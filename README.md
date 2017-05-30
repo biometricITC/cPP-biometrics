@@ -6,7 +6,7 @@ Collaborative Protection Profile for biometrics
 
 
 ## Working Draft
-[Essential Security Requirements (ESR)](tbd)
+[Essential Security Requirements (ESR)](output/ESR.html)
 
 [Collaborative Protection Profile for biometrics ](tbd)
 
