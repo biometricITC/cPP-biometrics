@@ -11,7 +11,7 @@ Collaborative Protection Profile for biometrics
 [Collaborative Protection Profile for biometrics ](tbd)
 
 ## Release Version
-[Protection Profile for Mobile Device Fundamentals v3.0](https://www.niap-ccevs.org/Profile/Info.cfm?id=381)
+[Essential Security Requirements (ESR) v1.0](https://www.commoncriteriaportal.org/communities/bio-esr.pdf)
 
 ## Technical Community
 [How to join the iTC (Mailing list and updates)](
