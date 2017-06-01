@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/esr2html.xsl"?>
 
-<ESR xmlns="http://common-criteria.rhcloud.com/ns/esr" name="Operating System Fundamentals">
+<ESR xmlns="http://common-criteria.rhcloud.com/ns/esr" name="Biometric Product Essential Security Requirements">
 
 	<intro>
 		<esrtitle>Biometric Product Essential Security Requirements</esrtitle>
