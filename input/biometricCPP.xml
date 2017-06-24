@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xsl-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
-
 <?xml-model href="../transforms/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<PP xmlns="http://common-criteria.rhcloud.com/ns/cc" name="Mobile Device Fundamentals"
-  xmlns:htm="http://www.w3.org/1999/xhtml">
-  <PPReference title="PP Reference" id="XXXXX">
+<PP name="Mobile Device Fundamentals" xmlns="http://common-criteria.rhcloud.com/ns/cc" xmlns:htm="http://www.w3.org/1999/xhtml">
+  <PPReference id="XXXXX" title="PP Reference">
     <ReferenceTable>
       <PPTitle>Biometric cPP</PPTitle>
       <PPVersion>3.1</PPVersion>
@@ -19,563 +17,397 @@
       </entry>
     </ReferenceTable>
   </PPReference>
-
   <RevisionHistory role="final">
     <entry>
       <version>0.1</version>
       <date>2016-06-24</date>
       <subject>Initial Version</subject>
     </entry>
-
-
   </RevisionHistory>
-
-
   <chapter id="int" title="Introduction">
-    <section title="Objectives of Document" id="objdoc" toe-type="BIO"> This document comprises the
+    <section id="objdoc" title="Objectives of Document" toe-type="BIO">This document comprises the
       Security Problem Definition for the biometric iTC. The iTC currently discusses three different
-      TOE that are all covered by the content in this document, namely: <htm:ul>
+      TOE that are all covered by the content in this document, namely: 
+      
+      <htm:ul>
         <htm:li>A TOE for presentation attack detection (PAD) only (also referred to as TOE.PAD), </htm:li>
         <htm:li>A TOE for biometric verification only (also referred to TOE.BIO),</htm:li>
         <htm:li>An integrated solution with PAD and biometric verification (also referred to as
-          TOE.INT). </htm:li>
-      </htm:ul> This document contains the description for TOE.BIO. The Security Problem Definition
-      comprises: <htm:ul>
+          TOE.INT). </htm:li></htm:ul>This document contains the description for TOE.BIO. The Security Problem Definition
+      comprises: 
+      
+      <htm:ul>
         <htm:li>A description of the external parties that interact with the TOE,</htm:li>
         <htm:li>A description of the assets to be protected by the TOE,</htm:li>
         <htm:li>A list of assumptions describing the intended environment of the TOE,</htm:li>
         <htm:li>A list of threats posed against the TOE,</htm:li>
         <htm:li>Organizational Security Policy (OSP) which is a set of rules, practices, and
-          procedures imposed by an organization to address its security needs..</htm:li>
-      </htm:ul> The Security Problem Definition defines the minimum set that applies to all possible
+          procedures imposed by an organization to address its security needs..</htm:li></htm:ul>The Security Problem Definition defines the minimum set that applies to all possible
       architectures of the TOE. However, certain architectures of the TOE may face additional
       threats or OSPs and will also have to implement additional functionality. As an example: A
       biometric algorithm may generate suitable audit events to be recorded by its environment but
       has ‑ by itself ‑ no mean to record or handle the events. A complete biometric system on the
       other hand, has the functionality to store and handle audit events. This Protection Profile
-      chooses the following approach to address this situation: <htm:ul>
+      chooses the following approach to address this situation: 
+      
+      <htm:ul>
         <htm:li>The requirements defined within the Security Problem Definition (and later on within
           the Objectives/SFR chapter) are to be met by every TOE, regardless of its
           architecture.)</htm:li>
         <htm:li>Chapter TBD defines additional functional packages that define additional
           requirements for certain architectures of a TOE.</htm:li>
         <htm:li>If a TOE meets the architecture of a functional package, the ST author shall include
-          all requirements from that functional package to their ST. </htm:li> </htm:ul>
+          all requirements from that functional package to their ST. </htm:li></htm:ul>
     </section>
-    <section title="Scope of Document" id="scope"> The scope of the Protection Profile within the
+    <section id="scope" title="Scope of Document">The scope of the Protection Profile within the
       development and evaluation process is described in the Common Criteria for Information
-      Technology Security Evaluation <cite linkend="CC"/>. In particular, a <abbr linkend="PP"/>
-      defines the IT security requirements of a generic type of <abbr linkend="TOE"/> and specifies
-      the functional and assurance security measures to be offered by that <abbr linkend="TOE"/> to
-      meet stated requirements <cite linkend="CC"/>. </section>
-    <section title="Intended Readership" id="intread"> The target audiences of this <abbr
-        linkend="PP"/> are biometric Device developers, <abbr linkend="CC"/> consumers, evaluators and
+      Technology Security Evaluation 
+      
+      <cite linkend="CC"/>
+      . In particular, a 
+      
+      <abbr linkend="PP"/>
+      defines the IT security requirements of a generic type of 
+      
+      <abbr linkend="TOE"/>
+      and specifies
+      the functional and assurance security measures to be offered by that 
+      
+      <abbr linkend="TOE"/>
+      to
+      meet stated requirements 
+      
+      <cite linkend="CC"/>
+      . </section>
+    <section id="intread" title="Intended Readership">The target audiences of this 
+      
+      <abbr linkend="PP"/>
+      are biometric Device developers, 
+      
+      <abbr linkend="CC"/>
+      consumers, evaluators and
       schemes. </section>
-    <section title="Glossary" id="glos">
+    <section id="glos" title="Glossary">
       <glossary>
         <entry>
           <term>PAD</term>
           <description>Presentation Attack Detection.</description>
         </entry>
-
       </glossary>
     </section>
+    <section id="parties" title="External Parties" toe-type="BIO">The following list comprises the external parties that may interact with the TOE.
 
-    <section title="External Parties" id="parties" toe-type="BIO"> 
 
-The following list comprises the external parties that may interact with the TOE.
-
-<htm:dl>
+      
+      <htm:dl>
         <htm:dt>Administrator </htm:dt>
-        <htm:dd>The TOE administrator is authorized and responsible to perform administrative TOE operations and able to use the administrative functions of the TOE. The administrator is also responsible for the installation and maintenance of the TOE. Depending on the concrete implementation of the TOE there may be more than one administrator and consequently also more than one administrative role. It is also possible that the role of the administrator is held by a user of the TOE. </htm:dd>        <htm:dt>User </htm:dt>
-        <htm:dd>A person who uses a biometric system to get enrolled or verified. </htm:dd>        <htm:dt>Attacker </htm:dt>
-        <htm:dd>An attacker is any individual who is attempting to subvert the operation of the TOE. </htm:dd>
-      </htm:dl> 
-
-
-     </section>    <section title="Assets" id="assets" toe-type="BIO"> 
-
-The following table comprises the assets that are to be protected by the TOE
-
-
-<htm:dl>
-        <htm:dt>Access </htm:dt>
-        <htm:dd>A biometric authentication system is used to control access to a physical or logical portal. The access to this portal (or the decision about granting access to be precise) is a primary asset for every biometric authentication </htm:dd>        <htm:dt>PAD result </htm:dt>
-        <htm:dd>If the TOE implements a PAD system, the decision on whether an attempt with the TOE is considered being a Presentation Attack is a primary asset. </htm:dd>        <htm:dt>TSF Data </htm:dt>
-        <htm:dd>All data for the operation of the TOE upon which the enforcement of the security mechanisms relies. </htm:dd>
-      </htm:dl> 
-
-
-     </section>
-
-<!-- Todo: This will have to be split up into the different TOE -->
-
-
-
-    <section title="TOE Overview" id="toeov"> tbd
+        <htm:dd>The TOE administrator is authorized and responsible to perform administrative TOE operations and able to use the administrative functions of the TOE. The administrator is also responsible for the installation and maintenance of the TOE. Depending on the concrete implementation of the TOE there may be more than one administrator and consequently also more than one administrative role. It is also possible that the role of the administrator is held by a user of the TOE. </htm:dd>
+        <htm:dt>User </htm:dt>
+        <htm:dd>A person who uses a biometric system to get enrolled or verified. </htm:dd>
+        <htm:dt>Attacker </htm:dt>
+        <htm:dd>An attacker is any individual who is attempting to subvert the operation of the TOE. </htm:dd></htm:dl>
     </section>
+    <section id="assets" title="Assets" toe-type="BIO">The following table comprises the assets that are to be protected by the TOE
 
-
-    <section title="TOE Usage" id="toeus"> tbd </section>
+      
+      <htm:dl>
+        <htm:dt>Access </htm:dt>
+        <htm:dd>A biometric authentication system is used to control access to a physical or logical portal. The access to this portal (or the decision about granting access to be precise) is a primary asset for every biometric authentication </htm:dd>
+        <htm:dt>PAD result </htm:dt>
+        <htm:dd>If the TOE implements a PAD system, the decision on whether an attempt with the TOE is considered being a Presentation Attack is a primary asset. </htm:dd>
+        <htm:dt>TSF Data </htm:dt>
+        <htm:dd>All data for the operation of the TOE upon which the enforcement of the security mechanisms relies. </htm:dd></htm:dl>
+    </section>
+    <!-- Todo: This will have to be split up into the different TOE -->
+    <section id="toeov" title="TOE Overview">tbd
+    </section>
+    <section id="toeus" title="TOE Usage">tbd </section>
   </chapter>
-
-  <chapter id="ccconf" title="CC Conformance"> As defined by the references <cite linkend="CC"/>,
-    this <abbr linkend="PP"/> conforms to the requirements of Common Criteria v3.1, Revision 5. The
-    methodology applied for the <abbr linkend="PP"/> evaluation is defined in <cite linkend="CEM"/>.
-    <htm:br/><htm:br/> This <abbr linkend="PP"/> satisfies the following Assurance Families:
+  <chapter id="ccconf" title="CC Conformance">As defined by the references 
+    
+    <cite linkend="CC"/>
+    ,
+    this 
+    
+    <abbr linkend="PP"/>
+    conforms to the requirements of Common Criteria v3.1, Revision 5. The
+    methodology applied for the 
+    
+    <abbr linkend="PP"/>
+    evaluation is defined in 
+    
+    <cite linkend="CEM"/>
+    .
+    
+    
+    <htm:br/>
+    <htm:br/>
+    This 
+    
+    <abbr linkend="PP"/>
+    satisfies the following Assurance Families:
    tbd </chapter>
-
-  <chapter title="Security Problem Definition" id="spd">
-    <section title="Threats" id="thr"> The following table comprises the threats that are directed against the TOE.
- <threats>
+  <chapter id="spd" title="Security Problem Definition">
+    <section id="thr" title="Threats">The following table comprises the threats that are directed against the TOE.
+ 
+      
+      <threats>
         <threat id="T.Casual_Attack" toe-type="BIO INT">
-          <description>
-            An attacker may attempt to impersonated as a legitimate user without being enrolled in the system themselves. In order to perform the attack, the attacker only uses their own biometric characteristic (in form of a zero-effort-attack) </description>
-
-<!-- TBD: The objectives referrer will need to be added as soon as the objectives are there -->
-        </threat>
-
-
+          <description>An attacker may attempt to impersonated as a legitimate user without being enrolled in the system themselves. In order to perform the attack, the attacker only uses their own biometric characteristic (in form of a zero-effort-attack) </description>
+          <!-- TBD: The objectives referrer will need to be added as soon as the objectives are there --></threat>
         <threat id="T.PA_Enrolment" toe-type="PAD INT">
-          <description> An attacker may attempt to get impersonated as another user during enrolment. In order to perform the attack, the attacker uses artificial biometric characteristics, carrying the biometric characteristic of the attacked user (as so called Presentation Attack) </description>
+          <description>An attacker may attempt to get impersonated as another user during enrolment. In order to perform the attack, the attacker uses artificial biometric characteristics, carrying the biometric characteristic of the attacked user (as so called Presentation Attack) </description>
         </threat>
-
-
         <threat id="T.PA_Verification" toe-type="BIO">
           <description>An attacker may attempt to get impersonated (during verification process) as a legitimate user without being enrolled in the system themselves. In order to perform the attack, the attacker uses artificial biometric characteristics, carrying the biometric characteristic of the attacked user (as so called Presentation Attack) </description>
         </threat>
-
         <threat id="T.General" toe-type="BIO PAD INT">
           <description>An attacker can carry out any kind of logical or physical attacks that do not exceed the attack potential and that are compliant with A.Environment as defined in the cPP in order to disguise his/her own identity during the enrolment or verification process or for the sake of impersonation.  More specifically, an attacker may try to modify TSF data (e.g. settings for the biometric verification process) in order to impact the normal operation of the TOE.</description>
-        </threat>       
-
-
-         <threat id="T.Residual" toe-type="BIO PAD INT">
+        </threat>
+        <threat id="T.Residual" toe-type="BIO PAD INT">
           <description>An attacker may try to take advantage of unprotected residual security relevant data (e.g. biometric data and settings) during a user's session or from a previous, already authenticated user.
 In this way the attacker tries to get access to the security relevant settings of the TOE.
 This threat covers several scenarios including:
 - An attacker takes advantage of the verification memory content (e.g. by reading the memory content, cache or relevant temporary data) using a flaw in a user visible interface of the TOE.
 - An attacker may take advantage of residual images at the capture device. These are likely to be limited to cases where physical contact with the biometric capture device is necessary for the biometric modality (e.g. fingerprints)</description>
         </threat>
-
-         <threat id="T.Roles" toe-type="BIO PAD INT">
+        <threat id="T.Roles" toe-type="BIO PAD INT">
           <description>An enrolled and authenticated user may try to exceed their privileges. This specifically addresses the cases where an authorized user tries to get administrator privileges in order to modify TSF data.</description>
         </threat>
-
       </threats>
     </section>
-
-
-
-
-
-    <section title="Assumptions" id="assp"> The following table comprises the assets that assumptions about the intended environment of the TOE. 
- <assumptions>
+    <section id="assp" title="Assumptions">The following table comprises the assets that assumptions about the intended environment of the TOE. 
+ 
+      
+      <assumptions>
         <assumption id="A.Admin" toe-type="BIO PAD INT">
           <description>It is assumed that the administrator of the TOE is well trained and non-hostile. Non-hostile specifically means that the administrator does not become an attacker nor does the administrator give relevant information to attackers. The administrator is responsible to accompany the TOE installation and oversees the system requirements regarding the TOE as well as the TOE settings and requirements. </description>
-<!--           <objective-refer ref="OE.CONFIG">
-            <rationale>The operational environment objective OE.CONFIG is realized through A.CONFIG.
-            </rationale>
-          </objective-refer> -->
-        </assumption>
-
+          <!--           <objective-refer ref="OE.CONFIG"><rationale>The operational environment objective OE.CONFIG is realized through A.CONFIG.</rationale></objective-refer>--></assumption>
         <assumption id="A.Environment" toe-type="BIO PAD INT">
           <description>The TOE is assumed to be used in a semi-controlled and observable environment (i.e. attacks that require extensive time or extensive access to the TOE or the use of complex tools (in the sense of conspicuous tools) are considered impractical during exploitation phase). This assumption also includes the protection of any parameters used by the TOE. </description>
         </assumption>
-
-  
         <assumption id="A.Comm" toe-type="BIO PAD INT">
           <description>It is assumed that the communication between the components of the biometric product is adequately protected against manipulation and eavesdropping of information. </description>
         </assumption>
-
         <assumption id="A.Fallback" toe-type="BIO PAD INT">
           <description>It is assumed that a fall-back mechanism as a complement to the TOE is available that reaches at least the same level of security as the biometric verification system does. This fall-back system is used in cases where an authorized user is rejected by the biometric verification system (False Rejection). </description>
         </assumption>
-
         <assumption id="A.Bio" toe-type="PAD">
           <description>The biometric system protected by the TOE ensures that all threats that are not related to presentation attacks are appropriately handled. Further, the biometric system ensures that the functionality of the TOE is invoked/used in order to protect the biometric system against presentation attacks. It is also assumed that the biometric sample that is acquired by the capture devices belongs to the sample that is used for presentation attack detection.</description>
-               <note role="application">The PAD system addressed in this Protection Profile is a protection mechanism against presentation attacks.
-            </note>
+          <appnote>
+            <htm:b>Application Note</htm:b>The PAD system addressed in this Protection Profile is a protection mechanism against presentation attacks. </appnote>
         </assumption>
-       
         <assumption id="A.PAD" toe-type="BIO">
           <description>It is assumed that the biometric system is protected against Presentation Attacks according to PP [bioCPP].</description>
-               <note role="application">The PAD system addressed in this Protection Profile is a protection mechanism against presentation attacks.
+          <note role="application">The PAD system addressed in this Protection Profile is a protection mechanism against presentation attacks.
             </note>
         </assumption>
-       
-
-
-
       </assumptions>
     </section>
+    <section id="osp" title="Organizational Security Policies">The following list comprises the OSP that the TOE shall comply with.
 
-
-    <section title="Organizational Security Policies" id="osp"> The following list comprises the OSP that the TOE shall comply with.
-
+      
+      
       <OSPs>
         <OSP id="OSP.ENROL" toe-type="BIO INT">
           <description>The TOE shall implement the functionality to enrol users. The TOE shall ensure that enrolment records are of sufficient quality in order to meet the requirements on recognition performance. Start of Enrolment shall only be possible after authorization of an authorized administrator.</description>
-<!--           <objective-refer ref="O.MANAGEMENT">
-            <rationale>The organizational security policy P.ENTERPRISE is enforced through the
+          <!--           <objective-refer ref="O.MANAGEMENT"><rationale>The organizational security policy P.ENTERPRISE is enforced through the
               objective O.MANAGEMENT as this objective represents how the enterprise and user assert
-              management over the <abbr linkend="OS"/>.</rationale>
-          </objective-refer> -->
-        </OSP>
-
-    <OSP id="OSP.Verifcation_Error" toe-type="BIO INT">
+              management over the <abbr linkend="OS"/>.</rationale></objective-refer>--></OSP>
+        <OSP id="OSP.Verifcation_Error" toe-type="BIO INT">
           <description>The TOE shall meet relevant criteria for its security relevant error rates for biometric verification (e.g. False Accept Rate (FAR) and False Rejection Rate (FRR)).</description>
-
         </OSP>
-
-
-
-    <OSP id="OSP.PAD_Error" toe-type="PAD INT">
+        <OSP id="OSP.PAD_Error" toe-type="PAD INT">
           <description>The TOE shall meet relevant criteria for its security relevant error rates for PAD.</description>
-
         </OSP>
-
-
-
-    <OSP id="OSP.TrialLimit" toe-type="PAD BIO INT">
+        <OSP id="OSP.TrialLimit" toe-type="PAD BIO INT">
           <description>Impostors must be prevented from gaining access to the portal by making repeated verification attempts using one or more claimed user IDs.
 Therefore the TOE in cooperation with its environment shall be able to limit the maximum number of unsuccessful verification attempts. </description>
-
         </OSP>
-
-
-          <OSP id="OSP.Audit" toe-type="PAD BIO INT">
-          <description>In order to <htm:ul>
-          <htm:li>generate statistics that can be used to adjust the parameters for better quality (maintenance) </htm:li> 
-           <htm:li>trace modification and</htm:li>
-            <htm:li>trace possible attacks </htm:li> </htm:ul> the TOE shall generate security-relevant audit events. 
-          </description>
+        <OSP id="OSP.Audit" toe-type="PAD BIO INT">
+          <description>In order to 
             
-
+            <htm:ul>
+              <htm:li>generate statistics that can be used to adjust the parameters for better quality (maintenance) </htm:li>
+              <htm:li>trace modification and</htm:li>
+              <htm:li>trace possible attacks </htm:li></htm:ul>the TOE shall generate security-relevant audit events. </description>
         </OSP>
-
-
-          <OSP id="OSP.Residual" toe-type="PAD BIO INT">
+        <OSP id="OSP.Residual" toe-type="PAD BIO INT">
           <description>The TOE shall erase all residual security-relevant data once they are redundant.. This specifically includes (but is not limited to) all information left after enrolment, verification or PAD processing.
           </description>
-            
-
-
         </OSP>
-
       </OSPs>
-
-
-
- </section>
-  </chapter>
-
-  <chapter title="Security Objectives" id="sobj">
-    <section title="Security Objectives for the TOE" id="sot"> The security objectives for the
-      Mobile Device are defined as follows. <SOs>
-        <SO id="O.COMMS">
-          <description><htm:b>Protected Communications</htm:b><htm:br/><htm:br/> To address the
-            network eavesdropping (T.EAVESDROP) and network attack (T.NETWORK) threats described in
-              <secref linkend="thr"/>, concerning wireless transmission of Enterprise and user data
-            and configuration data between the <abbr linkend="TOE"/> and remote network entities,
-            conformant <abbr linkend="TOE"/>s will use a trusted communication path. The <abbr
-              linkend="TOE"/> will be capable of communicating using one (or more) of these standard
-            protocols: IPsec, DTLS, TLS, HTTPS, or Bluetooth. The protocols are specified by RFCs
-            that offer a variety of implementation choices. Requirements have been imposed on some
-            of these choices (particularly those for cryptographic primitives) to provide
-            interoperability and resistance to cryptographic attack. <htm:br/><htm:br/> While
-            conformant <abbr linkend="TOE"/>s must support all of the choices specified in the <abbr
-              linkend="ST"/> including any optional <abbr linkend="SFR"/>s defined in this <abbr
-              linkend="PP"/>, they may support additional algorithms and protocols. If such
-            additional mechanisms are not evaluated, guidance must be given to the administrator to
-            make clear the fact that they were not evaluated. </description>
-<!--           <component-refer ref="FCS_CKM.1"/>
-          <component-refer ref="FCS_CKM.2(1)"/>
-          <component-refer ref="FCS_CKM.2(2)"/>
-          <component-refer ref="FCS_CKM_EXT.8"/>
-          <component-refer ref="FCS_COP.1(1)"/>
-          <component-refer ref="FCS_COP.1(2)"/>
-          <component-refer ref="FCS_COP.1(3)"/>
-          <component-refer ref="FCS_COP.1(4)"/>
-          <component-refer ref="FCS_COP.1(5)"/>
-          <component-refer ref="FCS_DTLS_EXT.1"/>
-          <component-refer ref="FCS_HTTPS_EXT.1"/>
-          <component-refer ref="FCS_RBG_EXT.1"/>
-          <component-refer ref="FCS_RBG_EXT.2"/>
-          <component-refer ref="FCS_RBG_EXT.3"/>
-          <component-refer ref="FCS_SRV_EXT.1"/>
-          <component-refer ref="FCS_SRV_EXT.2"/>
-          <component-refer ref="FCS_TLSC_EXT.1"/>
-          <component-refer ref="FCS_TLSC_EXT.2"/>
-          <component-refer ref="FCS_TLSC_EXT.3"/>
-          <component-refer ref="FDP_BLT_EXT.1"/>
-          <component-refer ref="FDP_IFC_EXT.1"/>
-          <component-refer ref="FDP_STG_EXT.1"/>
-          <component-refer ref="FDP_UPC_EXT.1"/>
-          <component-refer ref="FIA_BLT_EXT.1"/>
-          <component-refer ref="FIA_BLT_EXT.2"/>
-          <component-refer ref="FIA_BLT_EXT.3"/>
-          <component-refer ref="FIA_BLT_EXT.4"/>
-          <component-refer ref="FIA_BLT_EXT.5"/>
-          <component-refer ref="FIA_BLT_EXT.6"/>
-          <component-refer ref="FIA_X509_EXT.1"/>
-          <component-refer ref="FIA_X509_EXT.2"/>
-          <component-refer ref="FIA_X509_EXT.3"/>
-          <component-refer ref="FIA_X509_EXT.4"/>
-          <component-refer ref="FIA_X509_EXT.5"/>
-          <component-refer ref="FPT_BLT_EXT.1"/>
-          <component-refer ref="FTP_BLT_EXT.1"/>
-          <component-refer ref="FTP_BLT_EXT.2"/>
-          <component-refer ref="FTP_ITC_EXT.1"/> -->
-        </SO>
-        <SO id="O.STORAGE">
-          <description><htm:b>Protected Storage</htm:b><htm:br/><htm:br/> To address the issue of
-            loss of confidentiality of user data in the event of loss of a Mobile Device
-            (T.PHYSICAL), conformant <abbr linkend="TOE"/>s will use data-at-rest protection. The
-              <abbr linkend="TOE"/> will be capable of encrypting data and keys stored on the device
-            and will prevent unauthorized access to encrypted data. </description>
-          <component-refer ref="FCS_CKM_EXT.1"/>
-          <component-refer ref="FCS_CKM_EXT.2"/>
-          <component-refer ref="FCS_CKM_EXT.3"/>
-          <component-refer ref="FCS_CKM_EXT.4"/>
-          <component-refer ref="FCS_CKM_EXT.5"/>
-          <component-refer ref="FCS_CKM_EXT.6"/>
-          <component-refer ref="FCS_CKM_EXT.7"/>
-          <component-refer ref="FCS_COP.1(1)"/>
-          <component-refer ref="FCS_COP.1(2)"/>
-          <component-refer ref="FCS_COP.1(3)"/>
-          <component-refer ref="FCS_COP.1(4)"/>
-          <component-refer ref="FCS_COP.1(5)"/>
-          <component-refer ref="FCS_IV_EXT.1"/>
-          <component-refer ref="FCS_RBG_EXT.1"/>
-          <component-refer ref="FCS_RBG_EXT.2"/>
-          <component-refer ref="FCS_RBG_EXT.3"/>
-          <component-refer ref="FCS_STG_EXT.1"/>
-          <component-refer ref="FCS_STG_EXT.2"/>
-          <component-refer ref="FCS_STG_EXT.3"/>
-          <component-refer ref="FDP_ACF_EXT.2"/>
-          <component-refer ref="FDP_ACF_EXT.3"/>
-          <component-refer ref="FDP_DAR_EXT.1"/>
-          <component-refer ref="FDP_DAR_EXT.2"/>
-          <component-refer ref="FIA_UAU_EXT.1"/>
-          <component-refer ref="FPT_KST_EXT.1"/>
-          <component-refer ref="FPT_KST_EXT.2"/>
-          <component-refer ref="FPT_KST_EXT.3"/>
-          <component-refer ref="FPT_JTA_EXT.1"/>
-        </SO>
-        <SO id="O.CONFIG">
-          <description><htm:b>Mobile Device Configuration</htm:b><htm:br/><htm:br/> To ensure a
-            Mobile Device protects user and enterprise data that it may store or process, conformant
-              <abbr linkend="TOE"/>s will provide the capability to configure and apply security
-            policies defined by the user and the Enterprise Administrator. If Enterprise security
-            policies are configured these must be applied in precedence of user specified security
-            policies. </description>
-          <component-refer ref="FMT_MOF_EXT.1"/>
-          <component-refer ref="FMT_SMF_EXT.1"/>
-          <component-refer ref="FMT_SMF_EXT.2"/>
-          <component-refer ref="FTA_TAB.1"/>
-        </SO>
-        <SO id="O.AUTH">
-          <description><htm:b>Authorization and Authentication</htm:b><htm:br/><htm:br/> To address
-            the issue of loss of confidentiality of user data in the event of loss of a Mobile
-            Device (T.PHYSICAL), users are required to enter an authentication factor to the device
-            prior to accessing protected functionality and data. Some non-sensitive functionality
-            (e.g., emergency calling, text notification) can be accessed prior to entering the
-            authentication factor. The device will automatically lock following a configured period
-            of inactivity in an attempt to ensure authorization will be required in the event of the
-            device being lost or stolen.<htm:br/><htm:br/> Authentication of the endpoints of a
-            trusted communication path is required for network access to ensure attacks are unable
-            to establish unauthorized network connections to undermine the integrity of the device.
-            <htm:br/><htm:br/> Repeated attempts by a user to authorize to the <abbr linkend="TSF"/>
-            will be limited or throttled to enforce a delay between unsuccessful attempts.<htm:br/>
-          </description>
-          <component-refer ref="FCS_CKM.2(1)"/>
-          <component-refer ref="FDP_PBA_EXT.1"/>
-          <component-refer ref="FIA_AFL_EXT.1"/>
-          <component-refer ref="FIA_BLT_EXT.1"/>
-          <component-refer ref="FIA_BLT_EXT.2"/>
-          <component-refer ref="FIA_BLT_EXT.3"/>
-          <component-refer ref="FIA_BMG_EXT.1"/>
-          <component-refer ref="FIA_BMG_EXT.2"/>
-          <component-refer ref="FIA_BMG_EXT.3"/>
-          <component-refer ref="FIA_BMG_EXT.4"/>
-          <component-refer ref="FIA_BMG_EXT.5"/>
-          <component-refer ref="FIA_BMG_EXT.6"/>
-          <component-refer ref="FIA_PMG_EXT.1"/>
-          <component-refer ref="FIA_TRT_EXT.1"/>
-          <component-refer ref="FIA_UAU_EXT.1"/>
-          <component-refer ref="FIA_UAU_EXT.2"/>
-          <component-refer ref="FIA_UAU_EXT.4"/>
-          <component-refer ref="FIA_UAU.5"/>
-          <component-refer ref="FIA_UAU.6"/>
-          <component-refer ref="FIA_UAU.7"/>
-          <component-refer ref="FIA_X509_EXT.2"/>
-          <component-refer ref="FIA_X509_EXT.4"/>
-          <component-refer ref="FIA_X509_EXT.5"/>
-          <component-refer ref="FTA_SSL_EXT.1"/>
-        </SO>
-        <SO id="O.INTEGRITY">
-          <description><htm:b>Mobile Device Integrity</htm:b><htm:br/><htm:br/> To ensure the
-            integrity of the Mobile Device is maintained conformant <abbr linkend="TOE"/>s will
-            perform self-tests to ensure the integrity of critical functionality, software/firmware
-            and data has been maintained. The user shall be notified of any failure of these
-            self-tests. This will protect against the threat T.PERSISTENT. <htm:br/><htm:br/> To
-            address the issue of an application containing malicious or flawed code (T.FLAWAPP), the
-            integrity of downloaded updates to software/firmware will be verified prior to
-            installation/execution of the object on the Mobile Device. In addition, the <abbr
-              linkend="TOE"/> will restrict applications to only have access to the system services
-            and data they are permitted to interact with. The <abbr linkend="TOE"/> will further
-            protect against malicious applications from gaining access to data they are not
-            authorized to access by randomizing the memory layout. </description>
-          <component-refer ref="FAU_GEN.1"/>
-          <component-refer ref="FAU_SAR.1"/>
-          <component-refer ref="FAU_SEL.1"/>
-          <component-refer ref="FAU_STG.1"/>
-          <component-refer ref="FAU_STG.4"/>
-          <component-refer ref="FCS_COP.1(2)"/>
-          <component-refer ref="FCS_COP.1(3)"/>
-          <component-refer ref="FDP_ACF_EXT.1"/>
-          <component-refer ref="FDP_ACF_EXT.3"/>
-          <component-refer ref="FPT_AEX_EXT.1"/>
-          <component-refer ref="FPT_AEX_EXT.2"/>
-          <component-refer ref="FPT_AEX_EXT.3"/>
-          <component-refer ref="FPT_AEX_EXT.4"/>
-          <component-refer ref="FPT_AEX_EXT.5"/>
-          <component-refer ref="FPT_AEX_EXT.6"/>
-          <component-refer ref="FPT_AEX_EXT.7"/>
-          <component-refer ref="FPT_BBD_EXT.1"/>
-          <component-refer ref="FPT_NOT_EXT.1"/>
-          <component-refer ref="FPT_NOT_EXT.2"/>
-          <component-refer ref="FPT_STM.1"/>
-          <component-refer ref="FPT_TST_EXT.1"/>
-          <component-refer ref="FPT_TST_EXT.2(1)"/>
-          <component-refer ref="FPT_TST_EXT.2(2)"/>
-          <component-refer ref="FPT_TST_EXT.3"/>
-          <component-refer ref="FPT_TUD_EXT.1"/>
-          <component-refer ref="FPT_TUD_EXT.2"/>
-          <component-refer ref="FPT_TUD_EXT.3"/>
-          <component-refer ref="FPT_TUD_EXT.4"/>
-        </SO>
-        <SO id="O.PRIVACY">
-          <description><htm:b>End User Privacy and Device Functionality</htm:b><htm:br/><htm:br/> In
-            a BYOD environment (use cases 3 and 4), a personally-owned mobile device is used for
-            both personal activities and enterprise data. Enterprise management solutions may have
-            the technical capability to monitor and enforce security policies on the device.
-            However, the privacy of the personal activities and data must be ensured. In addition,
-            since there are limited controls that the enterprise can enforce on the personal side,
-            separation of personal and enterprise data is needed. This will protect against the
-            T.FLAWAPP and T.PERSISTENT threats. </description>
-          <component-refer ref="FDP_ACF_EXT.1"/>
-          <component-refer ref="FDP_BCK_EXT.1"/>
-          <component-refer ref="FMT_SMF_EXT.1"/>
-          <component-refer ref="FMT_SMF_EXT.3"/>
-        </SO>
-      </SOs>
     </section>
-    <section title="Security Objectives for the Operational Environment" id="sooe"> The following
-      security objectives for the operational environment assist the <abbr linkend="OS"/> in
+  </chapter>
+  <chapter id="sobj" title="Security Objectives">
+    <section id="sot" title="Security Objectives for the TOE">The security objectives for the
+      Mobile Device are defined as follows. 
+      
+      <SOs>
+        <SO id="O.BIO_VERIFICATION" toe-type="BIO INT">
+          <description>The TOE shall provide a biometric verification mechanism to ensure access to a portal with an adequate reliability.
+The TOE shall meet relevant criteria for its security relevant error rates for biometric verification (e.g. False Accept Rate (FAR) and False Rejection Rate (FRR)).
+An “Exact match” should not be counted as a positive verification as it may be a replay attempt.</description>
+          <!--           <component-refer ref="FCS_CKM.1"/><component-refer ref="FCS_CKM.2(1)"/><component-refer ref="FCS_CKM.2(2)"/><component-refer ref="FCS_CKM_EXT.8"/><component-refer ref="FCS_COP.1(1)"/><component-refer ref="FCS_COP.1(2)"/><component-refer ref="FCS_COP.1(3)"/><component-refer ref="FCS_COP.1(4)"/><component-refer ref="FCS_COP.1(5)"/><component-refer ref="FCS_DTLS_EXT.1"/><component-refer ref="FCS_HTTPS_EXT.1"/><component-refer ref="FCS_RBG_EXT.1"/><component-refer ref="FCS_RBG_EXT.2"/><component-refer ref="FCS_RBG_EXT.3"/><component-refer ref="FCS_SRV_EXT.1"/><component-refer ref="FCS_SRV_EXT.2"/><component-refer ref="FCS_TLSC_EXT.1"/><component-refer ref="FCS_TLSC_EXT.2"/><component-refer ref="FCS_TLSC_EXT.3"/><component-refer ref="FDP_BLT_EXT.1"/><component-refer ref="FDP_IFC_EXT.1"/><component-refer ref="FDP_STG_EXT.1"/><component-refer ref="FDP_UPC_EXT.1"/><component-refer ref="FIA_BLT_EXT.1"/><component-refer ref="FIA_BLT_EXT.2"/><component-refer ref="FIA_BLT_EXT.3"/><component-refer ref="FIA_BLT_EXT.4"/><component-refer ref="FIA_BLT_EXT.5"/><component-refer ref="FIA_BLT_EXT.6"/><component-refer ref="FIA_X509_EXT.1"/><component-refer ref="FIA_X509_EXT.2"/><component-refer ref="FIA_X509_EXT.3"/><component-refer ref="FIA_X509_EXT.4"/><component-refer ref="FIA_X509_EXT.5"/><component-refer ref="FPT_BLT_EXT.1"/><component-refer ref="FTP_BLT_EXT.1"/><component-refer ref="FTP_BLT_EXT.2"/><component-refer ref="FTP_ITC_EXT.1"/>--></SO>
+        <SO id="O.PAD" toe-type="PAD">
+          <description>The TOE shall detect whether a presentation is an presentation attack is or a bona fide presentation. 
+The evidence may be extracted from the data provided by the same sensor that is used to acquire the biometric characteristic for recognition (by the biometric system in the environment), or it may be retrieved using sensors which are solely dedicated to PAD. </description>
+        </SO>
+        <SO id="O.PAD" toe-type="PAD">
+          <description>The TOE shall detect whether a presentation is an presentation attack is or a bona fide presentation. 
+The evidence may be extracted from the data provided by the same sensor that is used to acquire the biometric characteristic for recognition (by the biometric system in the environment), or it may be retrieved using sensors which are solely dedicated to PAD. </description>
+        </SO>
+        <SO id="O.PAD_ENROL" toe-type="BIO INT">
+          <description>The TOE shall prevent an attacker facilitating a presentation attack from being successfully enrolled, </description>
+        </SO>
+        <SO id="O.PAD_VERIFICATION" toe-type="BIO INT">
+          <description>The TOE shall prevent an attacker facilitating a presentation attack from being successfully verified. </description>
+        </SO>
+        <SO id="O.AUDIT" toe-type="BIO PAD INT">
+          <description>The TOE  shall report or record
+          
+            <htm:ul>
+              <li>A use of the central functionality of the TOE and its result</li>
+              <li>Every use of a management function </li>
+              <li>All parameters modified by the management functions</li></htm:ul>
+          </description>
+          <appnote>The use of the central functionality of the TOE refers to the use of the PAD functionality in case of TOE.PAD and to the use of the biometric functionality in case of TOE.BIO.</appnote>
+          <appnote>Please note that the term “report” in O.Audit does only require the TOE to generate the audit event while it is possible that the storage of the events is done by the environment. </appnote>
+        </SO>
+        <SO id="O.ENROL" toe-type="BIO PAD INT">
+          <description>The TOE shall implement the functionality to enrol users. The TOE shall ensure that enrolment records are of sufficient quality in order to meet the requirements on recognition performance. The TOE shall ensure that start of Enrolment shall only be possible after authorization by an  administrator.  </description>
+        </SO>
+        <SO id="O.RESIDUAL" toe-type="BIO PAD INT">
+          <description>The TOE shall ensure that no residual or unprotected security relevant data remain in memory or on any sensor after operations are completed.  </description>
+          <appnote>In case no sensor is part of the TOE, this part of the objective shall be considered fulfilled. 
+          </appnote>
+        </SO>
+        <SO id="O.MANAGEMENT" toe-type="BIO PAD INT">
+          <description>The TOE shall provide the necessary management functionality for the modification of security relevant parameters to TOE administrators only. 
+As part of this management functionality the TOE shall only accept secure values for security relevant parameters to ensure the correct operation of the TOE. </description>
+        </SO>
+
+                <SO id="O.PAD_ERROR" toe-type="PAD INT">
+          <description>The TOE shall meet relevant criteria for its security relevant error rates for PAD </description>
+          <appnote>It is the concept of this PP that concrete values for security relevant error rates shall not be defined in the PP/ST. Instead, such concrete values should be defined in the corresponding methodology documents. 
+</appnote>
+        </SO>
+
+
+         <SO id="O.PROTECTION" toe-type="BIO INT">
+          <description>The TOE in cooperation with its immediate environment shall provide an adequate level of logical and physical protection in order to ensure the correct operation of the TOE. 
+This specifically concerns the enrolment and verification process. 
+Impostors must be prevented from gaining access to the portal by making repeated verification attempts using one or more claimed user IDs.
+Therefore the TOE in cooperation with its environment shall be able to limit the maximum number of unsuccessful verification attempts. 
+Also, the TOE ‑ in cooperation with its environment ‑ shall ensure that any TSF data is adequately protected. </description> <appnote>The relationship between the TOE and its environment is pretty complex in this point and deserves some further explanation: A.Environment does not pose an absolute protection for the TOE to be provided by the environment. It provides a level of protection, in which complex attacks may not be possible. However, simple and unobstrusive attacks can still be performed. Such attacks are described in T.General and have to be countered by the TOE itself as required by this objective. </appnote>
+        </SO>
+
+      </SOs>
+
+<!-- ******************************************************************************************
+  ____                       _ _            ___  _     _           _   _                
+ / ___|  ___  ___ _   _ _ __(_) |_ _   _   / _ \| |__ (_) ___  ___| |_(_)_   _____  ___ 
+ \___ \ / _ \/ __| | | | '__| | __| | | | | | | | '_ \| |/ _ \/ __| __| \ \ / / _ \/ __|
+  ___) |  __/ (__| |_| | |  | | |_| |_| | | |_| | |_) | |  __/ (__| |_| |\ V /  __/\__ \
+ |____/ \___|\___|\__,_|_|  |_|\__|\__, |  \___/|_.__// |\___|\___|\__|_| \_/ \___||___/
+                                   |___/            |__/                                
+   __              _   _                            _                                      _   
+  / _| ___  _ __  | |_| |__   ___    ___ _ ____   _(_)_ __ ___  _ __  _ __ ___   ___ _ __ | |_ 
+ | |_ / _ \| '__| | __| '_ \ / _ \  / _ \ '_ \ \ / / | '__/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|
+ |  _| (_) | |    | |_| | | |  __/ |  __/ | | \ V /| | | | (_) | | | | | | | | |  __/ | | | |_ 
+ |_|  \___/|_|     \__|_| |_|\___|  \___|_| |_|\_/ |_|_|  \___/|_| |_|_| |_| |_|\___|_| |_|\__|
+ <!-- *************************************************************************************!-->
+
+
+    </section>
+    <section id="sooe" title="Security Objectives for the Operational Environment">The following
+      security objectives for the operational environment assist the TOE
+      in
       correctly providing its security functionality. These track with the assumptions about the
-      environment. <SOEs>
+      environment. 
+      
+      <SOEs>
         <SOE id="OE.CONFIG">
           <description>TOE administrators will configure the Mobile Device security functions
-            correctly to create the intended security policy</description>
-        </SOE>
-        <SOE id="OE.NOTIFY">
-          <description>The Mobile User will immediately notify the administrator if the Mobile
-            Device is lost or stolen.</description>
-        </SOE>
-        <SOE id="OE.PRECAUTION">
-          <description>The Mobile User exercises precautions to reduce the risk of loss or theft of
-            the Mobile Device.</description>
-        </SOE>
+            correctly to create the intended security policy</description></SOE>
+<!-- TODO: hier weiter -->
+
       </SOEs>
     </section>
-    <section title="Security Objectives Rationale" id="SOR">This section describes how the
+
+
+    <section id="SOR" title="Security Objectives Rationale">This section describes how the
       assumptions, threats, and organizational security policies map to the security objectives.
+      
+      
       <InsertSPDCorrespondence/></section>
   </chapter>
-
   <appendix id="biblio" title="References">
     <bibliography>
       <entry id="CC">
         <tag>CC</tag>
-        <description>Common Criteria for Information Technology Security Evaluation - <htm:ul>
-            <htm:li><htm:a
-                href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf">Part 1:
-                Introduction and General Model</htm:a>, CCMB-2012-09-001, Version 3.1 Revision 4,
+        <description>Common Criteria for Information Technology Security Evaluation - 
+          
+          <htm:ul>
+            <htm:li>
+              <htm:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf">Part 1:
+                Introduction and General Model</htm:a>
+              , CCMB-2012-09-001, Version 3.1 Revision 4,
               September 2012.</htm:li>
-            <htm:li><htm:a
-                href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf">Part 2:
+            <htm:li>
+              <htm:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf">Part 2:
                 Security Functional Components</htm:a>, CCMB-2012-09-002, Version 3.1 Revision 4,
               September 2012.</htm:li>
-            <htm:li><htm:a
-                href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf">Part 3:
+            <htm:li>
+              <htm:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf">Part 3:
                 Security Assurance Components</htm:a>, CCMB-2012-09-003, Version 3.1 Revision 4,
               September 2012.</htm:li>
-          </htm:ul></description>
+          </htm:ul>
+        </description>
       </entry>
       <entry id="CEM">
         <tag>CEM</tag>
         <description>
           <htm:a href="http://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R4.pdf">Common
             Evaluation Methodology for Information Technology Security - Evaluation
-            Methodology</htm:a>, CCMB-2012-09-004, Version 3.1, Revision 4, September 2012.
-        </description>
+            Methodology</htm:a>, CCMB-2012-09-004, Version 3.1, Revision 4, September 2012.</description>
       </entry>
       <entry id="NFIQ1.0">
         <tag>NFIQ 1.0</tag>
         <description>
-          <htm:a
-            href="http://biometrics.nist.gov/cs_links/standard/archived/workshops/workshop1/presentations/Tabassi-Image-Quality.pdf"
-            >NIST Fingerprint Image Quality and relation to PIV</htm:a>, Tabassi, Elham.NIST
+          <htm:a href="http://biometrics.nist.gov/cs_links/standard/archived/workshops/workshop1/presentations/Tabassi-Image-Quality.pdf">NIST Fingerprint Image Quality and relation to PIV</htm:a>, Tabassi, Elham.NIST
           Information Technology Laboratory, 2005. Retrieved June 13, 2015. </description>
       </entry>
-
       <entry id="NFIQ2.0">
         <tag>NFIQ 2.0</tag>
         <description>
-          <htm:a
-            href="http://biometrics.nist.gov/cs_links/ibpc2016/presentations/ibpc2016_may04/13_tabassi_ibpc2016_nfiq_4May2016.pdf"
-            >Biometric Quality: The push towards zero error biometrics.</htm:a>, Tabassi, Elham et
-          al. International Biometrics Performance Conference (IBPC), 2016. Retrieved May 30, 2016.
-        </description>
+          <htm:a href="http://biometrics.nist.gov/cs_links/ibpc2016/presentations/ibpc2016_may04/13_tabassi_ibpc2016_nfiq_4May2016.pdf">Biometric Quality: The push towards zero error biometrics.</htm:a>, Tabassi, Elham et
+          al. International Biometrics Performance Conference (IBPC), 2016. Retrieved May 30, 2016.</description>
       </entry>
-
       <entry id="IBPC">
         <tag>IBPC</tag>
         <description>
-          <htm:a
-            href="http://biometrics.nist.gov/cs_links/ibpc2010/pdfs/Henniger_Olaf_IBPC-Presentation.pdf"
-            >On security evaluation of fingerprint recognition systems-- IBPC Presentation.</htm:a>,
+          <htm:a href="http://biometrics.nist.gov/cs_links/ibpc2010/pdfs/Henniger_Olaf_IBPC-Presentation.pdf">On security evaluation of fingerprint recognition systems-- IBPC Presentation.</htm:a>,
           Henniger, Scheuermann, and Kniess.International Biometric Performance Testing Conference
           (IBPC), 2010. Retrieved June 12, 2015. </description>
       </entry>
-
       <entry id="ISO19989">
         <tag>ISO 19989</tag>
         <description>
-          <htm:a
-            href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=66801"
-            >, ISO/IEC NP 19989: Evaluation of presentation attack detection for biometrics</htm:a>
-          International Organization for Standardization (ISO), 2014. </description>
+          <htm:a href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=66801">, ISO/IEC NP 19989: Evaluation of presentation attack detection for biometrics</htm:a>International Organization for Standardization (ISO), 2014. </description>
       </entry>
-
       <entry id="ANSI409.1">
         <tag>ANSI 409.1</tag>
-        <description> ANSI/CITS 409.1-2005. Biometrics Performance Testing and Reporting—Part 1:
+        <description>ANSI/CITS 409.1-2005. Biometrics Performance Testing and Reporting—Part 1:
           Principles and Findings.” Annex B. ANSI/CITS, 2005. </description>
       </entry>
-
       <entry id="NIST">
         <tag>NIST</tag>
         <description>
-          <htm:a
-            href="http://www.isca-speech.org/archive_open/archive_papers/odyssey/pres/odys_doddington_p.pdf"
-            >The NIST speaker recognition evaluation—Overview, methodology, systems, results,
+          <htm:a href="http://www.isca-speech.org/archive_open/archive_papers/odyssey/pres/odys_doddington_p.pdf">The NIST speaker recognition evaluation—Overview, methodology, systems, results,
             perspective</htm:a>, Doddington, Przybocki, Martin, and Reynolds. Speech Communication
           31: Elsevier, 2000, Retrieved June 10, 2015. </description>
       </entry>
-
       <entry id="Brown">
         <tag>BROWN</tag>
         <description>
@@ -584,29 +416,87 @@ Therefore the TOE in cooperation with its environment shall be able to limit the
       </entry>
     </bibliography>
   </appendix>
-  <appendix id="ack" title="Acknowledgements"> This protection profile was developed by the Mobility
+  <appendix id="ack" title="Acknowledgements">This protection profile was developed by the Mobility
     Technical Community with representatives from industry, U.S. Government agencies, Common
     Criteria Test Laboratories, and international Common Criteria schemes. The National Information
     Assurance Partnership wishes to acknowledge and thank the members of this group whose dedicated
-    efforts contributed significantly to the publication. These organizations include: <htm:br/><htm:br/>
-    <htm:b>U.S. Government</htm:b><htm:br/> Defense Information Systems Agency (DISA)<htm:br/>
-    Information Assurance Directorate (IAD)<htm:br/> National Information Assurance Partnership
-    (NIAP)<htm:br/> National Institute of Standards and Technology (NIST)<htm:br/><htm:br/>
-    <htm:b>International Common Criteria Schemes</htm:b><htm:br/> Australasian Information Security
-    Evaluation Program (AISEP)<htm:br/> Canadian Common Criteria Evaluation and Certification Scheme
-    (CSEC)<htm:br/> Information-technology Promotion Agency, Japan (IPA)<htm:br/> UK IT Security
-    Evaluation and Certificate Scheme (NCSC)<htm:br/><htm:br/>
-    <htm:b>Industry</htm:b><htm:br/> Apple, Inc.<htm:br/> BlackBerry<htm:br/> LG Electronics,
-    Inc.<htm:br/> Microsoft Corporation<htm:br/> Motorola Solutions<htm:br/> Samsung Electronics
-    Co., Ltd.<htm:br/> Other Members of the Mobility Technical Community<htm:br/><htm:br/>
-    <htm:b>Common Criteria Test Laboratories</htm:b><htm:br/> EWA-Canada, Ltd.<htm:br/> Gossamer
-    Security Solutions<htm:br/>
-  </appendix>
-
+    efforts contributed significantly to the publication. These organizations include: 
+    
+    <htm:br/>
+    <htm:br/>
+    <htm:b>U.S. Government</htm:b>
+    <htm:br/>
+    Defense Information Systems Agency (DISA)
+    
+    <htm:br/>
+    Information Assurance Directorate (IAD)
+    
+    <htm:br/>
+    National Information Assurance Partnership
+    (NIAP)
+    
+    <htm:br/>
+    National Institute of Standards and Technology (NIST)
+    
+    <htm:br/>
+    <htm:br/>
+    <htm:b>International Common Criteria Schemes</htm:b>
+    <htm:br/>
+    Australasian Information Security
+    Evaluation Program (AISEP)
+    
+    <htm:br/>
+    Canadian Common Criteria Evaluation and Certification Scheme
+    (CSEC)
+    
+    <htm:br/>
+    Information-technology Promotion Agency, Japan (IPA)
+    
+    <htm:br/>
+    UK IT Security
+    Evaluation and Certificate Scheme (NCSC)
+    
+    <htm:br/>
+    <htm:br/>
+    <htm:b>Industry</htm:b>
+    <htm:br/>
+    Apple, Inc.
+    
+    <htm:br/>
+    BlackBerry
+    
+    <htm:br/>
+    LG Electronics,
+    Inc.
+    
+    <htm:br/>
+    Microsoft Corporation
+    
+    <htm:br/>
+    Motorola Solutions
+    
+    <htm:br/>
+    Samsung Electronics
+    Co., Ltd.
+    
+    <htm:br/>
+    Other Members of the Mobility Technical Community
+    
+    <htm:br/>
+    <htm:br/>
+    <htm:b>Common Criteria Test Laboratories</htm:b>
+    <htm:br/>
+    EWA-Canada, Ltd.
+    
+    <htm:br/>
+    Gossamer
+    Security Solutions
+    
+    <htm:br/></appendix>
   <extra-css>
     <!--  .LsVerySpecificUseCase::before { content: "Note["; }
   .LsVerySpecificUseCase { text-decoration: line-through;}
   .LsVerySpecificUseCase::after { content: "]"; }-->
-    <!-- <htm:div class="LsVerySpecificUseCase">--> .SOlist .optional::after, .SOlist
-    .sel-based::after, .SOlist .objective::after { content: "(OPTIONAL)" } </extra-css>
+    <!-- <htm:div class="LsVerySpecificUseCase">-->.SOlist .optional::after, .SOlist
+    .sel-based::after, .SOlist .objective::after { content: &quot;(OPTIONAL)&quot; } </extra-css>
 </PP>

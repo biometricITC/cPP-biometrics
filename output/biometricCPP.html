@@ -142,7 +142,7 @@ function expand(){
     }
     
     
-     .SOlist .optional::after, .SOlist
+    .SOlist .optional::after, .SOlist
     .sel-based::after, .SOlist .objective::after { content: "(OPTIONAL)" } 
 
           /*       { background-color: #FFFFFF; } */
@@ -503,9 +503,11 @@ function expand(){
       </div>
       <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="int">1. Introduction</h1>
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="objdoc">1.1 Objectives of Document</h2> This document comprises the
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="objdoc">1.1 Objectives of Document</h2>This document comprises the
       Security Problem Definition for the biometric iTC. The iTC currently discusses three different
       TOE that are all covered by the content in this document, namely: 
+      
+      
       <ul xmlns="">
          
          <li>A TOE for presentation attack detection (PAD) only (also referred to as TOE.PAD), </li>
@@ -515,9 +517,10 @@ function expand(){
          <li>An integrated solution with PAD and biometric verification (also referred to as
             TOE.INT). 
          </li>
-         
-      </ul> This document contains the description for TOE.BIO. The Security Problem Definition
+      </ul>This document contains the description for TOE.BIO. The Security Problem Definition
       comprises: 
+      
+      
       <ul xmlns="">
          
          <li>A description of the external parties that interact with the TOE,</li>
@@ -531,14 +534,15 @@ function expand(){
          <li>Organizational Security Policy (OSP) which is a set of rules, practices, and
             procedures imposed by an organization to address its security needs..
          </li>
-         
-      </ul> The Security Problem Definition defines the minimum set that applies to all possible
+      </ul>The Security Problem Definition defines the minimum set that applies to all possible
       architectures of the TOE. However, certain architectures of the TOE may face additional
       threats or OSPs and will also have to implement additional functionality. As an example: A
       biometric algorithm may generate suitable audit events to be recorded by its environment but
       has &#8209; by itself &#8209; no mean to record or handle the events. A complete biometric system on the
       other hand, has the functionality to store and handle audit events. This Protection Profile
       chooses the following approach to address this situation: 
+      
+      
       <ul xmlns="">
          
          <li>The requirements defined within the Security Problem Definition (and later on within
@@ -552,18 +556,38 @@ function expand(){
          
          <li>If a TOE meets the architecture of a functional package, the ST author shall include
             all requirements from that functional package to their ST. 
-         </li> 
+         </li>
       </ul>
       
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="scope">1.2 Scope of Document</h2> The scope of the Protection Profile within the
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="scope">1.2 Scope of Document</h2>The scope of the Protection Profile within the
       development and evaluation process is described in the Common Criteria for Information
-      Technology Security Evaluation <a href="#CC">[CC]</a>. In particular, a <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
-      defines the IT security requirements of a generic type of <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> and specifies
-      the functional and assurance security measures to be offered by that <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> to
-      meet stated requirements <a href="#CC">[CC]</a>. 
+      Technology Security Evaluation 
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="intread">1.3 Intended Readership</h2> The target audiences of this <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> are biometric Device developers, <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> consumers, evaluators and
+      <a href="#CC">[CC]</a>
+      . In particular, a 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      defines the IT security requirements of a generic type of 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      and specifies
+      the functional and assurance security measures to be offered by that 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      to
+      meet stated requirements 
+      
+      <a href="#CC">[CC]</a>
+      . 
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="intread">1.3 Intended Readership</h2>The target audiences of this 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      are biometric Device developers, 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      consumers, evaluators and
       schemes. 
       
       <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="glos">1.4 Glossary</h2>
@@ -576,10 +600,9 @@ function expand(){
       </table>
       
       
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="parties">1.5 External Parties</h2>The following list comprises the external parties that may interact with the TOE.
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="parties">1.5 External Parties</h2> 
       
-      The following list comprises the external parties that may interact with the TOE.
       
       
       <dl xmlns="">
@@ -590,21 +613,19 @@ function expand(){
             functions of the TOE. The administrator is also responsible for the installation and maintenance of the TOE. Depending on
             the concrete implementation of the TOE there may be more than one administrator and consequently also more than one administrative
             role. It is also possible that the role of the administrator is held by a user of the TOE. 
-         </dd>        
+         </dd>
+         
          <dt>User </dt>
          
-         <dd>A person who uses a biometric system to get enrolled or verified. </dd>        
+         <dd>A person who uses a biometric system to get enrolled or verified. </dd>
+         
          <dt>Attacker </dt>
          
          <dd>An attacker is any individual who is attempting to subvert the operation of the TOE. </dd>
-         
-      </dl> 
+      </dl>
       
       
-          
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="assets">1.6 Assets</h2> 
-      
-      The following table comprises the assets that are to be protected by the TOE
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="assets">1.6 Assets</h2>The following table comprises the assets that are to be protected by the TOE
       
       
       
@@ -614,47 +635,60 @@ function expand(){
          
          <dd>A biometric authentication system is used to control access to a physical or logical portal. The access to this portal (or
             the decision about granting access to be precise) is a primary asset for every biometric authentication 
-         </dd>        
+         </dd>
+         
          <dt>PAD result </dt>
          
          <dd>If the TOE implements a PAD system, the decision on whether an attempt with the TOE is considered being a Presentation Attack
             is a primary asset. 
-         </dd>        
+         </dd>
+         
          <dt>TSF Data </dt>
          
          <dd>All data for the operation of the TOE upon which the enforcement of the security mechanisms relies. </dd>
-         
-      </dl> 
-      
-      
-      
+      </dl>
       
       
       <!-- Todo: This will have to be split up into the different TOE -->
       
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="toeov">1.7 TOE Overview</h2>tbd
       
       
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="toeus">1.8 TOE Usage</h2>tbd 
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="toeov">1.7 TOE Overview</h2> tbd
+      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="ccconf">2. CC Conformance</h1>As defined by the references 
+      
+      <a href="#CC">[CC]</a>
+      ,
+      this 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      conforms to the requirements of Common Criteria v3.1, Revision 5. The
+      methodology applied for the 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      evaluation is defined in 
+      
+      <a href="#CEM">[CEM]</a>
+      .
       
       
+      <br xmlns="">
+      <br xmlns="">
+      This 
       
-      
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="toeus">1.8 TOE Usage</h2> tbd 
-      
-      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="ccconf">2. CC Conformance</h1> As defined by the references <a href="#CC">[CC]</a>,
-      this <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> conforms to the requirements of Common Criteria v3.1, Revision 5. The
-      methodology applied for the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> evaluation is defined in <a href="#CEM">[CEM]</a>.
-      <br xmlns=""><br xmlns=""> This <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> satisfies the following Assurance Families:
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      satisfies the following Assurance Families:
       tbd 
       <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="spd">3. Security Problem Definition</h1>
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="thr">3.1 Threats</h2> The following table comprises the threats that are directed against the TOE.
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="thr">3.1 Threats</h2>The following table comprises the threats that are directed against the TOE.
+      
+      
       
       <dl xmlns:htm="http://www.w3.org/1999/xhtml">
          <dt>T.Casual_Attack</dt>
-         <dd>
-            An attacker may attempt to impersonated as a legitimate user without being enrolled in the system themselves. In order to
+         <dd>An attacker may attempt to impersonated as a legitimate user without being enrolled in the system themselves. In order to
             perform the attack, the attacker only uses their own biometric characteristic (in form of a zero-effort-attack) 
          </dd>
          <dt>T.PA_Verification</dt>
@@ -685,12 +719,9 @@ function expand(){
       </dl>
       
       
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="assp">3.2 Assumptions</h2>The following table comprises the assets that assumptions about the intended environment of the TOE. 
       
       
-      
-      
-      
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="assp">3.2 Assumptions</h2> The following table comprises the assets that assumptions about the intended environment of the TOE. 
       
       <dl xmlns:htm="http://www.w3.org/1999/xhtml">
          <dt>A.Admin</dt>
@@ -718,18 +749,16 @@ function expand(){
             handled. Further, the biometric system ensures that the functionality of the TOE is invoked/used in order to protect the biometric
             system against presentation attacks. It is also assumed that the biometric sample that is acquired by the capture devices
             belongs to the sample that is used for presentation attack detection.
+            <b xmlns="">Application Note</b>The PAD system addressed in this Protection Profile is a protection mechanism against presentation attacks. 
          </dd>
          <dt>A.PAD</dt>
-         <dd>It is assumed that the biometric system is protected against Presentation Attacks according to PP [bioCPP].The biometric system addressed in this Protection Profile serves to authenticate users and does not provide any functionality
-            for PAD.
-            
-         </dd>
+         <dd>It is assumed that the biometric system is protected against Presentation Attacks according to PP [bioCPP].</dd>
       </dl>
       
       
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="osp">3.3 Organizational Security Policies</h2>The following list comprises the OSP that the TOE shall comply with.
       
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="osp">3.3 Organizational Security Policies</h2> The following list comprises the OSP that the TOE shall comply with.
       
       
       <dl xmlns:htm="http://www.w3.org/1999/xhtml">
@@ -752,15 +781,16 @@ function expand(){
          </dd>
          <dt>OSP.Audit</dt>
          <dd>In order to 
+            
+            
             <ul xmlns="">
                
-               <li>generate statistics that can be used to adjust the parameters for better quality (maintenance) </li> 
+               <li>generate statistics that can be used to adjust the parameters for better quality (maintenance) </li>
                
                <li>trace modification and</li>
                
-               <li>trace possible attacks </li> 
-            </ul> the TOE shall generate security-relevant audit events. 
-            
+               <li>trace possible attacks </li>
+            </ul>the TOE shall generate security-relevant audit events. 
          </dd>
          <dt>OSP.Residual</dt>
          <dd>The TOE shall erase all residual security-relevant data once they are redundant.. This specifically includes (but is not limited
@@ -770,88 +800,98 @@ function expand(){
       </dl>
       
       
-      
-      
-      
       <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="sobj">4. Security Objectives</h1>
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="sot">4.1 Security Objectives for the TOE</h2> The security objectives for the
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="sot">4.1 Security Objectives for the TOE</h2>The security objectives for the
       Mobile Device are defined as follows. 
+      
+      
       <dl xmlns:htm="http://www.w3.org/1999/xhtml">
-         <dt>O.COMMS</dt>
-         <dd><b xmlns="">Protected Communications</b><br xmlns=""><br xmlns=""> To address the
-            network eavesdropping (T.EAVESDROP) and network attack (T.NETWORK) threats described in
-            <a href="#thr"> Section 3.1</a>, concerning wireless transmission of Enterprise and user data
-            and configuration data between the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> and remote network entities,
-            conformant <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>s will use a trusted communication path. The <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> will be capable of communicating using one (or more) of these standard
-            protocols: IPsec, DTLS, TLS, HTTPS, or Bluetooth. The protocols are specified by RFCs
-            that offer a variety of implementation choices. Requirements have been imposed on some
-            of these choices (particularly those for cryptographic primitives) to provide
-            interoperability and resistance to cryptographic attack. <br xmlns=""><br xmlns=""> While
-            conformant <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>s must support all of the choices specified in the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> including any optional <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>s defined in this <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>, they may support additional algorithms and protocols. If such
-            additional mechanisms are not evaluated, guidance must be given to the administrator to
-            make clear the fact that they were not evaluated. 
+         <dt>O.BIO_VERIFICATION</dt>
+         <dd>The TOE shall provide a biometric verification mechanism to ensure access to a portal with an adequate reliability.
+            The TOE shall meet relevant criteria for its security relevant error rates for biometric verification (e.g. False Accept Rate
+            (FAR) and False Rejection Rate (FRR)).
+            An &#8220;Exact match&#8221; should not be counted as a positive verification as it may be a replay attempt.
             <p></p> Addressed by: <span class="SOlist"></span></dd>
-         <dt>O.STORAGE</dt>
-         <dd><b xmlns="">Protected Storage</b><br xmlns=""><br xmlns=""> To address the issue of
-            loss of confidentiality of user data in the event of loss of a Mobile Device
-            (T.PHYSICAL), conformant <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>s will use data-at-rest protection. The
-            <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> will be capable of encrypting data and keys stored on the device
-            and will prevent unauthorized access to encrypted data. 
-            <p></p> Addressed by: <span class="SOlist"><span class=""><a class="" href="#FCS_CKM_EXT.1">FCS_CKM_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_CKM_EXT.2">FCS_CKM_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_CKM_EXT.3">FCS_CKM_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_CKM_EXT.4">FCS_CKM_EXT.4</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_CKM_EXT.5">FCS_CKM_EXT.5</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_CKM_EXT.6">FCS_CKM_EXT.6</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_CKM_EXT.7">FCS_CKM_EXT.7</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_COP.1(1)">FCS_COP.1(1)</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_COP.1(2)">FCS_COP.1(2)</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_COP.1(3)">FCS_COP.1(3)</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_COP.1(4)">FCS_COP.1(4)</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_COP.1(5)">FCS_COP.1(5)</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_IV_EXT.1">FCS_IV_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_RBG_EXT.1">FCS_RBG_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_RBG_EXT.2">FCS_RBG_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_RBG_EXT.3">FCS_RBG_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_STG_EXT.1">FCS_STG_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_STG_EXT.2">FCS_STG_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_STG_EXT.3">FCS_STG_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FDP_ACF_EXT.2">FDP_ACF_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FDP_ACF_EXT.3">FDP_ACF_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FDP_DAR_EXT.1">FDP_DAR_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FDP_DAR_EXT.2">FDP_DAR_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_UAU_EXT.1">FIA_UAU_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_KST_EXT.1">FPT_KST_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_KST_EXT.2">FPT_KST_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_KST_EXT.3">FPT_KST_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_JTA_EXT.1">FPT_JTA_EXT.1</a><span class="after"></span></span></span></dd>
-         <dt>O.CONFIG</dt>
-         <dd><b xmlns="">Mobile Device Configuration</b><br xmlns=""><br xmlns=""> To ensure a
-            Mobile Device protects user and enterprise data that it may store or process, conformant
-            <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>s will provide the capability to configure and apply security
-            policies defined by the user and the Enterprise Administrator. If Enterprise security
-            policies are configured these must be applied in precedence of user specified security
-            policies. 
-            <p></p> Addressed by: <span class="SOlist"><span class=""><a class="" href="#FMT_MOF_EXT.1">FMT_MOF_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FMT_SMF_EXT.1">FMT_SMF_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FMT_SMF_EXT.2">FMT_SMF_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FTA_TAB.1">FTA_TAB.1</a><span class="after"></span></span></span></dd>
-         <dt>O.AUTH</dt>
-         <dd><b xmlns="">Authorization and Authentication</b><br xmlns=""><br xmlns=""> To address
-            the issue of loss of confidentiality of user data in the event of loss of a Mobile
-            Device (T.PHYSICAL), users are required to enter an authentication factor to the device
-            prior to accessing protected functionality and data. Some non-sensitive functionality
-            (e.g., emergency calling, text notification) can be accessed prior to entering the
-            authentication factor. The device will automatically lock following a configured period
-            of inactivity in an attempt to ensure authorization will be required in the event of the
-            device being lost or stolen.<br xmlns=""><br xmlns=""> Authentication of the endpoints of a
-            trusted communication path is required for network access to ensure attacks are unable
-            to establish unauthorized network connections to undermine the integrity of the device.
-            <br xmlns=""><br xmlns=""> Repeated attempts by a user to authorize to the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
-            will be limited or throttled to enforce a delay between unsuccessful attempts.<br xmlns="">
+         <dt>O.PAD</dt>
+         <dd>The TOE shall detect whether a presentation is an presentation attack is or a bona fide presentation. 
+            The evidence may be extracted from the data provided by the same sensor that is used to acquire the biometric characteristic
+            for recognition (by the biometric system in the environment), or it may be retrieved using sensors which are solely dedicated
+            to PAD. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD</dt>
+         <dd>The TOE shall detect whether a presentation is an presentation attack is or a bona fide presentation. 
+            The evidence may be extracted from the data provided by the same sensor that is used to acquire the biometric characteristic
+            for recognition (by the biometric system in the environment), or it may be retrieved using sensors which are solely dedicated
+            to PAD. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD_ENROL</dt>
+         <dd>The TOE shall prevent an attacker facilitating a presentation attack from being successfully enrolled, 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD_VERIFICATION</dt>
+         <dd>The TOE shall prevent an attacker facilitating a presentation attack from being successfully verified. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.AUDIT</dt>
+         <dd>The TOE  shall report or record
             
-            <p></p> Addressed by: <span class="SOlist"><span class=""><a class="" href="#FCS_CKM.2(1)">FCS_CKM.2(1)</a><span class="after"></span></span>, <span class=""><a class="" href="#FDP_PBA_EXT.1">FDP_PBA_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_AFL_EXT.1">FIA_AFL_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BLT_EXT.1">FIA_BLT_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BLT_EXT.2">FIA_BLT_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BLT_EXT.3">FIA_BLT_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BMG_EXT.1">FIA_BMG_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BMG_EXT.2">FIA_BMG_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BMG_EXT.3">FIA_BMG_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BMG_EXT.4">FIA_BMG_EXT.4</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BMG_EXT.5">FIA_BMG_EXT.5</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_BMG_EXT.6">FIA_BMG_EXT.6</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_PMG_EXT.1">FIA_PMG_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_TRT_EXT.1">FIA_TRT_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_UAU_EXT.1">FIA_UAU_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_UAU_EXT.2">FIA_UAU_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_UAU_EXT.4">FIA_UAU_EXT.4</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_UAU.5">FIA_UAU.5</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_UAU.6">FIA_UAU.6</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_UAU.7">FIA_UAU.7</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_X509_EXT.2">FIA_X509_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_X509_EXT.4">FIA_X509_EXT.4</a><span class="after"></span></span>, <span class=""><a class="" href="#FIA_X509_EXT.5">FIA_X509_EXT.5</a><span class="after"></span></span>, <span class=""><a class="" href="#FTA_SSL_EXT.1">FTA_SSL_EXT.1</a><span class="after"></span></span></span></dd>
-         <dt>O.INTEGRITY</dt>
-         <dd><b xmlns="">Mobile Device Integrity</b><br xmlns=""><br xmlns=""> To ensure the
-            integrity of the Mobile Device is maintained conformant <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>s will
-            perform self-tests to ensure the integrity of critical functionality, software/firmware
-            and data has been maintained. The user shall be notified of any failure of these
-            self-tests. This will protect against the threat T.PERSISTENT. <br xmlns=""><br xmlns=""> To
-            address the issue of an application containing malicious or flawed code (T.FLAWAPP), the
-            integrity of downloaded updates to software/firmware will be verified prior to
-            installation/execution of the object on the Mobile Device. In addition, the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> will restrict applications to only have access to the system services
-            and data they are permitted to interact with. The <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> will further
-            protect against malicious applications from gaining access to data they are not
-            authorized to access by randomizing the memory layout. 
-            <p></p> Addressed by: <span class="SOlist"><span class=""><a class="" href="#FAU_GEN.1">FAU_GEN.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FAU_SAR.1">FAU_SAR.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FAU_SEL.1">FAU_SEL.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FAU_STG.1">FAU_STG.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FAU_STG.4">FAU_STG.4</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_COP.1(2)">FCS_COP.1(2)</a><span class="after"></span></span>, <span class=""><a class="" href="#FCS_COP.1(3)">FCS_COP.1(3)</a><span class="after"></span></span>, <span class=""><a class="" href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FDP_ACF_EXT.3">FDP_ACF_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_AEX_EXT.1">FPT_AEX_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_AEX_EXT.2">FPT_AEX_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_AEX_EXT.3">FPT_AEX_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_AEX_EXT.4">FPT_AEX_EXT.4</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_AEX_EXT.5">FPT_AEX_EXT.5</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_AEX_EXT.6">FPT_AEX_EXT.6</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_AEX_EXT.7">FPT_AEX_EXT.7</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_BBD_EXT.1">FPT_BBD_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_NOT_EXT.1">FPT_NOT_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_NOT_EXT.2">FPT_NOT_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_STM.1">FPT_STM.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_TST_EXT.2(1)">FPT_TST_EXT.2(1)</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_TST_EXT.2(2)">FPT_TST_EXT.2(2)</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_TST_EXT.3">FPT_TST_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_TUD_EXT.1">FPT_TUD_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_TUD_EXT.2">FPT_TUD_EXT.2</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_TUD_EXT.3">FPT_TUD_EXT.3</a><span class="after"></span></span>, <span class=""><a class="" href="#FPT_TUD_EXT.4">FPT_TUD_EXT.4</a><span class="after"></span></span></span></dd>
-         <dt>O.PRIVACY</dt>
-         <dd><b xmlns="">End User Privacy and Device Functionality</b><br xmlns=""><br xmlns=""> In
-            a BYOD environment (use cases 3 and 4), a personally-owned mobile device is used for
-            both personal activities and enterprise data. Enterprise management solutions may have
-            the technical capability to monitor and enforce security policies on the device.
-            However, the privacy of the personal activities and data must be ensured. In addition,
-            since there are limited controls that the enterprise can enforce on the personal side,
-            separation of personal and enterprise data is needed. This will protect against the
-            T.FLAWAPP and T.PERSISTENT threats. 
-            <p></p> Addressed by: <span class="SOlist"><span class=""><a class="" href="#FDP_ACF_EXT.1">FDP_ACF_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FDP_BCK_EXT.1">FDP_BCK_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FMT_SMF_EXT.1">FMT_SMF_EXT.1</a><span class="after"></span></span>, <span class=""><a class="" href="#FMT_SMF_EXT.3">FMT_SMF_EXT.3</a><span class="after"></span></span></span></dd>
+            
+            <ul xmlns="">
+               A use of the central functionality of the TOE and its result
+               Every use of a management function 
+               All parameters modified by the management functions
+            </ul>
+            
+            <p></p> Addressed by: <span class="SOlist"></span>The use of the central functionality of the TOE refers to the use of the PAD functionality in case of TOE.PAD and to the use
+            of the biometric functionality in case of TOE.BIO.Please note that the term &#8220;report&#8221; in O.Audit does only require the TOE to generate the audit event while it is possible that
+            the storage of the events is done by the environment. 
+         </dd>
+         <dt>O.ENROL</dt>
+         <dd>The TOE shall implement the functionality to enrol users. The TOE shall ensure that enrolment records are of sufficient quality
+            in order to meet the requirements on recognition performance. The TOE shall ensure that start of Enrolment shall only be possible
+            after authorization by an  administrator.  
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.RESIDUAL</dt>
+         <dd>The TOE shall ensure that no residual or unprotected security relevant data remain in memory or on any sensor after operations
+            are completed.  
+            <p></p> Addressed by: <span class="SOlist"></span>In case no sensor is part of the TOE, this part of the objective shall be considered fulfilled. 
+            
+         </dd>
+         <dt>O.MANAGEMENT</dt>
+         <dd>The TOE shall provide the necessary management functionality for the modification of security relevant parameters to TOE administrators
+            only. 
+            As part of this management functionality the TOE shall only accept secure values for security relevant parameters to ensure
+            the correct operation of the TOE. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD_ERROR</dt>
+         <dd>The TOE shall meet relevant criteria for its security relevant error rates for PAD 
+            <p></p> Addressed by: <span class="SOlist"></span>It is the concept of this PP that concrete values for security relevant error rates shall not be defined in the PP/ST. Instead,
+            such concrete values should be defined in the corresponding methodology documents. 
+            
+         </dd>
+         <dt>O.PROTECTION</dt>
+         <dd>The TOE in cooperation with its immediate environment shall provide an adequate level of logical and physical protection in
+            order to ensure the correct operation of the TOE. 
+            This specifically concerns the enrolment and verification process. 
+            Impostors must be prevented from gaining access to the portal by making repeated verification attempts using one or more claimed
+            user IDs.
+            Therefore the TOE in cooperation with its environment shall be able to limit the maximum number of unsuccessful verification
+            attempts. 
+            Also, the TOE &#8209; in cooperation with its environment &#8209; shall ensure that any TSF data is adequately protected. 
+            <p></p> Addressed by: <span class="SOlist"></span>The relationship between the TOE and its environment is pretty complex in this point and deserves some further explanation:
+            A.Environment does not pose an absolute protection for the TOE to be provided by the environment. It provides a level of protection,
+            in which complex attacks may not be possible. However, simple and unobstrusive attacks can still be performed. Such attacks
+            are described in T.General and have to be countered by the TOE itself as required by this objective. 
+         </dd>
       </dl>
       
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="sooe">4.2 Security Objectives for the Operational Environment</h2> The following
-      security objectives for the operational environment assist the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> in
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="sooe">4.2 Security Objectives for the Operational Environment</h2>The following
+      security objectives for the operational environment assist the TOE
+      in
       correctly providing its security functionality. These track with the assumptions about the
       environment. 
+      
+      
       <dl xmlns:htm="http://www.w3.org/1999/xhtml">
          <dt>OE.CONFIG</dt>
          <dd>TOE administrators will configure the Mobile Device security functions
@@ -870,6 +910,8 @@ function expand(){
       
       <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="SOR">4.3 Security Objectives Rationale</h2>This section describes how the
       assumptions, threats, and organizational security policies map to the security objectives.
+      
+      
       
       <table xmlns:htm="http://www.w3.org/1999/xhtml">
          <tr class="header">
@@ -979,24 +1021,31 @@ function expand(){
          <tr>
             <td><span id="CC"> [CC] </span></td>
             <td>Common Criteria for Information Technology Security Evaluation - 
+               
+               
                <ul xmlns="">
                   
-                  <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf">Part 1:
-                        Introduction and General Model</a>, CCMB-2012-09-001, Version 3.1 Revision 4,
+                  <li>
+                     <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf">Part 1:
+                        Introduction and General Model</a>
+                     , CCMB-2012-09-001, Version 3.1 Revision 4,
                      September 2012.
                   </li>
                   
-                  <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf">Part 2:
+                  <li>
+                     <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf">Part 2:
                         Security Functional Components</a>, CCMB-2012-09-002, Version 3.1 Revision 4,
                      September 2012.
                   </li>
                   
-                  <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf">Part 3:
+                  <li>
+                     <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf">Part 3:
                         Security Assurance Components</a>, CCMB-2012-09-003, Version 3.1 Revision 4,
                      September 2012.
                   </li>
                   
                </ul>
+               
             </td>
          </tr>
          <tr>
@@ -1005,7 +1054,6 @@ function expand(){
                <a xmlns="" href="http://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R4.pdf">Common
                   Evaluation Methodology for Information Technology Security - Evaluation
                   Methodology</a>, CCMB-2012-09-004, Version 3.1, Revision 4, September 2012.
-               
             </td>
          </tr>
          <tr>
@@ -1020,7 +1068,6 @@ function expand(){
             <td>
                <a xmlns="" href="http://biometrics.nist.gov/cs_links/ibpc2016/presentations/ibpc2016_may04/13_tabassi_ibpc2016_nfiq_4May2016.pdf">Biometric Quality: The push towards zero error biometrics.</a>, Tabassi, Elham et
                al. International Biometrics Performance Conference (IBPC), 2016. Retrieved May 30, 2016.
-               
             </td>
          </tr>
          <tr>
@@ -1034,13 +1081,12 @@ function expand(){
          <tr>
             <td><span id="ISO19989"> [ISO 19989] </span></td>
             <td>
-               <a xmlns="" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=66801">, ISO/IEC NP 19989: Evaluation of presentation attack detection for biometrics</a>
-               International Organization for Standardization (ISO), 2014. 
+               <a xmlns="" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=66801">, ISO/IEC NP 19989: Evaluation of presentation attack detection for biometrics</a>International Organization for Standardization (ISO), 2014. 
             </td>
          </tr>
          <tr>
             <td><span id="ANSI409.1"> [ANSI 409.1] </span></td>
-            <td> ANSI/CITS 409.1-2005. Biometrics Performance Testing and Reporting&#8212;Part 1:
+            <td>ANSI/CITS 409.1-2005. Biometrics Performance Testing and Reporting&#8212;Part 1:
                Principles and Findings.&#8221; Annex B. ANSI/CITS, 2005. 
             </td>
          </tr>
@@ -1061,23 +1107,81 @@ function expand(){
          </tr>
       </table>
       
-      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="ack">B. Acknowledgements</h1> This protection profile was developed by the Mobility
+      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="ack">B. Acknowledgements</h1>This protection profile was developed by the Mobility
       Technical Community with representatives from industry, U.S. Government agencies, Common
       Criteria Test Laboratories, and international Common Criteria schemes. The National Information
       Assurance Partnership wishes to acknowledge and thank the members of this group whose dedicated
-      efforts contributed significantly to the publication. These organizations include: <br xmlns=""><br xmlns="">
-      <b xmlns="">U.S. Government</b><br xmlns=""> Defense Information Systems Agency (DISA)<br xmlns="">
-      Information Assurance Directorate (IAD)<br xmlns=""> National Information Assurance Partnership
-      (NIAP)<br xmlns=""> National Institute of Standards and Technology (NIST)<br xmlns=""><br xmlns="">
-      <b xmlns="">International Common Criteria Schemes</b><br xmlns=""> Australasian Information Security
-      Evaluation Program (AISEP)<br xmlns=""> Canadian Common Criteria Evaluation and Certification Scheme
-      (CSEC)<br xmlns=""> Information-technology Promotion Agency, Japan (IPA)<br xmlns=""> UK IT Security
-      Evaluation and Certificate Scheme (NCSC)<br xmlns=""><br xmlns="">
-      <b xmlns="">Industry</b><br xmlns=""> Apple, Inc.<br xmlns=""> BlackBerry<br xmlns=""> LG Electronics,
-      Inc.<br xmlns=""> Microsoft Corporation<br xmlns=""> Motorola Solutions<br xmlns=""> Samsung Electronics
-      Co., Ltd.<br xmlns=""> Other Members of the Mobility Technical Community<br xmlns=""><br xmlns="">
-      <b xmlns="">Common Criteria Test Laboratories</b><br xmlns=""> EWA-Canada, Ltd.<br xmlns=""> Gossamer
-      Security Solutions<br xmlns="">
+      efforts contributed significantly to the publication. These organizations include: 
       
-   </body>
+      <br xmlns="">
+      <br xmlns="">
+      <b xmlns="">U.S. Government</b>
+      <br xmlns="">
+      Defense Information Systems Agency (DISA)
+      
+      <br xmlns="">
+      Information Assurance Directorate (IAD)
+      
+      <br xmlns="">
+      National Information Assurance Partnership
+      (NIAP)
+      
+      <br xmlns="">
+      National Institute of Standards and Technology (NIST)
+      
+      <br xmlns="">
+      <br xmlns="">
+      <b xmlns="">International Common Criteria Schemes</b>
+      <br xmlns="">
+      Australasian Information Security
+      Evaluation Program (AISEP)
+      
+      <br xmlns="">
+      Canadian Common Criteria Evaluation and Certification Scheme
+      (CSEC)
+      
+      <br xmlns="">
+      Information-technology Promotion Agency, Japan (IPA)
+      
+      <br xmlns="">
+      UK IT Security
+      Evaluation and Certificate Scheme (NCSC)
+      
+      <br xmlns="">
+      <br xmlns="">
+      <b xmlns="">Industry</b>
+      <br xmlns="">
+      Apple, Inc.
+      
+      <br xmlns="">
+      BlackBerry
+      
+      <br xmlns="">
+      LG Electronics,
+      Inc.
+      
+      <br xmlns="">
+      Microsoft Corporation
+      
+      <br xmlns="">
+      Motorola Solutions
+      
+      <br xmlns="">
+      Samsung Electronics
+      Co., Ltd.
+      
+      <br xmlns="">
+      Other Members of the Mobility Technical Community
+      
+      <br xmlns="">
+      <br xmlns="">
+      <b xmlns="">Common Criteria Test Laboratories</b>
+      <br xmlns="">
+      EWA-Canada, Ltd.
+      
+      <br xmlns="">
+      Gossamer
+      Security Solutions
+      
+      <br xmlns=""></body>
 </html>
