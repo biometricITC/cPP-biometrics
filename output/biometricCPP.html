@@ -690,30 +690,39 @@ function expand(){
       
       
       
-      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="assp">3.2 Assumptions</h2> The specific conditions listed below are assumed to
-      exist in the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>&#8217;s Operational Environment. These include both practical
-      realities in the development of the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> security requirements and the
-      essential environmental conditions on the use of the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>. 
-      <dl xmlns:htm="http://www.w3.org/1999/xhtml">
-         <dt>A.CONFIG</dt>
-         <dd>It is assumed that the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>&#8217;s security functions are
-            configured correctly in a manner to ensure that the <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> security
-            policies will be enforced on all applicable network traffic flowing among the attached
-            networks.
-         </dd>
-      </dl>
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="assp">3.2 Assumptions</h2> The following table comprises the assets that assumptions about the intended environment of the TOE. 
       
       <dl xmlns:htm="http://www.w3.org/1999/xhtml">
-         <dt>A.NOTIFY</dt>
-         <dd>It is assumed that the mobile user will immediately notify the administrator
-            if the Mobile Device is lost or stolen.
+         <dt>A.Admin</dt>
+         <dd>It is assumed that the administrator of the TOE is well trained and non-hostile. Non-hostile specifically means that the administrator
+            does not become an attacker nor does the administrator give relevant information to attackers. The administrator is responsible
+            to accompany the TOE installation and oversees the system requirements regarding the TOE as well as the TOE settings and requirements.
+            
          </dd>
-      </dl>
-      
-      <dl xmlns:htm="http://www.w3.org/1999/xhtml">
-         <dt>A.PRECAUTION</dt>
-         <dd>It is assumed that the mobile user exercises precautions to reduce the risk
-            of loss or theft of the Mobile Device.
+         <dt>A.Environment</dt>
+         <dd>The TOE is assumed to be used in a semi-controlled and observable environment (i.e. attacks that require extensive time or
+            extensive access to the TOE or the use of complex tools (in the sense of conspicuous tools) are considered impractical during
+            exploitation phase). This assumption also includes the protection of any parameters used by the TOE. 
+         </dd>
+         <dt>A.Comm</dt>
+         <dd>It is assumed that the communication between the components of the biometric product is adequately protected against manipulation
+            and eavesdropping of information. 
+         </dd>
+         <dt>A.Fallback</dt>
+         <dd>It is assumed that a fall-back mechanism as a complement to the TOE is available that reaches at least the same level of security
+            as the biometric verification system does. This fall-back system is used in cases where an authorized user is rejected by
+            the biometric verification system (False Rejection). 
+         </dd>
+         <dt>A.Bio</dt>
+         <dd>The biometric system protected by the TOE ensures that all threats that are not related to presentation attacks are appropriately
+            handled. Further, the biometric system ensures that the functionality of the TOE is invoked/used in order to protect the biometric
+            system against presentation attacks. It is also assumed that the biometric sample that is acquired by the capture devices
+            belongs to the sample that is used for presentation attack detection.
+         </dd>
+         <dt>A.PAD</dt>
+         <dd>It is assumed that the biometric system is protected against Presentation Attacks according to PP [bioCPP].The biometric system addressed in this Protection Profile serves to authenticate users and does not provide any functionality
+            for PAD.
+            
          </dd>
       </dl>
       
@@ -734,9 +743,7 @@ function expand(){
             (FAR) and False Rejection Rate (FRR)).
          </dd>
          <dt>OSP.PAD_Error</dt>
-         <dd>The TOE shall meet relevant criteria for its security relevant error rates for PAD.
-            TOE.PAD, TOE.INT
-         </dd>
+         <dd>The TOE shall meet relevant criteria for its security relevant error rates for PAD.</dd>
          <dt>OSP.TrialLimit</dt>
          <dd>Impostors must be prevented from gaining access to the portal by making repeated verification attempts using one or more claimed
             user IDs.
@@ -752,7 +759,13 @@ function expand(){
                <li>trace modification and</li>
                
                <li>trace possible attacks </li> 
-            </ul> 
+            </ul> the TOE shall generate security-relevant audit events. 
+            
+         </dd>
+         <dt>OSP.Residual</dt>
+         <dd>The TOE shall erase all residual security-relevant data once they are redundant.. This specifically includes (but is not limited
+            to) all information left after enrolment, verification or PAD processing.
+            
          </dd>
       </dl>
       
@@ -895,25 +908,34 @@ function expand(){
             <td></td>
          </tr>
          <tr>
-            <td>A.CONFIG</td>
-            <td>OE.CONFIG</td>
-            <td>The operational environment objective OE.CONFIG is realized through A.CONFIG.
-               
-            </td>
+            <td>A.Admin</td>
+            <td></td>
+            <td></td>
          </tr>
          <tr>
-            <td>A.NOTIFY</td>
-            <td>OE.NOTIFY</td>
-            <td>The operational environment objective OE.NOTIFY is realized through A.NOTIFY.
-               
-            </td>
+            <td>A.Environment</td>
+            <td></td>
+            <td></td>
          </tr>
          <tr>
-            <td>A.PRECAUTION</td>
-            <td>OE.PRECAUTION</td>
-            <td>The operational environment objective OE.PRECAUTION is realized through
-               A.PRECAUTION. 
-            </td>
+            <td>A.Comm</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>A.Fallback</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>A.Bio</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>A.PAD</td>
+            <td></td>
+            <td></td>
          </tr>
          <tr>
             <td>OSP.ENROL</td>
@@ -937,6 +959,11 @@ function expand(){
          </tr>
          <tr>
             <td>OSP.Audit</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>OSP.Residual</td>
             <td></td>
             <td></td>
          </tr>
