@@ -6,14 +6,14 @@
     <ReferenceTable>
       <PPTitle>Biometric cPP</PPTitle>
       <PPVersion>3.1</PPVersion>
-      <PPAuthor>National Information Assurance Partnership</PPAuthor>
+      <PPAuthor>tbd</PPAuthor>
       <PPPubDate>2017-06-16</PPPubDate>
       <PPCertificationID>unassigned</PPCertificationID>
       <CCVersion>3.1 Release 5</CCVersion>
       <Keywords>??</Keywords>
       <entry>
         <name>Registration</name>
-        <description>National Information Assurance Partnership</description>
+        <description>tbd</description>
       </entry>
     </ReferenceTable>
   </PPReference>
@@ -29,12 +29,14 @@
       Security Problem Definition for the biometric iTC. The iTC currently discusses three different
       TOE that are all covered by the content in this document, namely: 
       
+      
       <htm:ul>
         <htm:li>A TOE for presentation attack detection (PAD) only (also referred to as TOE.PAD), </htm:li>
         <htm:li>A TOE for biometric verification only (also referred to TOE.BIO),</htm:li>
         <htm:li>An integrated solution with PAD and biometric verification (also referred to as
           TOE.INT). </htm:li></htm:ul>This document contains the description for TOE.BIO. The
       Security Problem Definition comprises: 
+      
       
       <htm:ul>
         <htm:li>A description of the external parties that interact with the TOE,</htm:li>
@@ -51,6 +53,7 @@
       functionality to store and handle audit events. This Protection Profile chooses the following
       approach to address this situation: 
       
+      
       <htm:ul>
         <htm:li>The requirements defined within the Security Problem Definition (and later on within
           the Objectives/SFR chapter) are to be met by every TOE, regardless of its
@@ -60,30 +63,46 @@
         <htm:li>If a TOE meets the architecture of a functional package, the ST author shall include
           all requirements from that functional package to their ST. </htm:li></htm:ul>
     </section>
+    <!-- *****************************
+  ____                       
+ / ___|  ___ ___  _ __   ___ 
+ \___ \ / __/ _ \| '_ \ / _ \
+  ___) | (_| (_) | |_) |  __/
+ |____/ \___\___/| .__/ \___|
+                 |_|         
+*****************************
+ -->
     <section id="scope" title="Scope of Document">The scope of the Protection Profile within the
       development and evaluation process is described in the Common Criteria for Information
       Technology Security Evaluation 
       
+      
       <cite linkend="CC"/>
       . In particular, a 
       
+      
       <abbr linkend="PP"/>
       defines the IT security requirements of a generic type of 
+      
       
       <abbr linkend="TOE"/>
       and specifies
       the functional and assurance security measures to be offered by that 
       
+      
       <abbr linkend="TOE"/>
       to
       meet stated requirements 
+      
       
       <cite linkend="CC"/>
       . </section>
     <section id="intread" title="Intended Readership">The target audiences of this 
       
+      
       <abbr linkend="PP"/>
       are biometric Device developers, 
+      
       
       <abbr linkend="CC"/>
       consumers, evaluators
@@ -96,9 +115,18 @@
         </entry>
       </glossary>
     </section>
-    
+    <!-- **********************************************************************
+  _____      _                        _   ____            _   _           
+ | ____|_  _| |_ ___ _ __ _ __   __ _| | |  _ \ __ _ _ __| |_(_) ___  ___ 
+ |  _| \ \/ / __/ _ \ '__| '_ \ / _` | | | |_) / _` | '__| __| |/ _ \/ __|
+ | |___ ><| ||  __/ |  | | | | (_| | | |  __/ (_| | |  | |_| |  __/\__ \
+ |_____/_/\_\\__\___|_|  |_| |_|\__,_|_| |_|   \__,_|_|   \__|_|\___||___/
+                                                                          
+***************************************************************************
+ -->
     <section id="parties" title="External Parties" toe-type="BIO">The following list comprises the
       external parties that may interact with the TOE. 
+      
       
       <htm:dl>
         <htm:dt>Administrator </htm:dt>
@@ -113,8 +141,15 @@
         <htm:dt>Attacker </htm:dt>
         <htm:dd>An attacker is any individual who is attempting to subvert the operation of the TOE.</htm:dd></htm:dl>
     </section>
+    <!-- ********************************
+    / \   ___ ___  ___| |_ ___ 
+   / _ \ / __/ __|/ _ \ __/ __|
+  / ___ \\__ \__ \  __/ |_\__ \
+ /_/   \_\___/___/\___|\__|___/
+******************************** -->
     <section id="assets" title="Assets" toe-type="BIO">The following table comprises the assets that
       are to be protected by the TOE 
+      
       
       <htm:dl>
         <htm:dt>Access </htm:dt>
@@ -128,47 +163,80 @@
         <htm:dd>All data for the operation of the TOE upon which the enforcement of the security
           mechanisms relies. </htm:dd></htm:dl>
     </section>
+    <!-- ****************************************************************
+ |_   _/ _ \| ____|  / _ \__   _____ _ ____   _(_) _____      __
+   | || | | |  _|   | | | \ \ / / _ \ '__\ \ / / |/ _ \ \ /\ / /
+   | || |_| | |___  | |_| |\ V /  __/ |   \ V /| |  __/\ V  V / 
+   |_| \___/|_____|  \___/  \_/ \___|_|    \_/ |_|\___| \_/\_/ 
+**************************************************************** -->
     <!-- Todo: This will have to be split up into the different TOE -->
     <section id="toeov" title="TOE Overview">tbd </section>
+    <!-- ************************************************
+ |_   _/ _ \| ____| | | | |___  __ _  __ _  ___ 
+   | || | | |  _|   | | | / __|/ _` |/ _` |/ _ \
+   | || |_| | |___  | |_| \__ \ (_| | (_| |  __/
+   |_| \___/|_____|  \___/|___/\__,_|\__, |\___|
+                                     |___/      
+************************************************ -->
     <section id="toeus" title="TOE Usage">tbd </section>
   </chapter>
-  <chapter id="ccconf" title="CC Conformance">As defined by the references 
-    
+  <!-- ************************************************************************************************
+   ____             __                                              ____ _       _               
+  / ___|___  _ __  / _| ___  _ __ _ __ ___   __ _ _ __   ___ ___   / ___| | __ _(_)_ __ ___  ___ 
+ | |   / _ \| '_ \| |_ / _ \| '__| '_ ` _ \ / _` | '_ \ / __/ _ \ | |   | |/ _` | | '_ ` _ \/ __|
+ | |__| (_) | | | |  _| (_) | |  | | | | | | (_| | | | | (_|  __/ | |___| | (_| | | | | | | \__ \
+  \____\___/|_| |_|_|  \___/|_|  |_| |_| |_|\__,_|_| |_|\___\___|  \____|_|\__,_|_|_| |_| |_|___/
+************************************************************************************************ -->
+  <chapter id="ccconf" title="CC Conformance">As defined by the references  
     <cite linkend="CC"/>
-    ,
-    this 
-    
+    , this  
     <abbr linkend="PP"/>
-    conforms to the requirements of Common Criteria v3.1, Revision 5. The
-    methodology applied for the 
-    
+    conforms to the requirements of Common Criteria v3.1, Revision 5. The methodology applied for the  
     <abbr linkend="PP"/>
     evaluation is defined in 
-    
     <cite linkend="CEM"/>
     . 
     
     <htm:br/>
     <htm:br/>
     This 
-    
     <abbr linkend="PP"/>
     satisfies the following Assurance Families: tbd </chapter>
   <chapter id="spd" title="Security Problem Definition">
+    <!-- **************************************
+  _____ _                    _       
+ |_   _| |__  _ __ ___  __ _| |_ ___ 
+   | | | '_ \| '__/ _ \/ _` | __/ __|
+   | | | | | | | |  __/ (_| | |_\__ \
+   |_| |_| |_|_|  \___|\__,_|\__|___/
+                                    
+************************************** -->
     <section id="thr" title="Threats">The following table comprises the threats that are directed
       against the TOE. 
+      
       
       <threats>
         <threat id="T.Casual_Attack" toe-type="BIO INT">
           <description>An attacker may attempt to impersonated as a legitimate user without being
             enrolled in the system themselves. In order to perform the attack, the attacker only
             uses their own biometric characteristic (in form of a zero-effort-attack) </description>
-          <!-- TBD: The objectives referrer will need to be added as soon as the objectives are there --></threat>
+          <objective-refer ref="O.BIO_VERIFICATION">
+            <rationale>The threat T.EAVESDROP is countered by O.BIO_VERIFICATION as this objective requires the TOE to provide a biometric authentication mechanism that is resistant against attacks of this kind.</rationale></objective-refer>
+        </threat>
         <threat id="T.PA_Enrolment" toe-type="PAD INT">
           <description>An attacker may attempt to get impersonated as another user during enrolment.
             In order to perform the attack, the attacker uses artificial biometric characteristics,
             carrying the biometric characteristic of the attacked user (as so called Presentation
             Attack) </description>
+          <objective-refer ref="O.PAD">
+            <rationale>Tbd</rationale>
+          </objective-refer>
+          <objective-refer ref="O.PAD_ENROL">
+            <rationale>Tbd</rationale>
+          </objective-refer>
+          <objective-refer ref="O.ENROL">
+            <rationale>tbd</rationale>
+          </objective-refer>
         </threat>
         <threat id="T.PA_Verification" toe-type="BIO">
           <description>An attacker may attempt to get impersonated (during verification process) as
@@ -176,6 +244,15 @@
             the attack, the attacker uses artificial biometric characteristics, carrying the
             biometric characteristic of the attacked user (as so called Presentation Attack)
           </description>
+          <objective-refer ref="O.BIO_VERIFICATION">
+            <rationale>tbd</rationale>
+          </objective-refer>
+          <objective-refer ref="O.PAD">
+            <rationale>tbd</rationale>
+          </objective-refer>
+          <objective-refer ref="O.PAD_VERIFICATION">
+            <rationale>tbd</rationale>
+          </objective-refer>
         </threat>
         <threat id="T.General" toe-type="BIO PAD INT">
           <description>An attacker can carry out any kind of logical or physical attacks that do not
@@ -184,6 +261,9 @@
             process or for the sake of impersonation. More specifically, an attacker may try to
             modify TSF data (e.g. settings for the biometric verification process) in order to
             impact the normal operation of the TOE.</description>
+          <objective-refer ref="O.PROTECTION">
+            <rationale>tbd</rationale>
+          </objective-refer>
         </threat>
         <threat id="T.Residual" toe-type="BIO PAD INT">
           <description>An attacker may try to take advantage of unprotected residual security
@@ -196,16 +276,32 @@
             capture device. These are likely to be limited to cases where physical contact with the
             biometric capture device is necessary for the biometric modality (e.g.
             fingerprints)</description>
+          <objective-refer ref="O.RESIDUAL">
+            <rationale>tbd</rationale>
+          </objective-refer>
         </threat>
         <threat id="T.Roles" toe-type="BIO PAD INT">
           <description>An enrolled and authenticated user may try to exceed their privileges. This
             specifically addresses the cases where an authorized user tries to get administrator
             privileges in order to modify TSF data.</description>
+          <objective-refer ref="O.MANAGEMENT">
+            <rationale>tbd</rationale>
+          </objective-refer>
         </threat>
       </threats>
-    </section>
-    <section id="assp" title="Assumptions">The following table comprises the assets that assumptions
+    </section>*
+    <!-- **********************************************************
+   __ _ ___ ___ _   _ _ __ ___  _ __ | |_(_) ___  _ __  ___ 
+  / _` / __/ __| | | | '_ ` _ \| '_ \| __| |/ _ \| '_ \/ __|
+ | (_| \__ \__ \ |_| | | | | | | |_) | |_| | (_) | | | \__ \
+  \__,_|___/___/\__,_|_| |_| |_| .__/ \__|_|\___/|_| |_|___/
+                               |_|                        
+***********************************************************
+ -->
+    <section id="assp" title="Assumptions">
+      The following table comprises the assets that assumptions
       about the intended environment of the TOE. 
+      
       
       <assumptions>
         <assumption id="A.Admin" toe-type="BIO PAD INT">
@@ -215,7 +311,7 @@
             administrator is responsible to accompany the TOE installation and oversees the system
             requirements regarding the TOE as well as the TOE settings and requirements. </description>
           <objective-refer ref="OE.Admin">
-            <rationale>tbd</rationale></objective-refer>
+            <rationale>The assumption A.Admin is covered by the security objective OE.Admin. The assumption and the objective are drafted in a way that the correspondence is obvious.</rationale></objective-refer>
         </assumption>
         <assumption id="A.Environment" toe-type="BIO PAD INT">
           <description>The TOE is assumed to be used in a semi-controlled and observable environment
@@ -223,17 +319,26 @@
             complex tools (in the sense of conspicuous tools) are considered impractical during
             exploitation phase). This assumption also includes the protection of any parameters used
             by the TOE. </description>
+          <objective-refer ref="OE.Environment">
+            <rationale>The assumption A.Environment is covered by the security objective OE.Environment. The assumption and the objective are drafted in a way that the correspondence is obvious.</rationale>
+          </objective-refer>
         </assumption>
         <assumption id="A.Comm" toe-type="BIO PAD INT">
           <description>It is assumed that the communication between the components of the biometric
             product is adequately protected against manipulation and eavesdropping of information.
           </description>
+          <objective-refer ref="OE.Comm">
+            <rationale>The assumption A.Comm is covered by the security objective OE.Comm. The assumption and the objective are drafted in a way that the correspondence is obvious.</rationale>
+          </objective-refer>
         </assumption>
         <assumption id="A.Fallback" toe-type="BIO PAD INT">
           <description>It is assumed that a fall-back mechanism as a complement to the TOE is
             available that reaches at least the same level of security as the biometric verification
             system does. This fall-back system is used in cases where an authorized user is rejected
             by the biometric verification system (False Rejection). </description>
+          <objective-refer ref="OE.Fallback">
+            <rationale>The assumption A.Fallback is covered by the security objective OE.Fallback. The assumption and the objective are drafted in a way that the correspondence is obvious.</rationale>
+          </objective-refer>
         </assumption>
         <assumption id="A.Bio" toe-type="PAD">
           <description>The biometric system protected by the TOE ensures that all threats that are
@@ -242,19 +347,32 @@
             biometric system against presentation attacks. It is also assumed that the biometric
             sample that is acquired by the capture devices belongs to the sample that is used for
             presentation attack detection.</description>
+          <objective-refer ref="OE.Bio">
+            <rationale>The assumption A.Bio is covered by the security objective OE.Bio. The assumption and the objective are drafted in a way that the correspondence is obvious.</rationale>
+          </objective-refer>
           <appnote>The PAD system addressed in this Protection Profile is a protection mechanism
             against presentation attacks. </appnote>
         </assumption>
         <assumption id="A.PAD" toe-type="BIO">
           <description>It is assumed that the biometric system is protected against Presentation
             Attacks according to PP [bioCPP].</description>
+          <objective-refer ref="OE.PAD">
+            <rationale>The assumption A.PAD is covered by the security objective OE.PAD. The assumption and the objective are drafted in a way that the correspondence is obvious.</rationale>
+          </objective-refer>
           <note role="application">The PAD system addressed in this Protection Profile is a
             protection mechanism against presentation attacks. </note>
         </assumption>
       </assumptions>
     </section>
+    <!-- *******************
+  / _ \/ ___||  _ \ 
+ | | | \___ \| |_) |
+ | |_| |___) |  __/ 
+  \___/|____/|_|    
+ *******************   -->
     <section id="osp" title="Organizational Security Policies">The following list comprises the OSP
       that the TOE shall comply with. 
+      
       
       <OSPs>
         <OSP id="OSP.ENROL" toe-type="BIO INT">
@@ -283,6 +401,7 @@
         <OSP id="OSP.Audit" toe-type="PAD BIO INT">
           <description>In order to 
             
+            
             <htm:ul>
               <htm:li>generate statistics that can be used to adjust the parameters for better
                 quality (maintenance) </htm:li>
@@ -297,10 +416,21 @@
         </OSP>
       </OSPs>
     </section>
-  </chapter>
+  </chapter>*
+  <!-- ************************************************************************************
+                           _ _                 _     _           _   _                
+  ___  ___  ___ _   _ _ __(_) |_ _   _    ___ | |__ (_) ___  ___| |_(_)_   _____  ___ 
+ / __|/ _ \/ __| | | | '__| | __| | | |  / _ \| '_ \| |/ _ \/ __| __| \ \ / / _ \/ __|
+ \__ \  __/ (__| |_| | |  | | |_| |_| | | (_) | |_) | |  __/ (__| |_| |\ V /  __/\__ \
+ |___/\___|\___|\__,_|_|  |_|\__|\__, |  \___/|_.__// |\___|\___|\__|_| \_/ \___||___/
+                                 |___/            |__/                                
+*************************************************************************************
+ -->
   <chapter id="sobj" title="Security Objectives">
-    <section id="sot" title="Security Objectives for the TOE">The security objectives for the Mobile
+    <section id="sot" title="Security Objectives for the TOE">
+      The security objectives for the Mobile
       Device are defined as follows. 
+      
       
       <SOs>
         <SO id="O.BIO_VERIFICATION" toe-type="BIO INT">
@@ -334,6 +464,7 @@
         </SO>
         <SO id="O.AUDIT" toe-type="BIO PAD INT">
           <description>The TOE shall report or record 
+            
             
             <htm:ul>
               <li>A use of the central functionality of the TOE and its result</li>
@@ -407,6 +538,7 @@
       security objectives for the operational environment assist the TOE in correctly providing its
       security functionality. These track with the assumptions about the environment. 
       
+      
       <SOEs>
         <SOE id="OE.ADMIN" toe-type="BIO PAD INT">
           <description>The administrator of the TOE shall be well trained and non-hostile.
@@ -471,11 +603,21 @@
       
       <InsertSPDCorrespondence/></section>
   </chapter>
+  <!-- ********************************************
+                               _ _      
+   _. _ _ _   _ __   ___ _ __   __| (_)_  __
+  / _` | '_ \| '_ \ / _ \ '_ \ / _` | \ \/ /
+ | (_| | |_) | |_) |  __/ | | | (_| | |>< 
+  \__,_| .__/| .__/ \___|_| |_|\__,_|_/_/\_\
+       |_|   |_|            
+********************************************
+ -->
   <appendix id="biblio" title="References">
     <bibliography>
       <entry id="CC">
         <tag>CC</tag>
         <description>Common Criteria for Information Technology Security Evaluation - 
+          
           
           <htm:ul>
             <htm:li>

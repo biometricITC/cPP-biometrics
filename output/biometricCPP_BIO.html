@@ -1,0 +1,1212 @@
+<?xsl-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cc="http://common-criteria.rhcloud.com/ns/cc">
+   <head>
+      <title>Biometric cPP</title><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            showMathMenu: false,
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+              processEscapes: true
+            },
+            styles: {
+
+                ".MathJax_Display": {
+                "text-align": "left !important",
+                margin:       "0em 0em !important"
+            }}
+            });
+        </script><script type="text/javascript">
+const AMPERSAND=String.fromCharCode(38);
+
+function changeMyCounter(subroot, val){
+    var bb;
+    for(bb=0; bb!=subroot.childNodes.length; bb++){
+    	if( subroot.childNodes[bb] instanceof Element &amp;&amp;
+    	    "counter"==subroot.childNodes[bb].getAttribute("class")){
+    	    subroot.childNodes[bb].innerHTML = val;
+    	    return;
+    	}
+    }
+}
+
+function fixReferences(type){
+    var figs = document.getElementsByClassName("ctr");
+    var occurs = {};                                         // Map that stores how many times we've seen each thing
+    var aa;
+    for(aa=0; aa!= figs.length; aa++){                       // Go through every counted object
+    	var ct = figs[aa].getAttribute("data-counter-type");  // Get which counter type it is
+    	var curr = occurs[ct]!=null?parseInt(occurs[ct]):1;   // Figure out how many times we've seen it
+    	occurs[ ct ] = curr + 1;                              // Save off increment for next time
+    	changeMyCounter( figs[aa], curr);
+
+    	var figId = figs[aa].getAttribute("data-myid");
+    	var figRefs = document.getElementsByClassName(figId+"-ref");
+    	var bb;
+        for(bb=0; bb!=figRefs.length; bb++){
+    	    changeMyCounter(figRefs[bb], curr);
+    	}
+    }
+}
+
+// Function to expand and contract a given div
+function toggle(divID, imgID) {
+    var item = document.getElementById(divID);
+    var img = document.getElementById(imgID);
+    if (item) {
+        item.className = (item.className=='aacthidden') ? 'aact':'aacthidden';
+    }
+    if (img) {
+        var currimage = img.src.substring(img.src.lastIndexOf('/')+1);
+        img.src=(currimage=='collapsed.png')?'images/expanded.png':'images/collapsed.png';
+    }
+}
+
+// Expands targets if they are hidden
+function showTarget(id){
+    var element = document.getElementById(id);
+    while (element != document.body.rootNode ){
+	if ( "aacthidden" == element.getAttribute("class") ){
+	    toggle( element.id, "link-"+element.id );
+	    return;
+	}
+	element = element.parentElement;
+    }
+}
+
+// Called on page load to parse URL parameters and perform actions on them.
+function init(){
+    fixReferences("figure");
+    if(getQueryVariable("expand") == "on"){
+	expand();
+    }
+}
+
+// Pass a URL variable to this function and it will return it 's value
+function getQueryVariable(variable)
+{
+    var query = window.location.search.substring(1);
+    var vars = query.split(AMPERSAND);
+    for (var i=0;i!=vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+}
+
+
+//    Expands all assurance activities
+function expand(){
+    var divID = "";
+    var imgID = "link-";
+    var hidden_elements = document.getElementsByClassName('aacthidden');
+    for (var i = hidden_elements.length - 1; i &gt;= 0; --i) {
+        divID = hidden_elements[i].id;
+        imgID += divID;
+        toggle(divID,imgID);
+        imgID = "link-";
+    }
+}
+        </script><style type="text/css">
+    .assignable-content{
+      font-style: italic;
+    }
+    .refinement{
+      text-decoration: underline;
+    }
+    
+    a {
+      word-wrap: break-word;
+    }
+    a.abbr:link{
+      color:black;
+      text-decoration:none;
+    }
+    a.abbr:visited{
+      color:black;
+      text-decoration:none;
+    }
+    a.abbr:hover{
+      color:blue;
+      text-decoration:none;
+    }
+    a.abbr:hover:visited{
+      color:purple;
+      text-decoration:none;
+    }
+    a.abbr:active{
+      color:red;
+      text-decoration:none;
+    }
+    
+    
+    .SOlist .optional::after, .SOlist
+    .sel-based::after, .SOlist .objective::after { content: "(OPTIONAL)" } 
+          /*       { background-color: #FFFFFF; } */
+          body{
+              margin-left: 8%;
+              margin-right: 8%;
+              foreground: black;
+          }
+          .figure{
+              font-weight: bold;
+          }
+          h1{
+              page-break-before: always;
+              text-align: left;
+              font-size: 200%;
+              margin-top: 2em;
+              margin-bottom: 2em;
+              font-family: verdana, arial, helvetica, sans-serif;
+              margin-bottom: 1.0em;
+          }
+          h1.title{
+              text-align: center;
+          }
+          h2{
+              font-size: 125%;
+              border-bottom: solid 1px gray;
+              margin-bottom: 1.0em;
+              margin-top: 2em;
+              margin-bottom: 0.75em;
+              font-family: verdana, arial, helvetica, sans-serif;
+          }
+          h3{
+              font-size: 110%;
+              margin-bottom: 0.25em;
+              font-family: verdana, arial, helvetica, sans-serif;
+          }
+          h4{
+              margin-left: 0%;
+              font-size: 100%;
+              margin-bottom: 0.75em;
+              font-family: verdana, arial, helvetica, sans-serif;
+          }
+          h5,
+          h6{
+              margin-left: 6%;
+              font-size: 90%;
+              margin-bottom: 0.5em;
+              font-family: verdana, arial, helvetica, sans-serif;
+          }
+          p{
+              margin-bottom: 0.6em;
+              margin-top: 0.2em;
+          }
+          pre{
+              margin-bottom: 0.5em;
+              margin-top: 0.25em;
+              margin-left: 3%;
+              font-family: monospace;
+              font-size: 90%;
+          }
+          ul{
+              margin-bottom: 0.5em;
+              margin-top: 0.25em;
+          }
+          td{
+              vertical-align: top;
+          }
+          dl{
+              margin-bottom: 0.5em;
+              margin-top: 0.25em;
+          }
+          dt{
+              margin-top: 0.7em;
+              font-weight: bold;
+              font-family: verdana, arial, helvetica, sans-serif;
+          }
+          
+          a.linkref{
+              font-family: verdana, arial, helvetica, sans-serif;
+              font-size: 90%;
+          }
+          
+          *.simpleText{
+              margin-left: 10%;
+          }
+          *.propertyText{
+              margin-left: 10%;
+              margin-top: 0.2em;
+              margin-bottom: 0.2em
+          }
+          *.toc{
+              background: #FFFFFF;
+          }
+          *.toc2{
+              background: #FFFFFF;
+          }
+          div.comp{
+              margin-left: 8%;
+              margin-top: 1em;
+              margin-bottom: 1em;
+          }
+          div.appnote{
+              margin-left: 0%;
+              margin-top: 1em;
+          }
+          div.aact{
+              margin-left: 0%;
+              margin-top: 1em;
+              margin-bottom: 1em;
+              padding: 1em;
+              border: 2px solid #888888;
+              border-radius: 3px;
+              display: block;
+          }
+          .comment-aa{
+              background-color: beige;
+              color: green;
+          }
+          div.subaact{
+              margin-left: 0%;
+              margin-top: 1em;
+          }
+          div.aacthidden{
+              margin-left: 0%;
+              margin-top: 1em;
+              margin-bottom: 1em;
+          }
+          div.optional-appendicies{
+              display: none;
+          }
+          
+          div.statustag{
+              margin-left: 0%;
+              margin-top: 1em;
+              margin-bottom: 1em;
+              padding: 0.6em;
+              border: 2px solid #888888;
+              border-radius: 3px;
+          }
+          
+          div.toc{
+              margin-left: 8%;
+              margin-bottom: 4em;
+              padding-bottom: 0.75em;
+              padding-top: 1em;
+              padding-left: 2em;
+              padding-right: 2em;
+          }
+          span.SOlist{
+              font-size: 90%;
+              font-family: verdana, arial, helvetica, sans-serif;
+          }
+          h2.toc{
+              border-bottom: none;
+              margin-left: 0%;
+              margin-top: 0em;
+          }
+          p.toc{
+              margin-left: 2em;
+              margin-bottom: 0.2em;
+              margin-top: 0.5em;
+          }
+          p.toc2{
+              margin-left: 5em;
+              margin-bottom: 0.1em;
+              margin-top: 0.1em;
+          }
+          table{
+              margin: auto;
+              margin-top: 1em;
+              border-collapse: collapse; /*border: 1px solid black;*/
+          }
+          td{
+              text-align: left;
+              padding: 8px 8px;
+          }
+          th{
+              padding: 8px 8px;
+          }
+          tr.header{
+              border-bottom: 3px solid gray;
+              padding: 8px 8px;
+              text-align: left;
+              font-weight: bold; /*font-size: 90%; font-family: verdana, arial, helvetica, sans-serif; */
+          }
+          table tr:nth-child(2n+2){
+              background-color: #F4F4F4;
+          
+          }
+          div.center{
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              text-align: center;
+          }
+          div.figure{
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              text-align: center;
+              margin-top: 1em;
+          }
+          div.expandstyle{
+              display: table-cell;
+              vertical-align: middle;
+              padding-top: 10px
+          }
+          span.expandstyle{
+              vertical-align: middle;
+              color: black;
+              text-decoration: none;
+              font-size: 100%;
+              font-weight: bold; /*font-family: verdana, arial, helvetica, sans-serif; */
+          }
+          .expandstyle a{
+              color: black;
+              text-decoration: none;
+          }
+          .expandstyle a:link{
+              color: black;
+              text-decoration: none;
+          }
+          .expandstyle a:visited{
+              color: black;
+              text-decoration: none;
+          }
+          .expandstyle a:hover{
+              color: black;
+              text-decoration: none;
+          }
+          .expandstyle a:active{
+              color: black;
+              text-decoration: none;
+          }
+          
+          sup{
+              position: relative;
+              bottom: .5ex;
+              font-size: 80%;
+          }
+          
+          @media screen{
+              *.reqid{
+                  float: left;
+                  font-size: 90%;
+                  font-family: verdana, arial, helvetica, sans-serif;
+                  margin-right: 1em;
+              }
+              *.req{
+                  margin-left: 0%;
+                  margin-top: 1em;
+                  margin-bottom: 1em;
+              }
+              *.reqdesc{
+                  margin-left: 20%;
+              }
+              div.aacthidden{
+                  display: none;
+              }
+              div.statustag{
+                  box-shadow: 4px 4px 3px #888888;
+              }
+              div.aact{
+                  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+              }
+          }
+          
+          
+          @media print{
+              *.reqid{
+                  font-size: 90%;
+                  font-family: verdana, arial, 
+          helvetica, 
+          sans-serif;
+              }
+              *.req{
+                  margin-left: 0%;
+                  margin-top: 1em;
+                  margin-bottom: 1em;
+              }
+              *.reqdesc{
+                  margin-left: 20%;
+              }
+              div.aacthidden{
+                  padding: 1em;
+                  border: 2px solid #888888;
+                  border-radius: 3px;
+                  display: block;
+              }
+          
+              img[src = "images/collapsed.png"]{
+                  display: none;
+              }
+          
+          }
+	  
+	  
+	  
+
+	</style></head>
+   <body onLoad="init()">
+      <h1 class="title" style="page-break-before:auto;">Biometric cPP</h1>
+      <noscript>
+         <h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1>
+      </noscript>
+      <div class="center"><img src="../images/cclogo.png" alt="NIAP" width="300"></img><br></br><p></p>Version: 3.1
+         <p></p>2017-06-16
+         <p></p><b>National Information Assurance Partnership</b></div>
+      <h2 style="page-break-before:always;">Revision History</h2>
+      <table>
+         <tr class="header">
+            <th>Version</th>
+            <th>Date</th>
+            <th>Comment</th>
+         </tr>
+         33
+         
+         <tr>
+            <td>0.1</td>
+            <td>2016-06-24</td>
+            <td>Initial Version</td>
+         </tr>
+      </table>
+      <h2>Contents</h2>
+      <div class="toc">
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1. <a class="toc" href="#int">Introduction</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1.1. <a class="toc" href="#objdoc">Objectives of Document</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1.2. <a class="toc" href="#scope">Scope of Document</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1.3. <a class="toc" href="#intread">Intended Readership</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1.4. <a class="toc" href="#glos">Glossary</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1.5. <a class="toc" href="#parties">External Parties</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1.6. <a class="toc" href="#assets">Assets</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1.7. <a class="toc" href="#toeov">TOE Overview</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">1.8. <a class="toc" href="#toeus">TOE Usage</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">2. <a class="toc" href="#ccconf">CC Conformance</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">3. <a class="toc" href="#spd">Security Problem Definition</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">3.1. <a class="toc" href="#thr">Threats</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">3.2. <a class="toc" href="#assp">Assumptions</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">3.3. <a class="toc" href="#osp">Organizational Security Policies</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">4. <a class="toc" href="#sobj">Security Objectives</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">4.1. <a class="toc" href="#sot">Security Objectives for the TOE</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">4.2. <a class="toc" href="#sooe">Security Objectives for the Operational Environment</a></p>
+         <p xmlns:htm="http://www.w3.org/1999/xhtml" class="toc2">4.3. <a class="toc" href="#SOR">Security Objectives Rationale</a></p>
+         <p class="toc2"> Appendix A: <a class="toc" href="#biblio">References</a></p>
+         <p class="toc2"> Appendix B: <a class="toc" href="#ack">Acknowledgements</a></p>
+      </div>
+      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="int">1. Introduction</h1>
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="objdoc">1.1 Objectives of Document</h2>This document comprises the
+      Security Problem Definition for the biometric iTC. The iTC currently discusses three different
+      TOE that are all covered by the content in this document, namely: 
+      
+      
+      <ul xmlns="">
+         
+         <li>A TOE for presentation attack detection (PAD) only (also referred to as TOE.PAD), </li>
+         
+         <li>A TOE for biometric verification only (also referred to TOE.BIO),</li>
+         
+         <li>An integrated solution with PAD and biometric verification (also referred to as
+            TOE.INT). 
+         </li>
+      </ul>This document contains the description for TOE.BIO. The
+      Security Problem Definition comprises: 
+      
+      
+      <ul xmlns="">
+         
+         <li>A description of the external parties that interact with the TOE,</li>
+         
+         <li>A description of the assets to be protected by the TOE,</li>
+         
+         <li>A list of assumptions describing the intended environment of the TOE,</li>
+         
+         <li>A list of threats posed against the TOE,</li>
+         
+         <li>Organizational Security Policy (OSP) which is a set of rules, practices, and
+            procedures imposed by an organization to address its security needs..
+         </li>
+      </ul>The
+      Security Problem Definition defines the minimum set that applies to all possible architectures
+      of the TOE. However, certain architectures of the TOE may face additional threats or OSPs and
+      will also have to implement additional functionality. As an example: A biometric algorithm may
+      generate suitable audit events to be recorded by its environment but has &#8209; by itself &#8209; no mean
+      to record or handle the events. A complete biometric system on the other hand, has the
+      functionality to store and handle audit events. This Protection Profile chooses the following
+      approach to address this situation: 
+      
+      
+      <ul xmlns="">
+         
+         <li>The requirements defined within the Security Problem Definition (and later on within
+            the Objectives/SFR chapter) are to be met by every TOE, regardless of its
+            architecture.)
+         </li>
+         
+         <li>Chapter TBD defines additional functional packages that define additional
+            requirements for certain architectures of a TOE.
+         </li>
+         
+         <li>If a TOE meets the architecture of a functional package, the ST author shall include
+            all requirements from that functional package to their ST. 
+         </li>
+      </ul>
+      
+      
+      
+      <!-- *****************************
+  ____                       
+ / ___|  ___ ___  _ __   ___ 
+ \___ \ / __/ _ \| '_ \ / _ \
+  ___) | (_| (_) | |_) |  __/
+ |____/ \___\___/| .__/ \___|
+                 |_|         
+*****************************
+ -->
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="scope">1.2 Scope of Document</h2>The scope of the Protection Profile within the
+      development and evaluation process is described in the Common Criteria for Information
+      Technology Security Evaluation 
+      
+      <a href="#CC">[CC]</a>
+      . In particular, a 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      defines the IT security requirements of a generic type of 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      and specifies
+      the functional and assurance security measures to be offered by that 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      to
+      meet stated requirements 
+      
+      <a href="#CC">[CC]</a>
+      . 
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="intread">1.3 Intended Readership</h2>The target audiences of this 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      are biometric Device developers, 
+      
+      <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a>
+      consumers, evaluators
+      and schemes. 
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="glos">1.4 Glossary</h2>
+      
+      <table xmlns:htm="http://www.w3.org/1999/xhtml">
+         <tr id="PAD">
+            <td>PAD</td>
+            <td>Presentation Attack Detection.</td>
+         </tr>
+      </table>
+      
+      
+      
+      <!-- **********************************************************************
+  _____      _                        _   ____            _   _           
+ | ____|_  _| |_ ___ _ __ _ __   __ _| | |  _ \ __ _ _ __| |_(_) ___  ___ 
+ |  _| \ \/ / __/ _ \ '__| '_ \ / _` | | | |_) / _` | '__| __| |/ _ \/ __|
+ | |___ >  <| ||  __/ |  | | | | (_| | | |  __/ (_| | |  | |_| |  __/\__ \
+ |_____/_/\_\\__\___|_|  |_| |_|\__,_|_| |_|   \__,_|_|   \__|_|\___||___/
+                                                                          
+***************************************************************************
+ -->
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="parties">1.5 External Parties</h2>The following list comprises the
+      external parties that may interact with the TOE. 
+      
+      
+      <dl xmlns="">
+         
+         <dt>Administrator </dt>
+         
+         <dd>The TOE administrator is authorized and responsible to perform administrative TOE
+            operations and able to use the administrative functions of the TOE. The administrator is
+            also responsible for the installation and maintenance of the TOE. Depending on the
+            concrete implementation of the TOE there may be more than one administrator and
+            consequently also more than one administrative role. It is also possible that the role of
+            the administrator is held by a user of the TOE. 
+         </dd>
+         
+         <dt>User </dt>
+         
+         <dd>A person who uses a biometric system to get enrolled or verified. </dd>
+         
+         <dt>Attacker </dt>
+         
+         <dd>An attacker is any individual who is attempting to subvert the operation of the TOE.</dd>
+      </dl>
+      
+      
+      
+      <!-- ********************************
+    / \   ___ ___  ___| |_ ___ 
+   / _ \ / __/ __|/ _ \ __/ __|
+  / ___ \\__ \__ \  __/ |_\__ \
+ /_/   \_\___/___/\___|\__|___/
+******************************** -->
+      
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="assets">1.6 Assets</h2>The following table comprises the assets that
+      are to be protected by the TOE 
+      
+      
+      <dl xmlns="">
+         
+         <dt>Access </dt>
+         
+         <dd>A biometric authentication system is used to control access to a physical or logical
+            portal. The access to this portal (or the decision about granting access to be precise) is
+            a primary asset for every biometric authentication 
+         </dd>
+         
+         <dt>PAD result </dt>
+         
+         <dd>If the TOE implements a PAD system, the decision on whether an attempt with the TOE
+            is considered being a Presentation Attack is a primary asset. 
+         </dd>
+         
+         <dt>TSF Data </dt>
+         
+         <dd>All data for the operation of the TOE upon which the enforcement of the security
+            mechanisms relies. 
+         </dd>
+      </dl>
+      
+      
+      <!-- ****************************************************************
+ |_   _/ _ \| ____|  / _ \__   _____ _ ____   _(_) _____      __
+   | || | | |  _|   | | | \ \ / / _ \ '__\ \ / / |/ _ \ \ /\ / /
+   | || |_| | |___  | |_| |\ V /  __/ |   \ V /| |  __/\ V  V / 
+   |_| \___/|_____|  \___/  \_/ \___|_|    \_/ |_|\___| \_/\_/ 
+**************************************************************** -->
+      
+      <!-- Todo: This will have to be split up into the different TOE -->
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="toeov">1.7 TOE Overview</h2>tbd 
+      
+      
+      <!-- ************************************************
+ |_   _/ _ \| ____| | | | |___  __ _  __ _  ___ 
+   | || | | |  _|   | | | / __|/ _` |/ _` |/ _ \
+   | || |_| | |___  | |_| \__ \ (_| | (_| |  __/
+   |_| \___/|_____|  \___/|___/\__,_|\__, |\___|
+                                     |___/      
+************************************************ -->
+      
+      
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="toeus">1.8 TOE Usage</h2>tbd 
+      
+      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="ccconf">2. CC Conformance</h1>As defined by the references  <a href="#CC">[CC]</a>, this  <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> conforms to the requirements of Common Criteria v3.1, Revision 5. The methodology applied for the  <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> evaluation is defined in <a href="#CEM">[CEM]</a>. 
+      <br xmlns="">
+      <br xmlns="">
+      This <a xmlns="" xmlns:xhtml="http://www.w3.org/1999/xhtml" class="abbr" href="#abbr_"><abbr title=""></abbr></a> satisfies the following Assurance Families: tbd 
+      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="spd">3. Security Problem Definition</h1>
+      
+      <!-- **************************************
+  _____ _                    _       
+ |_   _| |__  _ __ ___  __ _| |_ ___ 
+   | | | '_ \| '__/ _ \/ _` | __/ __|
+   | | | | | | | |  __/ (_| | |_\__ \
+   |_| |_| |_|_|  \___|\__,_|\__|___/
+                                    
+************************************** -->
+      
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="thr">3.1 Threats</h2>The following table comprises the threats that are directed
+      against the TOE. 
+      
+      
+      <dl xmlns:htm="http://www.w3.org/1999/xhtml">
+         <dt>T.Casual_Attack</dt>
+         <dd>An attacker may attempt to impersonated as a legitimate user without being
+            enrolled in the system themselves. In order to perform the attack, the attacker only
+            uses their own biometric characteristic (in form of a zero-effort-attack) 
+         </dd>
+         <dt>T.PA_Enrolment</dt>
+         <dd>An attacker may attempt to get impersonated as another user during enrolment.
+            In order to perform the attack, the attacker uses artificial biometric characteristics,
+            carrying the biometric characteristic of the attacked user (as so called Presentation
+            Attack) 
+         </dd>
+         <dt>T.General</dt>
+         <dd>An attacker can carry out any kind of logical or physical attacks that do not
+            exceed the attack potential and that are compliant with A.Environment as defined in the
+            cPP in order to disguise his/her own identity during the enrolment or verification
+            process or for the sake of impersonation. More specifically, an attacker may try to
+            modify TSF data (e.g. settings for the biometric verification process) in order to
+            impact the normal operation of the TOE.
+         </dd>
+         <dt>T.Residual</dt>
+         <dd>An attacker may try to take advantage of unprotected residual security
+            relevant data (e.g. biometric data and settings) during a user's session or from a
+            previous, already authenticated user. In this way the attacker tries to get access to
+            the security relevant settings of the TOE. This threat covers several scenarios
+            including: - An attacker takes advantage of the verification memory content (e.g. by
+            reading the memory content, cache or relevant temporary data) using a flaw in a user
+            visible interface of the TOE. - An attacker may take advantage of residual images at the
+            capture device. These are likely to be limited to cases where physical contact with the
+            biometric capture device is necessary for the biometric modality (e.g.
+            fingerprints)
+         </dd>
+         <dt>T.Roles</dt>
+         <dd>An enrolled and authenticated user may try to exceed their privileges. This
+            specifically addresses the cases where an authorized user tries to get administrator
+            privileges in order to modify TSF data.
+         </dd>
+      </dl>
+      
+      
+      *
+      <!-- **********************************************************
+   __ _ ___ ___ _   _ _ __ ___  _ __ | |_(_) ___  _ __  ___ 
+  / _` / __/ __| | | | '_ ` _ \| '_ \| __| |/ _ \| '_ \/ __|
+ | (_| \__ \__ \ |_| | | | | | | |_) | |_| | (_) | | | \__ \
+  \__,_|___/___/\__,_|_| |_| |_| .__/ \__|_|\___/|_| |_|___/
+                               |_|                        
+***********************************************************
+ -->
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="assp">3.2 Assumptions</h2>The following table comprises the assets that assumptions
+      about the intended environment of the TOE. 
+      
+      
+      <dl xmlns:htm="http://www.w3.org/1999/xhtml">
+         <dt>A.Admin</dt>
+         <dd>It is assumed that the administrator of the TOE is well trained and
+            non-hostile. Non-hostile specifically means that the administrator does not become an
+            attacker nor does the administrator give relevant information to attackers. The
+            administrator is responsible to accompany the TOE installation and oversees the system
+            requirements regarding the TOE as well as the TOE settings and requirements. 
+         </dd>
+         <dt>A.Environment</dt>
+         <dd>The TOE is assumed to be used in a semi-controlled and observable environment
+            (i.e. attacks that require extensive time or extensive access to the TOE or the use of
+            complex tools (in the sense of conspicuous tools) are considered impractical during
+            exploitation phase). This assumption also includes the protection of any parameters used
+            by the TOE. 
+         </dd>
+         <dt>A.Comm</dt>
+         <dd>It is assumed that the communication between the components of the biometric
+            product is adequately protected against manipulation and eavesdropping of information.
+            
+         </dd>
+         <dt>A.Fallback</dt>
+         <dd>It is assumed that a fall-back mechanism as a complement to the TOE is
+            available that reaches at least the same level of security as the biometric verification
+            system does. This fall-back system is used in cases where an authorized user is rejected
+            by the biometric verification system (False Rejection). 
+         </dd>
+         <dt>A.PAD</dt>
+         <dd>It is assumed that the biometric system is protected against Presentation
+            Attacks according to PP [bioCPP].
+         </dd>
+      </dl>
+      
+      
+      
+      <!-- *******************
+  / _ \/ ___||  _ \ 
+ | | | \___ \| |_) |
+ | |_| |___) |  __/ 
+  \___/|____/|_|    
+ *******************   -->               
+      
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="osp">3.3 Organizational Security Policies</h2>The following list comprises the OSP
+      that the TOE shall comply with. 
+      
+      BIO
+      <dl xmlns:htm="http://www.w3.org/1999/xhtml">
+         <dt>OSP.ENROL</dt>
+         <dd>The TOE shall implement the functionality to enrol users. The TOE shall
+            ensure that enrolment records are of sufficient quality in order to meet the
+            requirements on recognition performance. Start of Enrolment shall only be possible after
+            authorization of an authorized administrator.
+         </dd>
+         <dt>OSP.Verifcation_Error</dt>
+         <dd>The TOE shall meet relevant criteria for its security relevant error rates
+            for biometric verification (e.g. False Accept Rate (FAR) and False Rejection Rate
+            (FRR)).
+         </dd>
+         <dt>OSP.TrialLimit</dt>
+         <dd>Impostors must be prevented from gaining access to the portal by making
+            repeated verification attempts using one or more claimed user IDs. Therefore the TOE in
+            cooperation with its environment shall be able to limit the maximum number of
+            unsuccessful verification attempts. 
+         </dd>
+         <dt>OSP.Audit</dt>
+         <dd>In order to 
+            
+            
+            <ul xmlns="">
+               
+               <li>generate statistics that can be used to adjust the parameters for better
+                  quality (maintenance) 
+               </li>
+               
+               <li>trace modification and</li>
+               
+               <li>trace possible attacks </li>
+            </ul>the TOE shall generate
+            security-relevant audit events. 
+         </dd>
+         <dt>OSP.Residual</dt>
+         <dd>The TOE shall erase all residual security-relevant data once they are
+            redundant.. This specifically includes (but is not limited to) all information left
+            after enrolment, verification or PAD processing. 
+         </dd>
+      </dl>
+      
+      
+      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="sobj">4. Security Objectives</h1>
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="sot">4.1 Security Objectives for the TOE</h2>The security objectives for the Mobile
+      Device are defined as follows. 
+      
+      
+      <dl xmlns:htm="http://www.w3.org/1999/xhtml">
+         <dt>O.BIO_VERIFICATION</dt>
+         <dd>The TOE shall provide a biometric verification mechanism to ensure access to
+            a portal with an adequate reliability. The TOE shall meet relevant criteria for its
+            security relevant error rates for biometric verification (e.g. False Accept Rate (FAR)
+            and False Rejection Rate (FRR)). An &#8220;Exact match&#8221; should not be counted as a positive
+            verification as it may be a replay attempt.
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD</dt>
+         <dd>The TOE shall detect whether a presentation is an presentation attack is or a
+            bona fide presentation. The evidence may be extracted from the data provided by the same
+            sensor that is used to acquire the biometric characteristic for recognition (by the
+            biometric system in the environment), or it may be retrieved using sensors which are
+            solely dedicated to PAD. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD</dt>
+         <dd>The TOE shall detect whether a presentation is an presentation attack is or a
+            bona fide presentation. The evidence may be extracted from the data provided by the same
+            sensor that is used to acquire the biometric characteristic for recognition (by the
+            biometric system in the environment), or it may be retrieved using sensors which are
+            solely dedicated to PAD. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD_ENROL</dt>
+         <dd>The TOE shall prevent an attacker facilitating a presentation attack from
+            being successfully enrolled, 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD_VERIFICATION</dt>
+         <dd>The TOE shall prevent an attacker facilitating a presentation attack from
+            being successfully verified. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.AUDIT</dt>
+         <dd>The TOE shall report or record 
+            
+            
+            <ul xmlns="">
+               A use of the central functionality of the TOE and its result
+               Every use of a management function 
+               All parameters modified by the management functions
+            </ul>
+            
+            <p></p> Addressed by: <span class="SOlist"></span>The use of the central functionality of the TOE refers to the use of the PAD
+            functionality in case of TOE.PAD and to the use of the biometric functionality in case
+            of TOE.BIO.Please note that the term &#8220;report&#8221; in O.Audit does only require the TOE to
+            generate the audit event while it is possible that the storage of the events is done by
+            the environment. 
+         </dd>
+         <dt>O.ENROL</dt>
+         <dd>The TOE shall implement the functionality to enrol users. The TOE shall
+            ensure that enrolment records are of sufficient quality in order to meet the
+            requirements on recognition performance. The TOE shall ensure that start of Enrolment
+            shall only be possible after authorization by an administrator. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.RESIDUAL</dt>
+         <dd>The TOE shall ensure that no residual or unprotected security relevant data
+            remain in memory or on any sensor after operations are completed. 
+            <p></p> Addressed by: <span class="SOlist"></span>In case no sensor is part of the TOE, this part of the objective shall be
+            considered fulfilled. 
+         </dd>
+         <dt>O.MANAGEMENT</dt>
+         <dd>The TOE shall provide the necessary management functionality for the
+            modification of security relevant parameters to TOE administrators only. As part of this
+            management functionality the TOE shall only accept secure values for security relevant
+            parameters to ensure the correct operation of the TOE. 
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <dt>O.PAD_ERROR</dt>
+         <dd>The TOE shall meet relevant criteria for its security relevant error rates
+            for PAD 
+            <p></p> Addressed by: <span class="SOlist"></span>It is the concept of this PP that concrete values for security relevant error
+            rates shall not be defined in the PP/ST. Instead, such concrete values should be defined
+            in the corresponding methodology documents. 
+         </dd>
+         <dt>O.PROTECTION</dt>
+         <dd>The TOE in cooperation with its immediate environment shall provide an
+            adequate level of logical and physical protection in order to ensure the correct
+            operation of the TOE. This specifically concerns the enrolment and verification process.
+            Impostors must be prevented from gaining access to the portal by making repeated
+            verification attempts using one or more claimed user IDs. Therefore the TOE in
+            cooperation with its environment shall be able to limit the maximum number of
+            unsuccessful verification attempts. Also, the TOE &#8209; in cooperation with its environment
+            &#8209; shall ensure that any TSF data is adequately protected. 
+            <p></p> Addressed by: <span class="SOlist"></span>The relationship between the TOE and its environment is pretty complex in this
+            point and deserves some further explanation: A.Environment does not pose an absolute
+            protection for the TOE to be provided by the environment. It provides a level of
+            protection, in which complex attacks may not be possible. However, simple and
+            unobstrusive attacks can still be performed. Such attacks are described in T.General and
+            have to be countered by the TOE itself as required by this objective. 
+         </dd>
+      </dl>
+      
+      <!--******************************************************************************************
+  ____                       _ _            ___  _     _           _   _                
+ / ___|  ___  ___ _   _ _ __(_) |_ _   _   / _ \| |__ (_) ___  ___| |_(_)_   _____  ___ 
+ \___ \ / _ \/ __| | | | '__| | __| | | | | | | | '_ \| |/ _ \/ __| __| \ \ / / _ \/ __|
+  ___) |  __/ (__| |_| | |  | | |_| |_| | | |_| | |_) | |  __/ (__| |_| |\ V /  __/\__ \
+ |____/ \___|\___|\__,_|_|  |_|\__|\__, |  \___/|_.__// |\___|\___|\__|_| \_/ \___||___/
+                                   |___/            |__/                                
+   __              _   _                            _                                      _   
+  / _| ___  _ __  | |_| |__   ___    ___ _ ____   _(_)_ __ ___  _ __  _ __ ___   ___ _ __ | |_ 
+ | |_ / _ \| '__| | __| '_ \ / _ \  / _ \ '_ \ \ / / | '__/ _ \| '_ \| '_ ` _ \ / _ \ '_ \| __|
+ |  _| (_) | |    | |_| | | |  __/ |  __/ | | \ V /| | | | (_) | | | | | | | | |  __/ | | | |_ 
+ |_|  \___/|_|     \__|_| |_|\___|  \___|_| |_|\_/ |_|_|  \___/|_| |_|_| |_| |_|\___|_| |_|\__|
+ *************************************************************************************-->
+      
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="sooe">4.2 Security Objectives for the Operational Environment</h2>The following
+      security objectives for the operational environment assist the TOE in correctly providing its
+      security functionality. These track with the assumptions about the environment. 
+      
+      
+      <dl xmlns:htm="http://www.w3.org/1999/xhtml">
+         <dt>OE.ADMIN</dt>
+         <dd>The administrator of the TOE shall be well trained and non-hostile.
+            Non-hostile specifically means that the administrator does not become an attacker nor
+            does the administrator give relevant information to attackers. The administrator is
+            responsible to witness the TOE installation and oversees the system requirements
+            regarding the TOE. 
+         </dd>
+         <dt>OE.Environment</dt>
+         <dd>The direct environment of the TOE shall be semi-controlled and observable.
+            This specifically means that attacks that require extensive time or extensive access to
+            the TOE or the use of complex tools (in the sense of conspicuous tools) shall be
+            rendered impractical by the environment. 
+         </dd>
+         <dt>OE.COMM</dt>
+         <dd>The direct environment of the TOE shall adequately protect the communication
+            between the components of the biometric product against manipulation and eavesdropping
+            
+         </dd>
+         <dt>OE.FALLBACK</dt>
+         <dd>The environment shall provide a fall-back mechanism as a complement to the
+            TOE that reaches at least the same level of security as the biometric verification
+            system. This fall-back system is used in cases where an authorized user is rejected by
+            the biometric verification system (False Rejection). 
+         </dd>
+         <dt>OE.FALLBACK</dt>
+         <dd>The biometric system protected by the TOE shall ensure that all threats that
+            are not related to PAD are appropriately handled. Further, the biometric system ensures
+            that the functionality of the TOE is invoked/used in order to protect the biometric
+            system against Presentation Attacks. It is also assumed that the biometric sample that
+            is acquired by the capture devices belongs to the sample that is used for PAD. Note:
+            Compliance to this security objective can be easily shown by providing a certificate for
+            the biometric system in the environment showing that the biometric system fulfils all
+            the requirements from [bioCPP]. 
+         </dd>
+         <table>
+            <tr>
+               <td>Application Note</td>
+               <td>The PAD system addressed in this Protection Profile is a protection mechanism
+                  against presentation attacks.
+               </td>
+            </tr>
+         </table>
+         <dt>OE.PAD</dt>
+         <dd>The biometric system shall be protected against Presentation Attacks
+            according to PP [padCPP]. Note: Compliance to this security objective can be shown by
+            providing a Common Criteria certificate for the PAD system in the environment showing
+            that the PAD system fulfils all the requirements from [padCPP]. 
+         </dd>
+         <table>
+            <tr>
+               <td>Application Note</td>
+               <td>The biometric system addressed in this Protection Profile serves to authenticate
+                  users and does not provide any functionality for PAD.
+               </td>
+            </tr>
+         </table>
+         <dt>OE.PAD</dt>
+         <dd>The environment shall provide functionality to associate users with roles.
+            This functionality of the environment is an important aspect that contributes to counter
+            threats that include aspects of a role model (like T.Roles). The minimum TOE as defined
+            in this Protection Profile may not have the functionality to distinguish roles for
+            users. For that reason, this functionality is provided by the environment.
+            
+         </dd>
+         <dt>OE.AdminAuth</dt>
+         <dd>The environment shall provide a secure and non biometric authentication
+            mechanism for the authentication of administrators. 
+         </dd>
+      </dl>
+      
+      
+      <h2 xmlns:htm="http://www.w3.org/1999/xhtml" id="SOR">4.3 Security Objectives Rationale</h2>This section describes how the
+      assumptions, threats, and organizational security policies map to the security objectives.
+      
+      
+      <table xmlns:htm="http://www.w3.org/1999/xhtml">
+         <tr class="header">
+            <td>Threat, Assumption, or OSP</td>
+            <td>Security Objectives</td>
+            <td>Rationale</td>
+         </tr>
+         <tr>
+            <td>T.Casual_Attack</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>T.PA_Enrolment</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>T.PA_Verification</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>T.General</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>T.Residual</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>T.Roles</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>A.Admin</td>
+            <td>OE.Admin</td>
+            <td>The assumption A.Admin is covered by the security objective OE.Admin. The assumption and the objective are drafted in a way
+               that the correspondence is obvious.
+            </td>
+         </tr>
+         <tr>
+            <td>A.Environment</td>
+            <td>OE.Environment</td>
+            <td>The assumption A.Environment is covered by the security objective OE.Environment. The assumption and the objective are drafted
+               in a way that the correspondence is obvious.
+            </td>
+         </tr>
+         <tr>
+            <td>A.Comm</td>
+            <td>OE.Comm</td>
+            <td>The assumption A.Comm is covered by the security objective OE.Comm. The assumption and the objective are drafted in a way
+               that the correspondence is obvious.
+            </td>
+         </tr>
+         <tr>
+            <td>A.Fallback</td>
+            <td>OE.Fallback</td>
+            <td>The assumption A.Fallback is covered by the security objective OE.Fallback. The assumption and the objective are drafted in
+               a way that the correspondence is obvious.
+            </td>
+         </tr>
+         <tr>
+            <td>A.Bio</td>
+            <td>OE.Bio</td>
+            <td>The assumption A.Bio is covered by the security objective OE.Bio. The assumption and the objective are drafted in a way that
+               the correspondence is obvious.
+            </td>
+         </tr>
+         <tr>
+            <td>A.PAD</td>
+            <td>OE.PAD</td>
+            <td>The assumption A.PAD is covered by the security objective OE.PAD. The assumption and the objective are drafted in a way that
+               the correspondence is obvious.
+            </td>
+         </tr>
+         <tr>
+            <td>OSP.ENROL</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>OSP.Verifcation_Error</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>OSP.PAD_Error</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>OSP.TrialLimit</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>OSP.Audit</td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr>
+            <td>OSP.Residual</td>
+            <td></td>
+            <td></td>
+         </tr>
+      </table>
+      
+      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="biblio">A. References</h1>
+      
+      <table xmlns:htm="http://www.w3.org/1999/xhtml">
+         <tr class="header">
+            <th>Identifier</th>
+            <th>Title</th>
+         </tr>
+         <tr>
+            <td><span id="CC"> [CC] </span></td>
+            <td>Common Criteria for Information Technology Security Evaluation - 
+               
+               
+               <ul xmlns="">
+                  
+                  <li>
+                     <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf">Part
+                        1: Introduction and General Model</a>
+                     , CCMB-2012-09-001, Version 3.1 Revision
+                     4, September 2012.
+                  </li>
+                  
+                  <li>
+                     <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf">Part
+                        2: Security Functional Components</a>, CCMB-2012-09-002, Version 3.1 Revision 4,
+                     September 2012.
+                  </li>
+                  
+                  <li>
+                     <a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf">Part
+                        3: Security Assurance Components</a>, CCMB-2012-09-003, Version 3.1 Revision 4,
+                     September 2012.
+                  </li>
+                  
+               </ul>
+               
+            </td>
+         </tr>
+         <tr>
+            <td><span id="CEM"> [CEM] </span></td>
+            <td>
+               <a xmlns="" href="http://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R4.pdf">Common
+                  Evaluation Methodology for Information Technology Security - Evaluation
+                  Methodology</a>, CCMB-2012-09-004, Version 3.1, Revision 4, September
+               2012.
+            </td>
+         </tr>
+      </table>
+      
+      <h1 xmlns:htm="http://www.w3.org/1999/xhtml" id="ack">B. Acknowledgements</h1>Tbd
+   </body>
+</html>
