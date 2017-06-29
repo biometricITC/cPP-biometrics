@@ -1,6 +1,6 @@
-Mobile Device Biometric System Use Case
+# Mobile Device Biometric System Use Case
 June 23, 2017
-# Background
+## Background
 A Mobile Device is composed of a hardware platform and its system software. The device typically provides wireless connectivity and may include software for functions like secure messaging, email, web, VPN connection, and VoIP (Voice over IP), for access to the network, data and applications, and for communicating to other Mobile Devices.
 A Biometric System is composed of multiple individual components (such as sensor and matching algorithm) that combine to make a fully operational system. A biometric system is automated and capable of: 
 1.	Capturing biometric samples from an end user
