@@ -449,10 +449,11 @@
         </SO>
         <SO id="O.PAD" toe-type="PAD">
           <description>The TOE shall detect whether a presentation is an presentation attack is or a
-            bona fide presentation. The evidence may be extracted from the data provided by the same
+            bona fide presentation.  </description>
+          <appnote>The evidence may be extracted from the data provided by the same
             sensor that is used to acquire the biometric characteristic for recognition (by the
             biometric system in the environment), or it may be retrieved using sensors which are
-            solely dedicated to PAD. </description>
+            solely dedicated to PAD.</appnote>
         </SO>
         <SO id="O.PAD_ENROL" toe-type="BIO INT">
           <description>The TOE shall prevent an attacker facilitating a presentation attack from
