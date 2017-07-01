@@ -473,8 +473,7 @@
           <appnote>The use of the central functionality of the TOE refers to the use of the PAD
             functionality in case of TOE.PAD and to the use of the biometric functionality in case
             of TOE.BIO.</appnote>
-          <appnote>Please note that the term “report” in O.Audit does only require the TOE to
-            generate the audit event while it is possible that the storage of the events is done by
+          <appnote>Note that the term “report” in O.Audit only require the TOE to generate the audit event while it is possible that the storage of the events is done by
             the environment. </appnote>
         </SO>
         <SO id="O.ENROL" toe-type="BIO PAD INT">
