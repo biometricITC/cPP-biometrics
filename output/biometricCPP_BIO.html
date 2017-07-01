@@ -921,20 +921,29 @@ function expand(){
          <dt>O.AUDIT</dt>
          <dd>The TOE shall report or record 
             
-            
-            
             <ul xmlns="">
                A use of the central functionality of the TOE and its result
                Every use of a management function 
                All parameters modified by the management functions
             </ul>
             
-            <p></p> Addressed by: <span class="SOlist"></span>The use of the central functionality of the TOE refers to the use of the PAD
-            functionality in case of TOE.PAD and to the use of the biometric functionality in case
-            of TOE.BIO.Please note that the term &#8220;report&#8221; in O.Audit does only require the TOE to
-            generate the audit event while it is possible that the storage of the events is done by
-            the environment. 
-         </dd>
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <table>
+            <tr>
+               <td>Application Note</td>
+               <td>The use of the central functionality of the TOE refers to the use of the PAD
+                  functionality in case of TOE.PAD and to the use of the biometric functionality in case
+                  of TOE.BIO.
+               </td>
+            </tr>
+            <tr>
+               <td>Application Note</td>
+               <td>Please note that the term &#8220;report&#8221; in O.Audit does only require the TOE to
+                  generate the audit event while it is possible that the storage of the events is done by
+                  the environment. 
+               </td>
+            </tr>
+         </table>
          <dt>O.ENROL</dt>
          <dd>The TOE shall implement the functionality to enrol users. The TOE shall
             ensure that enrolment records are of sufficient quality in order to meet the
@@ -944,9 +953,15 @@ function expand(){
          <dt>O.RESIDUAL</dt>
          <dd>The TOE shall ensure that no residual or unprotected security relevant data
             remain in memory or on any sensor after operations are completed. 
-            <p></p> Addressed by: <span class="SOlist"></span>In case no sensor is part of the TOE, this part of the objective shall be
-            considered fulfilled. 
-         </dd>
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <table>
+            <tr>
+               <td>Application Note</td>
+               <td>In case no sensor is part of the TOE, this part of the objective shall be
+                  considered fulfilled. 
+               </td>
+            </tr>
+         </table>
          <dt>O.MANAGEMENT</dt>
          <dd>The TOE shall provide the necessary management functionality for the
             modification of security relevant parameters to TOE administrators only. As part of this
@@ -962,13 +977,19 @@ function expand(){
             cooperation with its environment shall be able to limit the maximum number of
             unsuccessful verification attempts. Also, the TOE &#8209; in cooperation with its environment
             &#8209; shall ensure that any TSF data is adequately protected. 
-            <p></p> Addressed by: <span class="SOlist"></span>The relationship between the TOE and its environment is pretty complex in this
-            point and deserves some further explanation: A.Environment does not pose an absolute
-            protection for the TOE to be provided by the environment. It provides a level of
-            protection, in which complex attacks may not be possible. However, simple and
-            unobstrusive attacks can still be performed. Such attacks are described in T.General and
-            have to be countered by the TOE itself as required by this objective. 
-         </dd>
+            <p></p> Addressed by: <span class="SOlist"></span></dd>
+         <table>
+            <tr>
+               <td>Application Note</td>
+               <td>The relationship between the TOE and its environment is pretty complex in this
+                  point and deserves some further explanation: A.Environment does not pose an absolute
+                  protection for the TOE to be provided by the environment. It provides a level of
+                  protection, in which complex attacks may not be possible. However, simple and
+                  unobstrusive attacks can still be performed. Such attacks are described in T.General and
+                  have to be countered by the TOE itself as required by this objective. 
+               </td>
+            </tr>
+         </table>
       </dl>
       
       <!--******************************************************************************************
@@ -1021,9 +1042,16 @@ function expand(){
          <dd>The biometric system shall be protected against Presentation Attacks
             according to PP [padCPP]. Note: Compliance to this security objective can be shown by
             providing a Common Criteria certificate for the PAD system in the environment showing
-            that the PAD system fulfils all the requirements from [padCPP]. The biometric system addressed in this Protection Profile serves to authenticate
-            users and does not provide any functionality for PAD.
+            that the PAD system fulfils all the requirements from [padCPP]. 
          </dd>
+         <table>
+            <tr>
+               <td>Application Note</td>
+               <td>The biometric system addressed in this Protection Profile serves to authenticate
+                  users and does not provide any functionality for PAD.
+               </td>
+            </tr>
+         </table>
          <dt>OE.PAD</dt>
          <dd>The environment shall provide functionality to associate users with roles.
             This functionality of the environment is an important aspect that contributes to counter

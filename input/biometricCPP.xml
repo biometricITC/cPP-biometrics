@@ -464,8 +464,6 @@
         </SO>
         <SO id="O.AUDIT" toe-type="BIO PAD INT">
           <description>The TOE shall report or record 
-            
-            
             <htm:ul>
               <li>A use of the central functionality of the TOE and its result</li>
               <li>Every use of a management function </li>
