@@ -463,10 +463,33 @@
           <description>The TOE shall prevent an attacker facilitating a presentation attack from
             being successfully verified. </description>
         </SO>
-        <SO id="O.AUDIT" toe-type="BIO PAD INT">
+        <SO id="O.AUDIT" toe-type="BIO">
           <description>The TOE shall report or record 
             <htm:ul>
-              <li>A use of the central functionality of the TOE and its result</li>
+              <li>A use of the biometric functionality of the TOE and its result</li>
+              <li>Every use of a management function </li>
+              <li>All parameters modified by the management functions</li></htm:ul>
+          </description>
+          <appnote>Note that the term “report” in O.Audit only require the TOE to generate the audit event while it is possible that the storage of the events is done by
+            the environment. </appnote>
+        </SO>
+        <SO id="O.AUDIT" toe-type="PAD">
+          <description>The TOE shall report or record 
+            <htm:ul>
+              <li>A use of the PAD functionality of the TOE and its result</li>
+              <li>Every use of a management function </li>
+              <li>All parameters modified by the management functions</li></htm:ul>
+          </description>
+          <appnote>The use of the central functionality of the TOE refers to the use of the PAD
+            functionality in case of TOE.PAD and to the use of the biometric functionality in case
+            of TOE.BIO.</appnote>
+          <appnote>Note that the term “report” in O.Audit only require the TOE to generate the audit event while it is possible that the storage of the events is done by
+            the environment. </appnote>
+        </SO>
+        <SO id="O.AUDIT" toe-type="INT">
+          <description>The TOE shall report or record 
+            <htm:ul>
+              <li>A use of the biometric and the PAD functionality of the TOE and its result</li>
               <li>Every use of a management function </li>
               <li>All parameters modified by the management functions</li></htm:ul>
           </description>
