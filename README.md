@@ -1,10 +1,7 @@
 Collaborative Protection Profile for biometrics
 ===============================================
-![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/cclogo.png "Logo Title Text 1")
+![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/cclogo.png "cPP development")
 
-
-
-Collaborative Protection Profile for biometrics
 
 ## Working Drafts of the XML documents
 [Essential Security Requirements (ESR)](output/ESR.html)
