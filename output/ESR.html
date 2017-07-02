@@ -1,5 +1,5 @@
 <?xml-stylesheet type="text/xsl" href="../transforms/esr2html.xsl"><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:esr="http://common-criteria.rhcloud.com/ns/esr">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:esr="http://common-criteria.rhcloud.com/ns/esr" xmlns:fn="http://www.w3.org/2005/xpath-functions">
    <head><style type="text/css">
 					/*       { background-color: #FFFFFF; } */
 					body{
@@ -48,23 +48,23 @@
 					    margin-top:0.25em;
 					}</style></head>
    <body>
-      <table xmlns:fn="http://www.w3.org/2005/xpath-functions" class="intro">
+      <table class="intro">
          <tr>
-            <td style="width: 50%;"><img style="max-width:100%;" src="../images/cclogo.png"></img></td>
+            <td style="width: 50%;"><img style="max-width:100%;" src="images/cclogo.png"></img></td>
             <td style="vertical-align: middle;"><b>Common Criteria Evaluation and Validation Scheme</b><p></p>National Information
                					Assurance Partnership (NIAP) 
             </td>
          </tr>
       </table>
-      <p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p><b xmlns:fn="http://www.w3.org/2005/xpath-functions">Title: </b><esrtitle xmlns="http://common-criteria.rhcloud.com/ns/esr">Biometric Product Essential Security Requirements</esrtitle>
-      <p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p><b xmlns:fn="http://www.w3.org/2005/xpath-functions">Maintained by: </b><maintainer xmlns="http://common-criteria.rhcloud.com/ns/esr">CCDB Work Group for Biometric Product Security</maintainer>
-      <p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p><b xmlns:fn="http://www.w3.org/2005/xpath-functions">Unique Identifier: </b><identifier xmlns="http://common-criteria.rhcloud.com/ns/esr">42</identifier>
-      <p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p><b xmlns:fn="http://www.w3.org/2005/xpath-functions">Version: </b><version xmlns="http://common-criteria.rhcloud.com/ns/esr">1.0</version>
-      <p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p><b xmlns:fn="http://www.w3.org/2005/xpath-functions">Status: </b><status xmlns="http://common-criteria.rhcloud.com/ns/esr">draft</status>
-      <p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p><b xmlns:fn="http://www.w3.org/2005/xpath-functions">Date of issue: </b><issuedate xmlns="http://common-criteria.rhcloud.com/ns/esr">10 Nov 2016</issuedate>
-      <p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p><b xmlns:fn="http://www.w3.org/2005/xpath-functions">Approved by: </b><approver xmlns="http://common-criteria.rhcloud.com/ns/esr"></approver>
-      <p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p><b xmlns:fn="http://www.w3.org/2005/xpath-functions">Supersedes: </b><p xmlns:fn="http://www.w3.org/2005/xpath-functions"></p>
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="status">Status</div>
+      <p></p><b>Title: </b><esrtitle xmlns="http://common-criteria.rhcloud.com/ns/esr">Biometric Product Essential Security Requirements</esrtitle>
+      <p></p><b>Maintained by: </b><maintainer xmlns="http://common-criteria.rhcloud.com/ns/esr">CCDB Work Group for Biometric Product Security</maintainer>
+      <p></p><b>Unique Identifier: </b><identifier xmlns="http://common-criteria.rhcloud.com/ns/esr">42</identifier>
+      <p></p><b>Version: </b><version xmlns="http://common-criteria.rhcloud.com/ns/esr">1.0</version>
+      <p></p><b>Status: </b><status xmlns="http://common-criteria.rhcloud.com/ns/esr">draft</status>
+      <p></p><b>Date of issue: </b><issuedate xmlns="http://common-criteria.rhcloud.com/ns/esr">10 Nov 2016</issuedate>
+      <p></p><b>Approved by: </b><approver xmlns="http://common-criteria.rhcloud.com/ns/esr"></approver>
+      <p></p><b>Supersedes: </b><p></p>
+      <div class="section" id="status">Status</div>
       		
       <p xmlns="http://common-criteria.rhcloud.com/ns/esr"> The CCDB Working Group has been requested to develop an Essential Security Requirements
          			(ESR) for biometrics product. This initial draft contains material that was provided by
@@ -128,7 +128,7 @@
          		
       </ul>
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="purpose">Background and Purpose</div>
+      <div class="section" id="purpose">Background and Purpose</div>
       		
       <p xmlns="http://common-criteria.rhcloud.com/ns/esr"> From ISO/IEC 2382-37 Information technology &#8212; Vocabulary &#8212; Part 37: Biometrics (cf.
          			http://standards.iso.org/ittf/PubliclyAvailableStandards/c055194_ISOIEC_2382-37_2012.zip),
@@ -168,7 +168,7 @@
          			system (other configurations exist). This illustrates the different sub-functionalities
          			on which the biometric enrollment and the biometric verification processes rely on. 
       </p>
-      		<img xmlns="http://common-criteria.rhcloud.com/ns/esr" src="../images/process.jpg" alt="generic biometric system" style="width:800px;"></img>
+      		<img xmlns="http://common-criteria.rhcloud.com/ns/esr" src="./images/process.jpg" alt="generic biometric system" style="width:800px;"></img>
       		
       <p xmlns="http://common-criteria.rhcloud.com/ns/esr"> When used in a security system, the biometric product needs to take into account the
          			risk of subverting the biometric functionalities. One of the main entry points for an
@@ -187,7 +187,7 @@
          			detection -- Part 1: Framework 
       </p>
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="usecases">Use Cases</div>
+      <div class="section" id="usecases">Use Cases</div>
       		
       <p xmlns="http://common-criteria.rhcloud.com/ns/esr">Biometric products are used for user authentication for mobile devices such as
          			smartphones, PC login at offices, ATMs at banks, and building or room entrance control,
@@ -207,7 +207,7 @@
          		
       </ul>
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="resourcesprotected">Resources to be protected</div>
+      <div class="section" id="resourcesprotected">Resources to be protected</div>
       		
       <ul xmlns="http://common-criteria.rhcloud.com/ns/esr">
          			
@@ -221,7 +221,7 @@
          			biometric system) 
       </ul>
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="attackeraccess">Attacker access</div>
+      <div class="section" id="attackeraccess">Attacker access</div>
       		
       <ul xmlns="http://common-criteria.rhcloud.com/ns/esr">
          			
@@ -251,7 +251,7 @@
       </ul>
       
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="attackerressources">Attacker ressources</div>
+      <div class="section" id="attackerressources">Attacker ressources</div>
       		
       <ul xmlns="http://common-criteria.rhcloud.com/ns/esr">
          			
@@ -269,7 +269,7 @@
       </ul>
       
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="boundary">Boundary of product</div>
+      <div class="section" id="boundary">Boundary of product</div>
       		
       <ul xmlns="http://common-criteria.rhcloud.com/ns/esr">
          			
@@ -286,16 +286,16 @@
       <p xmlns="http://common-criteria.rhcloud.com/ns/esr"> Examples of typical boundary (inside the blue frame) of biometric products (figures are
          			inspired from [30107-1]): <br></br> 1. Case of a typical fully integrated biometric product: 
       </p>
-      		<img xmlns="http://common-criteria.rhcloud.com/ns/esr" src="../images/TOE1.jpg" alt="generic biometric system" style="width:800px;"></img>
+      		<img xmlns="http://common-criteria.rhcloud.com/ns/esr" src="./images/TOE1.jpg" alt="generic biometric system" style="width:800px;"></img>
       		
       <p xmlns="http://common-criteria.rhcloud.com/ns/esr"> 2. Case of a typical software only product: </p>
-      		<img xmlns="http://common-criteria.rhcloud.com/ns/esr" src="../images/TOE2.jpg" alt="generic biometric system" style="width:800px;"></img>
+      		<img xmlns="http://common-criteria.rhcloud.com/ns/esr" src="./images/TOE2.jpg" alt="generic biometric system" style="width:800px;"></img>
       		
       <p xmlns="http://common-criteria.rhcloud.com/ns/esr"> 3. Case of a typical presentation attack detection sensor-based product: </p>
-      		<img xmlns="http://common-criteria.rhcloud.com/ns/esr" src="../images/TOE3.jpg" alt="generic biometric system" style="width:800px;"></img>
+      		<img xmlns="http://common-criteria.rhcloud.com/ns/esr" src="./images/TOE3.jpg" alt="generic biometric system" style="width:800px;"></img>
       
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="requirements">Essential Security Requirements</div>
+      <div class="section" id="requirements">Essential Security Requirements</div>
       
       		
       <ul xmlns="http://common-criteria.rhcloud.com/ns/esr">
@@ -319,7 +319,7 @@
          		
       </ul>
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="assumptions">Assumptions</div>
+      <div class="section" id="assumptions">Assumptions</div>
       		
       <ul xmlns="http://common-criteria.rhcloud.com/ns/esr">
          			
@@ -339,7 +339,7 @@
          		
       </ul>
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="extensions">Optional Extensions</div>
+      <div class="section" id="extensions">Optional Extensions</div>
       		
       <p xmlns="http://common-criteria.rhcloud.com/ns/esr"> Requirements captured in this section may already be realized in some products in this
          			technology class, but this ESR is not mandating these capabilities exist in &#8220;baseline&#8221;
@@ -361,7 +361,7 @@
          		
       </ul>
       	
-      <div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="section" id="outsidescope">Outside the TOE's Scope</div>
+      <div class="section" id="outsidescope">Outside the TOE's Scope</div>
       		
       <!--
 			This is where the authors explicitly state things they do not want 

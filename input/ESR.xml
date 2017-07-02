@@ -83,7 +83,7 @@
 			inspired from ISO/IEC JTC1 SC37 standards, is a generic representation of a biometric
 			system (other configurations exist). This illustrates the different sub-functionalities
 			on which the biometric enrollment and the biometric verification processes rely on. </p>
-		<img src="../images/process.jpg" alt="generic biometric system" style="width:800px;"/>
+		<img src="./images/process.jpg" alt="generic biometric system" style="width:800px;"/>
 		<p> When used in a security system, the biometric product needs to take into account the
 			risk of subverting the biometric functionalities. One of the main entry points for an
 			attacker is the biometric capture subsystem where they could present artificial or
@@ -164,11 +164,11 @@
 		</ul>
 		<p> Examples of typical boundary (inside the blue frame) of biometric products (figures are
 			inspired from [30107-1]): <br/> 1. Case of a typical fully integrated biometric product: </p>
-		<img src="../images/TOE1.jpg" alt="generic biometric system" style="width:800px;"/>
+		<img src="./images/TOE1.jpg" alt="generic biometric system" style="width:800px;"/>
 		<p> 2. Case of a typical software only product: </p>
-		<img src="../images/TOE2.jpg" alt="generic biometric system" style="width:800px;"/>
+		<img src="./images/TOE2.jpg" alt="generic biometric system" style="width:800px;"/>
 		<p> 3. Case of a typical presentation attack detection sensor-based product: </p>
-		<img src="../images/TOE3.jpg" alt="generic biometric system" style="width:800px;"/>
+		<img src="./images/TOE3.jpg" alt="generic biometric system" style="width:800px;"/>
 
 	</section>
 
