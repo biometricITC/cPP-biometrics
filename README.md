@@ -4,14 +4,16 @@ Collaborative Protection Profile for biometrics
 
 Collaborative Protection Profile for biometrics
 
-
-## Working Draft
+## Working Drafts of the XML documents
 [Essential Security Requirements (ESR)](output/ESR.html)
 
-[Collaborative Protection Profile for biometrics ](tbd)
+[Collaborative Protection Profile for biometrics (this XML contains all three cPPs) ](https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/biometricCPP.xml)
 
-## Release Version
-[Essential Security Requirements (ESR) v1.0](https://www.commoncriteriaportal.org/communities/bio-esr.pdf)
+## Current versions of the HTML documents (please use username/password cpp/cpp)
+[Essential Security Requirements (ESR) v1.0](http://cpp.konfidas.de/output/ESR.html)
+[The biometric cPP](http://cpp.konfidas.de/output/biometricCPP_BIO.html)
+[The PAD cPP](http://cpp.konfidas.de/output/biometricCPP_PAD.html)
+[The integrated cPP](http://cpp.konfidas.de/output/biometricCPP_INT.html)
 
 ## Technical Community
 [How to join the iTC (Mailing list and updates)](
