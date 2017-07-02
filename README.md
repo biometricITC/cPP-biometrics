@@ -9,7 +9,10 @@ Collaborative Protection Profile for biometrics
 
 [Collaborative Protection Profile for biometrics (this XML contains all three cPPs) ](https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/biometricCPP.xml)
 
-## Current versions of the HTML documents (please use username/password cpp/cpp)
+## Current versions of the HTML documents 
+
+(please use username/password cpp/cpp)
+
 [Essential Security Requirements (ESR) v1.0](http://cpp.konfidas.de/output/ESR.html)
 [The biometric cPP](http://cpp.konfidas.de/output/biometricCPP_BIO.html)
 [The PAD cPP](http://cpp.konfidas.de/output/biometricCPP_PAD.html)
