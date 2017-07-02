@@ -1,5 +1,7 @@
 Collaborative Protection Profile for biometrics
 ===============================================
+![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/cclogo.png "Logo Title Text 1")
+
 
 
 Collaborative Protection Profile for biometrics
