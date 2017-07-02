@@ -434,10 +434,7 @@
       
       <SOs>
         <SO id="O.BIO_VERIFICATION" toe-type="BIO INT">
-          <description>The TOE shall provide a biometric verification mechanism to ensure access to
-            a portal with an adequate reliability. The TOE shall meet relevant criteria for its
-            security relevant error rates for biometric verification (e.g. False Accept Rate (FAR)
-            and False Rejection Rate (FRR)). An “Exact match” should not be counted as a positive
+          <description>The TOE shall provide a biometric verification mechanism to ensure access to a portal with adequate erro rates (e.g. False Accept Rate (FAR) and False Rejection Rate (FRR)). An “Exact match” should not be counted as a positive
             verification as it may be a replay attempt.</description>
           <!--           <component-refer ref="FCS_CKM.1"/><component-refer ref="FCS_CKM.2(1)"/><component-refer ref="FCS_CKM.2(2)"/><component-refer ref="FCS_CKM_EXT.8"/><component-refer ref="FCS_COP.1(1)"/><component-refer ref="FCS_COP.1(2)"/><component-refer ref="FCS_COP.1(3)"/><component-refer ref="FCS_COP.1(4)"/><component-refer ref="FCS_COP.1(5)"/><component-refer ref="FCS_DTLS_EXT.1"/><component-refer ref="FCS_HTTPS_EXT.1"/><component-refer ref="FCS_RBG_EXT.1"/><component-refer ref="FCS_RBG_EXT.2"/><component-refer ref="FCS_RBG_EXT.3"/><component-refer ref="FCS_SRV_EXT.1"/><component-refer ref="FCS_SRV_EXT.2"/><component-refer ref="FCS_TLSC_EXT.1"/><component-refer ref="FCS_TLSC_EXT.2"/><component-refer ref="FCS_TLSC_EXT.3"/><component-refer ref="FDP_BLT_EXT.1"/><component-refer ref="FDP_IFC_EXT.1"/><component-refer ref="FDP_STG_EXT.1"/><component-refer ref="FDP_UPC_EXT.1"/><component-refer ref="FIA_BLT_EXT.1"/><component-refer ref="FIA_BLT_EXT.2"/><component-refer ref="FIA_BLT_EXT.3"/><component-refer ref="FIA_BLT_EXT.4"/><component-refer ref="FIA_BLT_EXT.5"/><component-refer ref="FIA_BLT_EXT.6"/><component-refer ref="FIA_X509_EXT.1"/><component-refer ref="FIA_X509_EXT.2"/><component-refer ref="FIA_X509_EXT.3"/><component-refer ref="FIA_X509_EXT.4"/><component-refer ref="FIA_X509_EXT.5"/><component-refer ref="FPT_BLT_EXT.1"/><component-refer ref="FTP_BLT_EXT.1"/><component-refer ref="FTP_BLT_EXT.2"/><component-refer ref="FTP_ITC_EXT.1"/>--></SO>
         <SO id="O.PAD" toe-type="PAD">
