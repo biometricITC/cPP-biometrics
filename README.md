@@ -13,10 +13,10 @@ Collaborative Protection Profile for biometrics
 
 (please use username/password cpp/cpp)
 
-[Essential Security Requirements (ESR) v1.0](http://cpp.konfidas.de/output/ESR.html)
-[The biometric cPP](http://cpp.konfidas.de/output/biometricCPP_BIO.html)
-[The PAD cPP](http://cpp.konfidas.de/output/biometricCPP_PAD.html)
-[The integrated cPP](http://cpp.konfidas.de/output/biometricCPP_INT.html)
+- [Essential Security Requirements (ESR) v1.0](http://cpp.konfidas.de/output/ESR.html)
+- [The biometric cPP](http://cpp.konfidas.de/output/biometricCPP_BIO.html)
+- [The PAD cPP](http://cpp.konfidas.de/output/biometricCPP_PAD.html)
+- [The integrated cPP](http://cpp.konfidas.de/output/biometricCPP_INT.html)
 
 ## Technical Community
 [How to join the iTC (Mailing list and updates)](
