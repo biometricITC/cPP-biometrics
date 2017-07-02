@@ -1,6 +1,5 @@
-Collaborative Protection Profile for biometrics
-===============================================
-![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/cclogo.png "cPP development")
+Collaborative Protection Profile for biometrics ![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/cclogo.png "cPP development")
+============================================== 
 
 
 ## Working Drafts of the XML documents
