@@ -49,9 +49,9 @@ with modification:
 2\) that enable developers to conduct the repeatable and reproducible
 performance testing
 
-1.  Developer’s task
+1. Developer's task
 
-    1.  Overview
+1.1  Overview
 
 Developers shall provide an evidence for biometric performance testing
 (hereafter “test document”) for ISO/IEC 15408 evaluations. Test document
@@ -68,7 +68,7 @@ normally consists of the following two parts.
 This document defines items that shall be described in the test
 document.
 
-1.  Overview of reporting items
+1.2  Overview of reporting items
 
 Table-1 shows items that should be described in the test document. Name
 or structure of test document doesn’t need to follow this document.
@@ -88,14 +88,20 @@ Table-1: Reporting items
   Paragraph   Item
   ----------- --------------------------------------------
   1.3.1       General information
+  
   1.3.2       Target application and influential factors
+  
   1.3.3       Test subject selection
+  
   1.3.4       Test instructions and training
+  
   1.3.5       Test subject management
+  
   1.3.6       Test procedure
-  1.3.7       1.3.7 Result of testing
+  
+  1.3.7       Result of testing
 
-1.  Reporting items description
+1.3  Reporting items description
 
 This sub paragraph describes each reporting items in detail. All items
 are defined and explained in the ISO/IEC 19795-1 and 19795-2 however
@@ -112,7 +118,7 @@ performance testing.
 > identify the test configuration of the performance testing.
 > Information stated here shall be consistent with the security target.
 
-1.  TOE reference
+1. TOE reference
 
 > Information that uniquely identify the TOE (e.g., product name,
 > version, product code)
@@ -123,7 +129,7 @@ performance testing.
 > affected because modified code is executed only after making the
 > matching decisions)
 
-1.  TOE configuration
+2. TOE configuration
 
 > Any configurable parameters or setting of the TOE that may affect the
 > performance shall be reported. Value of each parameter set for the
@@ -131,25 +137,25 @@ performance testing.
 > decision threshold and image quality threshold) is configurable by
 > users, value of threshold set for the testing shall be reported.
 
-1.  TOE operational environment
+3. TOE operational environment
 
 > Information that uniquely identify any components that are necessary
 > to run the TOE (e.g. mobile device and operating system information if
 > the TOE is a mobile biometric authentication application running on
 > the mobile device).
 
-1.  Performance test tools
+4. Performance test tools
 
 > Information that uniquely identify any testing tools (e.g. SDK) used
 > for the performance testing.
 
-(1) General test information
+(2) General test information
 
 > Test document shall report the following general information about the
 > test. Information stated here shall be consistent with the security
 > target.
 
-1.  Biometric verification method
+1. Biometric verification method
 
 > Biometric characteristic and body part used for the TOE and overview
 > of the matching method
@@ -162,17 +168,17 @@ performance testing.
 > Description of template quality scores shall be provided if
 > applicable.
 
-1.  Performance matrices
+2. Performance matrices
 
 > Performance matrix (e.g. FTE, FAR or FRR) measured
 
-1.  Type of performance testing
+3. Type of performance testing
 
 > Type of performance testing (e.g. technology evaluation or scenario
 > evaluation, or both). If both type of testing were conducted, type of
 > testing applied to measure each matrix shall be reported.
 
-1.  Tester information
+4. Tester information
 
 > The name and entity of the tester as well as relationships between the
 > tester and the developer (independent/dependent) shall be reported.
@@ -180,7 +186,7 @@ performance testing.
 > employees, some part of testing such as gathering test crew may be
 > conducted by another entity.
 
-1.  Test period and location
+5. Test period and location
 
 > Period and location of testing shall be reported.
 
@@ -212,7 +218,7 @@ finger/hand vein verification.
 
 <!-- -->
 
-(1) Posture and positioning
+(2) Posture and positioning
 
 > Posture of test crew or positioning of his/her hand/finger (e.g.
 > Orientation of hand/finger in relation to the sensor or distance to
@@ -220,25 +226,25 @@ finger/hand vein verification.
 > with the TOE operational guidance or automated feedback provided by
 > the TOE.
 
-(1) Indoor or outdoor
+(3) Indoor or outdoor
 
 > Indoor or outdoor environment in which testing is to be conducted
 > shall be reported. In case of outdoor environment, other factors
 > affecting the performance (e.g. environmental illumination) shall also
 > be reported.
 
-(1) Temperature
+(4) Temperature
 
 > Range of temperature at which the testing is to be conducted shall be
 > reported (e.g. “Testing was conducted in an air-conditioned
 > environment where temperature was kept between X and Y degrees”).
 
-(1) Time interval
+(5) Time interval
 
 > Time interval (e.g. minimum, maximum and average time) between
 > enrolment and verification shall be reported.
 
-(1) Habituation
+(6) Habituation
 
 > The degree to which the crew is familiarized with the TOE shall be
 > reported (e.g. historical frequency of use of the TOE)
@@ -256,14 +262,14 @@ reported.
 > also be reported (e.g. gather test subjects from developer’s employees
 > or recruit them from public).
 
-(1) Number of test subjects used in the past development or testing
+(2) Number of test subjects used in the past development or testing
 
 > If templates or biometric data collected for the past developments or
 > tests were reused for the testing, numbers of subjects, body parts,
 > samples used in the past and selection method for such reused data
 > shall be reported. Rationale shall also be provided for reuse of data.
 
-(1) Use of artificially generated sample or features data
+(3) Use of artificially generated sample or features data
 
 > For technology evaluation, the use of artificially generated data, if
 > any, shall be reported. The numbers of test subjects, body parts and
@@ -282,7 +288,7 @@ shall be reported.
 > subject acclimatization to avoid such effect shall be reported for
 > genuine/imposter transaction or biometric data collection.
 
-(1) Test information and general test instructions
+(2) Test information and general test instructions
 
 > Test information and general test instructions given to test subject
 > prior to or after an enrolment, genuine/imposter transactions or
@@ -293,7 +299,7 @@ shall be reported.
 > shall not be adjusted to the TOE specification that is not described
 > in the TOE operational guidance)
 
-(1) Confirmation of habituation
+(3) Confirmation of habituation
 
 > Method for how to confirm the level of subject habituation prior to an
 > enrolment, genuine/imposter transaction or biometric data collection
@@ -335,7 +341,7 @@ following items shall be covered
 > the time of image submission. Offline means that enrolment and
 > verification is executed separately from image submission.
 
-(1) Enrolment and transaction flow
+(2) Enrolment and transaction flow
 
 > The following shall be reported to explain the flow of enrolment,
 > genuine and imposter transaction to measure biometric performance
@@ -359,7 +365,7 @@ following items shall be covered
 > failure of enrolment (i.e. enrolment policy) and transaction shall
 > also be specified.
 
-(1) Sample exclusion criteria
+(3) Sample exclusion criteria
 
 > Criteria for sample exclusion shall be reported (i.e. Test operator
 > shall not manually discard nor use an automated mechanism to discard
@@ -371,12 +377,12 @@ following items shall be covered
 > as failed enrolment and transaction to calculate the performance
 > matrix (See (8) 1 and 2).
 
-(1) Criteria for supervisor intervention
+(4) Criteria for supervisor intervention
 
 > Criteria for supervisor intervention at the time of each enrolment and
 > transaction shall be reported.
 
-(1) Advice or remedial action for a user who fails an enrolment and
+(5) Advice or remedial action for a user who fails an enrolment and
     transaction
 
 > Advices or remedial actions to users who fail to complete enrolment
@@ -388,7 +394,7 @@ following items shall be covered
 > Note: Advice or actions shall be consistent with that of the target
 > application.
 
-1.  Guidance policy shall be reported including
+2.  Guidance policy shall be reported including
 
 <!-- -->
 
@@ -400,13 +406,13 @@ c)  aspects of guidance at the discretion of the supervisor, if any.
 
 <!-- -->
 
-(1) Weighting
+(6) Weighting
 
 > If performance are estimated using a weighted proportion, the method
 > of weighting shall be specified: e.g., test subjects distribution,
 > distribution of the number of executed transactions.
 
-(1) Intra-individual comparisons for imposter transaction
+(7) Intra-individual comparisons for imposter transaction
 
 > Whether intra-individual comparisons was made to measure the FAR shall
 > be reported. Intra-individual comparisons, if any, shall be fully
@@ -423,13 +429,19 @@ Each performance matrix shall be measured as follows.
 
 > FTE shall be measured as follows.
 
+FTE = total number of subjects failed to meet the enrolment policy /
+                                                 total number of subjects attempted the enrolments                   
+
 Note: Enrolment policy shall also be specified in the test documents
 
-(1) Measured FAR and FRR
+(2) Measured FAR and FRR
 
 > FAR and FRR shall be measured as follows.
 
-(1) Upper confidence limit for FTE, FAR and FRR
+FAR or FRR = total number of failed imposter or genuine transactions /
+                                                 total number of imposter or genuine transactions
+
+(3) Upper confidence limit for FTE, FAR and FRR
 
 > Upper confidence limit for each matrix shall be calculated based on
 > interval estimation. This limit shall be equal or lower than target
@@ -440,7 +452,7 @@ Note: Enrolment policy shall also be specified in the test documents
 > calculation method of confidence interval and rationale for such
 > method shall also be reported.
 
-1.  Evaluator’s task
+2.  Evaluator’s task
 
 The evaluator shall confirm that the test document provided meets all
 requirements defined in the chapter 1.
