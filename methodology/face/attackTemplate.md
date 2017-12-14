@@ -4,13 +4,11 @@ Number of the attack can be coded into the filname.
 
 Attack type
 ===========
-No Identification number of attack scenario Attack type Face presentation attacks are categorized into the following attack type based on the research paper [1] 
+This chapter contains the type of the attack. Examples for attack types include 
 - 2D face, printed photo attack - 2D face, digital photo attack 
 - 2D face, replay video attack *1) 
 - 3D face, mask attack 
 - 3D face, plastic surgery attack *2) *1) 
-
-replay video can be created from photos using virtual reality [2] *2) this type is not considered in this document because it’s far beyond the scope of attack potential that the cPP assumes 
 
 Overview
 ========
@@ -22,11 +20,15 @@ Target user’s face information available to the attacker
 
 Tools
 =====
-Tools required to create the PAI 
+Tools required to create the PAI and to perform the attack.  
 
 Recipe
 ======
-Method to create the PAI
+Method to create the PAI. Stepwise instructions.
+
+Variations
+==========
+Identification of potentially useful variations to the recipe. 
 
 Prerequisite
 ============
@@ -34,15 +36,7 @@ All prerequisite conditions that need to be established before the attack
 
 Presentation
 ============
-How to present the PAI to the TOE
-
-Number of users
-===============
-Number of target users. PAIs should be created for each user
-
-Number of Presentations
-=======================
-Number of presentation for each PAI created
+How to present the PAI to the TOE.
 
 PAD technique
 =============
@@ -55,7 +49,3 @@ Existing research papers based on which this attack scenario is created. Evaluat
 Attack Potential
 ================
 Attack potential calculated for this attack scenario based on the attack potential table X (TBD. Current attack potential table proposed in the cPP may be modified to set an appropriate goal considering the current technology of the mobile devices) 
-
-Pass Criteria
-=============
-Criteria to pass the tests conducted based on the attack scenario. This criterion is determined based on or inferred from the experimental result shown in the research papers 
