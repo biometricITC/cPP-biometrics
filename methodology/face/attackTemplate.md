@@ -1,5 +1,4 @@
-Number
-=======
+# Number
 
 Attack type
 ===========
