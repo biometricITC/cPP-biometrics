@@ -11,3 +11,14 @@ No Identification number of attack scenario Attack type Face presentation attack
 
 replay video can be created from photos using virtual reality [2] *2) this type is not considered in this document because it’s far beyond the scope of attack potential that the cPP assumes 
 
+Overview
+========
+Brief overview of the attack scenario
+
+Input
+======
+Target user’s face information available to the attacker
+
+Tools
+=====
+Tools required to create the PAI 
