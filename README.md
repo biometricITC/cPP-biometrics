@@ -7,7 +7,7 @@ https://github.com/nils-tekampe/cPP-biometrics/issues/41
 [Essential Security Requirements (ESR)](output/ESR.html)
 
 ## Initial SPD for generic biometric systems
-https://github.com/nils-tekampe/cPP-biometrics/tree/master/output   (a word version available here: https://ccusersforum.onlyoffice.com/products/projects/tmdocs.aspx?prjid=548774#2068301 )
+https://github.com/nils-tekampe/cPP-biometrics/tree/master/output (a word version available here: https://ccusersforum.onlyoffice.com/products/projects/tmdocs.aspx?prjid=548774#2068301 )
 
 ## Listing of different mobile use cases (main focus since June 2017)
 https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/MobileUseCaseV2.md
