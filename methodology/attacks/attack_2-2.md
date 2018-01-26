@@ -47,7 +47,7 @@ from ambient lighting.
 
 PAD technique
 =============
-Different types of image aliasing appear during the recapture of a face image that can be detected by the PAD. [4] study the PAD method that can be implemented on the mobile device.
+Different types of image aliasing appear during the recapture of a face image that can be detected by the PAD. [Patel et al., 2015] study the PAD method that can be implemented on the mobile device.
 
 Reference
 =========
