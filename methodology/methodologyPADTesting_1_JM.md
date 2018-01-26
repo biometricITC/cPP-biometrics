@@ -184,6 +184,7 @@ The TOE is used to unlock the devices but not used for financial transactions. A
 The cPP defines A.User and evaluator shall assume that the mobile devices are configured securely by users. Especially evaluator shall make the following assumptions:
 
 a) A user enroll him/herself following guidance provided by the TOE
+
 b) Mobile device is securely configured and maximum number of unsuccessful biometric authentication attempts is limited.
 
 However, evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the penetration testing efficiently. However, the mobile device shall be evaluated in the evaluated configuration, which means that attack needs to be succeeded within the allowed number of biometric authentication attempts defined in the ST.
@@ -191,6 +192,7 @@ However, evaluator can increase the maximum number of unsuccessful biometric aut
 The cPP also defines A.Protection and evaluators shall assume that biometric data is adequately protected. Especially evaluators shall make the following assumptions:
 
 a) Attacker can’t access to the result of PAD subsystem so they can’t tune the PAIs based on the PAD score
+
 b) Attacker can’t gain the templates from the mobile device to create the PAIs
 
 ##### 2.3 Attack scenarios selection and changes
@@ -205,7 +207,7 @@ trial based on the result of the Evaluation Activity
 b) Information about PAD algorithm
 If evaluator can gain information about the PAD algorithm that the TOE implements through the internet, evaluator can omit some attack scenarios that may be detected by the algorithm reliably and focus on the other ones that may exploit the weakness of the algorithm.
 For example, if evaluator gains the information that the TOE checks the eye blinking, evaluator should change the attack scenario No.1-2 and cut off eye part of the photo to create the PAI, instead of warping the photo.
-Another example is, if the TOE uses the depth map of the face captured by near Infrared (NIR) camera for face unlock, 2D photo can be easily detected (See [9]). However, IR-reflective inks that show a strong response in NIR-band can be used to create the 2D photo that may be visible in the NIR-band. The accurate depth map may also not be gained if:
+Another example is, if the TOE uses the depth map of the face captured by near Infrared (NIR) camera for face unlock, 2D photo can be easily detected (See Bhattacharjee & Marcel, 2017). However, IR-reflective inks that show a strong response in NIR-band can be used to create the 2D photo that may be visible in the NIR-band. The accurate depth map may also not be gained if:
 - Distance between the camera and face is at maximum distance
 - Face unlock is conducted under the daylight
 - Face is placed under a sharp viewing angle against the TOE Evaluator can consider such factors to change the tool or presentation method of the PAIs.
@@ -272,7 +274,7 @@ How to present the PAI to the TOE.
 
 PAD technique
 =============
-Possible PAD technique that can detect the attack. See [1] for typical PAD technique. Applicability of the PAD technique to the mobile devices is also considered here if there are the PAD technique that can be implemented in mobile devices in the research papers.
+Possible PAD technique that can detect the attack. See [Rakshit & Kisku, 2017] for typical PAD technique. Applicability of the PAD technique to the mobile devices is also considered here if there are the PAD technique that can be implemented in mobile devices in the research papers.
 
 Reference
 =========
