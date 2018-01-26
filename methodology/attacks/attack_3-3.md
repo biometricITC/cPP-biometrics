@@ -48,7 +48,7 @@ Depth sensor can be used to detect 2D object.
 
 Reference
 =========
-For example, see [9]
+For example, see [Bhattacharjee & Marcel, 2017]
 
 Attack Potential
 ================
@@ -61,5 +61,6 @@ tbd
 Other
 =====
 Number of Users: 5
+
 Number of presentations: 10 attempts for each PAI
 
