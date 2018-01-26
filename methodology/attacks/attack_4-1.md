@@ -49,7 +49,7 @@ Different types of image aliasing appear during the recapture of a face image th
 
 Reference
 =========
-For example, see [3], [4] and [5]
+For example, see [Zhang et al., 2012], [Patel et al., 2015] and [Boulkenafet et al., 2017]
 
 Attack Potential
 ================
@@ -62,6 +62,7 @@ tbd
 Other
 =====
 Number of users: 5
+
 Number of presentations: 10 attempts for each PAI
 
 
