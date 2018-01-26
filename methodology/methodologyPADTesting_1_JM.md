@@ -1,5 +1,5 @@
 # Evaluation Activity for FIA_BVR_EXT.4.2
-12 th January 2018
+12th January 2018
 
 **_Note to the iTC members: Mobile toolbox is split into two parts. One part defines minimum functional testing that evaluators shall conduct as defined in the Evaluation Activity for FIA_BVR_EXT.4.2 without any changes. The other part provides guidance to evaluators what kind of additional tests should be done during the penetration testing in addition to the functional tests._**
 
@@ -20,7 +20,7 @@ None
 
 **e) Assessment Strategy for face presentation attack**
 
-##### Overview
+### Overview
 Face presentation attack can be carried out through the following process:
 1. Get face images of a target user from, for example, uploaded photo on the SNS
 2. Display or reconstruct the face image on the spoofing medium such as a photo or
@@ -39,7 +39,7 @@ All of above types except 3D face, mask attack shall be tested in this evaluatio
 
 In any type of attack, the TOE captures the fake face image from the spoofing medium and unlock the mobile device if the TOE can’t tell the difference between real and fake face.
 
-##### Type of PAIs for the testing and required tools
+### Type of PAIs for the testing and required tools
 Face images captured by the TOE from the spoofing medium may visually look very similar to the images captured from real ones, however, they are not exactly the same. For example, printed or displayed faces on the paper or screen reflect light in different ways because a human face is a complex non-rigid 3D object, whereas the photo or screen can be seen as a planar rigid object. The surface properties of real faces and fake ones, e.g. pigments, are also different. In addition, fake faces may contain artefacts such as moir ́e patterns that are an undesired aliasing of images produced during various image display and image acquisition processes.
 
 The TOE should detect such differences between images taken from real and fake face to prevent the presentation attacks. These differences are mainly influenced by the following factors listed in the table below and the performance of the PAD algorithm may also be affected by them.
@@ -60,7 +60,7 @@ production printer that may cost several thousands of dollars. However, such hig
 
 The following explains that what tools should be used for both levels of testing
 
-##### Quality of source face image from which the PAI is created
+### Quality of source face image from which the PAI is created
 Digital camera shall be used to take the digital image of target user’s face. There are three main factors that work together to influence the quality of digital image:
 
 * The quality of the recording device (camera's optics & sensor, scanner's sensor)
@@ -83,7 +83,7 @@ Lossy compression (e.g. JPEG)
   2. High quality testing
 lossless compression (e.g. TIFF)
 
-##### Quality of tools (e.g. printer and spoofing medium) to create the PAI
+### Quality of tools (e.g. printer and spoofing medium) to create the PAI
 For printed photo attack, evaluator shall print the face digital image on the paper. Quality of printer and type of paper plays a key role in creating good quality PAI. For example, inkjet printer is capable of producing higher detailed and photo-realistic printsthan laser printer and shall be used for normal quality testing.
 There are high-end printers that can produce much better quality of photo than the home inkjet printer. These printers are expensive and not available at home or office however, there are lots of online printing service providers that use such high-end printer to produce the high-quality photo. Such services shall be used to create the PAI for high quality testing.
 
@@ -110,7 +110,7 @@ Any PC screen no older than 2 years from release date. 19 inches, 1920 × 1080 a
 Any 4K screen no older than 2 years from release date. 24 inches, 3840 x 2160
 and above.
 
-##### Test protocols
+### Test protocols
 The following describes the test protocol that evaluator shall follow. If the Security Target allows multiple settings for security relevant parameters, all tests have to be conducted for all possible configurations.
 
 1) Enrollment
@@ -135,7 +135,7 @@ Source digital image shall be printed and displayed on the spoofing mediums (i.e
 Evaluator shall present the mobile device to the fixed and stationary spoofing mediums by hand at controlled environment for printed and digital photo attack to introduce some noticeable motion of the PAIs. For replay video attack, both of the spoofing medium and the PAI shall be stationary.
 Evaluator shall adjust the distance between the spoofing mediums and the TOE so that the device camera can’t see the edge of spoofing mediums. Evaluator shall also present the spoofing mediums in a way to minimize the reflection from ambient lighting.
 
-##### Number of trials
+### Number of trials
 Evaluator shall conduct the testing with five users. Two source images shall be taken for both normal and high-quality testing and two spoofing mediums (i.e. normal quality of photo and screen and high quality of photo and screen) shall be used for each user. 20 presentations shall be made for each PAI changing the distance between the TOE and spoofing medium (i.e. 120 presentations shall be made for each user)
 
 | Attack type  | Source image   | Spoofing medium   | # subject | # presentation | 
@@ -147,7 +147,7 @@ Evaluator shall conduct the testing with five users. Two source images shall be 
 | 2D face, replay video attack | Normal   | Normal    | 5 | 20 |
 |   | High  | High | 5 | 20 |
 
-###### f) Pass/fail criteria
+### f) Pass/fail criteria
 Evaluator doesn’t need to present each PAI more than 20 times. Evaluator may learn, for example, the distance between the spoofing medium and the TOE that the TOE accepts the PAI at high probability during the presentations. Evaluator can conduct the penetration testing later utilizing such knowledge therefore evaluator doesn’t need to re-
 run the testing using such knowledge for this evaluation activity.
 
@@ -160,14 +160,17 @@ unlock attempts with each PAI.*
 
 Above criteria marked in *italics* is initial proposal and need to be discussed later.
 
-
+&nbsp;
 ------
 
 # Mobile toolbox for face verification
-12 th January 2018
+12th January 2018
 
-## Background
-We agreed to develop “mobile toolbox” that defines PAIs that the mobile devices shall detect at minimum during the Berlin iTC meeting. I would like to propose “mobile toolbox” for the face verification in this document. This document introduces “attack scenario” that defines, not only PAIs but also how they should be used for presentation attacks. Most of scenarios are developed based on the existing research papers that study PAD algorithms that can be implemented in the mobile devices. So, theoretically, these attack scenarios can be detected with certain probability by the mobile devices. I think that the iTC can set an appropriate goal referring experimental results described in such papers.
+### Background
+
+We agreed to develop “mobile toolbox” that defines PAIs that the mobile devices shall detect at minimum during the Berlin iTC meeting. I would like to propose “mobile toolbox” for the face verification in this document.
+This document introduces “attack scenario” that defines, not only PAIs but also how they should be used for presentation attacks. Most of scenarios are developed based on the existing research papers that study PAD algorithms that can be implemented in the mobile devices. So, theoretically, these attack scenarios can be detected with certain probability by the mobile devices. I think that the iTC can set an appropriate goal referring experimental results described in such papers.
+
 &nbsp;
 ---
 &nbsp;
@@ -222,7 +225,9 @@ Evaluators shall utilize such knowledge to conduct the testing assuming the wors
 
 ### 3. Attack scenarios
 ##### 3.1 Format
+
 Each attack scenario includes following items to describe the attack. If evaluator modify the attack scenario, such modified scenario should include the following items at minimum:
+
 &nbsp;
 ---
 Number
@@ -284,6 +289,12 @@ Attack potential calculated for this attack scenario based on the attack potenti
 ##### 3.2 Attack scenario
 Evaluator shall conduct the penetration testing following attack scenarios defined here. However, those attack scenarios beyond the target attack potential is out of scope of evaluation. Evaluator may conduct the testing based on the scenario that is beyond the target attack potential if evaluator believes the attack potential could be lowered than one defined here for some reason. However, evaluator shall provide the rationale in the ETR to change the attack potential in each scenario.
 
+*Note: For the individual attack scenarios, please refer to the specific files in the 'attack' folder.*
+
+### 4. Scope of the cPP
+
+No.1 to No.4 should be within the scope of the use case 1 cPP because all attacks can be done at low cost (but we need to set appropriate pass/failure criteria).
+No.5 may be out of scope because creating the face mask costs about 300$ and this doesn’t match the motivation of attackers.
 
 
 
