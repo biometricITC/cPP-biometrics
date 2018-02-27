@@ -131,9 +131,11 @@ The TOE needs to consider the risk of subverting the TOE’s biometric verificat
 ----------
 The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from \[ISO30107-1\], is a generic representation of a TOE (other configurations exist). This illustrates the different sub-functionalities on which the mobile biometric enrollment andverification processes rely on.
 
-## figure to be inserted
 
-Figure 1: Generic representation of a TOE
+![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/ESR.png)
+
+                         Figure 1: Generic representation of a TOE
+
 
 As illustrated in the above figure, the TOE is capable of;
 
@@ -198,7 +200,16 @@ As defined by the references \[CC1\], \[CC2\] and \[CC3\], this cPP:
 The methodology applied for the cPP evaluation is defined in \[CEM\]. This cPP satisfies the following Assurance Families:
 APE\_CCL.1, APE\_ECD.1, APE\_INT.1, APE\_OBJ.1, APE\_REQ.1 and APE\_SPD.1.
 
-In order to be conformant to this cPP, a TOE must demonstrate Exact Conformance. Exact Conformance, as a subset of Strict Conformance as defined by the CC, is defined as the ST containing all of the SFRs in chapter 6 (these are the mandatory SFRs) of this cPP, and potentially SFRs from chapter 8 (these are optional SFRs) and chapter 9 (these are selection-based SFRs) of this cPP. While iteration is allowed, no additional requirements (from the CC parts 2 or 3, or definitions of extended components not already included in this cPP) are allowed to be included in the ST. Further, no SFRs in section 6 of this cPP are allowed to be omitted.
+In order to be conformant to this cPP, a TOE must demonstrate Exact
+Conformance. Exact Conformance, as a subset of Strict Conformance as
+defined by the CC, is defined as the ST containing all of the SFRs in
+chapter 6 (these are the mandatory SFRs) of this cPP, and potentially
+SFRs from chapter 8 (these are selection-based SFRs) and chapter 9 
+(these are optional SFRs) of this cPP. While iteration is allowed, no
+additional requirements (from the CC parts 2 or 3, or definitions of
+extended components not already included in this cPP) are allowed to be
+included in the ST. Further, no SFRs in chapter 6 of this cPP are
+allowed to be omitted.
 
 ## 4. Security Problem Definition
 
@@ -304,11 +315,10 @@ relevant error rates for PAD
 
 Application note:
 
-The TOE may or may not counter the presentation attack during the
-enrollment. If the ST author requires the TOE to counter the attack
-during the enrollment, ST author should include relevant optional
-security requirement defined in “6.2 Optional Security Fundamental
-Requirements”.
+The TOE may or may not counter a presentation attack during enrollment. 
+If the ST author requires the TOE to counter the attack
+during enrollment, ST author should include relevant optional
+security requirement defined in chapter 9.
 
 According to the \[ISO30107-3\], relevant criteria should be specified
 for each type of PAI. \[SD\] specifies PAIs used for attack and
@@ -425,3 +435,424 @@ organizational security policies map to the security objectives.
 |A.Management | OE.Management | The Assumption A.Management is satisfied by the operational environment objective OE.Management. |
 |A.User | OE.User | The Assumption A.User is satisfied by the operational environment objective OE.User. |
 |A.Alternative |OE.Alternative | The Assumption A.Alternative is satisfied by the operational environment objective OE.Alternative. |
+
+                   Table 1: Mapping between Security Problem Defintion and Security Objectives
+
+## 6. Security Functional Requirements
+
+6.1 Conventions
+-----------
+
+The individual security functional requirements are specified in the
+sections below.
+
+The following conventions are used for the completion of operations:
+
+-   \[*Italicized text within square brackets*\] indicates an operation
+    to be completed by the ST author
+
+-   [Underlined text] indicates additional text provided as a
+    refinement.
+
+-   \[***Bold and italicized text within square brackets***\] indicates
+    the completion of an assignment.
+
+-   \[*Italicized text within square brackets*\] indicates the
+    completion of a selection.
+
+-   Number in parentheses after SFR name, e.g. (1), indicates the
+    completion of an iteration.
+
+Extended SFRs are identified by having a label“EXT” at the end of the
+SFR name.
+
+6.2 Identification and Authentication (FIA)
+---------------------------------------
+### 6.2.1 Timing of the user authentication with biometric verification (FIA\_BVR\_EXT.1)
+
+### FIA\_BVR\_EXT.1 User authentication with biometric verification
+
+**FIA\_BVR\_EXT.1.1** The TSF shall provide a mobile biometric
+verification mechanism using \[**selection:** *fingerprint, iris, face,
+voice, vein*, \[**assignment:** *other modality* \] \].
+
+**FIA\_BVR\_EXT.1.2** The TSF shall provide a mobile biometric
+verification mechanism with the \[**selection:** *FMR, FAR* \] not exceeding
+\[**assignment:** *defined value* \] and \[**selection:** *FNMR, FRR* \] not exceeding
+\[**assignment:** *defined value* \].
+
+Application note 1:
+
+If the TOE support multiple BAFs, ST author may iterate the SFR to
+define different error rates for each BAF.
+
+Application note 2:
+
+ST author needs to select or assign those modalities in FIA_BVR_EXT.1.1 for which \[SD\] defines the Evaluation Activities.
+
+Application note 3:
+
+Value of FMR, FAR, FNMR and FRR needs to be assigned by the ST author
+however the ST author should consider the following factors for setting
+those values.
+
+a)  Required minimum values defined in the standards
+
+For example, \[NIST800-63B\] requires that FMR shall be 1 in 1000 or
+lower. \[ISO21879\] is proposing that FAR would be 1 in 10000 or lower
+that is equal to a conventional four-digit PIN-Code for secure
+transaction. According to \[Android CD\], finger print verification must
+have the FAR lower than 0.002% and recommended to have the FRR lower
+than 10%. The cPP doesn’t provide any recommendation for those error
+rates however, ST author should set appropriate error rates referring
+those value.
+
+For consistency in language throughout this document, referring to a
+“lower” number will mean the chance of occurrence is lower (i.e. 1/100
+is lower than 1/20). So, saying device 1 has a lower FAR than device 2
+means device 1 could have 1/1000 and device 2 would be 1/999 or higher
+in terms of likelihood. Saying “greater” will explicitly mean the
+opposite.
+
+b)  Technical limitation
+
+Although different modalities are available for the mobile biometric
+verification, all modalities may not achieve the same level of accuracy.
+For modalities that have different target of error rates, ST author can
+iterate the requirement to set appropriate error rates for each
+modality.
+
+c)  Number of test subjects required for the performance testing
+
+Target error rates defined in SFR must be evaluated based on \[SD\].
+Normally the target error rates will directly influence the size of the
+test subject, the time and cost of the testing. \[SD\] describes how
+those error rates should be evaluated in an objective manner.
+
+### 6.2.2	Biometric verification not accepting presentation attack instruments (FIA_BVR_EXT.2)
+
+### FIA\_BVR\_EXT.2 Biometric verification not accepting presentation attack instruments
+
+**FIA\_BVR\_EXT.2.1** The TSF shall prevent presentation of biometric
+characteristics which result in biometric samples of low quality from
+being successful in the biometric verification.
+
+**FIA\_BVR\_EXT.2.2** The TSF shall prevent use of artificial
+presentation attack instruments from being successfully verified.
+
+Application note 1:
+If the TOE support multiple BAFs, ST author may iterate the SFR to define different error rates for each BAF.
+
+Application note 2: \[SD\] describes that how evaluator should test the TOE to verify that it meets these security requirements.
+
+### 6.2.3	Check of biometric samples for enrolment (FIA_EBR_EXT.1)
+
+### FIA\_EBR.EXT.1 Check of biometric samples for enrolment 
+
+**FIA\_EBR\_EXT.1.1** The TSF shall prevent use of biometric
+characteristics of low quality for enrolment that has been presented by
+any user of the TSF.
+
+Application note 1: \[SD\] describes that how evaluator should test the TOE to verify that it meets this security requirements.
+
+
+-------------
+
+***Additional SFRs may be added to the cPP
+See Environment protection requirements from MDFPP (https://github.com/nils-tekampe/cPP-biometrics/issues/69)***
+
+--------------
+
+## 7. Security Assurance Requirements
+
+This chapter lists the set of SARs from CC part 3 that are required in
+evaluations against this cPP. Individual Evaluation Activities to be
+performed are specified in \[SD\].
+
+This cPP is intended to be used with \[MDFPP\] as the mobile device
+should provide security functionality that the TOE can rely on, as
+explained in Annex A. Any developer’s deliverables required by this cPP
+except the ST can be merged into ones required by \[MDFPP\], rather than
+preparing separate document for each evaluation to reduce cost and
+effort for the evaluations.
+
+The TOE security assurance requirements are identified in Table 2.
+
+| Assurance Class	| Assurance Components |
+|--------------|---------------------|
+|Security Target (ASE) |Conformance claims (ASE\_CCL.1) Extended components definition (ASE\_ECD.1) ST introduction (ASE\_INT.1) Security objectives for the operational environment (ASE\_OBJ.1) Stated security requirements (ASE\_REQ.1) Security Problem Definition (ASE\_SPD.1) TOE summary specification (ASE\_TSS.1) |  
+|Development (ADV) |Basic functional specification (ADV\_FSP.1) |
+|Guidance documents (AGD) |Operational user guidance (AGD\_OPE.1) Preparative procedures (AGD\_PRE.1) |
+|Life cycle support (ALC) |Labelling of the TOE (ALC\_CMC.1) TOE CM coverage (ALC\_CMS.1) |
+|Tests (ATE) |Independent testing – conformance (ATE\_IND.1) |
+|Vulnerability assessment (AVA) |Vulnerability survey (AVA\_VAN.1) |
+
+                              Table 2: Security Assurance Requirements
+
+7.1 ASE: Security Target
+--------------------
+
+The ST is evaluated as per ASE activities defined in the CEM. In
+addition, there may be
+
+Evaluation Activities specified within \[SD\] that call for necessary
+descriptions to be included in the TSS that are specific to the TOE
+technology type.
+
+The requirements for exact conformance of the Security Target are
+described in section 3.
+
+7.2 ADV: Development
+----------------
+
+The design information about the TOE is contained in the guidance
+documentation available to the end user as well as the TSS portion of
+the ST, and any required supplementary information required by this cPP
+that is not to be made public. \[SD\] defines required supplementary
+information that is necessary for Evaluation Activities.
+
+### 7.2.1 Basic Functional Specification (ADV\_FSP.1)
+
+The functional specification describes the TOE Security Functions
+Interfaces (TSFIs). It is not necessary to have a formal or complete
+specification of these interfaces. Additionally, because TOEs conforming
+to this cPP will necessarily have interfaces to the mobile device that
+are not directly invokable by TOE users, there is little point
+specifying that such interfaces be described in and of themselves since
+only indirect testing of such interfaces may be possible. For this cPP,
+the Evaluation Activities for this family focus on understanding the
+interfaces presented in the TSS in response to the functional
+requirements and the interfaces presented in the AGD documentation. No
+additional “functional specification” documentation is necessary to
+satisfy the Evaluation Activities specified in \[SD\].
+
+The Evaluation Activities in \[SD\] are associated with the applicable
+SFRs; since these are directly associated with the SFRs, the tracing in
+element ADV\_FSP.1.2D is implicitly already done and no additional
+documentation is necessary.
+
+7.3 AGD: Guidance Documentation
+---------------------------
+
+This cPP assumes that the TOE is embedded into the mobile device and it
+is configured and managed as described in guidance document that satisfy
+requirements defined in the \[MDFPP\].
+
+In addition to guidance document required by the \[MDFPP\], guidance
+pertaining to mobile biometric enrolment and verification must also be
+provided. Requirements on such guidance are contained in the Evaluation
+Activities specified in \[SD\].
+
+### 7.3.1 Operational User Guidance (AGD\_OPE.1)
+
+The operational user guidance does not have to be contained in a single
+document. Guidance to users can be included in the mobile device
+guidance document or can be spread among other document or web pages.
+
+The developer should review the Evaluation Activities contained in
+\[SD\] to ascertain the specifics of the guidance that the evaluator
+will be checking for. This will provide the necessary information for
+the preparation of acceptable guidance.
+
+### 7.3.2 Preparative Procedures (AGD\_PRE.1)
+
+Preparative procedures are useful for ensuring that the TOE has been
+received and installed in a secure manner as intended by the developer.
+However, the TOE is embedded into the mobile device and it is assumed
+that such information will be provided by the mobile device guidance
+document and evaluated by the mobile device evaluation based on
+\[MDFPP\]. Therefore, AGD\_PRE.1.1D is implicitly already done by those
+evaluation and no additional documentation is necessary.
+
+7.4 ALC: Life-cycle Support
+---------------------------
+
+At the assurance level provided for TOEs conformant to this cPP, 
+life-cycle support is limited to end-user-visible aspects of the life-cycle,
+rather than an examination of the TOE vendor’s development and configuration
+management process. This is not meant to diminish the critical role that a 
+developer’s practices play in contributing to the overall trustworthiness of 
+a product, rather, it is a reflection on the information to be made available 
+for evaluation at this assurance level.
+
+### 7.4.1 Labelling of the TOE (ALC_CMC.1)
+This component is targeted at identifying the TOE such that it can be 
+distinguished from other products or versions from the same vendor and can be 
+easily specified when being procured by an end user. The evaluator performs 
+the CEM work units associated with ALC_CMC.1.
+
+The TOE is tightly integrated into the mobile device. \[SD\] describes how 
+evaluator performs the CEM work units associated with ALC_CMC.1 based on 
+the relation between the TOE reference and the mobile device reference.
+
+### 7.4.2 TOE CM Coverage (ALC_CMS.1)
+Given the scope of the TOE and its associated evaluation evidence requirements, 
+the evaluator performs the CEM work units associated with ALC_CMS.1.
+
+7.5 ATE: Tests
+---------------------------
+
+Testing is specified for functional aspects of the system as well as aspects 
+that take advantage of design or implementation weaknesses. The former is 
+done through the ATE_IND family, while the latter is through the AVA_VAN 
+family. For this cPP, testing is based on advertised functionality and 
+interfaces with dependency on the availability of design information. 
+One of the primary outputs of the evaluation process is the test report 
+as specified in the following requirements.
+
+### 7.5.1 Independent Testing – Conformance (ATE_IND.1)
+Testing is performed to confirm the functionality described in the TSS 
+as well as the guidance documentation. The focus of the testing is to 
+confirm that the requirements specified in chapter 6 are being met. 
+The Evaluation Activities in \[SD\] identify the specific testing 
+activities necessary to verify compliance with the SFRs. The evaluator 
+produces a test report documenting the plan for and results of testing, 
+as well as coverage arguments focused on the platform/TOE combinations 
+that are claiming conformance to this cPP.
+
+7.6 AVA: Vulnerability Assessment
+---------------------------
+
+\[SD\] developed by the iTC describes the minimum penetration test items 
+based on the attack potential that the cPP assumes, publicly available 
+vulnerability information and technical discussion within the iTC. 
+Evaluator shall refer \[SD\] to device the penetration test items.
+
+### 7.6.1 Vulnerability Survey (AVA_VAN.1)
+\[SD\] provides a guide to the evaluator in performing a vulnerability analysis.
+
+## 8. Selection-Based Requirements
+As indicated in the introduction to this cPP, the baseline requirements 
+(those that must be performed by the TOE) are contained in the chapter 6. 
+Additionally, there are two other types of requirements specified in 
+chapter 8 and 9.
+
+The first type (in this chapter) comprises requirements based on 
+selections in other SFRs from the cPP: if certain selections are made, 
+then additional requirements in this chapter will need to be included 
+in the body of the ST.
+
+The second type (in chapter 9) comprises requirements that can be 
+included in the ST, but are not mandatory for a TOE to claim conformance 
+to this cPP. 
+
+
+**_TBD_**
+
+## 9. Optional Requirements
+
+If a TOE fulfils any of the optional requirements, the vendor is 
+encouraged to add the related functionality to the ST. Therefore, 
+in the application notes of this chapter the wording "This option 
+should be chosen..." is repeatedly used. But it also is used to 
+emphasize that this option should only be chosen if the TOE provides 
+the related functionality and that it is not necessary to implement 
+the related functionality to be compliant to the cPP. ST authors are 
+free to choose none, some or all SFRs defined in this chapter. Just 
+the fact that a product supports a certain functionality does not 
+mandate to add any SFR defined in this chapter.
+
+
+**_SFR for PAD during the enrollment (e.g. The TSF shall perform Presentation Attack Detection testing on each biometric enrollment) will be added here_**
+
+## 10. Extended Component Definitions
+This appendix contains the definitions for the extended requirements 
+that are used in the cPP, including those used in chapter 8 and 9.
+
+(Note: formatting conventions for selections and assignments in this chapter are those in \[CC2\].)
+
+**_TBD_**
+
+## Annex A
+
+## 1.	Overview
+This Annex describes relation between this cPP and \[MDFPP\].
+
+The TOE in this cPP is comprised of biometric capture sensors and 
+firmware/software that provide functions described in Section 2.3 
+(TOE design). The TOE is invoked by the mobile device (i.e. TOE 
+environment) when user’s biometric characteristics is presented to 
+the sensor, creates and stores the template or compares the features 
+with the stored template and returns the verification outcome to 
+the mobile device. 
+
+This cPP assumes that the mobile device satisfies SFRs defined in the 
+\[MDFPP\] so that the TOE can satisfy SFRs defined in this cPP. The next 
+section explains what SFRs in the \[MDFPP\] are directly relevant to 
+the TOE security functionality.
+
+## 2.	Relevant SFRs in the \[MDFPP\]
+Relation between SFRs defined in this cPP and \[MDFPP\] is described below. **Bold SFRs** are those defined in this cPP and *italicized SFRs* are those defined in the \[MDFPP\]
+
+### 2.1	Password authentication
+Mobile device needs to implement the Password Authentication Factor as 
+required by the *FIA_UAU.5.1*. This password authentication is used to 
+configure (e.g. enable/disable) the TOE, enroll the user, and as an 
+alternative authentication mechanism when the user is rejected by the 
+mobile biometric verification.
+
+This cPP assumes that above requirements are satisfied by the TOE environment as defined in OE.Alternative.
+
+### 2.2	Invocation of the TOE
+Any BAF selected in *FIA_UAU.5.1*, the TOE must be invoked by the mobile 
+device to unlock the device when the user presents his/her biometric 
+characteristic and the TOE shall provide a mobile biometric verification 
+mechanism that satisfy SFRs defined in this cPP. This means that same 
+BAF shall be selected in **FIA_BVR_EXT.1.1**, and relevant criteria and 
+its error rate shall be specified in **FIA_BVR_EXT.1.2**. If multiple BAFs 
+are selected in *FIA_UAU.5.1*, **FIA_BVR_EXT.1** shall be iterated for each BAF. 
+Mobile device need to authenticate the user following the rule specified in 
+*FIA_UAU.5.2*. Mobile device needs to invoke the TOE as specified in *FIA_UAU.6.1(2)*.
+
+This cPP assumes that above requirements are satisfied by the TOE environment as defined in OE.Authentication.
+
+### 2.3	Handling the verification outcome
+Mobile device needs to take appropriate actions after receiving the 
+verification outcome from the TOE as defined in *FIA_AFL_EXT.1*. *FIA_AFL_EXT.1* 
+defines rules regarding how the authentication factors interact in terms of 
+unsuccessful authentication and actions mobile device needs to take when number 
+of unsuccessful authentication attempts surpass the pre-defined number. Mobile device 
+also needs to apply authentication throttling after failed biometric verification as 
+required by *FIA_TRT_EXT.1.1*.
+
+This cPP assumes that above requirements are satisfied by the TOE environment as defined in OE.Authentication and OE.TrialLimit.
+
+### 2.4	Protection of the TOE and its biometric data
+Mobile device needs to provide the secure execution environment (e.g. restricted 
+operational environment) so that TOE can work securely. This secure execution 
+environment guarantees code and data loaded inside to be protected with respect 
+to confidentiality and integrity. Security of this secure execution environment 
+needs to be evaluated based on \[MDFPP\]. Mobile device also needs to verify 
+the integrity of the TOE prior to its execution as required by *FPT_TST_EXT.2*, 
+and keep secret of any sensitive information regarding the biometric when mobile 
+device receives the verification outcome from the TOE as required by *FIA_UAU.7.1*.
+
+This cPP assumes that above requirements are satisfied by the TOE environment as defined in OE.Protection
+
+However, the TOE shall use this secure execution environment correctly to protect 
+biometric data except publicly accessible biometric data (e.g. face image) and 
+satisfy the following requirements.
+
+  * The TOE shall save all biometric data (e.g. samples, features and templates) inside the secure execution environment
+  * The TOE shall not transmit biometric data to the outside the secure execution environment.
+  * The TOE shall process biometric data in the secure execution environment to enroll and verify the user.
+
+The TOE shall also protect biometric data, especially the templates, residing outside the secure execution environment.
+
+  * The TOE shall store only the encrypted form of the templates on the file system.
+  * The TOE shall erase templates on the file system when they are no longer needed (e.g. when template is revoked)
+
+The above requirements are defined in **_FPTXXXX, FPTXXXX and FPTXXXX**_. 
+**FDP_PBA_EXT.1.1** to protect the main TOE security functions, i.e. mobile 
+biometric enrolment, mobile biometric verification and PAD as required by 
+**FIA_EBR.EXT.1**, **FIA_BVR_EXT.1** and **FIA_BVR_EXT.2** in this cPP.
+
+### 2.5	Management of the TOE configuration
+Mobile device needs to enable/disable the BAF as required by *FMT_SMF_EXT.1 (Management function 23)* 
+and revoke the BAF as *FMT_SMF_EXT.1 (Management Function 46)*. Any change 
+to the BAF (e.g. adding or revoking templates) requires re-authentication 
+via the Password Authentication Factor as required by *FIA_UAU.6.1(1)*. 
+
+This cPP assumes that above requirements are satisfied by the TOE environment as defined in OE.Management.
+
+
