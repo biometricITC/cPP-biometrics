@@ -1,23 +1,23 @@
-# collaborative Protection Profile for Biometric verification on the mobile device for unlocking the device
+# collaborative Protection Profile for Biometric verification on the mobile device - for unlocking the device -
 ## Version 0.2 26-FEB-2018
 
 ## Acknowledgements
 
-This collaborative Protection Profile (cPP) was developed by the Biometrics Security (BS) international Technical Community (iTC) with representatives from industry, Government agencies, Common Criteria TestLaboratories, and members of academia.
+This collaborative Protection Profile (cPP) was developed by the Biometrics Security (BS) international Technical Community (iTC) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
 
 ## 1. Preface
 
 1.1 Objective of Document
 ---------------------
-This document presents the Common Criteria (CC) collaborative ProtectionProfile (cPP) to express the security functional requirements (SFRs) and security assurance requirements (SARs) for a mobile biometric verification on the mobile device. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this cPP are described in \[SD\].
+This document presents the Common Criteria (CC) collaborative Protection Profile (cPP) to express the security functional requirements (SFRs) and security assurance requirements (SARs) for a mobile biometric verification on the mobile device. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this cPP are described in \[SD\].
 
 1.2 Scope of Document
 -----------------
-The scope of the cPP within the development and evaluation process is described in the Common Criteria for Information Technology Security Evaluation \[CC\]. In particular, a cPP defines the IT security requirements of a generic type of TOE and specifies the functional andassurance security measures to be offered by that TOE to meet stated requirements \[CC1, Section C.1\].
+The scope of the cPP within the development and evaluation process is described in the Common Criteria for Information Technology Security Evaluation \[CC\]. In particular, a cPP defines the IT security requirements of a generic type of TOE and specifies the functional and assurance security measures to be offered by that TOE to meet stated requirements \[CC1, Section C.1\].
 
 1.3 Intended Readership
 -------------------
-The target audiences of this cPP are developers, CC consumers, systemintegrators, evaluators and schemes.
+The target audiences of this cPP are developers, CC consumers, system integrators, evaluators and schemes.
 Although the cPP and SD may contain minor editorial errors, the cPP is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the BS iTC.
 
 1.4 Related Documents
@@ -30,17 +30,17 @@ Although the cPP and SD may contain minor editorial errors, the cPP is recognize
 
 \[CC3\] Common Criteria for Information Technology Security Evaluation, Part 3: Security assurance components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
 
-\[CEM\] Common Methodology for Information Technology SecurityEvaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
+\[CEM\] Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
 
 **Supporting document**
 
-\[SD\] Evaluation Activities for Biometric verification on the mobiledevices \[TBD\]
+\[SD\] Evaluation Activities for Biometric verification on the mobile devices \[TBD\]
 
 **Other document**
 
 \[Android CD\] Android 8.1 Compatibility Definition, December 2017
 
-\[ISO19795-1\] Biometric performance testing and reporting — Part 1:Principles and framework, First edition
+\[ISO19795-1\] Biometric performance testing and reporting — Part 1: Principles and framework, First edition
 
 \[ISO19989-1\] Criteria and methodology for security evaluation ofbiometric systems — Part 1: Framework
 
@@ -50,17 +50,17 @@ Although the cPP and SD may contain minor editorial errors, the cPP is recognize
 
 \[ISO21879\] Performance testing of biometrics on mobile devices, underdevelopment
 
-\[ISO30107-1\] Biometric presentation attack detection —Part 1:Framework, First edition
+\[ISO30107-1\] Biometric presentation attack detection — Part 1:Framework, First edition
 
-\[ISO30107-3\] Biometric presentation attack detection —Part 3: Testingand reporting, First edition
+\[ISO30107-3\] Biometric presentation attack detection — Part 3: Testing and reporting, First edition
 
 \[MDFPP\] Protection Profile for Mobile Device Fundamentals, Version:3.1, 2017-06-16
 
-\[NIST800-63B\] NIST Special Publication 800-63B, Digital IdentityGuidelines Authentication and Lifecycle Management, June 2017
+\[NIST800-63B\] NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
 1.5 Glossary
 --------
-For the purposes of this cPP, the following terms and definitions givenin \[ISO19795-1\] , \[ISO30107-1\] and \[MDFPP\] apply. If the sameterms and definitions are given in those references, terms and definitions that fit the context of this cPP take precedence. Some terms and definitions are also adjusted to match the context of the mobile biometric enrolment and verification.
+For the purposes of this cPP, the following terms and definitions givenin \[ISO19795-1\] , \[ISO30107-1\] and \[MDFPP\] apply. If the same terms and definitions are given in those references, terms and definitions that fit the context of this cPP take precedence. Some terms and definitions are also adjusted to match the context of the mobile biometric enrolment and verification.
 
 | Term	| Definition |
 |-------|----------------------------|
@@ -103,13 +103,13 @@ For the purposes of this cPP, the following terms and definitions givenin \[ISO1
 
 2.1 PP Reference Identification
 ---------------------------
-PP Reference: collaborative Protection Profile for Biometricverification on the mobile devices - for unlocking the device -
+PP Reference: collaborative Protection Profile for Biometric verification on the mobile devices - for unlocking the device -
 PP Version: 0.2
 PP Date: 26-FEB-2018
 
 2.2 TOE Overview
 ------------
-This is a collaborative Protection Profile (cPP) whose Target ofEvaluation (TOE) is integrated into a mobile device and enrolls and verifies the user using his/her biometric characteristics to unlock themobile device in the locked state. Each mobile biometric enrolment and verification process is described in the following paragraphs.
+This is a collaborative Protection Profile (cPP) whose Target ofEvaluation (TOE) is integrated into a mobile device and enrolls and verifies the user using his/her biometric characteristics to unlock the mobile device in the locked state. Each mobile biometric enrolment and verification process is described in the following paragraphs.
 
 a)  Mobile biometric enrolment
 
@@ -119,7 +119,7 @@ Only a user who knows the mobile device password can enroll or revoke his/her ow
 
 b)  Mobile biometric verification
 
-During the verification process, a user presents his/her own biometric characteristics to the TOE without presenting any user identity information for unlocking the mobile device. The TOE retrieves all enrolled templates and compares them with the features extracted from the captured samples of the user to measure the similarity between thetwo data and determines whether to accept or reject the user based onthe similarity, and indicates the decision to the mobile device.
+During the verification process, a user presents his/her own biometric characteristics to the TOE without presenting any user identity information for unlocking the mobile device. The TOE retrieves all enrolled templates and compares them with the features extracted from the captured samples of the user to measure the similarity between the two data and determines whether to accept or reject the user based on the similarity, and indicates the decision to the mobile device.
 
 Examples of biometric characteristic used by the TOE are: fingerprint, face, iris, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this cPP is limited to only those modalities for which \[SD\] defines the Evaluation Activities.
 
@@ -129,7 +129,7 @@ The TOE needs to consider the risk of subverting the TOE’s biometric verificat
 
 2.3 TOE Design
 ----------
-The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from \[ISO30107-1\], is a generic representation of a TOE (other configurations exist). This illustrates the different sub-functionalities on which the mobile biometric enrollment andverification processes rely on.
+The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from \[ISO30107-1\], is a generic representation of a TOE (other configurations exist). This illustrates the different sub-functionalities on which the mobile biometric enrollment and verification processes rely on.
 
 
 ![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/ESR.png)
@@ -168,14 +168,14 @@ The evaluation of the above security functions is out of scope of this cPP and e
 
 2.5 TOE Use Case
 ------------
-Mobile device itself may be operated in a number of use cases such as enterprise use with limited personal use or Bring Your Own Device(BYOD). The TOE on the device may also be operated in the same use cases however use cases of the TOE should be devised separately considering the purpose of biometric verification and potential attacks. Thefollowing use cases describe how and why biometric verification issupposed to be used. Each use case has its own assurance level depending on its criticality and separate cPP should be developed for each usecase.
+Mobile device itself may be operated in a number of use cases such as enterprise use with limited personal use or Bring Your Own Device(BYOD). The TOE on the device may also be operated in the same use cases however use cases of the TOE should be devised separately considering the purpose of biometric verification and potential attacks. The following use cases describe how and why biometric verification is supposed to be used. Each use case has its own assurance level depending on its criticality and separate cPP should be developed for each usecase.
    
 This cPP only assumes USE CASE 1 described below. USE CASE 2 is out ofscope of this cPP.
  
 ### 2.5.1 USE CASE 1: Mobile biometric verification for unlocking the mobile device
 For enhanced security that is easy to use, mobile device may implement biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time) and after that the user is able to use an own biometric characteristic to unlock access to the device. In this use case, mobile device is not supposed to be used for security sensitive services through the mobile biometric verification.
 
-Main concern of this use case is the accuracy of biometric verification (i.e. FAR and FRR) and basic level of presentation attacks. Security assurance for mobile device that the TOE relies on should be handled by\[MDFPP\].
+Main concern of this use case is the accuracy of biometric verification (i.e. FAR and FRR) and basic level of presentation attacks. Security assurance for mobile device that the TOE relies on should be handled by \[MDFPP\].
 
 This use case assumes that the mobile device is configured correctly to enable the mobile biometric verification by the biometric system administrator.The users can act as the biometric system administrator in this use case.
 
