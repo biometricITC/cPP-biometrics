@@ -1,4 +1,4 @@
-# collaborative Protection Profile for Biometric verification on the mobile device - for unlocking the device -
+# collaborative Protection Profile for Mobile biometric enrolment and verification - for unlocking the device -
 ## Version 0.2 26-FEB-2018
 
 ## Acknowledgements
@@ -9,7 +9,7 @@ This collaborative Protection Profile (cPP) was developed by the Biometrics Secu
 
 1.1 Objective of Document
 ---------------------
-This document presents the Common Criteria (CC) collaborative Protection Profile (cPP) to express the security functional requirements (SFRs) and security assurance requirements (SARs) for a mobile biometric verification on the mobile device. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this cPP are described in \[SD\].
+This document presents the Common Criteria (CC) collaborative Protection Profile (cPP) to express the security functional requirements (SFRs) and security assurance requirements (SARs) for a mobile biometric enrolment and verification on the mobile device. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this cPP are described in \[SD\].
 
 1.2 Scope of Document
 -----------------
@@ -34,7 +34,7 @@ Although the cPP and SD may contain minor editorial errors, the cPP is recognize
 
 **Supporting document**
 
-\[SD\] Evaluation Activities for Biometric verification on the mobile devices \[TBD\]
+\[SD\] Evaluation Activities for Mobile biometric enrolment and verification – for unlocking the device – cPP \[TBD\]
 
 **Other document**
 
@@ -42,11 +42,11 @@ Although the cPP and SD may contain minor editorial errors, the cPP is recognize
 
 \[ISO19795-1\] Biometric performance testing and reporting — Part 1: Principles and framework, First edition
 
-\[ISO19989-1\] Criteria and methodology for security evaluation ofbiometric systems — Part 1: Framework
+\[ISO19989-1\] Criteria and methodology for security evaluation ofbiometric systems — Part 1: Framework, under development
 
-\[ISO19989-2\] Criteria and methodology for security evaluation ofbiometric systems — Part 2: Biometric recognition performance
+\[ISO19989-2\] Criteria and methodology for security evaluation ofbiometric systems — Part 2: Biometric recognition performance, under development
 
-\[ISO19989-3\] Criteria and methodology for security evaluation ofbiometric systems — Part 3: Presentation attack detection
+\[ISO19989-3\] Criteria and methodology for security evaluation ofbiometric systems — Part 3: Presentation attack detection, under development
 
 \[ISO21879\] Performance testing of biometrics on mobile devices, underdevelopment
 
@@ -64,13 +64,10 @@ For the purposes of this cPP, the following terms and definitions givenin \[ISO1
 
 | Term	| Definition |
 |-------|----------------------------|
-|**Adaptive (template)** |Authentication templates that evolve with each sample that is verified and introduced into the biometrics database. |
 |**Attempt** |Submission of one (or a sequence of) biometric samples to the part of the TOE. |
-|**Authentication Template** |Updated enrolment templates using verified samples for adapting changes of the users’ biometric characteristic caused by, for example, aging. |
 |**Biometric Authentication Factor (BAF)** |Authentication factor used for mobile biometric verification. In this cPP, the term is a synonym of the “template”. |
 |**Biometric Data** |Digital data created during a biometric process. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected during an biometric enrollment and verification process, but does not apply to end user information such as user name, password (unless tied to the biometric modality), demographic information, and authorizations. |
 |**Biometric System Administrator** |Person who is responsible for configuring the TOE. This cPP assumes that the user acts as the biometric system administrator. |
-|**Enrollment Template** |Templates generated during the enrollment process and utilized in various ways in order to generate an authentication template. |
 |**Failure-To-Enrol Rate (FTE)** |Proportion of the population for whom the system fails to complete the enrolment process. |
 |**False Accept Rate (FAR)** |Proportion of verification transactions with wrongful claims of identity that are incorrectly confirmed. |
 |**False Match Rate (FMR)** |Proportion of zero-effort impostor attempt samples falsely declared to match the compared non-self template. |
@@ -87,7 +84,7 @@ For the purposes of this cPP, the following terms and definitions givenin \[ISO1
 |**Presentation Attack Instrument (PAI)** |Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying supporting document specifies PAIs that the evaluator should consider for the CC evaluation. |
 |**(Biometric) Sample** |User’s biometric measures as output by the part of the TOE. |
 |**Similarity score** |Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model. |
-|**Template** |User’s stored reference measure based on features extracted from enrolment samples. There are two types of template (enrolment template and authentication template) defined in this cPP. |
+|**Template** |User’s stored reference measure based on features extracted from enrolment samples. |
 |**Transaction** |Sequence of attempts on the part of a user for the purposes of an enrolment and verification. |
 |**Zero-effort Impostor Attempt** |Attempt in which an individual submits his/her own biometric characteristics as if he/she were attempting successful verification against his/her own template, but the comparison is made against the template of another user. |
 
@@ -103,7 +100,7 @@ For the purposes of this cPP, the following terms and definitions givenin \[ISO1
 
 2.1 PP Reference Identification
 ---------------------------
-PP Reference: collaborative Protection Profile for Biometric verification on the mobile devices - for unlocking the device -
+PP Reference: collaborative Protection Profile for Mobile biometric enrolment and verification – for unlocking the device –
 PP Version: 0.2
 PP Date: 26-FEB-2018
 
@@ -113,7 +110,7 @@ This is a collaborative Protection Profile (cPP) whose Target ofEvaluation (TOE)
 
 a)  Mobile biometric enrolment
 
-During the enrolment process, the TOE captures samples from the biometric characteristics of a user presented to the TOE and extracts the features from the samples. The features are then stored as an enrolment template in the TOE. If the TOE supports the use of adaptive templates, the enrolment template may be updated later using verified (i.e. successfully authenticated) samples for adapting changes of the user’s biometric characteristic caused by, for example, aging.
+During the enrolment process, the TOE captures samples from the biometric characteristics of a user presented to the TOE and extracts the features from the samples. The features are then stored as a template in the TOE.
 
 Only a user who knows the mobile device password can enroll or revoke his/her own templates. Multiple templates may be enrolled.
 
