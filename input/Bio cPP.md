@@ -701,7 +701,9 @@ Application note 21:
 This requirement is only applicable to mobile biometric verification.
 PAD for mobile biometric enrolment is an optional requirement.
 
-Application note 22: Artificial PAIs that the TOE shall prevent and
+Application note 22: 
+
+Artificial PAIs that the TOE shall prevent and
 relevant criteria for its security relevant error rates for each type of
 PAI is defined in \[SD\].
 
