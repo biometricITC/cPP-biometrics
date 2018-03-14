@@ -13,7 +13,8 @@ https://github.com/nils-tekampe/cPP-biometrics/tree/master/output (a word versio
 https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/MobileUseCaseV2.md
 
 ## Current draft of cPP for use case 1 and supporting documents
-Draft version (format to be improved) https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/Usecase1cPP20171213 or available upon request in pdf or doc file.
+Draft version v.03 March 2018 https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/Bio%20cPP.md or available upon request in pdf or doc file. 
+(older version v0.1 https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/Usecase1cPP20171213 )
 
 ===============================================
 
