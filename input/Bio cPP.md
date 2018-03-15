@@ -75,7 +75,7 @@ updates and revisions. Please report any issues to the BS iTC.
 
 \[NIST800-63B\] NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
-1.5 [Glossary](#glossary)
+1.5 Glossary
 --------
 For the purposes of this cPP, the following terms and definitions given
 in \[ISO19795-1\] , \[ISO30107-1\] and \[MDFPP\] apply. If the same
@@ -105,6 +105,7 @@ biometric enrolment and verification.
 |**Presentation Attack Detection (PAD)** |Automated determination of a presentation attack. |
 |**Presentation Attack Instrument (PAI)** |Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying supporting document specifies PAIs that the evaluator should consider for the CC evaluation. |
 |**(Biometric) Sample** |User’s biometric measures as output by the part of the TOE. |
+|**Secure Execution Environment** |An operating environment separate from the main Mobile Device operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 |**Similarity score** |Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model. |
 |**Template** |User’s stored reference measure based on features extracted from enrolment samples. |
 |**Transaction** |Sequence of attempts on the part of a user for the purposes of an enrolment and verification. |
@@ -603,7 +604,7 @@ authenticated user.
 Application note 15:
 
 User shall be authenticated by the mobile device using the Password
-Authentication Factor first to be enrolled.
+Authentication Factor before beginning biometric enrolment.
 
 ### 6.2.2 Quality of biometric samples for mobile biometric enrolment (FIA\_MBE\_EXT.2)
 
@@ -649,7 +650,7 @@ a)  Required minimum values defined in the standards
 For example, \[NIST800-63B\] requires that FMR shall be 1 in 1000 or
 lower. \[ISO21879\] is proposing that FAR would be 1 in 10000 or lower
 that is equal to a conventional four-digit PIN-Code for secure
-transaction. According to \[Android CD\], finger print verification
+transaction. According to \[Android CD\], fingerprint verification
 shall have the FAR lower than 0.002% and recommended to have the FRR
 lower than 10%. The cPP doesn’t provide any recommendation for those
 error rates however, ST author should set appropriate error rates
@@ -714,7 +715,8 @@ PAI is defined in \[SD\].
 #### FPT\_BDP.EXT.1 Biometric data processing 
 
 **FPT\_BDP\_EXT.1.1** The TSF shall process any plaintext biometric
-except publicly accessible biometric data within the security boundary
+data used to generate templates and perform sample matching except 
+publicly accessible biometric data within the security boundary
 of the secure execution environment.
 
 Application note 23:
@@ -778,7 +780,7 @@ requirement.
 
 **FPT\_PBT\_EXT.1.1** The TSF shall protect the template
 \[**selection**: *using a PIN as an additional factor, using a password
-as an additional*l factor, \[**assignment**: *other circumstances*\] \].
+as an additional* factor, \[**assignment**: *other circumstances*\] \].
 
 Application note 29:
 
