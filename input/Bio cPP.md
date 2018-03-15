@@ -75,7 +75,7 @@ updates and revisions. Please report any issues to the BS iTC.
 
 \[NIST800-63B\] NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
-1.5 Glossary
+1.5 [Glossary](#glossary)
 --------
 For the purposes of this cPP, the following terms and definitions given
 in \[ISO19795-1\] , \[ISO30107-1\] and \[MDFPP\] apply. If the same
