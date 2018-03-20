@@ -623,7 +623,7 @@ if the TOE follow such standard.
 verification mechanism using \[**selection:** *fingerprint, iris, face,
 voice, vein*, \[**assignment:** *other modality* \] \].
 
-**FIA\_BVR\_EXT.1.2** The TSF shall provide a mobile biometric
+**FIA\_MBV\_EXT.1.2** The TSF shall provide a mobile biometric
 verification mechanism with the \[**selection:** *FMR, FAR* \] not exceeding
 \[**assignment:** *defined value* \] and \[**selection:** *FNMR, FRR* \] not exceeding
 \[**assignment:** *defined value* \].
