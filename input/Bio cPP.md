@@ -17,7 +17,7 @@ Profile (cPP) to express the security functional requirements (SFRs) and
 security assurance requirements (SARs) for a mobile biometric enrolment
 and verification on the mobile device. The Evaluation activities that
 specify the actions the evaluator performs to determine if a product
-satisfies the SFRs captured within this cPP are described in \[SD\].
+satisfies the SFRs captured within this cPP, are described in \[SD\].
 
 1.2 Scope of Document
 -----------------
@@ -59,15 +59,15 @@ updates and revisions. Please report any issues to the BS iTC.
 
 \[ISO19795-1\] Biometric performance testing and reporting — Part 1: Principles and framework, First edition
 
-\[ISO19989-1\] Criteria and methodology for security evaluation ofbiometric systems — Part 1: Framework, under development
+\[ISO19989-1\] Criteria and methodology for security evaluation of biometric systems — Part 1: Framework, under development
 
-\[ISO19989-2\] Criteria and methodology for security evaluation ofbiometric systems — Part 2: Biometric recognition performance, under development
+\[ISO19989-2\] Criteria and methodology for security evaluation of biometric systems — Part 2: Biometric recognition performance, under development
 
-\[ISO19989-3\] Criteria and methodology for security evaluation ofbiometric systems — Part 3: Presentation attack detection, under development
+\[ISO19989-3\] Criteria and methodology for security evaluation of biometric systems — Part 3: Presentation attack detection, under development
 
 \[ISO21879\] Performance testing of biometrics on mobile devices, underdevelopment
 
-\[ISO30107-1\] Biometric presentation attack detection — Part 1:Framework, First edition
+\[ISO30107-1\] Biometric presentation attack detection — Part 1: Framework, First edition
 
 \[ISO30107-3\] Biometric presentation attack detection — Part 3: Testing and reporting, First edition
 
@@ -77,7 +77,7 @@ updates and revisions. Please report any issues to the BS iTC.
 
 1.5 Glossary
 --------
-For the purposes of this cPP, the following terms and definitions given
+For the purpose of this cPP, the following terms and definitions given
 in \[ISO19795-1\] , \[ISO30107-1\] and \[MDFPP\] apply. If the same
 terms and definitions are given in those references, terms and
 definitions that fit the context of this cPP take precedence. Some terms
@@ -96,7 +96,7 @@ biometric enrolment and verification.
 |**False Non-match Rate (FNMR)** |Proportion of genuine attempt samples falsely declared not to match the template of the same characteristic from the same user supplying the sample. |
 |**False Reject Rate (FRR)** |Proportion of verification transactions with truthful claims of identity that are incorrectly denied. |
 |**Features** |Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates. |
-|**Locked State** |Powered on but most functionality is unavailable for use. User authentication is required to access functionality. |
+|**Locked State** |Powered on Mobile Device, with most functionalities unavailable for use. User authentication is required to access full functionality. |
 |**Mobile Device (MD)** |A device which is composed of a hardware platform and its system software. The device typically provides wireless connectivity and may include software for functions like secure messaging, email, web, VPN connection, and VoIP (Voice over IP), for access to the protected enterprise network, enterprise data and applications, and for communicating to other Mobile Devices. |
 |**Mobile Device User (User)** |The individual authorized to physically control and operate the Mobile Device. This cPP assumes that the user is the device owner. |
 |**(Biometric) Modality**	|A type or class of biometric system, such as fingerprint recognition, facial recognition, iris recognition, voice recognition, signature/sign, and others. |
@@ -201,14 +201,14 @@ As illustrated in the above figure, the TOE is capable of;
 -   Detecting the presentation attacks using artificial PAI
     (Presentation Attack Detection Subsystem)
 
--   Deciding how well features and any template match and indicating
+-   Deciding how well features and any template match, and indicating
     whether or not a verification of the user has been achieved
     (Decision Subsystem)
 
 2.4 Relation between TOE and mobile device
 --------------------------------------
 The TOE is reliant on the mobile device itself to provide overall
-security of the system. This cPP is intended to be used with \[MDFPP\]
+security of the system. This cPP is intended to be used with \[MDFPP\],
 and \[MDFPP\] is responsible for evaluating the following security
 functions:
 
@@ -224,18 +224,18 @@ functions:
 
 The evaluation of the above security functions is out of scope of this
 cPP and expected to be performed separately based on the \[MDFPP\].
-Relation between the cPP and \[MDFPP\] is explained in detail in Annex
+Relation between this cPP and \[MDFPP\] is explained in detail in Annex
 A.
 
 2.5 TOE Use Case
 ------------
 Mobile device itself may be operated in a number of use cases such as
 enterprise use with limited personal use or Bring Your Own Device
-(BYOD). The TOE on the device may also be operated in the same use cases
-however use cases of the TOE should be devised separately considering
+(BYOD). The TOE on the device may also be operated in the same use cases,
+however, use cases of the TOE should be devised separately considering
 the purpose of mobile biometric verification and potential attacks. The
 following use cases describe how and why mobile biometric verification
-is supposed to be used. Each use case has its own assurance level
+is supposed to be used. Each use case has its own assurance level,
 depending on its criticality and separate cPP should be developed for
 each use case.
    
@@ -246,7 +246,7 @@ scope of this cPP.
 For enhanced security that is easy to use, mobile device may implement
 mobile biometric verification on a device once it has been “unlocked”.
 The initial unlock is generally done by a PIN/password which is required
-at startup (or possibly after some period of time) and after that the
+at startup (or possibly after some period of time), and after that the
 user is able to use an own biometric characteristic to unlock access to
 the mobile device. In this use case, the mobile device is not supposed
 to be used for security sensitive services through the mobile biometric
@@ -262,9 +262,9 @@ enable the mobile biometric verification by the biometric system
 administrator. The user of the mobile device can act as the biometric
 system administrator in this use case.
 
-It is also assumed that the user enrolls his/herself correctly following
+It is also assumed that the user enrolls his/herself correctly, following
 the guidance provided by the TOE. Attacks during enrolment may be out of
-scope but optionally addressed. FTE is not security relevant criterion
+scope, but optionally addressed. FTE is not a security relevant criterion
 for this use case.
 
 ### 2.5.2 USE CASE 2: Mobile biometric verification for security sensitive service
@@ -283,9 +283,9 @@ FAR and FRR) and higher level of presentation attack.
 ## 3. CC Conformance
 As defined by the references \[CC1\], \[CC2\] and \[CC3\], this cPP:
 
--   conforms to the requirements of Common Criteria v3.1, Revision 5
+-   conforms to the requirements of Common Criteria v3.1, Revision 5,
 
--   is Part 2 extended, Part 3 conformant
+-   is Part 2 extended, Part 3 conformant,
 
 -   does not claim conformance to any other PP.
 
@@ -412,8 +412,8 @@ to meet the relevant error rates for mobile biometric verification.
 SFR Rationale:
 
 Requirements to provide a mobile biometric enrolment mechanism is
-defined in FIA\_MBE.EXT.1. Requirement for quality of template is
-defined in FIA\_MBE.EXT.2.
+defined in FIA\_MBE\_EXT.1. Requirement for quality of template is
+defined in FIA\_MBE\_EXT.2.
 
 Application note 2:
 
@@ -465,7 +465,7 @@ Requirements to control access to the template is defined in
 FPT\_PBT\_EXT.1. FPT\_BDP\_EXT.1, FPT\_BDP\_EXT.2 and FPT\_BDP\_EXT.3
 requires the TOE to protect the biometric data with support from the TOE
 environment. Optional requirements to protect the residual biometric
-data is defined as FDP\_RIP.1.
+data is defined as FDP\_RIP.1 in chapter 9.
 
 Application note 6:
 
@@ -551,7 +551,7 @@ organizational security policies map to the security objectives.
 
 | Threat, Assumption, or OSP	| Security Objectives	| Rationale |
 |-------|---------------|-------------|
-|T.Casual\_Attack OSP.Verification\_Error | O.BIO\_Verification | The threat T.Casual\_Attack is countered by O.BIO\_Verification as this provides the capability of mobile biometric verification not to allow the user who have not been enrolled to impersonate as a legitimate user. <br> The OSP OSP.Verification\_Error is enforced by O.BIO\_Verificaiton as this requires the TOE to meet relevant criteria for security relevant error rates for mobile biometric verification. |
+|T.Casual\_Attack OSP.Verification\_Error | O.BIO\_Verification | The threat T.Casual\_Attack is countered by O.BIO\_Verification as this provides the capability of mobile biometric verification not to allow the user who have not been enrolled to impersonate as a legitimate user. <br> The OSP OSP.Verification\_Error is enforced by O.BIO\_Verification as this requires the TOE to meet relevant criteria for security relevant error rates for mobile biometric verification. |
 |OSP.Enrol | O.Enrol | The OSP OSP.Enrol is enforced by O.Enrol as this require the TOE to implement the functionality to enroll a user for mobile biometric verification and create sufficient quality of templates. |
 |T.Presentation\_Attack 	OSP.PAD\_Error | O.Presentation\_Attack\_Detection | The threat T.Presentation\_Attack is countered by O.Presentation\_Attack\_Detection as this provides the capability of mobile biometric verification to prevent attacks with PAI. <br> The OSP OSP.PAD\_Error is enforced by O.Presentation\_Attack\_Detection as this requires the TOE to meet relevant criteria for security relevant error rates for PAD. |
 |OSP.Protection | O.Protection  OE.Protection | The OSP OSP.Protection is enforced by O.Protection and its operational environment objective OE.Protection. |
@@ -574,7 +574,7 @@ sections below.
 The following conventions are used for the completion of operations:
 
 -   \[*Italicized text within square brackets*\] indicates an operation
-    to be completed by the ST author
+    to be completed by the ST author.
 
 -   [Underlined text] indicates additional text provided as a
     refinement.
@@ -595,7 +595,7 @@ SFR name.
 ---------------------------------------
 ### 6.2.1 Mobile biometric enrolment (FIA\_MBE\_EXT.1)
 
-### FIA\_MBE.EXT.1 Mobile biometric enrolment 
+### FIA\_MBE\_EXT.1 Mobile biometric enrolment 
 
 **FIA\_MBE\_EXT.1.1** The TSF shall provide a mechanism to enroll an
 authenticated user.
@@ -607,7 +607,7 @@ Authentication Factor first to be enrolled.
 
 ### 6.2.2 Quality of biometric samples for mobile biometric enrolment (FIA\_MBE\_EXT.2)
 
-### FIA\_MBE.EXT.2 Quality of biometric samples for mobile biometric enrolment 
+### FIA\_MBE\_EXT.2 Quality of biometric samples for mobile biometric enrolment 
 
 **FIA\_MBE\_EXT.2.1** The TSF shall only use samples of sufficient
 quality to create the templates.
@@ -618,6 +618,8 @@ ST author may refine “sufficient quality” to specify quality standards
 if the TOE follow such standard.
 
 ### 6.2.3 Mobile biometric verification (FIA\_MBV\_EXT.1)
+
+### FIA\_MBV\_EXT.1 Mobile biometric verification
 
 **FIA\_MBV\_EXT.1.1** The TSF shall provide a mobile biometric
 verification mechanism using \[**selection:** *fingerprint, iris, face,
@@ -687,7 +689,7 @@ quality to verify the user.
 Application note 20:
 
 ST author may refine “sufficient quality” to specify quality standards
-if the TOE follow such standard.
+if the TOE follows such standard.
 
 ### 6.2.5 Presentation attack detection for mobile biometric verification (FIA\_MBV\_EXT.3)
 
@@ -711,7 +713,7 @@ PAI is defined in \[SD\].
 ---------------------------
 ### 6.3.1 Biometric data processing (FPT\_BDP\_EXT.1)
 
-#### FPT\_BDP.EXT.1 Biometric data processing 
+#### FPT\_BDP\_EXT.1 Biometric data processing 
 
 **FPT\_BDP\_EXT.1.1** The TSF shall process any plaintext biometric
 except publicly accessible biometric data within the security boundary
@@ -732,7 +734,7 @@ requirement.
 
 ### 6.3.2 No Biometric data transmission (FPT\_BDP\_EXT.2)
 
-#### FPT\_BDP.EXT.2 No Biometric data transmission 
+#### FPT\_BDP\_EXT.2 No Biometric data transmission 
 
 **FPT\_BDP\_EXT.2.1** The TSF shall not transmit any plaintext biometric
 data except publicly accessible biometric data outside the security
@@ -753,7 +755,7 @@ requirement.
 
 ### 6.3.3 Biometric data storage (FPT\_BDP\_EXT.3)
 
-#### FPT\_BDP.EXT.3 Biometric data storage 
+#### FPT\_BDP\_EXT.3 Biometric data storage 
 
 **FPT\_BDP\_EXT.3.1** The TSF shall not store any plaintext biometric
 data except publicly accessible biometric data outside the secure
@@ -870,8 +872,8 @@ document. Guidance to users can be included in the mobile device
 guidance document or can be spread among other document or web pages.
 
 This cPP defines the assumptions for the mobile device. These
-assumptions deem satisfied if the mobile device is successfully
-evaluated based on \[MDFPP\] and the operational guidance doesn’t to
+assumptions are implicitly satisfied if the mobile device is successfully
+evaluated based on \[MDFPP\] and the operational guidance doesn’t
 need to describe the security measures to be followed in order to fulfil
 the security objectives for the operational environment derived from
 those assumptions.
@@ -894,7 +896,7 @@ evaluation and no additional documentation is necessary.
 7.4 ALC: Life-cycle Support
 ---------------------------
 
-At the assurance level provided for TOEs conformant to this cPP,
+At the assurance level provided for a TOE conformant to this cPP,
 life-cycle support is limited to end-user-visible aspects of the
 life-cycle, rather than an examination of the TOE vendor’s development
 and configuration management process. This is not meant to diminish the
@@ -905,7 +907,7 @@ information to be made available for evaluation at this assurance level.
 ### 7.4.1 Labelling of the TOE (ALC_CMC.1)
 This component is targeted at identifying the TOE such that it can be
 distinguished from other products or versions from the same vendor and
-can be easily specified when being procured by an end user. The
+can be easily identified when being procured by an end user. The
 evaluator performs the CEM work units associated with ALC\_CMC.1.
 
 The TOE is tightly integrated into the mobile device. \[SD\] describes
@@ -925,7 +927,7 @@ Testing is specified for functional aspects of the system as well as
 aspects that take advantage of design or implementation weaknesses. The
 former is done through the ATE\_IND family, while the latter is through
 the AVA\_VAN family. For this cPP, testing is based on advertised
-functionality and interfaces with dependency on the availability of
+functionalities and interfaces with dependency on the availability of
 design information. One of the primary outputs of the evaluation process
 is the test report as specified in the following requirements.
 
@@ -966,7 +968,7 @@ included in the ST, but are not mandatory for a TOE to claim conformance
 to this cPP. 
 
 
-**_Currently these is no selection based SFR. I will add if needed_**
+**_Currently there is no selection based SFR. I will add if needed_**
 
 ## 9. Optional Requirements
 
@@ -1032,7 +1034,7 @@ The TOE in this cPP is comprised of biometric
 capture sensors and firmware/software that provide functions described
 in Section 2.3 (TOE design). The TOE is invoked by the mobile device
 (i.e. TOE environment) when user’s biometric characteristics is
-presented to the sensor, creates and stores the template or compares the
+presented to the sensor. The TOE creates and stores the template or compares the
 features with the stored template and returns the verification outcome
 to the mobile device.
 
@@ -1042,7 +1044,7 @@ section explains which SFRs in the \[MDFPP\] are directly relevant to
 the TOE security functionality.
 
 ## 2.	Relevant SFRs in the \[MDFPP\]
-Relation between SFRs defined in this cPP and \[MDFPP\] is described
+Relation between SFRs defined in this cPP and in the \[MDFPP\] is described
 below. **Bold SFRs** are those defined in this cPP and *italicized SFRs*
 are those defined in \[MDFPP\]
 
@@ -1058,17 +1060,17 @@ device as defined in OE.Alternative.
 ### 2.2	Invocation of the TOE
 For any modality selected in *FIA\_UAU.5.1*, mobile device shall invoke
 the TOE to unlock the device under the condition specified in
-*FIA\_UAU.6.1(2)*. Mobile device also shall authenticate the user
+*FIA\_UAU.6.1(2)*. Mobile device shall also authenticate the user
 following the rule specified in *FIA\_UAU.5.2*.
 
 This cPP assumes that above requirements are satisfied by the mobile
 device as defined in OE.Authentication.
 
 The TOE shall implement a mobile biometric verification mechanism that
-satisfy SFRs defined in this cPP. This means that same modality shall be
+satisfies SFRs defined in this cPP. This means that same modality shall be
 selected in **FIA\_MBV\_EXT.1.1**, and
 relevant criteria and its error rate shall be specified in
-**FIA\_MBV\_EXT.1.2.** If multiple modalities are selected in
+**FIA\_MBV\_EXT.1.2.**. If multiple modalities are selected in
 *FIA\_UAU.5.1*, **FIA\_MBV\_EXT.1** shall be iterated for each modality.
 The TOE shall also enroll all modalities selected as specified in
 **FIA\_MBE.EXT.1.**
@@ -1083,7 +1085,7 @@ authentication factors interact in terms of unsuccessful authentication
 and actions mobile device shall take when number of unsuccessful
 authentication attempts surpass the pre-defined number. Mobile device
 also shall apply authentication throttling after failed biometric
-verification as required by *FIA\_TRT\_EXT.1.1*.
+verification, as required by *FIA\_TRT\_EXT.1.1*.
 
 This cPP assumes that above requirements are satisfied by the mobile
 device as defined in OE.Authentication.
@@ -1096,43 +1098,42 @@ and data loaded inside to be protected with respect to confidentiality
 and integrity. This secure execution environment is out of scope of the
 TOE and shall be provided by the mobile device and evaluated based on
 \[MDFPP\]. However, ST author shall explain how such secure execution
-environment is provided by the mobile device for the TOE as required by
-\[SD\]. Mobile device also shall keep secret of any sensitive
+environment is provided by the mobile device for the TOE, as required by
+\[SD\]. Mobile device shall also keep secret any sensitive
 information regarding the biometric when mobile device receives the
-verification outcome from the TOE as required by *FIA\_UAU.7.1* and
+verification outcome from the TOE, as required by *FIA\_UAU.7.1*, and
 provide cryptographic support to encrypt or decrypt biometric data as
 required by *FCS* class.
 
 This cPP assumes that above requirements are satisfied by the mobile
 device as defined in OE.Protection.
 
-
 However, the TOE shall use this secure
 execution environment correctly to protect biometric data except
 publicly accessible biometric data (e.g. face image) and satisfy the
-following requirements.
+following requirements:
 
   * The TOE shall process any plaintext
     biometric data (e.g. capturing biometric characteristic, creating
     samples, features and templates) for mobile biometric enrolment and
     verification within the boundary of the secure execution
     environment. This implies that:
-    * Any part of the TOE that process plaintext biometric data shall
+    * Any part of the TOE that processes plaintext biometric data shall
         be within the boundary of the secure execution environment. For
         example, the biometric capture sensor shall be configured to be
-        within the boundary of the secure execution environment so that
+        within the boundary of the secure execution environment, so that
         only the secure execution environment can access to the sensor
         and the data captured. Any software modules that process
         plaintext biometric data shall run within the boundary of the
         secure execution environment.
     * Plaintext biometric data shall never be accessible from outside
-        the secure execution environment and any entities outside the
+        the secure execution environment, and any entities outside the
         secure execution environment can only access the result of
         process of biometric data (e.g. success or failure of mobile
         biometric verification) through the interface provided by the
         TOE.
-  * The TOE shall not transmit any plaintext biometric data to the
-    outside the secure execution environment.
+  * The TOE shall not transmit any plaintext biometric data outside
+    of the secure execution environment.
        
 If the TOE stores the part of biometric data outside the secure
 execution environment, the TOE shall protect such data so that any
@@ -1140,7 +1141,7 @@ entities running outside the secure execution environment can’t get
 access to any plaintext biometric data. ST author shall explain what
 biometric data resides outside the secure execution environment as
 required by \[SD\] and if no data resides outside the environment,
-requirements below deems satisfied.
+requirements below is implicitly satisfied.
 
   * The TOE shall not store any plaintext biometric data outside the
     secure execution environment. As described in Section 2.3 (TOE
@@ -1154,20 +1155,20 @@ requirements below deems satisfied.
     when it is revoked. This is an optional requirement.
     
 The TOE shall also protect templates so that only the user of the mobile
-device can access to the templates. This means that the TOE shall allow
-only authenticated user by the Password Authentication Factor to access
+device can access them. This means that the TOE shall only allow
+ authenticated user by the Password Authentication Factor to access
 (e.g. add or revoke) the template.
 
   * The TOE shall control access to, including adding or revoking, the
-    templates
+    templates.
     
 The above requirements are defined as **FPT\_PBT\_EXT.1**,
-**FPT\_BDP.EXT.1**, **FPT\_BDP.EXT.2** and **FPT\_PBT\_EXT.3** in chapter 6
+**FPT\_BDP\_EXT.1**, **FPT\_BDP\_EXT.2** and **FPT\_PBT\_EXT.3** in chapter 6
 and **FDP\_RIP.1** in chapter 9 in this cPP.
 
 ### 2.5	Management of the TOE configuration
 Mobile device shall enable/disable the BAF as
-required by *FMT\_SMF\_EXT.1 (Management function 23)* and revoke the
+required by *FMT\_SMF\_EXT.1 (Management function 23)*, and revoke the
 BAF as *FMT\_SMF\_EXT.1 (Management Function 46)*. Any change to the BAF
 (e.g. adding or revoking templates) requires re-authentication via the
 Password Authentication Factor as required by *FIA\_UAU.6.1(1)*.
