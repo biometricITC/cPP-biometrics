@@ -715,7 +715,7 @@ PAI is defined in \[SD\].
 
 #### FPT\_BDP\_EXT.1 Biometric data processing 
 
-**FPT\_BDP\_EXT.1.1** The TSF shall process any plaintext biometric
+**FPT\_BDP\_EXT.1.1** The TSF shall process any plaintext biometric data
 except publicly accessible biometric data within the security boundary
 of the secure execution environment.
 
