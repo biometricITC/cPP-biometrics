@@ -221,6 +221,11 @@ The evaluator uses these criteria to determine whether the EA has
 demonstrated that the TOE has met the relevant requirement or that it
 has failed to meet the relevant requirement.
 
+7. Requirements for reporting　　
+
+Specific reporting requirements that support transparency and 
+reproducibility of the pass/fail judgement are defined here.
+
 FIA: Identification and Authentication
 --------------------------------------
 
@@ -354,7 +359,7 @@ the TOE during the enrolment attempt.
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
-1)  Enrolment templates
+**Enrolment templates**
 
 The evaluator shall refer the TSS to understand how the TOE generate
 sufficient quality of enrolment templates. The evaluator shall also
@@ -383,9 +388,8 @@ d)  quality standard that the TOE uses to perform the assessment if the
 e)  additional assessment criteria to applied to creation of enrolment
     templates
 
-<!-- -->
 
-1)  Authentication templates
+**Authentication templates**
 
 If the TOE creates authentication templates, the evaluator shall refer
 the TSS to understand how the TOE generate sufficient quality of
@@ -404,7 +408,7 @@ and AGD\_OPE.1-5.
 
 \[Strategy for ATE \_IND\]
 
-1)  Enrolment templates
+**Enrolment templates**
 
 The evaluator shall perform the following test to verify that the TOE
 generates enrolment templates of sufficient quality. If the TOE supports
@@ -424,7 +428,7 @@ scores and quality threshold) to confirm that the TOE doesn’t create
 enrolment templates that don’t meet the assessment criteria specified in
 the “assessment criteria for templates”.
 
-1)  Authentication templates
+**Authentication templates**
 
 The evaluator shall perform the following test to verify that the TOE
 generates authentication templates of sufficient quality only if the
