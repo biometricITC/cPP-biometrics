@@ -1,3 +1,5 @@
+# This document was uploaded only for reference and is being extensivily updated. Please don't make comments on this document until the revision is finished. Revision is supposed to be finished by 6th April
+
 # Supporting Document Mandatory Technical Document
 
 # Evaluation Activities for collaborative Protection Profile for Mobile biometric enrolment and verification - for unlocking the device - cPP
@@ -160,7 +162,8 @@ For definitions of standard CC terminology see \[CC\] part 1.
 
 **TBD**
                                                                                                                                
-                                                              
+# This document was uploaded only for reference and is being extensivily updated. Please don't make comments on this document until the revision is finished. Revision is supposed to be finished by 6th April
+
 Evaluation Activities for SFRs
 ==============================
 
