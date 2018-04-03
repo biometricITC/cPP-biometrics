@@ -15,8 +15,8 @@ Target user is privacy aware. The user doesn’t publish any face images on the 
 Input
 ======
 Photo of target user that meet the following conditions:
-- printed on 5 × 7-inch glossy photo paper
-- camera resolution is 6MP (Mega Pixels) and above
+- printed on M.1
+- using T.1
 - photo was taken under controlled environment where the background of the scene is uniform, the light in the office is switched on and the window blinds are down
 - photo was taken right after the target user’s enrolment and under the same environment to reduce the possibility that the PAI is rejected because of the difference of the background scene or expression
 - target user’s face occupies about 20% of the full image
@@ -24,8 +24,8 @@ Photo of target user that meet the following conditions:
 
 Tools
 =====
-- Office laser printer or home inkjet printer.
-- Standard office paper (Paper weight would impact print quality (for example in the US paper is usually 20lb or 24lb in office use with the higher one being better quality and hence probably better for generating a PAI))
+- T.2
+- M.2
 
 Recipe
 ======
