@@ -21,7 +21,7 @@ Digital image of target user’s face that meet the following conditions:
 
 Tools
 =====
-Any 4K screen no older than 2 years from release date. 24 inches, 3840 x 2160 and above.
+- T.7
 
 Recipe
 ======

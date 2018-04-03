@@ -23,8 +23,8 @@ Digital image of target user’s face that meet the following conditions:
 
 Tools
 =====
-Any home inkjet printer (Resolution: 300dpi).
-Standard office paper (Size: A3 (297 x 420mm) or ledger (279 x 432mm)).
+- T.5
+- M.2
 
 Recipe
 ======
@@ -35,7 +35,7 @@ Variations
 tbd
 
 Prerequisite
-============
+==========
 Target user turns on the face unlock and registers user’s face following instructions provided by the device and manual (i.e. target user should not wear glasses, hat, beard, or heavy make-up during the enrollment if the guidance instructs not to do so) under the controlled environment.
 If the ST covers the multiple configurations for face unlock, the same test should be done for all configurations.
 

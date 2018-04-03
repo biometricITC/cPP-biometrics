@@ -15,8 +15,6 @@ Target user is privacy aware. The user doesn’t publish any face images on the 
 Input
 ======
 Photo of target user that meet the following conditions:
-- printed on M.1
-- using T.1
 - photo was taken under controlled environment where the background of the scene is uniform, the light in the office is switched on and the window blinds are down
 - photo was taken right after the target user’s enrolment and under the same environment to reduce the possibility that the PAI is rejected because of the difference of the background scene or expression
 - target user’s face occupies about 20% of the full image
@@ -24,7 +22,10 @@ Photo of target user that meet the following conditions:
 
 Tools
 =====
+- T.1
 - T.2
+- T.3
+- M.1
 - M.2
 
 Recipe

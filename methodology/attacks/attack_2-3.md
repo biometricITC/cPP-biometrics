@@ -23,7 +23,7 @@ Digital image of target user’s face that meet the following conditions:
 
 Tools
 =====
-Any PC screen (19 inches, 1920 × 1080 and above)
+- T.6
 
 Recipe
 ======

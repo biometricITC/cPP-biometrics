@@ -24,7 +24,11 @@ Photo of target user that meet the following conditions:
 
 Tools
 =====
-- Laptop PC (Display size: 12-13 inches, Resolution: 2736 × 1824)
+- T.4
+- T.1
+- T.2
+- M.1
+
 
 Recipe
 ======

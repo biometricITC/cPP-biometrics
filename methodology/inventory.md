@@ -12,13 +12,18 @@ Printer (T.2)
 ------------
 - Office laser printer or home inkjet printer.
 
+Scanner (flatbed) (T.2)
+------------
+- Resolution of scanner (dpi) should be, for example, 300 dpi that achieves best quality of image.
+
 
 Materials
 ===========
 
- 5 × 7-inch glossy photo paper
- -----------------------------
- - ID: M.1
+5 × 7-inch glossy photo paper (M.1)
+-----------------------------
+
+
 
 Standard office paper (M.2)
 ----------------------------

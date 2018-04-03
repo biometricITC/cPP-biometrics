@@ -24,8 +24,10 @@ Photo of target user that meet the following conditions:
 
 Tools
 =====
-- Office laser printer or home inkjet printer.
-- Standard office paper (Paper weight would impact print quality (for example in the US paper is usually 20lb or 24lb in office use with the higher one being better quality and hence probably better for generating a PAI)) 
+- T.2
+- T.3
+- M.2
+
 
 Recipe
 ======
