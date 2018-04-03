@@ -5,14 +5,13 @@ Tools
 
 Digital Camera (T.1)
 ---------------
-camera resolution is 6MP (Mega Pixels) and above
+camera resolution is at least equivalent to the front-facing camera of the device being tested
 
 
 Printer (T.2)
 ------------
 - Office laser printer or home inkjet printer.
 - Resolution 300 dpi
-
 
 Scanner (flatbed) (T.3)
 ------------
@@ -21,10 +20,6 @@ Scanner (flatbed) (T.3)
 Laptop (T.4)
 ------------
 Laptop PC (Display size: 12-13 inches, Resolution: 2736 × 1824)
-
-Inkjet Printer (T.5)
---------------------
-Any home inkjet printer (Resolution: 300dpi).
 
 PC Screen (T.6)
 ---------------
@@ -37,9 +32,9 @@ Any 4K screen no older than 2 years from release date. 24 inches, 3840 x 2160 an
 Materials 
 ===========
 
-5 × 7-inch glossy photo paper (M.1)
+Glossy photo paper (M.1)
 -----------------------------
-
+the image should cover at least the minimum of 5 x 7 inches. This could be a borderless image or printed on a larger sheet of photo paper (and cut if necessary)
 
 
 Standard office paper (M.2)
