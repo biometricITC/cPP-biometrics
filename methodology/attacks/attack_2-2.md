@@ -25,7 +25,7 @@ Digital image of target user’s face that meet the following conditions:
 Tools
 =====
 - tbd
-- M.2
+- M.1, type 1
 
 Recipe
 ======

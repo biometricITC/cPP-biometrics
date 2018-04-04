@@ -27,7 +27,7 @@ Tools
 - T.4, type 2
 - T.1, type 2
 - T.2, type 1
-- M.1
+- M.1, type 2
 
 
 Recipe

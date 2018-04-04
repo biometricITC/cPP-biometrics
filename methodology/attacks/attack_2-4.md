@@ -23,7 +23,7 @@ Digital image of target user’s face that meet the following conditions:
 
 Tools
 =====
-- T.6
+- T.5, type 2
 
 Recipe
 ======

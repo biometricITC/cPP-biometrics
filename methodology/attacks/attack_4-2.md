@@ -24,7 +24,7 @@ Digital video of target user’s face that meet the following conditions:
 
 Tools
 =====
-- T.7
+- T.5, type 3
 
 Recipe
 ======
