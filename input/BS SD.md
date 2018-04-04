@@ -269,7 +269,7 @@ the TOE during the enrolment attempt.
 
 The evaluator shall refer to the TSS to understand how the TOE enrols a 
 user and examine the AGD guidance to confirm that a user is required to 
-enter his/her valid password before the mobile biometric enrolment.
+enter his/her password before the mobile biometric enrolment.
 
 As described in the \[BScPP\], formal or complete specification of the
 interfaces is not required however, if such information is available,
@@ -319,7 +319,7 @@ given in the work unit from which it is derived.
 Mobile biometric verification performance depends on quality of
 the template that is compared to the samples presented to the TOE. 
 The evaluator shall examine that the TOE checks the quality of 
-enrolment and authentication templates based on the assessment 
+enrolment templates and authentication samples based on the assessment 
 criteria to verify a user with an adequate reliability.
 
 The evaluator shall keep in mind that the assessment criteria for
