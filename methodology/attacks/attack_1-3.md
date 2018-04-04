@@ -24,9 +24,9 @@ Photo of target user that meet the following conditions:
 
 Tools
 =====
-- T.4
-- T.1
-- T.2
+- T.4, type 2
+- T.1, type 2
+- T.2, type 1
 - M.1
 
 

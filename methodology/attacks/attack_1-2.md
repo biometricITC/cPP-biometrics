@@ -24,9 +24,9 @@ Photo of target user that meet the following conditions:
 
 Tools
 =====
-- T.2
-- T.3
-- M.2
+- T.3, type 1 or 2
+- T.2, type 1
+- M.1, type 1
 
 
 Recipe

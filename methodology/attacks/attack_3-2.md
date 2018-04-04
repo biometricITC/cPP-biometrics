@@ -23,7 +23,7 @@ Digital image of target user’s face that meet the following conditions:
 
 Tools
 =====
-Printing service is used to create high quality photo.
+- T.3, type 3
 
 Recipe
 ======
