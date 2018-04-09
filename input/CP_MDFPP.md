@@ -255,6 +255,10 @@ selected, but should be selected if the biometric authentication can be
 used independent of the hybrid authentication, i.e. without having to
 enter a PIN/password.*
 
+*If "hybrid" is selected, then the optional requirement FIA\_HYB\_EXT.1
+must be included in the TOE to specify the biometric modalities that
+are allowed to be used with the hybrid mechanism.*
+
 *The Password Authentication Factor is configured according to
 FIA\_PMG\_EXT.1.*
 
