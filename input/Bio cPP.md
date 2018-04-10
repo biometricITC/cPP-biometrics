@@ -88,12 +88,12 @@ biometric enrolment and verification.
 |-------|----------------------------|
 |**Attempt** |Submission of one (or a sequence of) biometric samples to the part of the TOE. |
 |**Biometric Authentication Factor (BAF)** |Authentication factor used for mobile biometric verification. In this cPP, the term is a synonym of the “template”. |
-|**Biometric Data** |Digital data created during a biometric process. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected during an biometric enrollment and verification process, but does not apply to end user information such as user name, password (unless tied to the biometric modality), demographic information, and authorizations. |
+|**Biometric Data** |Digital data created during biometric enrollment and verification processes. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected, and does not include end user information such as user name, password (unless tied to the biometric modality), demographic information, and authorizations. |
 |**Biometric System Administrator** |Person who is responsible for configuring the TOE. This cPP assumes that the user acts as the biometric system administrator. |
 |**Failure-To-Enrol Rate (FTE)** |Proportion of the population for whom the system fails to complete the enrolment process. |
 |**False Accept Rate (FAR)** |Proportion of verification transactions with wrongful claims of identity that are incorrectly confirmed. |
-|**False Match Rate (FMR)** |Proportion of zero-effort impostor attempt samples falsely declared to match the compared non-self template. |
-|**False Non-match Rate (FNMR)** |Proportion of genuine attempt samples falsely declared not to match the template of the same characteristic from the same user supplying the sample. |
+|**False Match Rate (FMR)** |Proportion of zero-effort impostor attempt samples that were falsely declared to match the compared non-self template. |
+|**False Non-match Rate (FNMR)** |Proportion of genuine attempt samples that were falsely declared not to match the template of the same characteristic from the same user supplying the sample. |
 |**False Reject Rate (FRR)** |Proportion of verification transactions with truthful claims of identity that are incorrectly denied. |
 |**Features** |Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates. |
 |**Locked State** |Powered on Mobile Device, with most functionalities unavailable for use. User authentication is required to access full functionality. |
@@ -144,17 +144,20 @@ the features from the samples. The features are then stored as a
 template in the TOE.
 
 Only a user who knows the mobile device password can enroll or revoke
-his/her own templates. Multiple templates may be enrolled.
+his/her own templates. Multiple templates may be enrolled, as separate 
+entries uniquely identified by the TOE and the user (through the mobile
+User Interface).
 
 b)  Mobile biometric verification
 
-During the verification process, a user presents his/her own biometric
-characteristics to the TOE without presenting any user identity
-information for unlocking the mobile device. The TOE retrieves all
-enrolled templates and compares them with the features extracted from
-the captured samples of the user to measure the similarity between the
-two data and determines whether to accept or reject the user based on
-the similarity, and indicates the decision to the mobile device.
+During the verification process, a user presents his/her own biometric 
+characteristics to the TOE without presenting any user identity information 
+for unlocking the mobile device. The TOE captures samples from the 
+biometric characteristics, retrieves all enrolled templates and compares them 
+with the features extracted from the captured samples of the user to measure 
+the similarity between the two data and determines whether to accept or 
+reject the user based on the similarity, and indicates the decision to 
+the mobile device.
 
 Examples of biometric characteristic used by the TOE are: fingerprint,
 face, iris, palm print, finger vein, palm vein, speech, signature and so
@@ -199,7 +202,7 @@ As illustrated in the above figure, the TOE is capable of;
 -   Comparing captured features with data contained in one or more
     templates (Comparison Subsystem)
 
--   Detecting the presentation attacks using artificial PAI
+-   Detecting the presentation attacks using automated PAI
     (Presentation Attack Detection Subsystem)
 
 -   Deciding how well features and any template match, and indicating
@@ -606,12 +609,11 @@ Application note 15:
 User shall be authenticated by the mobile device using the Password
 Authentication Factor before beginning biometric enrolment.
 
-### 6.2.2 Quality of biometric samples for mobile biometric enrolment (FIA\_MBE\_EXT.2)
+### 6.2.2 Quality of biometric templates for mobile biometric enrolment (FIA\_MBE\_EXT.2)
 
-### FIA\_MBE\_EXT.2 Quality of biometric samples for mobile biometric enrolment 
+### FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment 
 
-**FIA\_MBE\_EXT.2.1** The TSF shall only use samples of sufficient
-quality to create the templates.
+**FIA\_MBE\_EXT.2.1** The TSF shall create templates of sufficient quality.
 
 Application note 16:
 
