@@ -439,13 +439,13 @@ mobile biometric verification is defined in FIA\_MBV\_EXT.3. \[SD\]
 defines relevant criteria for its security relevant error rates for PAD
 in the Evaluation Activity for FIA\_MBV\_EXT.3. Optional requirement to
 provide a presentation attack detection mechanism during mobile
-biometric enrolment is defined as FIA\_EVR\_EXT.3.
+biometric enrolment is defined as FIA\_MBE\_EXT.3.
 
 Application note 4:
 
 The TOE may or may not counter a presentation attack during enrollment.
 If the ST author requires the TOE to counter the presentation attack
-during enrollment, ST author should include FIA\_EVR\_EXT.3 defined in
+during enrollment, ST author should include FIA\_MBE\_EXT.3 defined in
 chapter 9.
 
 Application note 5:
