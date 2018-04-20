@@ -267,9 +267,9 @@ the TOE during the enrolment attempt.
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
-The evaluator shall refer the TSS to understand how the TOE enrol a user
-and examine the AGD guidance to confirm that a user is required to enter
-valid his/her password before the mobile biometric enrolment.
+The evaluator shall refer to the TSS to understand how the TOE enrols a 
+user and examine the AGD guidance to confirm that a user is required to 
+enter his/her password before the mobile biometric enrolment.
 
 As described in the \[BScPP\], formal or complete specification of the
 interfaces is not required however, if such information is available,
@@ -286,11 +286,10 @@ The evaluator shall perform the following test to verify that the TOE
 performs the mobile biometric enrolment correctly.
 
 Step 1: The evaluator shall try to enrol he/herself without setting a
-valid password and confirm that he/she can’t enrol his/herself without
-setting a password.
+password and confirm that he/she can’t enrol his/herself.
 
-Step 2: The evaluator shall set a valid password and confirm that he/she
-can’t enrol his/herself without entering the valid password beforehand
+Step 2: The evaluator shall set a password and confirm that he/she
+can’t enrol his/herself without entering the password correctly beforehand
 in any case.
 
 The above EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
@@ -318,13 +317,10 @@ given in the work unit from which it is derived.
 #### Objective
 
 Mobile biometric verification performance depends on quality of
-enrolment and authentication templates that is compared to the samples
-presented to the TOE. The evaluator shall examine that the TOE checks
-the quality of enrolment and authentication templates based on the
-assessment criteria to verify a user with an adequate reliability.
-
-If the TOE doesn’t create authentication templates, this EA is only
-applicable to enrolment templates.
+the template that is compared to the samples presented to the TOE. 
+The evaluator shall examine that the TOE checks the quality of 
+enrolment templates and authentication samples based on the assessment 
+criteria to verify a user with an adequate reliability.
 
 The evaluator shall keep in mind that the assessment criteria for
 different biometric modalities may not be the same. The evaluator shall
@@ -362,17 +358,15 @@ the TOE during the enrolment attempt.
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
-**Enrolment templates**
-
 The evaluator shall refer the TSS to understand how the TOE generate
-sufficient quality of enrolment templates. The evaluator shall also
+sufficient quality of templates at enrolment. The evaluator shall also
 examine the guidance, including online assistance or prompt provided by
 the TOE, about how the TOE supports a user to enrol his/herself
 correctly and how the TOE behaves when low quality samples are presented
 to the TOE.
 
 The evaluator shall examine that “assessment criteria for templates” to
-check that how the TOE creates the enrolment templates based on its
+check that how the TOE creates the templates based on this
 assessment criteria. The “assessment criteria for templates” may
 include;
 
@@ -388,33 +382,15 @@ c)  assessment criteria to accept the sample of sufficient utility (e.g.
 d)  quality standard that the TOE uses to perform the assessment if the
     TOE follows such standard (e.g. NFIQ for fingerprint)
 
-e)  additional assessment criteria to applied to creation of enrolment
-    templates
-
-
-**Authentication templates**
-
-If the TOE creates authentication templates, the evaluator shall refer
-the TSS to understand how the TOE generate sufficient quality of
-authentication templates.
-
-The evaluator shall examine that the “assessment criteria for templates”
-to check that how the TOE creates the authenticate templates based on
-its assessment criteria. The “assessment criteria for templates” may
-include a) – d) and;
-
-a)  additional assessment criteria to applied to creation of
-    authentication templates
+e)  additional assessment criteria to applied to creation of templates
 
 The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
 and AGD\_OPE.1-5.
 
 \[Strategy for ATE \_IND\]
 
-**Enrolment templates**
-
 The evaluator shall perform the following test to verify that the TOE
-generates enrolment templates of sufficient quality. If the TOE supports
+generates templates of sufficient quality. If the TOE supports
 multiple biometric modalities, the same test shall be done for each
 modality.
 
@@ -430,28 +406,6 @@ Step 2: The evaluator shall check the TOE internal data (e.g. quality
 scores and quality threshold) to confirm that the TOE doesn’t create
 enrolment templates that don’t meet the assessment criteria specified in
 the “assessment criteria for templates”.
-
-**Authentication templates**
-
-The evaluator shall perform the following test to verify that the TOE
-generates authentication templates of sufficient quality only if the
-evaluator judge that creating authentication templates is feasible. If
-the TOE supports multiple biometric modalities, the same test shall be
-done for each modality.
-
-The following test requires the developer to provide access to a test
-platform that provides the evaluator with tools that are typically not
-found on factory products.
-
-Step 1: The evaluator shall enroll his/herself.
-
-Step 2: The evaluator shall present biometric samples repeatedly to
-trigger the TOE to create authentication templates.
-
-Step 3: The evaluator shall check the TOE internal data (e.g. quality
-scores and quality threshold) to confirm that the TOE doesn’t create
-authentication templates that don’t meet the assessment criteria
-specified in the “assessment criteria for templates”.
 
 The above EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
 ATE\_IND.1-6, and ATE\_IND.1-7.
@@ -494,6 +448,8 @@ of 30) to measure the mobile biometric verification performance.
 
 \[BScPP\] doesn’t support multimodal TOE which is measuring two or more
 different biometric modalities (e.g. iris and face) to verify a user.
+Multimodal is not the same as the hybrid mechanism specified in the
+\[MDFPP\].
 
 #### Relationship of the evaluation activity to SFRs, SARs, and other EAs
 
@@ -621,7 +577,7 @@ the TOE during the verification attempt.
 
 The evaluator shall refer the TSS to understand how the TOE checks
 quality of samples captured. The evaluator shall also examine the
-guidance, including online assistance or prompt provided by the TOE,
+guidance, including online assistance or prompts provided by the TOE,
 about how the TOE supports a user to verify his/herself correctly and
 how the TOE behaves when low quality samples are presented to the TOE.
 
@@ -756,7 +712,7 @@ FPT: Protection of the TSF
 #### Objective
 
 \[BScPP\] assumes that the mobile device provides the Secure Execution
-Environment (SSE), an operating environment separate from the main
+Environment (SEE), an operating environment separate from the main
 mobile device operating system. Access to the SEE is highly restricted
 and may be made available through special processor modes, separate
 security processors or a combination to provide this separation.
@@ -993,7 +949,7 @@ b)  AGD guidance may describe how the templates are stored securely.
 The evaluator shall examine the TSS and AGD guidance to check that the
 TOE encrypts all templates using encryption algorithm evaluated by
 \[MDFPP\] evaluation. The evaluator shall also ensure that either a PIN,
-password or other secure means, as specified by the ST author , required
+password or other secure means, as specified by the ST author, is required
 when templates are revoked or added.
 
 The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
