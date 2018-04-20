@@ -145,8 +145,8 @@ template in the TOE.
 
 Only a user who knows the mobile device password can enroll or revoke
 his/her own templates. Multiple templates may be enrolled, as separate 
-entries uniquely identified by the TOE and the user (through the mobile
-User Interface).
+entries uniquely identified by the TOE, and optionally uniquely identifiable 
+by the user (through the mobile User Interface).
 
 b)  Mobile biometric verification
 
