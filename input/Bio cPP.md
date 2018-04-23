@@ -173,8 +173,7 @@ resistance should be provided by the TOE in detail.
 ----------
 The TOE is fully integrated into the mobile device without the need for
 additional software and hardware. The following figure, inspired from
-\[ISO30107-1\], is a generic representation of a TOE (other
-configurations exist). This illustrates the different
+\[ISO30107-1\], is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different
 sub-functionalities on which the mobile biometric enrollment and
 verification processes rely on.
 
