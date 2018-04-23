@@ -202,7 +202,7 @@ As illustrated in the above figure, the TOE is capable of;
 -   Comparing captured features with data contained in one or more
     templates (Comparison Subsystem)
 
--   Detecting the presentation attacks using automated PAI
+-   Detecting the presentation attacks using artificial PAI
     (Presentation Attack Detection Subsystem)
 
 -   Deciding how well features and any template match, and indicating
