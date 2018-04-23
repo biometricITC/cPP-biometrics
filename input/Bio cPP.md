@@ -1,5 +1,5 @@
 # collaborative Protection Profile for Mobile biometric enrolment and verification - for unlocking the device -
-## Version 0.3 09-MAR-2018
+## Version 0.4 23-APR-2018
 
 ## Acknowledgements
 
