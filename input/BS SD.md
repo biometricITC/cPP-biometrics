@@ -90,28 +90,6 @@ Evaluation Activities can be defined for both Security Functional
 Requirements and Security Assurance Requirements. These are defined in
 separate sections of this Supporting Document.
 
-If any Evaluation Activity cannot be successfully completed in an
-evaluation then the overall verdict for the evaluation is a ‘fail’. In
-rare cases there may be acceptable reasons why an Evaluation Activity
-may be modified or deemed not applicable for a particular TOE, but this
-must be agreed with the Certification Body for the evaluation.
-
-In general, if all Evaluation Activities (for both SFRs and SARs) are
-successfully completed in an evaluation then it would be expected that
-the overall verdict for the evaluation is a ‘pass’. To reach a ‘fail’
-verdict when the Evaluation Activities have been successfully completed
-would require a specific justification from the evaluator as to why the
-Evaluation Activities were not sufficient for that TOE.
-
-Similarly, at the more granular level of Assurance Components, if the
-Evaluation Activities for an Assurance Component and all of its related
-SFR Evaluation Activities are successfully completed in an evaluation
-then it would be expected that the verdict for the Assurance Component
-is a ‘pass’. To reach a ‘fail’ verdict for the Assurance Component when
-these Evaluation Activities have been successfully completed would
-require a specific justification from the evaluator as to why the
-Evaluation Activities were not sufficient for that TOE.
-
 Application of this Supporting Document
 ---------------------------------------
 
