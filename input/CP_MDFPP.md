@@ -137,6 +137,18 @@ Editorial mistake.
 
 ***Proposed change***
 
+Change the *number 4* to *number 5* in the application note below.
+
+*Application Note: Administrator actions are defined as functions labeled 
+as mandatory for FMT_MOF_EXT.1.2 (i.e. ‘M-MM’ in Table 5). If the TSF does 
+not support removable media, **number 4** is implicitly met*
+
+***Rationale***
+
+Editorial mistake.
+
+***Proposed change***
+
 Remove *FDP\_PBA\_EXT.1 (optional), FIA\_BMG\_EXT.1 (optional),
 FIA\_BMG\_EXT.2 (optional), FIA\_BMG\_EXT.3 (optional), FIA\_BMG\_EXT.4
 (optional), FIA\_BMG\_EXT.5 (optional), FIA\_BMG\_EXT.6 (optional)* from
