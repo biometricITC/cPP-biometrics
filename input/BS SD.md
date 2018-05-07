@@ -138,8 +138,6 @@ For definitions of standard CC terminology see \[CC\] part 1.
 
 **TBD**
                                                                                                                                
-# This document was uploaded only for reference and is being extensivily updated. Please don't make comments on this document until the revision is finished. Revision is supposed to be finished by 6th April
-
 Evaluation Activities for SFRs
 ==============================
 
