@@ -1001,15 +1001,14 @@ attack instruments from being successfully enrolled.
 9.2 User data protection (FDP)
 --------------------------
 
-### 9.2.1 Subset residual information protection (FDP\_RIP.1)
+### 9.2.1 Full residual information protection (FDP\_RIP.2)
 
-#### FDP\_RIP.1 Subset residual information protection 
+#### FDP\_RIP.2 Full residual information protection 
 
 **FDP\_RIP.1.1** The TSF shall ensure that any previous information
 content of *biometric data* is made unavailable upon the
 \[**selection**: *allocation of the resource to, deallocation of the
-resource from*\] the following objects: \[**assignment**: *list of
-objects*\].
+resource from*\] all objects.
 
 Application note 30:
 
