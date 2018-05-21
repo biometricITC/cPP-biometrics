@@ -21,13 +21,13 @@ ISO/IEC 19795-1:2006 Biometric performance testing and reporting - Part
 ISO/IEC 19795-2:2007 Biometric performance testing and reporting - Part
 2: Testing methodologies for technology and scenario evaluation.
 
-A.1.  Requirements for the test document
+# Requirements for the test document
 
 The developer shall provide the test document for CC evaluations that
 claim a conform to \[BScPP\]. This section defines required content of
 the test document that is inputted to the EA for FIA\_MBV\_EXT.1.
 
-A.2.  Summary of contents
+# Summary of contents
 
 Table-A1 shows items that shall be reported in the test document. Name
 or structure of test document doesn’t need to follow Table-A1. However,
@@ -35,29 +35,30 @@ all items in Table-A1 shall be written somewhere in the test document.
 Also, if some items are not included in the test document, the developer
 shall provide a rationale for such exclusion to the evaluator.
 
-  |Section|Item|
-  |-------|----------------------------|
-  |A.3.1|Overview of the performance testing|
-  |A.3.2|Target application and influential factors|
-  |A.3.3|Test subject selection|
-  |A.3.4|Test instructions and training|
-  |A.3.5|Test subject management|
-  |A.3.6|Test procedure|
+| Section | Item                                       |
+|:--------|:-------------------------------------------|
+| A.3.1   | Overview of the performance testing        |
+| A.3.2   | Target application and influential factors |
+| A.3.3   | Test subject selection                     |
+| A.3.4   | Test instructions and training             |
+| A.3.5   | Test subject management                    |
+| A.3.6   | Test procedure                             |
+
 
 Table-A1: Reporting items
 
-A.3.  Reporting items description
+#  Reporting items description
 
 This section describes each item in Table-A1 in detail. All items are
 created based on ISO/IEC 19795-1 and 19795-2 however some of them are
 modified to adjust to the CC evaluation.
 
-A.3.1 Overview of the performance testing
+## Overview of the performance testing
 
 The developer shall report following general information about the
 performance testing.
 
-\(1) Performance test configuration
+### Performance test configuration
 
 The test document shall report the following information to uniquely
 identify the test configuration of the performance testing. Information
@@ -93,7 +94,7 @@ users, value of threshold set for the testing shall be reported.
 Information that uniquely identify all testing tools (e.g. SDK) used
 for the performance testing shall be reported.
 
-\(2) Result of the performance testing
+### Result of the performance testing
 
 The test document shall report the following items to provide the result
 of testing.
@@ -161,7 +162,7 @@ imposter transaction shall also be reported.
 If FMR and FNMR is selected in FIA\_MBV\_EXT.1, number of genuine and
 imposter attempts shall also be reported.
 
-A.3.2 Target application and influential factors
+## Target application and influential factors
 
 Test document shall specify a target application modeled in the test,
 such as mobile biometric verification in an indoor office environment
@@ -227,7 +228,7 @@ How much template adaptation occur prior to measure the FNMR or FRR if
 the TOE is able to adapt the templates over time with the aim to
 reduce the false rejection rates.
 
-A.3.3 Test subject selection
+## Test subject selection
 
 Following information about test subject for the testing shall be
 reported.
@@ -244,7 +245,7 @@ numbers of test subjects, body parts and samples derived from
 artificially generated images or feature data along with the rationale
 for using artificial data shall be provided.
 
-A.3.4 Test instructions and training
+## Test instructions and training
 
 Instructions and training given to the test subjects shall be reported.
 The same instructions and training shall be given to the all test
@@ -268,7 +269,7 @@ training among test subjects and the tools used for training shall be
 reported (e.g. developer can prepare the script for training in
 advance and apply it to all test subjects to ensure the consistency).
 
-A.3.5 Test subject management
+## Test subject management
 
 Following information about test subject management shall be reported.
 Proper management is necessary to avoid human errors that may occur
@@ -292,7 +293,7 @@ d) method of avoiding data collection errors (e.g. Use of data
    collection software minimizing the amount of data requiring keyboard
    entry)
 
-A.3.6 Test procedure
+## Test procedure
 
 A test protocol for the testing shall be reported. The following items
 shall be covered.
@@ -339,9 +340,9 @@ developer may exclude, modify or add some recommendations however, the
 developer shall show a clear rationale why such modifications could
 produce more accurate estimate of the performance.
 
-B.1. Recommendations
+## Recommendations
 
-1.Scenario of mobile biometric verification
+### Scenario of mobile biometric verification ###
 
 The user may use the mobile biometric verification in a different way.
 Suppose the mobile device provides both Password Authentication Factor
@@ -429,7 +430,7 @@ quite low. Therefore, the developer may calculate FNMR/FRR directly from
 the result of performance testing without considering the statistical
 confidence.
 
-B.2. Example – iris verification
+## Example – iris verification
 
 The developer defines that the iris verification is consisted of 5
 attempts using both right and left iris to unlock the mobile device and
