@@ -580,7 +580,7 @@ The following conventions are used for the completion of operations:
 -   \[*Italicized text within square brackets*\] indicates an operation
     to be completed by the ST author.
 
--   [Underlined text] indicates additional text provided as a
+-   **Bold text** indicates additional text provided as a
     refinement.
 
 -   \[**Bold text within square brackets**\] indicates
