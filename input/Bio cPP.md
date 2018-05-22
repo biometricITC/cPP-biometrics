@@ -1005,8 +1005,8 @@ attack instruments from being successfully enrolled.
 
 #### FDP\_RIP.2 Full residual information protection 
 
-**FDP\_RIP.1.1** The TSF shall ensure that any previous information
-content of *biometric data* is made unavailable upon the
+**FDP\_RIP.2.1** The TSF shall ensure that any previous information
+content of **biometric data** is made unavailable upon the
 \[**selection**: *allocation of the resource to, deallocation of the
 resource from*\] all objects.
 
