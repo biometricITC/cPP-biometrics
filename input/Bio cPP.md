@@ -1015,11 +1015,6 @@ Application note 30:
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
 
-Application note 31:
-
-ST author shall list all type of biometric data (e.g. template) stored
-in the file system in the assignment.
-
 ## 10. Extended Component Definitions
 This appendix contains the definitions for the extended requirements
 that are used in the cPP, including those used in chapter 8 and 9.
