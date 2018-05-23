@@ -25,7 +25,8 @@ ISO/IEC 19795-2:2007 Biometric performance testing and reporting - Part
 
 The developer shall provide the test document for CC evaluations that
 claim a conform to \[BScPP\]. This section defines required content of
-the test document that is inputted to the EA for FIA\_MBV\_EXT.1.
+the test document that is inputted to the Evaluation Activity for 
+FIA\_MBV\_EXT.1.
 
 # Summary of contents
 
@@ -53,7 +54,7 @@ This section describes each item in Table-A1 in detail. All items are
 created based on ISO/IEC 19795-1 and 19795-2 however some of them are
 modified to adjust to the CC evaluation.
 
-## Overview of the performance testing
+## A.3.1 Overview of the performance testing
 
 The developer shall report following general information about the
 performance testing.
@@ -114,9 +115,9 @@ separately.
 3.Definition of genuine and imposter transaction
 
 If FAR/FRR is selected in FIA\_MBV\_EXT.1, the test document shall
-clearly define what constitutes the transaction based on expected user
-behaviour and the same rule shall be applied consistently throughout
-the performance testing.
+clearly define what constitutes the transaction based on the worst 
+case senario (See Appendix B for such example) and the same rule 
+shall be applied consistently throughout the performance testing.
 
 4.Number of test subjects, templates and samples
 
@@ -162,7 +163,7 @@ imposter transaction shall also be reported.
 If FMR and FNMR is selected in FIA\_MBV\_EXT.1, number of genuine and
 imposter attempts shall also be reported.
 
-## Target application and influential factors
+## A.3.2 Target application and influential factors
 
 Test document shall specify a target application modeled in the test,
 such as mobile biometric verification in an indoor office environment
@@ -178,10 +179,13 @@ operating temperature). These factors should be consistent with the
 target application.
 
 The following factors are examples of controlling factors for
-finger/hand vein verification. The developer can define these factors
-arbitrarily. However, it’s recommended to control all influential
-factors appropriately because different error rates may be measured
-under different influential factors.
+finger/hand vein verification. The developer shall define these factors properly, 
+for example, based on ISO/IEC 19795-3. Any information that are useful in the context
+of the used biometric modality shall be considered by the developer to determine the factors.
+
+It’s recommended to control all influential factors appropriately 
+because different error rates may be measured under different influential 
+factors.
 
 1.Test subject demographics
 
@@ -228,24 +232,13 @@ How much template adaptation occur prior to measure the FNMR or FRR if
 the TOE is able to adapt the templates over time with the aim to
 reduce the false rejection rates.
 
-## Test subject selection
+## A.3.3 Test subject selection
 
-Following information about test subject for the testing shall be
-reported.
+Selection method of test subjects shall be reported (e.g. gather test subjects from
+developer’s employees or recruit them from public). It is recommended that demographics
+of test subjects follow the target application.
 
-1.Selection method of test subject
-
-Selection method shall be reported (e.g. gather test subjects from
-developer’s employees or recruit them from public).
-
-2.Use of artificially generated sample or features data
-
-The use of artificially generated data, if any, shall be reported. The
-numbers of test subjects, body parts and samples derived from
-artificially generated images or feature data along with the rationale
-for using artificial data shall be provided.
-
-## Test instructions and training
+## A.3.4 Test instructions and training
 
 Instructions and training given to the test subjects shall be reported.
 The same instructions and training shall be given to the all test
@@ -269,7 +262,7 @@ training among test subjects and the tools used for training shall be
 reported (e.g. developer can prepare the script for training in
 advance and apply it to all test subjects to ensure the consistency).
 
-## Test subject management
+## A.3.5 Test subject management
 
 Following information about test subject management shall be reported.
 Proper management is necessary to avoid human errors that may occur
@@ -293,7 +286,7 @@ d) method of avoiding data collection errors (e.g. Use of data
    collection software minimizing the amount of data requiring keyboard
    entry)
 
-## Test procedure
+## A.3.6 Test procedure
 
 A test protocol for the testing shall be reported. The following items
 shall be covered.
@@ -310,6 +303,13 @@ verification is executed separately from image submission.
 Details of flow of genuine and imposter attempt or transaction to
 measure the error rates shall be reported. The same flow shall be
 applied to all test subjects.
+
+The developer shall maintain a log file in which each interaction with
+the TOE is recorded. The log shall include all test attempts, preprative
+or practice attempts, set-up procedure (e.g. setting a threshold) and 
+maintenance activities (e.g. cleaning a sensor). Such a log file can be 
+very useful to make sure the testing was conducted following the test 
+flow.
 
 3.Sample exclusion criteria
 
@@ -351,25 +351,26 @@ may try to unlock the device with BAF until maximum number of
 unsuccessful authentication attempts is exceeded. Another user may try
 to unlock the device with BAF only three times and switch to the
 password if all three attempts were failed. However, it’s not possible
-to evaluate all of these scenarios and the developer shall assume only
-one typical usage scenario of the verification and conduct performance
+to evaluate all of these scenarios and the developer shall assume the 
+worst case senario of imposter attempts and conduct performance
 testing following such scenario consistently.
 
 For example, if the mobile face verification becomes unavailable after
-the five successive failed attempts, the developer may assume that the
-user tries five face unlock attempts in succession. In this case, the
-developer shall define that the verification transaction is consisted up
-to five unlock attempts and only one verification transaction can be run
-by each user.
+the five successive failed attempts, the developer shall assume that the
+attacker makes all five face unlock attempts in succession to try to unlock
+the mobile device. In this case, the developer shall define that the 
+verification transaction is consisted up to five unlock attempts and 
+only one verification transaction can be run by each user.
 
-Another example is if the mobile iris verification becomes unavailable
-after the five successive failed attempts, the developer may assume that
-the user tries mobile iris verification with right iris for the first
-three attempts and switch to the left iris for the last two attempts if
-all first three attempts were failed. The developer shall define the
-verification transaction is consisted of three right iris unlock and two
-left iris unlock attempts, and only one verification transaction can be
-run by each user.
+If the worst case senario can't be determined, the developer may select
+an arbitary senario. For example, if the mobile iris verification becomes 
+unavailable after the five successive failed attempts, the developer shall 
+assume that the attacker tries to all five iris unlock attempts in succession.
+However the developer may assume that the user tries right iris for the 
+first three attempts and switch to the left iris for the last two attempts 
+if all first three attempts were failed, or may assume that the user tries
+right iris for all five attempts. The developer can choose either of the 
+senario if the developer can't determine which one is the worst case.
 
 2.Maximum number of templates
 
@@ -385,14 +386,7 @@ with the device operation before the final enrollment transaction.
 3.Maximum number of samples per test subject
 
 The developer shall define the maximum number of samples per test
-subject following the scenario however, only up to 5 samples can be
-captured at maximum from one test subject because allowing to capture
-too much samples per test subject may decrease test independence and
-FMR/FNMR will be significantly underestimated.
-
-For example, the developer may capture 3 samples from right iris and 2
-ones from left iris from each test subject, or 5 samples from either of
-right or left iris to conduct the performance testing.
+subject following the worst case scenario.
 
 4.Maximum number of transaction per test subject
 
@@ -416,7 +410,9 @@ ordered pair if there is no explicit reason that this cross-comparison
 hinders the accuracy of the result of performance testing.
 Cross-comparison of attempts/templates for ordered pair allows to
 compare between user A’s template and user B’s sample and user A’s
-sample and user B’s template separately.
+sample and user B’s template separately. However, if the TOE's 
+verification algorithm is symmetric and make no distinction between
+the ordered pair, this assumption can't be used.
 
 This \[SD\] doesn’t allow intra-individual comparison that is a
 comparison between one body part and another body part of the same test
