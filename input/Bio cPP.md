@@ -655,7 +655,7 @@ For example, \[NIST800-63B\] requires that FMR shall be 1 in 1000 or
 lower. \[ISO21879\] is proposing that FAR would be 1 in 10000 or lower
 that is equal to a conventional four-digit PIN-Code for secure
 transaction. Several mobile vendors have specified fingerprint 
-verification on small sensors shall have the FAR lower than 0.002% and 
+verification shall have the FAR lower than 0.002% and 
 recommended to have the FRR lower than 10%. The cPP doesn’t provide 
 any recommendation for those error rates however, ST author should set 
 appropriate error rates referring those value.
