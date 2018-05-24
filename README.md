@@ -10,7 +10,7 @@ https://github.com/nils-tekampe/cPP-biometrics/issues/41
 https://github.com/nils-tekampe/cPP-biometrics/blob/master/2_UseCaseDescrption/MobileUseCaseV2.md
 
 ## Current draft of cPP for use case 1 and supporting documents
-- Draft version v.03 March 2018 https://github.com/nils-tekampe/cPP-biometrics/blob/master/3_ProtectionProfile/Bio%20cPP.md 
+- Current Draft of cPP https://github.com/nils-tekampe/cPP-biometrics/blob/master/3_ProtectionProfile/Bio%20cPP.md 
 - (older version v0.1 https://github.com/nils-tekampe/cPP-biometrics/blob/master/3_ProtectionProfile/Usecase1cPP20171213 )
 
 ## Methodology documents
