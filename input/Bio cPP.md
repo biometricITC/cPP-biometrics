@@ -979,7 +979,7 @@ to this cPP.
 
 **FIA\_HYB\_EXT.1.1** The TOE shall only use \[**selection:** *fingerprint, iris, face,
 voice, vein*, \[**assignment:** *other modality* \] as the biometric component of the 
-hybrid authentication mechansim.
+hybrid authentication mechanism.
 
 ## 9. Optional Requirements
 
