@@ -105,7 +105,7 @@ biometric enrolment and verification.
 |**Presentation Attack** |Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system. |
 |**Presentation Attack Detection (PAD)** |Automated determination of a presentation attack. |
 |**Presentation Attack Instrument (PAI)** |Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying supporting document specifies PAIs that the evaluator should consider for the CC evaluation. |
-|**(Biometric) Sample** |User’s biometric measures as output by the part of the TOE. |
+|**(Biometric) Sample** |User’s biometric measures as output by the data capture subsystem of the TOE.|
 |**Secure Execution Environment** |An operating environment separate from the main Mobile Device operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 |**Similarity score** |Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model. |
 |**Template** |User’s stored reference measure based on features extracted from enrolment samples. |
@@ -182,7 +182,8 @@ sub-functionalities on which the mobile biometric enrollment and
 verification processes rely on.
 
 
-![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/ESR.png)
+![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/images/TOE_flows.jpg)
+
 
                          Figure 1: Generic representation of a TOE
 
