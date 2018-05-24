@@ -289,7 +289,7 @@ As defined by the references \[CC1\], \[CC2\] and \[CC3\], this cPP:
 
 -   conforms to the requirements of Common Criteria v3.1, Revision 5,
 
--   is Part 2 extended, Part 3 conformant,
+-   is Part 2 extended, Part 3 extended,
 
 -   does not claim conformance to any other PP.
 
