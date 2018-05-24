@@ -1,7 +1,10 @@
+# Introduction 
+The CCDB has established a Work Group to assist in creating an iTC (and hence cPPs) for Biometrics Security (the Work Group name is abbreviated to "BS WG")([details](https://www.commoncriteriaportal.org/communities/Bio.cfm)) This repository contains all documents that are developed by the iTC. Please note that - if not noted otherwise - all documents in this repository represent work in progress. 
+
 # Collaborative Protection Profile for biometrics ![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/output/images/cclogo.png "cPP development")
 
 ## Our Essential Security Requirements 
-https://github.com/nils-tekampe/cPP-biometrics/blob/master/1_ESR/ESR.xml
+https://github.com/nils-tekampe/cPP-biometrics/blob/master/1_ESR/ESR.xml (stable version)
 
 ## How to deal with issues on Github
 https://github.com/nils-tekampe/cPP-biometrics/issues/41 
@@ -23,31 +26,15 @@ https://github.com/nils-tekampe/cPP-biometrics/tree/master/output (a word versio
 
 ## First generic version of the cPP (not specific to any use case) -- not maintained since June 2017 as current focus is on use case 1 above
 [Collaborative Protection Profile for biometrics (this XML contains all three cPPs) ](https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/biometricCPP.xml)
-## Current versions of the HTML documents for generic version of the cPP
-(please use username/password cpp/cpp)
-
-- [Essential Security Requirements (ESR) v1.0](http://cpp.konfidas.de/output/ESR.html)
-- [The biometric cPP](http://cpp.konfidas.de/output/biometricCPP_BIO.html)
-- [The PAD cPP](http://cpp.konfidas.de/output/biometricCPP_PAD.html)
-- [The integrated cPP](http://cpp.konfidas.de/output/biometricCPP_INT.html)
-
 
 ## Technical Community
-[How to join the iTC (Mailing list and updates)](
-tbd)
+If you are interested to join the iTC and become a member of the mailing list, please send an email with a short request to isec-itc-bio-info@ipa.go.jp.
 
-## Development Info
-[Help working with Transforms Submodule](https://github.com/commoncriteria/transforms/wiki/Working-with-Transforms-as-a-Submodule)
 
 ## Quickstart
-To clone this project along with its _transforms_ submodule run:
+To clone this project run:
 
 ````
-  git clone --recursive git@github.com:commoncriteria/mobile.git
+  git clone git@github.com:nils-tekampe/cPP-biometrics.git
 ````
-To pull updates from the upstream _transforms_ submodule and commit them run:
-````
- git submodule update --remote transforms
- git add transforms
- git commit
-````
+
