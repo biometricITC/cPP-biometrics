@@ -972,8 +972,16 @@ The second type (in chapter 9) comprises requirements that can be
 included in the ST, but are not mandatory for a TOE to claim conformance
 to this cPP. 
 
+8.1 Identification and Authentication (FIA)
+---------------------------
 
-**_Currently there is no selection based SFR. I will add if needed_**
+### 8.1.1 Hybrid Authentication Biometric Method (FIA\_HYB\_EXT.1)
+
+#### FIA\_HYB\_EXT.1 Hybrid Authentication Biometric Method 
+
+**FIA\_HYB\_EXT.1.1** The TOE shall only use \[**selection:** *fingerprint, iris, face,
+voice, vein*, \[**assignment:** *other modality* \] as the biometric component of the 
+hybrid authentication mechanism.
 
 ## 9. Optional Requirements
 
