@@ -1011,25 +1011,19 @@ attack instruments from being successfully enrolled.
 9.2 User data protection (FDP)
 --------------------------
 
-### 9.2.1 Subset residual information protection (FDP\_RIP.1)
+### 9.2.1 Full residual information protection (FDP\_RIP.2)
 
-#### FDP\_RIP.1 Subset residual information protection 
+#### FDP\_RIP.2 Full residual information protection 
 
-**FDP\_RIP.1.1** The TSF shall ensure that any previous information
-content of *biometric data* is made unavailable upon the
+**FDP\_RIP.2.1** The TSF shall ensure that any previous information
+content of **biometric data** is made unavailable upon the
 \[**selection**: *allocation of the resource to, deallocation of the
-resource from*\] the following objects: \[**assignment**: *list of
-objects*\].
+resource from*\] all objects.
 
 Application note 30:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
-
-Application note 31:
-
-ST author shall list all type of biometric data (e.g. template) stored
-in the file system in the assignment.
 
 ## 10. Extended Component Definitions
 This appendix contains the definitions for the extended requirements
