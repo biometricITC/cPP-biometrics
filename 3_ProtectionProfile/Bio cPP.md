@@ -182,7 +182,7 @@ sub-functionalities on which the mobile biometric enrollment and
 verification processes rely on.
 
 
-![cclogo](https://github.com/nils-tekampe/cPP-biometrics/blob/master/input/images/TOE_flows.jpg)
+![figure1](https://github.com/nils-tekampe/cPP-biometrics/blob/master/3_ProtectionProfile/images/TOE_flows.jpg)
 
 
                          Figure 1: Generic representation of a TOE
