@@ -346,8 +346,8 @@ rates for PAD.
 
 #### OSP.Protection
 
-The TOE in cooperation with its environment shall protect itself and
-biometric data.
+The TOE in cooperation with its environment shall protect itself, its
+configuration and biometric data.
 
 #### OSP.Verification\_Error
 
@@ -531,8 +531,8 @@ mobile biometric verification and adding or revoking templates.
 
 #### OE.Protection
 
-The TOE environment shall ensure that the TOE and biometric data is
-adequately protected.
+The TOE environment shall ensure that the TOE, the TOE configuration
+and biometric data is adequately protected.
 
 Application note 13:
 
