@@ -516,7 +516,7 @@ The TOE environment shall provide a secure execution environment to
 protect the TOE, the TOE configuration and biometric data during runtime
 and storage.
 
-Application note 13:
+Application note 11:
 
 As described in Annex A, the TOE and TOE environment (i.e. mobile
 device) shall satisfy related requirements defined in this cPP and
@@ -527,7 +527,7 @@ device) shall satisfy related requirements defined in this cPP and
 The user shall configure the TOE and its environment correctly in a
 manner to ensure that the TOE security policies will be enforced.
 
-Application note 14:
+Application note 12:
 
 Mobile device shall be configured by the user as required by \[MDFPP\].
 
@@ -587,7 +587,7 @@ SFR name.
 **FIA\_MBE\_EXT.1.1** The TSF shall provide a mechanism to enroll an
 authenticated user.
 
-Application note 15:
+Application note 13:
 
 User shall be authenticated by the mobile device using the Password
 Authentication Factor before beginning biometric enrolment.
@@ -598,7 +598,7 @@ Authentication Factor before beginning biometric enrolment.
 
 **FIA\_MBE\_EXT.2.1** The TSF shall create templates of sufficient quality.
 
-Application note 16:
+Application note 14:
 
 ST author may refine “sufficient quality” to specify quality standards
 if the TOE follow such standard.
@@ -616,17 +616,17 @@ verification mechanism with the \[**selection:** *FMR, FAR* \] not exceeding
 \[**assignment:** *defined value* \] and \[**selection:** *FNMR, FRR* \] not exceeding
 \[**assignment:** *defined value* \].
 
-Application note 17:
+Application note 15:
 
 If the TOE support multiple modalities, ST author may iterate the SFR to
 define different error rates for each modality.
 
-Application note 18:
+Application note 16:
 
 ST author shall select or assign those modalities in FIA\_MBV\_EXT.1.1
 for which \[SD\] defines the Evaluation Activities.
 
-Application note 19:
+Application note 17:
 
 Value of FMR, FAR, FNMR and FRR shall be assigned by the ST author
 however the ST author should consider the following factors for setting
@@ -672,7 +672,7 @@ those error rates should be evaluated in an objective manner.
 **FIA\_MBV\_EXT.2.1** The TSF shall only use samples of sufficient
 quality to verify the user.
 
-Application note 20:
+Application note 18:
 
 ST author may refine “sufficient quality” to specify quality standards
 if the TOE follows such standard.
@@ -684,12 +684,12 @@ if the TOE follows such standard.
 **FIA\_MBV\_EXT.3.1** The TSF shall prevent use of artificial
 presentation attack instruments from being successfully verified.
 
-Application note 21:
+Application note 19:
 
 This requirement is only applicable to mobile biometric verification.
 PAD for mobile biometric enrolment is an optional requirement.
 
-Application note 22: 
+Application note 20: 
 
 Artificial PAIs that the TOE shall prevent and
 relevant criteria for its security relevant error rates for each type of
@@ -707,12 +707,12 @@ data used to generate templates and perform sample matching, except
 publicly accessible biometric data, within the security boundary
 of the secure execution environment.
 
-Application note 23:
+Application note 21:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
 
-Application note 24:
+Application note 22:
 
 Publicly accessible biometric data is one that anyone can easily capture
 (e.g. face image captured by camera) and out of scope of this
@@ -728,12 +728,12 @@ requirement.
 data except publicly accessible biometric data outside the security
 boundary of the secure execution environment.
 
-Application note 25:
+Application note 23:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
 
-Application note 26:
+Application note 24:
 
 Publicly accessible biometric data is one that anyone can easily capture
 (e.g. face image captured by camera) and out of scope of this
@@ -748,7 +748,7 @@ requirement.
 **FPT\_BDP\_EXT.3.1** The TSF shall not store any plaintext biometric
 data outside the secure execution environment.
 
-Application note 27:
+Application note 25:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -761,7 +761,7 @@ protect biometric data in detail.
 \[**selection**: *using a PIN as an additional factor, using a password
 as an additional* factor, \[**assignment**: *other circumstances*\] \].
 
-Application note 28:
+Application note 26:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
@@ -992,7 +992,7 @@ content of **biometric data** is made unavailable upon the
 \[**selection**: *allocation of the resource to, deallocation of the
 resource from*\] all objects.
 
-Application note 29:
+Application note 27:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
