@@ -471,7 +471,7 @@ Requirements to control access to the template is defined in
 FPT\_PBT\_EXT.1. FPT\_BDP\_EXT.1, FPT\_BDP\_EXT.2 and FPT\_BDP\_EXT.3
 requires the TOE to protect the biometric data with support from the TOE
 environment. Optional requirements to protect the residual biometric
-data is defined as FDP\_RIP.1 in chapter 9.
+data is defined as FDP\_RIP.2 in chapter 9.
 
 Application note 6:
 
@@ -1173,7 +1173,7 @@ device can access them. This means that the TOE shall only allow
     
 The above requirements are defined as **FPT\_PBT\_EXT.1**,
 **FPT\_BDP\_EXT.1**, **FPT\_BDP\_EXT.2** and **FPT\_PBT\_EXT.3** in chapter 6
-and **FDP\_RIP.1** in chapter 9 in this cPP.
+and **FDP\_RIP.2** in chapter 9 in this cPP.
 
 ### 2.5	Management of the TOE configuration
 Mobile device shall enable/disable the BAF as
