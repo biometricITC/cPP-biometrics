@@ -411,7 +411,8 @@ rates shall be specified in the FIA\_MBV\_EXT.1.
 
 The TOE shall implement the functionality to enroll a user for mobile
 biometric verification and bind the template to the user only 
-after successful authentication of the user. The TOE shall create the 
+after successful authentication of the user to the TOE environment 
+using an alternative authentication mechanism. The TOE shall create the 
 sufficient quality of templates in order to meet the relevant error 
 rates for mobile biometric verification.
 
