@@ -6,8 +6,9 @@ The CCDB has established a Work Group to assist in creating an iTC (and hence cP
 ## Our Essential Security Requirements 
 https://github.com/nils-tekampe/cPP-biometrics/blob/master/1_ESR/ESR.xml (stable version)
 
-## How to deal with issues on Github
+## How to deal with issues on Github and commits
 https://github.com/nils-tekampe/cPP-biometrics/issues/41 
+https://github.com/biometricITC/cPP-biometrics/issues/115
 
 ## Listing of different mobile use cases (main focus since June 2017)
 https://github.com/nils-tekampe/cPP-biometrics/blob/master/2_UseCaseDescrption/MobileUseCaseV2.md
