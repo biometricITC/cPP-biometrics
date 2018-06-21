@@ -224,7 +224,7 @@ functions:
     actions based on the decision of the TOE
 
 -   Providing the secure execution environment that guarantees the TOE
-    and its data loaded inside to be protected with respect to
+    and its data to be protected with respect to
     confidentiality and integrity
 
 The evaluation of the above security functions is out of scope of this
