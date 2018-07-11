@@ -1,5 +1,5 @@
 # collaborative Protection Profile for Mobile biometric enrolment and verification - for unlocking the device -
-## Version 0.4 23-APR-2018
+## Version 0.5 24-JUN-2018
 
 ## Acknowledgements
 
@@ -232,6 +232,13 @@ cPP and expected to be performed separately based on the \[MDFPP\].
 Relation between this cPP and \[MDFPP\] is explained in detail in Annex
 A.
 
+
+
+![figure2](https://github.com/nils-tekampe/cPP-biometrics/blob/master/3_ProtectionProfile/images/BiocPP_architecture_proposal_3.png)
+
+
+                         Figure 2: Generic relations between the TOE and the mobile device environment
+                         
 2.5 TOE Use Case
 ------------
 Mobile device itself may be operated in a number of use cases such as
