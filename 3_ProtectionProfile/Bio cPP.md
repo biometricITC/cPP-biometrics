@@ -162,7 +162,7 @@ the mobile device.
 
 Examples of biometric characteristic used by the TOE are: fingerprint,
 face, iris, palm print, finger vein, palm vein, speech, signature and so
-forth. However, scope of this cPP is limited to only those modalities
+forth. However, scope of this cPP is limited to only those biometric characteristics
 for which \[SD\] defines the Evaluation Activities.
 
 c)  Presentation Attack Detection (PAD)
@@ -265,7 +265,7 @@ to be used for security sensitive services through the mobile biometric
 verification.
 
 Main concern of this use case is the accuracy of mobile biometric
-verification (i.e. FAR and FRR) and basic level of presentation attacks.
+verification (i.e. FAR/FMR and FRR/FNMR) and basic level of presentation attacks.
 Security assurance for mobile device that the TOE relies on should be
 handled by \[MDFPP\].
 
@@ -290,7 +290,7 @@ biometric for convenience instead of PIN/password to access such
 security sensitive services.
 
 The requirements for the TOE focus on the biometric performance (FTE,
-FAR and FRR) and higher level of presentation attack.
+FAR/FMR and FRR/FNMR) and higher level of presentation attack.
 
 ## 3. CC Conformance
 As defined by the references \[CC1\], \[CC2\] and \[CC3\], this cPP:
@@ -411,7 +411,7 @@ an adequate reliability.
 
 Application note 1:
 
-In this cPP, relevant criteria are FAR and FRR and corresponding error
+In this cPP, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error
 rates shall be specified in the FIA\_MBV\_EXT.1.
 
 #### O.Enrol
@@ -436,7 +436,7 @@ enroll his/herself as required by \[MDFPP\].
 
 Application note 3:
 
-In this cPP, relevant criteria are FAR and FRR and corresponding error
+In this cPP, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error
 rates shall be specified in the FIA\_MBV\_EXT.1.
 
 #### O.Presentation\_Attack\_Detection
@@ -567,7 +567,7 @@ organizational security policies map to the security objectives.
 |-------|---------------|-------------|
 |T.Casual\_Attack OSP.Verification\_Error | O.BIO\_Verification | The threat T.Casual\_Attack is countered by O.BIO\_Verification as this provides the capability of mobile biometric verification not to allow the user who have not been enrolled to impersonate as a legitimate user. <br> The OSP OSP.Verification\_Error is enforced by O.BIO\_Verification as this requires the TOE to meet relevant criteria for security relevant error rates for mobile biometric verification. |
 |OSP.Enrol | O.Enrol | The OSP OSP.Enrol is enforced by O.Enrol as this require the TOE to implement the functionality to enroll a user for mobile biometric verification and create sufficient quality of templates. |
-|T.Presentation\_Attack 	OSP.PAD\_Error | O.Presentation\_Attack\_Detection | The threat T.Presentation\_Attack is countered by O.Presentation\_Attack\_Detection as this provides the capability of mobile biometric verification to prevent attacks with PAI. <br> The OSP OSP.PAD\_Error is enforced by O.Presentation\_Attack\_Detection as this requires the TOE to meet relevant criteria for security relevant error rates for PAD. |
+|T.Presentation\_Attack 	OSP.PAD\_Error | O.Presentation\_Attack\_Detection | The threat T.Presentation\_Attack is countered by O.Presentation\_Attack\_Detection as this provides the capability of mobile biometric verification to prevent attacks with artificial PAIs. <br> The OSP OSP.PAD\_Error is enforced by O.Presentation\_Attack\_Detection as this requires the TOE to meet relevant criteria for security relevant error rates for PAD. |
 |OSP.Protection | O.Protection  OE.Protection | The OSP OSP.Protection is enforced by O.Protection and its operational environment objective OE.Protection. |
 |A.Alternative |OE.Alternative | The Assumption A.Alternative is satisfied by the operational environment objective OE.Alternative. |
 |A.Authentication | OE.Authentication | The Assumption A.Authentication is satisfied by the operational environment objective OE.Authentication. |
@@ -628,7 +628,7 @@ Authentication Factor before beginning biometric enrolment.
 Application note 16:
 
 ST author may refine “sufficient quality” to specify quality standards
-if the TOE follow such standard.
+if the TOE follows such standard.
 
 ### 6.2.3 Mobile biometric verification (FIA\_MBV\_EXT.1)
 
@@ -745,7 +745,7 @@ protect biometric data in detail.
 **FPT\_BDP\_EXT.2.1** The TSF shall not transmit any plaintext biometric
 data outside the security boundary of the secure execution environment.
 
-Application note 25:
+Application note 24:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -757,7 +757,7 @@ protect biometric data in detail.
 **FPT\_BDP\_EXT.3.1** The TSF shall not store any plaintext biometric
 data outside the secure execution environment.
 
-Application note 27:
+Application note 25:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -770,7 +770,7 @@ protect biometric data in detail.
 \[**selection**: *using a PIN as an additional factor, using a password
 as an additional* factor, \[**assignment**: *other circumstances*\] \].
 
-Application note 29:
+Application note 26:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
@@ -1001,7 +1001,7 @@ content of **biometric data** is made unavailable upon the
 \[**selection**: *allocation of the resource to, deallocation of the
 resource from*\] all objects.
 
-Application note 30:
+Application note 27:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
@@ -1013,7 +1013,69 @@ that are used in the cPP, including those used in chapter 8 and 9.
 (Note: formatting conventions for selections and assignments in this
 chapter are those in \[CC2\].)
 
-**_TBD. I will add ECD after fixing all SFRs_**
+10.1 Identification and Authentication (FIA)
+---------------------------
+
+### 10.1.1 Mobile biometric enrolment (FIA\_MBE\_EXT)
+
+#### Family Behaviour
+This component defines the requirements for the TSF to be able to 
+enroll a user, create templates of sufficient quality and prevent 
+presentation attacks.
+
+#### Component levelling
+
+Fig
+
+FIA\_MBE\_EXT.1 Mobile biometric enrolment requires the TSF to enroll a user.
+FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment requires 
+to create templates of sufficient quality.
+FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment requires 
+to prevent presenation attacks.
+
+
+#### Management: FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2
+The following actions could be considered for the management functions in FMT:
+a) the management of the TSF data (setting threshold values for quality scores to generate templates) by an administrator.
+
+#### Management: FIA\_MBE\_EXT.3
+The following actions could be considered for the management functions in FMT:
+a) the management of the TSF data (setting values for detecting artificial presentation attack instruments) by an administrator.
+
+#### Audit: FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
+a) Basic: Success or failure of the mobile biometric enrolment
+
+#### Audit: FIA\_MBE\_EXT.3
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
+a) Basic: Detection of presentation attacks
+
+### 10.1.1.1 FIA\_MBE\_EXT.1 Mobile biometric enrolment
+## FIA\_MBE\_EXT.1 Mobile biometric enrolment ##
+Hierarchical to: No other components.
+Dependencies: No dependencies.
+
+## FIA_MBE_EXT.1.1 The TSF shall provide a mechanism to enroll an authenticated user. ##
+
+Application note 28:
+User shall be authenticated by the mobile device using the Password Authentication Factor before beginning biometric enrolment.
+
+### 10.1.1.2 FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment
+## FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment ##
+Hierarchical to: FIA\_MBE\_EXT.1 Mobile biometric enrolment
+Dependencies: No dependencies.
+
+## FIA_MBE_EXT.2.1 The TSF shall create templates of sufficient quality. ##
+
+Application note 29:
+ST author may refine “sufficient quality” to specify quality standards if the TOE follow such standard.
+
+### 10.1.1.3 FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment
+## FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment ##
+Hierarchical to: FIA\_MBE\_EXT.1 Mobile biometric enrolment
+Dependencies: No dependencies.
+
+## FIA_MBE_EXT.3.1 The TSF shall create templates of sufficient quality. ##
 
 ## Annex A
 
@@ -1060,10 +1122,12 @@ The TOE shall implement a mobile biometric verification mechanism that
 satisfies SFRs defined in this cPP. This means that same modality shall be
 selected in **FIA\_MBV\_EXT.1.1**, and
 relevant criteria and its error rate shall be specified in
-**FIA\_MBV\_EXT.1.2.**. If multiple modalities are selected in
+**FIA\_MBV\_EXT.1.2**. If multiple modalities are selected in
 *FIA\_UAU.5.1*, **FIA\_MBV\_EXT.1** shall be iterated for each modality.
 The TOE shall also enroll all modalities selected as specified in
-**FIA\_MBE.EXT.1.**
+**FIA\_MBE.EXT.1**, assure the quality of samples and templates as specified in 
+**FIA\_MBV.EXT.2** and **FIA\_MBE.EXT.2** and prevent use of artificial presentation
+attack instruments as specified in **FIA\_MBV.EXT.3**.
 
 All SFRs in bold are defined in chapter 6 in this cPP.
 
