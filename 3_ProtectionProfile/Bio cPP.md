@@ -1027,55 +1027,55 @@ presentation attacks.
 
 Fig
 
-FIA\_MBE\_EXT.1 Mobile biometric enrolment requires the TSF to enroll a user.
+FIA\_MBE\_EXT.1 Mobile biometric enrolment requires the TSF to enroll a user.  
 FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment requires 
-to create templates of sufficient quality.
+to create templates of sufficient quality.  
 FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment requires 
 to prevent presenation attacks.
 
 
 #### Management: FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2
-The following actions could be considered for the management functions in FMT:
+The following actions could be considered for the management functions in FMT:  
 a) the management of the TSF data (setting threshold values for quality scores to generate templates) by an administrator.
 
 #### Management: FIA\_MBE\_EXT.3
-The following actions could be considered for the management functions in FMT:
+The following actions could be considered for the management functions in FMT:  
 a) the management of the TSF data (setting values for detecting artificial presentation attack instruments) by an administrator.
 
 #### Audit: FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:  
 a) Basic: Success or failure of the mobile biometric enrolment
 
 #### Audit: FIA\_MBE\_EXT.3
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:  
 a) Basic: Detection of presentation attacks
 
-### 10.1.1.1 FIA\_MBE\_EXT.1 Mobile biometric enrolment
-## FIA\_MBE\_EXT.1 Mobile biometric enrolment ##
-Hierarchical to: No other components.
+#### 10.1.1.1 FIA\_MBE\_EXT.1 Mobile biometric enrolment
+#### FIA\_MBE\_EXT.1 Mobile biometric enrolment ##
+Hierarchical to: No other components.  
 Dependencies: No dependencies.
 
-## FIA_MBE_EXT.1.1 The TSF shall provide a mechanism to enroll an authenticated user. ##
+#### FIA_MBE_EXT.1.1 The TSF shall provide a mechanism to enroll an authenticated user.
 
 Application note 28:
 User shall be authenticated by the mobile device using the Password Authentication Factor before beginning biometric enrolment.
 
-### 10.1.1.2 FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment
-## FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment ##
+#### 10.1.1.2 FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment
+#### FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment ##
 Hierarchical to: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 Dependencies: No dependencies.
 
-## FIA_MBE_EXT.2.1 The TSF shall create templates of sufficient quality. ##
+#### FIA_MBE_EXT.2.1 The TSF shall create templates of sufficient quality.
 
 Application note 29:
-ST author may refine “sufficient quality” to specify quality standards if the TOE follow such standard.
+ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
 
-### 10.1.1.3 FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment
-## FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment ##
+#### 10.1.1.3 FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment
+#### FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment 
 Hierarchical to: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 Dependencies: No dependencies.
 
-## FIA_MBE_EXT.3.1 The TSF shall create templates of sufficient quality. ##
+#### FIA_MBE_EXT.3.1 The TSF shall create templates of sufficient quality. 
 
 ## Annex A
 
