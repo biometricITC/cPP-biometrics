@@ -1023,8 +1023,8 @@ enroll a user, create templates of sufficient quality and prevent
 presentation attacks.
 
 #### Component levelling
-
-![figure3](https://github.com/biometricITC/cPP-biometrics/tree/NK-finalchange/3_ProtectionProfile/images/FIA_MBE_EXT.png)  
+ 
+<img src="https://github.com/biometricITC/cPP-biometrics/blob/NK-finalchange/3_ProtectionProfile/images/FIA_MBE_EXT.png" width="400px">
 
 FIA\_MBE\_EXT.1 Mobile biometric enrolment requires the TSF to enroll a user.  
 FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment requires 
@@ -1090,7 +1090,7 @@ presentation attacks.
 
 #### Component levelling
 
-![figure4](https://github.com/biometricITC/cPP-biometrics/tree/NK-finalchange/3_ProtectionProfile/images/FIA_MBV_EXT.png)  
+<img src="https://github.com/biometricITC/cPP-biometrics/blob/NK-finalchange/3_ProtectionProfile/images/FIA_MBV_EXT.png" width="400px">
 
 FIA\_MBV\_EXT.1 Mobile biometric verification requires the TSF to verify a user.  
 FIA\_MBV\_EXT.2 Quality of biometric samples for mobile biometric verification requires 
@@ -1223,7 +1223,7 @@ verify a user with the hybrid authentication.
 
 #### Component levelling
 
-![figure5](https://github.com/biometricITC/cPP-biometrics/tree/NK-finalchange/3_ProtectionProfile/images/FIA_HYB_EXT.png)  
+<img src="https://github.com/biometricITC/cPP-biometrics/blob/NK-finalchange/3_ProtectionProfile/images/FIA_HYB_EXT.png" width="400px">
 
 FIA\_HYB\_EXT.1 Hybrid Authentication Biometric Method requires the TSF to verify a user with the hybrid authentication.  
 
@@ -1253,7 +1253,7 @@ protect plaintext biometric data.
 
 #### Component levelling
 
-![figure6](https://github.com/biometricITC/cPP-biometrics/tree/NK-finalchange/3_ProtectionProfile/images/FPT_BDP_EXT.png)  
+<img src="https://github.com/biometricITC/cPP-biometrics/blob/NK-finalchange/3_ProtectionProfile/images/FPT_BDP_EXT.png" width="400px">
 
 FPT\_BDP\_EXT.1 Biometric data processing requires the TSF 
 to process plaintext biometric data within the security boundary 
@@ -1319,7 +1319,7 @@ protect templates.
 
 #### Component levelling
 
-![figure7](https://github.com/biometricITC/cPP-biometrics/tree/NK-finalchange/3_ProtectionProfile/images/FPT_PBT_EXT.png)  
+<img src="https://github.com/biometricITC/cPP-biometrics/blob/NK-finalchange/3_ProtectionProfile/images/FPT_PBT_EXT.png" width="400px">
 
 FPT\_PBT\_EXT.1 Protection of biometric template requires the TSF 
 to protect templates.  
