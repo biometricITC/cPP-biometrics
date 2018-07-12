@@ -1030,7 +1030,7 @@ FIA\_MBE\_EXT.1 Mobile biometric enrolment requires the TSF to enroll a user.
 FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment requires 
 the TSF to create templates of sufficient quality.  
 FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment requires 
-the TSF to prevent presenation attacks.
+the TSF to prevent presenation attacks during the mobile biometric enrolment.
 
 #### Management: FIA\_MBE\_EXT.1
 There are no management activities foreseen.
@@ -1078,7 +1078,8 @@ ST author may refine “sufficient quality” to specify quality standards if th
 Hierarchical to: No other components.  
 Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 
-**FIA_MBE_EXT.3.1** The TSF shall create templates of sufficient quality. 
+**FIA\_MBE\_EXT.3** The TSF shall prevent use of artificial presentation
+attack instruments from being successfully enrolled.
 
 ### 10.1.2 Mobile biometric verification (FIA\_MBV\_EXT)
 
@@ -1095,7 +1096,7 @@ FIA\_MBV\_EXT.1 Mobile biometric verification requires the TSF to verify a user.
 FIA\_MBV\_EXT.2 Quality of biometric samples for mobile biometric verification requires 
 the TSF to use samples of sufficient quality.  
 FIA\_MBV\_EXT.3 Presentation attack detection for mobile biometric verification requires 
-the TSF to prevent presenation attacks.
+the TSF to prevent presenation attacks during the mobile biometric verification.
 
 #### Management: FIA\_MBV\_EXT.1
 The following actions could be considered for the management functions in FMT:  
@@ -1200,8 +1201,6 @@ Hierarchical to: No other components.
 Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment  
               FIA\_MBV\_EXT.1 Mobile biometric verification  
 
-**FIA_MBE_EXT.3.1** The TSF shall create templates of sufficient quality. 
-
 **FIA\_MBV\_EXT.3.1** The TSF shall prevent use of artificial
 presentation attack instruments from being successfully verified.
 
@@ -1305,7 +1304,7 @@ Hierarchical to: No other components.
 Dependencies: No dependencies.
 
 **FPT\_BDP\_EXT.3.1** The TSF shall not store any plaintext biometric
-data outside the secure execution environment.
+data outside the security boundary of the secure execution environment.
 
 Application note 38:
 
