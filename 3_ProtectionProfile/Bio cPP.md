@@ -745,7 +745,7 @@ protect biometric data in detail.
 **FPT\_BDP\_EXT.2.1** The TSF shall not transmit any plaintext biometric
 data outside the security boundary of the secure execution environment.
 
-Application note 25:
+Application note 24:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -757,7 +757,7 @@ protect biometric data in detail.
 **FPT\_BDP\_EXT.3.1** The TSF shall not store any plaintext biometric
 data outside the secure execution environment.
 
-Application note 27:
+Application note 25:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -770,7 +770,7 @@ protect biometric data in detail.
 \[**selection**: *using a PIN as an additional factor, using a password
 as an additional* factor, \[**assignment**: *other circumstances*\] \].
 
-Application note 29:
+Application note 26:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
@@ -1001,7 +1001,7 @@ content of **biometric data** is made unavailable upon the
 \[**selection**: *allocation of the resource to, deallocation of the
 resource from*\] all objects.
 
-Application note 30:
+Application note 27:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
