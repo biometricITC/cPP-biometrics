@@ -1,5 +1,5 @@
 # collaborative Protection Profile for Mobile biometric enrolment and verification - for unlocking the device -
-## Version 0.5 24-JUN-2018
+## Version 0.6 13-JUL-2018
 
 ## Acknowledgements
 
@@ -54,8 +54,6 @@ updates and revisions. Please report any issues to the BS iTC.
 \[SD\] Evaluation Activities for Mobile biometric enrolment and verification – for unlocking the device – cPP \[TBD\]
 
 **Other document**
-
-\[Android CD\] Android 8.1 Compatibility Definition, December 2017
 
 \[ISO19795-1\] Biometric performance testing and reporting — Part 1: Principles and framework, First edition
 
@@ -120,6 +118,7 @@ biometric enrolment and verification.
 |0.1 |24th Oct, 2017 |Preliminary draft for the Berlin iTC session |  
 |0.2 |26th Feb, 2018 |First version uploaded to the repo in the Github for review |
 |0.3 |9th Mar, 2018  |Add SFRs and make editorial changes |
+|0.5 |13th Jul, 2018  |Add ECDs and make editorial changes |
 
 ## 2. PP Introduction
 
@@ -1025,16 +1024,18 @@ presentation attacks.
 
 #### Component levelling
 
-Fig
+![figure3](https://github.com/biometricITC/cPP-biometrics/tree/NK-finalchange/3_ProtectionProfile/images/FIA_MBE_EXT.png)  
 
 FIA\_MBE\_EXT.1 Mobile biometric enrolment requires the TSF to enroll a user.  
 FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment requires 
-to create templates of sufficient quality.  
+the TSF to create templates of sufficient quality.  
 FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment requires 
-to prevent presenation attacks.
+the TSF to prevent presenation attacks.
 
+#### Management: FIA\_MBE\_EXT.1
+There are no management activities foreseen
 
-#### Management: FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2
+#### Management: FIA\_MBE\_EXT.2
 The following actions could be considered for the management functions in FMT:  
 a) the management of the TSF data (setting threshold values for quality scores to generate templates) by an administrator.
 
@@ -1051,31 +1052,31 @@ The following actions should be auditable if FAU_GEN Security audit data generat
 a) Basic: Detection of presentation attacks
 
 #### 10.1.1.1 FIA\_MBE\_EXT.1 Mobile biometric enrolment
-#### FIA\_MBE\_EXT.1 Mobile biometric enrolment ##
-Hierarchical to: No other components.  
+#### FIA\_MBE\_EXT.1 Mobile biometric enrolment
+Hierarchical to: No other components.   
 Dependencies: No dependencies.
 
-#### FIA_MBE_EXT.1.1 The TSF shall provide a mechanism to enroll an authenticated user.
+**FIA_MBE_EXT.1.1** The TSF shall provide a mechanism to enroll an authenticated user.
 
 Application note 28:
 User shall be authenticated by the mobile device using the Password Authentication Factor before beginning biometric enrolment.
 
 #### 10.1.1.2 FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment
-#### FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment ##
-Hierarchical to: FIA\_MBE\_EXT.1 Mobile biometric enrolment
-Dependencies: No dependencies.
+#### FIA\_MBE\_EXT.2 Quality of biometric templates for mobile biometric enrolment
+Hierarchical to: No other components.  
+Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 
-#### FIA_MBE_EXT.2.1 The TSF shall create templates of sufficient quality.
+**FIA_MBE_EXT.2.1** The TSF shall create templates of sufficient quality.
 
 Application note 29:
 ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
 
 #### 10.1.1.3 FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment
 #### FIA\_MBE\_EXT.3 Presentation attack detection for mobile biometric enrolment 
-Hierarchical to: FIA\_MBE\_EXT.1 Mobile biometric enrolment
-Dependencies: No dependencies.
+Hierarchical to: No other components.  
+Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 
-#### FIA_MBE_EXT.3.1 The TSF shall create templates of sufficient quality. 
+**FIA_MBE_EXT.3.1** The TSF shall create templates of sufficient quality. 
 
 ## Annex A
 
