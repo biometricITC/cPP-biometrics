@@ -118,15 +118,15 @@ biometric enrolment and verification.
 |0.1 |24th Oct, 2017 |Preliminary draft for the Berlin iTC session |  
 |0.2 |26th Feb, 2018 |First version uploaded to the repo in the Github for review |
 |0.3 |9th Mar, 2018  |Add SFRs and make editorial changes |
-|0.5 |13th Jul, 2018  |Add ECDs and make editorial changes |
+|0.6 |13th Jul, 2018  |Add ECDs and make editorial changes |
 
 ## 2. PP Introduction
 
 2.1 PP Reference Identification
 ---------------------------
 PP Reference: collaborative Protection Profile for Mobile biometric enrolment and verification – for unlocking the device –
-PP Version: 0.3
-PP Date: 09-MAR-2018
+PP Version: 0.6
+PP Date: 13-JUL-2018
 
 2.2 TOE Overview
 ------------
