@@ -94,7 +94,7 @@ biometric enrolment and verification.
 |**False Non-match Rate (FNMR)** |Proportion of genuine attempt samples that were falsely declared not to match the template of the same characteristic from the same user supplying the sample. |
 |**False Reject Rate (FRR)** |Proportion of verification transactions with truthful claims of identity that are incorrectly denied. |
 |**Features** |Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates. |
-|**Hybrid Authentication** |A hybrid authentication factor is one where a user has to submit a combination of biometric sample and PIN or password with both to pass and without the user being made aware of which factor failed, if either fails. \[MDFPP\]|
+|**Hybrid Authentication** |A hybrid authentication factor is one where a user has to submit a combination of biometric sample and PIN or password with both to pass and without the user being made aware of which factor failed, if either fails. |
 |**Locked State** |Powered on Mobile Device, with most functionalities unavailable for use. User authentication is required to access full functionality. |
 |**Mobile Device (MD)** |A device which is composed of a hardware platform and its system software. The device typically provides wireless connectivity and may include software for functions like secure messaging, email, web, VPN connection, and VoIP (Voice over IP), for access to the protected enterprise network, enterprise data and applications, and for communicating to other Mobile Devices. |
 |**Mobile Device User (User)** |The individual authorized to physically control and operate the Mobile Device. This cPP assumes that the user is the device owner. |
@@ -965,18 +965,18 @@ to this cPP.
 voice, vein*, \[**assignment:** *other modality* \] as the biometric component of the 
 hybrid authentication mechanism.
 
+Application note 27:
+
+A hybrid authentication mechanism is one where a user has to submit a combination of biometric 
+sample and PIN or password with both to pass and without the user being made aware of which 
+factor failed, if either fails. if this mechanism is selected in the \[MDFPP\], the above 
+component shall also be selected.
+
 ## 9. Optional Requirements
 
-If a TOE fulfils any of the optional requirements, the vendor is
-encouraged to add the related functionality to the ST. Therefore, in the
-application notes of this chapter the wording "This option should be
-chosen..." is repeatedly used. But it also is used to emphasize that
-this option should only be chosen if the TOE provides the related
-functionality and that it is not necessary to implement the related
-functionality to be compliant to the cPP. ST authors are free to choose
-none, some or all SFRs defined in this chapter. Just the fact that a
-product supports a certain functionality does not mandate to add any SFR
-defined in this chapter.
+ST authors are free to choose none, some or all SFRs defined in this chapter. 
+Just the fact that a product supports a certain functionality does not mandate 
+to add any SFR defined in this chapter.
 
 9.1 Identification and Authentication (FIA)
 ---------------------------
@@ -1000,7 +1000,7 @@ content of **biometric data** is made unavailable upon the
 \[**selection**: *allocation of the resource to, deallocation of the
 resource from*\] all objects.
 
-Application note 27:
+Application note 28:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
@@ -1058,7 +1058,7 @@ Dependencies: No dependencies.
 
 **FIA_MBE_EXT.1.1** The TSF shall provide a mechanism to enroll an authenticated user.
 
-Application note 28:
+Application note 29:
 
 User shall be authenticated by the mobile device using the Password Authentication Factor before beginning biometric enrolment.
 
@@ -1069,7 +1069,7 @@ Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 
 **FIA_MBE_EXT.2.1** The TSF shall create templates of sufficient quality.
 
-Application note 29:
+Application note 30:
 
 ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
 
@@ -1132,17 +1132,17 @@ verification mechanism with the \[**selection:** *FMR, FAR* \] not exceeding
 \[**assignment:** *defined value* \] and \[**selection:** *FNMR, FRR* \] not exceeding
 \[**assignment:** *defined value* \].
 
-Application note 30:
+Application note 31:
 
 If the TOE support multiple modalities, ST author may iterate the SFR to
 define different error rates for each modality.
 
-Application note 31:
+Application note 32:
 
 ST author shall select or assign those modalities in FIA\_MBV\_EXT.1.1
 for which \[SD\] defines the Evaluation Activities.
 
-Application note 32:
+Application note 33:
 
 Value of FMR, FAR, FNMR and FRR shall be assigned by the ST author
 however the ST author should consider the following factors for setting
@@ -1190,7 +1190,7 @@ Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 **FIA\_MBV\_EXT.2.1** The TSF shall only use samples of sufficient
 quality to verify the user.
 
-Application note 33:
+Application note 34:
 
 ST author may refine “sufficient quality” to specify quality standards
 if the TOE follows such standard.
@@ -1204,12 +1204,12 @@ Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 **FIA\_MBV\_EXT.3.1** The TSF shall prevent use of artificial
 presentation attack instruments from being successfully verified.
 
-Application note 34:
+Application note 35:
 
 This requirement is only applicable to mobile biometric verification.
 PAD for mobile biometric enrolment is an optional requirement.
 
-Application note 35: 
+Application note 36: 
 
 Artificial PAIs that the TOE shall prevent and
 relevant criteria for its security relevant error rates for each type of
@@ -1242,6 +1242,13 @@ Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 voice, vein*, \[**assignment:** *other modality* \] as the biometric component of the 
 hybrid authentication mechanism.
 
+Application note 37:
+
+A hybrid authentication mechanism is one where a user has to submit a combination of biometric 
+sample and PIN or password with both to pass and without the user being made aware of which 
+factor failed, if either fails. if this mechanism is selected in the \[MDFPP\], the above 
+component shall also be selected.
+
 10.2 Protection of the TSF (FPT)
 ---------------------------
 
@@ -1249,7 +1256,8 @@ hybrid authentication mechanism.
 
 #### Family Behaviour
 This component defines the requirements for the TSF to be able to 
-protect plaintext biometric data.
+protect plaintext biometric data using security functions provided by
+the TOE environment.
 
 #### Component levelling
 
@@ -1280,7 +1288,7 @@ Dependencies: No dependencies.
 data used to generate templates and perform sample matching within the 
 security boundary of the secure execution environment.
 
-Application note 36:
+Application note 38:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -1293,7 +1301,7 @@ Dependencies: No dependencies.
 **FPT\_BDP\_EXT.2.1** The TSF shall not transmit any plaintext biometric
 data outside the security boundary of the secure execution environment.
 
-Application note 37:
+Application note 39:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -1306,7 +1314,7 @@ Dependencies: No dependencies.
 **FPT\_BDP\_EXT.3.1** The TSF shall not store any plaintext biometric
 data outside the security boundary of the secure execution environment.
 
-Application note 38:
+Application note 40:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -1339,7 +1347,7 @@ Dependencies: No dependencies.
 \[**selection**: *using a PIN as an additional factor, using a password
 as an additional* factor, \[**assignment**: *other circumstances*\] \].
 
-Application note 39:
+Application note 41:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
@@ -1392,12 +1400,16 @@ selected in **FIA\_MBV\_EXT.1.1**, and
 relevant criteria and its error rate shall be specified in
 **FIA\_MBV\_EXT.1.2**. If multiple modalities are selected in
 *FIA\_UAU.5.1*, **FIA\_MBV\_EXT.1** shall be iterated for each modality.
+If hybrid is selected in *FIA\_UAU.5.1*, **FIA\_HYB\_EXT.1** shall also be
+selected.
 The TOE shall also enroll all modalities selected as specified in
 **FIA\_MBE.EXT.1**, assure the quality of samples and templates as specified in 
 **FIA\_MBV.EXT.2** and **FIA\_MBE.EXT.2** and prevent use of artificial presentation
-attack instruments as specified in **FIA\_MBV.EXT.3**.
+attack instruments during the mobile biometric verification as specified in **FIA\_MBV.EXT.3**.
+The TOE may also prevent use of artificial presentation attack instruments during 
+the mobile biometric enrolment as specified in **FIA\_MBV.EXT.3**.
 
-All SFRs in bold are defined in chapter 6 in this cPP.
+All SFRs in bold are defined in chapter 6 and 8 in this cPP.
 
 ### 2.3	Handling the verification outcome
 Mobile device shall take appropriate actions
