@@ -950,8 +950,8 @@ hybrid authentication mechanism.
 Application note 27:
 
 A hybrid authentication mechanism is one where a user has to submit a combination of biometric 
-sample and PIN or password with both to pass and without the user being made aware of which 
-factor failed, if either fails. if this mechanism is selected in the \[MDFPP\], the above 
+sample and password with both to pass and without the user being made aware of which 
+factor failed, if either fails. If this mechanism is selected in the \[MDFPP\], the above 
 component shall also be selected.
 
 ## 9. Optional Requirements
@@ -1227,8 +1227,8 @@ hybrid authentication mechanism.
 Application note 37:
 
 A hybrid authentication mechanism is one where a user has to submit a combination of biometric 
-sample and PIN or password with both to pass and without the user being made aware of which 
-factor failed, if either fails. if this mechanism is selected in the \[MDFPP\], the above 
+sample and password with both to pass and without the user being made aware of which 
+factor failed, if either fails. If this mechanism is selected in the \[MDFPP\], the above 
 component shall also be selected.
 
 10.2 Protection of the TSF (FPT)
