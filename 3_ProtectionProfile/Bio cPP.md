@@ -14,7 +14,7 @@ Laboratories, and members of academia.
 ---------------------
 This document presents the Common Criteria (CC) collaborative Protection
 Profile (cPP) to express the security functional requirements (SFRs) and
-security assurance requirements (SARs) for a mobile biometric enrolment
+security assurance requirements (SARs) for mobile biometric enrolment
 and verification on the mobile device. The Evaluation activities that
 specify the actions the evaluator performs to determine if a product
 satisfies the SFRs captured within this cPP, are described in \[SD\].
@@ -938,6 +938,7 @@ to this cPP.
 
 8.1 Identification and Authentication (FIA)
 ---------------------------
+The following SFR shall be used by the ST author if 'hybrid' is selected in FIA_UAU.5.1.
 
 ### 8.1.1 Hybrid Authentication Biometric Method (FIA\_HYB\_EXT.1)
 
