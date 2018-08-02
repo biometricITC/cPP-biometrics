@@ -367,7 +367,8 @@ rates for mobile biometric verification.
 
 It is assumed that the TOE environment provides an alternative
 authentication mechanism as a complement to mobile biometric
-verification. This alternative authentication mechanism can be used in
+verification. The alternative authentication mechanism is required 
+for enrolment of the biometric template and can also be used in
 cases when a user is rejected by the mobile biometric verification
 (False Rejection).
 
@@ -487,8 +488,9 @@ device) shall satisfy relevant requirements defined in this cPP and
 #### OE.Alternative
 
 The TOE environment shall provide an alternative authentication
-mechanism as a complement to mobile biometric verification. This
-alternative authentication mechanism can be used in cases where a user
+mechanism as a complement to mobile biometric verification. The 
+alternative authentication mechanism is required for enrolment 
+of the biometric template and can also be used in cases where a user
 is rejected by the mobile biometric verification (False Rejection).
 
 Application note 7:
