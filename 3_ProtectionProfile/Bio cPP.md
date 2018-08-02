@@ -948,7 +948,7 @@ The following SFR shall be used by the ST author if 'hybrid' is selected in FIA_
 voice, vein*, \[**assignment:** *other modality* \] as the biometric component of the 
 hybrid authentication mechanism.
 
-Application note 27:
+Application note 25:
 
 A hybrid authentication mechanism is one where a user has to submit a combination of biometric 
 sample and PIN or password with both to pass and without the user being made aware of which 
@@ -983,7 +983,7 @@ content of **biometric data** is made unavailable upon the
 \[**selection**: *allocation of the resource to, deallocation of the
 resource from*\] all objects.
 
-Application note 25:
+Application note 26:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
@@ -1041,7 +1041,7 @@ Dependencies: No dependencies.
 
 **FIA_MBE_EXT.1.1** The TSF shall provide a mechanism to enroll an authenticated user.
 
-Application note 29:
+Application note 27:
 
 User shall be authenticated by the mobile device using the Password Authentication Factor before beginning biometric enrolment.
 
@@ -1052,7 +1052,7 @@ Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 
 **FIA_MBE_EXT.2.1** The TSF shall create templates of sufficient quality.
 
-Application note 30:
+Application note 28:
 
 ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
 
@@ -1115,17 +1115,17 @@ verification mechanism with the \[**selection:** *FMR, FAR* \] not exceeding
 \[**assignment:** *defined value* \] and \[**selection:** *FNMR, FRR* \] not exceeding
 \[**assignment:** *defined value* \].
 
-Application note 31:
+Application note 29:
 
 If the TOE support multiple modalities, ST author may iterate the SFR to
 define different error rates for each modality.
 
-Application note 32:
+Application note 30:
 
 ST author shall select or assign those modalities in FIA\_MBV\_EXT.1.1
 for which \[SD\] defines the Evaluation Activities.
 
-Application note 33:
+Application note 31:
 
 Value of FMR, FAR, FNMR and FRR shall be assigned by the ST author
 however the ST author should consider the following factors for setting
@@ -1173,7 +1173,7 @@ Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 **FIA\_MBV\_EXT.2.1** The TSF shall only use samples of sufficient
 quality to verify the user.
 
-Application note 34:
+Application note 32:
 
 ST author may refine “sufficient quality” to specify quality standards
 if the TOE follows such standard.
@@ -1187,12 +1187,12 @@ Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 **FIA\_MBV\_EXT.3.1** The TSF shall prevent use of artificial
 presentation attack instruments from being successfully verified.
 
-Application note 35:
+Application note 33:
 
 This requirement is only applicable to mobile biometric verification.
 PAD for mobile biometric enrolment is an optional requirement.
 
-Application note 36: 
+Application note 34: 
 
 Artificial PAIs that the TOE shall prevent and
 relevant criteria for its security relevant error rates for each type of
@@ -1225,7 +1225,7 @@ Dependencies: FIA\_MBE\_EXT.1 Mobile biometric enrolment
 voice, vein*, \[**assignment:** *other modality* \] as the biometric component of the 
 hybrid authentication mechanism.
 
-Application note 37:
+Application note 35:
 
 A hybrid authentication mechanism is one where a user has to submit a combination of biometric 
 sample and PIN or password with both to pass and without the user being made aware of which 
@@ -1271,7 +1271,7 @@ Dependencies: No dependencies.
 data used to generate templates and perform sample matching within the 
 security boundary of the secure execution environment.
 
-Application note 38:
+Application note 36:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -1284,7 +1284,7 @@ Dependencies: No dependencies.
 **FPT\_BDP\_EXT.2.1** The TSF shall not transmit any plaintext biometric
 data outside the security boundary of the secure execution environment.
 
-Application note 39:
+Application note 37:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -1297,7 +1297,7 @@ Dependencies: No dependencies.
 **FPT\_BDP\_EXT.3.1** The TSF shall not store any plaintext biometric
 data outside the security boundary of the secure execution environment.
 
-Application note 40:
+Application note 38:
 
 Annex A explains how the TOE in cooperation with its environment shall
 protect biometric data in detail.
@@ -1330,7 +1330,7 @@ Dependencies: No dependencies.
 \[**selection**: *using a PIN as an additional factor, using a password
 as an additional* factor, \[**assignment**: *other circumstances*\] \].
 
-Application note 41:
+Application note 39:
 
 Annex A explains how the TOE in cooperation with its environment protect
 biometric data in detail.
