@@ -27,7 +27,8 @@ Community (BS-iTC)
 
 **Document history:**
 
-*V0.1, March 2018 (Initial Release for Public review)*
+*V0.1, March 2018 (Initial Release for Public review)*  
+*V0.2, August 2018 (Second Release for Public review)*
 
 **General Purpose:** See section 1.1.
 
@@ -45,10 +46,10 @@ academia.
 
 
 
-Introduction
+1 Introduction
 ============
 
-Technology Area and Scope of Supporting Document
+1.1 Technology Area and Scope of Supporting Document
 ------------------------------------------------
 
 This Supporting Document defines the Evaluation Activities associated
@@ -83,14 +84,14 @@ may identify particular requirements for the content of Security Targets
 and possibly supplementary information (e.g. for biometric performance
 testing – see section 6).
 
-Structure of the Document
+1.2 Structure of the Document
 -------------------------
 
 Evaluation Activities can be defined for both Security Functional
 Requirements and Security Assurance Requirements. These are defined in
 separate sections of this Supporting Document.
 
-Application of this Supporting Document
+1.3 Application of this Supporting Document
 ---------------------------------------
 
 This Supporting Document (SD) defines three types of Evaluation
@@ -121,22 +122,26 @@ other. A description in a guidance documentation or one test case, for
 example, can cover multiple EAs at a time, no matter whether the EAs are
 related to the same or different SFRs.
 
-Terminology
+1.4 Terminology
 -----------
 
-### Glossary
+### 1.4.1 Glossary
 
 For definitions of standard CC terminology see \[CC\] part 1.
 
-**TBD**
+| Term	| Definition |
+|-------|----------------------------|
+|**Assurance** |Grounds for confidence that a TOE meets the SFRs \[CC\] part 1. |
                             
                             
                             
                             
 
-### Acronyms
+### 1.4.2 Acronyms
 
-**TBD**
+| Term	| Definition |
+|-------|----------------------------|
+|**Attempt** |Submission of one (or a sequence of) biometric samples to the part of the TOE. |
                                                                                                                                
 Evaluation Activities for SFRs
 ==============================
