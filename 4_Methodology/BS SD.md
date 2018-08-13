@@ -1,7 +1,7 @@
 # Supporting Document Mandatory Technical Document
 
 # Evaluation Activities for collaborative Protection Profile for Mobile biometric enrolment and verification - for unlocking the device - cPP
-## Version 0.1 28-MAR-2018
+## Version 0.2 17-AUG-2018
 
 **Foreword**
 
@@ -139,11 +139,15 @@ For definitions of standard CC terminology see \[CC\] part 1.
 
 ### 1.4.2 Acronyms
 
-| Term	| Definition |
+| Acronym	| Meaning |
 |-------|----------------------------|
-|**Attempt** |Submission of one (or a sequence of) biometric samples to the part of the TOE. |
-                                                                                                                               
-Evaluation Activities for SFRs
+|**cPP** |collaborative Protection Profile |
+|**EA** |Evaluation Activity |
+|**iTC** |International Technical Community |  
+|**SD** |Supporting Document | 
+
+
+2 Evaluation Activities for SFRs
 ==============================
 
 The EAs presented in this section capture the actions the evaluator
@@ -159,31 +163,40 @@ ISO/IEC 15408-4 requires. This standard describes a framework that shall
 be used for deriving EAs from CEM work units and specifies how to define
 EAs.
 
-1. Objective
+1\) Objective of the EA
 
 Objective defines the goal of the EA. Assessment Strategy describes how
 the evaluator can achieve this goal in more detail and Pass/fail
 criteria defines how the evaluator can determine whether the goal is
 achieved or not.
 
-2. Relationship of the evaluation activity to SFRs, SARs, and other EAs
+2\) Relationship of the evaluation activity to SFRs, SARs, and other EAs
 
 SFRs or SARs that the EA is directly related are identified here.
 
 Where the EA depends on completion of another EA then the dependency and
 the other EA is identified here.
 
-3. Tool types required to perform the activity
+3\) Rationale for the EA
+
+A justification for its derivation from one or more work units are described here.
+
+---
+This rationale will be described separately from other items. new section will be created for this rationale
+---
+
+
+4\) Tool types required to perform the activity
 
 If performing the EA requires any tool types in order to complete the EA
 then these tool types are defined here.
 
-4. Required input from the developer or other entities
+5\) Required input from the developer or other entities
 
 Additional detail is specified here regarding the required format and
 content of the inputs to the EA.
 
-5. Assessment Strategy
+6\) Assessment Strategy
 
 Assessment Strategy provides guidance and details how to perform the EA.
 It includes, as appropriate to the content of the EA;
@@ -196,40 +209,49 @@ b)  how to make use of any tool types required (potentially including
 
 c)  guidance on the steps for performing the EA
 
-
-6. Pass/fail criteria
+7\) Pass/fail criteria
 
 The evaluator uses these criteria to determine whether the EA has
 demonstrated that the TOE has met the relevant requirement or that it
 has failed to meet the relevant requirement.
 
-7. Requirements for reporting　　
+8\) Requirements for reporting　　
 
 Specific reporting requirements that support transparency and
 reproducibility of the pass/fail judgement are defined here.
 
-FIA: Identification and Authentication
+2.1 FIA: Identification and Authentication
 --------------------------------------
 
-### EA for FIA\_MBE\_EXT.1
+### 2.1.1 EA for FIA\_MBE\_EXT.1
 
-#### Objective
+#### 1\) Objective of the EA
 
 The evaluator shall verify that the TOE enrols a user only after
 successful authentication of the user by his/her password. Security
 requirements for the password authentication are defined in \[MDFPP\]
 and out of scope of this EA.
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the evaluation activity to SFRs, SARs, and other EAs
 
 This EA is related to FIA\_MBE\_EXT.1. There is no dependency to other
 EAs defined in this SD.
 
-#### Tool types required to perform the activity
+#### 3\) Rationale for the EA
+
+This EA is derived from XXX.XXX
+
+The evaluation activity shall include a justification for its derivation from one or more work units in
+ISO/IEC 18045. That justification may contain an explanation why work units had to be reworked for
+the scope and depth of an evaluation of a specific technology or TOE type. The combination of rationale
+at the levels of evaluation method (see clause 6.2.9) and evaluation activity shall justify that the
+evaluation method addresses all aspects of the ISO/IEC 18045 action elements to which it applies.
+
+#### 4\) Tool types required to perform the activity
 
 No tool is required for this EA.
 
-#### Required input from the developer or other entities
+#### 5\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
@@ -242,7 +264,7 @@ b)  AGD guidance shall provide clear instruction for a user to enrol
 AGD guidance includes online assistance, prompts or warning provided by
 the TOE during the enrolment attempt.
 
-#### Assessment Strategy
+#### 6\) Assessment Strategy
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
@@ -253,7 +275,14 @@ enter his/her valid password before the mobile biometric enrolment.
 The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
 and AGD\_OPE.1-5.
 
-\[Strategy for ATE \_IND\]
+---
+ASE_TSS.1-1 The evaluator shall examine the TOE summary specification to determine that it describes how the TOE meets each SFR.
+ADV_FSP.1-7 The evaluator shall examine the functional specification to determine that it is an accurate instantiation of the SFRs.
+AGD_OPE.1-4 The evaluator shall examine the operational user guidance to determine that it describes, for each user role, each type of security-relevant event relative to the user functions that need to be performed, including changing the security characteristics of entities under the control of the TSF and operation following failure or operational error.
+AGD_OPE.1-5 The evaluator shall examine the operational user guidance and other evaluation evidence to determine that the guidance identifies all possible modes of operation of the TOE (including, if applicable, operation following failure or operational error), their consequences and implications for maintaining secure operation.
+---
+
+\[Strategy for ATE\_IND\]
 
 The evaluator shall perform the following test to verify that the TOE
 performs the mobile biometric enrolment correctly.
@@ -267,7 +296,15 @@ enrol his/herself without entering the password correctly beforehand.
 The above EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
 ATE\_IND.1-6, and ATE\_IND.1-7.
 
-#### Pass/fail criteria
+---
+ATE_IND.1-3 The evaluator shall devise a test subset.
+ATE_IND.1-4 The evaluator shall produce test documentation for the test subset that is sufficiently detailed to enable the tests to be reproducible.
+ATE_IND.1-5 The evaluator shall conduct testing.
+ATE_IND.1-6 The evaluator shall record the following information about the tests that compose the test subset:
+ATE_IND.1-7 The evaluator shall check that all actual test results are consistent with the expected test results.
+---
+
+#### 7\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
@@ -279,7 +316,7 @@ b)  only authenticated users by password can enrol his/herself and any
     attempts to enrol without the authentication are rejected though the
     independent testing
 
-#### Requirements for reporting
+#### 8\) Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above,
 especially how the evaluator reaches the pass/fail judgement based on
