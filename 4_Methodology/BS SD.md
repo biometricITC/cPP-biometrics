@@ -6,7 +6,7 @@
 **Foreword**
 
 This is a supporting document, intended to complement the Common
-Criteria version 3 and the associated Common Evaluation Methodology for
+Criteria (CC) version 3 and the associated Common Evaluation Methodology for
 Information Technology Security Evaluation.
 
 Supporting documents may be “Guidance Documents”, that highlight
@@ -18,7 +18,7 @@ of the supporting document. The usage of the latter class is not only
 mandatory, but certificates issued as a result of their application are
 recognized under the CCRA.
 
-This supporting document has been developed by the biometric Security
+This supporting document has been developed by the Biometric Security
 iTC (BS-iTC) and is designed to be used to support the evaluations of
 TOEs against the cPPs identified in section 1.1.
 
@@ -82,7 +82,7 @@ Evaluation Activities may in some cases clarify the meaning of SFRs, and
 may identify particular requirements for the content of Security Targets
 (especially the TOE Summary Specification), user guidance documentation,
 and possibly supplementary information (e.g. for biometric performance
-testing – see section 6).
+testing – see Appendix A).
 
 1.2 Structure of the Document
 -------------------------
@@ -127,25 +127,28 @@ related to the same or different SFRs.
 
 ### 1.4.1 Glossary
 
-For definitions of standard CC terminology see \[CC\] part 1.
+For definitions of standard CC terminology, see CC part 1.
 
-| Term	| Definition |
-|-------|----------------------------|
-|**Assurance** |Grounds for confidence that a TOE meets the SFRs \[CC\] part 1. |
-                            
-                            
-                            
-                            
+For definitions of biometrics and mobile device, see \[BScPP\] and \[MDFPP\].                            
 
 ### 1.4.2 Acronyms
 
 | Acronym	| Meaning |
 |-------|----------------------------|
+|**BAF** |Biometric Authentication Factor |
+|**CC** |Common Criteria for Information Technology Security Evaluation |
+|**CEM** |Common Methodology for Information Technology Security Evaluation |
 |**cPP** |collaborative Protection Profile |
 |**EA** |Evaluation Activity |
-|**iTC** |International Technical Community |  
+|**iTC** |International Technical Community | 
+|**PAI** |Presentation Attack Instrument |
+|**PP** |Protection Profile |
+|**SAR** |Security Assurance Requirement | 
 |**SD** |Supporting Document | 
-
+|**SFR** |Security Functional Requirement | 
+|**ST** |Security Target | 
+|**TOE** |Target Of Evaluation | 
+|**TSS** |TOE Summary Specification | 
 
 2 Evaluation Activities for SFRs
 ==============================
@@ -170,33 +173,24 @@ the evaluator can achieve this goal in more detail and Pass/fail
 criteria defines how the evaluator can determine whether the goal is
 achieved or not.
 
-2\) Relationship of the evaluation activity to SFRs, SARs, and other EAs
+2\) Relationship of the EA to SFRs, SARs, and other EAs
 
 SFRs or SARs that the EA is directly related are identified here.
 
 Where the EA depends on completion of another EA then the dependency and
 the other EA is identified here.
 
-3\) Rationale for the EA
-
-A justification for its derivation from one or more work units are described here.
-
----
-This rationale will be described separately from other items. new section will be created for this rationale
----
-
-
-4\) Tool types required to perform the activity
+3\) Tool types required to perform the EA
 
 If performing the EA requires any tool types in order to complete the EA
 then these tool types are defined here.
 
-5\) Required input from the developer or other entities
+4\) Required input from the developer or other entities
 
 Additional detail is specified here regarding the required format and
 content of the inputs to the EA.
 
-6\) Assessment Strategy
+5\) Assessment Strategy
 
 Assessment Strategy provides guidance and details how to perform the EA.
 It includes, as appropriate to the content of the EA;
@@ -209,16 +203,21 @@ b)  how to make use of any tool types required (potentially including
 
 c)  guidance on the steps for performing the EA
 
-7\) Pass/fail criteria
+6\) Pass/fail criteria
 
 The evaluator uses these criteria to determine whether the EA has
 demonstrated that the TOE has met the relevant requirement or that it
 has failed to meet the relevant requirement.
 
-8\) Requirements for reporting　　
+7\) Requirements for reporting　　
 
 Specific reporting requirements that support transparency and
 reproducibility of the pass/fail judgement are defined here.
+
+ISO/IEC 15408-4 also requires the SD to provide the rationale for the EA, 
+which is a justification for the derivation of EAs from one or more 
+work units. This rationale isn't provided for each EA but summarized  
+separately in section 6.
 
 2.1 FIA: Identification and Authentication
 --------------------------------------
@@ -232,55 +231,37 @@ successful authentication of the user by his/her password. Security
 requirements for the password authentication are defined in \[MDFPP\]
 and out of scope of this EA.
 
-#### 2\) Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FIA\_MBE\_EXT.1. There is no dependency to other
-EAs defined in this SD.
+This EA is created from FIA\_MBE\_EXT.1 and defines activities the evaluator
+shall perform to examine whether the TOE meets FIA\_MBE\_EXT.1 or not. 
 
-#### 3\) Rationale for the EA
+There is no dependency to other EAs defined in this SD.
 
-This EA is derived from XXX.XXX
-
-The evaluation activity shall include a justification for its derivation from one or more work units in
-ISO/IEC 18045. That justification may contain an explanation why work units had to be reworked for
-the scope and depth of an evaluation of a specific technology or TOE type. The combination of rationale
-at the levels of evaluation method (see clause 6.2.9) and evaluation activity shall justify that the
-evaluation method addresses all aspects of the ISO/IEC 18045 action elements to which it applies.
-
-#### 4\) Tool types required to perform the activity
+#### 3\) Tool types required to perform the EA
 
 No tool is required for this EA.
 
-#### 5\) Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
 a)  TSS shall explain how the TOE meet FIA\_MBE\_EXT.1 at high level
     description
 
-b)  AGD guidance shall provide clear instruction for a user to enrol
+b)  AGD guidance shall provide clear instructions for a user to enrol
     his/herself.
 
-AGD guidance includes online assistance, prompts or warning provided by
+AGD guidance may include online assistance, prompts or warning provided by
 the TOE during the enrolment attempt.
 
-#### 6\) Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
 The evaluator shall examine the TSS to understand how the TOE enrols a
 user and examine the AGD guidance to confirm that a user is required to
 enter his/her valid password before the mobile biometric enrolment.
-
-The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
-and AGD\_OPE.1-5.
-
----
-ASE_TSS.1-1 The evaluator shall examine the TOE summary specification to determine that it describes how the TOE meets each SFR.
-ADV_FSP.1-7 The evaluator shall examine the functional specification to determine that it is an accurate instantiation of the SFRs.
-AGD_OPE.1-4 The evaluator shall examine the operational user guidance to determine that it describes, for each user role, each type of security-relevant event relative to the user functions that need to be performed, including changing the security characteristics of entities under the control of the TSF and operation following failure or operational error.
-AGD_OPE.1-5 The evaluator shall examine the operational user guidance and other evaluation evidence to determine that the guidance identifies all possible modes of operation of the TOE (including, if applicable, operation following failure or operational error), their consequences and implications for maintaining secure operation.
----
 
 \[Strategy for ATE\_IND\]
 
@@ -293,18 +274,7 @@ password and confirm that he/she can’t enrol his/herself.
 Step 2: The evaluator shall set a password and confirm that he/she can’t
 enrol his/herself without entering the password correctly beforehand.
 
-The above EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
-ATE\_IND.1-6, and ATE\_IND.1-7.
-
----
-ATE_IND.1-3 The evaluator shall devise a test subset.
-ATE_IND.1-4 The evaluator shall produce test documentation for the test subset that is sufficiently detailed to enable the tests to be reproducible.
-ATE_IND.1-5 The evaluator shall conduct testing.
-ATE_IND.1-6 The evaluator shall record the following information about the tests that compose the test subset:
-ATE_IND.1-7 The evaluator shall check that all actual test results are consistent with the expected test results.
----
-
-#### 7\) Pass/fail criteria
+#### 6\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
@@ -313,18 +283,18 @@ a)  information necessary to perform this EA is described in the TSS and
     AGD guidance
 
 b)  only authenticated users by password can enrol his/herself and any
-    attempts to enrol without the authentication are rejected though the
+    attempts to enrol without the authentication are rejected through the 
     independent testing
 
-#### 8\) Requirements for reporting
+#### 7\) Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above,
 especially how the evaluator reaches the pass/fail judgement based on
 the Pass/Fail criteria.
 
-### EA for FIA\_MBE\_EXT.2
+### 2.1.2 EA for FIA\_MBE\_EXT.2
 
-#### Objective
+#### 1\) Objective of the EA
 
 Mobile biometric verification performance depends on quality of the
 template that is compared to the samples presented to the TOE. The
@@ -340,18 +310,20 @@ different biometric modalities may not be the same. The evaluator shall
 evaluate each biometric modality separately if the ST author selects
 multiple biometric modalities in FIA\_MBV\_EXT.1.
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FIA\_MBE\_EXT.2. The evaluator shall perform the
-EA for FIA\_MBE\_EXT.1 first to confirm the mobile biometric enrolment
-can be done correctly.
+This EA is created from FIA\_MBE\_EXT.2 and defines activities the evaluator
+shall perform to examine whether the TOE meets FIA\_MBE\_EXT.2 or not. 
 
-#### Tool types required to perform the activity
+The evaluator shall perform the EA for FIA\_MBE\_EXT.1 first to confirm 
+the mobile biometric enrolment can be done correctly.
+
+#### 3\) Tool types required to perform the EA
 
 Developer shall provide a test platform for the evaluator to conduct the
 test described in the Assessment Strategy.
 
-#### Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
@@ -364,10 +336,10 @@ b)  AGD guidance shall provide clear instructions for a user to enrol
 c)  Supplementary information (Assessment criteria for templates) shall
     describe assessment criteria for creating templates
 
-AGD guidance includes online assistance, prompts or warning provided by
+AGD guidance may include online assistance, prompts or warning provided by
 the TOE during the enrolment attempt.
 
-#### Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
@@ -375,8 +347,7 @@ the TOE during the enrolment attempt.
 
 The evaluator shall examine the TSS to understand how the TOE generate
 sufficient quality of templates at enrolment. The evaluator shall also
-examine the guidance, including online assistance or prompts provided by
-the TOE, about how the TOE supports a user to enrol his/herself
+examine the guidance about how the TOE supports a user to enrol his/herself
 correctly and how the TOE behaves when low quality samples are presented
 to the TOE.
 
@@ -410,13 +381,10 @@ to check that how the TOE creates the authenticate templates based on
 its assessment criteria. The “assessment criteria for templates” may
 include a) – d) and;
 
-a)  additional assessment criteria to applied to creation of
+f)  additional assessment criteria to applied to creation of
     authentication templates
 
-The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
-and AGD\_OPE.1-5.
-
-\[Strategy for ATE \_IND\]
+\[Strategy for ATE\_IND\]
 
 **Enrolment templates**
 
@@ -457,10 +425,7 @@ scores and quality threshold) to confirm that the TOE doesn’t create
 authentication templates that don’t meet the assessment criteria
 specified in the “assessment criteria for templates”.
 
-The above EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
-ATE\_IND.1-6, and ATE\_IND.1-7.
-
-#### Pass/fail criteria
+#### 6\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
@@ -469,17 +434,17 @@ a)  information necessary to perform this EA is described in the TSS,
     AGD guidance and “assessment criteria for templates”
 
 b)  the TOE creates only templates that pass the assessment criteria
-    though the independent testing
+    through the independent testing
 
-#### Requirements for reporting
+#### 7\) Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above,
 especially how the evaluator reaches the pass/fail judgement based on
 the Pass/Fail criteria.
 
-### EA for FIA\_MBV\_EXT.1
+### 2.1.3 EA for FIA\_MBV\_EXT.1
 
-#### Objective
+#### 1\) Objective of the EA
 
 The evaluator shall verify that the TOE implements the mobile biometric
 verification mechanism whose error rates is equal or lower than the
@@ -497,17 +462,19 @@ Therefore, risk of zero-effort impostor attempts is low and the
 developer may not follow the statistical method (e.g. Rule of 3 or Rule
 of 30) to measure the mobile biometric verification performance.
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FIA\_MBV\_EXT.1. The evaluator shall perform the
-EAs for FIA\_MBE\_EXT.1 and FIA\_MBE\_EXT.2 first to confirm the mobile
-biometric enrolment can be done correctly.
+This EA is created from FIA\_MBV\_EXT.1 and defines activities the evaluator
+shall perform to examine whether the TOE meets FIA\_MBV\_EXT.1 or not. 
 
-#### Tool types required to perform the activity
+The evaluator shall perform the EAs for FIA\_MBE\_EXT.1 and FIA\_MBE\_EXT.2 
+first to confirm the mobile biometric enrolment can be done correctly.
+
+#### 3\) Tool types required to perform the EA
 
 No tool is required for this EA.
 
-#### Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
@@ -521,17 +488,16 @@ c)  Supplementary information (developer’s performance test document)
     shall describe developer’s performance test protocol and result of
     testing
 
-AGD guidance includes online assistance, prompts or warning provided by
+AGD guidance may include online assistance, prompts or warning provided by
 the TOE during the verification attempt.
 
-#### Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
 The evaluator shall examine the TSS to understand how the TOE verify a
 user with his/her biometric characteristics. The evaluator shall also
-examine the guidance, including online assistance or prompts provided by
-the TOE, about how the TOE supports a user to verify his/herself
+examine the guidance about how the TOE supports a user to verify his/herself
 correctly and how the TOE behaves when mobile biometric verification is
 succeeded or failed.
 
@@ -553,10 +519,7 @@ Finally, the evaluator shall check that the measured error rates
 document” is equal or lower than the error rates specified in the
 FIA\_MBV\_EXT.1.2.
 
-The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
-and AGD\_OPE.1-5.
-
-#### Pass/fail criteria
+#### 6\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
@@ -573,7 +536,7 @@ c)  FRR/FAR or FNMR/FMR measured by the developer’s performance testing
     is equal or lower than “*defined value*“ specified in
     FIA\_MBV\_EXT.1.2
 
-#### Requirements for reporting
+#### 7\) Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above,
 especially how the evaluator reaches the pass/fail judgement based on
@@ -583,9 +546,9 @@ The evaluator shall also report a justification why evaluator determines
 the rationale provided by developer is valid if “developer’s performance
 test document” doesn’t meet any requirements in Appendix A.
 
-### EA for FIA\_MBV\_EXT.2
+### 2.1.4 EA for FIA\_MBV\_EXT.2
 
-#### Objective
+#### 1\) Objective of the EA
 
 Mobile biometric verification performance depends on quality of samples
 that is compared to templates. The evaluator shall examine that the TOE
@@ -599,21 +562,23 @@ multiple biometric modalities in FIA\_MBV\_EXT.1.
 
 The evaluator shall also keep in mind that assessment criteria used for
 templates and samples may not be the same. Assessment criteria for
-templates may be stricter than one for samples.
+templates may be stricter than the one for samples.
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FIA\_MBV\_EXT.2. The evaluator shall perform the
-EAs for FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2 and FIA\_MBV\_EXT.1 first to
-confirm the mobile biometric enrolment and verification can be done
-correctly.
+This EA is created from FIA\_MBV\_EXT.2 and defines activities the evaluator
+shall perform to examine whether the TOE meets FIA\_MBV\_EXT.2 or not. 
 
-#### Tool types required to perform the activity
+The evaluator shall perform the EAs for FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2 
+and FIA\_MBV\_EXT.1 first to confirm the mobile biometric enrolment and 
+verification can be done correctly.
+
+#### 3\) Tool types required to perform the EA
 
 Developer shall provide a test platform for the evaluator to conduct the
 test described in the Assessment Strategy.
 
-#### Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
@@ -626,10 +591,10 @@ b)  AGD guidance shall provide clear instruction for a user to verify
 c)  Supplementary information (Assessment criteria for samples) shall
     describe assessment criteria for creating samples
 
-AGD guidance includes online assistance, prompts or warning provided by
+AGD guidance may include online assistance, prompts or warning provided by
 the TOE during the verification attempt.
 
-#### Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
@@ -655,10 +620,7 @@ c)  assessment criteria to accept the sample of sufficient utility (e.g.
 d)  quality standard that the TOE uses to perform the assessment if the
     TOE follows such standard (e.g. NFIQ for fingerprint)
 
-The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
-and AGD\_OPE.1-5.
-
-\[Strategy for ATE \_IND\]
+\[Strategy for ATE\_IND\]
 
 The evaluator shall perform the following test to verify that the TOE
 checks the quality of samples based on the assessment criteria.
@@ -676,10 +638,7 @@ scores and quality threshold) to confirm that the TOE rejects any
 samples that don’t meet the assessment criteria specified in the
 “assessment criteria for samples”.
 
-The above EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
-ATE\_IND.1-6, and ATE\_IND.1-7.
-
-#### Pass/fail criteria
+#### 6\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
@@ -688,17 +647,17 @@ a)  information necessary to perform this EA is described in the TSS,
     AGD guidance and “assessment criteria for samples”
 
 b)  the TOE accepts only samples that pass the assessment criteria
-    though the independent testing
+    through the independent testing
 
-#### Requirements for reporting
+#### 7\) Requirements for reporting　
 
 The evaluator shall report the summary of result of EA defined above,
 especially how the evaluator reaches the pass/fail judgement based on
 the Pass/Fail criteria.
 
-### EA for FIA\_MBV\_EXT.3
+### 2.1.5 EA for FIA\_MBV\_EXT.3
 
-#### Objective
+#### 1\) Objective of the EA
 
 The evaluator shall verify that the TOE prevents use of artificial
 Presentation Attack Instruments (PAI). This EA defines the minimum PAIs
@@ -713,62 +672,61 @@ vulnerability analysis, the evaluators will use all their knowledge that
 they gained during the evaluation for penetration testing. Another EA is
 defined for this penetration testing (AVA\_VAN.1).
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FIA\_MBV\_EXT.3. The evaluator shall perform the
-EAs for FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2, FIA\_MBV\_EXT.1 and
-FIA\_MBV\_EXT.2 first to confirm the mobile biometric verification can
-be done correctly.
+This EA is created from FIA\_MBV\_EXT.3 and defines activities the evaluator
+shall perform to examine whether the TOE meets FIA\_MBV\_EXT.3 or not. 
 
-#### Tool types required to perform the activity
+The evaluator shall perform the EAs for FIA\_MBE\_EXT.1, FIA\_MBE\_EXT.2, 
+FIA\_MBV\_EXT.1 and FIA\_MBV\_EXT.2 first to confirm the mobile biometric 
+enrolment and verification can be done correctly.
+
+#### 3\) Tool types required to perform the EA
 
 All tools required to conduct the test are described in the Assessment
 Strategy.
 
-#### Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
 a)  TSS shall explain how the TOE meets FIA\_MBV\_EXT.3 at high level
     description. TSS may only states that the TOE implements PAD
     mechanism and may not disclose any information about the PAD
-    mechanism itself because such information is highly sensitive and
-    may be exploited by attackers.
+    mechanism itself in detail because such information is highly 
+    sensitive and may be exploited by attackers.
 
 b)  AGD guidance may provide information about how the TOE reacts when
     artificial PAI is detected.
 
-#### Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
-The evaluator shall examine the TSS and AGD guidance to understand that
-the TOE prevents the use of artificial PAI.
+The evaluator shall examine the TSS and AGD guidance to check that
+the TSS and AGD guidnace states that the TOE prevents the use of 
+artificial PAI.
 
-The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
-and AGD\_OPE.1-5.
+\[Strategy for ATE\_IND\]
 
-\[Strategy for ATE \_IND\]
+See Appendix C.
 
-See YYYY.
+#### 6\) Pass/fail criteria
 
-This EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
-ATE\_IND.1-6, and ATE\_IND.1-7.
+See Appendix C.
 
-#### Pass/fail criteria
+#### 7\) Requirements for reporting
 
-See YYYY
+The evaluator shall report the summary of result of EA defined above,
+especially how the evaluator reaches the pass/fail judgement based on
+the Pass/Fail criteria.
 
-#### Requirements for reporting
-
-See YYYY
-
-FPT: Protection of the TSF
+2.2 FPT: Protection of the TSF
 --------------------------
 
-### EA for FPT\_BDP\_EXT.1
+### 2.2.1 EA for FPT\_BDP\_EXT.1
 
-#### Objective
+#### 1\) Objective of the EA
 
 \[BScPP\] assumes that the mobile device provides the Secure Execution
 Environment (SEE), an operating environment separate from the main
@@ -778,35 +736,35 @@ security processors or a combination to provide this separation.
 
 Evaluation of this SEE is out of scope of \[BScPP\] and the evaluator
 doesn’t need to evaluate this environment itself. However, the evaluator
-shall examine that the TOE processes any plaintext biometric data except
-publicly accessible biometric data (e.g. face image) within the security
-boundary of the SEE. The SEE is responsible for preventing any entities
-outside the environment from accessing plaintext biometric data except
-publicly accessible biometric data.
+shall examine that the TOE processes any plaintext biometric data within 
+the security boundary of the SEE. The SEE is responsible for preventing 
+any entities outside the environment from accessing plaintext biometric 
+data.
 
-FPT\_BDP\_EXT.1 applies to plaintext biometric data except publicly
-accessible biometric data being processed during mobile biometric
-enrolment and verification. Protection of transmitted and stored
-biometric data is out of scope of this EA and covered by FPT\_BDP\_EXT.2
-and FPT\_BDP\_EXT.3 respectively.
+FPT\_BDP\_EXT.1 applies to plaintext biometric data being processed 
+during mobile biometric enrolment and verification. Protection of 
+transmitted and stored biometric data is out of scope of this EA 
+and covered by FPT\_BDP\_EXT.2 and FPT\_BDP\_EXT.3 respectively.
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FPT\_BDP\_EXT.1. There is no dependency to other
-EAs defined in this SD.
+This EA is created from FPT\_BDP\_EXT.1 and defines activities the evaluator
+shall perform to examine whether the TOE meets FPT\_BDP\_EXT.1 or not. 
 
-#### Tool types required to perform the activity
+There is no dependency to other EAs defined in this SD.
+
+#### 3\) Tool types required to perform the EA
 
 No tool is required for this EA.
 
-#### Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
 a)  TSS shall explain how the TOE meets FPT\_BDP\_EXT.1 at high level
     description.
 
-#### Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS\]
 
@@ -817,11 +775,9 @@ decision outcome. This is a typical process flow of mobile biometric
 verification, however, biometric capture sensor may do the all tasks
 within the sensor. In either case, all TSF modules (i.e. biometric
 capture sensor and any software running in biometric capture sensor and
-mobile device processors) that process plaintext biometric data except
-publicly accessible biometric data must be separated from any entities
-outside the SEE. Any plaintext biometric data except publicly accessible
-biometric data itself must not be accessible from any entities outside
-the SEE.
+mobile device processors) that process plaintext biometric data must be 
+separated from any entities outside the SEE. Any plaintext biometric data
+must not be accessible from any entities outside the SEE.
 
 In any cases, the evaluator shall examine the TSS to confirm that;
 
@@ -833,11 +789,11 @@ a)  All TSF modules run within the SEE and any entities outside the SEE
     entities outside the SEE can’t access the sensor and data captured
     by the sensor.
 
-a)  All plaintext biometric data is retained in volatile memory within
+b)  All plaintext biometric data is retained in volatile memory within
     the SEE and any entities outside the SEE including mobile device
     operating system can’t access these data.
 
-b)  Any TSFIs doesn’t reveal plaintext biometric data to any entities
+c)  Any TSFIs doesn’t reveal plaintext biometric data to any entities
     outside the SEE
 
 The evaluator shall keep in mind that the objective of this EA is not
@@ -847,24 +803,22 @@ high-level view of how the developer intends to satisfy each SFR. The
 evaluator shall check the TSS to seek for a logical explanation why
 above a) – c) is satisfied considering this scope of the requirement.
 
-The above EA is derived from ASE\_TSS.1-1.
-
-#### Pass/fail criteria
+#### 6\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
 
 a)  information necessary to perform this EA is described in the TSS
 
-#### Requirements for reporting
+#### 7\) Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above,
 especially how the evaluator reaches the pass/fail judgement based on
 the Pass/Fail criteria.
 
-### EA for FPT\_BDP\_EXT.2
+### 2.2.2 EA for FPT\_BDP\_EXT.2
 
-#### Objective
+#### 1\) Objective of the EA
 
 The intention of this requirement is to prevent the logging, backing up
 or sending of plaintext biometric data to a service that transmits the
@@ -878,16 +832,20 @@ developer. The TOE must encrypt the data first before sending it.
 In any case, the evaluator shall determine that the TOE doesn’t transmit
 any plaintext biometric data outside the security boundary of the SEE.
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FPT\_BDP\_EXT.2. There is no dependency to other
-EAs defined in this SD.
+This EA is created from FPT\_BDP\_EXT.2 and defines activities the evaluator
+shall perform to examine whether the TOE meets FPT\_BDP\_EXT.2 or not. 
 
-#### Tool types required to perform the activity
+The evaluator shall perform the EAs for FPT\_BDP\_EXT.1 first to confirm 
+the TSF processes any plaintext biometric data within the security boundary 
+of the secure execution environment.
+
+#### 3\) Tool types required to perform the EA
 
 No tool is required for this EA.
 
-#### Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
@@ -897,7 +855,7 @@ a)  TSS shall explain how the TOE meets FPT\_BDP\_EXT.2 at high level
 b)  AGD guidance shall describe all functions that transmit biometric
     data.
 
-#### Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
@@ -929,10 +887,7 @@ b)  The TOE never transmits plaintext biometric data to outside the SEE.
 c)  The TOE disables the transmission right after the TOE achieves its
     purpose
 
-The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
-and AGD\_OPE.1-5.
-
-#### Pass/fail criteria
+#### 6\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
@@ -940,14 +895,15 @@ confirms that:
 a)  information necessary to perform this EA is described in the TSS and
     AGD guidance.
 
-#### Requirements for reporting
+#### 7\) Requirements for reporting
 
-This EA does not require reports or report details other than those
-given in the work unit from which it is derived.
+The evaluator shall report the summary of result of EA defined above,
+especially how the evaluator reaches the pass/fail judgement based on
+the Pass/Fail criteria.
 
-### EA for FPT\_BDP\_EXT.3
+### 2.2.3 EA for FPT\_BDP\_EXT.3
 
-#### Objective
+#### 1\) Objective of the EA
 
 Plaintext biometric data, especially templates, are highly sensitive
 personal data because biometric characteristics may be recovered from
@@ -958,26 +914,29 @@ biometric verification. However, protection of such stored biometric
 data is not covered by FPT\_BDP\_EXT.1.
 
 The evaluator shall confirm that the TOE encrypts plaintext biometric
-data except publicly accessible biometric data within the SEE before
-storing it in any non-volatile memory that entities outside the SEE can
-get access to. If the evaluator confirm that the TOE doesn’t store
-plaintext biometric data outside the SEE (e.g. biometric capture sensor
-processes biometric data within the sensor and return only decision
-outcome to the TSF modules running inside the SEE) during performing the
-evaluation activity of FPT\_BDP\_EXT.1, this requirement deems
-satisfied.
+data within the SEE before storing it in any non-volatile memory that 
+entities outside the SEE can get access to. If the evaluator confirms 
+that the TOE doesn’t store plaintext biometric data outside the SEE 
+(e.g. biometric capture sensor processes biometric data within the 
+sensor and return only decision outcome to the TSF modules running 
+inside the SEE) during performing the evaluation activity of 
+FPT\_BDP\_EXT.1, this requirement deems satisfied.
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FPT\_BDP\_EXT.3. There is no dependency to other
-EAs defined in this SD.
+This EA is created from FPT\_BDP\_EXT.3 and defines activities the evaluator
+shall perform to examine whether the TOE meets FPT\_BDP\_EXT.3 or not. 
 
-#### Tool types required to perform the activity
+The evaluator shall perform the EAs for FPT\_BDP\_EXT.1 first to confirm 
+the TSF processes any plaintext biometric data within the security boundary 
+of the secure execution environment.
+
+#### 3\) Tool types required to perform the EA
 
 Developer shall provide a test platform for the evaluator to conduct the
 test described in the Assessment Strategy.
 
-#### Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
@@ -989,7 +948,7 @@ b)  Supplementary information (file list/format and cryptographic
     biometric data, and cryptographic algorithm used to encrypt those
     files.
 
-#### Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS\]
 
@@ -1006,9 +965,7 @@ b)  The TOE encrypts all plaintext biometric data listed in the TSS
 c)  The TOE uses cryptographic functions evaluated based on \[MDFPP\] to
     encrypt the data
 
-The above EA is derived from ASE\_TSS.1-1.
-
-\[Strategy for ATE \_IND\]
+\[Strategy for ATE\_IND\]
 
 The evaluator shall perform the following test to verify that the TOE
 encrypts plaintext biometric data if the TOE stores the data in
@@ -1046,10 +1003,7 @@ files to the format defined in “file list/format and cryptographic
 algorithm” to check that the files don’t follow the defined format to
 implicitly assume files are encrypted.
 
-The above EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
-ATE\_IND.1-6, and ATE\_IND.1-7.
-
-#### Pass/fail criteria
+#### 6\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
@@ -1057,17 +1011,17 @@ confirms that:
 a)  information necessary to perform this EA is described in the TSS.
 
 b)  the TOE encrypts any plaintext biometric data before storing it
-    outside the SEE though the independent testing
+    outside the SEE through the independent testing
 
-#### Requirements for reporting
+#### 7\) Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above,
 especially how the evaluator reaches the pass/fail judgement based on
 the Pass/Fail criteria.
 
-### EA for FPT\_PBT\_EXT.1
+### 2.2.4 EA for FPT\_PBT\_EXT.1
 
-#### Objective
+#### 1\) Objective of the EA
 
 Only authenticated user can add his/her own templates during mobile
 biometric enrolment as defined in the FIA\_MBE\_EXT.1 and those
@@ -1078,16 +1032,19 @@ confirm that only authenticated user either using a PIN, password or by
 other secure means, as specified by the ST author can access the
 templates through the TSFI provided by the TOE.
 
-#### Relationship of the evaluation activity to SFRs, SARs, and other EAs
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
-This EA is related to FPT\_PBT\_EXT.1. There is no dependency to other
-EAs defined in this SD.
+This EA is created from FPT\_PBT\_EXT.1 and defines activities the evaluator
+shall perform to examine whether the TOE meets FPT\_PBT\_EXT.1 or not. 
 
-#### Tool types required to perform the activity
+The evaluator shall perform the EA for FIA\_MBE\_EXT.1 first to confirm 
+the mobile biometric enrolment can be done correctly.
+
+#### 3\) Tool types required to perform the EA
 
 No tool is required for this EA.
 
-#### Required input from the developer or other entities
+#### 4\) Required input from the developer or other entities
 
 Following input is required from the developer.
 
@@ -1096,7 +1053,7 @@ a)  TSS shall explain how the TOE meets FPT\_BDP\_EXT.1 at high level
 
 b)  AGD guidance shall describe how the user can access the templates.
 
-#### Assessment Strategy
+#### 5\) Assessment Strategy
 
 \[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
 
@@ -1105,10 +1062,7 @@ TSFI through which the user can access (e.g. revoke) the templates. The
 evaluator shall confirm that those TSFI requires either using a PIN,
 password or by other secure means, as specified by the ST author.
 
-The above EA is derived from ASE\_TSS.1-1, ADV\_FSP.1-7, AGD\_OPE.1-4
-and AGD\_OPE.1-5.
-
-\[Strategy for ATE \_IND\]
+\[Strategy for ATE\_IND\]
 
 The evaluator shall perform the following test to verify that the TOE
 protects the templates as specified in TSS and AGD guidance.
@@ -1117,12 +1071,9 @@ Step 1: The evaluator shall perform functions through the TSFIs that
 access the templates.
 
 Step 2: The evaluator shall check that the TSFI requires either using a
-PIN, password or by other secure means, as specified by the ST author
+PIN, password or by other secure means, as specified by the ST author.
 
-The above EA is derived from ATE\_IND.1-3, ATE\_IND.1-4, ATE\_IND.1-5,
-ATE\_IND.1-6, and ATE\_IND.1-7.
-
-#### Pass/fail criteria
+#### 6\) Pass/fail criteria
 
 The evaluators can pass this evaluation activity only if the evaluator
 confirms that:
@@ -1131,10 +1082,589 @@ a)  information necessary to perform this EA is described in the TSS and
     AGD guidance.
 
 b)  the TOE protects the templates either using a PIN, password or by
-    other secure means, as specified by the ST author
+    other secure means, as specified by the ST author.
 
-#### Requirements for reporting
+#### 7\) Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above,
 especially how the evaluator reaches the pass/fail judgement based on
 the Pass/Fail criteria.
+
+3 Evaluation Activities for Selection-Based Requirements
+==============================
+
+
+
+4 Evaluation Activities for Optional Requirements
+==============================
+
+
+5 Evaluation Activities for SARs
+==============================
+
+The sections below specify EAs for the Security Assurance Requirements
+(SARs) included in the related cPPs (see section 1.1 above). The EAs in
+Section 2 (Evaluation Activities for SFRs), Section 3 (Evaluation Activities
+for Selection-Based Requirements), and Section 4 (Evaluation Activities for
+Optional Requirements) are an interpretation of the more general CEM
+assurance requirements as they apply to the specific technology area of the
+TOE.
+
+In this section, each SAR that is contained in the cPP is listed, and the EAs
+that are not associated with an SFR are captured here, or a reference is made
+to the CEM, and the evaluator is expected to perform the CEM work units.
+
+5.1 ASE: Security Target Evaluation
+--------------------------
+
+When evaluating a Security Target, the evaluator performs the work units as
+presented in the CEM, except ASE_TSS.1-1. During ASE_TSS.1-1 evaluation, 
+the evaluator shall ensure the content of the TSS in the ST satisfies the EAs 
+specified in Section 2 (Evaluation Activities for SFRs), Section 3 
+(Evaluation Activities for Selection-Based Requirements), and Section 4 
+(Evaluation Activities for Optional Requirements).
+
+5.2 ADV: Development
+--------------------------
+
+### 5.2.1 Basic Functional Specification (ADV_FSP.1)
+
+The work units and relevant EAs for this assurance component focus on 
+understanding the graphical user interfaces for mobile biometric 
+enrolment and verification, and management of biometric templates. 
+
+This \[SD\] assumes that those interfaces are described in the AGD 
+documentation, including online assistance, prompts or warning provided 
+by the TOE. Therefore no additional “functional specification” 
+documentation is necessary if AGD documentation include information 
+required by the work units and EAs.
+
+When evaluating AGD documentation, the evaluator performs the work units 
+as presented in the CEM, considering the following application notes.
+
+#### Application note for ADV_FSP.1-1, ADV_FSP.1-2 and ADV_FSP.1-3
+SFR-supporting and SFR-enforcing TSFI can be interpreted as "any 
+TSFI through which the user can enrol and verify his/herself, and 
+access any biometric data including templates".
+
+The evaluator shall examine the purpose, method of use and parameters 
+(if any) of these TSFI described in AGD documentation as required by
+ADV_FSP.1-1, ADV_FSP.1-2 and ADV_FSP.1-3.
+
+#### Application note for ADV_FSP.1-4
+If AGD documentation doesn't describe all available interfaces including, 
+for example, any secret codes or hidden menu used for diagnostic purposes 
+or testing, the developer shall provide "rationale for the implicit 
+categorisation of interfaces as SFR-non-interfering" that explain;
+
+a)  type of interfaces that are not described in AGD documentation
+
+b)  rationale why those interfaces are not directly or indirectly
+    related to the enforcement of SFRs
+    
+As described in CEM, individual interfaces should not need to be 
+addressed in the rationale. The developer can provide the brief
+rationale and the evaluator may test such interfaces if necessary.
+
+#### Application note for ADV_FSP.1-5
+AGD documentation doesn't need to provide the explicit "tracing links 
+the SFRs to the corresponding TSFIs". If AGD documentation explains
+how to use the interface to enrol the user, such information can be 
+implicit tracing link between FIA_MBE_EXT.1 to the corresponding TSFI.
+
+
+-----------
+
+
+When evaluating the TSFI, the evaluator performs the work units as
+presented in the CEM, except ADV_FSP.1-7. During ASE_TSS.1-1 evaluation, 
+the evaluator shall ensure the content of the TSS in the ST satisfies the EAs 
+specified in Section 2 (Evaluation Activities for SFRs), Section 3 
+(Evaluation Activities for Selection-Based Requirements), and Section 4 
+(Evaluation Activities for Optional Requirements).
+
+
+
+described in the AGD documentation, and
+possibly identified in the TOE Summary Specification (TSS) in response to
+the SFRs. Specific evaluator actions to be performed against this
+documentation are identified (where relevant) for each SFR in Section 2, 3, 4 
+and in EAs for AGD, ATE and AVA SARs in other parts of Section 5.
+
+The EAs presented in this section address the CEM work units ADV_FSP.1-
+1, ADV_FSP.1-2, ADV_FSP.1-3, and ADV_FSP.1-5.
+
+The EAs are reworded for clarity and interpret the CEM work units such that
+they will result in more objective and repeatable actions by the evaluator. The
+EAs in this SD are intended to ensure the evaluators are consistently
+performing equivalent actions.
+
+The documents to be examined for this assurance component in an evaluation
+are therefore the Security Target, AGD documentation, and any required
+supplementary information required by the cPP: no additional “functional
+specification” documentation is necessary to satisfy the EAs. The interfaces
+that need to be evaluated are also identified by reference to the EAs listed for
+each SFR, and are expected to be identified in the context of the Security
+Target, AGD documentation, and any required supplementary information
+defined in the cPP rather than as a separate list specifically for the purposes of
+CC evaluation. The direct identification of documentation requirements and
+their assessment as part of the EAs for each SFR also means that the tracing
+required in ADV_FSP.1.2D (work units ADV_FSP.1-4, ADV_FSP.1-6 and
+ADV_FSP.1-7) is treated as implicit and no separate mapping information is
+required for this element.
+
+#### 1\) Objective of the EA
+
+6 Justification for the derivation of EAs
+==============================
+
+
+
+
+
+Appendix A Developer’s performance test document and its assessment strategy
+============================================================================
+
+This Appendix A describes requirements for the developer’s performance
+test document (hereafter “test document”) and its assessment strategy.
+
+The developer shall create the test document to report the result of
+performance testing (e.g. FRR/FAR or FNMR/FMR).
+
+The evaluator shall examine the test document following the assessment
+strategy defined in this Appendix to verify that the developer’s
+performance test was done in an objective and repeatable manner to check
+the trustworthiness of the measured error rates.
+
+The requirements defined in this Appendix are created based on following
+international standards.
+
+ISO/IEC 19795-1:2006 Biometric performance testing and reporting - Part
+1: Principles and framework
+
+ISO/IEC 19795-2:2007 Biometric performance testing and reporting - Part
+2: Testing methodologies for technology and scenario evaluation.
+
+# A.1 Requirements for the test document
+
+The developer shall provide the test document for CC evaluations that
+claim a conform to \[BScPP\]. This section defines required content of
+the test document that is inputted to the Evaluation Activity for 
+FIA\_MBV\_EXT.1.
+
+# A.2 Summary of contents
+
+Table-A1 shows items that shall be reported in the test document. Name
+or structure of test document doesn’t need to follow Table-A1. However,
+all items in Table-A1 shall be written somewhere in the test document.
+Also, if some items are not included in the test document, the developer
+shall provide a rationale for such exclusion to the evaluator.
+
+| Section | Item                                       |
+|:--------|:-------------------------------------------|
+| A.3.1   | Overview of the performance testing        |
+| A.3.2   | Target application and influential factors |
+| A.3.3   | Test subject selection                     |
+| A.3.4   | Test instructions and training             |
+| A.3.5   | Test subject management                    |
+| A.3.6   | Test procedure                             |
+
+
+Table-A1: Reporting items
+
+# A.3 Reporting items description
+
+This section describes each item in Table-A1 in detail. All items are
+created based on ISO/IEC 19795-1 and 19795-2 however some of them are
+modified to adjust to the CC evaluation.
+
+## A.3.1 Overview of the performance testing
+
+The developer shall report following general information about the
+performance testing.
+
+### 1\) Performance test configuration
+
+The test document shall report the following information to uniquely
+identify the test configuration of the performance testing. Information
+stated here shall be consistent with the ST.
+
+1.TOE reference
+
+Information that uniquely identify the TOE shall be reported.
+\[BScPP\] is intended to be used with \[MDFPP\] and reference for the
+mobile device can be used as the TOE reference only if the reference
+for the mobile device also uniquely identifies the TOE embedded in the
+mobile device
+
+Modification to the TOE for performance testing, if any, shall be
+reported (e.g. The TOE is modified to export biometric data for
+off-line testing). The rationale that such modification doesn’t affect
+the TOE performance shall also be provided. For example, the developer
+may claim that the performance is not affected because modified code
+isn’t executed during mobile biometric verification or the developer
+may run regression test to verify that modification doesn’t change the
+result of verification (e.g. similarity score).
+
+2.TOE configuration
+
+Any configurable parameters or setting of the TOE that may affect the
+performance shall be reported. Value of each parameter set for the
+testing shall also be provided. For example, if threshold (e.g.
+decision threshold and image quality threshold) is configurable by
+users, value of threshold set for the testing shall be reported.
+
+3.Performance test tools
+
+Information that uniquely identify all testing tools (e.g. SDK) used
+for the performance testing shall be reported.
+
+### 2\) Result of the performance testing
+
+The test document shall report the following items to provide the result
+of testing.
+
+1.Test period and location
+
+Timeline for the performance testing (samples or templates may be
+collected over multiple sessions) and location of testing shall be
+reported.
+
+2.Modality used for mobile biometric verification
+
+The performance testing shall be done for all modalities selected in
+FIA\_MBV\_EXT.1. Result of testing for each modality shall be reported
+separately.
+
+3.Definition of genuine and imposter transaction
+
+If FAR/FRR is selected in FIA\_MBV\_EXT.1, the test document shall
+clearly define what constitutes the transaction based on the worst 
+case senario (See Appendix B for such example) and the same rule 
+shall be applied consistently throughout the performance testing.
+
+4.Number of test subjects, templates and samples
+
+The following numbers used for calculating FMR/FNMR or FAR/FRR shall
+be reported. See Appendix B for requirements for number of test
+subjects, enrollment templates and samples.
+
+This Appendix assumes that at least the FMR or FAR is measured through
+offline testing (i.e. cross-comparison) to achieve the maximum number
+of attempts or transactions. FNMR or FRR may be measured through
+online or offline testing.
+
+a) Test subject
+
+Number of test subjects who participated in the testing shall be
+reported.
+
+b) Enrolment templates
+
+Number of enrolment templates used for testing shall be reported.
+
+All test subjects cannot generate the templates successfully and total
+number of templates may be less than (number of test subjects) ×
+(number of body parts of a test subject).
+
+c) Samples
+
+Number of samples collected for each body part and total number of
+samples collected from all test subjects shall be reported.
+
+All test subjects cannot generate the samples successfully and total
+number of samples may be less than (number of test subjects) × (number
+of body parts of a test subject) × (number of samples collected for
+each body part).
+
+5.Result of testing
+
+Error rates measured by the performance testing shall be reported.
+
+If FAR and FRR is selected in FIA\_MBV\_EXT.1, number of genuine and
+imposter transaction shall also be reported.
+
+If FMR and FNMR is selected in FIA\_MBV\_EXT.1, number of genuine and
+imposter attempts shall also be reported.
+
+## A.3.2 Target application and influential factors
+
+Test document shall specify a target application modeled in the test,
+such as mobile biometric verification in an indoor office environment
+with a habituated crew.
+
+Test document shall also report influential factors that may influence
+performance, measures to control such factors and under what factors the
+performance testing was conducted.
+
+Influential factors can be determined by referring appropriate documents
+(e.g. ISO/IEC 19795-3) or referring the product datasheet (e.g.
+operating temperature). These factors should be consistent with the
+target application.
+
+The following factors are examples of controlling factors for
+finger/hand vein verification. The developer shall define these factors properly, 
+for example, based on ISO/IEC 19795-3. Any information that are useful in the context
+of the used biometric modality shall be considered by the developer to determine the factors.
+
+It’s recommended to control all influential factors appropriately 
+because different error rates may be measured under different influential 
+factors.
+
+1.Test subject demographics
+
+ - Age: age distribution ratio by arbitrary age groups (e.g., 1, 5, 10
+ years)
+
+ - Gender: male/female distribution
+
+ - Ethnic origin: Distribution ratio by ethnic origin. Category of
+ ethnic origin can be arbitrarily defined by developer.
+
+2.Posture and positioning
+
+Posture of test subject or positioning of his/her hand/finger (e.g.
+Orientation of hand/finger in relation to the sensor or distance to
+the sensor). Such information should be consistent with the TOE
+operational guidance or automated feedback provided by the TOE.
+
+3.Indoor or outdoor
+
+Indoor or outdoor environment in which testing is to be conducted. In
+case of outdoor environment, other factors affecting the performance
+(e.g. environmental illumination) should also be reported.
+
+4.Temperature
+
+Range of temperature at which the testing is to be conducted (e.g.
+“Testing was conducted in an air-conditioned environment where
+temperature was kept between X and Y degrees”).
+
+5.Time interval
+
+Time interval (e.g. minimum, maximum and average time) between
+enrolment and verification.
+
+6.Habituation
+
+The degree to which the test subject is familiarized with the TOE
+(e.g. frequency of use of the TOE)
+
+7.Template adaptation
+
+How much template adaptation occur prior to measure the FNMR or FRR if
+the TOE is able to adapt the templates over time with the aim to
+reduce the false rejection rates.
+
+## A.3.3 Test subject selection
+
+Selection method of test subjects shall be reported (e.g. gather test subjects from
+developer’s employees or recruit them from public). It is recommended that demographics
+of test subjects follow the target application.
+
+## A.3.4 Test instructions and training
+
+Instructions and training given to the test subjects shall be reported.
+The same instructions and training shall be given to the all test
+subjects.
+
+1.Test information and general test instructions
+
+Test information and general test instructions given to test subject
+prior or after biometric data collection shall be reported. Such
+instructions shall be consistent to automated guidance or feedback
+given by the TOE or instructions described in the TOE operational
+guidance. Testing shall not be adjusted to the TOE specification that
+is not described in the TOE operational guidance.
+
+2.Confirmation of habituation
+
+Method for how to confirm the level of subject habituation prior to
+biometric data collection shall be reported. If the habituation was
+confirmed through training, method to ensure the consistency of
+training among test subjects and the tools used for training shall be
+reported (e.g. developer can prepare the script for training in
+advance and apply it to all test subjects to ensure the consistency).
+
+## A.3.5 Test subject management
+
+Following information about test subject management shall be reported.
+Proper management is necessary to avoid human errors that may occur
+during the testing.
+
+1.Management processes
+
+Biometric data can be corrupted by human error during the collection
+process (e.g. using a middle finger when the index finger is
+required). The test subject management processes to avoid such errors
+shall be reported. Management processes shall cover the following
+processes.
+
+a) method of initial test subject registration
+
+b) method of ensuring test subject uniqueness
+
+c) amount and type of personal data collected
+
+d) method of avoiding data collection errors (e.g. Use of data
+   collection software minimizing the amount of data requiring keyboard
+   entry)
+
+## A.3.6 Test procedure
+
+A test protocol for the testing shall be reported. The following items
+shall be covered.
+
+1.Type of attempt or transaction
+
+Whether the attempt or transaction is executed online or offline shall
+be reported. Online means that enrolment and verification is executed
+at the time of image submission. Offline means that enrolment and
+verification is executed separately from image submission.
+
+2.Test flow
+
+Details of flow of genuine and imposter attempt or transaction to
+measure the error rates shall be reported. The same flow shall be
+applied to all test subjects.
+
+The developer shall maintain a log file in which each interaction with
+the TOE is recorded. The log shall include all test attempts, preprative
+or practice attempts, set-up procedure (e.g. setting a threshold) and 
+maintenance activities (e.g. cleaning a sensor). Such a log file can be 
+very useful to make sure the testing was conducted following the test 
+flow.
+
+3.Sample exclusion criteria
+
+Criteria for sample exclusion shall be reported. Test operator shall
+not manually discard nor use an automated mechanism to discard
+collected samples unless the samples conform to documented exclusion
+criteria. Number of excluded samples shall be reported. If
+transactions are failed because of such excluded samples, number of
+such failed transactions shall also be reported. These failed
+transactions shall be counted as failed transactions to calculate the
+error rates.
+
+4.Advice or remedial action
+
+Advices or remedial actions to test subjects who fail to complete
+transactions or sample collections shall be reported. Such advices or
+remedial actions shall be limited to the minimum amount necessary
+because this \[SD\] assumes that the mobile device is used by the
+single user without any support. The same advices or remedial actions
+shall be given to test subject at the same condition.
+
+Appendix B Requirement for the number of test subject, transaction and samples
+==============================================================================
+
+The developer shall follow recommendations or minimum requirements below
+to conduct the performance testing to estimate FAR/FMR and FRR/FNMR. The
+developer may exclude, modify or add some recommendations however, the
+developer shall show a clear rationale why such modifications could
+produce more accurate estimate of the performance.
+
+## B.1 Recommendations
+
+### 1\) Scenario of mobile biometric verification
+
+The user may use the mobile biometric verification in a different way.
+Suppose the mobile device provides both Password Authentication Factor
+and BAF and user can use either of factor to unlock the device. One user
+may try to unlock the device with BAF until maximum number of
+unsuccessful authentication attempts is exceeded. Another user may try
+to unlock the device with BAF only three times and switch to the
+password if all three attempts were failed. However, it’s not possible
+to evaluate all of these scenarios and the developer shall assume the 
+worst case senario of imposter attempts and conduct performance
+testing following such scenario consistently.
+
+For example, if the mobile face verification becomes unavailable after
+the five successive failed attempts, the developer shall assume that the
+attacker makes all five face unlock attempts in succession to try to unlock
+the mobile device. In this case, the developer shall define that the 
+verification transaction is consisted up to five unlock attempts and 
+only one verification transaction can be run by each user.
+
+If the worst case senario can't be determined, the developer may select
+an arbitary senario. For example, if the mobile iris verification becomes 
+unavailable after the five successive failed attempts, the developer shall 
+assume that the attacker tries to all five iris unlock attempts in succession.
+However the developer may assume that the user tries right iris for the 
+first three attempts and switch to the left iris for the last two attempts 
+if all first three attempts were failed, or may assume that the user tries
+right iris for all five attempts. The developer can choose either of the 
+senario if the developer can't determine which one is the worst case.
+
+### 2\) Maximum number of templates
+
+Only one template can be generated from each body part (e.g. right iris,
+left hand index finger or face) and used for the performance testing.
+
+Quality of template may have significant impact on the mobile biometric
+verification performance. This \[SD\] assumes that the user is familiar
+with the mobile devices operation and enroll his/herself correctly. The
+test subject may make enough number of practice attempts to get familiar
+with the device operation before the final enrollment transaction.
+
+### 3\) Maximum number of samples per test subject
+
+The developer shall define the maximum number of samples per test
+subject following the worst case scenario.
+
+### 4\) Maximum number of transaction per test subject
+
+Only one transaction can be run by each test user because the mobile
+device locks the mobile biometric verification as required by \[MDFPP\]
+after the certain number of attempts are failed.
+
+### 5\) Statistical certainty for FAR/FMR
+
+FMR/FAR shall be estimated following rule of 3 or 30 because these
+errors are most relevant to the security of the TOE and trustworthiness
+of those values shall be evaluated statistically. While the rule of 3
+would require that one test subject is only involved in one impostor
+transaction, it is commonly agreed that the statistical loss of
+computing all possible cross-comparisons between test subjects is
+acceptable. This \[SD\] allows full cross-comparison to estimate
+FAR/FMR.
+
+This \[SD\] also allows cross-comparison of attempts/templates for
+ordered pair if there is no explicit reason that this cross-comparison
+hinders the accuracy of the result of performance testing.
+Cross-comparison of attempts/templates for ordered pair allows to
+compare between user A’s template and user B’s sample and user A’s
+sample and user B’s template separately. However, if the TOE's 
+verification algorithm is symmetric and make no distinction between
+the ordered pair, this assumption can't be used.
+
+This \[SD\] doesn’t allow intra-individual comparison that is a
+comparison between one body part and another body part of the same test
+subject (e.g. comparison between right and left iris of the same user).
+
+### 6\) Statistical certainty for FRR/FNMR
+
+Rule of 3 requires no error occurred for all attempts/transactions and
+rule of 30 may require too many attempts/transactions if the FNMR/FRR is
+quite low. Therefore, the developer may calculate FNMR/FRR directly from
+the result of performance testing without considering the statistical
+confidence.
+
+## B.2 Example – iris verification
+
+The developer defines that the iris verification is consisted of 5
+attempts using both right and left iris to unlock the mobile device and
+specify 0.01 % FAR and 1% FRR in FIA\_MBV\_EXT.1. At least 30,000
+imposter transactions shall be conducted with no error to achieve this
+performance goal if the rule of 3 is applied. To run more than 30,000
+imposter transactions, at least 174 test subjects shall be gathered (173
+\* 174 = 30,102). If number of test subjects is 174, only 1 genuine
+transaction can be failed to achieve 1% FRR (2/174 = 0.011 &gt; 1%).
+
+If the developer specifies 0.01 % FMR and 1% FNMR in FIA\_MBV\_EXT.1, at
+least 30,000 imposter attempts shall be made with no errors. To run more
+than 30,000 imposter attempts, at least 78 test subjects shall be
+gathered (77 \* 78 \* 5 = 30030). If number of test subjects is 78, the
+total number of genuine attempts is 78 \* 5 = 390 and 3 genuine attempts
+can be failed to achieve 1% FNMR (4/390 = 0.0102 &gt; 1%)
+
