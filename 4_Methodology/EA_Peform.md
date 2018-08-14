@@ -21,14 +21,14 @@ ISO/IEC 19795-1:2006 Biometric performance testing and reporting - Part
 ISO/IEC 19795-2:2007 Biometric performance testing and reporting - Part
 2: Testing methodologies for technology and scenario evaluation.
 
-# Requirements for the test document
+# A.1 Requirements for the test document
 
 The developer shall provide the test document for CC evaluations that
 claim a conform to \[BScPP\]. This section defines required content of
 the test document that is inputted to the Evaluation Activity for 
 FIA\_MBV\_EXT.1.
 
-# Summary of contents
+# A.2 Summary of contents
 
 Table-A1 shows items that shall be reported in the test document. Name
 or structure of test document doesn’t need to follow Table-A1. However,
@@ -48,7 +48,7 @@ shall provide a rationale for such exclusion to the evaluator.
 
 Table-A1: Reporting items
 
-#  Reporting items description
+# A.3 Reporting items description
 
 This section describes each item in Table-A1 in detail. All items are
 created based on ISO/IEC 19795-1 and 19795-2 however some of them are
@@ -59,7 +59,7 @@ modified to adjust to the CC evaluation.
 The developer shall report following general information about the
 performance testing.
 
-### Performance test configuration
+### 1\) Performance test configuration
 
 The test document shall report the following information to uniquely
 identify the test configuration of the performance testing. Information
@@ -95,7 +95,7 @@ users, value of threshold set for the testing shall be reported.
 Information that uniquely identify all testing tools (e.g. SDK) used
 for the performance testing shall be reported.
 
-### Result of the performance testing
+### 2\) Result of the performance testing
 
 The test document shall report the following items to provide the result
 of testing.
@@ -340,9 +340,9 @@ developer may exclude, modify or add some recommendations however, the
 developer shall show a clear rationale why such modifications could
 produce more accurate estimate of the performance.
 
-## Recommendations
+## B.1 Recommendations
 
-### Scenario of mobile biometric verification ###
+### 1\) Scenario of mobile biometric verification
 
 The user may use the mobile biometric verification in a different way.
 Suppose the mobile device provides both Password Authentication Factor
@@ -372,7 +372,7 @@ if all first three attempts were failed, or may assume that the user tries
 right iris for all five attempts. The developer can choose either of the 
 senario if the developer can't determine which one is the worst case.
 
-2.Maximum number of templates
+### 2\) Maximum number of templates
 
 Only one template can be generated from each body part (e.g. right iris,
 left hand index finger or face) and used for the performance testing.
@@ -383,18 +383,18 @@ with the mobile devices operation and enroll his/herself correctly. The
 test subject may make enough number of practice attempts to get familiar
 with the device operation before the final enrollment transaction.
 
-3.Maximum number of samples per test subject
+### 3\) Maximum number of samples per test subject
 
 The developer shall define the maximum number of samples per test
 subject following the worst case scenario.
 
-4.Maximum number of transaction per test subject
+### 4\) Maximum number of transaction per test subject
 
 Only one transaction can be run by each test user because the mobile
 device locks the mobile biometric verification as required by \[MDFPP\]
 after the certain number of attempts are failed.
 
-5.Statistical certainty for FAR/FMR
+### 5\) Statistical certainty for FAR/FMR
 
 FMR/FAR shall be estimated following rule of 3 or 30 because these
 errors are most relevant to the security of the TOE and trustworthiness
@@ -418,7 +418,7 @@ This \[SD\] doesn’t allow intra-individual comparison that is a
 comparison between one body part and another body part of the same test
 subject (e.g. comparison between right and left iris of the same user).
 
-6.Statistical certainty for FRR/FNMR
+### 6\) Statistical certainty for FRR/FNMR
 
 Rule of 3 requires no error occurred for all attempts/transactions and
 rule of 30 may require too many attempts/transactions if the FNMR/FRR is
@@ -426,7 +426,7 @@ quite low. Therefore, the developer may calculate FNMR/FRR directly from
 the result of performance testing without considering the statistical
 confidence.
 
-## Example – iris verification
+## B.2 Example – iris verification
 
 The developer defines that the iris verification is consisted of 5
 attempts using both right and left iris to unlock the mobile device and
