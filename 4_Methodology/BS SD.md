@@ -217,7 +217,7 @@ reproducibility of the pass/fail judgement are defined here.
 ISO/IEC 15408-4 also requires the SD to provide the rationale for the EA, 
 which is a justification for the derivation of EAs from one or more 
 work units. This rationale isn't provided for each EA but summarized  
-separately in section 6.
+separately in section 5.
 
 2.1 FIA: Identification and Authentication
 --------------------------------------
@@ -1093,31 +1093,117 @@ the Pass/Fail criteria.
 3 Evaluation Activities for Selection-Based Requirements
 ==============================
 
+3.1 FIA: Identification and Authentication
+--------------------------------------
 
+### 3.1.1 EA for FIA_HYB_EXT.1
+
+#### 1\) Objective of the EA
+
+A hybrid authentication mechanism is one where a user has to submit a 
+combination of biometric sample and PIN or password with both to pass 
+and without the user being made aware of which factor failed, if either 
+fails. The evaluator shall verify that the TOE use only selected 
+modality for this hybrid authentication.
+
+#### 2\) Relationship of the EA to SFRs, SARs, and other EAs
+
+This EA is created from FIA_HYB_EXT.1 and defines activities the evaluator
+shall perform to examine whether the TOE meets FIA_HYB_EXT.1 or not. 
+
+The evaluator shall perform the EA for FIA\_MBE\_EXT.1 first to confirm 
+the mobile biometric enrolment can be done correctly.
+
+#### 3\) Tool types required to perform the EA
+
+No tool is required for this EA.
+
+#### 4\) Required input from the developer or other entities
+
+Following input is required from the developer.
+
+a)  TSS shall explain how the TOE meets FIA\_MBE\_EXT.1 at high level
+    description.
+
+b)  AGD guidance shall describe how the hybrid authentication can
+    be done.
+
+#### 5\) Assessment Strategy
+
+\[Strategy for ASE\_TSS, AGD\_OPE and ADV\_FSP\]
+
+The evaluator shall examine the TSS to understand how the TOE verify a
+user with his/her biometric characteristics and PIN or password. 
+The evaluator shall also examine the guidance about how the TOE 
+supports a user to verify his/herself correctly and how the TOE 
+behaves when hybrid authentication is succeeded or failed.
+
+\[Strategy for ATE\_IND\]
+
+The evaluator shall perform the following test to verify that the TOE
+protects the templates as specified in TSS and AGD guidance.
+
+Step 1: The evaluator shall configure and perform hybrid authentication.
+
+Step 2: The evaluator shall check that the TOE can conduct hybrid 
+        authentication as specified, especially, when either factor is 
+        failed, the TOE doesn't reveal any information about which
+        factor is failed.
+
+#### 6\) Pass/fail criteria
+
+The evaluators can pass this evaluation activity only if the evaluator
+confirms that:
+
+a)  information necessary to perform this EA is described in the TSS and
+    AGD guidance.
+
+b)  the TOE can conduct hybrid authentication using modality as specified 
+    by the ST author.
+
+#### 7\) Requirements for reporting
+
+The evaluator shall report the summary of result of EA defined above,
+especially how the evaluator reaches the pass/fail judgement based on
+the Pass/Fail criteria.
 
 4 Evaluation Activities for Optional Requirements
 ==============================
 
+4.1 FIA: Identification and Authentication
+--------------------------------------
+
+### 4.1.1 EA for FIA_MBE_EXT.3
+
+The evaluator shall refer the EA for FIA_MBV_EXT.3 to perform evaluation
+of this SFR.
+
+4.2 FDP: User data protection
+--------------------------------------
+
+### 4.2.1 EA for FDP_RIP.2
+
+The evaluator shall refer the EA for FCS_CKM_EXT.4 in \[MDFPP\] to perform
+evaluation of this SFR.
 
 5 Evaluation Activities for SARs
 ==============================
 
 The sections below specify EAs for the Security Assurance Requirements
-(SARs) included in the related cPPs (see section 1.1 above). The EAs in
-Section 2 (Evaluation Activities for SFRs), Section 3 (Evaluation Activities
-for Selection-Based Requirements), and Section 4 (Evaluation Activities for
-Optional Requirements) are an interpretation of the more general CEM
-assurance requirements as they apply to the specific technology area of the
-TOE.
+(SARs) included in the \[BScPP\]. The EAs in Section 2 (Evaluation 
+Activities for SFRs), Section 3 (Evaluation Activities for Selection-Based 
+Requirements), and Section 4 (Evaluation Activities for Optional Requirements) 
+are an interpretation of the more general CEM assurance requirements as they 
+apply to the specific technology area of the TOE.
 
 In this section, each SAR that is contained in the cPP is listed, and the EAs
-that are not associated with an SFR are captured here, or a reference is made
-to the CEM, and the evaluator is expected to perform the CEM work units.
+that are not associated with an SFR or application notes to perform the CEM work 
+units are defined here.
 
 5.1 ASE: Security Target Evaluation
 --------------------------
 
-When evaluating a Security Target, the evaluator shall performs the work units as
+When evaluating ASE, the evaluator shall performs the work units as
 presented in the CEM, except ASE_TSS.1-1. During ASE_TSS.1-1 evaluation, 
 the evaluator shall ensure the content of the TSS in the ST satisfies the EAs 
 specified in Section 2 (Evaluation Activities for SFRs), if applicable, Section 3 
@@ -1127,37 +1213,45 @@ specified in Section 2 (Evaluation Activities for SFRs), if applicable, Section 
 5.2 ADV: Development
 --------------------------
 
+The design information about the TOE may be contained in the AGD guidance 
+available to the end user as well as the TSS portion of the ST, and any required 
+supplementary information required by \[BScPP\] that is not to be made public. 
+\[SD\] defines required supplementary information that is necessary for EAs.
+
 ### 5.2.1 Basic Functional Specification (ADV_FSP.1)
 
-The work units and relevant EAs for this assurance component focus on 
-understanding the graphical user interfaces for mobile biometric 
-enrolment and verification, and management of biometric templates. 
+The functional specification describes the TOE Security Functions Interfaces (TSFIs).
+It is not necessary to have a formal or complete specification of these interfaces. 
+Additionally, because TOEs conforming to \[BScPP\] will necessarily have interfaces 
+to the mobile device that are not directly invokable by TOE users, there is little 
+point specifying that such interfaces be described in and of themselves since only 
+indirect testing of such interfaces may be possible. 
 
-This \[SD\] assumes that those interfaces are described in the AGD 
-documentation, including online assistance, prompts or warning provided 
-by the TOE. Therefore no additional “functional specification” 
-documentation is necessary if AGD documentation include enough information 
-required by the work units and EAs.
+For \[BScPP\], the EAs for this family focus on understanding the interfaces presented 
+in the TSS in response to the functional requirements and the interfaces presented in 
+the AGD guidance. No additional “functional specification” documentation is necessary 
+to satisfy the EAs specified in this \[SD\].
 
-When evaluating AGD documentation, the evaluator performs the work units 
+When evaluating ADV_FSP.1, the evaluator performs the work units 
 as presented in the CEM, taking the following application notes into account.
 
 #### Application note for ADV_FSP.1-1, ADV_FSP.1-2 and ADV_FSP.1-3
+
 *SFR-supporting and SFR-enforcing TSFI* can be interpreted as "any 
 TSFIs through which the user can enrol and verify his/herself, and 
 access any biometric data including templates".
 
 The evaluator shall examine the purpose, method of use and parameters 
-(if any) of these TSFIs described in AGD documentation as required by
-ADV_FSP.1-1, ADV_FSP.1-2 and ADV_FSP.1-3.
+(if any) of these TSFIs as required by ADV_FSP.1-1, ADV_FSP.1-2 and ADV_FSP.1-3.
 
 #### Application note for ADV_FSP.1-4
-If AGD documentation doesn't describe all available interfaces including, 
+
+If AGD guidance doesn't describe all available interfaces including, 
 for example, any secret codes or hidden menu used for diagnostic purposes 
 or testing, the developer shall provide *rationale for the implicit 
 categorisation of interfaces as SFR-non-interfering* that explain;
 
-a)  type of interfaces that are not described in AGD documentation
+a)  type of interfaces that are not described in AGD guidance
 
 b)  rationale why those interfaces are not directly or indirectly
     related to the enforcement of SFRs
@@ -1168,18 +1262,21 @@ rationale and the evaluator may ask more information about such
 interfaces for penetration testing if necessary.
 
 #### Application note for ADV_FSP.1-5
-AGD documentation doesn't need to provide the explicit *tracing links 
-the SFRs to the corresponding TSFIs*. If AGD documentation explains
-how to use the interface to enrol the user, such information can be 
-implicit tracing link between FIA_MBE_EXT.1 to the corresponding TSFI.
+
+The EAs in Section 2, if applicable, Section 3 and 4 of this \[SD\] are associated with 
+the applicable SFRs; since these are directly associated with the SFRs, *the tracing from 
+the functional specification to the SFRs* is implicitly already done and no additional 
+documentation is necessary. Therefore, the intent of this work unit is covered by those EAs.
 
 #### Application note for ADV_FSP.1-6
+
 EAs that are associated with the SFRs in Section 2, and, if applicable, 
 Sections 3 and 4, are performed to ensure that all the SFRs where the 
 security functionality is externally visible (i.e. at the TSFI) are
 covered. Therefore, the intent of this work unit is covered by those EAs.
 
 #### Application note for ADV_FSP.1-7
+
 EAs that are associated with the SFRs in Section 2, and, if applicable, 
 Sections 3 and 4, are performed to ensure that all the SFRs where the 
 security functionality is externally visible (i.e. at the TSFI) are
@@ -1190,17 +1287,24 @@ of this work unit is covered by those EAs.
 5.3 AGD: Guidance Documents
 --------------------------
 
-It is not necessary for a TOE to provide separate documentation to meet the
-individual requirements of AGD_OPE and AGD_PRE. Although the EAs in
-this section are described under the traditionally separate AGD families, the
-mapping between the documentation provided by the developer and AGD_OPE and 
-AGD_PRE requirements may be many-to-many, as long as all requirements are met 
-in documentation that is delivered to users (as appropriate) as part of the TOE. 
+\[BScPP\] assumes that the TOE is embedded into the mobile device and it is 
+configured and managed as described in AGD guidance that satisfy 
+requirements defined in the \[MDFPP\].
 
+In addition to AGD guidance required by the \[MDFPP\], guidance pertaining 
+to mobile biometric enrolment and verification shall also be provided. 
+Requirements on such guidance are contained in the EAs specified in Section 2,
+if applicalbe, Section 3 and 4.
 
 ### 5.3.1 Operational User Guidance (AGD_OPE.1)
 
+The operational user guidance does not have to be contained in a single document. 
+Guidance to users can be included in the mobile device guidance document or can 
+be spread among other document or web pages.
 
+When evaluating AGD_OPE.1, the evaluator performs the work units 
+as presented in the CEM, taking the following application notes into account.
+There is no application note for AGD_OPE.1-7 and AGD_OPE.1-8.
 
 #### Application note for AGD_OPE.1-1
 
@@ -1236,62 +1340,80 @@ such *secure use* of interfaces. For example, number of unsuccessful attempts
 for mobile biometric verification must be limitted by the \[MDFPP\]. The evaluator
 shall avoid duplicate effort between evaluations under \[BScPP\] and \[MDFPP\].
 
-#### Application note for AGD_OPE.1-3, AGD_OPE.1-4
+#### Application note for AGD_OPE.1-3, AGD_OPE.1-4 and AGD_OPE.1-5
 
-EAs in \[BScPP\] and \[MDFPP\] define required contents in AGD documentation
-. Therefore, the intent of this work unit is covered by those EAs.
+EAs defined in \[BScPP\] specify required guidance in AGD documentation. 
+Therefore, the intent of these works unit are covered by those EAs.
 
-#### Application note for AGD_OPE.1-4
+#### Application note for AGD_OPE.1-6
 
+\[BScPP\] defines the assumptions for the mobile device that is the 
+operational environment of the TOE. These assumptions are implicitly 
+satisfied if the mobile device is successfully evaluated based on \[MDFPP\] 
+and the operational guidance doesn’t need to describe *the security measures to be 
+followed in order to fulfil the security objectives for the operational environment* 
+derived from those assumptions.
 
+### 5.3.2 Preparative Procedures (AGD_PRE.1)
 
-The evaluator shall examine the operational user guidance to determine that it describes, for each user role, each type of security-relevant event relative to the user functions that need to be performed, including changing the security characteristics of entities under the control of the TSF and operation following failure or operational error.
+Preparative procedures are useful for ensuring that the TOE has been received and 
+installed in a secure manner as intended by the developer. However, the TOE is 
+embedded into the mobile device and it is assumed that such information will be 
+provided by the mobile device guidance document and evaluated by the mobile 
+device evaluation based on \[MDFPP\]. Therefore, AGD_PRE.1.1D is implicitly 
+already done by those evaluations and no additional documentation is necessary.
 
------------
+5.4 ALC: Life-cycle Support
+--------------------------
 
+At the assurance level provided for a TOE conformant to this cPP, life-cycle 
+support is limited to end-user-visible aspects of the life-cycle, rather than 
+an examination of the TOE vendor’s development and configuration management 
+process. This is not meant to diminish the critical role that a developer’s 
+practices play in contributing to the overall trustworthiness of a product, 
+rather, it is a reflection on the information to be made available for 
+evaluation at this assurance level.
 
-When evaluating the TSFI, the evaluator performs the work units as
-presented in the CEM, except ADV_FSP.1-7. During ASE_TSS.1-1 evaluation, 
-the evaluator shall ensure the content of the TSS in the ST satisfies the EAs 
-specified in Section 2 (Evaluation Activities for SFRs), Section 3 
-(Evaluation Activities for Selection-Based Requirements), and Section 4 
-(Evaluation Activities for Optional Requirements).
+### 5.4.1 Labelling of the TOE (ALC_CMC.1)
 
+This component is targeted at identifying the TOE such that it can be distinguished 
+from other products or versions from the same vendor and can be easily identified 
+when being procured by an end user. The evaluator performs the CEM work units 
+associated with ALC_CMC.1.
 
+When evaluating ALC_CMC.1, the evaluator performs the work units 
+as presented in the CEM, taking the following application notes into account.
+There is no application note for ALC_CMC.1-2.
 
-described in the AGD documentation, and
-possibly identified in the TOE Summary Specification (TSS) in response to
-the SFRs. Specific evaluator actions to be performed against this
-documentation are identified (where relevant) for each SFR in Section 2, 3, 4 
-and in EAs for AGD, ATE and AVA SARs in other parts of Section 5.
+#### Application note for ALC_CMC.1-1
 
-The EAs presented in this section address the CEM work units ADV_FSP.1-
-1, ADV_FSP.1-2, ADV_FSP.1-3, and ADV_FSP.1-5.
+The TOE is tightly integrated into the mobile device and the reference of mobile
+device can also be used for the TOE reference only if the reference of mobile 
+device can uniquly identify the TOE, which means that any modification to the TOE
+should lead to the change to the reference of mobile device.
 
-The EAs are reworded for clarity and interpret the CEM work units such that
-they will result in more objective and repeatable actions by the evaluator. The
-EAs in this SD are intended to ensure the evaluators are consistently
-performing equivalent actions.
+### 5.4.2 TOE CM Coverage (ALC_CMS.1)
 
-The documents to be examined for this assurance component in an evaluation
-are therefore the Security Target, AGD documentation, and any required
-supplementary information required by the cPP: no additional “functional
-specification” documentation is necessary to satisfy the EAs. The interfaces
-that need to be evaluated are also identified by reference to the EAs listed for
-each SFR, and are expected to be identified in the context of the Security
-Target, AGD documentation, and any required supplementary information
-defined in the cPP rather than as a separate list specifically for the purposes of
-CC evaluation. The direct identification of documentation requirements and
-their assessment as part of the EAs for each SFR also means that the tracing
-required in ADV_FSP.1.2D (work units ADV_FSP.1-4, ADV_FSP.1-6 and
-ADV_FSP.1-7) is treated as implicit and no separate mapping information is
-required for this element.
+Given the scope of the TOE and its associated evaluation evidence requirements, 
+the evaluator performs the CEM work units associated with ALC_CMS.1. There is no
+application note for this assurance family.
 
-#### 1\) Objective of the EA
+5.5 ATE: Tests
+--------------------------
 
-6 Justification for the derivation of EAs
-==============================
+Testing is specified for functional aspects of the TOE as well as aspects that 
+take advantage of design or implementation weaknesses. The former is done through 
+the ATE_IND family, while the latter is through the AVA_VAN family. For this cPP, 
+testing is based on advertised functionalities and interfaces with dependency on 
+the availability of design information. One of the primary outputs of the evaluation 
+process is the test report as specified in the following requirements.
 
+### 5.5.1 Independent Testing – Conformance (ATE_IND.1)
+
+Testing is performed to confirm the functionality described in the TSS as well as 
+the AGD guidance. The focus of the testing is to confirm that the requirements 
+specified in \[BScPP\] being met. The EAs in this \[SD\] identify the specific 
+testing activities necessary to verify compliance with the SFRs. 
 
 
 
