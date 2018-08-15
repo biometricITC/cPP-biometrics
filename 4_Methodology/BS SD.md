@@ -1117,11 +1117,11 @@ to the CEM, and the evaluator is expected to perform the CEM work units.
 5.1 ASE: Security Target Evaluation
 --------------------------
 
-When evaluating a Security Target, the evaluator performs the work units as
+When evaluating a Security Target, the evaluator shall performs the work units as
 presented in the CEM, except ASE_TSS.1-1. During ASE_TSS.1-1 evaluation, 
 the evaluator shall ensure the content of the TSS in the ST satisfies the EAs 
-specified in Section 2 (Evaluation Activities for SFRs), Section 3 
-(Evaluation Activities for Selection-Based Requirements), and Section 4 
+specified in Section 2 (Evaluation Activities for SFRs), if applicable, Section 3 
+(Evaluation Activities for Selection-Based Requirements) and Section 4 
 (Evaluation Activities for Optional Requirements).
 
 5.2 ADV: Development
@@ -1136,26 +1136,26 @@ enrolment and verification, and management of biometric templates.
 This \[SD\] assumes that those interfaces are described in the AGD 
 documentation, including online assistance, prompts or warning provided 
 by the TOE. Therefore no additional “functional specification” 
-documentation is necessary if AGD documentation include information 
+documentation is necessary if AGD documentation include enough information 
 required by the work units and EAs.
 
 When evaluating AGD documentation, the evaluator performs the work units 
-as presented in the CEM, considering the following application notes.
+as presented in the CEM, taking the following application notes into account.
 
 #### Application note for ADV_FSP.1-1, ADV_FSP.1-2 and ADV_FSP.1-3
-SFR-supporting and SFR-enforcing TSFI can be interpreted as "any 
-TSFI through which the user can enrol and verify his/herself, and 
+*SFR-supporting and SFR-enforcing TSFI* can be interpreted as "any 
+TSFIs through which the user can enrol and verify his/herself, and 
 access any biometric data including templates".
 
 The evaluator shall examine the purpose, method of use and parameters 
-(if any) of these TSFI described in AGD documentation as required by
+(if any) of these TSFIs described in AGD documentation as required by
 ADV_FSP.1-1, ADV_FSP.1-2 and ADV_FSP.1-3.
 
 #### Application note for ADV_FSP.1-4
 If AGD documentation doesn't describe all available interfaces including, 
 for example, any secret codes or hidden menu used for diagnostic purposes 
-or testing, the developer shall provide "rationale for the implicit 
-categorisation of interfaces as SFR-non-interfering" that explain;
+or testing, the developer shall provide *rationale for the implicit 
+categorisation of interfaces as SFR-non-interfering* that explain;
 
 a)  type of interfaces that are not described in AGD documentation
 
@@ -1164,14 +1164,88 @@ b)  rationale why those interfaces are not directly or indirectly
     
 As described in CEM, individual interfaces should not need to be 
 addressed in the rationale. The developer can provide the brief
-rationale and the evaluator may test such interfaces if necessary.
+rationale and the evaluator may ask more information about such 
+interfaces for penetration testing if necessary.
 
 #### Application note for ADV_FSP.1-5
-AGD documentation doesn't need to provide the explicit "tracing links 
-the SFRs to the corresponding TSFIs". If AGD documentation explains
+AGD documentation doesn't need to provide the explicit *tracing links 
+the SFRs to the corresponding TSFIs*. If AGD documentation explains
 how to use the interface to enrol the user, such information can be 
 implicit tracing link between FIA_MBE_EXT.1 to the corresponding TSFI.
 
+#### Application note for ADV_FSP.1-6
+EAs that are associated with the SFRs in Section 2, and, if applicable, 
+Sections 3 and 4, are performed to ensure that all the SFRs where the 
+security functionality is externally visible (i.e. at the TSFI) are
+covered. Therefore, the intent of this work unit is covered by those EAs.
+
+#### Application note for ADV_FSP.1-7
+EAs that are associated with the SFRs in Section 2, and, if applicable, 
+Sections 3 and 4, are performed to ensure that all the SFRs where the 
+security functionality is externally visible (i.e. at the TSFI) are
+addressed, and that the description of the interfaces is accurate with 
+respect to the specification captured in the SFRs. Therefore, the intent 
+of this work unit is covered by those EAs.
+
+5.3 AGD: Guidance Documents
+--------------------------
+
+It is not necessary for a TOE to provide separate documentation to meet the
+individual requirements of AGD_OPE and AGD_PRE. Although the EAs in
+this section are described under the traditionally separate AGD families, the
+mapping between the documentation provided by the developer and AGD_OPE and 
+AGD_PRE requirements may be many-to-many, as long as all requirements are met 
+in documentation that is delivered to users (as appropriate) as part of the TOE. 
+
+
+### 5.3.1 Operational User Guidance (AGD_OPE.1)
+
+
+
+#### Application note for AGD_OPE.1-1
+
+The TOE is used by the single user and these is only one *user role*. All necessary 
+information for using *user-accessible functions* (e.g. mobile biometric enrolment 
+and verification) are identified by EAs in Section 2, and, if applicable, 
+Sections 3 and 4. 
+
+This work unit also require the evaluator to examine that AGD documentation describes 
+*appropriate warnings*. Examples of such warnings for mobile biometric verification 
+are as follows.
+
+a)  estimated error rates (i.e. FAR/FRR and FMR/FNMR)
+
+b)  paticular type of users that may face higher error rates (e.g. twins and 
+    siblings that look like same may see higher FAR/FMR in case of the mobile 
+    face verification) 
+
+The evaluator shall take the above aspects into account to perform this work
+unit.
+
+#### Application note for AGD_OPE.1-2
+
+*\(T\)he available interfaces provided by the TOE* can be interpreted as 
+"any TSFIs through which the user can enrol and verify his/herself, and 
+access any biometric data including templates". The evaluator shall focus
+on the *secure use* of such interfaces. Example of guidance for *secure use*
+is recommending twins not to use mobile face verification if twins will see
+higher FAR/FMR.
+
+The evaluator shall recognize that \[MDFPP\] also covers the evaluation of
+such *secure use* of interfaces. For example, number of unsuccessful attempts 
+for mobile biometric verification must be limitted by the \[MDFPP\]. The evaluator
+shall avoid duplicate effort between evaluations under \[BScPP\] and \[MDFPP\].
+
+#### Application note for AGD_OPE.1-3, AGD_OPE.1-4
+
+EAs in \[BScPP\] and \[MDFPP\] define required contents in AGD documentation
+. Therefore, the intent of this work unit is covered by those EAs.
+
+#### Application note for AGD_OPE.1-4
+
+
+
+The evaluator shall examine the operational user guidance to determine that it describes, for each user role, each type of security-relevant event relative to the user functions that need to be performed, including changing the security characteristics of entities under the control of the TSF and operation following failure or operational error.
 
 -----------
 
