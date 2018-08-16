@@ -215,9 +215,8 @@ Specific reporting requirements that support transparency and
 reproducibility of the pass/fail judgement are defined here.
 
 ISO/IEC 15408-4 also requires the SD to provide the rationale for the EA, 
-which is a justification for the derivation of EAs from one or more 
-work units. This rationale isn't provided for each EA but summarized  
-separately in section 5.
+which is a justification for the derivation of EAs from one or more work units. 
+This rationale isn't provided for each EA but summarized separately in section 5.
 
 2.1 FIA: Identification and Authentication
 --------------------------------------
