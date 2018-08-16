@@ -1403,22 +1403,16 @@ application note for this assurance family.
 5.5 ATE: Tests
 --------------------------
 
-Testing is specified for functional aspects of the TOE as well as aspects that 
-take advantage of design or implementation weaknesses. The former is done through 
-the ATE_IND family, while the latter is through the AVA_VAN family. For this cPP, 
-testing is based on advertised functionalities and interfaces with dependency on 
-the availability of design information. One of the primary outputs of the evaluation 
-process is the test report as specified in the following requirements.
-
 ### 5.5.1 Independent Testing – Conformance (ATE_IND.1)
 
-Testing is performed to confirm the functionality described in the TSS as well as 
-the AGD guidance. The focus of the testing is to confirm that the requirements 
-specified in \[BScPP\] being met. The EAs in this \[SD\] identify the specific 
-testing activities necessary to verify compliance with the SFRs. 
+The focus of the testing is to confirm that the requirements specified in the
+SFRs are being met. Additionally, testing is performed to confirm the
+functionality described in the TSS, as well as the dependencies on the
+Operational guidance documentation is accurate.
 
-
-
+When evaluating ATE_IND.1, the evaluator performs the work units 
+as presented in the CEM. However, evaluator shall conduct all applicable test
+items in Appendix C.
 
 Appendix A Developer’s performance test document and its assessment strategy
 ============================================================================
