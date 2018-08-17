@@ -663,16 +663,6 @@ Presentation Attack Instruments (PAI). This EA defines the minimum PAIs
 that the evaluator shall create and test protocol that evaluator shall
 follow to test the TOE. Appendix C specifies such PAIs and test protocols.
 
-While this EA allows to develop an overall statement about the performance 
-of the TOE with respect to its PAD mechanism, they cannot provide any 
-assurance about the PAD functionality with respect to variations of PAIs 
-that are not covered by this EA. It falls into the focus of the 
-vulnerability assessment to evaluate whether the use of additional PAIs 
-can lead to increased error rates. During the vulnerability analysis, 
-the evaluators will use all their knowledge that they gained during the 
-evaluation for penetration testing. Another EA is defined for this 
-penetration testing (AVA\_VAN.1).
-
 #### 2\) Relationship of the EA to SFRs, SARs, and other EAs
 
 This EA is created from FIA\_MBV\_EXT.3 and defines activities the evaluator
@@ -1413,6 +1403,57 @@ When evaluating ATE_IND.1, the evaluator performs the work units
 as presented in the CEM. However, evaluator should conduct all applicable test
 items in Appendix C.
 
+5.6 AVA: Vulnerability Assessment
+--------------------------
+
+### 5.6.1 Vulnerability Survey (AVA_VAN.1)
+
+The following flaw hypothesis for the TOE must be considered during the AVA assessment.
+
+a)  An Attacker may attempt to impersonate as a legitimate user using only his/her own 
+    biometric characteristic (i.e. zero-effort impostor attempt) 
+
+b)  An attacker may attempt to impersonate as a legitimate user using artificial 
+    Presentation Attack Instrument (PAI).
+
+c)  An attacker may attempt to access plaintext biometric data through mobile device 
+    interfaces to create the PAI
+
+The above a) shall be evaluated through EA for FIA_MBV_EXT.1 and c) shall be evaluated 
+through EAs for FPT_BDP_EXT.1-3 and FPT_PBT_EXT.1. 
+
+b) shall also be evaluated through EA for FIA_MBV_EXT.3, however, this EA allows to 
+develop an overall statement about the performance of the TOE with respect to its PAD 
+mechanism, it cannot provide any assurance about the PAD functionality with respect 
+to variations of PAIs that are not covered by the EA. It falls into the focus of the 
+vulnerability assessment to evaluate whether the use of additional PAIs can lead to 
+increased error rates. During the vulnerability analysis, the evaluators will use 
+all their knowledge that they gained during the evaluation for penetration testing.
+Appendix D provides guidance for the vulnerability assessment for the PAD.
+
+When evaluating AVA_VAN.1, the evaluator performs the work units 
+as presented in the CEM, except AVA_VAN.1-3,.....
+The evaluator shall refer application notes described in Appendix D when performing 
+these work unit.
+
+6 References
+--------------------------
+
+\[CC1\] Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.
+
+\[CC2\] Common Criteria for Information Technology Security Evaluation, Part 2: Security functional components, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.
+
+\[CC3\] Common Criteria for Information Technology Security Evaluation, Part 3: Security assurance components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
+
+\[CEM\] Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
+
+\[BScPP\] collaborative Protection Profile for Mobile biometric enrolment and verification - for unlocking the device - \[TBD\]
+
+\[SD\] Evaluation Activities for Mobile biometric enrolment and verification – for unlocking the device – cPP \[TBD\]
+
+\[MDFPP\] Protection Profile for Mobile Device Fundamentals, Version:3.1, 2017-06-16
+
+
 Appendix A Developer’s performance test document and its assessment strategy
 ============================================================================
 
@@ -1891,12 +1932,6 @@ types based on the spoofing medium used and how the face image is recorded.
 - 2D face, printed photo attack
 - 2D face, digital photo attack
 - 2D face, replay video attack
-- 3D face, mask attack
-
-*All of above types except 3D face, mask attack shall be tested in this EA. 
-3D face, mask attack is out of scope because the cost of creating 3D face mask 
-doesn’t match to the assurance required by \[BScPP\] at the time of creating
-this \[SD\].* 
 
 In any type of attack, presentation attack is succeeded if the TOE captures the 
 fake face image from the spoofing medium and unlock the mobile device because 
@@ -1934,9 +1969,9 @@ High quality PAIs looks more similar to the real face however, it may show more
 micro facial textures that can be used to differentiate between the real and 
 fake. However, such micro textures may not be evident in the low quality PAIs. 
 The TOE may overlook such low quality PAIs if the PAD algorithm completely relies 
-on micro textures to detect the PAIs. So, this EA requires to test all PAIs as 
-specified in XXX. However, the evaluator can omit some of them if the evaluator 
-has a valid rationale based on information gained from the developer.
+on micro textures to detect the PAIs. So, this EA requires the evaluator to test all 
+PAIs as specified in C.1.2.2. However, the evaluator can omit some of them if the 
+evaluator has a valid rationale based on information gained from the developer.
 
 Category | Level 1 | Level 2 | Level 3
 --- | --- | --- | ---
@@ -1969,11 +2004,11 @@ Either of the following type is assigned to each test item.
 
 3\) Overview
 
-Brief overview of the presentation attack scenario
+Brief overview of the presentation attack scenario.
 
 4\) Input
 
-Target user’s face information available to the attacker
+Target user’s face information available to the attacker.
 
 5\) Tools
 
@@ -1989,7 +2024,7 @@ Identification of potentially useful variations to the recipe.
 
 8\) Prerequisite
 
-All prerequisite conditions that need to be established before the attack 
+All prerequisite conditions that need to be established before the attack. 
 
 9\) Presentation
 
@@ -2005,13 +2040,157 @@ Existing research papers based on which each test item is created.
 Evaluator should look at them because detailed test procedure may be 
 described in the papers.
 
+#### C.1.2.2 Test items 
+
+-------
+
+Number
+=======
+1-1 
+
+Attack type
+===========
+2D face, printed photo attack
+
+Overview
+========
+In this test, user’s face digital image is not available but photo of the target can be 
+used to create PAI.
+
+Target user is privacy aware. The user doesn’t publish any face images on the internet
+so user’s digital face images are not available to attacker. However, the user places 
+photo of the user on his/her desk. Attacker can scan such picture to make the PAI.
+
+Input
+======
+Photo of target user that meet the following conditions:
+- photo was taken under controlled environment where the background of the scene 
+is uniform, the light in the office is switched on and the window blinds are down
+- photo was taken right after the target user’s enrolment and under the same 
+environment to reduce the possibility that the PAI is rejected because of the 
+difference of the background scene or expression
+- target user’s face occupies about 20% of the full image
+- photo includes user’s full face
+- photo was taken by level 3 camera
+
+Tools
+=====
+The following tool shall be used when the evaluator create PAIs following the recipe.
+
+- Scanner: level 1 or 2
+- Printer: level 1 or 2
+- Paper: level 1 or 2
+
+Recipe
+======
+1) Evaluator scans user’s photo image and saves it in PC. 
+2) Evaluator crops the face image using basic image editing software (e.g. Microsoft Paint) 
+to enlarge it to cover as much of the paper as possible while maintaining the original 
+image aspect ratio. If multiple options are available for enlarging the image, an option 
+that achieves best image quality should be selected. Evaluator doesn’t use image editing 
+software to enhance quality of face image (such attack is considered later).
+3) Evalautor prints it out on a paper.
+
+Variations
+==========
+tbd
+
+Prerequisite
+============
+Target user turns on the face unlock and registers user’s face following instructions 
+provided by the device and manual (i.e. target user should not wear glasses, hat, beard, 
+or heavy make-up during the enrollment if the guidance instructs not to do so) under 
+the controlled environment.
+
+If the ST covers the multiple configurations for face unlock, the same test should be 
+done for all configurations.
+
+Presentation
+============
+Evaluator presents the photo to the device by hand at controlled environment. 
+Evaluator adjusts the distance between the photo and the device to right distance 
+so that the device camera can’t see the edge of photo. Evaluator also presents 
+the photo to minimize the reflection from ambient lighting.
+
+PAD technique
+=============
+During scanning, enlarging and copying the image, lots of information like high 
+frequency information of original face will be lost. Such changes can be detected 
+by, for example, LBP that require relatively low computational power.
+
+Reference
+=========
+There is no research paper that conduct attacks following this scenario. All PAIs 
+were created using live image of target user, not photo image of the user in all researches.
+
+Pass Criteria
+=============
+The evaluator shall create at least one PAI for one user and make at least 10 presentation attempts.
+All attempts shall be rejected. Proposed algorithm in the existing research papers are 
+capable to detect this primitive attack.
+
+-------
+
+**other test items will be included from https://github.com/biometricITC/cPP-biometrics/tree/master/4_Methodology/attacks**
+
+Appendix D Vulnerability Analysis for Presentation Attack
+==============================================================================
+
+EA for FIA_MBV_EXT.3 defines the minimum presentation attack testing that all evaluator
+shall follow. The evaluator shall also conduct additional penetration testing to make 
+sure that the TOE is resistant to attacks with PAIs by an attacker possessing a Basic 
+attack potential. This Appendix provides the guidance for the evaluator’s presentation 
+attack testing that shall be conducted during AVA.
+
+## D.1 Basic Assumption for AVA presentation attack testing
+
+1\)	Motivation of attackers
+The TOE is used to unlock the devices but not used for financial transactions. Attacker 
+doesn’t have strong motivation to unlock the device but tries to unlock his/her friends’ 
+or co-workers’ mobile devices just for fun. Attacker would use any tools or materials 
+that are normally available at home and normal office environment such as laptop PC or 
+office printer. Attacker would also use other services such as online printing services 
+to print a photo of target users if such services are available at low cost.
+
+2\)	Assumption from the cPP
+\[BScPP\] defines A.User and evaluator shall assume that the mobile devices are configured 
+securely by users. Especially evaluator shall make the following assumptions:
+
+a)	A user enroll him/herself following guidance provided by the TOE   
+b)	Mobile device is securely configured and maximum number of unsuccessful biometric 
+    authentication attempts is limited.
+
+However, evaluator can increase the maximum number of unsuccessful biometric authentication 
+attempts to conduct the penetration testing efficiently. However, the mobile device shall 
+be evaluated in the evaluated configuration, which means that attack needs to be succeeded 
+within the allowed number of biometric authentication attempts.
+
+\[BScPP\] also defines A.Protection and evaluators shall assume that biometric data is 
+adequately protected. Especially evaluators shall make the following assumptions:
+
+a)	Attacker can’t access to the result of PAD subsystem so they can’t tune the PAIs 
+    based on the PAD score   
+b)	Attacker can’t gain the templates from the mobile device to create the PAIs
+
+## D.2 Test timeframe
+
+Evaluator shall keep in mind that attacker’s motivation is not so high. Timeframe 
+for the presentation attack testing should be one week at maximum.
+
+## D.3 Prerequisite for evaluators
+Successful presentation attacks may require fine-tuning of parameters such as 
+distance between the PAI and mobile device or lightning condition. Evaluator 
+may learn good parameters through the EA for FIA_MBV_EXT.3. In addition to 
+that, there are lots of videos or presentation slides on the internet that 
+show how presentation attack can be conducted successfully. Evaluator shall 
+watch those videos to learn, for example, how to present the PAI or how to 
+create the PAI to conduct the testing efficiently as much as possible. 
+
+Evaluators shall utilize such knowledge to conduct the testing assuming the 
+worst-case scenario (i.e. attacker who doesn’t know such information choose 
+best parameters by luck) however, such evaluator’s knowledge or experience 
+shall be considered to rate the attack potential.
 
 
-
-
-
-
-
-
-
+##TBD##
 
