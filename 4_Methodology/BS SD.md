@@ -1194,11 +1194,16 @@ units are defined here.
 --------------------------
 
 When evaluating ASE, the evaluator shall perform the work units as
-presented in the CEM, except ASE_TSS.1-1. During ASE_TSS.1-1 evaluation, 
-the evaluator shall ensure the content of the TSS in the ST satisfies the EAs 
-specified in Section 2 (Evaluation Activities for SFRs), if applicable, Section 3 
-(Evaluation Activities for Selection-Based Requirements) and Section 4 
-(Evaluation Activities for Optional Requirements).
+presented in the CEM, taking the following application notes into account.
+There is no application note for ASE_TSS.1-2.
+
+#### Application note for ASE_TSS.1-1
+
+During ASE_TSS.1-1 evaluation, the evaluator shall ensure the content of 
+the TSS in the ST satisfies the EAs specified in Section 2 (Evaluation 
+Activities for SFRs), if applicable, Section 3 (Evaluation Activities 
+for Selection-Based Requirements) and Section 4 (Evaluation Activities 
+for Optional Requirements).
 
 5.2 ADV: Development
 --------------------------
@@ -1250,7 +1255,7 @@ b)  rationale why those interfaces are not directly or indirectly
 As described in CEM, individual interfaces should not need to be 
 addressed in the rationale. The developer can provide a brief
 rationale and the evaluator may ask more information about such 
-interfaces for penetration testing if necessary.
+interfaces if necessary.
 
 #### Application note for ADV_FSP.1-5
 
@@ -1278,9 +1283,9 @@ of this work unit is covered by those EAs.
 5.3 AGD: Guidance Documents
 --------------------------
 
-\[BScPP\] assumes that the TOE is embedded into the mobile device and it is 
-configured and managed as described in AGD guidance that satisfy 
-requirements defined in the \[MDFPP\].
+\[BScPP\] assumes that the TOE is embedded into the mobile device and
+the mobile device is configured and managed as described in AGD 
+guidance that satisfy requirements defined in the \[MDFPP\].
 
 In addition to AGD guidance required by the \[MDFPP\], guidance pertaining 
 to mobile biometric enrolment and verification shall also be provided. 
@@ -1304,7 +1309,7 @@ information for using *user-accessible functions* (e.g. mobile biometric enrolme
 and verification) are identified by EAs in Section 2, and, if applicable, 
 Sections 3 and 4. 
 
-This work unit also require the evaluator to examine that AGD guidance describes 
+This work unit also requires the evaluator to examine that AGD guidance describes 
 *appropriate warnings*. Examples of such warnings for mobile biometric verification 
 are as follows.
 
@@ -1400,41 +1405,71 @@ functionality described in the TSS, as well as the dependencies on the
 Operational guidance documentation is accurate.
 
 When evaluating ATE_IND.1, the evaluator performs the work units 
-as presented in the CEM. However, evaluator should conduct all applicable test
-items in Appendix C.
+as presented in the CEM, taking the following application notes into account
+to meet goals described above.
+There is no application note for ATE_IND.1-1, ATE_IND.1-2, ATE_IND.1-6, 
+ATE_IND.1-7 and ATE_IND.1-8.
+
+#### Application note for ATE_IND.1-3
+
+The evaluator shall conduct all tests specified in EAs in Section 2, 
+if applicable, Section 3 and 4. The evaluator shall also conduct
+presentation attack tests defined in Appendix C.1.2.2.
+
+#### Application note for ATE_IND.1-4
+
+The ealuator shall produce test documentation based on information 
+described in EAs and test items defined in Appendix C.1.2.2. 
+Those test items don't describe any specific information (e.g. name 
+of camera) for testing. The evaluator shall add such concrete information 
+to the test documentation.
+
+#### Application note for ATE_IND.1-5
+
+For presentation attack testing, the evaluator shall devise the  
+penetration testing for AVA_VAN.1 based on behaviour of the TOE 
+discovered during the independent testing. The evaluator doesn't 
+need to perform additional ad hoc tests in addition to the presentation 
+attack test items defined in Appendix C.1.2.2 during the independent testing.
 
 5.6 AVA: Vulnerability Assessment
 --------------------------
 
 ### 5.6.1 Vulnerability Survey (AVA_VAN.1)
 
-The following flaw hypothesis for the TOE must be considered during the AVA assessment.
-
-a)  An Attacker may attempt to impersonate as a legitimate user using only his/her own 
-    biometric characteristic (i.e. zero-effort impostor attempt) 
-
-b)  An attacker may attempt to impersonate as a legitimate user using artificial 
-    Presentation Attack Instrument (PAI).
-
-c)  An attacker may attempt to access plaintext biometric data through mobile device 
-    interfaces to create the PAI
-
-The above a) shall be evaluated through EA for FIA_MBV_EXT.1 and c) shall be evaluated 
-through EAs for FPT_BDP_EXT.1-3 and FPT_PBT_EXT.1. 
-
-b) shall also be evaluated through EA for FIA_MBV_EXT.3, however, this EA allows to 
-develop an overall statement about the performance of the TOE with respect to its PAD 
-mechanism, it cannot provide any assurance about the PAD functionality with respect 
-to variations of PAIs that are not covered by the EA. It falls into the focus of the 
-vulnerability assessment to evaluate whether the use of additional PAIs can lead to 
-increased error rates. During the vulnerability analysis, the evaluators will use 
-all their knowledge that they gained during the evaluation for penetration testing.
-Appendix D provides guidance for the vulnerability assessment for the PAD.
+While vulnerability analysis is inherently a subjective activity, a minimum
+level of analysis can be defined and some measure of objectivity and
+repeatability (or at least comparability) can be imposed on the vulnerability
+analysis process. In order to achieve such objectivity and repeatability it is
+important that the evaluator follows a set of well-defined activities, and
+documents their findings so others can follow their arguments and come to the
+same conclusions as the evaluator. While this does not guarantee that different
+evaluation facilities will identify exactly the same type of vulnerabilities or
+come to exactly the same conclusions, the approach defines the minimum level
+of analysis and the scope of that analysis, and provides Certification Bodies a
+measure of assurance that the minimum level of analysis is being performed
+by the evaluation facilities.
 
 When evaluating AVA_VAN.1, the evaluator performs the work units 
-as presented in the CEM, except AVA_VAN.1-3,.....
-The evaluator shall refer application notes described in Appendix D when performing 
-these work unit.
+as presented in the CEM, taking the following application notes into account
+to meet goals described above.
+There is no application note for AVA_VAN.1-1, AVA_VAN.1-2, ATE_IND.1-6, 
+ATE_IND.1-7 and ATE_IND.1-8.
+
+#### Application note for AVA_VAN.1-3
+
+
+#### Application note for AVA_VAN.1-4
+
+
+#### Application note for AVA_VAN.1-3
+
+
+#### Application note for AVA_VAN.1-3
+
+
+#### Application note for AVA_VAN.1-3
+
 
 6 References
 --------------------------
@@ -1449,9 +1484,14 @@ these work unit.
 
 \[BScPP\] collaborative Protection Profile for Mobile biometric enrolment and verification - for unlocking the device - \[TBD\]
 
+\[MDFPP\] Protection Profile for Mobile Device Fundamentals, Version:3.1, 2017-06-16
+
+\[ISO19792\] Security evaluation of biometrics
+
+\[ISO30107-1\] Biometric presentation attack detection — Part 1: Framework
+
 \[SD\] Evaluation Activities for Mobile biometric enrolment and verification – for unlocking the device – cPP \[TBD\]
 
-\[MDFPP\] Protection Profile for Mobile Device Fundamentals, Version:3.1, 2017-06-16
 
 
 Appendix A Developer’s performance test document and its assessment strategy
@@ -1962,7 +2002,7 @@ Table-C2: Quality factors
 
 Various quality of PAIs can be created with, for example, smartphone cameras, 
 compact or high-professional digital cameras however, it’s time consuming to 
-create all possible PAIs using different devices. Therefore, this EA categorizes
+create all possible PAIs using different tools. Therefore, this EA categorizes
 the tools into two or three levels to cover those variety of PAIs.
 
 High quality PAIs looks more similar to the real face however, it may show more 
@@ -1988,7 +2028,7 @@ Table-C3: Tool category and level
 This section specifies test items for face presentation attack. 
 
 #### C.1.2.1 Format of test item 
-All test items in following sections are specified using the following common format.
+All test items in C.1.2.2 are specified using the following common format.
 
 1\) Number
 
@@ -2133,64 +2173,108 @@ capable to detect this primitive attack.
 
 **other test items will be included from https://github.com/biometricITC/cPP-biometrics/tree/master/4_Methodology/attacks**
 
-Appendix D Vulnerability Analysis for Presentation Attack
+
+
+Appendix D Application notes for Vulnerability Analysis
 ==============================================================================
 
-EA for FIA_MBV_EXT.3 defines the minimum presentation attack testing that all evaluator
-shall follow. The evaluator shall also conduct additional penetration testing to make 
-sure that the TOE is resistant to attacks with PAIs by an attacker possessing a Basic 
-attack potential. This Appendix provides the guidance for the evaluator’s presentation 
-attack testing that shall be conducted during AVA.
+## D.1 Attack to the TOE
 
-## D.1 Basic Assumption for AVA presentation attack testing
+Various types of attack to the general biometric system are defined in \[ISO19792\] 
+and \[ISO30107-1\]. The evaluator doesn't need to evaluate all of them for the TOE because 
+of the assumptions defined in the \[BScPP\] and assurance level (i.e. required attack potential) 
+claimed by the \[BScPP\]. However, the evaluator shall consider the following three 
+types of attack to the TOE.
+
+a)  An attacker may attempt to impersonate as a legitimate user using only his/her own 
+    biometric characteristic (i.e. zero-effort impostor attempt) 
+
+b)  An attacker may attempt to impersonate as a legitimate user using artificial 
+    Presentation Attack Instrument (PAI).
+
+c)  An attacker may attempt to access plaintext biometric data through mobile device 
+    interfaces to create the PAI
+
+The above a) can be evaluated through EA for FIA_MBV_EXT.1 and c) can be evaluated 
+through EAs for FPT_BDP_EXT.1, FPT_BDP_EXT.2, FPT_BDP_EXT.1-3 and FPT_PBT_EXT.1. 
+
+b) can also be evaluated through EA for FIA_MBV_EXT.3, however, this EA defines the 
+minimum presentation attack testing that all evaluator shall conduct. The evaluator 
+shall also conduct additional penetration testing to make sure that the TOE is 
+resistant to presentation attacks by an attacker possessing a Basic attack potential. 
+This Appendix provides the guidance for the evaluator’s presentation 
+attack testing that shall be conducted during the AVA evaluation.
+
+Any other types of attack are out of scope of the \[SD\] because the BSiTC can't find
+such attacks from information published by the release date of this \[SD\].
+
+If the evaluator may find such attacks that aren't covered by this \[SD\] but can be 
+conducted by the attacker possessing Basic attack potential, the evaluator shall 
+seek a guidance from the BSiTC to evaluate those novel attacks.
+
+## D.2 Assumptions for AVA presentation attack testing
+
+The evaluator shall assume the following assumptions described in the \[BScPP\].
 
 1\)	Motivation of attackers
+
 The TOE is used to unlock the devices but not used for financial transactions. Attacker 
 doesn’t have strong motivation to unlock the device but tries to unlock his/her friends’ 
-or co-workers’ mobile devices just for fun. Attacker would use any tools or materials 
-that are normally available at home and normal office environment such as laptop PC or 
-office printer. Attacker would also use other services such as online printing services 
-to print a photo of target users if such services are available at low cost.
+or co-workers’ mobile devices just for fun. Therefore, \[SD\] assumes that the attacker 
+conducts attacks simply following scripts (i.e. step by step guide (e.g. demo on YouTube) 
+to create the PAI and run the attack with those PAI) that are publicly available.
+However if the attackers recognizes that it takes too much time and cost to follow the 
+scripts, they would simply give up attacking the TOE. 
+Attacker would use any tools or materials that are normally available at home and normal 
+office environment such as laptop PC or office printer. Attacker would also use available 
+services such as online printing services to create the PAI if such services are available 
+at low cost.
 
 2\)	Assumption from the cPP
-\[BScPP\] defines A.User and evaluator shall assume that the mobile devices are configured 
-securely by users. Especially evaluator shall make the following assumptions:
+
+\[BScPP\] defines A.User and the evaluator shall assume that the mobile devices are configured 
+securely by users. Especially the evaluator shall make the following assumptions:
 
 a)	A user enroll him/herself following guidance provided by the TOE   
 b)	Mobile device is securely configured and maximum number of unsuccessful biometric 
     authentication attempts is limited.
 
-However, evaluator can increase the maximum number of unsuccessful biometric authentication 
-attempts to conduct the penetration testing efficiently. However, the mobile device shall 
-be evaluated in the evaluated configuration, which means that attack needs to be succeeded 
-within the allowed number of biometric authentication attempts.
+However, the evaluator can increase the maximum number of unsuccessful biometric 
+authentication attempts to conduct the penetration testing efficiently. However, 
+the mobile device shall be evaluated in the evaluated configuration, which means 
+that attack needs to be succeeded within the allowed number of biometric authentication 
+attempts.
 
-\[BScPP\] also defines A.Protection and evaluators shall assume that biometric data is 
-adequately protected. Especially evaluators shall make the following assumptions:
+\[BScPP\] also defines A.Protection and the evaluators shall assume that biometric 
+data is adequately protected if the evaluator doesn't find any flaws during the EA 
+for FDP_BDP_EXT.1, FDP_BDP_EXT.2, FDP_BDP_EXT.3. Especially the evaluator shall make 
+the following assumptions:
 
 a)	Attacker can’t access to the result of PAD subsystem so they can’t tune the PAIs 
     based on the PAD score   
 b)	Attacker can’t gain the templates from the mobile device to create the PAIs
 
-## D.2 Test timeframe
+## D.3 Test timeframe
 
-Evaluator shall keep in mind that attacker’s motivation is not so high. Timeframe 
-for the presentation attack testing should be one week at maximum.
+The evaluator shall keep in mind that attacker’s motivation is not so high. 
+Timeframe for the presentation attack testing should be one week at maximum.
 
-## D.3 Prerequisite for evaluators
+## D.4 Prerequisite for evaluators
+
 Successful presentation attacks may require fine-tuning of parameters such as 
-distance between the PAI and mobile device or lightning condition. Evaluator 
+distance between the PAI and mobile device or lightning condition. The evaluator 
 may learn good parameters through the EA for FIA_MBV_EXT.3. In addition to 
 that, there are lots of videos or presentation slides on the internet that 
-show how presentation attack can be conducted successfully. Evaluator shall 
+show how presentation attack can be conducted successfully. The evaluator shall 
 watch those videos to learn, for example, how to present the PAI or how to 
 create the PAI to conduct the testing efficiently as much as possible. 
 
-Evaluators shall utilize such knowledge to conduct the testing assuming the 
+The evaluator shall utilize such knowledge to conduct the testing assuming the 
 worst-case scenario (i.e. attacker who doesn’t know such information choose 
 best parameters by luck) however, such evaluator’s knowledge or experience 
 shall be considered to rate the attack potential.
 
+## D.5 Assessment stragegy
 
-##TBD##
+The evaluator 
 
