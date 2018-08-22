@@ -1458,12 +1458,15 @@ ATE_IND.1-7 and ATE_IND.1-8.
 
 #### Application note for AVA_VAN.1-3
 
+See Appendix D.5.1. 
 
 #### Application note for AVA_VAN.1-4
 
+See Appendix D.2. 
 
-#### Application note for AVA_VAN.1-3
+#### Application note for AVA_VAN.1-5
 
+See Appendix D.5.2.
 
 #### Application note for AVA_VAN.1-3
 
@@ -2184,7 +2187,7 @@ Various types of attack to the general biometric system are defined in \[ISO1979
 and \[ISO30107-1\]. The evaluator doesn't need to evaluate all of them for the TOE because 
 of the assumptions defined in the \[BScPP\] and assurance level (i.e. required attack potential) 
 claimed by the \[BScPP\]. However, the evaluator shall consider the following three 
-types of attack to the TOE.
+types of attack that the TOE must counter.
 
 a)  An attacker may attempt to impersonate as a legitimate user using only his/her own 
     biometric characteristic (i.e. zero-effort impostor attempt) 
@@ -2202,15 +2205,16 @@ b) can also be evaluated through EA for FIA_MBV_EXT.3, however, this EA defines 
 minimum presentation attack testing that all evaluator shall conduct. The evaluator 
 shall also conduct additional penetration testing to make sure that the TOE is 
 resistant to presentation attacks by an attacker possessing a Basic attack potential. 
+
 This Appendix provides the guidance for the evaluator’s presentation 
 attack testing that shall be conducted during the AVA evaluation.
 
-Any other types of attack are out of scope of the \[SD\] because the BSiTC can't find
+Any other types of attack are out of scope of the \[SD\] because the BS iTC can't find
 such attacks from information published by the release date of this \[SD\].
 
 If the evaluator may find such attacks that aren't covered by this \[SD\] but can be 
 conducted by the attacker possessing Basic attack potential, the evaluator shall 
-seek a guidance from the BSiTC to evaluate those novel attacks.
+seek a guidance from the BS iTC to evaluate those novel attacks.
 
 ## D.2 Assumptions for AVA presentation attack testing
 
@@ -2246,9 +2250,9 @@ that attack needs to be succeeded within the allowed number of biometric authent
 attempts.
 
 \[BScPP\] also defines A.Protection and the evaluators shall assume that biometric 
-data is adequately protected if the evaluator doesn't find any flaws during the EA 
-for FDP_BDP_EXT.1, FDP_BDP_EXT.2, FDP_BDP_EXT.3. Especially the evaluator shall make 
-the following assumptions:
+data is adequately protected if the evaluator doesn't find any flaws during peforming 
+the EAs for FDP_BDP_EXT.1, FDP_BDP_EXT.2, FDP_BDP_EXT.3 and FPT_PBT_EXT.1.
+Especially the evaluator shall make the following assumptions:
 
 a)	Attacker can’t access to the result of PAD subsystem so they can’t tune the PAIs 
     based on the PAD score   
@@ -2264,17 +2268,391 @@ Timeframe for the presentation attack testing should be one week at maximum.
 Successful presentation attacks may require fine-tuning of parameters such as 
 distance between the PAI and mobile device or lightning condition. The evaluator 
 may learn good parameters through the EA for FIA_MBV_EXT.3. In addition to 
-that, there are lots of videos or presentation slides on the internet that 
-show how presentation attack can be conducted successfully. The evaluator shall 
-watch those videos to learn, for example, how to present the PAI or how to 
-create the PAI to conduct the testing efficiently as much as possible. 
+that, there are lots of videos, presentation slides or research papers on the 
+internet that show how presentation attack can be conducted successfully. 
+The evaluator shall watch those videos to learn, for example, how to present 
+the PAI or how to create the PAI to conduct the testing efficiently as much 
+as possible. 
 
-The evaluator shall utilize such knowledge to conduct the testing assuming the 
-worst-case scenario (i.e. attacker who doesn’t know such information choose 
-best parameters by luck) however, such evaluator’s knowledge or experience 
-shall be considered to rate the attack potential.
+The evaluator shall utilize such knowledge to conduct the testing. However,
+all effort and required knowledge or experience to identify the successful 
+presenation attack methods shall be taken into account when the evaluator 
+caluculate the attack potential.
 
-## D.5 Assessment stragegy
+## D.5 vulnerability analysis process
 
-The evaluator 
+This section specifies the process for the vulnerability analysis that the evaluator shall follow.
 
+### D.5.1 Internet search
+
+There are lots of scripts available in the internet that define the procedure 
+to create the PAI and run the attack with those PAI. The presentation test 
+items for face (C.1.2.2), iris (XXXXX) *tbd* .. are created based on such scripts 
+and the most of them are covered by those test items.
+
+However, the evaluator may gain useful knowledge from such scripts because
+they may provide the following information that the test items don't provide.
+
+a) Specific presentation attack method to the TOE
+   If the evaluator can find the script that is actually used to attack the
+   TOE being evaluated or previous version of the TOE, the evaluator shall 
+   conduct the attack following the script if the attack can be conducted 
+   by the attacker possessing a Basic attack potential. Test items defined 
+   in this \[SD\] specify only general information applicable to all type 
+   of biometric verification products. 
+
+b) More detailed presentation attack method to the TOE 
+   Some scripts include a video clip to show how to create the PAI and 
+   how to present the PAI to the TOE in detail. Other ones specify 
+   identification information of tools that actually used to create the PAI.
+   The evaluator shall take such information into account to conduct
+   the presentation attacks.
+
+c) Cost of conducting the presentation attack to the TOE
+   Some scripts show cost, time and effort to conduct the presentation 
+   attack (e.g. cost of developing tools to create the PAI and 
+   the number of total presentations of PAI to the TOE). The evaluator
+   shall consider such information to determine whether the attack is 
+   beyond the Basic attack potential or not and how much effort should
+   be spent for the presentation attack.
+   
+d) New presentation attack method to the TOE
+   If the evaluator can find the script that is not covered by this \[SD\],
+   the evaluator shall conduct the attack following the script if the 
+   attack can be conducted by the attacker possessing a Basic attack potential. 
+
+### D.5.2 Determine the presentation attack test items
+  
+The evaluator can modify the presentation test items specified in the \[SD\] or
+create new test items based on the scripts available in the internet. However,
+evaluator shall keep in mind the test timeframe (see D.3) and devise presentation
+attack test items.
+
+The evaluator may spend equal effort and time on each test items, however, the 
+evaluator shall prioritize the test items considering information gained from 
+scripts as much as possible. For example, the evaluator may give higher priority 
+to the test item for which detail and clear scripts are avaiable because the 
+attacker are easy to follow such ones or one for which scripts that successfuly 
+attack the previous version of the TOE are available. The evaluator shall
+report how he/she prioritize the test items based on which information in the 
+ETR.
+
+### D.5.3 Produce penetration test documentation
+
+The evaluator shall create clear presentation method in sufficient detail to 
+enable the tests to be repeatable, especially, if evaluator succeed the 
+presentation attacks.
+
+The evaluator may gradually change the presentation attack methods, for example,
+the distance between the TOE and PAI, ambient lighting condition and resoluation
+of PAI untill the attack succeed. However, the evaluator shall add such 
+detail to the test documentation so that other evaluators can also successfully 
+attack the TOE.
+
+### D.5.4 Attack potential calculation
+
+If the evaluator can succeed the presentation attack, the evaluator shall confirm
+that the attack can be conducted by the attacker possessing the Basic attack potential.
+The evaluator shall follow Appendix E in \[SD\] to calculate the attack potential. 
+Appendix E adjusts the caluculation methods defined in \[CEM\] to the biometric verification.
+
+### D.5.5 Pass Criteria
+
+*TBD*
+
+Appendix E Attack Potential and TOE resistance
+==============================================================================
+
+## E.1 Calculating attack potential
+
+Attack potential is a function of expertise, resources and motivation, as is written in 
+\[CEM\]. Regarding motivation, see B.4.1.1 in \[CEM\].
+
+### E.1.1 Identification and exploitation of attacks
+
+#### E.1.1.1 Identification of attacks
+
+Identification corresponds to the effort required to create the attack, and to demonstrate 
+that it can be successfully applied to the TOE (including setting up or building any 
+necessary test equipment). The demonstration that the attack can be successfully applied 
+needs to consider any difficulties in expanding a result shown in the laboratory to create 
+a useful attack. One of the outputs from identification could be a script that gives a 
+step-by-step description of how to carry out the attack. This script is assumed to be used 
+in the exploitation phase.
+
+#### E.1.1.2 Exploitation of attacks
+
+Exploitation corresponds to achieving the attack on an instance of the TOE in its exploitation 
+environment using the analysis and techniques defined in the identification phase. It could 
+be assumed that a different attacker carries out the exploitation, the technique (and relevant 
+background information) could be available for the exploitation in the form of a script or 
+set of instructions defined during the identification phase. This type of script is assumed 
+to identify the necessary equipment and, for example, mathematical techniques used in the 
+analysis, or presentation attack methods. Furthermore, this same information may also reduce 
+the exploitation requirement to one of time measurement, whereas the identification phase may 
+have required reverse engineering of hardware or software information hence the expertise 
+requirement may be reduced.
+
+NOTE1 For the evaluator, the work of the identification phase has to be fully performed: 
+developing hardware and software, creating PAIs if any, etc. The rating of this phase 
+corresponds to the "real spending" in defining the attack. For the exploitation, it is 
+not necessary to perform the work again and the rating could correspond to an evaluation 
+of the necessary effort for each factor.
+
+NOTE2 Exploitation consisting in applying scripts, it is expected that some factor 
+values will be reduced from the identification phase, in particular "Elapsed Time" 
+and "Expertise". For the same reason, the "Knowledge of the TOE" factor is not 
+applicable in the exploitation phase (all the knowledge is scripted).
+
+### E.1.2 Factors to be considered
+
+As in \[CEM\], the factors to be considered consist of ***Elapsed time***, 
+***Expertise***, ***Knowledge of the TOE***, ***Window of opportunity***, and 
+***Equipment***. But ***Window of opportunity*** is divided into two subfactors 
+***Window of opportunity (Access to the TOE)*** and ***Window of opportunity 
+(Access to biometric characteristics)*** \.
+
+***Elapsed time*** is the total amount of time taken by the attacker.
+
+In the identification phase, elapsed time corresponds to the time required 
+to create the attack, and to demonstrate that it can be successfully applied 
+to the TOE (including setting up or building any necessary hardware or software 
+equipment). The demonstration that the attack can be successfully applied 
+needs to consider any difficulties in expanding a result shown in the 
+laboratory to create a useful attack. One of the outputs from identification 
+is, for instance, a script that gives a step-by-step description of how to 
+carry out the attack. This script is assumed to be used in the exploitation part.
+
+In the exploitation phase, elapsed time corresponds to the time necessary to 
+apply the "script" to specific biometric characteristics. For example, for a 
+presentation attack to a fingerprint capture device, it corresponds to the 
+time required to create a PAI from an image of a print (and not the acquisition 
+of this image which is taken into account in the factor ***Window of opportunity 
+(Access to biometric characteristics)*** \).
+
+Potential difficulties to have an access to the TOE in exploitation environment 
+are taken into account in the factor ***Window of opportunity (Access to the TOE)*** \.
+
+***Expertise*** refers to the level of proficiency required by the attacker and the 
+general knowledge that he possesses, not specific of the system being attacked. 
+The levels are as follows:
+
+a) Layman is the level no real expertise needed and such that any person with 
+   a regular level of education is capable of performing the attack. For example, 
+   creating a PAI in a known (published) way without specific difficulties 
+   (specific or difficult to buy materials) is considered at this level of expertise.
+   
+b) Proficient is the level such that some advanced knowledge in certain specific 
+   topics (biometrics) is required as well as good knowledge of the state-of-the-art 
+   of attacks. An attacker of this level is capable of adapting known attack methods 
+   to his needs. For example, adapting a known attack type (published) by the choice 
+   of specific (not published and sometimes difficult to find) materials in order 
+   to bypass a presentation attack detection mechanism and/or finding a non-evident 
+   way to present this PAI to the system can be considered at this level of expertise.
+   
+c) Expert is the level such that a specific preparation in multiple areas such as 
+   pattern recognition, computer vision or optimization is needed in order to carry 
+   out the attack. An attacker of this level is capable of generating his own new 
+   attacking algorithms. For example, finding a new (unpublished) way of creating 
+   an attack type using new and specific materials (unpublished) to counter an 
+   advanced presentation attack detection mechanism, can be considered at this 
+   level. In addition, this level can be associated with specific equipment (bespoke)
+   
+d) Multiple experts is the level such that the attack needs the collaboration of 
+   several people with high level expertise in different fields (e.g., electronics, 
+   cryptanalysis, physics, etc.). It has to be noticed that a specific competence 
+   in biometrics is not considered as "multiple expertise". For example, building 
+   a "hill climbing" attack by gaining access to the comparison scores requires 
+   additional expertise to electrically attack and penetrate the TOE, which can be 
+   considered to constitute a "multi expertise" level.
+   
+NOTE1 As previously noted, exploitation expertise is usually lower than identification 
+expertise. Layman or Proficient can be considered as typical value for expertise in 
+the exploitation phase. For the same reason, the multiple expert level is excluded 
+from the exploitation phase.
+
+NOTE2 As all the factors, higher rating would require specific justifications from the evaluator.
+
+***Knowledge of the TOE*** refers to the amount of knowledge of system required 
+to perform the attack. For instance, format of the acquired samples, size and 
+resolution of acquisition systems, specific format of templates, but also specifications 
+and implementation of countermeasures are knowledge that could be required to set up an attack.
+
+This information could be publicly available at the website of the capture device 
+manufacturer or protected (distributed to stakeholders under non-disclosure agreement 
+or even classified inside the company). The levels are as follows:
+
+a) Public information which is fairly easy to obtain (e.g., on the web).
+
+b) Restricted information which is only shared by the developer and organizations 
+   which are using the system, usually under a non-disclosure agreement.
+
+c) Confidential information which is only available within the organization that 
+   develops the system and is in no case shared outside it.
+   
+d) Critical information which is only available to certain people or groups 
+   within the organization which develops the system.
+   
+Special attention should be paid in this point to possible countermeasures that may be 
+implemented in the system and whether it is necessary or not to have knowledge of their 
+existence in order to be successful in a given attack.
+
+It is assumed that all the knowledge required to perform the attack is gained during 
+the identification phase and "scripted" for the exploitation. Therefore, this factor is 
+not used for the exploitation phase.
+
+***Window of opportunity (Access to the TOE)*** refers to measuring the difficulty 
+to access the TOE either to prepare the attack or to perform it on the target system.
+
+For the identification phase, elements that should be taken into account include the 
+easiness to buy the same biometric equipment (with and without countermeasures).
+
+For exploitation phase, both technical (such known/unknown tuning) and organizational 
+measures (presence of a guard, ability to physically modify the target, limited number 
+of tries, etc.) should be taken into account.
+
+The number and the level of equipment requested to build the attack is also taken into 
+account in this factor.
+
+This factor is not expressed in terms of time. The levels are as follows:
+
+a) Easy: For identification phase, there is no strong constraint for the attacker to 
+   buy the TOE (reasonable price) to prepare its attack. For exploitation phase, there 
+   is no limit in the number of tries and the presentation attack is difficult to detecte.
+   
+b) Moderate: For identification phase, specialised distribution schemes exist 
+   (not available to individuals). For exploitation phase, either a tuning of the 
+   attack for the final system is required (unknown parameterization of countermeasures 
+   for example) or there is a supervision of the biometric system emitting, for example, 
+   an alert in case of numerous fail presentations.
+
+c) Difficult: For identification phase, the system is not available except for 
+   identified users and access requires compromising of one of the actors. For exploitation 
+   phase, for example PAIs must be adapted to the (unknown) specific tuning, or there is 
+   a strong supervision (for example a guard), or the system needs physical modification 
+   (for example physically accessing a hidden signal significant of the comparison score). 
+   Compromising one actor involved in the use of the system (guard, administrator, and 
+   maintenance) is often required.
+   
+***Window of opportunity (Access to biometric characteristics)***
+
+Security evaluations of \[CC\] are dedicated to evaluate the intrinsic resistance of a 
+system. Due to the potential number of attack paths (with or without the cooperation 
+of an enrolled subject for example) the evaluation does not take into account the way a 
+real biometric characteristic is acquired. For presentation attack detection, the 
+vulnerability analysis is based on the hypothesis that a real "image" is available, 
+and the rating only concerns the creation and the presentation of a PAI.
+
+However, it is important to be able to compare the resistance of various systems, 
+even based on different biometrics. In addition, getting a real "image" to build a 
+PAI is clearly part of an attack and it is of interest, for the final user of the 
+TOE and the pertinence of a certificate to add a factor related to this aspect. 
+
+The levels are as follows:
+
+a) Immediate is for 2D face, signature image, and voice. Samples of these modalities 
+   can be collected without difficulty, even without direct contact with an enrolled 
+   data subject (an exploration of the web and the social networks and so forth).
+
+b) Easy is for fingerprint. Latent fingerprints are often left on objects the enrolled 
+   data subject had in hand, but need to be revealed, acquired and the corresponding 
+   images need a preprocessing.
+   
+c) Moderate is for 3D face, dynamic signature, and 3D fingerprint. 3D images require 
+   multiple acquisitions, probably in a controlled way, without the collaboration of 
+   an enrolled data subject but probably with a direct contact with them.
+   
+d) Difficult is for iris and vein. Iris images can be acquired with a high resolution 
+   camera, but with some difficulties to get a complete high quality image without 
+   the cooperation of an enrolled data subject. Veins are a hidden characteristic, 
+   but infra-red cameras, close to them, can acquire images to be used.
+   
+NOTE 1 The above distribution of modalities per level is subject to modification 
+depending on the evolution of technologies and usage. The current distribution is 
+to be seen as guidance for the evaluator, who will have to adapt the rating to 
+state-of-the-art.
+
+NOTE 2 Rating the resistance of a system is based on rating the successful 
+attacks and verifying that no successful attack is found at the targeted level. 
+Some attacks do not need real biometric data to be available, for example, attacks 
+based on synthetic images or templates generation. In such a case, this factor has 
+to be considered to be Immediate.
+
+***Equipment*** refers to the type of equipment required to perform the attack. 
+This includes the biometric databases used (if any). The levels are follows:
+
+Standard equipment is an ordable, easy to obtain and simple to operate equipment 
+(e.g., computer, video cameras, mobile phones, "do it yourself" material, 
+and artistic leisure materials).
+
+Specialised equipment refers to fairly expensive equipment, not available in 
+standard markets and which require of some specific formation to be used (e.g., 
+laboratory equipment, advanced printer specific materials and inks, and advanced 
+oscilloscopes).
+
+Bespoke equipment refers to very expensive equipment with difficult and controlled 
+access; for example, research printing systems with specific ink definition and 
+flexible support adaptation. In addition, if more than one specialised equipment 
+are required to perform different parts of the attack, this value should be used. 
+Before using this level, it has to be carefully checked that no service is available 
+(renting, limited time access, etc.). If such service exists, the level has to be 
+moved down to Specialised level.
+
+### E.1.3 Calculation of attack potential
+
+Table E1 identifies the factors discussed in the previous subclause and associates 
+numeric values with the total value of each factor.
+
+Factor | Identification | Exploitation
+--- | --- | --- 
+**Elapsed Time** |  |  
+<= one day | 0 | 0 
+<= one week | 1 | 2 
+<= two weeks | 2 | 4 
+<= one month | 4 | 8 
+\> one month | 4 | 16  
+**Expertise** |  |  
+Layman | 0 | 0 
+Proficient | 2 | 4 
+Expert | 4 | 8 
+Multiple experts | 8 | Not applicable 
+**Knowledge of TOE** |  |  
+Public | 0 | Not applicable 
+Restricted | 2 | Not applicable 
+Sensitive | 4 | Not applicable 
+Critical | 8 | Not applicable 
+**Window of Opportunity (Access to TOE)** |  |  
+Easy | 0 | 0 
+Moderate | 2 | 4 
+Difficult | 4 | 8 
+**Window of Opportunity (Access to Biometric Characteristics)** |  |  
+Immediate | Not applicable | 0 
+Easy | Not applicable | 2 
+Moderate | Not applicable | 4 
+Difficult | Not applicable | 8 
+**Equipment** |  |  
+Standard | 0 | 0 
+Specialised | 2 | 4 
+Bespoke | 4 | 8 
+
+Table-E1: Calculation of attack potential
+
+In order to calculate the attack potential value of the entire attack, the 
+evaluator shall add all the values of all the factors in identification phase 
+and exploitation phase.
+
+### E.1.4 Rating of vulnerabilities and TOE resistance
+
+The "Values" column of Table E2 indicates the range of attack potential values 
+(calculated using Table E1) of an attack scenario that results in the SFRs 
+being undermined.
+
+Values | Attack potential required to expoit scenario | TOE resistant to attackers with attack potential of | Meets assurance components | Failure of components
+--- | --- | --- | --- | --- 
+\< 10 | Basic | No rating | - |  AVA_VAN.1, AVA_VAN.2, AVA_VAN.3, AVA_VAN.4, AVA_VAN.5 
+10-19 | Enhanced-Basic | Basic | AVA_VAN.1, AVA_VAN.2 | AVA_VAN.3, AVA_VAN.4, AVA_VAN.5 
+20-29 | Moderate | Enhanced-Basic | AVA_VAN.1, AVA_VAN.2, AVA_VAN.3 | AVA_VAN.4, AVA_VAN.5 
+30-39 | High | Moderate | AVA_VAN.1, AVA_VAN.2, AVA_VAN.3, AVA_VAN.4 | AVA_VAN.5 
+=>40 | Beyond-High | High | AVA_VAN.1, AVA_VAN.2, AVA_VAN.3, AVA_VAN.4, AVA_VAN.5 | -  
+
+Table E2 — Rating of vulnerabilities and TOE resistance
