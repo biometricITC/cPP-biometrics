@@ -1402,7 +1402,7 @@ application note for this assurance family.
 The focus of the testing is to confirm that the requirements specified in the
 SFRs are being met. Additionally, testing is performed to confirm the
 functionality described in the TSS, as well as the dependencies on the
-Operational guidance documentation is accurate.
+operational guidance documentation is accurate.
 
 When evaluating ATE_IND.1, the evaluator performs the work units 
 as presented in the CEM, taking the following application notes into account
@@ -1414,14 +1414,14 @@ ATE_IND.1-7 and ATE_IND.1-8.
 
 The evaluator shall conduct all tests specified in EAs in Section 2, 
 if applicable, Section 3 and 4. The evaluator shall also conduct
-presentation attack tests defined in Appendix C.1.2.2.
+presentation attack tests defined in Appendix C.
 
 #### Application note for ATE_IND.1-4
 
 The ealuator shall produce test documentation based on information 
-described in EAs and test items defined in Appendix C.1.2.2. 
+described in EAs and test items defined in Appendix C. 
 Those test items don't describe any specific information (e.g. name 
-of camera) for testing. The evaluator shall add such concrete information 
+of camera) for testing. The evaluator shall add concrete information 
 to the test documentation.
 
 #### Application note for ATE_IND.1-5
@@ -1429,8 +1429,9 @@ to the test documentation.
 For presentation attack testing, the evaluator shall devise the  
 penetration testing for AVA_VAN.1 based on behaviour of the TOE 
 discovered during the independent testing. The evaluator doesn't 
-need to perform additional ad hoc tests in addition to the presentation 
-attack test items defined in Appendix C.1.2.2 during the independent testing.
+need to perform additional ad hoc tests for presentation attack 
+in addition to the test items defined in Appendix C during the 
+independent testing.
 
 5.6 AVA: Vulnerability Assessment
 --------------------------
@@ -1453,8 +1454,7 @@ by the evaluation facilities.
 When evaluating AVA_VAN.1, the evaluator performs the work units 
 as presented in the CEM, taking the following application notes into account
 to meet goals described above.
-There is no application note for AVA_VAN.1-1, AVA_VAN.1-2, ATE_IND.1-6, 
-ATE_IND.1-7 and ATE_IND.1-8.
+There is no application note for AVA_VAN.1-1, AVA_VAN.1-2, ***tbd*** .
 
 #### Application note for AVA_VAN.1-3
 
@@ -1468,10 +1468,7 @@ See Appendix D.2.
 
 See Appendix D.5.2.
 
-#### Application note for AVA_VAN.1-3
-
-
-#### Application note for AVA_VAN.1-3
+***tbd***
 
 
 6 References
@@ -2174,9 +2171,11 @@ capable to detect this primitive attack.
 
 -------
 
-**other test items will be included from https://github.com/biometricITC/cPP-biometrics/tree/master/4_Methodology/attacks**
+***tbd***  
+***other test items will be included from https://github.com/biometricITC/cPP-biometrics/tree/master/4_Methodology/attacks***
+***similar test items for iris will also be included***
 
-
+-------
 
 Appendix D Application notes for Vulnerability Analysis
 ==============================================================================
@@ -2281,13 +2280,14 @@ caluculate the attack potential.
 
 ## D.5 vulnerability analysis process
 
-This section specifies the process for the vulnerability analysis that the evaluator shall follow.
+This section specifies the process for the vulnerability analysis that the 
+evaluator shall follow.
 
 ### D.5.1 Internet search
 
 There are lots of scripts available in the internet that define the procedure 
 to create the PAI and run the attack with those PAI. The presentation test 
-items for face (C.1.2.2), iris (XXXXX) *tbd* .. are created based on such scripts 
+items for ***face (C.1.2.2), iris (XXXXX), tbd*** .. are created based on such scripts 
 and the most of them are covered by those test items.
 
 However, the evaluator may gain useful knowledge from such scripts because
@@ -2325,10 +2325,10 @@ d) New presentation attack method to the TOE
   
 The evaluator can modify the presentation test items specified in the \[SD\] or
 create new test items based on the scripts available in the internet. However,
-evaluator shall keep in mind the test timeframe (see D.3) and devise presentation
+evaluator shall keep in mind the test timeframe (see D.3) to devise presentation
 attack test items.
 
-The evaluator may spend equal effort and time on each test items, however, the 
+The evaluator may spend equal time and effort on each test items, however, the 
 evaluator shall prioritize the test items considering information gained from 
 scripts as much as possible. For example, the evaluator may give higher priority 
 to the test item for which detail and clear scripts are avaiable because the 
@@ -2358,7 +2358,7 @@ Appendix E adjusts the caluculation methods defined in \[CEM\] to the biometric 
 
 ### D.5.5 Pass Criteria
 
-*TBD*
+***TBD***
 
 Appendix E Attack Potential and TOE resistance
 ==============================================================================
