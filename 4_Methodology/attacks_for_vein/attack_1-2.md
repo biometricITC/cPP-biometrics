@@ -23,7 +23,7 @@ Recipe
 Attacker prints target user’s vein image on paper using the printer and stick it on a bottle 
 for palm vein verification or a round transparent tube (size of tube is the same size as finger) 
 for finger vein verification. There is no special requirement for the paper and printer as 
-described in the Appendix X. 2-3-1 "Create and present the PAI for print attack”. 
+described in Appendix X. 2-3-1 "Create and present the PAI for print attack”. 
 
 Variations
 ==========
