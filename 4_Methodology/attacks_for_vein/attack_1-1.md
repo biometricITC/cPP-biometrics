@@ -16,7 +16,7 @@ the vein image, for example, when user is sleeping.
 Input
 ======
 Digital image of target user’s vein that meet the following conditions:
--	captured by the tool specified in the “Tools”
+-	captured by the tool specified in the “Tools”  
 Research papers listed in Appendix X. 2-1 "Capture the vein image” 
 explain how to capture the vein image in detail.
 
