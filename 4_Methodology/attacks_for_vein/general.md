@@ -131,7 +131,6 @@ If the TOE captures the vein image using visible light instead of NIR light, eva
 take video of palm or finger with a digital camera and display them on the screen and present 
 it to the TOE. 
 
-
 **3. Guidance for ATE_IND testing**  
 More detailed test information (e.g. required spec of camera) is specified in test items in the 
 toolbox. Evaluator shall conduct all test items in the toolbox without any change for ATE_IND testing.
@@ -149,13 +148,15 @@ Evaluator may try to enroll the PAI first and increase the number of trial for s
 be enrolled because enrollment and verification may share the same process (e.g. liveness check or 
 quality check).
 
-**5. Reference**
-[1] B. T. Ton. Vascular pattern of the finger: biometric of the future?
-https://essay.utwente.nl/61963/1/final_report_online_Ton.pdf
-[2] João Ricardo Gonçalves Neves. Hand Veins Recognition System.
+**5. Reference**  
+[1] B. T. Ton. Vascular pattern of the finger: biometric of the future?  
+https://essay.utwente.nl/61963/1/final_report_online_Ton.pdf  
+
+[2] João Ricardo Gonçalves Neves. Hand Veins Recognition System.  
 https://fenix.tecnico.ulisboa.pt/downloadFile/395145923801/Master%20Thesis%20Jo%C3%A3o%20Neves%2057516.pdf
-[3] Klaus Mangold et all. The physics of near-infrared photography. 
+
+[3] Klaus Mangold et all. The physics of near-infrared photography.  
 http://www.montana.edu/jshaw/documents/NIR%20Photography%20-%20Mangold%20et%20al%20-%20EJP2013.pdf
-[4] Zeno Geradts, Peter Sommer. D6.1: Forensic Implications of Identity Management
-Systems.
+
+[4] Zeno Geradts, Peter Sommer. D6.1: Forensic Implications of Identity Management Systems.  
 http://www.fidis.net/fileadmin/fidis/deliverables/fidis-wp6-del6.1.forensic_implications_of_identity_management_systems.pdf
