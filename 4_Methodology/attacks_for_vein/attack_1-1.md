@@ -28,7 +28,7 @@ of scanner as described in 2-1.
 Recipe
 ======
 Attacker prints target user’s vein image on paper. There is no special 
-requirement for the paper and printer as described in the Appendix X. 2-3-1 
+requirement for the paper and printer as described in Appendix X. 2-3-1 
 "Create and present the PAI for print attack”. 
 
 Variations
