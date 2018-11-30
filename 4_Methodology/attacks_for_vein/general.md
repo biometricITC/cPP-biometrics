@@ -1,4 +1,4 @@
-# Mobile toolbox for finger/palm vein verification
+# Appendix X. Mobile toolbox for finger/palm vein verification
 30th Nov 2018
 
 **1. Scope of the toolbox**  
