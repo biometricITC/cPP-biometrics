@@ -8,7 +8,7 @@ See Annex A in our cPP. This Annex explains relation between SFRs in \[GPOSPP\] 
 
 \[GPOSPP\] and our cPP are separate PPs and developer must make a conformance claim to both \[GPOSPP\] and our cPP. Developer must select the same biometric modalities in FIA\_UAU.5.1 in \[GPOSPP\] and FIA\_MBV\_EXT.1 in our cPP.
 
-Developer doesn’t need to prepare separate document such as AGD guidnace for both evaluations if document satisfy requirements defined in both \[GPOSPP\] and cPP/SD.
+Developer doesn’t need to prepare separate document such as AGD guidance for both evaluations if document satisfy requirements defined in both \[GPOSPP\] and cPP/SD.
 
 ## 3. Change proposal
 
