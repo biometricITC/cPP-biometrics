@@ -760,9 +760,25 @@ biometric data in detail.
 
 ## 7. Security Assurance Requirements
 
-This Protection Profile bases on the assurance requirements as defined in Evaluation Assurance Level 1 in \[CC3\]. However, for the evaluation of the Security Target, the assurance components as contained in EAL2 (and upwards) shall be used. This results in an overall assurance level of EAL1+, where the augmentation results from the components ASE_OBJ.2, ASE_REQ.2, ASE_SPD.1 and ASE_TSS.1. 
+This Protection Profile utilizes an explicit assurance level based on the assurance requirements as defined in Evaluation Assurance Level 1 in \[CC3\]. 
 
-It should be noted that the evaluation of a TOE according to this PP will be performed in close correlation with the evaluation of the mobile device containing the TOE in accordance with \[MDFPP\]. The developer is therefore encouraged to utilize effects of synergy between the evaluations and reuse documentation efficiently. 
+However, for the evaluation of the Security Target, the assurance components as contained in EAL2 (and upwards) shall be used. 
+
+Further, this Protection Profile focusses on a functional test of the described security functionality and does therefore not contain any assurance component for vulnerability assessment. 
+
+This results in the use of the following assurance components:
+- ADV\_FSP.1
+- AGD\_OPE.1
+- AGD\_PRE.1
+- ALC\_CMC.1
+- ALC\_CMS.1
+- ASE\_CCL.1
+- ASE\_ECD.1
+- ASE\_INT.1
+- ASE\_OBJ.2
+- ASE\_SPD.1
+- ASE\_TSS.1
+- ATE\_IND.1
 
 ## 8. Selection-Based Requirements
 As indicated in the introduction to this cPP, the baseline requirements
