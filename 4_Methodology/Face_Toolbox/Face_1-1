@@ -19,7 +19,7 @@ T.1a type 1
 T.3a type 1
 
 Recipe
-Attacker take user’s photo image and prints it on regular paper.
+Attacker takes user’s photo image and prints it on regular paper.
 Resolution of scanner (dpi) should be, for example, 300-600 dpi that achieves best quality of image.
 Attacker crops the face image using basic image editing software to enlarge it to cover as much of the paper as possible while maintaining the original image aspect ratio. If multiple options are available for enlarging the image, an option that achieves best image quality should be selected. Attacker doesn’t edit the image to enhance quality of face image.
 Attacker prints it out on regular paper. Printer resolution should be, for example, 600 dpi that achieves best quality of image (set to photo print).
