@@ -1,0 +1,43 @@
+Number
+Face 1-1
+
+Attack type
+Face, printed photo attack
+
+Overview
+A printed picture of the user’s full face is presented to the TOE.
+
+Input
+Photo of target user that meet the following conditions:
+photo was taken under controlled environment where the background of the scene is uniform, the light in the office is switched on and the window blinds are down
+photo was taken right after the target user’s enrollment and under the same environment to reduce the possibility that the PAI is rejected because of the difference of the background scene or expression
+target user’s eyes are open and entire face is visible (i.e. well lit room)
+photo includes user’s full face
+
+Tools
+T.1a type 1
+T.3a type 1
+
+Recipe
+Attacker take user’s photo image and prints it on regular paper.
+Resolution of scanner (dpi) should be, for example, 300-600 dpi that achieves best quality of image.
+Attacker crops the face image using basic image editing software to enlarge it to cover as much of the paper as possible while maintaining the original image aspect ratio. If multiple options are available for enlarging the image, an option that achieves best image quality should be selected. Attacker doesn’t edit the image to enhance quality of face image.
+Attacker prints it out on regular paper. Printer resolution should be, for example, 600 dpi that achieves best quality of image (set to photo print).
+
+Prerequisite
+Target user enrolled at least one face on the TOE.
+
+Presentation
+Attacker presents the print to the device by hand at controlled environment.
+Attacker adjusts the distance between the print and the device seeing relevant attack video clip or attacker adjusts to right distance so that the device camera can’t see the edge of photo.
+Attacker also presents the print to minimize the reflection from ambient lighting.
+
+Attack Potential
+tbd
+
+Pass Criteria
+All unlock attempts shall be rejected. Proposed algorisms in the existing research papers are capable to detect this primitive attack.
+
+Other
+Number of users: 1
+Number of Presentations: 10 attempts for each PAI
