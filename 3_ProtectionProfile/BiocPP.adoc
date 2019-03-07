@@ -16,12 +16,12 @@ This collaborative Protection Profile Module (cPP Module) was developed by the B
 This document presents the Common Criteria (CC) collaborative Protection Profile Module (cPP Module) to express the security functional requirements (SFRs) and security assurance requirements (SARs) for mobile biometric enrolment and verification on the mobile device. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this cPP Module, are described in <<SD>>.
 
 === Scope of Document
-The scope of the cPP Module within the development and evaluation process is described in the Common Criteria for Information Technology Security Evaluation. In particular, a cPP Module defines the IT security requirements of a generic type of TOE and specifies the functional security measures to be offered by that TOE to meet stated requirements [<<CC1>>, Section B.14].
+The scope of the cPP Module within the development and evaluation process is described in the Common Criteria for Information Technology Security Evaluation. In particular, a cPP Module defines the IT security requirements of a generic type of TOE and specifies the functional security measures to be offered by that TOE to meet stated requirements <<CC1>>, Section B.14.
 
 === Intended Readership
 The target audiences of this cPP Module are developers, CC consumers, system integrators, evaluators and schemes. 
 
-Although the cPP Module and [SD] may contain minor editorial errors, the cPP Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the BS iTC. 
+Although the cPP Module and <<SD>> may contain minor editorial errors, the cPP Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the BS iTC. 
 
 === Related Documents
 [bibliography]
@@ -151,7 +151,7 @@ The TOE is fully integrated into the mobile device without the need for addition
 [#img-TOE-generic]
 .Generic representation of a TOE
 image::TOE_flows.jpg[title="Generic representation of a TOE" align="center"]
-
+{empty} +
 As illustrated in the above figure, the TOE is capable of:
 
 * Capturing samples from user’s biometric characteristics (Data Capture Subsystem)
@@ -355,7 +355,7 @@ The following table describes how the assumptions, threats, and organizational s
 
 == Security Functional Requirements
 
-=== <<MDFPP>> Security Functional Requirements Direction
+=== MDFPP Security Functional Requirements Direction
 
 This section instructs the ST author on what selections must be made to certain SFRs contained in the <<MDFPP>> in order to mitigate a threat from the <<MDFPP>> in a more specific or restrictive manner as described in this cPP Module than specified in the <<MDFPP>>.
 
@@ -844,7 +844,7 @@ The TOE in this cPP Module is comprised of biometric capture sensors and firmwar
 
 This cPP Module assumes that the mobile device satisfies SFRs defined in the <<MDFPP>> so that the TOE can work as specified in this cPP Module. The next section explains which SFRs in the <<MDFPP>> are directly relevant to the TOE security functionality.
 
-=== Relevant SFRs in the <<MDFPP>>
+=== Relevant SFRs in the MDFPP
 Relation between SFRs defined in this cPP Module and in the <<MDFPP>> is described below. *Bold SFRs* are those defined in this cPP Module and _italicized SFRs_ are those defined in <<MDFPP>>.
 
 ==== Password authentication
