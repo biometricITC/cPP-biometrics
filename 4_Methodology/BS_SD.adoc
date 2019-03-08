@@ -6,6 +6,7 @@
 :imagesdir: images
 :revnumber: 0.3
 :revdate: 2019-01
+:xrefstyle: full
 
 == Foreword
 
@@ -13,7 +14,7 @@ This is a Supporting Document, intended to complement the Common Criteria (CC) v
 
 Supporting Documents may be “Guidance Documents”, that highlight specific approaches and application of the standard to areas where no mutual recognition of its application is required, and as such, are not of normative nature, or “Mandatory Technical Documents”, whose application is mandatory for evaluations whose scope is covered by that of the Supporting Document. The usage of the latter class is not only mandatory, but certificates issued as a result of their application are recognized under the CCRA.
 
-This Supporting Document has been developed by the Biometric Security iTC (BS-iTC) and is designed to be used to support the evaluations of TOEs against the cPP Module identified in section 1.1.
+This Supporting Document has been developed by the Biometric Security iTC (BS-iTC) and is designed to be used to support the evaluations of TOEs against the cPP Module identified in <<Technology Area and Scope of Supporting Document>>.
 
 === Technical Editor
 
@@ -187,7 +188,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.1 at high level description
-. AGD guidance shall provide clear instructions for a user to enrol his/herself
+. AGD guidance shall provide clear instructions for a user to enrol him/herself
 
 AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
 
@@ -267,7 +268,7 @@ The evaluator shall examine that “assessment criteria for templates” to chec
 
 If the TOE creates authentication templates, the evaluator shall examine the TSS to understand how the TOE generate sufficient quality of authentication templates.
 
-The evaluator shall examine that the “assessment criteria for templates” to check that how the TOE creates the authenticate templates based on its assessment criteria. The “assessment criteria for templates” may include a) – d) in 2.3.2.5.1.1 and;
+The evaluator shall examine that the “assessment criteria for templates” to check that how the TOE creates the authenticate templates based on its assessment criteria. The “assessment criteria for templates” may include a) – d) in <<Strategy for ASE_TSS and AGD_OPE/ADV_FSP>> and;
 
 [loweralpha, start=6]
 . Additional assessment criteria to applied to creation of authentication templates
@@ -342,9 +343,9 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 The evaluator shall examine the TSS to understand how the TOE verify a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify him/herself correctly and how the TOE behaves when mobile biometric verification is succeeded or failed.
 
-The evaluator shall examine “developer’s performance test document” to verify that the developer conducts the objective and repeatable performance testing. Minimum requirements for conducting performance testing are defined in Section 7 (Developer’s performance test document and its assessment strategy).
+The evaluator shall examine “developer’s performance test document” to verify that the developer conducts the objective and repeatable performance testing. Minimum requirements for conducting performance testing are defined in <<Developer’s performance test document and its assessment strategy>> (Developer’s performance test document and its assessment strategy).
 
-Requirements defined in Section 7 is based on the ISO/IEC 19795. This standard specifies requirements on performance test protocol, recording and reporting of results based on the best practices developed by relevant organizations. The evaluator shall confirm that “developer’s performance test document” meets all requirements in Section 7 and seek a rationale if “developer’s performance test document” doesn’t meet any requirements and determine whether the rationale is valid or not.
+Requirements defined in <<Developer’s performance test document and its assessment strategy>> is based on the ISO/IEC 19795. This standard specifies requirements on performance test protocol, recording and reporting of results based on the best practices developed by relevant organizations. The evaluator shall confirm that “developer’s performance test document” meets all requirements in <<Developer’s performance test document and its assessment strategy>> and seek a rationale if “developer’s performance test document” doesn’t meet any requirements and determine whether the rationale is valid or not.
 
 Finally, the evaluator shall check that the measured error rates (FRR/FAR or FNMR/FMR) reported in “developer’s performance test document” is equal or lower than the error rates specified in the FIA_MBV_EXT.1.2.
 
@@ -354,14 +355,14 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
 . Information necessary to perform this EA is described in the TSS and AGD guidance
-. “Developer’s performance test document” meets all requirements in Section 7 and valid rationale is provided by developer if “developer’s performance test document” doesn’t meet any requirements
+. “Developer’s performance test document” meets all requirements in <<Developer’s performance test document and its assessment strategy>> and valid rationale is provided by developer if “developer’s performance test document” doesn’t meet any requirements
 . FRR/FAR or FNMR/FMR measured by the developer’s performance testing is equal or lower than “defined value” specified in FIA_MBV_EXT.1.2
 
 ===== Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-The evaluator shall also report a justification why evaluator determines the rationale provided by developer is valid if “developer’s performance test document” doesn’t meet any requirements in Section 7.
+The evaluator shall also report a justification why evaluator determines the rationale provided by developer is valid if “developer’s performance test document” doesn’t meet any requirements in <<Developer’s performance test document and its assessment strategy>>.
 
 ==== EA for FIA_MBV_EXT.2
 
@@ -435,7 +436,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 The evaluator shall verify that the TOE prevents use of artificial Presentation Attack Instruments (PAI). This section defines EAs derived from ASE_TSS.1, AGD_OPE.1 and ADV_FSP.
 
-The main part of EA for FIA_MBV_EXT.3 is evaluator’s testing using artificial PAI. The Section <<Evaluation Activities for FIA_MBV_EXT.3>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform during the testing.
+The main part of EA for FIA_MBV_EXT.3 is evaluator’s testing using artificial PAI. The <<Evaluation Activities for FIA_MBV_EXT.3>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform during the testing.
 
 ===== Dependency
 
@@ -459,7 +460,7 @@ Following input is required from the developer.
 
 The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of artificial PAI.
 
-Main part of EA is evaluator’s testing defined in Section 6. The evaluator should not require the detail design description of PAD from developer because it’s beyond the scope of assurance level claimed in [BIOcPP Module].
+Main part of EA is evaluator’s testing defined in <<Evaluation Activities for FIA_MBV_EXT.3>>. The evaluator should not require the detail design description of PAD from developer because it’s beyond the scope of assurance level claimed in [BIOcPP Module].
 
 ===== Pass/Fail criteria
 
@@ -761,7 +762,7 @@ The evaluator shall refer the EA for FCS_CKM_EXT.4 in [MDFPP] to perform evaluat
 
 == Evaluation Activities for SARs
 
-[BIOcPP Module] does not define any SARs beyond those defined within the [MDFPP] to which it can claim conformance. It is important to note that the TOE that is evaluated against [BIOcPP Module] is inherently evaluated against [MDFPP] as well. This means that EAs in Section 5.2 (Security Assurance Requirements) in [MDFPP] should also applied to [BIOcPP Module] with additional application notes or EAs defined in the following Sections.
+[BIOcPP Module] does not define any SARs beyond those defined within the [MDFPP] to which it can claim conformance. It is important to note that the TOE that is evaluated against [BIOcPP Module] is inherently evaluated against [MDFPP] as well. This means that EAs in <<Class ADV: Development>> (Security Assurance Requirements) in [MDFPP] should also applied to [BIOcPP Module] with additional application notes or EAs defined in the following Sections.
 
 === Class ASE: Security Target
 
@@ -779,7 +780,7 @@ The evaluator shall take the following additional application notes into account
 
 [BIOcPP Module] defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on [MDFPP] and the operational guidance doesn’t need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
 
-There is additional application note related to EAs for FIA_MBV_EXT.3 in the Section <<Additional application notes for AGD Class for FIA_MBV_EXT.3>>. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
+There is additional application note related to EAs for FIA_MBV_EXT.3 in <<Additional application notes for AGD Class for FIA_MBV_EXT.3>>. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
 
 ==== Application note for EA of AGD_PRE.1
 
@@ -799,7 +800,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of ATE_IND.1
 
-Same EA should be applied to [BIOcPP Module] except SFR FIA_MBV_EXT.3 (**Presentation attack detection for mobile biometric verification**). The evaluator shall perform EAs defined in the Section <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
+Same EA should be applied to [BIOcPP Module] except SFR FIA_MBV_EXT.3 (**Presentation attack detection for mobile biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
 
 === Class AVA: Vulnerability Assessment
 
@@ -807,7 +808,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of AVA_VAN.1
 
-Same EA should be applied to [BIOcPP Module] except SFR FIA_MBV_EXT.3 (**Presentation attack detection for mobile biometric verification**). The evaluator shall perform EAs defined in the Section <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
+Same EA should be applied to [BIOcPP Module] except SFR FIA_MBV_EXT.3 (**Presentation attack detection for mobile biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
 
 == Evaluation Activities for FIA_MBV_EXT.3
 
@@ -829,27 +830,27 @@ To solve this issue, the Biometric Security iTC (BS-iTC) creates [Toolbox]. This
 
 [Toolbox] includes a collection of test items for each biometric modality. Each test item describes the procedure to create PAIs and the method to present them to the TOE in sufficient detail to enable the test to be repeatable.
 
-The same [Toolbox] can also be used for AVA_VAN.1 evaluation (i.e. penetration testing) because AVA_VAN.1 requires the evaluator to devise tests based on information available in the public domain. However, [Toolbox] should be used in a different manner for AVA_VAN.1 evaluation. Following Section explains how [Toolbox] should be used in EAs for ATE_IND.1 and AVA_VAN.1.
+The same [Toolbox] can also be used for AVA_VAN.1 evaluation (i.e. penetration testing) because AVA_VAN.1 requires the evaluator to devise tests based on information available in the public domain. However, [Toolbox] should be used in a different manner for AVA_VAN.1 evaluation. The following section explains how [Toolbox] should be used in EAs for ATE_IND.1 and AVA_VAN.1.
 
 === EAs for ATE_IND.1 (Independent testing - conformance)
 
 ==== Independent test activities using [Toolbox]
 
-As described in previous section, [Toolbox] defines test items to create a representative set of PAIs that the evaluator shall use for the testing. During ATE_IND.1 evaluation, the evaluator shall conduct all test items in [Toolbox] without any change. The evaluator is not allowed to skip any test items in the [Toolbox] to maintain compatibility among different evaluations.
+As described in previous section, [Toolbox] defines test items to create a representative set of PAIs that the evaluator shall use for the testing. During ATE_IND.1 evaluation, the evaluator shall conduct all test items in [Toolbox] for the selected modalities without any change. The evaluator is not allowed to skip any test items in the [Toolbox] to maintain compatibility between different evaluations.
 
-During the independent testing, the evaluator may find those PAIs that mismatched to the enrolled target user however, the evaluator can’t reliably reproduce such successful presentation attack.
+During the independent testing, the evaluator may find PAIs that are incorrectly matched to the enrolled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
 
-[Toolbox] defines the Pass/Fail criteria, maximum attack presentation match rate for PAIs. The evaluator shall repeat presentation of PAIs defined number and confirm that the TOE’s match rate is below the criteria during the independent testing. The evaluator shall assign fail verdict to those TOE that doesn’t satisfy the criteria.
+[Toolbox] defines the Pass/Fail criteria, maximum attack presentation match rate for PAIs. The evaluator shall follow the [Toolbox] criteria for the number of PAI presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign fail verdict to those TOE that doesn’t satisfy the criteria.
 
 The PAIs that pass the criteria but show the higher attack presentation match rate will be tested again during the AVA_VAN.1 evaluation.
 
-Current version of [Toolbox] does not cover all biometric modalities. If the evaluator wants to evaluate those modalities not included in [Toolbox], the evaluator shall contact to the BS-iTC to work together to extend [Toolbox]. Upon the BS-iTC approval of this extension, the evaluator can proceed with PAD evaluation for new modality.
+[Toolbox] does not necessarily cover all biometric modalities. If the developer wants to evaluate modalities not currently included in [Toolbox], the developer and evaluator shall contact to the BS-iTC to work together to extend [Toolbox]. Upon the BS-iTC approval of this extension, the evaluator can proceed with PAD evaluation for new modality.
 
 ==== Justification for EAs for ATE_IND.1
 
 The EAs presented in this section are derived from ATE_IND.1-3, ATE_IND.1-4 and ATE_IND.1-7 and their verdicts will be associated with those work units.
 
-[Toolbox] describes a test subset and test documentation that is sufficiently detailed to enable the tests to be reproducible (ATE_IND.1-3 and ATE_IND.1-4). [Toolbox] also defines pass/fail criteria that support evaluator’s decision (ATE_IND.1-7).
+[Toolbox] describes a test subset and test documentation that is sufficiently detailed to enable the tests to be reproducible (ATE_IND.1-3 and ATE_IND.1-4). [Toolbox] also defines Pass/Fail criteria that support evaluator’s decision (ATE_IND.1-7).
 
 === EA for AVA_VAN.1 (Vulnerability survey)
 
@@ -861,15 +862,15 @@ This Section describes EAs for AVA_VAN.1 step by step following the order of AVA
 
 The evaluator shall search publicly available information that is published after the publication date of [Toolbox] to look for new PAI species. New PAI species are those PAIs that are out of scope of [Toolbox] and need to be made in the completely different way with the significantly different materials that are not covered by [Toolbox].
 
-Those new PAI species that can be made by slightly modifying test items in [Toolbox] are covered by Section 6.3.1.3.1.
+Those new PAI species that can be made by slightly modifying test items in [Toolbox] are covered by <<No new PAIs found test plan>>.
 
 ===== Identify candidate PAIs for testing
 
-The evaluator shall perform EAs in Section 6.3.1.2.1 if there is no new PAI species found at the previous step. Otherwise, follow Section 6.3.1.2.2.
+The evaluator shall perform EAs in <<No new PAIs found>> if there is no new PAI species found at the previous step. Otherwise, follow <<New PAIs found>>.
 
 ====== No new PAIs found
 
-If the evaluator can’t find such new PAI species, the evaluator doesn’t need to devise new test items in addition to those defined in [Toolbox] because the BS-iTC develops test items based on all publicly available information published by the publication date of [Toolbox]. The BS-iTC also verifies that test items cover all existing PAI species that are within the scope of Basic attack potential defined in Section 9 (Attack Potential and TOE resistance). Therefore, the evaluator doesn’t need to repeat this process.
+If the evaluator can’t find such new PAI species, the evaluator doesn’t need to devise new test items in addition to those defined in [Toolbox] because the BS-iTC develops test items based on all publicly available information published by the publication date of [Toolbox]. The BS-iTC also verifies that test items cover all existing PAI species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. Therefore, the evaluator doesn’t need to repeat this process.
 
 ====== New PAIs found
 
@@ -888,7 +889,7 @@ The TOE is used to unlock the devices but not used for financial transactions. A
 .. A user enrol him/herself following guidance provided by the TOE
 .. Mobile device is securely configured, and maximum number of unsuccessful biometric authentication attempts is limited
 +
-However, evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing efficiently. However, the mobile device shall be evaluated in the evaluated configuration, which means that attack needs to be succeeded within the allowed number of biometric authentication attempts defined in the ST.
+For efficiency, the evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing. However, as the mobile device shall be evaluated in the evaluated configuration, any attack needs to succeed within the allowed number of biometric authentication attempts defined in the ST to be considered a successful attack.
 +
 [BIOcPP Module] also defines *A.Protection* and evaluator shall assume that biometric data is adequately protected. Especially evaluator shall make the following assumptions:
 +
@@ -899,17 +900,17 @@ However, evaluator can increase the maximum number of unsuccessful biometric aut
 [loweralpha, start=3]
 . Attack potential
 +
-The evaluator is not expected to determine the exploitability for new PAI species beyond those for which a Basic attack potential is required to create and present. Therefore, the evaluator shall determine that attack potential required to use new PAI species is within the scope of the Basic attack potential referring Section 9 (Attack Potential and TOE resistance).
+The evaluator is not expected to determine the exploitability for new PAI species beyond those for which a Basic attack potential is required to create and present. Therefore, the evaluator shall determine that attack potential required to use new PAI species is within the scope of the Basic attack potential referring <<Attack Potential and TOE resistance>>.
 
 ===== Produce test plan
 
-The evaluator shall perform EAs in Section 6.3.1.3.1 if there is no new PAI species found in previous step. Otherwise, follow Section 6.3.1.3.2.
+The evaluator shall perform EAs in <<No new PAIs found test plan>> if there is no new PAI species found in previous step. Otherwise, follow <<New PAIs found test plan>>.
 
-====== No new PAIs found
+====== No new PAIs found test plan
 
 The evaluator shall select those PAIs that show higher attack presentation match rate at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
-If there is no such PAIs, the evaluator should select“higher quality” PAIs. “Higher quality” means that PAIs are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face PAI).
+If there is no such PAIs, the evaluator should select “higher quality” PAIs. “Higher quality” means that PAIs are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face PAI).
 
 The evaluator may recreate the PAIs selected for penetration testing to improve their quality taking following approaches.
 
@@ -933,35 +934,35 @@ The evaluator may also increase time for PAI presentation training and habituati
 
 For example, in case of finger or palm vein verification, quality of vein pattern gained from the sensor (NIR-camera) of the TOE may vary depending on the distance between the PAI and sensor, and how to present the PAI to the TOE. However, it’s not possible for the evaluator to know the best distance or presentation method for the PAI in advance because this SD requires the evaluator to test the TOE in black-box manner. The evaluator may simply increase the number of attempts to find the best distance or presentation through trial and error process.
 
-====== New PAIs found
+====== New PAIs found test plan
 
 If the evaluator can find the new PAI species that can be used for the penetration testing, the evaluator shall produce the test item for those new PAI species and add them to [Toolbox]. The evaluator shall create those new test items at the same format and level of detail as existing ones in [Toolbox].
 
 The evaluator shall also inform the BS-iTC for this update because the BS-iTC is responsible for maintaining [Toolbox].
 
-The evaluator shall also perform EAs in Section 6.3.1.3.1 to produce the test plan based on the result of independent testing.
+The evaluator shall also perform EAs in <<No new PAIs found test plan>> to produce the test plan based on the result of independent testing.
 
 ===== Conduct the penetration testing
 
 The evaluator shall conduct the penetration testing based on the test plan created in the previous step.
 
-The evaluator shall select those PAIs that may succeed the attack at higher probability as described in Section 6.3.1.3 (Produce test plan) for the penetration testing.
+The evaluator shall select those PAIs that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
 However, the evaluator shall not spend more than one week for independent and penetration testing, considering the assurance level claimed by [BIOcPP Module].
 
-===== Determine pass or failure of penetration testing
+===== Determine Pass/Fail of penetration testing
 
-The evaluator shall determine that the TOE, in its operational environment, is resistant to an attacker possessing a Basic attack potential. The evaluator shall make this determination based on guidance provided in Section 9.3 (Pass/Fail criteria for EAs for FIA_MBV_EXT.3).
+The evaluator shall determine that the TOE, in its operational environment, is resistant to an attacker possessing a Basic attack potential. The evaluator shall make this determination based on guidance provided in  <<Pass/Fail criteria for EAs for FIA_MBV_EXT.3>>.
 
 ==== Justification for EAs for AVA_VAN.1
 
 The EAs presented in this section are derived from AVA_VAN.1-3, AVA_VAN.1-4, AVA_VAN.1-5, AVA_VAN.1-6, AVA_VAN.1-7 and AVA_VAN.1-10 and their verdicts will be associated with those work units.
 
-EAs in Section 6.3.1.1 and 6.3.1.2 complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new PAI) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
+EAs in the <<Search for new PAIs>> and <<Identify candidate PAIs for testing>> complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new PAI) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
 
-EAs in Section 6.3.1.3 and 6.3.1.4 complements evaluator’s action for creating the test plan and conducting the penetration testing for PAD (AVA_VAN.1-6 and AVA_VAN.1-7)
+EAs in <<Produce test plan>> and <<Conduct the penetration testing>> complements evaluator’s action for creating the test plan and conducting the penetration testing for PAD (AVA_VAN.1-6 and AVA_VAN.1-7)
 
-EAs in Section 6.3.1.5 provides specific guidance for pass or failure of the testing (AVA_VAN.1-10).
+EAs in <<Determine Pass/Fail of penetration testing>> provides specific guidance for pass or failure of the testing (AVA_VAN.1-10).
 
 == Developer’s performance test document and its assessment strategy
 
@@ -969,7 +970,7 @@ This Section describes requirements for the developer’s performance test docum
 
 The developer shall create the test document to report the result of performance testing (e.g. FRR/FAR or FNMR/FMR).
 
-The evaluator shall examine the test document following the Assessment Strategy defined in Section 2.3.3 (EA for FIA_MBV_EXT.1) to verify that the developer’s performance test was done in an objective and repeatable manner to check the trustworthiness of the measured error rates.
+The evaluator shall examine the test document following the Assessment Strategy defined in <<EA for FIA_MBV_EXT.1>> to verify that the developer’s performance test was done in an objective and repeatable manner to check the trustworthiness of the measured error rates.
 
 The requirements defined in this Section are created based on [ISO19795-1] and [ISO19795-2].
 
@@ -985,19 +986,19 @@ Table 1 shows items that shall be reported in the test document. Name or structu
 .Reporting items
 |===
 |*Section* |*Item*
-|7.3.1 |Overview of the performance testing
-|7.3.2 |Target application and influential factors
-|7.3.3 |Test subject selection
-|7.3.4 |Test instructions and training
-|7.3.5 |Test subject management
-|7.3.6 |Test procedure
+|TD.1 |Overview of the performance testing
+|TD.2 |Target application and influential factors
+|TD.3 |Test subject selection
+|TD.4 |Test instructions and training
+|TD.5 |Test subject management
+|TD.6 |Test procedure
 |===
 
 === Reporting items description
 
 This Section describes each item in Table 1 in detail. All items are created based on [ISO19795-1] and [ISO19795-2] however some of them are modified to adjust to the CC evaluation.
 
-==== Overview of the performance testing
+==== TD.1 Overview of the performance testing
 
 The developer shall report following general information about the performance testing.
 
@@ -1009,7 +1010,7 @@ The test document shall report the following information to uniquely identify th
 [arabic]
 .. TOE reference
 +
-Information that uniquely identify the TOE shall be reported. [BIOcPP Module] is intended to be used with [MDFPP] and reference for the mobile device can be used as the TOE reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device
+Information that uniquely identifes the TOE shall be reported. [BIOcPP Module] is intended to be used with [MDFPP] and reference for the mobile device can be used as the TOE reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device
 +
 Modification to the TOE for performance testing, if any, shall be reported (e.g. The TOE is modified to export biometric data for off-line testing). The rationale that such modification doesn’t affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code isn’t executed during mobile biometric verification or the developer may run regression test to verify that modification doesn’t change the result of verification (e.g. similarity score).
 .. TOE configuration
@@ -1033,10 +1034,10 @@ Timeline for the performance testing (samples or templates may be collected over
 The performance testing shall be done for all modalities selected in FIA_MBV_EXT.1. Result of testing for each modality shall be reported separately.
 .. Definition of genuine and imposter transaction
 +
-If FAR/FRR is selected in FIA_MBV_EXT.1, the test document shall clearly define what constitutes the transaction based on the guidance provided in Section 8 (Requirement for the number of test subject, transaction and samples) and the same rule shall be applied consistently throughout the performance testing.
+If FAR/FRR is selected in FIA_MBV_EXT.1, the test document shall clearly define what constitutes the transaction based on the guidance provided in <<Requirement for the number of test subject, transaction and samples>> and the same rule shall be applied consistently throughout the performance testing.
 .. Number of test subjects, templates and samples
 +
-The following numbers used for calculating FMR/FNMR or FAR/FRR shall be reported. See Section 8 for requirements for number of test subjects, enrolment templates and samples.
+The following numbers used for calculating FMR/FNMR or FAR/FRR shall be reported. See <<Requirement for the number of test subject, transaction and samples>> for requirements for number of test subjects, enrolment templates and samples.
 +
 This Section assumes that at least the FMR or FAR is measured through offline testing (i.e. cross-comparison) to achieve the maximum number of attempts or transactions. FNMR or FRR may be measured through online or offline testing.
 
@@ -1047,12 +1048,12 @@ Number of test subjects who participated in the testing shall be reported.
 +
 Number of enrolment templates used for testing shall be reported.
 +
-All test subjects cannot generate the templates successfully and total number of templates may be less than (number of test subjects) × (number of body parts of a test subject).
+Note all test subjects may generate the templates successfully and total number of templates may be less than (number of test subjects) × (number of body parts of a test subject).
 * Samples
 +
 Number of samples collected for each body part and total number of samples collected from all test subjects shall be reported.
 +
-All test subjects cannot generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of body parts of a test subject) × (number of samples collected for each body part).
+Not all test subjects may generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of body parts of a test subject) × (number of samples collected for each body part).
 
 [arabic, start=5]
 . Result of testing
@@ -1063,7 +1064,7 @@ If FAR and FRR is selected in FIA_MBV_EXT.1, number of genuine and imposter tran
 +
 If FMR and FNMR is selected in FIA_MBV_EXT.1, number of genuine and imposter attempts shall also be reported.
 
-==== Target application and influential factors
+==== TD.2 Target application and influential factors
 
 Test document shall specify a target application modelled in the test, such as mobile biometric verification in an indoor office environment with a habituated crew.
 
@@ -1101,13 +1102,13 @@ Time interval (e.g. minimum, maximum and average time) between enrolment and ver
 The degree to which the test subject is familiarized with the TOE (e.g. frequency of use of the TOE)
 . Template adaptation
 +
-How much template adaptation occur prior to measure the FMR/FAR and FNMR/FRR if the TOE is able to adapt the templates over time with the aim to reduce the error rates
+How much template adaptation may occur prior to measuring the FMR/FAR and FNMR/FRR if the TOE is able to adapt the templates over time with the aim to reduce the error rates
 
-==== Test subject selection
+==== TD.3 Test subject selection
 
 Selection method of test subjects shall be reported (e.g. gather test subjects from developer’s employees or recruit them from public). It is recommended that demographics of test subjects follow the target application.
 
-==== Test instructions and training
+==== TD.4 Test instructions and training
 
 Instructions and training given to the test subjects shall be reported. The same instructions and training shall be given to the all test subjects.
 
@@ -1119,9 +1120,9 @@ Test information and general test instructions given to test subject prior or af
 +
 Method for how to confirm the level of subject habituation prior to biometric data collection shall be reported. If the habituation was confirmed through training, method to ensure the consistency of training among test subjects and the tools used for training shall be reported (e.g. developer can prepare the script for training in advance and apply it to all test subjects to ensure the consistency)
 
-==== Test subject management
+==== TD.5 Test subject management
 
-Following information about test subject management shall be reported. Proper management is necessary to avoid human errors that may occur during the testing.
+The following information about test subject management shall be reported. Proper management is necessary to avoid human errors that may occur during the testing.
 
 [loweralpha]
 . Management processes
@@ -1129,18 +1130,18 @@ Following information about test subject management shall be reported. Proper ma
 Biometric data can be corrupted by human error during the collection process (e.g. using a middle finger when the index finger is required). The test subject management processes to avoid such errors shall be reported. Management processes shall cover the following processes
 +
 [arabic]
-.. method of initial test subject registration
-.. method of ensuring test subject uniqueness
-.. method of avoiding data collection errors (e.g. Use of data collection software minimizing the amount of data requiring keyboard entry)
+.. Method of initial test subject registration
+.. Method of ensuring test subject uniqueness
+.. Method of avoiding data collection errors (e.g. Use of data collection software minimizing the amount of data requiring keyboard entry)
 
-==== Test procedure
+==== TD.6 Test procedure
 
 A test protocol for the testing shall be reported. The following items shall be covered.
 
 [loweralpha]
 . Type of attempt or transaction
 +
-Whether the attempt or transaction is executed online or offline shall be reported. Online means that enrolment and verification is executed at the time of image submission. Offline means that enrolment and verification is executed separately from image submission
+Whether the attempt or transaction is executed online or offline shall be reported. Online means that enrolment and verification is executed at the time of image submission. Offline means that enrolment and verification is executed separately from image submission.
 . Test flow
 +
 Details of flow of genuine and imposter attempt or transaction to measure the error rates shall be reported. The same flow shall be applied to all test subjects.
@@ -1148,10 +1149,10 @@ Details of flow of genuine and imposter attempt or transaction to measure the er
 The developer shall maintain a log file in which each interaction with the TOE is recorded. The log shall include all test attempts, preparative or practice attempts, set-up procedure (e.g. setting a threshold) and maintenance activities (e.g. cleaning a sensor). Such a log file can be very useful to make sure the testing was conducted following the test flow.
 . Sample exclusion criteria
 +
-Criteria for sample exclusion shall be reported. Test operator shall not manually discard nor use an automated mechanism to discard collected samples unless the samples conform to documented exclusion criteria. Number of excluded samples shall be reported. If transactions are failed because of such excluded samples, number of such failed transactions shall also be reported. These failed transactions shall be counted as failed transactions to calculate the error rates
+Criteria for sample exclusion shall be reported. Test operator shall not manually discard nor use an automated mechanism to discard collected samples unless the samples conform to documented exclusion criteria. The number of excluded samples shall be reported. If transactions are failed because of such excluded samples, number of such failed transactions shall also be reported. These failed transactions shall be counted as failed transactions to calculate the error rates.
 . Advice or remedial action
 +
-Advices or remedial actions to test subjects who fail to complete transactions or sample collections shall be reported. Such advices or remedial actions shall be limited to the minimum amount necessary because [BIOcPP Module] assumes that the mobile device is used by the single user without any support. The same advices or remedial actions shall be given to test subject at the same condition.
+Advice or remedial actions to test subjects who fail to complete transactions or sample collections shall be reported. Such advice or remedial actions shall be limited to the minimum amount necessary because [BIOcPP Module] assumes that the mobile device is used by the single user without any support. The same advice or remedial actions shall be given to test subject at the same condition.
 
 == Requirement for the number of test subject, transaction and samples
 
@@ -1183,11 +1184,11 @@ The developer shall also select the most common scenario among users to conduct 
 
 Only one template can be generated from each body part (e.g. right index fingerprint, left hand vein or face) of test subject and used for the performance testing.
 
-Quality of template may have significant impact on the mobile biometric verification performance. This SD assumes that the user is familiar with the mobile devices operation and enrol his/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
+Quality of template may have significant impact on the mobile biometric verification performance. This SD assumes that the user is familiar with the mobile devices operation and enrol him/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
 
 ==== Maximum number of samples per test subject
 
-The developer shall define the maximum number of samples per test subject to be collected following the guidance provided in the Section 8.1.1.
+The developer shall define the maximum number of samples per test subject to be collected following the guidance provided in <<Test scenario for mobile biometric verification>>.
 
 ==== Maximum number of transactions per test subject
 
@@ -1195,7 +1196,7 @@ Only one transaction can be run by each test subject because the mobile device l
 
 ==== Statistical certainty for FAR/FMR
 
-FMR/FAR shall be estimated following rule of 3 or 30 because these errors are most relevant to the security of the TOE and trustworthiness of those values shall be evaluated statistically. While the rule of 3 would require that one test subject is only involved in one impostor transaction, it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. This SD allows full cross-comparison to estimate FAR/FMR.
+FMR/FAR shall be estimated following rule of 3 or 30 because these errors are most relevant to the security of the TOE and the trustworthiness of those values shall be evaluated statistically. While the rule of 3 would require that one test subject is only involved in one impostor transaction, it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. This SD allows full cross-comparison to estimate FAR/FMR.
 
 This SD also allows cross-comparison of attempts/templates for ordered pair if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates for ordered pair allows to compare between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE's verification algorithm is symmetric and make no distinction between the ordered pair, this assumption can't be used.
 
@@ -1233,9 +1234,9 @@ Identification corresponds to the effort required to create the attack, and to d
 
 Exploitation corresponds to achieving the attack on an instance of the TOE in its exploitation environment using the analysis and techniques defined in the identification phase. It could be assumed that a different attacker carries out the exploitation, the technique (and relevant background information) could be available for the exploitation in the form of a script or set of instructions defined during the identification phase. This type of script is assumed to identify the necessary equipment and, for example, mathematical techniques used in the analysis, or presentation attack methods. Furthermore, this same information may also reduce the exploitation requirement to one of time measurement, whereas the identification phase may have required reverse engineering of hardware or software information hence the expertise requirement may be reduced.
 
-NOTE1: For the evaluator, the work of the identification phase has to be fully performed: developing hardware and software, creating PAIs if any, etc. The rating of this phase corresponds to the "real spending" in defining the attack. For the exploitation, it is not necessary to perform the work again and the rating could correspond to an evaluation of the necessary effort for each factor.
+NOTE: For the evaluator, the work of the identification phase has to be fully performed: developing hardware and software, creating PAIs if any, etc. The rating of this phase corresponds to the "real spending" in defining the attack. For the exploitation, it is not necessary to perform the work again and the rating could correspond to an evaluation of the necessary effort for each factor.
 
-NOTE2: Exploitation consisting in applying scripts, it is expected that some factor values will be reduced from the identification phase, in particular "Elapsed Time" and "Expertise". For the same reason, the "Knowledge of the TOE" factor is not applicable in the exploitation phase (all the knowledge is scripted).
+NOTE: Exploitation consisting in applying scripts, it is expected that some factor values will be reduced from the identification phase, in particular "Elapsed Time" and "Expertise". For the same reason, the "Knowledge of the TOE" factor is not applicable in the exploitation phase (all the knowledge is scripted).
 
 ==== Factors to be considered
 
@@ -1252,24 +1253,24 @@ Potential difficulties to have an access to the TOE in exploitation environment 
 *_Expertise_* refers to the level of proficiency required by the attacker and the general knowledge that he possesses, not specific of the system being attacked. The levels are as follows:
 
 [loweralpha]
-. Layman is the level no real expertise needed and such that any person with a regular level of education is capable of performing the attack. For example, creating a PAI in a known (published) way without specific difficulties (specific or difficult to buy materials) is considered at this level of expertise.
-. Proficient is the level such that some advanced knowledge in certain specific topics (biometrics) is required as well as good knowledge of the state-of-the-art of attacks. An attacker of this level is capable of adapting known attack methods to his needs. For example, adapting a known attack type (published) by the choice of specific (not published and sometimes difficult to find) materials in order to bypass a presentation attack detection mechanism and/or finding a non-evident way to present this PAI to the system can be considered at this level of expertise.
-. Expert is the level such that a specific preparation in multiple areas such as pattern recognition, computer vision or optimization is needed in order to carry out the attack. An attacker of this level is capable of generating his own new attacking algorithms. For example, finding a new (unpublished) way of creating an attack type using new and specific materials (unpublished) to counter an advanced presentation attack detection mechanism, can be considered at this level. In addition, this level can be associated with specific equipment (bespoke)
-. Multiple experts is the level such that the attack needs the collaboration of several people with high level expertise in different fields (e.g., electronics, cryptanalysis, physics, etc.). It has to be noticed that a specific competence in biometrics is not considered as "multiple expertise". For example, building a "hill climbing" attack by gaining access to the comparison scores requires additional expertise to electrically attack and penetrate the TOE, which can be considered to constitute a "multi expertise" level.
+. _Layman_ is the level no real expertise needed and such that any person with a regular level of education is capable of performing the attack. For example, creating a PAI in a known (published) way without specific difficulties (specific or difficult to buy materials) is considered at this level of expertise.
+. _Proficient_ is the level such that some advanced knowledge in certain specific topics (biometrics) is required as well as good knowledge of the state-of-the-art of attacks. An attacker of this level is capable of adapting known attack methods to his needs. For example, adapting a known attack type (published) by the choice of specific (not published and sometimes difficult to find) materials in order to bypass a presentation attack detection mechanism and/or finding a non-evident way to present this PAI to the system can be considered at this level of expertise.
+. _Expert_ is the level such that a specific preparation in multiple areas such as pattern recognition, computer vision or optimization is needed in order to carry out the attack. An attacker of this level is capable of generating his own new attacking algorithms. For example, finding a new (unpublished) way of creating an attack type using new and specific materials (unpublished) to counter an advanced presentation attack detection mechanism, can be considered at this level. In addition, this level can be associated with specific equipment (bespoke)
+. _Multiple Experts_ is the level such that the attack needs the collaboration of several people with high level expertise in different fields (e.g., electronics, cryptanalysis, physics, etc.). It has to be noticed that a specific competence in biometrics is not considered as "multiple expertise". For example, building a "hill climbing" attack by gaining access to the comparison scores requires additional expertise to electrically attack and penetrate the TOE, which can be considered to constitute a "multi expertise" level.
 
-NOTE1: As previously noted, exploitation expertise is usually lower than identification expertise. Layman or Proficient can be considered as typical value for expertise in the exploitation phase. For the same reason, the multiple expert level is excluded from the exploitation phase.
+NOTE: As previously noted, exploitation expertise is usually lower than identification expertise. Layman or Proficient can be considered as typical value for expertise in the exploitation phase. For the same reason, the multiple expert level is excluded from the exploitation phase.
 
-NOTE2: As all the factors, higher rating would require specific justifications from the evaluator.
+NOTE: As all the factors, higher rating would require specific justifications from the evaluator.
 
 *_Knowledge of the TOE_* refers to the amount of knowledge of system required to perform the attack. For instance, format of the acquired samples, size and resolution of acquisition systems, specific format of templates, but also specifications and implementation of countermeasures are knowledge that could be required to set up an attack.
 
 This information could be publicly available at the website of the capture device manufacturer or protected (distributed to stakeholders under non-disclosure agreement or even classified inside the company). The levels are as follows:
 
 [loweralpha]
-. Public information which is fairly easy to obtain (e.g., on the web).
-. Restricted information which is only shared by the developer and organizations which are using the system, usually under a non-disclosure agreement.
-. Confidential information which is only available within the organization that develops the system and is in no case shared outside it.
-. Critical information which is only available to certain people or groups within the organization which develops the system.
+. _Public information_ which is fairly easy to obtain (e.g., on the web).
+. _Restricted information_ which is only shared by the developer and organizations which are using the system, usually under a non-disclosure agreement.
+. _Confidential information_ which is only available within the organization that develops the system and is in no case shared outside it.
+. _Critical information_ which is only available to certain people or groups within the organization which develops the system.
 
 Special attention should be paid in this point to possible countermeasures that may be implemented in the system and whether it is necessary or not to have knowledge of their existence in order to be successful in a given attack.
 
@@ -1286,9 +1287,9 @@ The number and the level of equipment requested to build the attack is also take
 This factor is not expressed in terms of time. The levels are as follows:
 
 [loweralpha]
-. Easy: For identification phase, there is no strong constraint for the attacker to buy the TOE (reasonable price) to prepare its attack. For exploitation phase, there is no limit in the number of tries and the presentation attack is difficult to detect.
-. Moderate: For identification phase, specialised distribution schemes exist (not available to individuals). For exploitation phase, either a tuning of the attack for the final system is required (unknown parameterization of countermeasures for example) or there is a supervision of the biometric system emitting, for example, an alert in case of numerous fail presentations.
-. Difficult: For identification phase, the system is not available except for identified users and access requires compromising of one of the actors. For exploitation phase, for example PAIs must be adapted to the (unknown) specific tuning, or there is a strong supervision (for example a guard), or the system needs physical modification (for example physically accessing a hidden signal significant of the comparison score). Compromising one actor involved in the use of the system (guard, administrator, and maintenance) is often required.
+. __Easy__: For identification phase, there is no strong constraint for the attacker to buy the TOE (reasonable price) to prepare its attack. For exploitation phase, there is no limit in the number of tries and the presentation attack is difficult to detect.
+. __Moderate__: For identification phase, specialised distribution schemes exist (not available to individuals). For exploitation phase, either a tuning of the attack for the final system is required (unknown parameterization of countermeasures for example) or there is a supervision of the biometric system emitting, for example, an alert in case of numerous fail presentations.
+. __Difficult__: For identification phase, the system is not available except for identified users and access requires compromising of one of the actors. For exploitation phase, for example PAIs must be adapted to the (unknown) specific tuning, or there is a strong supervision (for example a guard), or the system needs physical modification (for example physically accessing a hidden signal significant to the comparison score). Compromising one actor involved in the use of the system (guard, administrator, and maintenance) is often required.
 
 *_Window of opportunity (Access to biometric characteristics)_* refers to measuring the difficulty to access the target biometric characteristics either to prepare the attack or to perform it on the target system
 
@@ -1299,29 +1300,30 @@ However, it is important to be able to compare the resistance of various systems
 The levels are as follows:
 
 [loweralpha]
-. Immediate is for 2D face, signature image, and voice. Samples of these modalities can be collected without difficulty, even without direct contact with an enrolled data subject (an exploration of the web and the social networks and so forth).
-. Easy is for fingerprint. Latent fingerprints are often left on objects the enrolled data subject had in hand, but need to be revealed, acquired and the corresponding images need a preprocessing.
-. Moderate is for 3D face, dynamic signature, and 3D fingerprint. 3D images require multiple acquisitions, probably in a controlled way, without the collaboration of an enrolled data subject but probably with a direct contact with them.
-. Difficult is for iris and vein. Iris images can be acquired with a high resolution camera, but with some difficulties to get a complete high quality image without the cooperation of an enrolled data subject. Veins are a hidden characteristic, but infra-red cameras, close to them, can acquire images to be used.
+. _Immediate_ is for 2D face, signature image, and voice. Samples of these modalities can be collected without difficulty, even without direct contact with an enrolled data subject (an exploration of the web and the social networks and so forth).
+. _Easy_ is for fingerprint. Latent fingerprints are often left on objects the enrolled data subject had in hand, but need to be revealed, acquired and the corresponding images need a preprocessing.
+. _Moderate_ is for 3D face, dynamic signature, and 3D fingerprint. 3D images require multiple acquisitions, probably in a controlled way, without the collaboration of an enrolled data subject but probably with a direct contact with them.
+. _Difficult_ is for iris and vein. Iris images can be acquired with a high resolution camera, but with some difficulties to get a complete high quality image without the cooperation of an enrolled data subject. Veins are a hidden characteristic, but infra-red cameras, close to them, can acquire images to be used.
 
-NOTE 1: The above distribution of modalities per level is subject to modification depending on the evolution of technologies and usage. The current distribution is to be seen as guidance for the evaluator, who will have to adapt the rating to state-of-the-art.
+NOTE: The above distribution of modalities per level is subject to modification depending on the evolution of technologies and usage. The current distribution is to be seen as guidance for the evaluator, who will have to adapt the rating to state-of-the-art.
 
-NOTE 2: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or templates generation. In such a case, this factor has to be considered to be Immediate.
+NOTE: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Immediate_.
 
 *_Equipment_* refers to the type of equipment required to perform the attack. This includes the biometric databases used (if any). The levels are follows:
 
-Standard equipment is an orderable, easy to obtain and simple to operate equipment (e.g., computer, video cameras, mobile phones, "do it yourself" material, and artistic leisure materials).
+_Standard equipment_ is an orderable, easy to obtain and simple to operate equipment (e.g., computer, video cameras, mobile phones, "do it yourself" material, and artistic leisure materials).
 
-Specialised equipment refers to fairly expensive equipment, not available in standard markets and which require of some specific formation to be used (e.g., laboratory equipment, advanced printer specific materials and inks, and advanced oscilloscopes).
+_Specialised equipment_ refers to fairly expensive equipment, not available in standard markets and which require of some specific formation to be used (e.g., laboratory equipment, advanced printer specific materials and inks, and advanced oscilloscopes).
 
-Bespoke equipment refers to very expensive equipment with difficult and controlled access; for example, research printing systems with specific ink definition and flexible support adaptation. In addition, if more than one specialised equipment is required to perform different parts of the attack, this value should be used. Before using this level, it has to be carefully checked that no service is available (renting, limited time access, etc.). If such service exists, the level has to be moved down to Specialised level.
+_Bespoke equipment_ refers to very expensive equipment with difficult and controlled access; for example, research printing systems with specific ink definition and flexible support adaptation. In addition, if more than one specialised equipment is required to perform different parts of the attack, this value should be used. Before using this level, it has to be carefully checked that no service is available (renting, limited time access, etc.). If such service exists, the level has to be moved down to Specialised level.
 
 ==== Calculation of attack potential
 
-Table 2 identifies the factors discussed in the previous Section and associates numeric values with the total value of each factor.
+<<attackpotentialcalc>> identifies the factors discussed in the previous Section and associates numeric values with the total value of each factor.
 
 [cols=",,",options="header",]
 .Calculation of attack potential for general biometric system
+[[attackpotentialcalc]]
 |===
 |Factor |Value |
 | |Identification |Exploitation
@@ -1370,10 +1372,11 @@ In order to calculate the attack potential value of the entire attack, the evalu
 
 ==== Rating of vulnerabilities and TOE resistance
 
-The "Values" column of Table 3 indicates the range of attack potential values (calculated using Table 2) of an attack scenario that results in the SFRs being undermined.
+The "Values" column of <<ratingvuln>> indicates the range of attack potential values (calculated using <<attackpotentialcalc>>) of an attack scenario that results in the SFRs being undermined.
 
 [cols=",,,,",options="header",]
 .Rating of vulnerabilities and TOE resistance
+[[ratingvuln]]
 |===
 |Values a|
 Attack potential
@@ -1472,7 +1475,7 @@ AVA_VAN.5
 
 === Application notes for [BIOcPP Module] 
 
-Attack potential table (Table 2) defined in previous Section doesn’t consider specific restrictions introduced by [BIOcPP Module]. For example, [BIOcPP Module] assumes that allowable maximum number of unsuccessful authentication attempts is limited that influence the calculation of *_Window of Opportunity (Access to TOE)_* for exploitation phase.
+Attack potential table <<attackpotentialcalc>> defined in previous Section doesn’t consider specific restrictions introduced by [BIOcPP Module]. For example, [BIOcPP Module] assumes that allowable maximum number of unsuccessful authentication attempts is limited that influence the calculation of *_Window of Opportunity (Access to TOE)_* for exploitation phase.
 
 The evaluator shall take following application notes into account to calculate the attack potential for [BIOcPP Module], especially calculating the attack potential for presentation attacks during performing EAs for FIA_MBV_EXT.3.
 
@@ -1486,7 +1489,7 @@ The evaluator shall select “Difficult” because number of unsuccessful authen
 
 === Pass/Fail criteria for EAs for FIA_MBV_EXT.3
 
-As required by CC, the evaluator shall determine that the TOE is resistant to an attacker possessing a Basic attack potential based on the attack potential table (Table 2). However, the table doesn’t provide any guidance for the probability of success or failure of presentation attack.
+As required by CC, the evaluator shall determine that the TOE is resistant to an attacker possessing a Basic attack potential based on <<attackpotentialcalc>>. However, the table doesn’t provide any guidance for the probability of success or failure of presentation attack.
 
 The evaluator may have enough confidence to assign fail verdict to the TOE if the evaluator find the PAIs that succeed the attack repeatably or at high probability (e.g. almost 100%).
 
@@ -1529,7 +1532,7 @@ The evaluator should focus on a few PAIs that show highest error rate at the ind
 
 CEM work unit AGD_OPE.1-1 requires the evaluator to examine the AGD guidance to determine that it describes appropriate warnings for secure use of the TOE.
 
-The evaluator shall examine that appropriate warnings is provided in the AGD guidance if the evaluator can find those PAIs that pass the penetration test however whose *_p_* is higher than 7 %.
+The evaluator shall examine that appropriate warnings is provided in the AGD guidance if the evaluator can find those PAIs that pass the penetration test however whose *_p_* is higher than 7%.
 
 Those PAIs can succeed at least one presentation attack (and succeed to unlock the mobile device) at 25% of probability when allowable number of unsuccessful attempts is 4 (i.e. *n* = 4).
 
