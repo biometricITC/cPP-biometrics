@@ -29,12 +29,13 @@ Although the cPP Module and <<SD>> may contain minor editorial errors, the cPP M
 - [[[CC2]]] Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.
 - [[[CC3]]]	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
 - [[[CEM]]]	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
+- [[[addenda]]]	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
 - [[[SD]]]	Evaluation Activities for collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
 - [[[ISO19795-1]]]	Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [[[ISO21879]]]	Performance testing of biometrics on mobile devices, under development.
 - [[[ISO30107-1]]]	Biometric presentation attack detection — Part 1: Framework, First edition.
 - [[[ISO30107-3]]]	Biometric presentation attack detection — Part 3: Testing and reporting, First edition.
-- [[[MDFPP]]]	Protection Profile for Mobile Device Fundamentals, Version:3.1, 2017-06-16
+- [[[MDFPP]]]	Protection Profile for Mobile Device Fundamentals, Version:3.2
 - [[[NIST800-63B]]]	NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
 === Glossary
