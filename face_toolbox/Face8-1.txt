@@ -1,0 +1,46 @@
+Number
+Face 8-1
+
+Attack type
+3D mask on face
+
+Overview
+A 3D mask from photo of user’s full face is applied to the attacker’s face and presented to the TOE.
+
+Input
+Photo of target user that meet the following conditions:
+	•	photo was taken under controlled environment where the background of the scene is uniform, the light in the office is switched on and the window blinds are down
+	•	photo was taken right after the target user’s enrollment and under the same environment to reduce the possibility that the PAI is rejected because of the difference of the background scene or expression
+	•	target user’s eyes are open and entire face is visible (i.e. well lit room)
+	•	photo includes user’s full face
+
+Tools
+T.1c
+T.3b
+
+Recipe
+Attacker takes user’s photo image using 3D camera.
+Attacker prints the image using 3D printer in ABS plastic.
+Attacker uses the 3D print as a mold to create a mask using stone powder.
+
+Prerequisite
+Target user enrolled at least one face on the TOE.
+
+Presentation
+Attacker applies the mask to his face.
+Attacker presents his masked face to the device at controlled environment.
+Attacker adjusts the distance between the masked face and the device seeing relevant attack video clip or attacker adjusts to right distance so that the device camera can’t see the edge of mask.
+Attacker also presents his masked face to minimize the reflection from ambient lighting on the print.
+
+Attack Potential
+tbd
+
+Pass Criteria
+All unlock attempts shall be rejected. Proposed algorithms in the existing research papers are capable to detect this primitive attack.
+
+Other
+Number of users: 1
+Number of Presentations: 10 attempts for each PAI
+
+
+

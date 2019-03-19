@@ -1,0 +1,43 @@
+Number
+Face 5-1
+
+Attack type
+HR Video replay attack
+
+Overview
+A High Resolution video display of the user’s full face is presented to the TOE.
+
+Input
+Video of target user that meet the following conditions:
+	•	video was taken under controlled environment where the background of the scene is uniform, the light in the office is switched on and the window blinds are down
+	•	video was taken right after the target user’s enrollment and under the same environment to reduce the possibility that the PAI is rejected because of the difference of the background scene or expression
+	•	target user’s eyes are open and entire face is visible (i.e. well lit room)
+	•	video includes user’s full face
+
+Tools
+T.1a or T.1b type 2
+T.5
+
+Recipe
+Attacker records a video of the user using HR Camera.
+Attacker uses a computer and enhances the recording using basic video editing software to select only relevant portions of the video. Attacker doesn’t use video editing software to enhance quality of face image.
+Attacker stores video on a mobile device.
+Attacker replays the HR video recording on the screen.
+
+Prerequisite
+Target user enrolled at least one face on the TOE.
+
+Presentation
+Attacker presents the screen displaying the video recording to the tested device by hand at controlled environment.
+Attacker adjusts the distance between the screen and the device seeing relevant attack video clip or attacker adjusts to right distance so that the device camera can’t see the edge of the mobile device used to display.
+Attacker also presents the screen to minimize the reflection from ambient lighting.
+
+Attack Potential
+tbd
+
+Pass Criteria
+All unlock attempts shall be rejected. Proposed algorithms in the existing research papers are capable to detect this primitive attack.
+
+Other
+Number of users: 1
+Number of Presentations: 10 attempts for each PAI
