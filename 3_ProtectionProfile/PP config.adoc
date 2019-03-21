@@ -37,7 +37,7 @@ This PP-Configuration includes the following components:
 
 *Conformance Statement*
 
-To be conformant to this PP-Configuration, an ST must demonstrate Exact Conformance, a subset of Strict Conformance as defined in [CC1] (ASE_CCL).
+To be conformant to this PP-Configuration, an ST must demonstrate Exact Conformance, a subset of Strict Conformance as defined in [MDFPP].
 
 The ST must include all components in the Base-PP that are:
 
@@ -75,6 +75,7 @@ In order to evaluate a TOE that claims conformance to this PP-Configuration, the
 | |Preparative Procedures (AGD_PRE.1)
 |Life Cycle Support (ALC) |Labeling of the TOE (ALC_CMC.1)
 | |TOE CM Coverage (ALC_CMS.1)
+| |Timely Security Updates (ALC_TSU_EXT)
 |Tests (ATE) |Independent testing - conformance (ATE_IND.1)
 |Vulnerability Assessment (AVA) |Vulnerability Survey (AVA_VAN.1)
 |===
@@ -102,13 +103,16 @@ CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
 |[CEM] |Common Methodology for Information Technology Security Evaluation, +
 Evaluation Methodology, +
 CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
+|[addenda] |CC and CEM addenda, +
+Exact Conformance, Selection-Based SFRs, Optional SFRs, +
+Version 0.5, May 2017.
 |===
 
 *Protection Profiles*
 
 [cols=",",]
 |===
-|[MDFPP] |Protection Profile for Mobile Device Fundamentals, Version:3.1, 2017-06-16
+|[MDFPP] |Protection Profile for Mobile Device Fundamentals, Version:3.2
 |[BIOcPP Module] |collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -, January 31, Version 0.8, 2019
 |===
 

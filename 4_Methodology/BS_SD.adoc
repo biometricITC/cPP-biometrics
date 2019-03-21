@@ -788,7 +788,7 @@ There is additional application note related to EAs for FIA_MBV_EXT.3 in <<Addit
 
 === Class ALC: Life-cycle Support
 
-The evaluator shall take the following additional application notes into account to perform EAs defined in [MDFPP] for [BIOcPP Module]. There is no application note for EA for ALC_CMS.1.
+The evaluator shall take the following additional application notes into account to perform EAs defined in [MDFPP] for [BIOcPP Module]. There is no application note for EA for ALC_CMS.1 and ALC_TSU_EXT.
 
 ==== Application note for EA of ALC_CMC.1
 
@@ -1557,6 +1557,10 @@ CCMB-2017-04-003, Version 3.1 Revision 5, April 2017
 Evaluation Methodology, +
 CCMB-2017-04-004, Version 3.1 Revision 5, April 2017
 
+[addenda] CC and CEM addenda, +
+Exact Conformance, Selection-Based SFRs, Optional SFRs, +
+Version 0.5, May 2017
+
 [ISO15408-4] Evaluation criteria for IT security – Part 4: Framework for the specification of evaluation methods and activities, under development.
 
 [ISO19792] Security evaluation of biometrics, First edition.
@@ -1573,7 +1577,7 @@ CCMB-2017-04-004, Version 3.1 Revision 5, April 2017
 
 [ISO30107-3] Biometric presentation attack detection — Part 3: Testing and reporting, First edition.
 
-[MDFPP] Protection Profile for Mobile Device Fundamentals, Version 3.1, 2017-06-16
+[MDFPP] Protection Profile for Mobile Device Fundamentals, Version 3.2
 
 [Toolbox] *TBD*
 
