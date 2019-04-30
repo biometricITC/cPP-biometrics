@@ -333,7 +333,7 @@ The following table describes how the assumptions, threats, and organizational s
 |<<O.Enrol>>	
 |The OSP <<OSP.Enrol>> is enforced by <<O.Enrol>> as this require the TOE to implement the functionality to enrol a user for mobile biometric verification and create sufficient quality of templates.
 
-|<<T.Presentation_Attack OSP.PAD_Error>>	
+|<<T.Presentation_Attack>> <<OSP.PAD_Error>>	
 |<<O.Presentation_Attack_Detection>>	
 |The threat <<T.Presentation_Attack>> is countered by <<O.Presentation_Attack_Detection>> as this provides the capability of mobile biometric verification to prevent attacks with artificial PAIs. The OSP <<OSP.PAD_Error>> is enforced by <<O.Presentation_Attack_Detection>> as this requires the TOE to meet relevant criteria for security relevant error rates for PAD.
 
