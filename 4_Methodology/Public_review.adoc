@@ -1,0 +1,57 @@
+= Public Review of the Biometric iTC cPP-Module & Supporting Document
+:showtitle:
+:toc:
+:toclevels: 3
+:table-caption: Table
+:revnumber: 0.1
+:revdate: 2019-04-30
+:xrefstyle: full
+
+== Introduction
+
+This is an announcement of a public review period for the cPP-Module and cPP-Module Supporting Document from the Biometrics iTC.
+
+This document will provide information about where to find the documents, how to provide feedback and information about the current status of the documents.
+
+== Documents for Review
+
+The following are the documents are included in this review:
+
+.Documents
+[[DocTable]]
+|===
+|Title |Version |Link
+
+|collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -
+|0.8
+|<somewhere on GitHub> <link to comment spreadsheet>
+
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -
+|0.3
+|<somewhere on GitHub> <link to comment spreadsheet>
+
+|===
+
+== Current Document Status
+The Biometrics iTC considers these documents to be complete except for sections related to AVA_VAN. The iTC is working with the sponsoring and interested schemes on determining the appropriate way to include AVA_VAN in the cPP-Module and Supporting Document for mutual recognition. Outside of these small sections of the documents, the content is currently considered complete.
+
+== Review Process
+There are two ways to contribute comments and suggestions to the iTC. The first is through GitHub, the second by spreadsheet.
+
+Each comment must have a suggested resolution be proposed if a change is needed to the document.
+
+The public review period is scheduled for 45 days from <some date>, ending on <some later date>. 
+
+=== GitHub Review Process
+To use GitHub to submit comments, you must have a GitHub account (and it is assumed you know how to use GitHub). Each comment should be submitted as an individual [Issue](https://github.com/biometricITC/cPP-biometrics/issues) with the Label "Public Review" assigned. Pull Requests created for any issues will be linked to for tracability.
+
+=== Spreadsheet Review Process
+Along with the link in <<DocTable>> for each document is a link to the spreadsheet to be used for comments. Email the spreadsheets to <some email address>.
+
+=== AVA_VAN Review
+In the Supporting Document, the following sections are directly related to the AVA_VAN discussions that are ongoing:
+
+ - 5.6. Class AVA: Vulnerability Assessment
+ - 6.3. EA for AVA_VAN.1 (Vulnerability survey)
+
+Comments to these two sections will be reviewed, but any changes will not be performed until after the AVA_VAN discussions are complete, at which point any comments will be further reviewed based on the udpated document.
