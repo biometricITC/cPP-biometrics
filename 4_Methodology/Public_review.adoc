@@ -24,11 +24,11 @@ The following are the documents are included in this review:
 
 |collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
 |0.8
-|<somewhere on GitHub> <link to comment spreadsheet>
+|https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
 
 |Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
 |0.3
-|<somewhere on GitHub> <link to comment spreadsheet>
+|https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
 
 |===
 
