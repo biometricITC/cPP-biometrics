@@ -1,9 +1,9 @@
-= PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -
+= PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
 :showtitle:
 :toc:
 :table-caption: Table
 :revnumber: 0.8
-:revdate: 2019-01-31
+:revdate: 2019-05-01
 
 == Acknowledgements
 
@@ -21,7 +21,7 @@ The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that
 
 This PP-Configuration is identified as follows:
 
-* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device - version 0.8, January 31, 2019
+* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - version 0.8, May 01, 2019
 * As a shorthand reference, it can be identified as "BIO+MDF"
 
 === PP-Configuration Components Statement
@@ -29,7 +29,7 @@ This PP-Configuration is identified as follows:
 This PP-Configuration includes the following components:
 
 * Base-PP: Protection Profile for Mobile Device Fundamentals [MDFPP]
-* PP-Module: collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOcPP Module].
+* PP-Module: collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOcPP Module].
 
 == Conformance Claims
 
@@ -113,7 +113,7 @@ Version 0.5, May 2017.
 [cols=",",]
 |===
 |[MDFPP] |Protection Profile for Mobile Device Fundamentals, Version:3.2
-|[BIOcPP Module] |collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -, January 31, Version 0.8, 2019
+|[BIOcPP Module] |collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -, January 31, Version 0.8, 2019
 |===
 
 === Revision History
