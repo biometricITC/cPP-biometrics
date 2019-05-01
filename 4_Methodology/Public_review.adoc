@@ -1,15 +1,15 @@
-= Public Review of the Biometric iTC cPP-Module & Supporting Document
+= Public Review of the Biometric iTC PP-Module & Supporting Document
 :showtitle:
 :toc:
 :toclevels: 3
 :table-caption: Table
 :revnumber: 0.1
-:revdate: 2019-04-30
+:revdate: 2019-05-01
 :xrefstyle: full
 
 == Introduction
 
-This is an announcement of a public review period for the cPP-Module and cPP-Module Supporting Document from the Biometrics iTC.
+This is an announcement of a public review period for the PP-Module and PP-Module Supporting Document from the Biometrics iTC.
 
 This document will provide information about where to find the documents, how to provide feedback and information about the current status of the documents.
 
@@ -22,11 +22,11 @@ The following are the documents are included in this review:
 |===
 |Title |Version |Link
 
-|collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -
+|collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
 |0.8
 |<somewhere on GitHub> <link to comment spreadsheet>
 
-|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
 |0.3
 |<somewhere on GitHub> <link to comment spreadsheet>
 
