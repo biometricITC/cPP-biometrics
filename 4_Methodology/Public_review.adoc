@@ -94,9 +94,9 @@ The Biometrics iTC follows the document release process below for the publicatio
 |===
 
 === Review Process
-There are two ways to contribute comments and suggestions to the iTC. The first is through GitHub, the second by spreadsheet.
+There are two ways to contribute comments and suggestions to the iTC. The first is through GitHub, the second by spreadsheet. It should be noted however that comments that are received via the spreadsheet will be added to the github platform to allow for a comprehensive discussion. Also, feedback for comments is only provided via the answers in the github comments. 
 
-Each comment must have a suggested resolution be proposed if a change is needed to the document.
+Each comment should have a suggested resolution be proposed if a change is needed to the document.
 
 ==== GitHub Review Process
 To use GitHub to submit comments, you must have a GitHub account (and it is assumed you know how to use GitHub). Each comment should be submitted as an individual [Issue](https://github.com/biometricITC/cPP-biometrics/issues) with the Label "Public Review" assigned. Pull Requests created for any issues will be linked to these Issues for tracability.
@@ -112,7 +112,7 @@ Comments on these specific topics can be made separately.
 === Publish as PP-Module or PP
 The original focus for the iTC was to create a standalone PP and rely on PP-Configurations for combining with the MDFPP, GPOSPP or others. Later the iTC modified the PP into a PP-Module for somewhat easier integration with the MDFPP (the primary target device at this time).
 
-The iTC is considering several possible options for the final output, including, if necessary, releasing both a PP and a PP-Module with common SFRs but different SAR requirements.
+The iTC is considering several possible options for the final output, including, if necessary, releasing both a PP and a PP-Module sharing ressources where appropiate.
 
 === AVA_VAN Review
 The iTC has been considering the appropriate amount of vulnerability assessment for biometric systems. As a group, the iTC has reached out to the supporting and interested schemes for assistance in resolving the issues that have been raised regarding the inclusion of AVA_VAN. The iTC is waiting for feedback and direction from the schemes involved on the next steps related to this issue (and it will likely have an impact on the PP or PP-Module question as well).
