@@ -114,7 +114,7 @@ The documents under review are the current state of output. Two major areas of d
 Comments on these specific topics can be made separately.
 
 === Publish as PP-Module or PP
-The original focus for the iTC was to create a standalone PP that would be evaluated separately but recommended to be used with the other PP (e.g. MDFPP or GPOSPP) that defines security requirements to provide the secure environment for the biometric enrolment and verification. Later the iTC modified the PP into a PP-Module for somewhat easier integration with the MDFPP (the primary target device at this time).
+The original focus for the iTC was to create a standalone PP that would be evaluated separately that defines security requirements to provide the secure environment for the biometric enrolment and verification. Later the iTC modified the PP into a PP-Module for somewhat easier integration with the MDFPP (the primary target device at this time).
 
 The iTC is considering several possible options for the final output, including, if necessary, releasing both a PP and a PP-Module sharing ressources where appropiate.
 
