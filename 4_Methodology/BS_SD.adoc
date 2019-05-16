@@ -1162,7 +1162,7 @@ The developer shall follow recommendations or minimum requirements below to cond
 
 ==== Test scenario for mobile biometric verification
 
-The developer shall follow the guidance in this Section to define the transaction if the developer selects FAR and FRR in FIA_MBV_EXT.1 or define the number of samples per each test subject if the developer selects FMR and FNMR in FIA_MBV_EXT.1
+The developer shall follow the guidance in this Section to define the transaction if the developer selects FAR and FRR in FIA_MBV_EXT.1 or to define the number of samples per each test subject if the developer selects FMR and FNMR in FIA_MBV_EXT.1.
 
 The user may use the mobile biometric verification in a different way.
 
