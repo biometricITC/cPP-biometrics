@@ -4,7 +4,7 @@
 :toclevels: 3
 :table-caption: Table
 :revnumber: 0.1
-:revdate: 2019-05-01
+:revdate: 2019-05-16
 :xrefstyle: full
 
 == Introduction
@@ -48,22 +48,22 @@ The Biometrics iTC follows the document release process below for the publicatio
 [ditaa]
 ....
                                   
-    +----------+    +--------+   +---------+   +----------+
-    |          |    | cYEL   |   |         |   |          |
-    | Internal |    | Public |   | Public  |   | Proposed |
-    |  Draft   |--> | Review |-->| Review  |-->|  Draft   |-+
-    |          |    | Draft  |   | Update  |   |          | |
-    |          |    | (45d)  |   | (30-60d)|   | (30d)    | |
-    +----------+    +--------+   +---------+   +----------+ |
-                                                            |
-            +-----------------------------------------------+
-            |   +-----------+   +-----------+
-            |   |           |   |           |
-            |   | Proposed  |   | Final     |
-            +-->|  Update   |-->| Document  |
-                |           |   | Published |
-                | (10d)     |   |           |
-                +-----------+   +-----------+
+    +----------+    +----------+   +----------+   +----------+   +----------+
+    |          |    |  cYEL    |   | Public   |   |          |   | Public   |
+    | Internal |    |  Public  |   | Review   |   |  Public  |   | Review   |
+    |  Draft   |--> |  Review  |-->| Draft 1  |-->|  Review  |-->| Draft 2  |-+
+    |          |    |  Draft 1 |   | Update   |   |  Draft 2 |   | Update   | |
+    |          |    |  (45d)   |   | (30-60d) |   |  (45d)   |   | (30-60d) | |
+    +----------+    +----------+   +----------+   +----------+   +----------+ |
+                                                                              |
+            +-----------------------------------------------------------------+
+            |   +----------+   +----------+   +-----------+
+            |   |          |   |          |   |           |
+            |   | Proposed |   | Proposed |   | Final     |
+            +-->|  Draft   |-->|  Update  |-->| Document  |
+                |          |   |          |   | Published |
+                | (30d)    |   | (10d)    |   |           |
+                +----------+   +----------+   +-----------+
 ....
 
 .Review Timeline
@@ -75,13 +75,21 @@ The Biometrics iTC follows the document release process below for the publicatio
 |
 |The normal, pre-release process for creating the documents
 
-|Public Review Draft
+|Public Review Draft 1
 |45 days
 |iTC has voted according to Terms of Reference to release this version for public review. Public (i.e. from non-iTC participants) comments are accepted during this period
 
-|Public Review Update
+|Public Review Draft 1 Update
 |30 to 60 days
-| The iTC will review all received comments and update the documents accordingly
+|The iTC will review all received comments and update the documents accordingly
+
+|Public Review Draft 2 (Optional)
+|45 days
+|iTC has voted according to Terms of Reference to release this version for public review. Public (i.e. from non-iTC participants) comments are accepted during this period
+
+|Public Review Draft 2 Update (Optional)
+|30 to 60 days
+|The iTC will review all received comments and update the documents accordingly
 
 |Proposed Draft
 |30 days
@@ -97,13 +105,15 @@ The Biometrics iTC follows the document release process below for the publicatio
 
 |===
 
+The iTC may decide, based on the comments received during the Public Review Draft 1 period, that a Public Review Draft 2 period is needed. Public announcement of a second review draft or a proposed draft will be made once all comments have been addressed.
+
 === Review Process
 There are two ways to contribute comments and suggestions to the iTC. The first is through GitHub, the second by spreadsheet. It should be noted however that comments that are received via the spreadsheet will be added to the github platform to allow for a comprehensive discussion. Also, feedback for comments is only provided via the answers in the github comments. 
 
 Each comment should have a suggested resolution be proposed if a change is needed to the document.
 
 ==== GitHub Review Process
-To use GitHub to submit comments, you must have a GitHub account (and it is assumed you know how to use GitHub). Each comment should be submitted as an individual [Issue](https://github.com/biometricITC/cPP-biometrics/issues) with the Label "Public Review" assigned. Pull Requests created for any issues will be linked to these Issues for tracability.
+To use GitHub to submit comments, you must have a GitHub account (and it is assumed you know how to use GitHub). Each comment should be submitted as an individual https://github.com/biometricITC/cPP-biometrics/issues[Issue] with the Label "Public Review" assigned. Pull Requests created for any issues will be linked to these Issues for tracability.
 
 ==== Spreadsheet Review Process
 Along with the link in <<DocTable>> for each document is a link to the spreadsheet to be used for comments. Email the spreadsheets to <some email address>.
