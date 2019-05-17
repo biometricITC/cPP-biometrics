@@ -53,7 +53,7 @@ The Biometrics iTC follows the document release process below for the publicatio
     | Internal |    |  Public  |   | Review   |   |  Public  |   | Review   |
     |  Draft   |--> |  Review  |-->| Draft 1  |-->|  Review  |-->| Draft 2  |-+
     |          |    |  Draft 1 |   | Update   |   |  Draft 2 |   | Update   | |
-    |          |    |  (45d)   |   | (30-60d) |   |  (45d)   |   | (30-60d) | |
+    |          |    |  (45d)   |   | (60d)    |   |  (45d)   |   | (60d)    | |
     +----------+    +----------+   +----------+   +----------+   +----------+ |
                                                                               |
             +-----------------------------------------------------------------+
@@ -80,7 +80,7 @@ The Biometrics iTC follows the document release process below for the publicatio
 |iTC has voted according to Terms of Reference to release this version for public review. Public (i.e. from non-iTC participants) comments are accepted during this period
 
 |Public Review Draft 1 Update
-|30 to 60 days
+|Up to 60 days
 |The iTC will review all received comments and update the documents accordingly
 
 |Public Review Draft 2 (Optional)
@@ -88,7 +88,7 @@ The Biometrics iTC follows the document release process below for the publicatio
 |iTC has voted according to Terms of Reference to release this version for public review. Public (i.e. from non-iTC participants) comments are accepted during this period
 
 |Public Review Draft 2 Update (Optional)
-|30 to 60 days
+|Up to 60 days
 |The iTC will review all received comments and update the documents accordingly
 
 |Proposed Draft
