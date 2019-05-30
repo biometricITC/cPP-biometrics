@@ -879,7 +879,7 @@ If the evaluator can find new PAI species, the evaluator shall consider the foll
 [loweralpha]
 . Attacker’s motivation
 +
-For enhanced security that is easy to use, the TOE implements mobile biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the mobile device. The SD assumes that the mobile device is not used for security sensitive services through the mobile biometric verification.
+For enhanced security that is easy to use, the TOE implements mobile biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the mobile device. The SD assumes that the mobile biometric verification is being used in accordance with USE CASE 1: Mobile biometric verification for unlocking the mobile device.
 
 Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face PAI) if such services are available at low cost.
 
