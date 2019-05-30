@@ -3,8 +3,8 @@
 :toc:
 :toclevels: 3
 :table-caption: Table
-:revnumber: 0.1
-:revdate: 2019-05-16
+:revnumber: 0.2
+:revdate: 2019-05-30
 :xrefstyle: full
 
 == Introduction
@@ -37,6 +37,10 @@ The following are the documents are included in this Public Review:
 |https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
 
 |Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
+|0.3
+|https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
+
+|Toolbox Overview for Testing Compliance for Mobile Biometric Enrolment and Verification
 |0.3
 |https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
 
@@ -126,7 +130,7 @@ Comments on these specific topics can be made separately.
 === Publish as PP-Module or PP
 The original focus for the iTC was to create a standalone PP that would be evaluated separately that defines security requirements to provide the secure environment for the biometric enrolment and verification. Later the iTC modified the PP into a PP-Module for somewhat easier integration with the MDFPP (the primary target device at this time).
 
-The iTC is considering several possible options for the final output, including, if necessary, releasing both a PP and a PP-Module sharing ressources where appropiate.
+The iTC is considering several possible options for the final output, including, if necessary, releasing both a PP and a PP-Module sharing resources where appropriate. The iTC will also consider appropriate PP-Configurations for handling integration with other PPs.
 
 === AVA_VAN Review
 The iTC has been considering the appropriate amount of vulnerability assessment for biometric systems. As a group, the iTC has reached out to the supporting and interested schemes for assistance in resolving the issues that have been raised regarding the inclusion of AVA_VAN. The iTC is waiting for feedback and direction from the schemes involved on the next steps related to this issue (and it will likely have an impact on the PP or PP-Module question as well).
@@ -136,4 +140,9 @@ In the Supporting Document, the following sections are directly related to the A
  - 5.6. Class AVA: Vulnerability Assessment
  - 6.3. EA for AVA_VAN.1 (Vulnerability survey)
 
-Comments to these two sections will be reviewed, but any changes will not be performed until after the AVA_VAN discussions with the schemes are complete, at which point any comments will be further reviewed based on the udpated document.
+Comments to these two sections will be reviewed, but any changes will not be performed until after the AVA_VAN discussions with the schemes are complete, at which point any comments will be further reviewed based on the updated document.
+
+=== Number of Subjects in PAD Testing
+While the iTC is still working on the PAD toolboxes, the Toolbox Overview has been written to provide a consistent framework for tests.
+
+The iTC is specifically interested in comments regarding the appropriate number of subjects which should be required for each test. 
