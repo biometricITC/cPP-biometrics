@@ -9,7 +9,7 @@
 
 == Introduction
 
-This is an announcement of a public review period for the PP-Module and PP-Module Supporting Document from the Biometrics iTC. By design these documents do not provide information about the methodology for performing Presentation Attack Detection. These are being handled as a toolkit which can be updated separately (and ideally more rapidly) without needing changes to the PP-Module and Supporting Document.
+This is an announcement of a public review period for the PP-Module and PP-Module Supporting Document from the BIO-iTC. By design these documents do not provide information about the methodology for performing Presentation Attack Detection. These are being handled as a toolkit which can be updated separately (and ideally more rapidly) without needing changes to the PP-Module and Supporting Document.
 
 This document will provide information about where to find the documents, how to provide feedback and information about the current status of the documents.
 
@@ -47,7 +47,7 @@ The following are the documents are included in this Public Review:
 |===
 
 == Document Release Process
-The Biometrics iTC follows the document release process below for the publication of documents. Generally the PP (PP-Module and PP-Configuration) and SD would be released at the same time.
+The BIO-iTC follows the document release process below for the publication of documents. Generally the PP (PP-Module and PP-Configuration) and SD would be released at the same time.
 
 [ditaa]
 ....
