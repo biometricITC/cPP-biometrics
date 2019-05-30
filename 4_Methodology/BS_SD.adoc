@@ -826,7 +826,7 @@ However, [BIOPP-Module] doesn’t require such design representations about PAD 
 
 Instead, this SD requires the evaluator to conduct ATE_IND.1 evaluation (i.e. independent testing) in black-box manner. However, difficulty of black-box testing for PAD, as described in [ISO30107-3], is that it’s very difficult to have a comprehensive model of all possible PAIs. Therefore, it may be possible that different evaluator could use a different set of PAIs and see different test results for the same TOE.
 
-To solve this issue, the Biometric Security iTC (BS-iTC) creates [Toolbox]. This [Toolbox] defines the common PAIs for PAD testing based on publicly available information (e.g. research papers), experiences and knowledge shared among the BS-iTC members.
+To solve this issue, the Biometric Security iTC (BIO-iTC) creates [Toolbox]. This [Toolbox] defines the common PAIs for PAD testing based on publicly available information (e.g. research papers), experiences and knowledge shared among the BIO-iTC members.
 
 [Toolbox] includes a collection of test items for each biometric modality. Each test item describes the procedure to create PAIs and the method to present them to the TOE in sufficient detail to enable the test to be repeatable.
 
@@ -844,7 +844,7 @@ During the independent testing, the evaluator may find PAIs that are incorrectly
 
 The PAIs that pass the criteria but show the higher attack presentation match rate will be tested again during the AVA_VAN.1 evaluation.
 
-[Toolbox] does not necessarily cover all biometric modalities. If the developer wants to evaluate modalities not currently included in [Toolbox], the developer and evaluator shall contact to the BS-iTC to work together to extend [Toolbox]. Upon the BS-iTC approval of this extension, the evaluator can proceed with PAD evaluation for new modality.
+[Toolbox] does not necessarily cover all biometric modalities. If the developer wants to evaluate modalities not currently included in [Toolbox], the developer and evaluator shall contact to the BIO-iTC to work together to extend [Toolbox]. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for new modality.
 
 ==== Justification for EAs for ATE_IND.1
 
@@ -870,7 +870,7 @@ The evaluator shall perform EAs in <<No new PAIs found>> if there is no new PAI 
 
 ====== No new PAIs found
 
-If the evaluator can’t find such new PAI species, the evaluator doesn’t need to devise new test items in addition to those defined in [Toolbox] because the BS-iTC develops test items based on all publicly available information published by the publication date of [Toolbox]. The BS-iTC also verifies that test items cover all existing PAI species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. Therefore, the evaluator doesn’t need to repeat this process.
+If the evaluator can’t find such new PAI species, the evaluator doesn’t need to devise new test items in addition to those defined in [Toolbox] because the BIO-iTC develops test items based on all publicly available information published by the publication date of [Toolbox]. The BIO-iTC also verifies that test items cover all existing PAI species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. Therefore, the evaluator doesn’t need to repeat this process.
 
 ====== New PAIs found
 
@@ -938,7 +938,7 @@ For example, in case of finger or palm vein verification, quality of vein patter
 
 If the evaluator can find the new PAI species that can be used for the penetration testing, the evaluator shall produce the test item for those new PAI species and add them to [Toolbox]. The evaluator shall create those new test items at the same format and level of detail as existing ones in [Toolbox].
 
-The evaluator shall also inform the BS-iTC for this update because the BS-iTC is responsible for maintaining [Toolbox].
+The evaluator shall also inform the BIO-iTC for this update because the BIO-iTC is responsible for maintaining [Toolbox].
 
 The evaluator shall also perform EAs in <<No new PAIs found test plan>> to produce the test plan based on the result of independent testing.
 
