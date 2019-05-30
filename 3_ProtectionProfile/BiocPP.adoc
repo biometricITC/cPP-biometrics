@@ -8,7 +8,7 @@
 :revdate: 2019-05-01
 
 == Acknowledgements
-This collaborative PP-Module was developed by the Biometrics Security (BS) international Technical Community (iTC) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+This collaborative PP-Module was developed by the Biometrics Security international Technical Community (BIO-iTC) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
 
 == Preface
 
@@ -21,7 +21,7 @@ The scope of the PP-Module within the development and evaluation process is desc
 === Intended Readership
 The target audiences of this PP-Module are developers, CC consumers, system integrators, evaluators and schemes. 
 
-Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the BS iTC. 
+Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the BIO-iTC. 
 
 === Related Documents
 [bibliography]
