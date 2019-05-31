@@ -22,13 +22,13 @@ The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that
 This PP-Configuration is identified as follows:
 
 * PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - version 0.8, May 01, 2019
-* As a shorthand reference, it can be identified as "BIO+MDF"
+* As a shorthand reference, it can be identified as "PPC+MDF+BIO+01"
 
 === PP-Configuration Components Statement
 
 This PP-Configuration includes the following components:
 
-* Base-PP: Protection Profile for Mobile Device Fundamentals [MDFPP]
+* base PP: Protection Profile for Mobile Device Fundamentals [MDFPP]
 * PP-Module: collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOcPP Module].
 
 == Conformance Claims
@@ -39,7 +39,7 @@ This PP-Configuration includes the following components:
 
 To be conformant to this PP-Configuration, an ST must demonstrate Exact Conformance, a subset of Strict Conformance as defined in [MDFPP].
 
-The ST must include all components in the Base-PP that are:
+The ST must include all components in the base PP that are:
 
 * Unconditional (which are always required)
 * Selection-based (which are required when certain selections are chosen in the unconditional requirements)
