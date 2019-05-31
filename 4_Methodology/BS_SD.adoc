@@ -60,7 +60,7 @@ This Supporting Document was developed by the Biometric Security international T
 
 === Technology Area and Scope of Supporting Document
 
-This Supporting Document (SD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOPP-Module] that is intended for use with the following Base-PP: +
+This Supporting Document (SD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOPP-Module] that is intended for use with the following base PP: +
 
 
 *Protection Profile for Mobile Device Fundamentals ([MDFPP])*
