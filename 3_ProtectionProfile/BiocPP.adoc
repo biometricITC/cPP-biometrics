@@ -406,7 +406,7 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 
 *Application Note {counter:remark_count}*:: Value of FMR, FAR, FNMR and FRR shall be assigned by the ST author however the ST author should consider the following factors for setting those values.
 
-a)	Required minimum values defined in the standards
+a)	Allowed maximum values defined in the standards
 
 For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO21879>> is proposing that FAR would be 1 in 10000 or lower that is equal to a conventional four-digit PIN-Code for secure transaction. Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value. 
 
@@ -689,7 +689,7 @@ Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment
 
 *Application Note {counter:remark_count}*:: Value of FMR, FAR, FNMR and FRR shall be assigned by the ST author however the ST author should consider the following factors for setting those values.
 
-a)	Required minimum values defined in the standards
+a)	Allowed maximum values defined in the standards
 
 For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO21879>> is proposing that FAR would be 1 in 10000 or lower that is equal to a conventional four-digit PIN-Code for secure transaction. Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value.
 
