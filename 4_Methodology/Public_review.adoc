@@ -1,10 +1,10 @@
-= Public Review of the Biometric iTC PP-Module & Supporting Document
+= Public Review Draft 1 of the Biometric iTC PP-Module & Supporting Document Overview
 :showtitle:
 :toc:
 :toclevels: 3
 :table-caption: Table
-:revnumber: 0.3
-:revdate: 2019-06-05
+:revnumber: 1.0
+:revdate: 2019-06-12
 :xrefstyle: full
 
 == Introduction
@@ -13,36 +13,55 @@ This is an announcement of a public review period for the PP-Module and PP-Modul
 
 This document will provide information about where to find the documents, how to provide feedback and information about the current status of the documents.
 
-== Review Status Phase
-The documents listed here are in the *Public Review Draft* phase.
+Please email isec-itc-bio-info@ipa.go.jp if there are any questions about the Review process.
 
-Publication Date:: May 15, 2019 (placeholders)
-End of Comment Period:: June 30, 2019
+The latest status of the Review Period, including the latest copies of any documents, can be found at the https://biometricitc.github.io/[Biometrics Security iTC page].
+
+== Review Status Phase
+The documents listed here are in the *Public Review Draft 1* phase.
+
+Publication Date:: June 17, 2019
+End of Comment Period:: July 31, 2019
 
 == Documents for Review
 
-The following are the documents are included in this Public Review:
+The following are the documents included in this Public Review Draft 1 Period:
 
-.Documents
+.Review Documents
 [[DocTable]]
+[cols="3,1,2",options="header"]
 |===
-|Title |Version |Link
+|Title ^|Version ^|Link
 
 |collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
-|0.8
-|https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
+.^|0.8
+^.^|https://ccusersforum.onlyoffice.com/products/files/#2525570/MOD-BIO-enrl-v0.8DRAFT.pdf[Download PP-Module]
 
 |PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -
-|0.8
-|https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
+.^|0.8
+^.^|https://ccusersforum.onlyoffice.com/products/files/#2525570/PPC+MDF+BIO-v0.8DRAFT.pdf[Download PP-Configuration]
 
 |Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
-|0.3
-|https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
+.^|0.3
+^.^|https://ccusersforum.onlyoffice.com/products/files/#2525570/SD-BIO-enrl-v0.3DRAFT.pdf[Download Supporting Document]
 
 |Toolbox Overview for Testing Compliance for Mobile Biometric Enrolment and Verification
-|0.3
-|https://www.commoncriteriaportal.org/communities/Bio.cfm <link to comment spreadsheet>
+.^|0.3
+^.^|https://ccusersforum.onlyoffice.com/products/files/#2525570/BIO-PAD-Toolbox-Overview-v0.3DRAFT.pdf[Download Toolbox Overview]
+
+|===
+
+The following are the documents to use in support of the Public Review Draft 1 Period.
+
+.Supporting Documents
+[[SupDocTable]]
+[cols="1,1",options="header"]
+|===
+|Title ^|Link
+
+.^|Comment Matrix
+^|https://ccusersforum.onlyoffice.com/products/files/#2525570/BIO-iTC-CommentsMatrix.xlsx[Download Comment Matrix]
+
 
 |===
 
@@ -122,15 +141,17 @@ PAD Toolbox drafts will be published with this review (final review on toolboxes
 The iTC may decide, based on the comments received during the Public Review Draft 1 period, that a Public Review Draft 2 period is needed. Public announcement of a second review draft or a proposed draft will be made once all comments have been addressed.
 
 === Review Process
-There are two ways to contribute comments and suggestions to the iTC. The first is through GitHub, the second by spreadsheet. It should be noted however that comments that are received via the spreadsheet will be added to the GitHub platform to allow for a comprehensive discussion. Also, feedback for comments is only provided via the answers in the github comments. 
+There are two ways to contribute comments and suggestions to the iTC. The first is through GitHub, the second by spreadsheet. It should be noted however that comments that are received via the spreadsheet will be added to the GitHub platform to allow for a comprehensive discussion. Also, feedback for comments is only provided via the answers in the GitHub comments. 
 
 Each comment should have a suggested resolution be proposed if a change is needed to the document.
 
 ==== GitHub Review Process
 To use GitHub to submit comments, you must have a GitHub account (and it is assumed you know how to use GitHub). Each comment should be submitted as an individual https://github.com/biometricITC/cPP-biometrics/issues[Issue] with the Label "Public Review" assigned. Pull Requests created for any issues will be linked to these Issues for traceability.
 
-==== Spreadsheet Review Process
-Along with the link in <<DocTable>> for each document is a link to the spreadsheet to be used for comments. Email the spreadsheets to <some email address>.
+==== Comment Matrix Spreadsheet Review Process
+In the <<SupDocTable>> table there is a link to the Comment Matrix spreadsheet. There are instructions for using the Matrix on the second worksheet. Please create a separate copy of the spreadsheet for each document.
+
+Email the spreadsheets to isec-itc-bio-info@ipa.go.jp.
 
 == Additional Notes
 The documents under review are the current state of output. Two major areas of discussion within the iTC that are still under consideration within are noted below. 
