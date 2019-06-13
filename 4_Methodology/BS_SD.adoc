@@ -1563,21 +1563,25 @@ CCMB-2017-04-004, Version 3.1 Revision 5, April 2017
 Exact Conformance, Selection-Based SFRs, Optional SFRs, +
 Version 0.5, May 2017
 
-[ISO15408-4] Evaluation criteria for IT security – Part 4: Framework for the specification of evaluation methods and activities, under development.
+[ISO/IEC 15408-4] Evaluation criteria for IT security – Part 4: Framework for the specification of evaluation methods and activities, under development.
 
-[ISO19792] Security evaluation of biometrics, First edition.
+[ISO/IEC 19792] Security evaluation of biometrics, First edition.
 
-[ISO19795-1] Biometric performance testing and reporting - Part 1: Principles and framework, First edition.
+[ISO/IEC 19795-1] Biometric performance testing and reporting - Part 1: Principles and framework, First edition.
 
-[ISO19795-2] Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.
+[ISO/IEC 19795-2] Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.
 
-[ISO19795-3] Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
+[ISO/IEC 19795-3] Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
 
-[ISO19989-1] Criteria and methodology for security evaluation of biometric systems – Part 1: framework, under development.
+[ISO/IEC 19989-1] Criteria and methodology for security evaluation of biometric systems – Part 1: framework, under development.
 
-[ISO30107-1] Biometric presentation attack detection — Part 1: Framework, First edition.
+[ISO/IEC 19989-2] Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
 
-[ISO30107-3] Biometric presentation attack detection — Part 3: Testing and reporting, First edition.
+[ISO/IEC 21879] Performance testing of biometrics on mobile devices
+
+[ISO/IEC 30107-1] Biometric presentation attack detection — Part 1: Framework, First edition.
+
+[ISO/IEC 30107-3] Biometric presentation attack detection — Part 3: Testing and reporting, First edition.
 
 [MDFPP] Protection Profile for Mobile Device Fundamentals, Version 3.2
 
