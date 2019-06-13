@@ -1,14 +1,17 @@
-
 = collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
 :showtitle:
 :toc:
+:toclevels: 3
 :sectnums:
 :imagesdir: images
 :revnumber: 0.8
 :revdate: 2019-06-13
 
+:iTC-longame: Biometrics Security
+:iTC-shortname: BIO-iTC
+
 == Acknowledgements
-This collaborative PP-Module was developed by the Biometrics Security international Technical Community (BIO-iTC) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+This collaborative PP-Module was developed by the {iTC-longame} international Technical Community ({iTC-shortname}) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
 
 == Preface
 
@@ -21,29 +24,29 @@ The scope of the PP-Module within the development and evaluation process is desc
 === Intended Readership
 The target audiences of this PP-Module are developers, CC consumers, system integrators, evaluators and schemes. 
 
-Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the BIO-iTC. 
+Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the {iTC-shortname}. 
 
 === Related Documents
 [bibliography]
-- [[[CC1]]]	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.
-- [[[CC2]]] Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.
-- [[[CC3]]]	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
-- [[[CEM]]]	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
-- [[[addenda]]]	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
-- [[[SD]]]	Evaluation Activities for collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
-- [[[ISO19795-1]]]	Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
-- [[[ISO19989-2]]] Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
-- [[[ISO19989-3]]] Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
-- [[[ISO21879]]] Performance testing of biometrics on mobile devices
-- [[[ISO29156]]] Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
-- [[[ISO30107-1]]]	Biometric presentation attack detection - Part 1: Framework, First edition.
-- [[[ISO30107-3]]]	Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
-- [[[ISO30107-4]]] Information technology - Biometric presentation attack detection - Part 4: Profile for testing of mobile devices
-- [[[MDFPP]]]	Protection Profile for Mobile Device Fundamentals, Version:3.2
-- [[[NIST800-63B]]]	NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
+- [#CC1]#[CC1]#	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.
+- [#CC2]#[CC2]# Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.
+- [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
+- [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
+- [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
+- [#SD]#[SD]# Evaluation Activities for collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
+- [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
+- [#ISOIEC19989-2]#[ISO/IEC 19989-2]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
+- [#ISO19989-3]#[ISO/IEC 19989-3]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
+- [#ISO21879]#[ISO/IEC 21879]# Performance testing of biometrics on mobile devices
+- [#ISO29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
+- [#ISO30107-1]#[ISO/IEC 30107-1]# Biometric presentation attack detection - Part 1: Framework, First edition.
+- [#ISO30107-3]#[ISO/IEC 30107-3]#	Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
+- [#ISO30107-4]#[ISO/IEC 30107-4]# Information technology - Biometric presentation attack detection - Part 4: Profile for testing of mobile devices
+- [#MDFPP]#[MDFPP]#	Protection Profile for Mobile Device Fundamentals, Version:3.2
+- [#NIST800-63B]#[NIST800-63B]# NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
 === Glossary
-For the purpose of this PP-Module, the following terms and definitions given in <<ISO19795-1>>, <<ISO30107-1>> and <<MDFPP>> apply. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the mobile biometric enrolment and verification.
+For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>>, <<ISO30107-1,ISO/IEC 30107-1>> and <<MDFPP>> apply. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the mobile biometric enrolment and verification.
 
 [glossary]
 Attempt::
@@ -151,7 +154,7 @@ c)	Presentation Attack Detection (PAD)
 The TOE needs to consider the risk of subverting the TOE’s biometric verification. Attacker could present artificial PAIs to the TOE to interfere with the TOE’s security objectives. The TOE needs to be able to provide resistance to presentation attacks. <<SD>> explains what resistance should be provided by the TOE in detail.
 
 === TOE Design
-The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the mobile biometric enrolment and verification processes rely on.
+The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1,ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the mobile biometric enrolment and verification processes rely on.
 
 [#img-TOE-generic]
 .Generic representation of a TOE
@@ -285,7 +288,7 @@ Requirement to provide a presentation attack detection mechanism during mobile b
 
 *Application Note {counter:remark_count}*:: The TOE may or may not counter a presentation attack during enrolment. If the ST author requires the TOE to counter the presentation attack during enrolment, ST author should include FIA_MBE_EXT.3 defined in <<Optional Requirements>>.
 
-*Application Note {counter:remark_count}*:: According to the <<ISO30107-3>>, relevant error rates should be specified for each type of PAI. <<SD>> defines PAIs that should be used for attack and describes how to create and present the PAIs to the TOE, and minimum error rates that the TOE shall achieve.
+*Application Note {counter:remark_count}*:: According to the <<ISO30107-3,ISO/IEC 30107-3>>, relevant error rates should be specified for each type of PAI. <<SD>> defines PAIs that should be used for attack and describes how to create and present the PAIs to the TOE, and minimum error rates that the TOE shall achieve.
 
 [[O.Protection]]O.Protection::
 The TOE shall protect biometric data using the secure execution environment provided by the TOE environment.
@@ -412,7 +415,7 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 
 a)	Allowed maximum values defined in the standards
 
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR". Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value. 
+For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR". Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value. 
 
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
 
@@ -469,7 +472,7 @@ This PP-Module does not define any additional assurance requirements above and b
 
 == Consistency Rationale
 
-=== MDFPP
+=== Protection Profile for Mobile Device Fundamentals
 
 ==== Consistency of TOE Type
 
@@ -695,7 +698,7 @@ Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment
 
 a)	Allowed maximum values defined in the standards
 
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR". Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value.
+For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR". Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value.
 
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
 
