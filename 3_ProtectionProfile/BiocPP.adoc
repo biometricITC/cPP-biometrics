@@ -5,7 +5,7 @@
 :sectnums:
 :imagesdir: images
 :revnumber: 0.8
-:revdate: 2019-05-01
+:revdate: 2019-06-13
 
 == Acknowledgements
 This collaborative PP-Module was developed by the Biometrics Security international Technical Community (BIO-iTC) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
@@ -32,9 +32,13 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 - [[[addenda]]]	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
 - [[[SD]]]	Evaluation Activities for collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
 - [[[ISO19795-1]]]	Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
-- [[[ISO29156]]]	Information technology -- Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
-- [[[ISO30107-1]]]	Biometric presentation attack detection — Part 1: Framework, First edition.
-- [[[ISO30107-3]]]	Biometric presentation attack detection — Part 3: Testing and reporting, First edition.
+- [[[ISO19989-2]]] Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
+- [[[ISO19989-3]]] Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
+- [[[ISO21879]]] Performance testing of biometrics on mobile devices
+- [[[ISO29156]]] Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
+- [[[ISO30107-1]]]	Biometric presentation attack detection - Part 1: Framework, First edition.
+- [[[ISO30107-3]]]	Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
+- [[[ISO30107-4]]] Information technology - Biometric presentation attack detection - Part 4: Profile for testing of mobile devices
 - [[[MDFPP]]]	Protection Profile for Mobile Device Fundamentals, Version:3.2
 - [[[NIST800-63B]]]	NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
