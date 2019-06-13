@@ -32,7 +32,7 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 - [[[addenda]]]	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
 - [[[SD]]]	Evaluation Activities for collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
 - [[[ISO19795-1]]]	Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
-- [[[ISO21879]]]	Performance testing of biometrics on mobile devices, under development.
+- [[[ISO29156]]]	Information technology -- Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
 - [[[ISO30107-1]]]	Biometric presentation attack detection — Part 1: Framework, First edition.
 - [[[ISO30107-3]]]	Biometric presentation attack detection — Part 3: Testing and reporting, First edition.
 - [[[MDFPP]]]	Protection Profile for Mobile Device Fundamentals, Version:3.2
@@ -408,7 +408,7 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 
 a)	Allowed maximum values defined in the standards
 
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO21879>> is proposing that FAR would be 1 in 10000 or lower that is equal to a conventional four-digit PIN-Code for secure transaction. Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value. 
+For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR". Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value. 
 
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
 
@@ -691,7 +691,7 @@ Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment
 
 a)	Allowed maximum values defined in the standards
 
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO21879>> is proposing that FAR would be 1 in 10000 or lower that is equal to a conventional four-digit PIN-Code for secure transaction. Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value.
+For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR". Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value.
 
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
 
