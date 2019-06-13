@@ -4,7 +4,7 @@
 :toclevels: 3
 :table-caption: Table
 :revnumber: 1.0
-:revdate: 2019-06-12
+:revdate: 2019-06-13
 :xrefstyle: full
 
 == Introduction
@@ -35,19 +35,19 @@ The following are the documents included in this Public Review Draft 1 Period:
 
 |collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
 .^|0.8
-^.^|https://ccusersforum.onlyoffice.com/products/files/#2525570/MOD-BIO-enrl-v0.8DRAFT.pdf[Download PP-Module]
+^.^|https://biometricitc.github.io/pr-draft1/MOD-BIO-enrl-v0.8DRAFT.pdf[Download PP-Module]
 
 |PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -
 .^|0.8
-^.^|https://ccusersforum.onlyoffice.com/products/files/#2525570/PPC+MDF+BIO-v0.8DRAFT.pdf[Download PP-Configuration]
+^.^|https://biometricitc.github.io/pr-draft1/PPC+MDF+BIO-v0.8DRAFT.pdf[Download PP-Configuration]
 
 |Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
 .^|0.3
-^.^|https://ccusersforum.onlyoffice.com/products/files/#2525570/SD-BIO-enrl-v0.3DRAFT.pdf[Download Supporting Document]
+^.^|https://biometricitc.github.io/pr-draft1/SD-BIO-enrl-v0.3DRAFT.pdf[Download Supporting Document]
 
 |Toolbox Overview for Testing Compliance for Mobile Biometric Enrolment and Verification
 .^|0.3
-^.^|https://ccusersforum.onlyoffice.com/products/files/#2525570/BIO-PAD-Toolbox-Overview-v0.3DRAFT.pdf[Download Toolbox Overview]
+^.^|https://biometricitc.github.io/pr-draft1/BIO-PAD-Toolbox-Overview-v0.3DRAFT.pdf[Download Toolbox Overview]
 
 |===
 
@@ -60,7 +60,7 @@ The following are the documents to use in support of the Public Review Draft 1 P
 |Title ^|Link
 
 .^|Comment Matrix
-^|https://ccusersforum.onlyoffice.com/products/files/#2525570/BIO-iTC-CommentsMatrix.xlsx[Download Comment Matrix]
+^|https://biometricitc.github.io/pr-draft1/BIO-iTC-CommentsMatrix.xlsx[Download Comment Matrix]
 
 
 |===
