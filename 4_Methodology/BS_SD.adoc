@@ -4,8 +4,9 @@
 :toclevels: 3
 :table-caption: Table
 :imagesdir: images
-:revnumber: 0.3
-:revdate: 2019-05-01
+:icons: font
+:revnumber: 0.4
+:revdate: 2019-08-05
 :xrefstyle: full
 
 == Foreword
@@ -39,6 +40,10 @@ Biometric Security international Technical Community (BIO-iTC)
 |0.3
 |May 1, 2019
 |Third release for internal review
+
+|0.4
+August 5, 2019
+|Updates based on Public Review Draft 1 comments
 |===
 
 === General Purpose
@@ -200,11 +205,10 @@ The evaluator shall examine the TSS to understand how the TOE enrols a user and 
 
 ====== Strategy for ATE_IND
 
-The evaluator shall perform the following test to verify that the TOE performs the mobile biometric enrolment correctly.
+The evaluator shall perform the following steps to verify that the TOE performs the mobile biometric enrolment correctly.
 
-[loweralpha]
-. Step 1: The evaluator shall try to enrol him/herself without setting a password and confirm that he/she can’t enrol him/herself.
-. Step 2: The evaluator shall set a password and confirm that he/she can’t enrol him/herself without entering the password correctly beforehand.
+. The evaluator shall try to enrol him/herself without setting a password and confirm that he/she can’t enrol him/herself.
+. The evaluator shall set a password and confirm that he/she can’t enrol him/herself without entering the password correctly beforehand.
 
 ===== Pass/Fail criteria
 
@@ -249,6 +253,7 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 ===== Assessment Strategy
 
+[[MBE2]]
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
 *Enrolment templates*
@@ -262,15 +267,14 @@ The evaluator shall examine that “assessment criteria for templates” to chec
 . Method to quantify the quality of samples (e.g. method to generate quality score)
 . Assessment criteria to accept the sample of sufficient utility (e.g. compare quality score to quality threshold)
 . Quality standard that the TOE uses to perform the assessment if the TOE follows such standard (e.g. NFIQ for fingerprint)
-. Additional assessment criteria applied to creation of enrolment templates
 
 *Authentication templates*
 
 If the TOE creates authentication templates, the evaluator shall examine the TSS to understand how the TOE generate sufficient quality of authentication templates.
 
-The evaluator shall examine that the “assessment criteria for templates” to check that how the TOE creates the authenticate templates based on its assessment criteria. The “assessment criteria for templates” may include a) – d) in <<Strategy for ASE_TSS and AGD_OPE/ADV_FSP>> and;
+The evaluator shall examine that the “assessment criteria for templates” to check that how the TOE creates the authenticate templates based on its assessment criteria. The “assessment criteria for templates” may include a) – d) in <<MBE2>> and;
 
-[loweralpha, start=6]
+[loweralpha, start=5]
 . Additional assessment criteria to applied to creation of authentication templates
 
 ====== Strategy for ATE_IND
@@ -279,22 +283,20 @@ The evaluator shall examine that the “assessment criteria for templates” to 
 
 The evaluator shall perform the following test to verify that the TOE generates templates of sufficient quality.
 
-The following test requires the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
+The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-[loweralpha]
-. Step 1: The evaluator shall perform mobile biometric enrolment that results in creation of templates that don’t satisfy the assessment criteria described in “assessment criteria for templates” (e.g. presenting biometric samples of low quality)
-. Step 2: The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create enrolment templates that don’t meet the assessment criteria specified in the “assessment criteria for templates”
+. The evaluator shall perform mobile biometric enrolment that results in creation of templates that don’t satisfy the assessment criteria described in “assessment criteria for templates” (e.g. presenting biometric samples of low quality)
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create enrolment templates that don’t meet the assessment criteria specified in the “assessment criteria for templates”
 
 *Authentication templates*
 
 The evaluator shall perform the following test to verify that the TOE generates authentication templates of sufficient quality only if the evaluator judges that creating authentication templates is feasible.
 
-The following test requires the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
+The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-[loweralpha]
-. Step 1: The evaluator shall enrol him/herself
-. Step 2: The evaluator shall present biometric samples repeatedly to trigger the TOE to create authentication templates
-. Step 3: The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create authentication templates that don’t meet the assessment criteria specified in the “assessment criteria for templates”
+. The evaluator shall enrol him/herself
+. The evaluator shall present biometric samples repeatedly to trigger the TOE to create authentication templates
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create authentication templates that don’t meet the assessment criteria specified in the “assessment criteria for templates”
 
 ===== Pass/Fail criteria
 
@@ -343,7 +345,7 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 The evaluator shall examine the TSS to understand how the TOE verify a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify him/herself correctly and how the TOE behaves when mobile biometric verification is succeeded or failed.
 
-The evaluator shall examine “developer’s performance test document” to verify that the developer conducts the objective and repeatable performance testing. Minimum requirements for conducting performance testing are defined in <<Developer’s performance test document and its assessment strategy>> (Developer’s performance test document and its assessment strategy).
+The evaluator shall examine “developer’s performance test document” to verify that the developer conducts the objective and repeatable performance testing. Minimum requirements for conducting performance testing are defined in <<Developer’s performance test document and its assessment strategy>>.
 
 Requirements defined in <<Developer’s performance test document and its assessment strategy>> is based on the ISO/IEC 19795. This standard specifies requirements on performance test protocol, recording and reporting of results based on the best practices developed by relevant organizations. The evaluator shall confirm that “developer’s performance test document” meets all requirements in <<Developer’s performance test document and its assessment strategy>> and seek a rationale if “developer’s performance test document” doesn’t meet any requirements and determine whether the rationale is valid or not.
 
@@ -411,12 +413,11 @@ The evaluator shall examine that “assessment criteria for samples” to check 
 
 The evaluator shall perform the following test to verify that the TOE checks the quality of samples based on the assessment criteria.
 
-The following test requires the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
+The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-[loweralpha]
-. Step 1: The evaluator shall present biometric samples of low quality for mobile biometric verification that don’t satisfy the assessment criteria described in “assessment criteria for samples”
+. The evaluator shall present biometric samples of low quality for mobile biometric verification that don’t satisfy the assessment criteria described in “assessment criteria for samples”
 
-. Step 2: The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that don’t meet the assessment criteria specified in the “assessment criteria for samples”
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that don’t meet the assessment criteria specified in the “assessment criteria for samples”
 
 ===== Pass/Fail criteria
 
@@ -515,7 +516,7 @@ In any cases, the evaluator shall examine the TSS to confirm that;
 
 . All plaintext biometric data is retained in volatile memory within the SEE and any entities outside the SEE including mobile device operating system can’t access these data. Any TSFIs doesn’t reveal plaintext biometric data to any entities outside the SEE
 
-The evaluator shall keep in mind that the objective of this EA is not evaluating the SEE itself. This EA is derived from ASE_TSS.1.1 which requires that the TSS to provide potential consumers of the TOE with a high-level view of how the developer intends to satisfy each SFR. The evaluator shall check the TSS to seek for a logical explanation why above a) – c) is satisfied considering this scope of the requirement.
+The evaluator shall keep in mind that the objective of this EA is not evaluating the SEE itself. This EA is derived from ASE_TSS.1.1 which requires that the TSS to provide potential consumers of the TOE with a high-level view of how the developer intends to satisfy each SFR. The evaluator shall check the TSS to seek for a logical explanation why above a) – b) is satisfied considering this scope of the requirement.
 
 ===== Pass/Fail criteria
 
@@ -624,15 +625,14 @@ The evaluator shall examine the TSS to understand the activities that happen on 
 
 The evaluator shall perform the following test to verify that the TOE encrypts plaintext biometric data if the TOE stores the data in non-volatile memory outside the SEE.
 
-The following test requires the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
+The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-[loweralpha]
-. Step 1: The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on [MDFPP]
-. Step 2: The evaluator shall load an app onto the mobile device. This app shall attempt to traverse over all file systems and report any newly created files
-. Step 3: The evaluator shall perform mobile biometric enrolment and verification and run the app to list new files
-. Step 4: The evaluator shall compare files reported by the app and ones listed in “file list/format and cryptographic algorithm”
-. Step 5: If evaluator finds newly created files not listed in “file list/format and cryptographic algorithm”, the evaluator shall confirm that those files don’t include plaintext biometric data with the support from developer
-. Step 6: For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on [MDFPP]. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files don’t follow the defined format to implicitly assume files are encrypted.
+. The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on [MDFPP]
+. The evaluator shall load an app onto the mobile device. This app shall attempt to traverse over all file systems and report any newly created files
+. The evaluator shall perform mobile biometric enrolment and verification and run the app to list new files
+. The evaluator shall compare files reported by the app and ones listed in “file list/format and cryptographic algorithm”
+. If evaluator finds newly created files not listed in “file list/format and cryptographic algorithm”, the evaluator shall confirm that those files don’t include plaintext biometric data with the support from developer
+. For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on [MDFPP]. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files don’t follow the defined format to implicitly assume files are encrypted.
 
 ===== Pass/Fail criteria
 
@@ -676,11 +676,10 @@ The evaluator shall examine the TSS and AGD guidance to identify any TSFI throug
 
 ====== Strategy for ATE_IND
 
-The evaluator shall perform the following test to verify that the TOE protects the templates as specified in TSS and AGD guidance.
+The evaluator shall perform the following test steps to verify that the TOE protects the templates as specified in TSS and AGD guidance.
 
-[loweralpha]
-. Step 1: The evaluator shall perform functions through the TSFIs that access the templates
-. Step 2: The evaluator shall check that the TSFI requires either using a PIN, password or by other secure means, as specified by the ST author.
+. The evaluator shall perform functions through the TSFIs that access the templates
+. The evaluator shall check that the TSFI requires either using a PIN, password or by other secure means, as specified by the ST author.
 
 ===== Pass/Fail criteria
 
@@ -728,11 +727,10 @@ The evaluator shall examine the TSS to understand how the TOE verify a user with
 
 ====== Strategy for ATE_IND
 
-The evaluator shall perform the following test to verify that the TOE protects the templates as specified in TSS and AGD guidance.
+The evaluator shall perform the following test steps to verify that the TOE protects the templates as specified in TSS and AGD guidance.
 
-[loweralpha]
-. Step 1: The evaluator shall configure and perform hybrid authentication
-. Step 2: The evaluator shall check that the TOE can conduct hybrid authentication as specified, especially, when either factor is failed, the TOE doesn't reveal any information about which factor is failed
+. The evaluator shall configure and perform hybrid authentication
+. The evaluator shall check that the TOE can conduct hybrid authentication as specified, especially, when either factor is failed, the TOE doesn't reveal any information about which factor is failed
 
 ===== Pass/Fail criteria
 
@@ -880,7 +878,7 @@ If the evaluator can find new PAI species, the evaluator shall consider the foll
 . Attacker’s motivation
 +
 For enhanced security that is easy to use, the TOE implements mobile biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the mobile device. The SD assumes that the mobile biometric verification is being used in accordance with USE CASE 1: Mobile biometric verification for unlocking the mobile device.
-
++
 Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face PAI) if such services are available at low cost.
 
 . Assumptions in [BIOPP-Module]
@@ -931,9 +929,10 @@ However, the evaluator shall recreate the PAI at the similar cost and time as re
 The evaluator may follow the same procedure in [Toolbox] to recreate PAIs, however, from different test subjects from ones used for the independent testing.
 +
 For example, in case of finger or palm vein verification, men normally have thicker blood vessel than women. So, the evaluator may change the test subject who has thicker blood vessel to capture the clearer vein pattern.
-
+. Improve presentation method
++
 The evaluator may also increase time for PAI presentation training and habituation to find the better presentation method.
-
++
 For example, in case of finger or palm vein verification, quality of vein pattern gained from the sensor (NIR-camera) of the TOE may vary depending on the distance between the PAI and sensor, and how to present the PAI to the TOE. However, it’s not possible for the evaluator to know the best distance or presentation method for the PAI in advance because this SD requires the evaluator to test the TOE in black-box manner. The evaluator may simply increase the number of attempts to find the best distance or presentation through trial and error process.
 
 ====== New PAIs found test plan
@@ -954,7 +953,7 @@ However, the evaluator shall not spend more than one week for independent and pe
 
 ===== Determine Pass/Fail of penetration testing
 
-The evaluator shall determine that the TOE, in its operational environment, is resistant to an attacker possessing a Basic attack potential. The evaluator shall make this determination based on guidance provided in  <<Pass/Fail criteria for EAs for FIA_MBV_EXT.3>>.
+The evaluator shall determine that the TOE, in its operational environment, is resistant to an attacker possessing a Basic attack potential. The evaluator shall make this determination based on guidance provided in  <<Pass/Fail criteria for EAs for FIA_MBV_EXT.3>> and maximum allowable error rates defined in [Toolbox].
 
 ==== Justification for EAs for AVA_VAN.1
 
@@ -962,7 +961,7 @@ The EAs presented in this section are derived from AVA_VAN.1-3, AVA_VAN.1-4, AVA
 
 EAs in the <<Search for new PAIs>> and <<Identify candidate PAIs for testing>> complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new PAI) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
 
-EAs in <<Produce test plan>> and <<Conduct the penetration testing>> complements evaluator’s action for creating the test plan and conducting the penetration testing for PAD (AVA_VAN.1-6 and AVA_VAN.1-7)
+EAs in <<Produce test plan>> and <<Conduct the penetration testing>> complements evaluator’s action for creating the test plan and conducting the penetration testing for PAD (AVA_VAN.1-6 and AVA_VAN.1-7).
 
 EAs in <<Determine Pass/Fail of penetration testing>> provides specific guidance for pass or failure of the testing (AVA_VAN.1-10).
 
@@ -982,25 +981,29 @@ The developer shall provide the test document for CC evaluations that claim a co
 
 === Summary of contents
 
-Table 1 shows items that shall be reported in the test document. Name or structure of test document doesn’t need to follow Table 1. However, all items in Table 1 shall be written somewhere in the test document. Also, if some items are not included in the test document, the developer shall provide a rationale for such exclusion to the evaluator.
+<<ReportingItemsTable>> shows items that shall be reported in the test document. Name or structure of test document doesn’t need to follow <<ReportingItemsTable>>. However, all items in <<ReportingItemsTable>> shall be written somewhere in the test document. Also, if some items are not included in the test document, the developer shall provide a rationale for such exclusion to the evaluator.
 
+:xrefstyle: short
 [cols=",",options="header",]
 .Reporting items
+[[ReportingItemsTable]]
 |===
 |*Section* |*Item*
-|TD.1 |Overview of the performance testing
-|TD.2 |Target application and influential factors
-|TD.3 |Test subject selection
-|TD.4 |Test instructions and training
-|TD.5 |Test subject management
-|TD.6 |Test procedure
+|<<Overview of the performance testing>> |Overview of the performance testing
+|<<Target application and influential factors>> |Target application and influential factors
+|<<Test subject selection>> |Test subject selection
+|<<Test instructions and training>> |Test instructions and training
+|<<Test subject management>> |Test subject management
+|<<Test procedure>> |Test procedure
 |===
+
+:xrefstyle: full
 
 === Reporting items description
 
-This Section describes each item in Table 1 in detail. All items are created based on [ISO19795-1] and [ISO19795-2] however some of them are modified to adjust to the CC evaluation.
+This Section describes each item in <<ReportingItemsTable>> in detail. All items are created based on [ISO19795-1] and [ISO19795-2] however some of them are modified to adjust to the CC evaluation.
 
-==== TD.1 Overview of the performance testing
+==== Overview of the performance testing
 
 The developer shall report following general information about the performance testing.
 
@@ -1036,10 +1039,10 @@ Timeline for the performance testing (samples or templates may be collected over
 The performance testing shall be done for all modalities selected in FIA_MBV_EXT.1. Result of testing for each modality shall be reported separately.
 .. Definition of genuine and imposter transaction
 +
-If FAR/FRR is selected in FIA_MBV_EXT.1, the test document shall clearly define what constitutes the transaction based on the guidance provided in <<Requirement for the number of test subject, transaction and samples>> and the same rule shall be applied consistently throughout the performance testing.
+If FAR/FRR is selected in FIA_MBV_EXT.1, the test document shall clearly define what constitutes the transaction based on the guidance provided in <<Req4sub-tran-sam>> and the same rule shall be applied consistently throughout the performance testing.
 .. Number of test subjects, templates and samples
 +
-The following numbers used for calculating FMR/FNMR or FAR/FRR shall be reported. See <<Requirement for the number of test subject, transaction and samples>> for requirements for number of test subjects, enrolment templates and samples.
+The following numbers used for calculating FMR/FNMR or FAR/FRR shall be reported. See <<Req4sub-tran-sam>> for requirements for number of test subjects, enrolment templates and samples.
 +
 This Section assumes that at least the FMR or FAR is measured through offline testing (i.e. cross-comparison) to achieve the maximum number of attempts or transactions. FNMR or FRR may be measured through online or offline testing.
 
@@ -1050,12 +1053,12 @@ Number of test subjects who participated in the testing shall be reported.
 +
 Number of enrolment templates used for testing shall be reported.
 +
-Note all test subjects may generate the templates successfully and total number of templates may be less than (number of test subjects) × (number of body parts of a test subject).
+Note all test subjects may not generate the templates successfully and total number of templates may be less than (number of test subjects) × (number of body parts of a test subject).
 * Samples
 +
 Number of samples collected for each body part and total number of samples collected from all test subjects shall be reported.
 +
-Not all test subjects may generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of body parts of a test subject) × (number of samples collected for each body part).
+Note all test subjects may not generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of body parts of a test subject) × (number of samples collected for each body part).
 
 [arabic, start=5]
 . Result of testing
@@ -1066,7 +1069,7 @@ If FAR and FRR is selected in FIA_MBV_EXT.1, number of genuine and imposter tran
 +
 If FMR and FNMR is selected in FIA_MBV_EXT.1, number of genuine and imposter attempts shall also be reported.
 
-==== TD.2 Target application and influential factors
+==== Target application and influential factors
 
 Test document shall specify a target application modelled in the test, such as mobile biometric verification in an indoor office environment with a habituated crew.
 
@@ -1106,11 +1109,11 @@ The degree to which the test subject is familiarized with the TOE (e.g. frequenc
 +
 How much template adaptation may occur prior to measuring the FMR/FAR and FNMR/FRR if the TOE is able to adapt the templates over time with the aim to reduce the error rates
 
-==== TD.3 Test subject selection
+==== Test subject selection
 
 Selection method of test subjects shall be reported (e.g. gather test subjects from developer’s employees or recruit them from public). It is recommended that demographics of test subjects follow the target application.
 
-==== TD.4 Test instructions and training
+==== Test instructions and training
 
 Instructions and training given to the test subjects shall be reported. The same instructions and training shall be given to the all test subjects.
 
@@ -1122,7 +1125,7 @@ Test information and general test instructions given to test subject prior or af
 +
 Method for how to confirm the level of subject habituation prior to biometric data collection shall be reported. If the habituation was confirmed through training, method to ensure the consistency of training among test subjects and the tools used for training shall be reported (e.g. developer can prepare the script for training in advance and apply it to all test subjects to ensure the consistency)
 
-==== TD.5 Test subject management
+==== Test subject management
 
 The following information about test subject management shall be reported. Proper management is necessary to avoid human errors that may occur during the testing.
 
@@ -1136,7 +1139,7 @@ Biometric data can be corrupted by human error during the collection process (e.
 .. Method of ensuring test subject uniqueness
 .. Method of avoiding data collection errors (e.g. Use of data collection software minimizing the amount of data requiring keyboard entry)
 
-==== TD.6 Test procedure
+==== Test procedure
 
 A test protocol for the testing shall be reported. The following items shall be covered.
 
@@ -1151,11 +1154,12 @@ Details of flow of genuine and imposter attempt or transaction to measure the er
 The developer shall maintain a log file in which each interaction with the TOE is recorded. The log shall include all test attempts, preparative or practice attempts, set-up procedure (e.g. setting a threshold) and maintenance activities (e.g. cleaning a sensor). Such a log file can be very useful to make sure the testing was conducted following the test flow.
 . Sample exclusion criteria
 +
-Criteria for sample exclusion shall be reported. Test operator shall not manually discard nor use an automated mechanism to discard collected samples unless the samples conform to documented exclusion criteria. The number of excluded samples shall be reported. If transactions are failed because of such excluded samples, number of such failed transactions shall also be reported. These failed transactions shall be counted as failed transactions to calculate the error rates.
+Criteria for sample exclusion shall be reported. Test operator shall not manually discard nor use an automated mechanism to discard collected samples unless the samples conform to documented exclusion criteria. The number of excluded samples shall be reported. If transactions are failed because of such excluded samples, number of such failed transactions shall also be reported.
 . Advice or remedial action
 +
 Advice or remedial actions to test subjects who fail to complete transactions or sample collections shall be reported. Such advice or remedial actions shall be limited to the minimum amount necessary because [BIOPP-Module] assumes that the mobile device is used by the single user without any support. The same advice or remedial actions shall be given to test subject at the same condition.
 
+[[Req4sub-tran-sam]]
 == Requirement for the number of test subject, transaction and samples
 
 The developer shall follow recommendations or minimum requirements below to conduct the performance testing to measure FAR/FMR and FRR/FNMR. The developer may exclude, modify or add some recommendations however, the developer shall show a clear rationale why such modifications could produce more accurate estimate of the performance.
@@ -1178,7 +1182,7 @@ For example, if the ST sets the maximum number of unsuccessful authentication at
 
 This means that if FAR and FRR are selected, the developer shall define that the genuine and imposter transaction is consisted up to five unlock attempts and only one transaction can be run by each user.
 
-If FMR and FNMR are selected, the developer may follow the same scenario and collect five samples from each test subject. However, FMR/FNMR is a comparison subsystem measure while FAR/FRR is a system level measure, therefore FAR/FRR should be selected in the ST if the developer considers the specific test scenario to measure the performance.
+If FMR and FNMR are selected, the developer may follow the same scenario and collect five samples from each test subject. However, FMR/FNMR is a comparison subsystem measure while FAR/FRR is a system level measure, therefore FAR/FRR should be selected in FIA_MBV_EXT.1 if the developer considers the specific test scenario to measure the performance.
 
 The developer shall also select the most common scenario among users to conduct the performance testing. For example, if the user can enrol multiple fingerprints, the developer should assume that the user enrols index and thumb fingerprint if such enrolment is most common. FAR may increase and FRR may decrease if the user enrols multiple fingerprints however, performance of widely used configuration should be measured.
 
@@ -1236,9 +1240,15 @@ Identification corresponds to the effort required to create the attack, and to d
 
 Exploitation corresponds to achieving the attack on an instance of the TOE in its exploitation environment using the analysis and techniques defined in the identification phase. It could be assumed that a different attacker carries out the exploitation, the technique (and relevant background information) could be available for the exploitation in the form of a script or set of instructions defined during the identification phase. This type of script is assumed to identify the necessary equipment and, for example, mathematical techniques used in the analysis, or presentation attack methods. Furthermore, this same information may also reduce the exploitation requirement to one of time measurement, whereas the identification phase may have required reverse engineering of hardware or software information hence the expertise requirement may be reduced.
 
-NOTE: For the evaluator, the work of the identification phase has to be fully performed: developing hardware and software, creating PAIs if any, etc. The rating of this phase corresponds to the "real spending" in defining the attack. For the exploitation, it is not necessary to perform the work again and the rating could correspond to an evaluation of the necessary effort for each factor.
+[NOTE]
+====
+For the evaluator, the work of the identification phase has to be fully performed: developing hardware and software, creating PAIs if any, etc. The rating of this phase corresponds to the "real spending" in defining the attack. For the exploitation, it is not necessary to perform the work again and the rating could correspond to an evaluation of the necessary effort for each factor.
+====
 
-NOTE: Exploitation consisting in applying scripts, it is expected that some factor values will be reduced from the identification phase, in particular "Elapsed Time" and "Expertise". For the same reason, the "Knowledge of the TOE" factor is not applicable in the exploitation phase (all the knowledge is scripted).
+[NOTE]
+====
+Exploitation consisting in applying scripts, it is expected that some factor values will be reduced from the identification phase, in particular "Elapsed Time" and "Expertise". For the same reason, the "Knowledge of the TOE" factor is not applicable in the exploitation phase (all the knowledge is scripted).
+====
 
 ==== Factors to be considered
 
@@ -1255,14 +1265,20 @@ Potential difficulties to have an access to the TOE in exploitation environment 
 *_Expertise_* refers to the level of proficiency required by the attacker and the general knowledge that he possesses, not specific of the system being attacked. The levels are as follows:
 
 [loweralpha]
-. _Layman_ is the level no real expertise needed and such that any person with a regular level of education is capable of performing the attack. For example, creating a PAI in a known (published) way without specific difficulties (specific or difficult to buy materials) is considered at this level of expertise.
+. _Layman_ is the level no real expertise needed and such that any person with a regular level of education is capable of performing the attack. For example, creating a PAI in a known (published) way without specific difficulties (difficult to buy materials) is considered at this level of expertise.
 . _Proficient_ is the level such that some advanced knowledge in certain specific topics (biometrics) is required as well as good knowledge of the state-of-the-art of attacks. An attacker of this level is capable of adapting known attack methods to his needs. For example, adapting a known attack type (published) by the choice of specific (not published and sometimes difficult to find) materials in order to bypass a presentation attack detection mechanism and/or finding a non-evident way to present this PAI to the system can be considered at this level of expertise.
 . _Expert_ is the level such that a specific preparation in multiple areas such as pattern recognition, computer vision or optimization is needed in order to carry out the attack. An attacker of this level is capable of generating his own new attacking algorithms. For example, finding a new (unpublished) way of creating an attack type using new and specific materials (unpublished) to counter an advanced presentation attack detection mechanism, can be considered at this level. In addition, this level can be associated with specific equipment (bespoke)
 . _Multiple Experts_ is the level such that the attack needs the collaboration of several people with high level expertise in different fields (e.g., electronics, cryptanalysis, physics, etc.). It has to be noticed that a specific competence in biometrics is not considered as "multiple expertise". For example, building a "hill climbing" attack by gaining access to the comparison scores requires additional expertise to electrically attack and penetrate the TOE, which can be considered to constitute a "multi expertise" level.
 
-NOTE: As previously noted, exploitation expertise is usually lower than identification expertise. Layman or Proficient can be considered as typical value for expertise in the exploitation phase. For the same reason, the multiple expert level is excluded from the exploitation phase.
+[NOTE]
+====
+As previously noted, exploitation expertise is usually lower than identification expertise. Layman or Proficient can be considered as typical value for expertise in the exploitation phase. For the same reason, the multiple expert level is excluded from the exploitation phase.
+====
 
-NOTE: As all the factors, higher rating would require specific justifications from the evaluator.
+[NOTE]
+====
+As all the factors, higher rating would require specific justifications from the evaluator.
+====
 
 *_Knowledge of the TOE_* refers to the amount of knowledge of system required to perform the attack. For instance, format of the acquired samples, size and resolution of acquisition systems, specific format of templates, but also specifications and implementation of countermeasures are knowledge that could be required to set up an attack.
 
@@ -1307,9 +1323,15 @@ The levels are as follows:
 . _Moderate_ is for 3D face, dynamic signature, and 3D fingerprint. 3D images require multiple acquisitions, probably in a controlled way, without the collaboration of an enrolled data subject but probably with a direct contact with them.
 . _Difficult_ is for iris and vein. Iris images can be acquired with a high resolution camera, but with some difficulties to get a complete high quality image without the cooperation of an enrolled data subject. Veins are a hidden characteristic, but infra-red cameras, close to them, can acquire images to be used.
 
-NOTE: The above distribution of modalities per level is subject to modification depending on the evolution of technologies and usage. The current distribution is to be seen as guidance for the evaluator, who will have to adapt the rating to state-of-the-art.
+[NOTE]
+====
+The above distribution of modalities per level is subject to modification depending on the evolution of technologies and usage. The current distribution is to be seen as guidance for the evaluator, who will have to adapt the rating to state-of-the-art.
+====
 
-NOTE: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Immediate_.
+[NOTE]
+====
+Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Immediate_.
+====
 
 *_Equipment_* refers to the type of equipment required to perform the attack. This includes the biometric databases used (if any). The levels are follows:
 
@@ -1370,7 +1392,11 @@ a|
 |Bespoke |4 |8
 |===
 
-In order to calculate the attack potential value of the entire attack, the evaluator shall add all the values of all the factors in identification phase and exploitation phase.
+:xrefstyle: short
+
+In order to calculate the attack potential value of the entire attack, the evaluator shall add all the values of all the factors in identification phase and exploitation phase. However, <<attackpotentialcalc>> is intended as a guide. Evaluator may modify the table with a proper justification.
+
+:xrefstyle: full
 
 ==== Rating of vulnerabilities and TOE resistance
 
