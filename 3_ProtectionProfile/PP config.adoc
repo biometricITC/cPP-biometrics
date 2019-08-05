@@ -2,8 +2,8 @@
 :showtitle:
 :toc:
 :table-caption: Table
-:revnumber: 0.8
-:revdate: 2019-05-01
+:revnumber: 0.9
+:revdate: 2019-08-05
 
 == Acknowledgements
 
@@ -29,7 +29,7 @@ This PP-Configuration is identified as follows:
 This PP-Configuration includes the following components:
 
 * base PP: Protection Profile for Mobile Device Fundamentals [MDFPP]
-* PP-Module: collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOcPP Module].
+* PP-Module: collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOPP-Module].
 
 == Conformance Claims
 
@@ -49,11 +49,11 @@ and may include components that are
 * Optional
 * Objective.
 
-The same conditions apply to [BIOcPP Module] that is included as part of this PP-Configuration.
+The same conditions apply to [BIOPP-Module] that is included as part of this PP-Configuration.
 
 *CC Conformance Claims*
 
-This PP-Configuration, [MDFPP] and [BIOcPP Module] are conformant to Common Criteria Version 3.1, Revision 5.
+This PP-Configuration, [MDFPP] and [BIOPP-Module] are conformant to Common Criteria Version 3.1, Revision 5.
 
 === SAR Statement
 
@@ -83,7 +83,7 @@ In order to evaluate a TOE that claims conformance to this PP-Configuration, the
 
 Note that to fully evaluate the TOE, these SARs shall be applied to the entire TSF and not just the portions described by [MDFPP] where the SARs are defined.
 
-In addition to this, both [MDFPP] and [BIOcPP Module] define "Evaluation Activities" for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1. [MDFPP] and [BIOcPP Module] also provide Evaluation Activities for the SARs. In evaluating this PP-Configuration, the evaluator shall ensure that all Evaluation Activities for SFRs and SARs are evaluated as part of satisfying the required SARs.
+In addition to this, both [MDFPP] and [BIOPP-Module] define "Evaluation Activities" for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1. [MDFPP] and [BIOPP-Module] also provide Evaluation Activities for the SARs. In evaluating this PP-Configuration, the evaluator shall ensure that all Evaluation Activities for SFRs and SARs are evaluated as part of satisfying the required SARs.
 
 === Related Documents
 
@@ -113,7 +113,7 @@ Version 0.5, May 2017.
 [cols=",",]
 |===
 |[MDFPP] |Protection Profile for Mobile Device Fundamentals, Version:3.2
-|[BIOcPP Module] |collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -, January 31, Version 0.8, 2019
+|[BIOPP-Module] |collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -, January 31, Version 0.8, 2019
 |===
 
 === Revision History
@@ -121,5 +121,11 @@ Version 0.5, May 2017.
 [cols=",,",options="header",]
 |===
 |*Version* |*Date* |*Description*
-|0.8 |31 Jan, 2019 |First draft for review
+|0.8 
+|31 Jan, 2019 
+|First draft for review
+
+|0.9
+|August 5, 2019
+|Update from Puiblic Review Draft 1
 |===
