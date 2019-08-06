@@ -881,9 +881,10 @@ For enhanced security that is easy to use, the TOE implements mobile biometric v
 +
 Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face PAI) if such services are available at low cost.
 
-. Assumptions in [BIOPP-Module]
-+
 [BIOPP-Module] defines *A.User* and evaluator shall assume that the mobile devices are configured securely by users. Especially evaluator shall make the following assumptions:
+
+[loweralpha, start=2]
+. Assumptions in [BIOPP-Module]
 +
 [arabic]
 .. A user enrol him/herself following guidance provided by the TOE
