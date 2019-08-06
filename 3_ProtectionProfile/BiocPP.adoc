@@ -381,7 +381,7 @@ The following conventions are used for the completion of operations:
 
 * [_Italicized text within square brackets_] indicates an operation to be completed by the ST author.
 
-* [*Bold text within square brackets*] indicates the completion of an assignment.
+* [*Bold text within square brackets*] indicates the type of operation.
 
 Extended SFRs are identified by having a label “EXT” at the end of the SFR name.
 
@@ -689,7 +689,7 @@ Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment
 
 a)	Allowed maximum values defined in the standards
 
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR". Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value.
+For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR. Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value.
 
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
 
