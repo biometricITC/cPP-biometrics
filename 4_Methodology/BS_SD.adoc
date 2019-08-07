@@ -881,22 +881,24 @@ For enhanced security that is easy to use, the TOE implements mobile biometric v
 +
 Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face PAI) if such services are available at low cost.
 
-[BIOPP-Module] defines *A.User* and evaluator shall assume that the mobile devices are configured securely by users. Especially evaluator shall make the following assumptions:
-
 [loweralpha, start=2]
 . Assumptions in [BIOPP-Module]
 +
+--
+[BIOPP-Module] defines *A.User* and evaluator shall assume that the mobile devices are configured securely by users. Especially evaluator shall make the following assumptions:
+
 [arabic]
 .. A user enrol him/herself following guidance provided by the TOE
 .. Mobile device is securely configured, and maximum number of unsuccessful biometric authentication attempts is limited
 +
 For efficiency, the evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing. However, as the mobile device shall be evaluated in the evaluated configuration, any attack needs to succeed within the allowed number of biometric authentication attempts defined in the ST to be considered a successful attack.
-+
+
 [BIOPP-Module] also defines *A.Protection* and evaluator shall assume that biometric data is adequately protected. Especially evaluator shall make the following assumptions:
-+
+
 [arabic, start=1]
 .. Attacker can’t access to the result of PAD subsystem, so they can’t tune the PAIs based on the PAD score
 .. Attacker can’t gain the templates from the mobile device to create the PAIs
+--
 
 [loweralpha, start=3]
 . Attack potential
