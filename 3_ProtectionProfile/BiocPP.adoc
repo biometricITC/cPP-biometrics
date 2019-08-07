@@ -687,20 +687,6 @@ Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment
 
 *FIA_MBV_EXT.1.2* The TSF shall provide a mobile biometric verification mechanism with the [*selection:* _FMR, FAR_] not exceeding [*assignment:* _defined value_] and [*selection:* _FNMR, FRR_] not exceeding [*assignment:* _defined value_].
 
-a)	Allowed maximum values defined in the standards
-
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR. Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value.
-
-For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
-
-b)	Technical limitation
-
-Although different modalities are available for the mobile biometric verification, all modalities may not achieve the same level of accuracy. For modalities that have different target of error rates, ST author may iterate the requirement to set appropriate error rates for each modality.
-
-c)	Number of test subjects required for the performance testing
-
-Target error rates defined in SFR shall be evaluated based on <<SD>>. Normally the target error rates will directly influence the size of the test subject, the time and cost of the testing. <<SD>> describes how those error rates should be evaluated in an objective manner.
-
 ===== FIA_MBV_EXT.2 Quality of biometric samples for mobile biometric verification
 Hierarchical to: No other components.
 
