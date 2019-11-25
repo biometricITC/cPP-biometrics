@@ -1,4 +1,4 @@
-= collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
+= collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -
 :showtitle:
 :toc:
 :toclevels: 3
@@ -10,13 +10,14 @@
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
 
+
 == Acknowledgements
 This collaborative PP-Module was developed by the {iTC-longame} international Technical Community ({iTC-shortname}) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
 
 == Preface
 
 === Objectives of Document
-This document presents the Common Criteria (CC) collaborative PP-Module to express the security functional requirements (SFRs) and security assurance requirements (SARs) for mobile biometric enrolment and verification on the mobile device. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this PP-Module, are described in <<SD>>.
+This document presents the Common Criteria (CC) collaborative PP-Module to express the security functional requirements (SFRs) and security assurance requirements (SARs) for biometric enrolment and verification on the mobile device. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this PP-Module, are described in <<SD>>.
 
 === Scope of Document
 The scope of the PP-Module within the development and evaluation process is described in the Common Criteria for Information Technology Security Evaluation. In particular, a PP-Module defines the IT security requirements of a generic type of TOE and specifies the functional security measures to be offered by that TOE to meet stated requirements <<CC1>>, Section B.14.
@@ -33,7 +34,7 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 - [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
-- [#SD]#[SD]# Evaluation Activities for collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
+- [#SD]#[SD]# Evaluation Activities for collaborative Protection Profile Module for Biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
 - [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [#ISOIEC19989-2]#[ISO/IEC 19989-2]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
 - [#ISO19989-3]#[ISO/IEC 19989-3]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
@@ -45,7 +46,7 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 - [#NIST800-63B]#[NIST800-63B]# NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
 === Glossary
-For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the mobile biometric enrolment and verification.
+For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
 Attempt::
@@ -138,15 +139,15 @@ Zero-effort Impostor Attempt::
 - PP Date: {revdate}
 
 === TOE Overview
-This is a collaborative Protection Profile Module (PP-Module) that is used to extend a base PP for a mobile device that implement mobile biometric enrolment and verification to unlock the mobile device in the locked state using user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a mobile device that implements mobile biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE (i.e. mobile device) and implements the mobile biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and mobile device. Each mobile biometric enrolment and verification process is described in the following paragraphs. 
+This is a collaborative Protection Profile Module (PP-Module) that is used to extend a base PP for a mobile device that implement biometric enrolment and verification to unlock the mobile device in the locked state using user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a mobile device that implements biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE (i.e. mobile device) and implements the biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and mobile device. Each biometric enrolment and verification process is described in the following paragraphs. 
 
-a)	Mobile biometric enrolment
+a)	Biometric enrolment
 
 During the enrolment process, the TOE captures samples from the biometric characteristics of a user presented to the TOE and extracts the features from the samples. The features are then stored as a template in the TOE.
 
 Only a user who knows the mobile device password can enrol or revoke his/her own templates. Multiple templates may be enrolled, as separate entries uniquely identified by the TOE, and optionally uniquely identifiable by the user (through the mobile User Interface).
 
-b)	Mobile biometric verification
+b)	Biometric verification
 
 During the verification process, a user presents his/her own biometric characteristics to the TOE without presenting any user identity information for unlocking the mobile device. The TOE captures samples from the biometric characteristics, retrieves all enrolled templates and compares them with the features extracted from the captured samples of the user to measure the similarity between the two data and determines whether to accept or reject the user based on the similarity, and indicates the decision to the mobile device.
 
@@ -157,7 +158,7 @@ c)	Presentation Attack Detection (PAD)
 The TOE needs to consider the risk of subverting the TOE’s biometric verification. Attacker could present artificial PAIs to the TOE to interfere with the TOE’s security objectives. The TOE needs to be able to provide resistance to presentation attacks. <<SD>> explains what resistance should be provided by the TOE in detail.
 
 === TOE Design
-The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1,ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the mobile biometric enrolment and verification processes rely on.
+The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1,ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
 
 [#img-TOE-generic]
 .Generic representation of a TOE
@@ -190,7 +191,7 @@ Mobile device itself may be operated in a number of use cases such as enterprise
 
 This PP-Module only assumes USE CASE 1 described below. USE CASE 2 is out of scope of this PP-Module.
 
-==== USE CASE 1: Mobile biometric verification for unlocking the mobile device
+==== USE CASE 1: Biometric verification for unlocking the mobile device
 For enhanced security that is easy to use, mobile device may implement mobile biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use an own biometric characteristic to unlock access to the mobile device. In this use case, the mobile device is not supposed to be used for security sensitive services through the mobile biometric verification.
 
 Main concern of this use case is the accuracy of mobile biometric verification (i.e. FAR/FMR and FRR/FNMR) and basic level of presentation attacks. Security assurance for mobile device that the TOE relies on should be handled by the base PP.
@@ -199,7 +200,7 @@ This use case assumes that the mobile device is configured correctly to enable t
 
 It is also assumed that the user enrols his/herself correctly, following the guidance provided by the TOE. Attacks during enrolment may be out of scope, but optionally addressed. FTE is not a security relevant criterion for this use case.
 
-==== USE CASE 2: Mobile biometric verification for security sensitive service
+==== USE CASE 2: Biometric verification for security sensitive service
 
 This use case is an example of another use case that isn’t considered in this PP-Module. Another PP-Module should be developed at higher assurance level for this use case.
 
@@ -220,7 +221,7 @@ In order to be conformant to this PP-Module, a ST shall demonstrate Exact Confor
 
 The security problem is described in terms of the threats that the TOE is expected to address, assumptions about its operational environment, and any organizational security policies that the TOE is expected to enforce.
 
-This PP-Module is written to address the situation described in the section <<USE CASE 1: Mobile biometric verification for unlocking the mobile device>>. 
+This PP-Module is written to address the situation described in the section <<USE CASE 1: Biometric verification for unlocking the mobile device>>. 
 
 Note that as a PP-Module, all threats, assumptions, and OSPs defined in the base PP will also apply to a TOE unless otherwise specified. The SFRs defined in this PP-Module will mitigate the threats that are defined in the PP-Module but may also mitigate some threats defined in the base PP in more comprehensive detail due to the specific capabilities provided by a biometric system.
 
@@ -276,7 +277,7 @@ The TOE shall implement the functionality to enrol a user for mobile biometric v
 
 SFR Rationale:
 
-Requirements to provide a mobile biometric enrolment mechanism is defined in FIA_MBE_EXT.1. Requirement for quality of template is defined in FIA_MBE_EXT.2.
+Requirements to provide a biometric enrolment mechanism is defined in FIA_MBE_EXT.1. Requirement for quality of template is defined in FIA_MBE_EXT.2.
 
 *Application Note {counter:remark_count}*:: A user shall be authenticated using a Password Authentication Factor to enrol his/herself.
 
@@ -287,7 +288,7 @@ The TOE shall prevent a presentation attack using artificial PAIs. The TOE shall
 
 SFR Rationale:
 
-Requirement to provide a presentation attack detection mechanism during mobile biometric verification is defined in FIA_MBV_EXT.3. <<SD>> defines relevant criteria for its security relevant error rates for PAD. Optional requirement to provide a presentation attack detection mechanism during mobile biometric enrolment is defined as FIA_MBE_EXT.3.
+Requirement to provide a presentation attack detection mechanism during mobile biometric verification is defined in FIA_MBV_EXT.3. <<SD>> defines relevant criteria for its security relevant error rates for PAD. Optional requirement to provide a presentation attack detection mechanism during biometric enrolment is defined as FIA_MBE_EXT.3.
 
 *Application Note {counter:remark_count}*:: The TOE may or may not counter a presentation attack during enrolment. If the ST author requires the TOE to counter the presentation attack during enrolment, ST author should include FIA_MBE_EXT.3 defined in <<Optional Requirements>>.
 
@@ -376,19 +377,19 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 
 === Identification and Authentication (FIA)
 
-==== FIA_MBE_EXT.1 Mobile biometric enrolment [[FIA_MBE_EXT.1]]
+==== FIA_MBE_EXT.1 Biometric enrolment [[FIA_MBE_EXT.1]]
 
 *FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
 
 *Application Note {counter:remark_count}*:: User shall be authenticated by the mobile device using the Password Authentication Factor before beginning biometric enrolment.
 
-==== FIA_MBE_EXT.2 Quality of biometric templates for mobile biometric enrolment [[FIA_MBE_EXT.2]]
+==== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
 
 *FIA_MBE_EXT.2.1* The TSF shall create templates of sufficient quality.
 
 *Application Note {counter:remark_count}*:: ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
 
-==== FIA_MBV_EXT.1 Mobile biometric verification [[FIA_MBV_EXT.1]]
+==== FIA_MBV_EXT.1 Biometric verification [[FIA_MBV_EXT.1]]
 
 *FIA_MBV_EXT.1.1*:: The TSF shall provide a mobile biometric verification mechanism using [*selection*: _fingerprint, eye, face, voice, vein_, [*assignment*: _other modality_]].
 
@@ -425,7 +426,7 @@ Target error rates defined in SFR shall be evaluated based on <<SD>>. Normally t
 
 *FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
 
-*Application Note {counter:remark_count}*:: This requirement is only applicable to mobile biometric verification. PAD for mobile biometric enrolment is an optional requirement.
+*Application Note {counter:remark_count}*:: This requirement is only applicable to mobile biometric verification. PAD for biometric enrolment is an optional requirement.
 
 *Application Note {counter:remark_count}*:: Artificial PAIs that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of PAI is defined in <<SD>>.
 
@@ -476,7 +477,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 === Identification and Authentication (FIA)
 
-==== FIA_MBE_EXT.3 Presentation attack detection for mobile biometric enrolment [[FIA_MBE_EXT.3]]
+==== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment [[FIA_MBE_EXT.3]]
 
 *FIA_MBE_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully enrolled.
 
@@ -495,7 +496,7 @@ This appendix contains the definitions for the extended requirements that are us
 
 === Identification and Authentication (FIA)
 
-==== Mobile biometric enrolment (FIA_MBE_EXT)
+==== Biometric enrolment (FIA_MBE_EXT)
 
 ===== Family Behaviour
 
@@ -511,7 +512,7 @@ This component defines the requirements for the TSF to be able to enrol a user, 
                                                   |  +---+
     +------------------------------------------+  |
     |                                          |  |  +---+
-    | FIA_MBE_EXT  Mobile biometric enrollment +--+->| 2 |
+    | FIA_MBE_EXT  Biometric enrollment        +--+->| 2 |
     |                                          |  |  +---+
     +------------------------------------------+  |
                                                   |  +---+
@@ -519,11 +520,11 @@ This component defines the requirements for the TSF to be able to enrol a user, 
                                                      +---+
 ....
  
-FIA_MBE_EXT.1 Mobile biometric enrolment requires the TSF to enrol a user.
+FIA_MBE_EXT.1 Biometric enrolment requires the TSF to enrol a user.
 
-FIA_MBE_EXT.2 Quality of biometric templates for mobile biometric enrolment requires the TSF to create templates of sufficient quality.
+FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment requires the TSF to create templates of sufficient quality.
 
-FIA_MBE_EXT.3 Presentation attack detection for mobile biometric enrolment requires the TSF to prevent presentation attacks during the mobile biometric enrolment.
+FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment requires the TSF to prevent presentation attacks during the biometric enrolment.
 
 ===== Management: FIA_MBE_EXT.1
 
@@ -550,29 +551,29 @@ The following actions should be auditable if FAU_GEN Security audit data generat
 
 a)	Basic: Detection of presentation attacks
 
-===== FIA_MBE_EXT.1 Mobile biometric enrolment
+===== FIA_MBE_EXT.1 Biometric enrolment
 Hierarchical to: No other components
 
 Dependencies: No dependencies
 
 *FIA_MBE_EXT.1.1* The TSF shall provide a mechanism to enrol an authenticated user.
 
-===== FIA_MBE_EXT.2 Quality of biometric templates for mobile biometric enrolment
+===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment
 Hierarchical to: No other components
 
-Dependencies: 	FIA_MBE_EXT.1 Mobile biometric enrolment
+Dependencies: 	FIA_MBE_EXT.1 Biometric enrolment
 
 *FIA_MBE_EXT.2.1* The TSF shall create templates of sufficient quality.
 
-===== FIA_MBE_EXT.3 Presentation attack detection for mobile biometric enrolment
+===== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment
 
 Hierarchical to: No other components
 
-Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment
+Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
 *FIA_MBE_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully enrolled.
 
-==== Mobile biometric verification (FIA_MBV_EXT)
+==== Biometric verification (FIA_MBV_EXT)
 
 ===== Family Behaviour
 This component defines the requirements for the TSF to be able to verify a user, use samples of sufficient quality and prevent presentation attacks.
@@ -587,7 +588,7 @@ This component defines the requirements for the TSF to be able to verify a user,
                                                     |  +---+
     +--------------------------------------------+  |
     |                                            |  |  +---+
-    | FIA_MBV_EXT  Mobile biometric verification +--+->| 2 |
+    | FIA_MBV_EXT  Biometric verification        +--+->| 2 |
     |                                            |  |  +---+
     +--------------------------------------------+  |
                                                     |  +---+
@@ -595,7 +596,7 @@ This component defines the requirements for the TSF to be able to verify a user,
                                                        +---+
 ....
  
-FIA_MBV_EXT.1 Mobile biometric verification requires the TSF to verify a user.
+FIA_MBV_EXT.1 Biometric verification requires the TSF to verify a user.
 
 FIA_MBV_EXT.2 Quality of biometric samples for mobile biometric verification requires the TSF to use samples of sufficient quality.
 
@@ -627,11 +628,11 @@ The following actions should be auditable if FAU_GEN Security audit data generat
 
 a)	Basic: Detection of presentation attacks
 
-===== FIA_MBV_EXT.1 Mobile biometric verification
+===== FIA_MBV_EXT.1 Biometric verification
 
 Hierarchical to: No other components
 
-Dependencies: FIA_MBE_EXT.1 Mobile biometric enrolment
+Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
 *FIA_MBV_EXT.1.1* The TSF shall provide a mobile biometric verification mechanism using [*selection:* _fingerprint, eye, face, voice, vein_, [*assignment:* _other modality_]].
 
@@ -642,9 +643,9 @@ Hierarchical to: No other components.
 
 Dependencies: 	
 
-FIA_MBE_EXT.1 Mobile biometric enrolment 
+FIA_MBE_EXT.1 Biometric enrolment 
 
-FIA_MBV_EXT.1 Mobile biometric verification
+FIA_MBV_EXT.1 Biometric verification
 
 
 *FIA_MBV_EXT.2.1* The TSF shall only use samples of sufficient quality to verify the user.
@@ -654,9 +655,9 @@ Hierarchical to: No other components
 
 Dependencies: 
 
-FIA_MBE_EXT.1 Mobile biometric enrolment
+FIA_MBE_EXT.1 Biometric enrolment
 
-FIA_MBV_EXT.1 Mobile biometric verification
+FIA_MBV_EXT.1 Biometric verification
 
 *FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
 
