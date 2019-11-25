@@ -1,4 +1,4 @@
-= Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - 
+= Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - 
 :showtitle:
 :toc:
 :toclevels: 3
@@ -52,7 +52,7 @@ See section 1.1.
 
 === Field of special use
 
-This Supporting Document applies to the evaluation of TOEs claiming conformance with the collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOPP-Module].
+This Supporting Document applies to the evaluation of TOEs claiming conformance with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module].
 
 === Acknowledgements
 
@@ -65,14 +65,14 @@ This Supporting Document was developed by the Biometric Security international T
 
 === Technology Area and Scope of Supporting Document
 
-This Supporting Document (SD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device - [BIOPP-Module] that is intended for use with the following base PP: +
+This Supporting Document (SD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module] that is intended for use with the following base PP: +
 
 
 *Protection Profile for Mobile Device Fundamentals ([MDFPP])*
 
 This SD is mandatory for evaluations of TOEs that claim conformance to [BIOPP-Module].
 
-The Biometric Security technical area has a number of specialised aspects, such as those relating to the mobile biometric enrolment and verification, and to the particular ways in which the TOE needs to be assessed across a range of different Presentation Attack Instruments (PAI). This degree of specialisation, and the associations between individual SFRs in [BIOPP-Module], make it important for both efficiency and effectiveness that EAs are given more specific interpretations than those found in the generic CEM activities.
+The Biometric Security technical area has a number of specialised aspects, such as those relating to the biometric enrolment and verification, and to the particular ways in which the TOE needs to be assessed across a range of different Presentation Attack Instruments (PAI). This degree of specialisation, and the associations between individual SFRs in [BIOPP-Module], make it important for both efficiency and effectiveness that EAs are given more specific interpretations than those found in the generic CEM activities.
 
 Although EAs are defined mainly for the evaluator to follow, the definitions in this SD aim to provide a common understanding for developers, evaluators and users as to what aspects of the TOE are tested in an evaluation against [BIOPP-Module], and to what depth the testing is carried out. This common understanding in turn contributes to the goal of ensuring that evaluations against [BIOPP-Module] achieve comparable, transparent and repeatable results. In general, the definition of EAs will also help developers to prepare for evaluation by identifying specific requirements for their TOE. The specific requirements in EAs may in some cases clarify the meaning of SFRs, and may identify particular requirements for the content of Security Targets (STs) (especially the TOE Summary Specification (TSS)), AGD guidance, and possibly supplementary information (e.g. for biometric performance testing – see <<Developer’s performance test document and its assessment strategy>>).
 
@@ -201,11 +201,11 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE enrols a user and examine the AGD guidance to confirm that a user is required to enter his/her valid password before the mobile biometric enrolment.
+The evaluator shall examine the TSS to understand how the TOE enrols a user and examine the AGD guidance to confirm that a user is required to enter his/her valid password before the biometric enrolment.
 
 ====== Strategy for ATE_IND
 
-The evaluator shall perform the following steps to verify that the TOE performs the mobile biometric enrolment correctly.
+The evaluator shall perform the following steps to verify that the TOE performs the biometric enrolment correctly.
 
 . The evaluator shall try to enrol him/herself without setting a password and confirm that he/she can’t enrol him/herself.
 . The evaluator shall set a password and confirm that he/she can’t enrol him/herself without entering the password correctly beforehand.
@@ -226,7 +226,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-Mobile biometric verification performance depends on quality of the template that is compared to the samples presented to the TOE. The evaluator shall examine that the TOE checks the quality of enrolment and authentication templates based on the assessment criteria to verify a user with an adequate reliability.
+Biometric verification performance depends on quality of the template that is compared to the samples presented to the TOE. The evaluator shall examine that the TOE checks the quality of enrolment and authentication templates based on the assessment criteria to verify a user with an adequate reliability.
 
 If the TOE doesn’t create authentication templates, this EA is only applicable to enrolment templates.
 
@@ -234,7 +234,7 @@ The evaluator shall keep in mind that the assessment criteria for different biom
 
 ===== Dependency
 
-The evaluator shall perform the EA for FIA_MBE_EXT.1 first to confirm the mobile biometric enrolment can be done correctly.
+The evaluator shall perform the EA for FIA_MBE_EXT.1 first to confirm the biometric enrolment can be done correctly.
 
 ===== Tool types required to perform the EA
 
@@ -285,7 +285,7 @@ The evaluator shall perform the following test to verify that the TOE generates 
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall perform mobile biometric enrolment that results in creation of templates that don’t satisfy the assessment criteria described in “assessment criteria for templates” (e.g. presenting biometric samples of low quality)
+. The evaluator shall perform biometric enrolment that results in creation of templates that don’t satisfy the assessment criteria described in “assessment criteria for templates” (e.g. presenting biometric samples of low quality)
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create enrolment templates that don’t meet the assessment criteria specified in the “assessment criteria for templates”
 
 *Authentication templates*
@@ -314,15 +314,15 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE implements the mobile biometric verification mechanism whose error rates is equal or lower than the claimed error rates (i.e. value of FAR/FMR and FRR/FNMR specified in FIA_MBV_EXT.1.2).
+The evaluator shall verify that the TOE implements the biometric verification mechanism whose error rates is equal or lower than the claimed error rates (i.e. value of FAR/FMR and FRR/FNMR specified in FIA_MBV_EXT.1.2).
 
 The evaluator shall solely rely on the supplementary information (developer’s performance test document) to achieve this objective following instruction defined in Assessment Strategy.
 
-[BIOPP-Module] assumes that the mobile biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, risk of zero-effort impostor attempts is low and the developer may not follow the statistical method (e.g. Rule of 3 or Rule of 30) to measure the mobile biometric verification performance.
+[BIOPP-Module] assumes that the biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, risk of zero-effort impostor attempts is low and the developer may not follow the statistical method (e.g. Rule of 3 or Rule of 30) to measure the biometric verification performance.
 
 ===== Dependency
 
-The evaluator shall perform the EAs for FIA_MBE_EXT.1 and FIA_MBE_EXT.2 first to confirm the mobile biometric enrolment can be done correctly.
+The evaluator shall perform the EAs for FIA_MBE_EXT.1 and FIA_MBE_EXT.2 first to confirm the biometric enrolment can be done correctly.
 
 ===== Tool types required to perform the EA
 
@@ -343,7 +343,7 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE verify a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify him/herself correctly and how the TOE behaves when mobile biometric verification is succeeded or failed.
+The evaluator shall examine the TSS to understand how the TOE verify a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify him/herself correctly and how the TOE behaves when biometric verification is succeeded or failed.
 
 The evaluator shall examine “developer’s performance test document” to verify that the developer conducts the objective and repeatable performance testing. Minimum requirements for conducting performance testing are defined in <<Developer’s performance test document and its assessment strategy>>.
 
@@ -370,7 +370,7 @@ The evaluator shall also report a justification why evaluator determines the rat
 
 ===== Objective of the EA
 
-Mobile biometric verification performance depends on quality of samples that is compared to templates. The evaluator shall examine that the TOE checks the quality of samples based on the assessment criteria to verify a user with an adequate reliability.
+Biometric verification performance depends on quality of samples that is compared to templates. The evaluator shall examine that the TOE checks the quality of samples based on the assessment criteria to verify a user with an adequate reliability.
 
 The evaluator shall keep in mind that the assessment criteria for different biometric modalities may not be the same. The evaluator shall evaluate each biometric modality separately if the ST author selects multiple biometric modalities in FIA_MBV_EXT.1.
 
@@ -378,7 +378,7 @@ The evaluator shall also keep in mind that assessment criteria used for template
 
 ===== Dependency
 
-The evaluator shall perform the EAs for FIA_MBE_EXT.1, FIA_MBE_EXT.2 and FIA_MBV_EXT.1 first to confirm the mobile biometric enrolment and verification can be done correctly.
+The evaluator shall perform the EAs for FIA_MBE_EXT.1, FIA_MBE_EXT.2 and FIA_MBV_EXT.1 first to confirm the biometric enrolment and verification can be done correctly.
 
 ===== Tool types required to perform the EA
 
@@ -415,7 +415,7 @@ The evaluator shall perform the following test to verify that the TOE checks the
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall present biometric samples of low quality for mobile biometric verification that don’t satisfy the assessment criteria described in “assessment criteria for samples”
+. The evaluator shall present biometric samples of low quality for biometric verification that don’t satisfy the assessment criteria described in “assessment criteria for samples”
 
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that don’t meet the assessment criteria specified in the “assessment criteria for samples”
 
@@ -441,7 +441,7 @@ The main part of EA for FIA_MBV_EXT.3 is evaluator’s testing using artificial 
 
 ===== Dependency
 
-The evaluator shall perform the EAs for FIA_MBE_EXT.1, FIA_MBE_EXT.2, FIA_MBV_EXT.1 and FIA_MBV_EXT.2 first to confirm the mobile biometric enrolment and verification can be done correctly.
+The evaluator shall perform the EAs for FIA_MBE_EXT.1, FIA_MBE_EXT.2, FIA_MBV_EXT.1 and FIA_MBV_EXT.2 first to confirm the biometric enrolment and verification can be done correctly.
 
 ===== Tool types required to perform the EA
 
@@ -484,7 +484,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 Evaluation of this SEE is out of scope of [BIOPP-Module] and the evaluator doesn’t need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the security boundary of the SEE. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
 
-FPT_BDP_EXT.1 applies to plaintext biometric data being processed during mobile biometric enrolment and verification. Protection of transmitted and stored biometric data is out of scope of this EA and covered by FPT_BDP_EXT.2 and FPT_BDP_EXT.3 respectively.
+FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of transmitted and stored biometric data is out of scope of this EA and covered by FPT_BDP_EXT.2 and FPT_BDP_EXT.3 respectively.
 
 ===== Dependency
 
@@ -505,7 +505,7 @@ Following input is required from the developer.
 
 ====== Strategy for ASE_TSS
 
-As depicted in Figure 1 of [BIOPP-Module], biometric characteristics is captured by biometric capture sensor and then sent to the processors in mobile device for signal processing, PAD and comparison and return the decision outcome. This is a typical process flow of mobile biometric verification; however, biometric capture sensor may do the all tasks within the sensor. In either case, all TSF modules (i.e. biometric capture sensor and any software running in biometric capture sensor and mobile device processors) that process plaintext biometric data must be separated from any entities outside the SEE. Any plaintext biometric data must not be accessible from any entities outside the SEE.
+As depicted in Figure 1 of [BIOPP-Module], biometric characteristics is captured by biometric capture sensor and then sent to the processors in mobile device for signal processing, PAD and comparison and return the decision outcome. This is a typical process flow of biometric verification; however, biometric capture sensor may do the all tasks within the sensor. In either case, all TSF modules (i.e. biometric capture sensor and any software running in biometric capture sensor and mobile device processors) that process plaintext biometric data must be separated from any entities outside the SEE. Any plaintext biometric data must not be accessible from any entities outside the SEE.
 
 In any cases, the evaluator shall examine the TSS to confirm that;
 
@@ -590,7 +590,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-Plaintext biometric data, especially templates, are highly sensitive personal data because biometric characteristics may be recovered from them. Plain text biometric data shall be processed within the SEE as required by FPT_BDP_EXT.1. However, part of plaintext biometric data including templates may need to be stored in mobile device for mobile biometric verification. However, protection of such stored biometric data is not covered by FPT_BDP_EXT.1.
+Plaintext biometric data, especially templates, are highly sensitive personal data because biometric characteristics may be recovered from them. Plain text biometric data shall be processed within the SEE as required by FPT_BDP_EXT.1. However, part of plaintext biometric data including templates may need to be stored in mobile device for biometric verification. However, protection of such stored biometric data is not covered by FPT_BDP_EXT.1.
 
 The evaluator shall confirm that the TOE encrypts plaintext biometric data within the SEE before storing it in any non-volatile memory that entities outside the SEE can get access to. If the evaluator confirms that the TOE doesn’t store plaintext biometric data outside the SEE (e.g. biometric capture sensor processes biometric data within the sensor and return only decision outcome to the TSF modules running inside the SEE) during performing the EA of FPT_BDP_EXT.1, this requirement deems satisfied.
 
@@ -614,7 +614,7 @@ Following input is required from the developer.
 
 ====== Strategy for ASE_TSS
 
-The evaluator shall examine the TSS to understand the activities that happen on mobile biometric enrolment and verification relating to encrypting and storing biometric data. The evaluator shall confirm that;
+The evaluator shall examine the TSS to understand the activities that happen on biometric enrolment and verification relating to encrypting and storing biometric data. The evaluator shall confirm that;
 
 [loweralpha]
 . The TSS lists type of biometric data that the TOE stores in non-volatile memory outside the SEE
@@ -629,7 +629,7 @@ The following test steps require the developer to provide access to a test platf
 
 . The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on [MDFPP]
 . The evaluator shall load an app onto the mobile device. This app shall attempt to traverse over all file systems and report any newly created files
-. The evaluator shall perform mobile biometric enrolment and verification and run the app to list new files
+. The evaluator shall perform biometric enrolment and verification and run the app to list new files
 . The evaluator shall compare files reported by the app and ones listed in “file list/format and cryptographic algorithm”
 . If evaluator finds newly created files not listed in “file list/format and cryptographic algorithm”, the evaluator shall confirm that those files don’t include plaintext biometric data with the support from developer
 . For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on [MDFPP]. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files don’t follow the defined format to implicitly assume files are encrypted.
@@ -650,11 +650,11 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-Only authenticated user can add his/her own templates during mobile biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored outside the SEE without encryption as required by the FPT_BDP_EXT.3. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only authenticated user either using a PIN, password or by other secure means, as specified by the ST author can access the templates through the TSFI provided by the TOE.
+Only authenticated user can add his/her own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored outside the SEE without encryption as required by the FPT_BDP_EXT.3. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only authenticated user either using a PIN, password or by other secure means, as specified by the ST author can access the templates through the TSFI provided by the TOE.
 
 ===== Dependency
 
-The evaluator shall perform the EA for FIA_MBE_EXT.1 first to confirm the mobile biometric enrolment can be done correctly.
+The evaluator shall perform the EA for FIA_MBE_EXT.1 first to confirm the biometric enrolment can be done correctly.
 
 ===== Tool types required to perform the EA
 
@@ -705,7 +705,7 @@ A hybrid authentication mechanism is one where a user has to submit a combinatio
 
 ===== Dependency
 
-The evaluator shall perform the EA for FIA_MBE_EXT.1 first to confirm the mobile biometric enrolment can be done correctly.
+The evaluator shall perform the EA for FIA_MBE_EXT.1 first to confirm the biometric enrolment can be done correctly.
 
 ===== Tool types required to perform the EA
 
@@ -798,7 +798,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of ATE_IND.1
 
-Same EA should be applied to [BIOPP-Module] except SFR FIA_MBV_EXT.3 (**Presentation attack detection for mobile biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
+Same EA should be applied to [BIOPP-Module] except SFR FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
 
 === Class AVA: Vulnerability Assessment
 
@@ -806,13 +806,13 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of AVA_VAN.1
 
-Same EA should be applied to [BIOPP-Module] except SFR FIA_MBV_EXT.3 (**Presentation attack detection for mobile biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
+Same EA should be applied to [BIOPP-Module] except SFR FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
 
 == Evaluation Activities for FIA_MBV_EXT.3
 
 === Introduction
 
-The evaluator shall perform the following two types of EAs or testing to evaluate the FIA_MBV_EXT.3 (**Presentation attack detection for mobile biometric verification**).
+The evaluator shall perform the following two types of EAs or testing to evaluate the FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**).
 
 [loweralpha]
 . EAs for ATE_IND.1 (Independent testing - conformance)
@@ -877,7 +877,7 @@ If the evaluator can find new PAI species, the evaluator shall consider the foll
 [loweralpha]
 . Attacker’s motivation
 +
-For enhanced security that is easy to use, the TOE implements mobile biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the mobile device. The SD assumes that the mobile biometric verification is being used in accordance with USE CASE 1: Mobile biometric verification for unlocking the mobile device.
+For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the mobile device. The SD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the mobile device.
 +
 Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face PAI) if such services are available at low cost.
 
@@ -1020,7 +1020,7 @@ The test document shall report the following information to uniquely identify th
 +
 Information that uniquely identifes the TOE shall be reported. [BIOPP-Module] is intended to be used with [MDFPP] and reference for the mobile device can be used as the TOE reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device
 +
-Modification to the TOE for performance testing, if any, shall be reported (e.g. The TOE is modified to export biometric data for off-line testing). The rationale that such modification doesn’t affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code isn’t executed during mobile biometric verification or the developer may run regression test to verify that modification doesn’t change the result of verification (e.g. similarity score).
+Modification to the TOE for performance testing, if any, shall be reported (e.g. The TOE is modified to export biometric data for off-line testing). The rationale that such modification doesn’t affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code isn’t executed during biometric verification or the developer may run regression test to verify that modification doesn’t change the result of verification (e.g. similarity score).
 .. TOE configuration
 +
 Any configurable parameters or setting of the TOE that may affect the performance shall be reported. Value of each parameter set for the testing shall also be provided. For example, if threshold (e.g. decision threshold and image quality threshold) is configurable by users, value of threshold set for the testing shall be reported.
@@ -1037,7 +1037,7 @@ The test document shall report the following items to provide the result of test
 .. Test period and location
 +
 Timeline for the performance testing (samples or templates may be collected over multiple sessions) and location of testing shall be reported.
-.. Modality used for mobile biometric verification
+.. Modality used for biometric verification
 +
 The performance testing shall be done for all modalities selected in FIA_MBV_EXT.1. Result of testing for each modality shall be reported separately.
 .. Definition of genuine and imposter transaction
@@ -1074,7 +1074,7 @@ If FMR and FNMR is selected in FIA_MBV_EXT.1, number of genuine and imposter att
 
 ==== Target application and influential factors
 
-Test document shall specify a target application modelled in the test, such as mobile biometric verification in an indoor office environment with a habituated crew.
+Test document shall specify a target application modelled in the test, such as biometric verification in an indoor office environment with a habituated crew.
 
 Test document shall also report influential factors that may influence performance, measures to control such factors and under what factors the performance testing was conducted.
 
@@ -1169,15 +1169,15 @@ The developer shall follow recommendations or minimum requirements below to cond
 
 === Recommendations
 
-==== Test scenario for mobile biometric verification
+==== Test scenario for biometric verification
 
 The developer shall follow the guidance in this Section to define the transaction if the developer selects FAR and FRR in FIA_MBV_EXT.1 or to define the number of samples per each test subject if the developer selects FMR and FNMR in FIA_MBV_EXT.1.
 
-The user may use the mobile biometric verification in a different way.
+The user may use the biometric verification in a different way.
 
 Suppose the mobile device provides both Password Authentication Factor and BAF and user can use either of factor to unlock the device. One user may try to unlock the device with BAF until allowable maximum number of unsuccessful authentication attempts is exceeded. Another user may try to unlock the device with BAF only three times and switch to the password if all three attempts were failed.
 
-It may also be possible for user to enrol multiple body parts (e.g. index and thumb fingerprint) or single body part for mobile biometric verification.
+It may also be possible for user to enrol multiple body parts (e.g. index and thumb fingerprint) or single body part for biometric verification.
 
 However, it’s not possible to evaluate all these scenarios to measure the performance but the developer shall refer the ST that claims conformance to [MDFPP] to define the scenario.
 
@@ -1193,15 +1193,15 @@ The developer shall also select the most common scenario among users to conduct 
 
 Only one template can be generated from each body part (e.g. right index fingerprint, left hand vein or face) of test subject and used for the performance testing.
 
-Quality of template may have significant impact on the mobile biometric verification performance. This SD assumes that the user is familiar with the mobile devices operation and enrol him/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
+Quality of template may have significant impact on the biometric verification performance. This SD assumes that the user is familiar with the mobile devices operation and enrol him/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
 
 ==== Maximum number of samples per test subject
 
-The developer shall define the maximum number of samples per test subject to be collected following the guidance provided in <<Test scenario for mobile biometric verification>>.
+The developer shall define the maximum number of samples per test subject to be collected following the guidance provided in <<Test scenario for biometric verification>>.
 
 ==== Maximum number of transactions per test subject
 
-Only one transaction can be run by each test subject because the mobile device locks the mobile biometric verification as required by [MDFPP] after the certain number of attempts are failed.
+Only one transaction can be run by each test subject because the mobile device locks the biometric verification as required by [MDFPP] after the certain number of attempts are failed.
 
 ==== Statistical certainty for FAR/FMR
 
@@ -1516,7 +1516,7 @@ The evaluator shall select “Easy” because the TOE is the mobile device that 
 
 ==== Application note for Window of Opportunity (Access to TOE) for Exploitation
 
-The evaluator shall select “Difficult” because number of unsuccessful authentication attempts for mobile biometric verification is limited, and mobile biometric verification become unusable if the number of failure attempts exceed the limit.
+The evaluator shall select “Difficult” because number of unsuccessful authentication attempts for biometric verification is limited, and biometric verification become unusable if the number of failure attempts exceed the limit.
 
 === Pass/Fail criteria for EAs for FIA_MBV_EXT.3
 
@@ -1524,13 +1524,13 @@ As required by CC, the evaluator shall determine that the TOE is resistant to an
 
 The evaluator may have enough confidence to assign fail verdict to the TOE if the evaluator find the PAIs that succeed the attack repeatably or at high probability (e.g. almost 100%).
 
-However, the evaluator can’t make an objective decision if the probability of success decreases at certain level because the mobile device limits the number of unsuccessful authentication attempts for mobile biometric verification and the attacker can’t present the PAI to the TOE so many times in the actual operational environment.
+However, the evaluator can’t make an objective decision if the probability of success decreases at certain level because the mobile device limits the number of unsuccessful authentication attempts for biometric verification and the attacker can’t present the PAI to the TOE so many times in the actual operational environment.
 
 This Section provides the Pass/Fail criteria for EAs for FIA_MBV_EXT.3 taking this particular aspect into account so that the evaluator can make consistent and objective decision.
 
 ==== Pass/Fail criteria
 
-The mobile device limits the number of unsuccessful authentication attempts for mobile biometric verification, as required by [MDFPP]. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
+The mobile device limits the number of unsuccessful authentication attempts for biometric verification, as required by [MDFPP]. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
 
 This SD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable PAIs”. “Reliable PAIs” are those PAIs that succeed at least one attack within the allowable number of attempts (i.e. succeed to unlock the mobile device) at more than 80% of probability. This SD selects this probability based on the use case assumed in [BIOPP-Module].
 
@@ -1551,7 +1551,7 @@ The following table shows that example of pairs (maximum *_p_* for particular *n
 |8 |0.18 (18%)
 |===
 
-The evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST that claim conformance to [MDFPP]. If the ST assign 5 to the maximum number of unsuccessful attempts for mobile biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
+The evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST that claim conformance to [MDFPP]. If the ST assign 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
 
 The evaluator shall assign pass verdict to the TOE only if the evaluator can’t find those PAIs that the probability of successful attack is more than *_p_*.
 
@@ -1567,11 +1567,11 @@ The evaluator shall examine that appropriate warnings is provided in the AGD gui
 
 Those PAIs can succeed at least one presentation attack (and succeed to unlock the mobile device) at 25% of probability when allowable number of unsuccessful attempts is 4 (i.e. *n* = 4).
 
-Example of warnings is that the AGD guidance may warn that the mobile biometric verification is less secure than a password and recommend using a password for security sensitive services.
+Example of warnings is that the AGD guidance may warn that the biometric verification is less secure than a password and recommend using a password for security sensitive services.
 
 == References
 
-[BIOPP-Module] collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device –, May 01, Version 0.8, 2019
+[BIOPP-Module] collaborative PP-Module for Biometric enrolment and verification - for unlocking the device –, May 01, Version 0.8, 2019
 
 [CC1] Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model +
 CCMB-2017-04-001, Version 3.1 Revision 5, April 2017
