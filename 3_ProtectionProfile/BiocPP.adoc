@@ -3,9 +3,10 @@
 :toc:
 :toclevels: 3
 :sectnums:
+:sectnumlevels: 5
 :imagesdir: images
-:revnumber: 0.9
-:revdate: 2019-08-05
+:revnumber: 0.91
+:revdate: 2019-12-05
 
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
@@ -34,7 +35,9 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 - [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
-- [#SD]#[SD]# Evaluation Activities for collaborative Protection Profile Module for Biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
+- [#MDFPP]#[MDFPP]# Protection Profile for Mobile Device Fundamentals, Version:3.3.
+- [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 05, 2019, Version 0.91.
+- [#SD]#[SD]# Evaluation Activities for collaborative Protection Profile Module for Biometric enrolment and verification - for unlocking the device -, December 05, 2019, Version 0.5.
 - [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [#ISOIEC19989-2]#[ISO/IEC 19989-2]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
 - [#ISO19989-3]#[ISO/IEC 19989-3]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
@@ -129,14 +132,21 @@ Zero-effort Impostor Attempt::
 |0.9
 |5th August, 2019
 |Updates based on Public Review Draft 1 comments
+
+|0.9
+|5th December, 2019
+|Updates to make PAD optional
 |===
 
-== PP Introduction
+== PP-Module Introduction
 
-=== PP Reference Identification
-- PP Reference: {doctitle}
-- PP Version: {revnumber}
-- PP Date: {revdate}
+=== PP-Module Reference
+- PP-Module Reference: {doctitle}
+- PP-Module Version: {revnumber}
+- PP-Module Date: {revdate}
+
+=== Base PP identification
+Base PP of this PP-Module is <<MDFPP>>.
 
 === TOE Overview
 This is a collaborative Protection Profile Module (PP-Module) that is used to extend a base PP for a mobile device that implement biometric enrolment and verification to unlock the mobile device in the locked state using user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a mobile device that implements biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE (i.e. mobile device) and implements the biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and mobile device. Each biometric enrolment and verification process is described in the following paragraphs. 
@@ -153,11 +163,7 @@ During the verification process, a user presents his/her own biometric character
 
 Examples of biometric characteristic used by the TOE are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics for which <<SD>> defines the Evaluation Activities.
 
-c)	Presentation Attack Detection (PAD)
-
-The TOE needs to consider the risk of subverting the TOE’s biometric verification. Attacker could present artificial PAIs to the TOE to interfere with the TOE’s security objectives. The TOE needs to be able to provide resistance to presentation attacks. <<SD>> explains what resistance should be provided by the TOE in detail.
-
-=== TOE Design
+==== TOE Design
 The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1,ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
 
 [#img-TOE-generic]
@@ -170,10 +176,10 @@ As illustrated in the above figure, the TOE is capable of:
 * Extracting and processing the features from samples of sufficient quality and generating various templates (Signal Processing Subsystem)
 * Storing the templates in a database on the mobile device (Data Storage Subsystem)
 * Comparing captured features with data contained in one or more templates (Comparison Subsystem)
-* Detecting the presentation attacks using artificial PAI (Presentation Attack Detection Subsystem)
+* Optionally detecting the presentation attacks using artificial PAI (Presentation Attack Detection Subsystem)
 * Deciding how well features and any template match, and indicating whether or not a verification of the user has been achieved (Decision Subsystem)
 
-=== Relation between TOE and mobile device 
+==== Relation between TOE and mobile device 
 The TOE is reliant on the mobile device itself to provide overall security of the system. This PP-Module is intended to be used with a base PP, and the base PP is responsible for evaluating the following security functions:
 
 * Providing the Password Authentication Factor to support user authentication and management of the TOE security function
@@ -186,36 +192,50 @@ The evaluation of the above security functions is out of scope of this PP-Module
 .Generic relations between the TOE and the mobile device environment
 image::BiocPP_architecture_proposal_3.png[title="Generic relations between the TOE and the mobile device environment" align="center"]
 
-=== TOE Use Case
-Mobile device itself may be operated in a number of use cases such as enterprise use with limited personal use or Bring Your Own Device (BYOD). The TOE on the device may also be operated in the same use cases, however, use cases of the TOE should be devised separately considering the purpose of mobile biometric verification and potential attacks. The following use cases describe how and why mobile biometric verification is supposed to be used. Each use case has its own assurance level, depending on its criticality and separate PP or PP-Module should be developed for each use case.  
+==== TOE Use Case
+Mobile device itself may be operated in a number of use cases such as enterprise use with limited personal use or Bring Your Own Device (BYOD). The TOE on the device may also be operated in the same use cases, however, use cases of the TOE should be devised separately considering the purpose of biometric verification. The following use cases describe how and why biometric verification is supposed to be used. Each use case has its own assurance level, depending on its criticality and separate PP or PP-Module should be developed for each use case.  
 
 This PP-Module only assumes USE CASE 1 described below. USE CASE 2 is out of scope of this PP-Module.
 
-==== USE CASE 1: Biometric verification for unlocking the mobile device
-For enhanced security that is easy to use, mobile device may implement mobile biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use an own biometric characteristic to unlock access to the mobile device. In this use case, the mobile device is not supposed to be used for security sensitive services through the mobile biometric verification.
+===== USE CASE 1: Biometric verification for unlocking the mobile device
+For enhanced security that is easy to use, mobile device may implement mobile biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use an own biometric characteristic to unlock access to the mobile device. In this use case, the mobile device is not supposed to be used for security sensitive services through the biometric verification.
 
-Main concern of this use case is the accuracy of mobile biometric verification (i.e. FAR/FMR and FRR/FNMR) and basic level of presentation attacks. Security assurance for mobile device that the TOE relies on should be handled by the base PP.
+Main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for mobile device that the TOE relies on should be handled by the base PP.
 
-This use case assumes that the mobile device is configured correctly to enable the mobile biometric verification by the biometric system administrator. The user of the mobile device can act as the biometric system administrator in this use case.
+This use case assumes that the mobile device is configured correctly to enable the biometric verification by the biometric system administrator. The user of the mobile device can act as the biometric system administrator in this use case.
 
-It is also assumed that the user enrols his/herself correctly, following the guidance provided by the TOE. Attacks during enrolment may be out of scope, but optionally addressed. FTE is not a security relevant criterion for this use case.
+It is also assumed that the user enrols his/herself correctly, following the guidance provided by the TOE. Presentation attacks during biometric enrolment and verification may be out of scope, but optionally addressed. FTE is not a security relevant criterion for this use case.
 
-==== USE CASE 2: Biometric verification for security sensitive service
+===== USE CASE 2: Biometric verification for security sensitive service
 
-This use case is an example of another use case that isn’t considered in this PP-Module. Another PP-Module should be developed at higher assurance level for this use case.
+This use case is an example of another use case that isn’t considered in this PP-Module. Another PP or PP-Module should be developed at higher assurance level for this use case.
 
 Mobile devices may be used for security sensitive services such as payment transactions and online banking. Verification may be done by the biometric for convenience instead of PIN/password to access such security sensitive services.
 
-The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR and FRR/FNMR) and higher level of presentation attack.
+The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR and FRR/FNMR) and presentation attack detection.
 
-== CC Conformance Claims
+== Consistency rationale
+
+Consistency between SPD/objectives/SFRs in <<MDFPP>> and this PP-Module is demonstrated in the <<PPC-MDF>>.
+
+== Conformance Claims
+
+=== Conformance statement
+
 As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, this PP-Module:
 
 * conforms to the requirements of Common Criteria v3.1, Revision 5,
 * is Part 2 extended,
+* all assurance requirements are inherited from the base PP
 * does not claim conformance to any other security functional requirement packages.
 
-In order to be conformant to this PP-Module, a ST shall demonstrate Exact Conformance. Exact Conformance, as a subset of Strict Conformance as defined by the CC, is defined as the ST containing all of the SFRs in <<Security Functional Requirements>> (these are the mandatory SFRs) of this PP-Module, and potentially SFRs from <<Selection-Based Requirements>> (these are selection-based SFRs) and <<Optional Requirements>> (these are optional SFRs) of this PP-Module. While iteration is allowed, no additional requirements (from [CC2] or [CC3], or definitions of extended components not already included in this PP-Module) are allowed to be included in the ST. Further, no SFRs in <<Security Functional Requirements>> of this PP-Module are allowed to be omitted.
+=== Conformance type
+
+In order to be conformant to this PP-Module, a ST shall demonstrate Exact Conformance. Exact Conformance requires the ST to contain all of the SFRs in <<Security Functional Requirements>> (these are the mandatory SFRs). The ST may includes <<Optional Requirements>> (these are optional SFRs) of this PP-Module. While iteration is allowed, no additional requirements (from [CC2] or [CC3], or definitions of extended components not already included in this PP-Module) are allowed to be included in the ST. Further, no SFRs in <<Security Functional Requirements>> of this PP-Module are allowed to be omitted.
+
+=== Evaluation activities
+
+This PP-Module requires the use of evaluation activities defined in <<SD>>.
 
 == Security Problem Definition
 
