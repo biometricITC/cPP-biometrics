@@ -226,7 +226,7 @@ Note that to fully evaluate the TOE, these SARs shall be applied to the entire T
 === Evaluation methods/activities references statement
 <<MDFPP>> and <<SD>> define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1. <<MDFPP>> and <<SD>> also provide Evaluation Activities for the SARs. In evaluating this PP-Configuration, the evaluator shall ensure that all Evaluation Activities for SFRs and SARs are evaluated as part of satisfying the required SARs.
 
-=== Related Documents
+== Related Documents
 
 **Common Criteria**footnote:[For details see http://www.commoncriteriaportal.org/]
 
