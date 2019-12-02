@@ -441,7 +441,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-[BIOPP-Module] assumes that the mobile device provides the Secure Execution Environment (SEE), an operating environment separate from the main mobile device operating system. Access to the SEE is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
+<<BIOPP-Module>> assumes that the mobile device provides the Secure Execution Environment (SEE), an operating environment separate from the main mobile device operating system. Access to the SEE is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 
 Evaluation of this SEE is out of scope of <<BIOPP-Module>> and the evaluator doesn’t need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the security boundary of the SEE. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
 
@@ -668,7 +668,7 @@ The <<BIOPP-Module>> does not contain any selection-based requirements.
 
 The evaluator shall verify that the TOE prevents use of artificial Presentation Attack Instruments (PAI) during biometric enrolment. This section defines EAs derived from ASE_TSS.1, AGD_OPE.1 and ADV_FSP.1.
 
-The main part of EA for FIA_MBE_EXT.3 is evaluator’s testing using artificial PAI. The <<Evaluation Activities for FIA_MBV_EXT.3>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform during the testing during biometric verification. The evaluator shall follow the same EAs for evaluating presentation attack detection during biometric enrolment. 
+The main part of EA for FIA_MBE_EXT.3 is evaluator’s testing using artificial PAI. The <<Evaluation Activities for PAD testing>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform for PAD testing during the biometric verification. The same EAs can be applied to PAD testing during the biometric enrolment. 
 
 ===== Dependency
 
@@ -692,7 +692,7 @@ Following input is required from the developer.
 
 The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of artificial PAI during biometric enrolment.
 
-Main part of EA is evaluator’s testing defined in <<Evaluation Activities for FIA_MBV_EXT.3>>. The evaluator should not require the detail design description of PAD from developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
+Main part of EA is evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require the detail design description of PAD from developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
 ===== Pass/Fail criteria
 
@@ -711,7 +711,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 The evaluator shall verify that the TOE prevents use of artificial Presentation Attack Instruments (PAI) during biometric verification. This section defines EAs derived from ASE_TSS.1, AGD_OPE.1 and ADV_FSP.1.
 
-The main part of EA for FIA_MBV_EXT.3 is evaluator’s testing using artificial PAI. The <<Evaluation Activities for FIA_MBV_EXT.3>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform during the testing.
+The main part of EA for FIA_MBV_EXT.3 is evaluator’s testing using artificial PAI. The <<Evaluation Activities for PAD testing>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform during the testing.
 
 ===== Dependency
 
@@ -735,7 +735,7 @@ Following input is required from the developer.
 
 The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of artificial PAI during biometric verification.
 
-Main part of EA is evaluator’s testing defined in <<Evaluation Activities for FIA_MBV_EXT.3>>. The evaluator should not require the detail design description of PAD from developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
+Main part of EA is evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require the detail design description of PAD from developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
 ===== Pass/Fail criteria
 
@@ -756,7 +756,7 @@ The evaluator shall refer the EA for FCS_CKM_EXT.4 in <<MDFPP>> to perform evalu
 
 == Evaluation Activities for SARs
 
-<<BIOPP-Module>> does not define any SARs beyond those defined within the <<MDFPP>> to which it can claim conformance. It is important to note that the TOE that is evaluated against <<BIOPP-Module>> is inherently evaluated against <<MDFPP>> as well. This means that EAs in <<Class ADV: Development>> (Security Assurance Requirements) in <<MDFPP>> should also applied to <<BIOPP-Module>> with additional application notes or EAs defined in the following Sections.
+<<BIOPP-Module>> does not define any SARs beyond those defined within the <<MDFPP>> to which it can claim conformance. It is important to note that the TOE that is evaluated against <<BIOPP-Module>> is inherently evaluated against <<MDFPP>> as well. This means that EAs in Section 5.2 *Security Assurance Requirements* in <<MDFPP>> should also applied to <<BIOPP-Module>> with additional application notes or EAs defined in the following Sections.
 
 === Class ASE: Security Target
 
@@ -794,7 +794,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of ATE_IND.1
 
-Same EA should be applied to <<BIOPP-Module>> except SFR FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
+Same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for PAD testing>> for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
 
 === Class AVA: Vulnerability Assessment
 
@@ -802,13 +802,13 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of AVA_VAN.1
 
-Same EA should be applied to <<BIOPP-Module>> except SFR FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for FIA_MBV_EXT.3>> for FIA_MBV_EXT.3.
+Same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for PAD testing>> for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
 
-== Evaluation Activities for FIA_MBV_EXT.3
+== Evaluation Activities for PAD testing
 
 === Introduction
 
-The evaluator shall perform the following two types of EAs or testing to evaluate the FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**).
+The evaluator shall perform the following two types of EAs or testing to evaluate the FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The following section defines EAs for FIA_MBV_EXT.3 however, the evaluator can rephrase "verification" with "enrolment" and apply the EAs to FIA_MBE_EXT.3. 
 
 [loweralpha]
 . EAs for ATE_IND.1 (Independent testing - conformance)
@@ -834,7 +834,7 @@ As described in previous section, <<Toolbox>> defines test items to create a rep
 
 During the independent testing, the evaluator may find PAIs that are incorrectly matched to the enrolled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
 
-[Toolbox] defines the Pass/Fail criteria, maximum attack presentation match rate for PAIs. The evaluator shall follow the <<Toolbox>> criteria for the number of PAI presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign fail verdict to those TOE that doesn’t satisfy the criteria.
+<<Toolbox>> defines the Pass/Fail criteria, maximum attack presentation match rate for PAIs. The evaluator shall follow the <<Toolbox>> criteria for the number of PAI presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign fail verdict to those TOE that doesn’t satisfy the criteria.
 
 The PAIs that pass the criteria but show the higher attack presentation match rate will be tested again during the AVA_VAN.1 evaluation.
 
@@ -952,7 +952,7 @@ However, the evaluator shall not spend more than one week for independent and pe
 
 ===== Determine Pass/Fail of penetration testing
 
-The evaluator shall determine that the TOE, in its operational environment, is resistant to an attacker possessing a Basic attack potential. The evaluator shall make this determination based on guidance provided in  <<Pass/Fail criteria for EAs for FIA_MBV_EXT.3>> and maximum allowable error rates defined in <<Toolbox>>.
+The evaluator shall determine that the TOE, in its operational environment, is resistant to an attacker possessing a Basic attack potential. The evaluator shall make this determination based on guidance provided in  <<Pass/Fail criteria for EAs for PAD testing (FIA_MBE_EXT.3 and FIA_MBV_EXT.3)>> and maximum allowable error rates defined in <<Toolbox>>.
 
 ==== Justification for EAs for AVA_VAN.1
 
@@ -1514,7 +1514,7 @@ The evaluator shall select “Easy” because the TOE is the mobile device that 
 
 The evaluator shall select “Difficult” because number of unsuccessful authentication attempts for biometric verification is limited, and biometric verification become unusable if the number of failure attempts exceed the limit.
 
-=== Pass/Fail criteria for EAs for FIA_MBV_EXT.3
+=== Pass/Fail criteria for EAs for PAD testing (FIA_MBE_EXT.3 and FIA_MBV_EXT.3)
 
 As required by CC, the evaluator shall determine that the TOE is resistant to an attacker possessing a Basic attack potential based on <<attackpotentialcalc>>. However, the table doesn’t provide any guidance for the probability of success or failure of presentation attack.
 
@@ -1522,7 +1522,7 @@ The evaluator may have enough confidence to assign fail verdict to the TOE if th
 
 However, the evaluator can’t make an objective decision if the probability of success decreases at certain level because the mobile device limits the number of unsuccessful authentication attempts for biometric verification and the attacker can’t present the PAI to the TOE so many times in the actual operational environment.
 
-This Section provides the Pass/Fail criteria for EAs for FIA_MBV_EXT.3 taking this particular aspect into account so that the evaluator can make consistent and objective decision.
+This Section provides the Pass/Fail criteria for EAs for PAD testing taking this particular aspect into account so that the evaluator can make consistent and objective decision.
 
 ==== Pass/Fail criteria
 
