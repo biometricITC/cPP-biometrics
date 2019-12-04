@@ -224,7 +224,57 @@ In order to evaluate a TOE that claims conformance to this PP-Configuration, the
 Note that to fully evaluate the TOE, these SARs shall be applied to the entire TSF and not just the portions described by <<MDFPP>> where the SARs are defined.
 
 === Evaluation methods/activities references statement
-<<MDFPP>> and <<SD>> define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1. <<MDFPP>> and <<SD>> also provide Evaluation Activities for the SARs. In evaluating this PP-Configuration, the evaluator shall ensure that all Evaluation Activities for SFRs and SARs are evaluated as part of satisfying the required SARs.
+<<MDFPP>> and <<SD>> define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1. If optional requirement FDP_RIP.2 is selected in the <<BIOPP-Module>>, the Evaluation Activities for FCS_CKM_EXT.4 in <<MDFPP>> can be applied to FDP_RIP.2.
+
+<<BIOPP-Module>> does not define any SARs beyond those defined within <<MDFPP>> to which it can claim conformance. It is important to note that the TOE that is evaluated against <<BIOPP-Module>> is inherently evaluated against <<MDFPP>> as well. This means that EAs in Section 5.2 *Security Assurance Requirements* in <<MDFPP>> should also applied to <<BIOPP-Module>> with additional application notes or EAs defined in the following Sections.
+
+==== Class ASE: Security Target
+
+<<MDFPP>> doesn’t define any EAs and there is no additional EAs for <<BIOPP-Module>>.
+
+==== Class ADV: Development
+
+Same EA defined in <<MDFPP>> should also be applied to <<BIOPP-Module>>.
+
+==== Class AGD: Guidance Documentation
+
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<MDFPP>>.
+
+===== Application note for EA of AGD_OPE.1
+
+<<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<MDFPP>> and the operational guidance doesn’t need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
+
+There is additional application note related to EAs for FIA_MBV_EXT.3 in <<Additional application notes for AGD Class for FIA_MBV_EXT.3>>. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
+
+===== Application note for EA of AGD_PRE.1
+
+[BIOPP-Module] supposes that the biometric system is fully integrated into the mobile device and the preparative procedures are unnecessary for [BIOPP-Module]. Therefore, AGD_PRE.1 deems satisfied for <<BIOPP-Module>>.
+
+==== Class ALC: Life-cycle Support
+
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<MDFPP>> for <<BIOPP-Module>>. There is no application note for EA for ALC_CMS.1 and ALC_TSU_EXT.
+
+===== Application note for EA of ALC_CMC.1
+
+<<BIOPP-Module>> is intended to be used with <<MDFPP>> and reference for the mobile device can be used as the TOE (mobile device + biometric system) reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device.
+
+==== Class ATE: Tests
+
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<MDFPP>> for <<BIOPP-Module>>.
+
+===== Application note for EA of ATE_IND.1
+
+Same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for PAD testing>> for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
+
+==== Class AVA: Vulnerability Assessment
+
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<MDFPP>> for <<BIOPP-Module>>.
+
+===== Application note for EA of AVA_VAN.1
+
+Same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for PAD testing>> for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
+
+In evaluating this PP-Configuration, the evaluator shall ensure that all Evaluation Activities for SFRs and SARs are evaluated as part of satisfying the required SARs.
 
 == Related Documents
 
