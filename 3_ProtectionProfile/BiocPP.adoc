@@ -146,7 +146,7 @@ Zero-effort Impostor Attempt::
 - PP-Module Date: {revdate}
 
 === Base PP identification
-Base PP of this PP-Module is <<MDFPP>>.
+Base PP of this PP-Module is identified in the appropriate PP-Configuration.
 
 === TOE Overview
 ==== TOE main security features
@@ -217,7 +217,7 @@ The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR an
 
 == Consistency rationale
 
-Consistency between the <<MDFPP>> and this PP-Module is demonstrated in the <<PPC-MDF>>.
+Consistency between the base PP and this PP-Module is demonstrated in the appropriate PP-Configuration.
 
 == Conformance Claims
 
@@ -427,25 +427,25 @@ Target error rates defined in SFR shall be evaluated based on <<SD>>. Normally t
 
 *FPT_BDP_EXT.1.1* The TSF shall process any plaintext biometric data used to generate templates and perform sample matching within the security boundary of the secure execution environment.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the <<PPC-MDF>> explains how the biometric system in cooperation with the mobile device shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
 
 ==== FPT_BDP_EXT.2 No Biometric data transmission [[FPT_BDP_EXT.2]]
 
 *FPT_BDP_EXT.2.1* The TSF shall not transmit any plaintext biometric data outside the security boundary of the secure execution environment.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the <<PPC-MDF>> explains how the biometric system in cooperation with the mobile device shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
 
 ==== FPT_BDP_EXT.3 Biometric data storage [[FPT_BDP_EXT.3]]
 
 [[FPT_BDP_EXT.3.1]]*FPT_BDP_EXT.3.1* The TSF shall not store any plaintext biometric data outside the security boundary of the secure execution environment.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the <<PPC-MDF>> explains how the biometric system in cooperation with the mobile device shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
 
 ==== FPT_PBT_EXT.1 Protection of biometric template [[FPT_PBT_EXT.1]]
 
 *FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_, [*assignment*: _other circumstances_]].
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the <<PPC-MDF>> explains how the biometric system in cooperation with the mobile device shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
 
 == Security Assurance Requirements
 
@@ -483,7 +483,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 *FDP_RIP.2.1* The TSF shall ensure that any previous information content of biometric data is made unavailable upon the [*selection*: _allocation of the resource to, deallocation of the resource from_] all objects.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the <<PPC-MDF>> explains how the biometric system in cooperation with the mobile device shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
 
 == Extended Component Definitions
 This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <<Optional Requirements>>. 
