@@ -3,9 +3,10 @@
 :toc:
 :toclevels: 3
 :sectnums:
+:sectnumlevels: 5
 :imagesdir: images
-:revnumber: 0.9
-:revdate: 2019-08-05
+:revnumber: 0.91
+:revdate: 2019-12-05
 
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
@@ -34,7 +35,9 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 - [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
-- [#SD]#[SD]# Evaluation Activities for collaborative Protection Profile Module for Biometric enrolment and verification - for unlocking the device -, January-2019, Version 0.3.
+- [#MDFPP]#[MDFPP]# Protection Profile for Mobile Device Fundamentals, Version:3.3.
+- [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 05, 2019, Version 0.91.
+- [#SD]#[SD]# Evaluation Activities for collaborative Protection Profile Module for Biometric enrolment and verification - for unlocking the device -, December 05, 2019, Version 0.5.
 - [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [#ISOIEC19989-2]#[ISO/IEC 19989-2]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
 - [#ISO19989-3]#[ISO/IEC 19989-3]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
@@ -52,7 +55,7 @@ For the purpose of this PP-Module, the following terms and definitions given in 
 Attempt::
    Submission of one (or a sequence of) biometric samples to the part of the TOE.
 Biometric Authentication Factor (BAF)::
-	Authentication factor used for mobile biometric verification. In this PP-Module, the term is a synonym of the “template”.
+	Authentication factor used for biometric verification. In this PP-Module, the term is a synonym of the “template”.
 Biometric Data::
 	Digital data created during biometric enrolment and verification processes. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected, and does not include end user information such as user name, password (unless tied to the biometric modality), demographic information, and authorizations.
 Biometric System Administrator::
@@ -129,16 +132,24 @@ Zero-effort Impostor Attempt::
 |0.9
 |5th August, 2019
 |Updates based on Public Review Draft 1 comments
+
+|0.9
+|5th December, 2019
+|Updates to make PAD optional
 |===
 
-== PP Introduction
+== PP-Module Introduction
 
-=== PP Reference Identification
-- PP Reference: {doctitle}
-- PP Version: {revnumber}
-- PP Date: {revdate}
+=== PP-Module Reference
+- PP-Module Reference: {doctitle}
+- PP-Module Version: {revnumber}
+- PP-Module Date: {revdate}
+
+=== Base PP identification
+Base PP of this PP-Module is identified in the appropriate PP-Configuration.
 
 === TOE Overview
+==== TOE main security features
 This is a collaborative Protection Profile Module (PP-Module) that is used to extend a base PP for a mobile device that implement biometric enrolment and verification to unlock the mobile device in the locked state using user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a mobile device that implements biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE (i.e. mobile device) and implements the biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and mobile device. Each biometric enrolment and verification process is described in the following paragraphs. 
 
 a)	Biometric enrolment
@@ -153,11 +164,7 @@ During the verification process, a user presents his/her own biometric character
 
 Examples of biometric characteristic used by the TOE are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics for which <<SD>> defines the Evaluation Activities.
 
-c)	Presentation Attack Detection (PAD)
-
-The TOE needs to consider the risk of subverting the TOE’s biometric verification. Attacker could present artificial PAIs to the TOE to interfere with the TOE’s security objectives. The TOE needs to be able to provide resistance to presentation attacks. <<SD>> explains what resistance should be provided by the TOE in detail.
-
-=== TOE Design
+==== TOE Design
 The TOE is fully integrated into the mobile device without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1,ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
 
 [#img-TOE-generic]
@@ -170,10 +177,10 @@ As illustrated in the above figure, the TOE is capable of:
 * Extracting and processing the features from samples of sufficient quality and generating various templates (Signal Processing Subsystem)
 * Storing the templates in a database on the mobile device (Data Storage Subsystem)
 * Comparing captured features with data contained in one or more templates (Comparison Subsystem)
-* Detecting the presentation attacks using artificial PAI (Presentation Attack Detection Subsystem)
+* Optionally detecting the presentation attacks using artificial PAI (Presentation Attack Detection Subsystem)
 * Deciding how well features and any template match, and indicating whether or not a verification of the user has been achieved (Decision Subsystem)
 
-=== Relation between TOE and mobile device 
+==== Relation between TOE and mobile device 
 The TOE is reliant on the mobile device itself to provide overall security of the system. This PP-Module is intended to be used with a base PP, and the base PP is responsible for evaluating the following security functions:
 
 * Providing the Password Authentication Factor to support user authentication and management of the TOE security function
@@ -186,36 +193,50 @@ The evaluation of the above security functions is out of scope of this PP-Module
 .Generic relations between the TOE and the mobile device environment
 image::BiocPP_architecture_proposal_3.png[title="Generic relations between the TOE and the mobile device environment" align="center"]
 
-=== TOE Use Case
-Mobile device itself may be operated in a number of use cases such as enterprise use with limited personal use or Bring Your Own Device (BYOD). The TOE on the device may also be operated in the same use cases, however, use cases of the TOE should be devised separately considering the purpose of mobile biometric verification and potential attacks. The following use cases describe how and why mobile biometric verification is supposed to be used. Each use case has its own assurance level, depending on its criticality and separate PP or PP-Module should be developed for each use case.  
+==== TOE Use Case
+Mobile device itself may be operated in a number of use cases such as enterprise use with limited personal use or Bring Your Own Device (BYOD). The TOE on the device may also be operated in the same use cases, however, use cases of the TOE should be devised separately considering the purpose of biometric verification. The following use cases describe how and why biometric verification is supposed to be used. Each use case has its own assurance level, depending on its criticality and separate PP or PP-Module should be developed for each use case.  
 
 This PP-Module only assumes USE CASE 1 described below. USE CASE 2 is out of scope of this PP-Module.
 
-==== USE CASE 1: Biometric verification for unlocking the mobile device
-For enhanced security that is easy to use, mobile device may implement mobile biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use an own biometric characteristic to unlock access to the mobile device. In this use case, the mobile device is not supposed to be used for security sensitive services through the mobile biometric verification.
+===== USE CASE 1: Biometric verification for unlocking the mobile device
+For enhanced security that is easy to use, mobile device may implement biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use an own biometric characteristic to unlock access to the mobile device. In this use case, the mobile device is not supposed to be used for security sensitive services through the biometric verification.
 
-Main concern of this use case is the accuracy of mobile biometric verification (i.e. FAR/FMR and FRR/FNMR) and basic level of presentation attacks. Security assurance for mobile device that the TOE relies on should be handled by the base PP.
+Main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for mobile device that the TOE relies on should be handled by the base PP.
 
-This use case assumes that the mobile device is configured correctly to enable the mobile biometric verification by the biometric system administrator. The user of the mobile device can act as the biometric system administrator in this use case.
+This use case assumes that the mobile device is configured correctly to enable the biometric verification by the biometric system administrator. The user of the mobile device can act as the biometric system administrator in this use case.
 
-It is also assumed that the user enrols his/herself correctly, following the guidance provided by the TOE. Attacks during enrolment may be out of scope, but optionally addressed. FTE is not a security relevant criterion for this use case.
+It is also assumed that the user enrols his/herself correctly, following the guidance provided by the TOE. Presentation attacks during biometric enrolment and verification may be out of scope, but optionally addressed. FTE is not a security relevant criterion for this use case.
 
-==== USE CASE 2: Biometric verification for security sensitive service
+===== USE CASE 2: Biometric verification for security sensitive service
 
-This use case is an example of another use case that isn’t considered in this PP-Module. Another PP-Module should be developed at higher assurance level for this use case.
+This use case is an example of another use case that isn’t considered in this PP-Module. Another PP or PP-Module should be developed at higher assurance level for this use case.
 
 Mobile devices may be used for security sensitive services such as payment transactions and online banking. Verification may be done by the biometric for convenience instead of PIN/password to access such security sensitive services.
 
-The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR and FRR/FNMR) and higher level of presentation attack.
+The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR and FRR/FNMR) and presentation attack detection.
 
-== CC Conformance Claims
+== Consistency rationale
+
+Consistency between the base PP and this PP-Module is demonstrated in the appropriate PP-Configuration.
+
+== Conformance Claims
+
+=== Conformance statement
+
 As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, this PP-Module:
 
 * conforms to the requirements of Common Criteria v3.1, Revision 5,
 * is Part 2 extended,
-* does not claim conformance to any other security functional requirement packages.
+* all assurance requirements are inherited from the base PP,
+* does not claim conformance to any other security functional packages.
 
-In order to be conformant to this PP-Module, a ST shall demonstrate Exact Conformance. Exact Conformance, as a subset of Strict Conformance as defined by the CC, is defined as the ST containing all of the SFRs in <<Security Functional Requirements>> (these are the mandatory SFRs) of this PP-Module, and potentially SFRs from <<Selection-Based Requirements>> (these are selection-based SFRs) and <<Optional Requirements>> (these are optional SFRs) of this PP-Module. While iteration is allowed, no additional requirements (from [CC2] or [CC3], or definitions of extended components not already included in this PP-Module) are allowed to be included in the ST. Further, no SFRs in <<Security Functional Requirements>> of this PP-Module are allowed to be omitted.
+=== Conformance type
+
+In order to be conformant to this PP-Module, a ST shall demonstrate Exact Conformance. Exact Conformance requires the ST to contain all of the SFRs in <<Security Functional Requirements>> (these are the mandatory SFRs). The ST may includes <<Optional Requirements>> (these are optional SFRs) of this PP-Module. While iteration is allowed, no additional requirements (from [CC2] or [CC3], or definitions of extended components not already included in this PP-Module) are allowed to be included in the ST. Further, no SFRs in <<Security Functional Requirements>> of this PP-Module are allowed to be omitted.
+
+=== Evaluation activities
+
+This PP-Module requires the use of evaluation activities defined in <<SD>>.
 
 == Security Problem Definition
 
@@ -230,30 +251,24 @@ Note that as a PP-Module, all threats, assumptions, and OSPs defined in the base
 [[T.Casual_Attack]]T.Casual_Attack::
 An attacker may attempt to impersonate as a legitimate user without being enrolled in the TOE. In order to perform the attack, the attacker only use his/her own biometric characteristic (in form of a zero-effort impostor attempt).
 
-[[T.Presentation_Attack]]T.Presentation_Attack::
-An attacker may attempt a presentation attack to the TOE. In order to perform the attack, the attacker uses artificial Presentation Attack Instrument (PAI) except his/her own biometric characteristic.
-
 === Organizational Security Policies
 
 [[OSP.Enrol]]OSP.Enrol::
-The TOE shall enrol a user for mobile biometric verification, only after successful authentication of a user. The TOE shall ensure that templates are of sufficient quality in order to meet the relevant error rates for mobile biometric verification.
-
-[[OSP.PAD_Error]]OSP.PAD_Error::
-The TOE shall meet relevant criteria for its security relevant error rates for PAD.
+The TOE shall enrol a user for biometric verification, only after successful authentication of a user. The TOE shall ensure that templates are of sufficient quality in order to meet the relevant error rates for biometric verification.
 
 [[OSP.Protection]]OSP.Protection::
 The TOE in cooperation with its environment shall protect itself, its configuration and biometric data.
 
 [[OSP.Verification_Error]]OSP.Verification_Error::
-The TOE shall meet relevant criteria for its security relevant error rates for mobile biometric verification.
+The TOE shall meet relevant criteria for its security relevant error rates for biometric verification.
 
 === Assumptions
 
 [[A.Alternative]]A.Alternative::
-It is assumed that the TOE environment provides an alternative authentication mechanism as a complement to mobile biometric verification. The alternative authentication mechanism is required for enrolment of the biometric template and can also be used in cases when a user is rejected by the mobile biometric verification (False Rejection).
+It is assumed that the TOE environment provides an alternative authentication mechanism as a complement to biometric verification. The alternative authentication mechanism is required for enrolment of the biometric template and can also be used in cases when a user is rejected by the biometric verification (False Rejection).
 
 [[A.Authentication]]A.Authentication::
-It is assumed that the TOE environment invokes the TOE for mobile biometric verification, and take appropriate actions based on the TOE’s decision.
+It is assumed that the TOE environment invokes the TOE for biometric verification, and take appropriate actions based on the TOE’s decision.
 
 [[A.User]]A.User::
 It is assumed that the user configures the TOE and its environment correctly in a manner to ensure that the TOE security policies will be enforced.
@@ -264,16 +279,16 @@ This PP-Module defines the following security objectives.
 === Security Objectives for the TOE
 
 [[O.BIO_Verification]]O.BIO_Verification::
-The TOE shall provide a mobile biometric verification mechanism to verify a user with an adequate reliability. The TOE shall meet the relevant criteria for its security relevant error rates for mobile biometric verification.
+The TOE shall provide a biometric verification mechanism to verify a user with an adequate reliability. The TOE shall meet the relevant criteria for its security relevant error rates for biometric verification.
 
 SFR Rationale:
 
-Requirements to provide a mobile biometric verification mechanism is defined in FIA_MBV_EXT.1 in which ST author can specify the relevant criteria for its security relevant error rates. FIA_MBV_EXT.2 requires the TOE to only use samples of sufficient quality to verify a user with an adequate reliability.
+Requirements to provide a biometric verification mechanism is defined in FIA_MBV_EXT.1 in which ST author can specify the relevant criteria for its security relevant error rates. FIA_MBV_EXT.2 requires the TOE to only use samples of sufficient quality to verify a user with an adequate reliability.
 
 *Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
 
 [[O.Enrol]]O.Enrol::
-The TOE shall implement the functionality to enrol a user for mobile biometric verification and bind the template to the user only after successful authentication of the user to the TOE environment using an alternative authentication mechanism. The TOE shall create the sufficient quality of templates in order to meet the relevant error rates for mobile biometric verification.
+The TOE shall implement the functionality to enrol a user for biometric verification and bind the template to the user only after successful authentication of the user to the TOE environment using an alternative authentication mechanism. The TOE shall create the sufficient quality of templates in order to meet the relevant error rates for biometric verification.
 
 SFR Rationale:
 
@@ -282,17 +297,6 @@ Requirements to provide a biometric enrolment mechanism is defined in FIA_MBE_EX
 *Application Note {counter:remark_count}*:: A user shall be authenticated using a Password Authentication Factor to enrol his/herself.
 
 *Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
-
-[[O.Presentation_Attack_Detection]]O.Presentation_Attack_Detection::
-The TOE shall prevent a presentation attack using artificial PAIs. The TOE shall meet relevant criteria for its security relevant error rates for PAD.
-
-SFR Rationale:
-
-Requirement to provide a presentation attack detection mechanism during mobile biometric verification is defined in FIA_MBV_EXT.3. <<SD>> defines relevant criteria for its security relevant error rates for PAD. Optional requirement to provide a presentation attack detection mechanism during biometric enrolment is defined as FIA_MBE_EXT.3.
-
-*Application Note {counter:remark_count}*:: The TOE may or may not counter a presentation attack during enrolment. If the ST author requires the TOE to counter the presentation attack during enrolment, ST author should include FIA_MBE_EXT.3 defined in <<Optional Requirements>>.
-
-*Application Note {counter:remark_count}*:: According to the <<ISO30107-3,ISO/IEC 30107-3>>, relevant error rates should be specified for each type of PAI. <<SD>> defines PAIs that should be used for attack and describes how to create and present the PAIs to the TOE, and minimum error rates that the TOE shall achieve.
 
 [[O.Protection]]O.Protection::
 The TOE shall protect biometric data using the secure execution environment provided by the TOE environment.
@@ -306,14 +310,14 @@ Requirements to control access to the template is defined in FPT_PBT_EXT.1. FPT_
 === Security Objectives for the Operational Environment
 
 [[OE.Alternative]]OE.Alternative::
-The TOE environment shall provide an alternative authentication mechanism as a complement to mobile biometric verification. The alternative authentication mechanism is required for enrolment of the biometric template and can also be used in cases where a user is rejected by the mobile biometric verification (False Rejection).
+The TOE environment shall provide an alternative authentication mechanism as a complement to biometric verification. The alternative authentication mechanism is required for enrolment of the biometric template and can also be used in cases where a user is rejected by the biometric verification (False Rejection).
 
 *Application Note {counter:remark_count}*:: The TOE environment (i.e. mobile device) shall satisfy relevant requirements defined in base PP.
 
 *Application Note {counter:remark_count}*:: The TOE environment (i.e. mobile device) shall provide an alternative authentication mechanism such as a Password Authentication Factor.
 
 [[OE.Authentication]]OE.Authentication::
-The TOE environment shall invoke the TOE for mobile biometric verification, and take appropriate actions based on the TOE’s decision.
+The TOE environment shall invoke the TOE for biometric verification, and take appropriate actions based on the TOE’s decision.
 
 *Application Note {counter:remark_count}*:: Appropriate actions taken by the mobile device are unlocking the mobile device or incrementing the number of unsuccessful attempts and limiting maximum number of unsuccessful attempts.
 
@@ -336,15 +340,11 @@ The following table describes how the assumptions, threats, and organizational s
 
 |<<T.Casual_Attack>> <<OSP.Verification_Error>>	
 |<<O.BIO_Verification>>	
-|The threat <<T.Casual_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of mobile biometric verification not to allow the user who have not been enrolled to impersonate as a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for mobile biometric verification.
+|The threat <<T.Casual_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of biometric verification not to allow the user who have not been enrolled to impersonate as a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for biometric verification.
 
 |<<OSP.Enrol>>	
 |<<O.Enrol>>	
-|The OSP <<OSP.Enrol>> is enforced by <<O.Enrol>> as this require the TOE to implement the functionality to enrol a user for mobile biometric verification and create sufficient quality of templates.
-
-|<<T.Presentation_Attack>> <<OSP.PAD_Error>>	
-|<<O.Presentation_Attack_Detection>>	
-|The threat <<T.Presentation_Attack>> is countered by <<O.Presentation_Attack_Detection>> as this provides the capability of mobile biometric verification to prevent attacks with artificial PAIs. The OSP <<OSP.PAD_Error>> is enforced by <<O.Presentation_Attack_Detection>> as this requires the TOE to meet relevant criteria for security relevant error rates for PAD.
+|The OSP <<OSP.Enrol>> is enforced by <<O.Enrol>> as this require the TOE to implement the functionality to enrol a user for biometric verification and create sufficient quality of templates.
 
 |<<OSP.Protection>>	
 |<<O.Protection>> <<OE.Protection>>	
@@ -391,9 +391,9 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 
 ==== FIA_MBV_EXT.1 Biometric verification [[FIA_MBV_EXT.1]]
 
-*FIA_MBV_EXT.1.1*:: The TSF shall provide a mobile biometric verification mechanism using [*selection*: _fingerprint, eye, face, voice, vein_, [*assignment*: _other modality_]].
+*FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection*: _fingerprint, eye, face, voice, vein_, [*assignment*: _other modality_]].
 
-*FIA_MBV_EXT.1.2*:: The TSF shall provide a mobile biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _defined value_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _defined value_].
+*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _defined value_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _defined value_].
 
 *Application Note {counter:remark_count}*:: If the TOE support multiple modalities, ST author may iterate the SFR to define different error rates for each modality.
 
@@ -410,25 +410,17 @@ For consistency in language throughout this document, referring to a “lower”
 
 . Technical limitation
 +
-Although different modalities are available for the mobile biometric verification, all modalities may not achieve the same level of accuracy. For modalities that have different target of error rates, ST author may iterate the requirement to set appropriate error rates for each modality.
+Although different modalities are available for the biometric verification, all modalities may not achieve the same level of accuracy. For modalities that have different target of error rates, ST author may iterate the requirement to set appropriate error rates for each modality.
 
 . Number of test subjects required for the performance testing
 +
 Target error rates defined in SFR shall be evaluated based on <<SD>>. Normally the target error rates will directly influence the size of the test subject, the time and cost of the testing. <<SD>> describes how those error rates should be evaluated in an objective manner.
 
-==== FIA_MBV_EXT.2 Quality of biometric samples for mobile biometric verification [[FIA_MBV_EXT.2]]
+==== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
 
 *FIA_MBV_EXT.2.1* The TSF shall only use samples of sufficient quality to verify the user.
 
 *Application Note {counter:remark_count}*:: ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
-
-==== FIA_MBV_EXT.3 Presentation attack detection for mobile biometric verification [[FIA_MBV_EXT.3]]
-
-*FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
-
-*Application Note {counter:remark_count}*:: This requirement is only applicable to mobile biometric verification. PAD for biometric enrolment is an optional requirement.
-
-*Application Note {counter:remark_count}*:: Artificial PAIs that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of PAI is defined in <<SD>>.
 
 === Protection of the TSF (FPT)
 ==== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
@@ -459,8 +451,6 @@ Target error rates defined in SFR shall be evaluated based on <<SD>>. Normally t
 
 This PP-Module does not define any additional assurance requirements above and beyond what is defined in the base PP that it extends. Application of the SARs to the TOE boundary described by both the claimed base and this PP-Module is sufficient to demonstrate that the claimed SFRs have been implemented correctly by the TOE.
 
-
-
 == Selection-Based Requirements
 
 As indicated in the introduction to this PP-Module, the baseline requirements (those that shall be performed by the TOE) are contained in <<Security Functional Requirements>>. Additionally, there are two other types of requirements specified in <<Selection-Based Requirements>> and <<Optional Requirements>>.
@@ -481,6 +471,12 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 *FIA_MBE_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully enrolled.
 
+==== FIA_MBV_EXT.3 Presentation attack detection for biometric verification [[FIA_MBV_EXT.3]]
+
+*FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
+
+*Application Note {counter:remark_count}*:: Artificial PAIs that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of PAI is defined in <<SD>>.
+
 === User data protection (FDP)
 
 ==== FDP_RIP.2 Full residual information protection [[FDP_RIP.2]]
@@ -490,7 +486,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 *Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
 
 == Extended Component Definitions
-This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <<Selection-Based Requirements>> and <<Optional Requirements>>. 
+This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <<Optional Requirements>>. 
 
 (Note: formatting conventions for selections and assignments in this Section are those in <<CC2>>.)
 
@@ -544,7 +540,7 @@ a)	the management of the TSF data (setting values for detecting artificial prese
 ===== Audit: FIA_MBE_EXT.1, FIA_MBE_EXT.2
 The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
 
-a)	Basic: Success or failure of the mobile biometric enrollment
+a)	Basic: Success or failure of the biometric enrollment
 
 ===== Audit: FIA_MBE_EXT.3
 The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
@@ -598,9 +594,9 @@ This component defines the requirements for the TSF to be able to verify a user,
  
 FIA_MBV_EXT.1 Biometric verification requires the TSF to verify a user.
 
-FIA_MBV_EXT.2 Quality of biometric samples for mobile biometric verification requires the TSF to use samples of sufficient quality.
+FIA_MBV_EXT.2 Quality of biometric samples for biometric verification requires the TSF to use samples of sufficient quality.
 
-FIA_MBV_EXT.3 Presentation attack detection for mobile biometric verification requires the TSF to prevent presentation attacks during the mobile biometric verification.
+FIA_MBV_EXT.3 Presentation attack detection for biometric verification requires the TSF to prevent presentation attacks during the biometric verification.
 
 ===== Management: FIA_MBV_EXT.1
 
@@ -621,7 +617,7 @@ a)	the management of the TSF data (setting values for detecting artificial prese
 ===== Audit: FIA_MBV_EXT.1, FIA_MBV_EXT.2
 The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
 
-a)	Basic: Success or failure of the mobile biometric verification
+a)	Basic: Success or failure of the biometric verification
 
 ===== Audit: FIA_MBV_EXT.3
 The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
@@ -634,11 +630,11 @@ Hierarchical to: No other components
 
 Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBV_EXT.1.1* The TSF shall provide a mobile biometric verification mechanism using [*selection:* _fingerprint, eye, face, voice, vein_, [*assignment:* _other modality_]].
+*FIA_MBV_EXT.1.1* The TSF shall provide a biometric verification mechanism using [*selection:* _fingerprint, eye, face, voice, vein_, [*assignment:* _other modality_]].
 
-*FIA_MBV_EXT.1.2* The TSF shall provide a mobile biometric verification mechanism with the [*selection:* _FMR, FAR_] not exceeding [*assignment:* _defined value_] and [*selection:* _FNMR, FRR_] not exceeding [*assignment:* _defined value_].
+*FIA_MBV_EXT.1.2* The TSF shall provide a biometric verification mechanism with the [*selection:* _FMR, FAR_] not exceeding [*assignment:* _defined value_] and [*selection:* _FNMR, FRR_] not exceeding [*assignment:* _defined value_].
 
-===== FIA_MBV_EXT.2 Quality of biometric samples for mobile biometric verification
+===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification
 Hierarchical to: No other components.
 
 Dependencies: 	
@@ -650,7 +646,7 @@ FIA_MBV_EXT.1 Biometric verification
 
 *FIA_MBV_EXT.2.1* The TSF shall only use samples of sufficient quality to verify the user.
 
-===== FIA_MBV_EXT.3 Presentation attack detection for mobile biometric verification
+===== FIA_MBV_EXT.3 Presentation attack detection for biometric verification
 Hierarchical to: No other components
 
 Dependencies: 
