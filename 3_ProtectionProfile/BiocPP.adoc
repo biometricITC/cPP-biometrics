@@ -52,6 +52,8 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
+Artefact::
+An artefact is a specific Presentation Attack Instrument (PAI) species that has been created to test Presentation Attack Detection (PAD) capabilities of the TOE. An artefact is specific to both the type of species as well as the person used as the source of the biometric sample.
 Attempt::
    Submission of one (or a sequence of) biometric samples to the part of the TOE.
 Biometric Authentication Factor (BAF)::
@@ -96,6 +98,8 @@ Secure Execution Environment::
 	An operating environment separate from the main Mobile Device operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity score::
 	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
+(Biometric) Species::
+The biometric species is the type of Presentation Attack Instrument (PAI) that has been created such as a photo, mold or mask (as appropriate for the modality being tested).
 Template::
 	User’s stored reference measure based on features extracted from enrolment samples.
 Transaction::
