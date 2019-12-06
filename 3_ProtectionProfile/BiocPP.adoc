@@ -52,14 +52,10 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
-<<<<<<< Updated upstream
-=======
 Artefact::
 An artefact is a specific Presentation Attack Instrument (PAI) species that has been created to test Presentation Attack Detection (PAD) capabilities of the TOE. An artefact is specific to both the type of species as well as the person used as the source of the biometric sample.
-
 Alternative Authentication Factor::
 	A type of authentication factor requiring the user to provide a secret set of characters to gain access, for example a password or PIN.
->>>>>>> Stashed changes
 Attempt::
    Submission of one (or a sequence of) biometric samples to the part of the TOE.
 Biometric Authentication Factor (BAF)::
