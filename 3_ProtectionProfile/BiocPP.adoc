@@ -52,8 +52,14 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
+<<<<<<< Updated upstream
+=======
 Artefact::
 An artefact is a specific Presentation Attack Instrument (PAI) species that has been created to test Presentation Attack Detection (PAD) capabilities of the TOE. An artefact is specific to both the type of species as well as the person used as the source of the biometric sample.
+
+Alternative Authentication Factor::
+	A type of authentication factor requiring the user to provide a secret set of characters to gain access, for example a password or PIN.
+>>>>>>> Stashed changes
 Attempt::
    Submission of one (or a sequence of) biometric samples to the part of the TOE.
 Biometric Authentication Factor (BAF)::
@@ -84,8 +90,6 @@ Mobile Device User (User)::
 	The individual authorized to physically control and operate the Mobile Device. This PP-Module assumes that the user is the device owner.
 (Biometric) Modality::
 	A type or class of biometric system, such as fingerprint recognition, facial recognition, eye/iris recognition, voice recognition, signature/sign, and others.
-Password Authentication Factor::
-	A type of authentication factor requiring the user to provide a secret set of characters to gain access.
 Presentation Attack::
 	Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system.
 Presentation Attack Detection (PAD)::
@@ -98,8 +102,6 @@ Secure Execution Environment::
 	An operating environment separate from the main Mobile Device operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity score::
 	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
-(Biometric) Species::
-The biometric species is the type of Presentation Attack Instrument (PAI) that has been created such as a photo, mold or mask (as appropriate for the modality being tested).
 Template::
 	User’s stored reference measure based on features extracted from enrolment samples.
 Transaction::
@@ -187,7 +189,7 @@ As illustrated in the above figure, the TOE is capable of:
 ==== Relation between TOE and mobile device 
 The TOE is reliant on the mobile device itself to provide overall security of the system. This PP-Module is intended to be used with a base PP, and the base PP is responsible for evaluating the following security functions:
 
-* Providing the Password Authentication Factor to support user authentication and management of the TOE security function
+* Providing the Alternative Authentication Factor to support user authentication and management of the TOE security function
 * Invoking the TOE to enrol and verify the user and take appropriate actions based on the decision of the TOE
 * Providing the secure execution environment that guarantees the TOE and its data to be protected with respect to confidentiality and integrity
 
@@ -298,7 +300,7 @@ SFR Rationale:
 
 Requirements to provide a biometric enrolment mechanism is defined in FIA_MBE_EXT.1. Requirement for quality of template is defined in FIA_MBE_EXT.2.
 
-*Application Note {counter:remark_count}*:: A user shall be authenticated using a Password Authentication Factor to enrol his/herself.
+*Application Note {counter:remark_count}*:: A user shall be authenticated using an Alternative Authentication Factor to enrol his/herself.
 
 *Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
 
@@ -318,7 +320,7 @@ The TOE environment shall provide an alternative authentication mechanism as a c
 
 *Application Note {counter:remark_count}*:: The TOE environment (i.e. mobile device) shall satisfy relevant requirements defined in base PP.
 
-*Application Note {counter:remark_count}*:: The TOE environment (i.e. mobile device) shall provide an alternative authentication mechanism such as a Password Authentication Factor.
+*Application Note {counter:remark_count}*:: The TOE environment (i.e. mobile device) shall provide an alternative authentication mechanism for the user to enter an Alternative Authentication Factor.
 
 [[OE.Authentication]]OE.Authentication::
 The TOE environment shall invoke the TOE for biometric verification, and take appropriate actions based on the TOE’s decision.
@@ -385,7 +387,7 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 
 *FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
 
-*Application Note {counter:remark_count}*:: User shall be authenticated by the mobile device using the Password Authentication Factor before beginning biometric enrolment.
+*Application Note {counter:remark_count}*:: User shall be authenticated by the TOE environment (OE.Alternative) using an Alternative Authentication Factor before beginning biometric enrolment.
 
 ==== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
 
