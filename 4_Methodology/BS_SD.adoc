@@ -1122,7 +1122,7 @@ The developer shall follow the guidance in this Section to define the transactio
 
 The user may use the biometric verification in a different way.
 
-Suppose the mobile device provides both Password Authentication Factor and BAF and user can use either of factor to unlock the device. One user may try to unlock the device with BAF until allowable maximum number of unsuccessful authentication attempts is exceeded. Another user may try to unlock the device with BAF only three times and switch to the password if all three attempts were failed.
+Suppose the mobile device provides both an Alternative Authentication Factor and BAF and user can use either of factor to unlock the device. One user may try to unlock the device with BAF until allowable maximum number of unsuccessful authentication attempts is exceeded. Another user may try to unlock the device with BAF only three times and switch to the password if all three attempts were failed.
 
 It may also be possible for user to enrol multiple body parts (e.g. index and thumb fingerprint) or single body part for biometric verification.
 
