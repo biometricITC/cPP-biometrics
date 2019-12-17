@@ -150,7 +150,7 @@ Base PP of this PP-Module is identified in the appropriate PP-Configuration.
 
 === TOE Overview
 ==== TOE main security features
-This is a collaborative Protection Profile Module (PP-Module) used to extend a base PP for a mobile device that implement biometric enrolment and verification to unlock the mobile device in the locked state using the user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a mobile device that implements biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE (i.e. mobile device) and implements the biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and mobile device. Each biometric enrolment and verification process is described in the following paragraphs. 
+This is a collaborative Protection Profile Module (PP-Module) used to extend a base PP for a mobile device that implement biometric enrolment and verification to unlock the mobile device in the locked state using the user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a mobile device that implements biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE environment (i.e. smartphones) and implements the biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and mobile device. Each biometric enrolment and verification process is described in the following paragraphs. 
 
 a)	Biometric enrolment
 
@@ -305,16 +305,16 @@ SFR Rationale:
 
 Requirements to control access to the template is defined in FPT_PBT_EXT.1. FPT_BDP_EXT.1, FPT_BDP_EXT.2 and FPT_BDP_EXT.3 requires the TOE to protect the biometric data with support from the TOE environment. Optional requirements to protect the residual biometric data is defined as FDP_RIP.2 in <<Optional Requirements>>.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. mobile device) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. smartphones) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
 
 === Security Objectives for the Operational Environment
 
 [[OE.Alternative]]OE.Alternative::
 The TOE environment shall provide an alternative authentication mechanism as a complement to biometric verification. The alternative authentication mechanism is required for enrolment of the biometric template and can also be used in cases where a user is rejected by the biometric verification (False Rejection).
 
-*Application Note {counter:remark_count}*:: The TOE environment (i.e. mobile device) shall satisfy relevant requirements defined in base PP.
+*Application Note {counter:remark_count}*:: The TOE environment (i.e. smartphones) shall satisfy relevant requirements defined in base PP.
 
-*Application Note {counter:remark_count}*:: The TOE environment (i.e. mobile device) shall provide an alternative authentication mechanism such as a Password Authentication Factor.
+*Application Note {counter:remark_count}*:: The TOE environment (i.e. smartphones) shall provide an alternative authentication mechanism such as a Password Authentication Factor.
 
 [[OE.Authentication]]OE.Authentication::
 The TOE environment shall invoke the TOE for biometric verification, and take appropriate actions based on the TOE’s decision.
@@ -324,7 +324,7 @@ The TOE environment shall invoke the TOE for biometric verification, and take ap
 [[OE.Protection]]OE.Protection::
 The TOE environment shall provide a secure execution environment to protect the TOE, the TOE configuration and biometric data during runtime and storage.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. mobile device) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. smartphones) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
 
 [[OE.User]]OE.User::
 The user shall configure the TOE and its environment correctly in a manner to ensure that the TOE security policies will be enforced.
