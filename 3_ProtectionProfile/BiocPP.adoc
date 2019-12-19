@@ -52,6 +52,8 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
+Artefact::
+	Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying [SD] specifies artefacts that the evaluator should consider for the CC evaluation. Artefacts here are specifically artificially generated Presentation Attack Instruments (PAI), not natural ones.
 Attempt::
    Submission of one (or a sequence of) biometric samples to the part of the TOE.
 Biometric Authentication Factor (BAF)::
@@ -61,7 +63,7 @@ Biometric Data::
 Biometric System Administrator::
 	Person who is responsible for configuring the TOE. This PP-Module assumes that the user acts as the biometric system administrator.
 Computer::
-	A self-contained device which is composed of a hardware platform and its system software. The device is typically some sort of general purpose computing platform, such as a laptop, tablet or smartphone that is designed to be portable (though this is not required). 
+	A self-contained device which is composed of a hardware platform and its system software (operating system and applications). The device is typically some sort of general purpose computing platform, such as a laptop, tablet or smartphone that is designed to be portable (though this is not required). 
 Computer User (User)::
 	The individual authorized to physically control and operate the Computer. This PP-Module assumes that the user is the device owner.
 	Failure-To-Enroll Rate (FTE)::
@@ -88,8 +90,6 @@ Presentation Attack::
 	Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system.
 Presentation Attack Detection (PAD)::
 	Automated determination of a presentation attack.
-Presentation Attack Instrument (PAI)::
-	Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying [SD] specifies PAIs that the evaluator should consider for the CC evaluation.
 (Biometric) Sample::
 	User’s biometric measures as output by the data capture subsystem of the TOE.
 Secure Execution Environment::
@@ -150,13 +150,13 @@ Base PP of this PP-Module is identified in the appropriate PP-Configuration.
 
 === TOE Overview
 ==== TOE main security features
-This is a collaborative Protection Profile Module (PP-Module) used to extend a base PP for a computer that implement biometric enrolment and verification to unlock the computer in the locked state using the user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE environment (i.e. smartphones) and implements the biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and computer. Each biometric enrolment and verification process is described in the following paragraphs. 
+This is a collaborative Protection Profile Module (PP-Module) used to extend a base PP for a computer that implement biometric enrolment and verification to unlock the computer in the locked state using the user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE environment (i.e. the computer) and implements the biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and computer. Each biometric enrolment and verification process is described in the following paragraphs. 
 
 a)	Biometric enrolment
 
 During the enrolment process, the TOE captures samples from the biometric characteristics of a user presented to the TOE and extracts the features from the samples. The features are then stored as a template in the TOE.
 
-Only a user who knows the computer password can enrol or revoke his/her own templates. Multiple templates may be enrolled, as separate entries uniquely identified by the TOE, and optionally uniquely identifiable by the user (through the mobile User Interface).
+Only a user who knows the computer password can enrol or revoke his/her own templates. Multiple templates may be enrolled, as separate entries uniquely identified by the TOE, and optionally uniquely identifiable by the user (through the computer's User Interface).
 
 b)	Biometric verification
 
@@ -177,7 +177,7 @@ As illustrated in the above figure, the TOE is capable of:
 * Extracting and processing the features from samples of sufficient quality and generating various templates (Signal Processing Subsystem)
 * Storing the templates in a database on the computer (Data Storage Subsystem)
 * Comparing captured features with data contained in one or more templates (Comparison Subsystem)
-* Optionally detecting the presentation attacks using artificial PAI (Presentation Attack Detection Subsystem)
+* Optionally detecting the presentation attacks using an artefact
 * Deciding how well features and any template match, and indicating whether or not a verification of the user has been achieved (Decision Subsystem)
 
 ==== Relation between TOE and Computer 
@@ -199,7 +199,7 @@ The computer itself may be operated in a number of use cases such as enterprise 
 This PP-Module only assumes USE CASE 1 described below. USE CASE 2 is out of scope of this PP-Module.
 
 ===== USE CASE 1: Biometric verification for unlocking the computer
-For enhanced security that is easy to use, the computer may implement biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that, the user is able to use their own biometric characteristic to unlock access to the computer. In this use case, the computer is not supposed to be used for security sensitive services through the mobile biometric verification.
+For enhanced security that is easy to use, the computer may implement biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that, the user is able to use their own biometric characteristic to unlock access to the computer. In this use case, the computer is not supposed to be used for security sensitive services through the biometric verification.
 
 The main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for computer that the TOE relies on should be handled by the base PP.
 
@@ -305,16 +305,16 @@ SFR Rationale:
 
 Requirements to control access to the template is defined in FPT_PBT_EXT.1. FPT_BDP_EXT.1, FPT_BDP_EXT.2 and FPT_BDP_EXT.3 requires the TOE to protect the biometric data with support from the TOE environment. Optional requirements to protect the residual biometric data is defined as FDP_RIP.2 in <<Optional Requirements>>.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. smartphones) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
 
 === Security Objectives for the Operational Environment
 
 [[OE.Alternative]]OE.Alternative::
 The TOE environment shall provide an alternative authentication mechanism as a complement to biometric verification. The alternative authentication mechanism is required for enrolment of the biometric template and can also be used in cases where a user is rejected by the biometric verification (False Rejection).
 
-*Application Note {counter:remark_count}*:: The TOE environment (i.e. smartphones) shall satisfy relevant requirements defined in base PP.
+*Application Note {counter:remark_count}*:: The TOE environment (i.e. the computer) shall satisfy relevant requirements defined in base PP.
 
-*Application Note {counter:remark_count}*:: The TOE environment (i.e. smartphones) shall provide an alternative authentication mechanism such as a Password Authentication Factor.
+*Application Note {counter:remark_count}*:: The TOE environment (i.e. the computer) shall provide an alternative authentication mechanism such as a Password Authentication Factor.
 
 [[OE.Authentication]]OE.Authentication::
 The TOE environment shall invoke the TOE for biometric verification, and take appropriate actions based on the TOE’s decision.
@@ -324,7 +324,7 @@ The TOE environment shall invoke the TOE for biometric verification, and take ap
 [[OE.Protection]]OE.Protection::
 The TOE environment shall provide a secure execution environment to protect the TOE, the TOE configuration and biometric data during runtime and storage.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. smartphones) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
 
 [[OE.User]]OE.User::
 The user shall configure the TOE and its environment correctly in a manner to ensure that the TOE security policies will be enforced.
@@ -475,7 +475,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 *FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
 
-*Application Note {counter:remark_count}*:: Artificial PAIs that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of PAI is defined in <<SD>>.
+*Application Note {counter:remark_count}*:: Artefacts that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of artefact is defined in <<SD>>.
 
 === User data protection (FDP)
 
