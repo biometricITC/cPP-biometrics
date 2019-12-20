@@ -5,8 +5,8 @@
 :sectnums:
 :sectnumlevels: 5
 :imagesdir: images
-:revnumber: 0.91
-:revdate: 2019-12-05
+:revnumber: 0.92
+:revdate: 2019-12-20
 
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
@@ -138,6 +138,11 @@ Zero-effort Impostor Attempt::
 |0.9
 |5th December, 2019
 |Updates to make PAD optional
+
+|0.92
+|December 20, 2019
+|Public Review Draft 2
+
 |===
 
 == PP-Module Introduction

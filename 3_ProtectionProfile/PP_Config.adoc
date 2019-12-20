@@ -2,8 +2,8 @@
 :showtitle:
 :toc:
 :table-caption: Table
-:revnumber: 0.91
-:revdate: 2019-12-05
+:revnumber: 0.92
+:revdate: 2019-12-20
 
 == Acknowledgements
 
@@ -314,7 +314,7 @@ Version 0.5, May 2017.
 
 |===
 
-= Revision History
+== Revision History
 
 [cols=",,",options="header",]
 |===
@@ -325,9 +325,14 @@ Version 0.5, May 2017.
 
 |0.9
 |August 5, 2019
-|Update from Puiblic Review Draft 1
+|Update from Public Review Draft 1
 
 |0.91
 |December 5, 2019
 |Update to make PAD optional
+
+|0.92
+|December 20, 2019
+|Public Review Draft 2
+
 |===
