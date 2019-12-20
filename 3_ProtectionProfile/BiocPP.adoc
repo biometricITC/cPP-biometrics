@@ -96,6 +96,8 @@ Secure Execution Environment::
 	An operating environment separate from the main Computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity score::
 	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
+(Biometric) Species::
+The biometric species is the type of Presentation Attack Instrument (PAI) that has been created such as a photo, mold or mask (as appropriate for the modality being tested).
 Template::
 	User’s stored reference measure based on features extracted from enrolment samples.
 Transaction::
