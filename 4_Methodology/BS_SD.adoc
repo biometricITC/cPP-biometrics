@@ -5,8 +5,8 @@
 :table-caption: Table
 :imagesdir: images
 :icons: font
-:revnumber: 0.5
-:revdate: 2019-12-05
+:revnumber: 0.92
+:revdate: 2019-12-20
 :xrefstyle: full
 
 == Foreword
@@ -48,6 +48,11 @@ Biometric Security international Technical Community (BIO-iTC)
 |0.5
 |December 5, 2019
 |Updates to make PAD optional
+
+|0.92
+|December 20, 2019
+|Public Review Draft 2
+
 |===
 
 === General Purpose
