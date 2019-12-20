@@ -73,7 +73,7 @@ This Supporting Document (SD) defines the Evaluation Activities (EAs) associated
 
 This SD is mandatory for evaluations of TOEs that claim conformance to <<BIOPP-Module>>.
 
-The Biometric Security technical area has a number of specialised aspects, such as those relating to the biometric enrolment and verification, and to the particular ways in which the TOE optionally needs to be assessed across a range of different Presentation Attack Instruments (PAI). This degree of specialisation, and the associations between individual SFRs in <<BIOPP-Module>>, make it important for both efficiency and effectiveness that EAs are given more specific interpretations than those found in the generic CEM activities.
+The Biometric Security technical area has a number of specialised aspects, such as those relating to the biometric enrolment and verification, and to the particular ways in which the TOE optionally needs to be assessed across a range of different artificial artefact instruments (specifically artificial, not natural, Presentation Attack Instruments). This degree of specialisation, and the associations between individual SFRs in <<BIOPP-Module>>, make it important for both efficiency and effectiveness that EAs are given more specific interpretations than those found in the generic CEM activities.
 
 Although EAs are defined mainly for the evaluator to follow, the definitions in this SD aim to provide a common understanding for developers, evaluators and users as to what aspects of the TOE are tested in an evaluation against <<BIOPP-Module>>, and to what depth the testing is carried out. This common understanding in turn contributes to the goal of ensuring that evaluations against <<BIOPP-Module>> achieve comparable, transparent and repeatable results. In general, the definition of EAs will also help developers to prepare for evaluation by identifying specific requirements for their TOE. The specific requirements in EAs may in some cases clarify the meaning of SFRs, and may identify particular requirements for the content of Security Targets (STs) (especially the TOE Summary Specification (TSS)), AGD guidance, and possibly supplementary information (e.g. for biometric performance testing – see <<Developer’s performance test document and its assessment strategy>>).
 
@@ -89,7 +89,7 @@ In general, if all EAs (for both SFRs and SARs) are successfully completed in an
 
 ==== Glossary
 
-For definitions of standard CC terminology see <<CC1>>. For definitions of biometrics and mobile device, see <<BIOPP-Module>> and the base PP.
+For definitions of standard CC terminology see <<CC1>>. For definitions of biometrics and the computer, see <<BIOPP-Module>> and the base PP.
 
 ==== Acronyms
 
@@ -102,7 +102,7 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 |*cPP* |collaborative Protection Profile
 |*EA* |Evaluation Activity
 |*iTC* |International Technical Community
-|*PAI* |Presentation Attack Instrument
+|*PAI* |Presentation Attack Instrument (artefact)
 |*PP* |Protection Profile
 |*SAR* |Security Assurance Requirement
 |*SD* |Supporting Document
@@ -335,7 +335,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
-. AGD guidance shall provide clear instruction for a user to verify him/herself to unlock the mobile device
+. AGD guidance shall provide clear instruction for a user to verify him/herself to unlock the computer
 . Supplementary information (developer’s performance test document) shall describe developer’s performance test protocol and result of testing
 
 AGD guidance may include online assistance, prompts or warning provided by the TOE during the verification attempt.
@@ -438,7 +438,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-<<BIOPP-Module>> assumes that the mobile device provides the Secure Execution Environment (SEE), an operating environment separate from the main mobile device operating system. Access to the SEE is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
+<<BIOPP-Module>> assumes that the computer provides the Secure Execution Environment (SEE), an operating environment separate from the main computer operating system. Access to the SEE is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 
 Evaluation of this SEE is out of scope of <<BIOPP-Module>> and the evaluator doesn’t need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the security boundary of the SEE. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
 
@@ -463,16 +463,16 @@ Following input is required from the developer.
 
 ====== Strategy for ASE_TSS
 
-As depicted in Figure 1 of <<BIOPP-Module>>, biometric characteristics is captured by biometric capture sensor and then sent to the processors in mobile device for signal processing, PAD and comparison and return the decision outcome. This is a typical process flow of biometric verification; however, biometric capture sensor may do the all tasks within the sensor. In either case, all TSF modules (i.e. biometric capture sensor and any software running in biometric capture sensor and mobile device processors) that process plaintext biometric data must be separated from any entities outside the SEE. Any plaintext biometric data must not be accessible from any entities outside the SEE.
+As depicted in Figure 1 of <<BIOPP-Module>>, biometric characteristics is captured by biometric capture sensor and then sent to the processors in the computer for signal processing, PAD and comparison and return the decision outcome. This is a typical process flow of biometric verification; however, biometric capture sensor may do the all tasks within the sensor. In either case, all TSF modules (i.e. biometric capture sensor and any software running in biometric capture sensor and the computer processors) that process plaintext biometric data must be separated from any entities outside the SEE. Any plaintext biometric data must not be accessible from any entities outside the SEE.
 
 In any cases, the evaluator shall examine the TSS to confirm that;
 
 [loweralpha]
-. All TSF modules run within the SEE and any entities outside the SEE including mobile device operating system can’t interfere with processing of these modules
+. All TSF modules run within the SEE and any entities outside the SEE including the computer operating system can’t interfere with processing of these modules
 
 * If biometric capture sensor returns plaintext biometric data, any entities outside the SEE can’t access the sensor and data captured by the sensor
 
-. All plaintext biometric data is retained in volatile memory within the SEE and any entities outside the SEE including mobile device operating system can’t access these data. Any TSFIs doesn’t reveal plaintext biometric data to any entities outside the SEE
+. All plaintext biometric data is retained in volatile memory within the SEE and any entities outside the SEE including the computer operating system can’t access these data. Any TSFIs doesn’t reveal plaintext biometric data to any entities outside the SEE
 
 The evaluator shall keep in mind that the objective of this EA is not evaluating the SEE itself. This EA is derived from ASE_TSS.1.1 which requires that the TSS to provide potential consumers of the TOE with a high-level view of how the developer intends to satisfy each SFR. The evaluator shall check the TSS to seek for a logical explanation why above a) – b) is satisfied considering this scope of the requirement.
 
@@ -548,7 +548,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-Plaintext biometric data, especially templates, are highly sensitive personal data because biometric characteristics may be recovered from them. Plain text biometric data shall be processed within the SEE as required by FPT_BDP_EXT.1. However, part of plaintext biometric data including templates may need to be stored in mobile device for biometric verification. However, protection of such stored biometric data is not covered by FPT_BDP_EXT.1.
+Plaintext biometric data, especially templates, are highly sensitive personal data because biometric characteristics may be recovered from them. Plain text biometric data shall be processed within the SEE as required by FPT_BDP_EXT.1. However, part of plaintext biometric data including templates may need to be stored in the computer for biometric verification. However, protection of such stored biometric data is not covered by FPT_BDP_EXT.1.
 
 The evaluator shall confirm that the TOE encrypts plaintext biometric data within the SEE before storing it in any non-volatile memory that entities outside the SEE can get access to. If the evaluator confirms that the TOE doesn’t store plaintext biometric data outside the SEE (e.g. biometric capture sensor processes biometric data within the sensor and return only decision outcome to the TSF modules running inside the SEE) during performing the EA of FPT_BDP_EXT.1, this requirement deems satisfied.
 
@@ -586,7 +586,7 @@ The evaluator shall perform the following test to verify that the TOE encrypts p
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
 . The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on the base PP
-. The evaluator shall load an app onto the mobile device. This app shall attempt to traverse over all file systems and report any newly created files
+. The evaluator shall load an app onto the computer. This app shall attempt to traverse over all file systems and report any newly created files
 . The evaluator shall perform biometric enrolment and verification and run the app to list new files
 . The evaluator shall compare files reported by the app and ones listed in “file list/format and cryptographic algorithm”
 . If evaluator finds newly created files not listed in “file list/format and cryptographic algorithm”, the evaluator shall confirm that those files don’t include plaintext biometric data with the support from developer
@@ -663,9 +663,9 @@ The <<BIOPP-Module>> does not contain any selection-based requirements.
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE prevents use of artificial Presentation Attack Instruments (PAI) during biometric enrolment. This section defines EAs derived from ASE_TSS.1, AGD_OPE.1 and ADV_FSP.1.
+The evaluator shall verify that the TOE prevents use of artificial artefacts during biometric enrolment. This section defines EAs derived from ASE_TSS.1, AGD_OPE.1 and ADV_FSP.1.
 
-The main part of EA for FIA_MBE_EXT.3 is evaluator’s testing using artificial PAI. The <<Evaluation Activities for PAD testing>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform for PAD testing during the biometric verification. The same EAs can be applied to PAD testing during the biometric enrolment. 
+The main part of EA for FIA_MBE_EXT.3 is evaluator’s testing using the artefact. The <<Evaluation Activities for PAD testing>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform for PAD testing during the biometric verification. The same EAs can be applied to PAD testing during the biometric enrolment. 
 
 ===== Dependency
 
@@ -681,13 +681,13 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.3 at high level description. TSS may only states that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information is beyond the scope of assurance level claimed by <<BIOPP-Module>> and may also be exploited by attackers
-. AGD guidance may provide information about how the TOE reacts when artificial PAI is detected
+. AGD guidance may provide information about how the TOE reacts when the artefact is detected
 
 ===== Assessment Strategy
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of artificial PAI during biometric enrolment.
+The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment.
 
 Main part of EA is evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require the detail design description of PAD from developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
@@ -696,7 +696,7 @@ Main part of EA is evaluator’s testing defined in <<Evaluation Activities for 
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. TSS or AGD guidance states that the TOE prevents the use of artificial PAI during biometric enrolment
+. TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment
 
 ===== Requirements for reporting
 
@@ -706,9 +706,9 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE prevents use of artificial Presentation Attack Instruments (PAI) during biometric verification. This section defines EAs derived from ASE_TSS.1, AGD_OPE.1 and ADV_FSP.1.
+The evaluator shall verify that the TOE prevents use of artificial artefacts during biometric verification. This section defines EAs derived from ASE_TSS.1, AGD_OPE.1 and ADV_FSP.1.
 
-The main part of EA for FIA_MBV_EXT.3 is evaluator’s testing using artificial PAI. The <<Evaluation Activities for PAD testing>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform during the testing.
+The main part of EA for FIA_MBV_EXT.3 is evaluator’s testing using the artefact. The <<Evaluation Activities for PAD testing>> defines EAs for ATE_IND.1 and AVA_VAN.1 in detail that the evaluator shall perform during the testing.
 
 ===== Dependency
 
@@ -724,13 +724,13 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.3 at high level description. TSS may only states that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information is beyond the scope of assurance level claimed by <<BIOPP-Module>> and may also be exploited by attackers
-. AGD guidance may provide information about how the TOE reacts when artificial PAI is detected
+. AGD guidance may provide information about how the TOE reacts when the artefact is detected
 
 ===== Assessment Strategy
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of artificial PAI during biometric verification.
+The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric verification.
 
 Main part of EA is evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require the detail design description of PAD from developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
@@ -739,7 +739,7 @@ Main part of EA is evaluator’s testing defined in <<Evaluation Activities for 
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. TSS or AGD guidance states that the TOE prevents the use of artificial PAI
+. TSS or AGD guidance states that the TOE prevents the use of the artefact
 
 ===== Requirements for reporting
 
@@ -769,25 +769,28 @@ ATE_IND.1 requires the evaluator to demonstrate that the TOE operates in accorda
 
 However, <<BIOPP-Module>> doesn’t require such design representations about PAD (e.g. how the TOE checks the liveness of the object) in TSS or AGD because those information is beyond the scope of assurance level claimed by [BIOPP-Module]. Therefore, this SD doesn’t also require the evaluator to test the functional aspects of PAD based on those design representations.
 
-Instead, this SD requires the evaluator to conduct ATE_IND.1 evaluation (i.e. independent testing) in black-box manner. However, difficulty of black-box testing for PAD, as described in <<ISO30107-3>>, is that it’s very difficult to have a comprehensive model of all possible PAIs. Therefore, it may be possible that different evaluator could use a different set of PAIs and see different test results for the same TOE.
+Instead, this SD requires the evaluator to conduct ATE_IND.1 evaluation (i.e. independent testing) in black-box manner. However, difficulty of black-box testing for PAD, as described in <<ISO30107-3>>, is that it’s very difficult to have a comprehensive model of all possible artefacts. Therefore, it may be possible that different evaluator could use a different set of artefacts and see different test results for the same TOE.
 
-To solve this issue, the Biometric Security iTC (BIO-iTC) creates <<Toolbox>>. This <<Toolbox>> defines the common PAIs for PAD testing based on publicly available information (e.g. research papers), experiences and knowledge shared among the BIO-iTC members.
+To solve this issue, the Biometric Security iTC (BIO-iTC) creates <<Toolbox>>. This <<Toolbox>> defines the common artefacts for PAD testing based on publicly available information (e.g. research papers), experiences and knowledge shared among the BIO-iTC members.
 
-<<Toolbox>> includes a collection of test items for each biometric modality. Each test item describes the procedure to create PAIs and the method to present them to the TOE in sufficient detail to enable the test to be repeatable.
+<<Toolbox>> includes a collection of test items for each biometric modality. Each test item describes the procedure to create artefacts and the method to present them to the TOE in sufficient detail to enable the test to be repeatable.
 
 The same <<Toolbox>> can also be used for AVA_VAN.1 evaluation (i.e. penetration testing) because AVA_VAN.1 requires the evaluator to devise tests based on information available in the public domain. However, <<Toolbox>> should be used in a different manner for AVA_VAN.1 evaluation. The following section explains how <<Toolbox>> should be used in EAs for ATE_IND.1 and AVA_VAN.1.
+
+==== Presentation Attack Instrument (artefact) species
+There are many types of Presentation Attack Instruments that can be used to test a PAD system. The <<BIOPP-Module>> specifically defines the artefacts that are to be used as artificial, and not natural. Natural artefacts, such as a dead eye, are not considered in scope for this evaluation. When searching for new artefact species, only artificial species should be considered.
 
 === EAs for ATE_IND.1 (Independent testing - conformance)
 
 ==== Independent test activities using <<Toolbox>>
 
-As described in previous section, <<Toolbox>> defines test items to create a representative set of PAIs that the evaluator shall use for the testing. During ATE_IND.1 evaluation, the evaluator shall conduct all test items in <<Toolbox>> for the selected modalities without any change. The evaluator is not allowed to skip any test items in the <<Toolbox>> to maintain compatibility between different evaluations.
+As described in previous section, <<Toolbox>> defines test items to create a representative set of artefacts that the evaluator shall use for the testing. During ATE_IND.1 evaluation, the evaluator shall conduct all test items in <<Toolbox>> for the selected modalities without any change. The evaluator is not allowed to skip any test items in the <<Toolbox>> to maintain compatibility between different evaluations.
 
-During the independent testing, the evaluator may find PAIs that are incorrectly matched to the enrolled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
+During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enrolled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
 
-<<Toolbox>> defines the Pass/Fail criteria, maximum attack presentation match rate for PAIs. The evaluator shall follow the <<Toolbox>> criteria for the number of PAI presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign fail verdict to those TOE that doesn’t satisfy the criteria.
+<<Toolbox>> defines the Pass/Fail criteria, maximum attack presentation match rate for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign fail verdict to those TOE that doesn’t satisfy the criteria.
 
-The PAIs that pass the criteria but show the higher attack presentation match rate will be tested again during the AVA_VAN.1 evaluation.
+The artefacts that pass the criteria but show the higher attack presentation match rate will be tested again during the AVA_VAN.1 evaluation.
 
 <<Toolbox>> does not necessarily cover all biometric modalities. If the developer wants to evaluate modalities not currently included in <<Toolbox>>, the developer and evaluator shall contact to the BIO-iTC to work together to extend <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for new modality.
 
@@ -803,101 +806,101 @@ The EAs presented in this section are derived from ATE_IND.1-3, ATE_IND.1-4 and 
 
 This Section describes EAs for AVA_VAN.1 step by step following the order of AVA_VAN.1 CEM work units.
 
-===== Search for new PAIs
+===== Search for new artefacts
 
-The evaluator shall search publicly available information that is published after the publication date of <<Toolbox>> to look for new PAI species. New PAI species are those PAIs that are out of scope of <<Toolbox>> and need to be made in the completely different way with the significantly different materials that are not covered by <<Toolbox>>.
+The evaluator shall search publicly available information that is published after the publication date of <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are out of scope of <<Toolbox>> and need to be made in the completely different way with the significantly different materials that are not covered by <<Toolbox>>.
 
-Those new PAI species that can be made by slightly modifying test items in <<Toolbox>> are covered by <<No new PAIs found test plan>>.
+Those new artefact species that can be made by slightly modifying test items in <<Toolbox>> are covered by <<No new artefacts found test plan>>.
 
-===== Identify candidate PAIs for testing
+===== Identify candidate artefacts for testing
 
-The evaluator shall perform EAs in <<No new PAIs found>> if there is no new PAI species found at the previous step. Otherwise, follow <<New PAIs found>>.
+The evaluator shall perform EAs in <<No new artefacts found>> if there is no new artefact species found at the previous step. Otherwise, follow <<New artefacts found>>.
 
-====== No new PAIs found
+====== No new artefacts found
 
-If the evaluator can’t find such new PAI species, the evaluator doesn’t need to devise new test items in addition to those defined in <<Toolbox>> because the BIO-iTC develops test items based on all publicly available information published by the publication date of <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing PAI species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. Therefore, the evaluator doesn’t need to repeat this process.
+If the evaluator can’t find such new artefact species, the evaluator doesn’t need to devise new test items in addition to those defined in <<Toolbox>> because the BIO-iTC develops test items based on all publicly available information published by the publication date of <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. Therefore, the evaluator doesn’t need to repeat this process.
 
-====== New PAIs found
+====== New artefacts found
 
-If the evaluator can find new PAI species, the evaluator shall consider the following factors to examine whether those new PAI species can be used in the actual operational environment or not.
+If the evaluator can find new artefact species, the evaluator shall consider the following factors to examine whether those new artefact species can be used in the actual operational environment or not.
 
 [loweralpha]
 . Attacker’s motivation
 +
-For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the mobile device. The SD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the mobile device.
+For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the computer. The SD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the computer.
 +
-Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face PAI) if such services are available at low cost.
+Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face artefact) if such services are available at low cost.
 
 [loweralpha, start=2]
 . Assumptions in <<BIOPP-Module>>
 +
 --
-<<BIOPP-Module>> defines *A.User* and evaluator shall assume that the mobile devices are configured securely by users. Especially evaluator shall make the following assumptions:
+<<BIOPP-Module>> defines *A.User* and evaluator shall assume that the computers are configured securely by users. Especially evaluator shall make the following assumptions:
 
 [arabic]
 .. A user enrol him/herself following guidance provided by the TOE
-.. Mobile device is securely configured, and maximum number of unsuccessful biometric authentication attempts is limited
+.. The computer is securely configured, and maximum number of unsuccessful biometric authentication attempts is limited
 +
-For efficiency, the evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing. However, as the mobile device shall be evaluated in the evaluated configuration, any attack needs to succeed within the allowed number of biometric authentication attempts defined in the ST to be considered a successful attack.
+For efficiency, the evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing. However, as the computer shall be evaluated in the evaluated configuration, any attack needs to succeed within the allowed number of biometric authentication attempts defined in the ST to be considered a successful attack.
 
 <<BIOPP-Module>> also defines *A.Protection* and evaluator shall assume that biometric data is adequately protected. Especially evaluator shall make the following assumptions:
 
 [arabic, start=1]
-.. Attacker can’t access to the result of PAD subsystem, so they can’t tune the PAIs based on the PAD score
-.. Attacker can’t gain the templates from the mobile device to create the PAIs
+.. Attacker can’t access to the result of PAD subsystem, so they can’t tune the artefacts based on the PAD score
+.. Attacker can’t gain the templates from the computer to create the artefacts
 --
 
 [loweralpha, start=3]
 . Attack potential
 +
-The evaluator is not expected to determine the exploitability for new PAI species beyond those for which a Basic attack potential is required to create and present. Therefore, the evaluator shall determine that attack potential required to use new PAI species is within the scope of the Basic attack potential referring <<Attack Potential and TOE resistance>>.
+The evaluator is not expected to determine the exploitability for new artefact species beyond those for which a Basic attack potential is required to create and present. Therefore, the evaluator shall determine that attack potential required to use new artefact species is within the scope of the Basic attack potential referring <<Attack Potential and TOE resistance>>.
 
 ===== Produce test plan
 
-The evaluator shall perform EAs in <<No new PAIs found test plan>> if there is no new PAI species found in previous step. Otherwise, follow <<New PAIs found test plan>>.
+The evaluator shall perform EAs in <<No new artefacts found test plan>> if there is no new artefact species found in previous step. Otherwise, follow <<New artefacts found test plan>>.
 
-====== No new PAIs found test plan
+====== No new artefacts found test plan
 
-The evaluator shall select those PAIs that show higher attack presentation match rate at the independent testing. The evaluator shall test them extensively during the penetration testing.
+The evaluator shall select those artefacts that show higher attack presentation match rate at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
-If there is no such PAIs, the evaluator should select “higher quality” PAIs. “Higher quality” means that PAIs are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face PAI).
+If there is no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact).
 
-The evaluator may recreate the PAIs selected for penetration testing to improve their quality taking following approaches.
+The evaluator may recreate the artefacts selected for penetration testing to improve their quality taking following approaches.
 
 [loweralpha]
-. Modify the creation process of PAIs
+. Modify the creation process of artefacts
 +
-The evaluator may modify the process in <<Toolbox>> to improve the PAIs.
+The evaluator may modify the process in <<Toolbox>> to improve the artefacts.
 +
-For example, in case of finger or palm vein verification, the evaluator needs to capture the vein pattern from a target user using a NIR-camera and print it out to create the PAI (i.e. printed vein pattern). However, quality of the vein pattern may vary depending on configuration of tools (e.g. intensity of NIR light for NIR-camera) or type of materials (e.g. type of paper).
+For example, in case of finger or palm vein verification, the evaluator needs to capture the vein pattern from a target user using a NIR-camera and print it out to create the artefact (i.e. printed vein pattern). However, quality of the vein pattern may vary depending on configuration of tools (e.g. intensity of NIR light for NIR-camera) or type of materials (e.g. type of paper).
 +
-During the penetration testing, the evaluator may change those various factors to recreate PAIs with clearer vein pattern for the penetration testing.
+During the penetration testing, the evaluator may change those various factors to recreate artefacts with clearer vein pattern for the penetration testing.
 +
-However, the evaluator shall recreate the PAI at the similar cost and time as required for the original PAI to stay within the Basic attack potential.
+However, the evaluator shall recreate the artefact at the similar cost and time as required for the original artefact to stay within the Basic attack potential.
 . Change test subjects
 +
-The evaluator may follow the same procedure in <<Toolbox>> to recreate PAIs, however, from different test subjects from ones used for the independent testing.
+The evaluator may follow the same procedure in <<Toolbox>> to recreate artefacts, however, from different test subjects from ones used for the independent testing.
 +
 For example, in case of finger or palm vein verification, men normally have thicker blood vessel than women. So, the evaluator may change the test subject who has thicker blood vessel to capture the clearer vein pattern.
 . Improve presentation method
 +
-The evaluator may also increase time for PAI presentation training and habituation to find the better presentation method.
+The evaluator may also increase time for artefact presentation training and habituation to find the better presentation method.
 +
-For example, in case of finger or palm vein verification, quality of vein pattern gained from the sensor (NIR-camera) of the TOE may vary depending on the distance between the PAI and sensor, and how to present the PAI to the TOE. However, it’s not possible for the evaluator to know the best distance or presentation method for the PAI in advance because this SD requires the evaluator to test the TOE in black-box manner. The evaluator may simply increase the number of attempts to find the best distance or presentation through trial and error process.
+For example, in case of finger or palm vein verification, quality of vein pattern gained from the sensor (NIR-camera) of the TOE may vary depending on the distance between the artefact and sensor, and how to present the artefact to the TOE. However, it’s not possible for the evaluator to know the best distance or presentation method for the artefact in advance because this SD requires the evaluator to test the TOE in black-box manner. The evaluator may simply increase the number of attempts to find the best distance or presentation through trial and error process.
 
-====== New PAIs found test plan
+====== New artefacts found test plan
 
-If the evaluator can find the new PAI species that can be used for the penetration testing, the evaluator shall produce the test item for those new PAI species and add them to <<Toolbox>>. The evaluator shall create those new test items at the same format and level of detail as existing ones in <<Toolbox>>.
+If the evaluator can find the new artefact species that can be used for the penetration testing, the evaluator shall produce the test item for those new artefact species and add them to <<Toolbox>>. The evaluator shall create those new test items at the same format and level of detail as existing ones in <<Toolbox>>.
 
 The evaluator shall also inform the BIO-iTC for this update because the BIO-iTC is responsible for maintaining <<Toolbox>>.
 
-The evaluator shall also perform EAs in <<No new PAIs found test plan>> to produce the test plan based on the result of independent testing.
+The evaluator shall also perform EAs in <<No new artefacts found test plan>> to produce the test plan based on the result of independent testing.
 
 ===== Conduct the penetration testing
 
 The evaluator shall conduct the penetration testing based on the test plan created in the previous step.
 
-The evaluator shall select those PAIs that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
+The evaluator shall select those artefacts that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
 However, the evaluator shall not spend more than one week for independent and penetration testing, considering the assurance level claimed by <<BIOPP-Module>>.
 
@@ -909,7 +912,7 @@ The evaluator shall determine that the TOE, in its operational environment, is r
 
 The EAs presented in this section are derived from AVA_VAN.1-3, AVA_VAN.1-4, AVA_VAN.1-5, AVA_VAN.1-6, AVA_VAN.1-7 and AVA_VAN.1-10 and their verdicts will be associated with those work units.
 
-EAs in the <<Search for new PAIs>> and <<Identify candidate PAIs for testing>> complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new PAI) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
+EAs in the <<Search for new artefacts>> and <<Identify candidate artefacts for testing>> complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new artefact) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
 
 EAs in <<Produce test plan>> and <<Conduct the penetration testing>> complements evaluator’s action for creating the test plan and conducting the penetration testing for PAD (AVA_VAN.1-6 and AVA_VAN.1-7).
 
@@ -965,7 +968,7 @@ The test document shall report the following information to uniquely identify th
 [arabic]
 .. TOE reference
 +
-Information that uniquely identifes the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the base PP and reference for the mobile device can be used as the TOE reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device
+Information that uniquely identifes the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the base PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
 +
 Modification to the TOE for performance testing, if any, shall be reported (e.g. The TOE is modified to export biometric data for off-line testing). The rationale that such modification doesn’t affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code isn’t executed during biometric verification or the developer may run regression test to verify that modification doesn’t change the result of verification (e.g. similarity score).
 .. TOE configuration
@@ -1107,7 +1110,7 @@ The developer shall maintain a log file in which each interaction with the TOE i
 Criteria for sample exclusion shall be reported. Test operator shall not manually discard nor use an automated mechanism to discard collected samples unless the samples conform to documented exclusion criteria. The number of excluded samples shall be reported. If transactions are failed because of such excluded samples, number of such failed transactions shall also be reported.
 . Advice or remedial action
 +
-Advice or remedial actions to test subjects who fail to complete transactions or sample collections shall be reported. Such advice or remedial actions shall be limited to the minimum amount necessary because [BIOPP-Module] assumes that the mobile device is used by the single user without any support. The same advice or remedial actions shall be given to test subject at the same condition.
+Advice or remedial actions to test subjects who fail to complete transactions or sample collections shall be reported. Such advice or remedial actions shall be limited to the minimum amount necessary because [BIOPP-Module] assumes that the computer is used by the single user without any support. The same advice or remedial actions shall be given to test subject at the same condition.
 
 [[Req4sub-tran-sam]]
 == Requirement for the number of test subject, transaction and samples
@@ -1122,13 +1125,13 @@ The developer shall follow the guidance in this Section to define the transactio
 
 The user may use the biometric verification in a different way.
 
-Suppose the mobile device provides both Password Authentication Factor and BAF and user can use either of factor to unlock the device. One user may try to unlock the device with BAF until allowable maximum number of unsuccessful authentication attempts is exceeded. Another user may try to unlock the device with BAF only three times and switch to the password if all three attempts were failed.
+Suppose the computer provides both Password Authentication Factor and BAF and user can use either of factor to unlock the device. One user may try to unlock the device with BAF until allowable maximum number of unsuccessful authentication attempts is exceeded. Another user may try to unlock the device with BAF only three times and switch to the password if all three attempts were failed.
 
 It may also be possible for user to enrol multiple body parts (e.g. index and thumb fingerprint) or single body part for biometric verification.
 
 However, it’s not possible to evaluate all these scenarios to measure the performance but the developer shall refer the ST that claims conformance to the base PP to define the scenario.
 
-For example, if the ST sets the maximum number of unsuccessful authentication attempts for mobile fingerprint verification to five, the developer shall assume that the attacker makes all five fingerprint unlock attempts in succession to try to unlock the mobile device.
+For example, if the ST sets the maximum number of unsuccessful authentication attempts for fingerprint verification to five, the developer shall assume that the attacker makes all five fingerprint unlock attempts in succession to try to unlock the computer.
 
 This means that if FAR and FRR are selected, the developer shall define that the genuine and imposter transaction is consisted up to five unlock attempts and only one transaction can be run by each user.
 
@@ -1140,7 +1143,7 @@ The developer shall also select the most common scenario among users to conduct 
 
 Only one template can be generated from each body part (e.g. right index fingerprint, left hand vein or face) of test subject and used for the performance testing.
 
-Quality of template may have significant impact on the biometric verification performance. This SD assumes that the user is familiar with the mobile devices operation and enrol him/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
+Quality of template may have significant impact on the biometric verification performance. This SD assumes that the user is familiar with the computers operation and enrol him/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
 
 ==== Maximum number of samples per test subject
 
@@ -1148,7 +1151,7 @@ The developer shall define the maximum number of samples per test subject to be 
 
 ==== Maximum number of transactions per test subject
 
-Only one transaction can be run by each test subject because the mobile device locks the biometric verification as required by the base PP after the certain number of attempts are failed.
+Only one transaction can be run by each test subject because the computer locks the biometric verification as required by the base PP after the certain number of attempts are failed.
 
 ==== Statistical certainty for FAR/FMR
 
@@ -1164,7 +1167,7 @@ Rule of 3 requires no error occurred for all attempts/transactions and rule of 3
 
 === Example – fingerprint verification
 
-The developer defines that mobile fingerprint verification is consisted of 5 attempts using both right index and thumb fingerprint to unlock the mobile device and specify 0.01 % FAR and 1% FRR in FIA_MBV_EXT.1.
+The developer defines that fingerprint verification is consisted of 5 attempts using both right index and thumb fingerprint to unlock the computer and specify 0.01 % FAR and 1% FRR in FIA_MBV_EXT.1.
 
 As described in the previous Section, the genuine and imposter transaction is consisted up to five unlock attempts using either of finger against each template for index and thumb finger and only one transaction can be run by each user.
 
@@ -1192,7 +1195,7 @@ Exploitation corresponds to achieving the attack on an instance of the TOE in it
 
 [NOTE]
 ====
-For the evaluator, the work of the identification phase has to be fully performed: developing hardware and software, creating PAIs if any, etc. The rating of this phase corresponds to the "real spending" in defining the attack. For the exploitation, it is not necessary to perform the work again and the rating could correspond to an evaluation of the necessary effort for each factor.
+For the evaluator, the work of the identification phase has to be fully performed: developing hardware and software, creating artefacts if any, etc. The rating of this phase corresponds to the "real spending" in defining the attack. For the exploitation, it is not necessary to perform the work again and the rating could correspond to an evaluation of the necessary effort for each factor.
 ====
 
 [NOTE]
@@ -1208,15 +1211,15 @@ As in <<CEM>>, the factors to be considered consist of *_Elapsed time_*, *_Exper
 
 In the identification phase, elapsed time corresponds to the time required to create the attack, and to demonstrate that it can be successfully applied to the TOE (including setting up or building any necessary hardware or software equipment). The demonstration that the attack can be successfully applied needs to consider any difficulties in expanding a result shown in the laboratory to create a useful attack. One of the outputs from identification is, for instance, a script that gives a step-by-step description of how to carry out the attack. This script is assumed to be used in the exploitation part.
 
-In the exploitation phase, elapsed time corresponds to the time necessary to apply the "script" to specific biometric characteristics. For example, for a presentation attack to a fingerprint capture device, it corresponds to the time required to create a PAI from an image of a print (and not the acquisition of this image which is taken into account in the factor *_Window of opportunity (Access to biometric characteristics)_*).
+In the exploitation phase, elapsed time corresponds to the time necessary to apply the "script" to specific biometric characteristics. For example, for a presentation attack to a fingerprint capture device, it corresponds to the time required to create an artefact from an image of a print (and not the acquisition of this image which is taken into account in the factor *_Window of opportunity (Access to biometric characteristics)_*).
 
 Potential difficulties to have an access to the TOE in exploitation environment are taken into account in the factor *_Window of opportunity (Access to the TOE)_*.
 
 *_Expertise_* refers to the level of proficiency required by the attacker and the general knowledge that he possesses, not specific of the system being attacked. The levels are as follows:
 
 [loweralpha]
-. _Layman_ is the level no real expertise needed and such that any person with a regular level of education is capable of performing the attack. For example, creating a PAI in a known (published) way without specific difficulties (difficult to buy materials) is considered at this level of expertise.
-. _Proficient_ is the level such that some advanced knowledge in certain specific topics (biometrics) is required as well as good knowledge of the state-of-the-art of attacks. An attacker of this level is capable of adapting known attack methods to his needs. For example, adapting a known attack type (published) by the choice of specific (not published and sometimes difficult to find) materials in order to bypass a presentation attack detection mechanism and/or finding a non-evident way to present this PAI to the system can be considered at this level of expertise.
+. _Layman_ is the level no real expertise needed and such that any person with a regular level of education is capable of performing the attack. For example, creating an artefact in a known (published) way without specific difficulties (difficult to buy materials) is considered at this level of expertise.
+. _Proficient_ is the level such that some advanced knowledge in certain specific topics (biometrics) is required as well as good knowledge of the state-of-the-art of attacks. An attacker of this level is capable of adapting known attack methods to his needs. For example, adapting a known attack type (published) by the choice of specific (not published and sometimes difficult to find) materials in order to bypass a presentation attack detection mechanism and/or finding a non-evident way to present this artefact to the system can be considered at this level of expertise.
 . _Expert_ is the level such that a specific preparation in multiple areas such as pattern recognition, computer vision or optimization is needed in order to carry out the attack. An attacker of this level is capable of generating his own new attacking algorithms. For example, finding a new (unpublished) way of creating an attack type using new and specific materials (unpublished) to counter an advanced presentation attack detection mechanism, can be considered at this level. In addition, this level can be associated with specific equipment (bespoke)
 . _Multiple Experts_ is the level such that the attack needs the collaboration of several people with high level expertise in different fields (e.g., electronics, cryptanalysis, physics, etc.). It has to be noticed that a specific competence in biometrics is not considered as "multiple expertise". For example, building a "hill climbing" attack by gaining access to the comparison scores requires additional expertise to electrically attack and penetrate the TOE, which can be considered to constitute a "multi expertise" level.
 
@@ -1257,13 +1260,13 @@ This factor is not expressed in terms of time. The levels are as follows:
 [loweralpha]
 . __Easy__: For identification phase, there is no strong constraint for the attacker to buy the TOE (reasonable price) to prepare its attack. For exploitation phase, there is no limit in the number of tries and the presentation attack is difficult to detect.
 . __Moderate__: For identification phase, specialised distribution schemes exist (not available to individuals). For exploitation phase, either a tuning of the attack for the final system is required (unknown parameterization of countermeasures for example) or there is a supervision of the biometric system emitting, for example, an alert in case of numerous fail presentations.
-. __Difficult__: For identification phase, the system is not available except for identified users and access requires compromising of one of the actors. For exploitation phase, for example PAIs must be adapted to the (unknown) specific tuning, or there is a strong supervision (for example a guard), or the system needs physical modification (for example physically accessing a hidden signal significant to the comparison score). Compromising one actor involved in the use of the system (guard, administrator, and maintenance) is often required.
+. __Difficult__: For identification phase, the system is not available except for identified users and access requires compromising of one of the actors. For exploitation phase, for example artefacts must be adapted to the (unknown) specific tuning, or there is a strong supervision (for example a guard), or the system needs physical modification (for example physically accessing a hidden signal significant to the comparison score). Compromising one actor involved in the use of the system (guard, administrator, and maintenance) is often required.
 
 *_Window of opportunity (Access to biometric characteristics)_* refers to measuring the difficulty to access the target biometric characteristics either to prepare the attack or to perform it on the target system
 
-Security evaluations of CC are dedicated to evaluate the intrinsic resistance of a system. Due to the potential number of attack paths (with or without the cooperation of an enrolled subject for example) the evaluation does not take into account the way a real biometric characteristic is acquired. For presentation attack detection, the vulnerability analysis is based on the hypothesis that a real "image" is available, and the rating only concerns the creation and the presentation of a PAI.
+Security evaluations of CC are dedicated to evaluate the intrinsic resistance of a system. Due to the potential number of attack paths (with or without the cooperation of an enrolled subject for example) the evaluation does not take into account the way a real biometric characteristic is acquired. For presentation attack detection, the vulnerability analysis is based on the hypothesis that a real "image" is available, and the rating only concerns the creation and the presentation of an artefact.
 
-However, it is important to be able to compare the resistance of various systems, even based on different biometrics. In addition, getting a real "image" to build a PAI is clearly part of an attack and it is of interest, for the final user of the TOE and the pertinence of a certificate to add a factor related to this aspect.
+However, it is important to be able to compare the resistance of various systems, even based on different biometrics. In addition, getting a real "image" to build an artefact is clearly part of an attack and it is of interest, for the final user of the TOE and the pertinence of a certificate to add a factor related to this aspect.
 
 The levels are as follows:
 
@@ -1459,7 +1462,7 @@ The evaluator shall take following application notes into account to calculate t
 
 ==== Application note for Window of Opportunity (Access to TOE) for Identification
 
-The evaluator shall select “Easy” because the TOE is the mobile device that anyone can purchase.
+The evaluator shall select “Easy” because the TOE is a computer that anyone can purchase.
 
 ==== Application note for Window of Opportunity (Access to TOE) for Exploitation
 
@@ -1469,17 +1472,17 @@ The evaluator shall select “Difficult” because number of unsuccessful authen
 
 As required by CC, the evaluator shall determine that the TOE is resistant to an attacker possessing a Basic attack potential based on <<attackpotentialcalc>>. However, the table doesn’t provide any guidance for the probability of success or failure of presentation attack.
 
-The evaluator may have enough confidence to assign fail verdict to the TOE if the evaluator find the PAIs that succeed the attack repeatably or at high probability (e.g. almost 100%).
+The evaluator may have enough confidence to assign fail verdict to the TOE if the evaluator find the artefacts that succeed the attack repeatably or at high probability (e.g. almost 100%).
 
-However, the evaluator can’t make an objective decision if the probability of success decreases at certain level because the mobile device limits the number of unsuccessful authentication attempts for biometric verification and the attacker can’t present the PAI to the TOE so many times in the actual operational environment.
+However, the evaluator can’t make an objective decision if the probability of success decreases at certain level because the computer limits the number of unsuccessful authentication attempts for biometric verification and the attacker can’t present the artefact to the TOE so many times in the actual operational environment.
 
 This Section provides the Pass/Fail criteria for EAs for PAD testing taking this particular aspect into account so that the evaluator can make consistent and objective decision.
 
 ==== Pass/Fail criteria
 
-The mobile device limits the number of unsuccessful authentication attempts for biometric verification, as required by the base PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
+The computer limits the number of unsuccessful authentication attempts for biometric verification, as required by the base PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
 
-This SD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable PAIs”. “Reliable PAIs” are those PAIs that succeed at least one attack within the allowable number of attempts (i.e. succeed to unlock the mobile device) at more than 80% of probability. This SD selects this probability based on the use case assumed in <<BIOPP-Module>>.
+This SD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable artefacts”. “Reliable artefacts” are those artefacts that succeed at least one attack within the allowable number of attempts (i.e. succeed to unlock the computer) at more than 80% of probability. This SD selects this probability based on the use case assumed in <<BIOPP-Module>>.
 
 The probability of a successful presentation attack for one attempt *_p_* needs to satisfy the following equation to satisfy the above condition.
 
@@ -1500,19 +1503,19 @@ The following table shows that example of pairs (maximum *_p_* for particular *n
 
 If the base PP is <<MDFPP>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assign 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
 
-The evaluator shall assign pass verdict to the TOE only if the evaluator can’t find those PAIs that the probability of successful attack is more than *_p_*.
+The evaluator shall assign pass verdict to the TOE only if the evaluator can’t find those artefacts that the probability of successful attack is more than *_p_*.
 
-The evaluator shall make at least 3 PAIs from three test subjects following the same creation process and perform at least 10 attempts for each PAI to calculate *_p_* (i.e. minimum number of attempts for calculation of *_p_* for each PAI is 3 * 10 = 30).
+The evaluator shall make at least 3 artefacts from three test subjects following the same creation process and perform at least 10 attempts for each artefact to calculate *_p_* (i.e. minimum number of attempts for calculation of *_p_* for each artefact is 3 * 10 = 30).
 
-The evaluator should focus on a few PAIs that show highest error rate at the independent testing or hold highest quality for the penetration testing and spend enough time for training before conducting the final testing to measure *_p_* for those PAIs.
+The evaluator should focus on a few artefacts that show highest error rate at the independent testing or hold highest quality for the penetration testing and spend enough time for training before conducting the final testing to measure *_p_* for those artefacts.
 
 ==== Additional application notes for AGD Class for FIA_MBV_EXT.3
 
 CEM work unit AGD_OPE.1-1 requires the evaluator to examine the AGD guidance to determine that it describes appropriate warnings for secure use of the TOE.
 
-The evaluator shall examine that appropriate warnings is provided in the AGD guidance if the evaluator can find those PAIs that pass the penetration test however whose *_p_* is higher than 7%.
+The evaluator shall examine that appropriate warnings is provided in the AGD guidance if the evaluator can find those artefacts that pass the penetration test however whose *_p_* is higher than 7%.
 
-Those PAIs can succeed at least one presentation attack (and succeed to unlock the mobile device) at 25% of probability when allowable number of unsuccessful attempts is 4 (i.e. *n* = 4).
+Those artefacts can succeed at least one presentation attack (and succeed to unlock the computer) at 25% of probability when allowable number of unsuccessful attempts is 4 (i.e. *n* = 4).
 
 Example of warnings is that the AGD guidance may warn that the biometric verification is less secure than a password and recommend using a password for security sensitive services.
 

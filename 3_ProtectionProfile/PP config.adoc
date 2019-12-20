@@ -14,7 +14,7 @@ This PP-Configuration was developed by the Biometrics Security international Tec
 
 == Introduction
 
-The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that combines Protection Profiles (PPs) and PP-Modules for various technology types into a single configuration that can be evaluated as a whole. The scope includes the definition of the configuration of a mobile device that has biometric enrolment and verification capability. The TOE will be defined by a combination of the components described in <<PP-Configuration Components Statement>>.
+The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that combines Protection Profiles (PPs) and PP-Modules for various technology types into a single configuration that can be evaluated as a whole. The scope includes the definition of the configuration of a mobile device (a computer in the terms of the PP-Module) that has biometric enrolment and verification capability. The TOE will be defined by a combination of the components described in <<PP-Configuration Components Statement>>.
 
 == PP-Configuration Reference
 
