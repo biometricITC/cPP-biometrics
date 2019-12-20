@@ -1532,8 +1532,8 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.    
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.        
 - [#MDFPP]#[MDFPP]# Protection Profile for Mobile Device Fundamentals, Version:3.3.    
-- [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 05, 2019, Version 0.91.    
-- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 5, 2019, Version 0.91.    
+- [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92.    
+- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92.    
 - [#ISO/IEC 15408-4]#[ISO/IEC 15408-4]# Evaluation criteria for IT security – Part 4: Framework for the specification of evaluation methods and activities, under development.    
 - [#ISO/IEC 19792]#[ISO/IEC 19792]# Security evaluation of biometrics, First edition.    
 - [#ISO/IEC 19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
