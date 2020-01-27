@@ -424,6 +424,7 @@ The following test steps require the developer to provide access to a test platf
 . The evaluator shall present biometric samples of low quality for biometric verification that don’t satisfy the assessment criteria described in “assessment criteria for samples”
 . The evaluator shall present biometric samples of acceptable quality for biometric verification that don’t satisfy the assessment criteria described in “assessment criteria for samples”
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that don’t meet the assessment criteria specified in the “assessment criteria for samples”
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any samples accepted by TOE meet the assessment criteria specified in the “assessment criteria for samples” correctly
 
 ===== Pass/Fail criteria
 
