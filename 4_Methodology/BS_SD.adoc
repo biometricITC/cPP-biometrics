@@ -302,6 +302,7 @@ The following test steps require the developer to provide access to a test platf
 
 . The evaluator shall enrol him/herself
 . The evaluator shall present biometric samples repeatedly to trigger the TOE to create authentication templates
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create authentication templates that don’t meet the assessment criteria specified in the “assessment criteria for templates”
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any authentication templates created by TOE meet the assessment criteria specified in the “assessment criteria for templates” correctly
 
 ===== Pass/Fail criteria
