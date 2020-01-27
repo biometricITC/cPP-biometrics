@@ -201,7 +201,7 @@ Following input is required from the developer.
 . TSS shall explain how the TOE meets FIA_MBE_EXT.1 at high level description
 . AGD guidance shall provide clear instructions for a user to enrol him/herself
 
-AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
+AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the enrolment attempt.
 
 ===== Assessment Strategy
 
@@ -255,7 +255,7 @@ Following input is required from the developer.
 . AGD guidance shall provide clear instructions for a user to enrol him/herself
 . Supplementary information (Assessment criteria for templates) shall describe assessment criteria for creating templates
 
-AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
+AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the enrolment attempt.
 
 ===== Assessment Strategy
 
@@ -343,7 +343,7 @@ Following input is required from the developer.
 . AGD guidance shall provide clear instruction for a user to verify him/herself to unlock the computer
 . Supplementary information (developer’s performance test document) shall describe developer’s performance test protocol and result of testing
 
-AGD guidance may include online assistance, prompts or warning provided by the TOE during the verification attempt.
+AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
 
 ===== Assessment Strategy
 
@@ -399,7 +399,7 @@ Following input is required from the developer.
 . AGD guidance shall provide clear instruction for a user to verify him/herself
 . Supplementary information (Assessment criteria for samples) shall describe assessment criteria for creating samples
 
-AGD guidance may include online assistance, prompts or warning provided by the TOE during the verification attempt.
+AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
 
 ===== Assessment Strategy
 
