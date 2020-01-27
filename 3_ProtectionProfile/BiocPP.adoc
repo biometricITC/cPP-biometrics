@@ -527,7 +527,7 @@ FIA_MBE_EXT.1 Biometric enrolment requires the TSF to enrol a user.
 
 FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment requires the TSF to create templates of sufficient quality.
 
-FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment requires the TSF to prevent presentation attacks during the biometric enrolment.
+FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment requires the TSF to detect and prevent presentation attacks during the biometric enrolment.
 
 ===== Management: FIA_MBE_EXT.1
 
@@ -603,7 +603,7 @@ FIA_MBV_EXT.1 Biometric verification requires the TSF to verify a user.
 
 FIA_MBV_EXT.2 Quality of biometric samples for biometric verification requires the TSF to use samples of sufficient quality.
 
-FIA_MBV_EXT.3 Presentation attack detection for biometric verification requires the TSF to prevent presentation attacks during the biometric verification.
+FIA_MBV_EXT.3 Presentation attack detection for biometric verification requires the TSF to detect and prevent presentation attacks during the biometric verification.
 
 ===== Management: FIA_MBV_EXT.1
 
