@@ -76,7 +76,7 @@ False Non-match Rate (FNMR)::
 	Proportion of genuine attempt samples that were falsely declared not to match the template of the same characteristic from the same user supplying the sample.
 False Reject Rate (FRR)::
 	Proportion of verification transactions with truthful claims of identity that are incorrectly denied.
-Features::
+(Biometric) Features::
 	Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates.
 Hybrid Authentication::
 	A hybrid authentication factor is one where a user has to submit a combination of biometric sample and PIN or password with both to pass and without the user being made aware of which factor failed, if either fails.
