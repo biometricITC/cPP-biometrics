@@ -422,7 +422,7 @@ The evaluator shall perform the following test to verify that the TOE checks the
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
 . The evaluator shall present biometric samples of low quality for biometric verification that don’t satisfy the assessment criteria described in “assessment criteria for samples”
-
+. The evaluator shall present biometric samples of acceptable quality for biometric verification that don’t satisfy the assessment criteria described in “assessment criteria for samples”
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that don’t meet the assessment criteria specified in the “assessment criteria for samples”
 
 ===== Pass/Fail criteria
