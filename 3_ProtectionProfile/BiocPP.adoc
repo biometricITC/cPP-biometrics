@@ -462,7 +462,7 @@ This PP-Module does not define any additional assurance requirements above and b
 
 As indicated in the introduction to this PP-Module, the baseline requirements (those that shall be performed by the TOE) are contained in <<Security Functional Requirements>>. Additionally, there are two other types of requirements specified in <<Selection-Based Requirements>> and <<Optional Requirements>>.
 
-The this section comprises requirements based on selections in other SFRs from the PP-Module: if certain selections are made, then additional requirements in this Section will need to be included in the body of the ST.
+This section comprises requirements based on selections in other SFRs from the PP-Module: if certain selections are made, then additional requirements in this Section will need to be included in the body of the ST.
 
 The PP-Module does not contain any selection-based requirements.
 
