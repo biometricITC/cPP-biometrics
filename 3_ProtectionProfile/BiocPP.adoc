@@ -186,7 +186,7 @@ As illustrated in the above figure, the TOE is capable of:
 
 * Capturing samples from user’s biometric characteristics (Data Capture Subsystem)
 * Extracting and processing the features from samples of sufficient quality and generating various templates (Signal Processing Subsystem)
-* Storing the templates in a database on the computer (Data Storage Subsystem)
+* Storing the templates in a database on the computer (Storage Subsystem)
 * Comparing captured features with data contained in one or more templates (Comparison Subsystem)
 * Optionally detecting the presentation attacks using an artefact
 * Deciding how well features and any template match, and indicating whether or not a verification of the user has been achieved (Decision Subsystem)
