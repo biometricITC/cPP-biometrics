@@ -519,7 +519,7 @@ This component defines the requirements for the TSF to be able to enrol a user, 
                                                   |  +---+
     +------------------------------------------+  |
     |                                          |  |  +---+
-    | FIA_MBE_EXT  Biometric enrollment        +--+->| 2 |
+    | FIA_MBE_EXT  Biometric enrolment         +--+->| 2 |
     |                                          |  |  +---+
     +------------------------------------------+  |
                                                   |  +---+
@@ -551,7 +551,7 @@ a)	the management of the TSF data (setting values for detecting artificial prese
 ===== Audit: FIA_MBE_EXT.1, FIA_MBE_EXT.2
 The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
 
-a)	Basic: Success or failure of the biometric enrollment
+a)	Basic: Success or failure of the biometric enrolment
 
 ===== Audit: FIA_MBE_EXT.3
 The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
