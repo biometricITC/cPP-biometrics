@@ -60,8 +60,12 @@ Biometric Authentication Factor (BAF)::
 	Authentication factor used for biometric verification. In this PP-Module, the term is a synonym of the “template”.
 Biometric Characteristic::
 	Biological and behavioural characteristic of an individual from which distinguishing, repeatable biometric features can be extracted for the purpose of biometric recognition.
+Biometric Claim::
+	A claim that a biometric capture subject is or is not the source of a specified or unspecified biometric reference.
 Biometric Data::
 	Digital data created during biometric enrolment and verification processes. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected, and does not include end user information such as user name, password (unless tied to the biometric modality), demographic information, and authorizations.
+Biometric Probe::
+	Biometric sample or biometric feature set input to an algorithm for use as the subject of biometric comparison to a biometric reference(s).
 Biometric System Administrator::
 	Person who is responsible for configuring the TOE. This PP-Module assumes that the user acts as the biometric system administrator.
 Computer::
