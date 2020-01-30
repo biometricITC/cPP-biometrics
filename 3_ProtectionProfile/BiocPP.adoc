@@ -1,4 +1,4 @@
-= collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -
+= collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module]
 :showtitle:
 :toc:
 :toclevels: 3
