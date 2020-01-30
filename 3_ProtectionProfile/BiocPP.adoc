@@ -683,7 +683,7 @@ This component defines the requirements for the TSF to be able to protect plaint
                                                  |  +---+
     +-----------------------------------------+  |
     |                                         |  |  +---+
-    | FPT_BDP_EXT  Diometric data processing  +--+->| 2 |
+    | FPT_BDP_EXT  Biometric data processing  +--+->| 2 |
     |                                         |  |  +---+
     +-----------------------------------------+  |
                                                  |  +---+
