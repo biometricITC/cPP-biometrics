@@ -26,7 +26,7 @@ The scope of the PP-Module within the development and evaluation process is desc
 === Intended Readership
 The target audiences of this PP-Module are developers, CC consumers, system integrators, evaluators and schemes. 
 
-Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the {iTC-shortname}. 
+Although the PP-Module and Supporting Document <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the {iTC-shortname}. 
 
 === Related Documents
 [bibliography]
