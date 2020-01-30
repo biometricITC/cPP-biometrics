@@ -18,7 +18,7 @@ This collaborative PP-Module was developed by the {iTC-longame} international Te
 == Preface
 
 === Objectives of Document
-This document presents the Common Criteria (CC) collaborative PP-Module to express the security functional requirements (SFRs) and security assurance requirements (SARs) for biometric enrolment and verification on the computer. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this PP-Module, are described in <<SD>>.
+This document presents the Common Criteria (CC) collaborative PP-Module to express the security functional requirements (SFRs) and security assurance requirements (SARs) for biometric enrolment and verification on the computer. The Evaluation activities that specify the actions the evaluator performs to determine if a product satisfies the SFRs captured within this PP-Module, are described in <<BIOSD>>.
 
 === Scope of Document
 The scope of the PP-Module within the development and evaluation process is described in the Common Criteria for Information Technology Security Evaluation. In particular, a PP-Module defines the IT security requirements of a generic type of TOE and specifies the functional security measures to be offered by that TOE to meet stated requirements <<CC1>>, Section B.14.
@@ -26,7 +26,7 @@ The scope of the PP-Module within the development and evaluation process is desc
 === Intended Readership
 The target audiences of this PP-Module are developers, CC consumers, system integrators, evaluators and schemes. 
 
-Although the PP-Module and Supporting Document <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the {iTC-shortname}. 
+Although the PP-Module and Supporting Document <<BIOSD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the {iTC-shortname}. 
 
 === Related Documents
 [bibliography]
@@ -36,8 +36,8 @@ Although the PP-Module and Supporting Document <<SD>> may contain minor editoria
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
 - [#MDFPP]#[MDFPP]# Protection Profile for Mobile Device Fundamentals, Version:3.3.
-- [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92.
-- [#SD]#[SD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92.
+- [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92 [CFG-MDF-BIO].
+- [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92 - [BIOSD].
 - [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [#ISOIEC19989-2]#[ISO/IEC 19989-2]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
 - [#ISO19989-3]#[ISO/IEC 19989-3]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
@@ -53,7 +53,7 @@ For the purpose of this PP-Module, the following terms and definitions given in 
 
 [glossary]
 Artefact::
-	Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying [SD] specifies artefacts that the evaluator should consider for the CC evaluation. Specifically, the artefacts here are artificially generated Presentation Attack Instruments (PAI), not natural ones.
+	Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying [BIOSD] specifies artefacts that the evaluator should consider for the CC evaluation. Specifically, the artefacts here are artificially generated Presentation Attack Instruments (PAI), not natural ones.
 Attempt::
    Submission of one (or a sequence of) biometric samples to the part of the TOE.
 Biometric Authentication Factor (BAF)::
@@ -173,7 +173,7 @@ b)	Biometric verification
 
 During the verification process, a user presents his/her own biometric characteristics to the TOE without presenting any user identity information for unlocking the computer. The TOE captures samples from the biometric characteristics, retrieves all enrolled templates and compares them with the features extracted from the captured samples of the user to measure the similarity between the two data and determines whether to accept or reject the user based on the similarity, and indicates the decision to the computer.
 
-Examples of biometric characteristic used by the TOE are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics for which <<SD>> defines the Evaluation Activities.
+Examples of biometric characteristic used by the TOE are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics for which <<BIOSD>> defines the Evaluation Activities.
 
 ==== TOE Design
 The TOE is fully integrated into the computer without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1,ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
@@ -247,7 +247,7 @@ In order to be conformant to this PP-Module, a ST shall demonstrate Exact Confor
 
 === Evaluation activities
 
-This PP-Module requires the use of evaluation activities defined in <<SD>>.
+This PP-Module requires the use of evaluation activities defined in <<BIOSD>>.
 
 == Security Problem Definition
 
@@ -408,7 +408,7 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 
 *Application Note {counter:remark_count}*:: If the TOE support multiple modalities, ST author may iterate the SFR to define different error rates for each modality.
 
-*Application Note {counter:remark_count}*:: ST author shall select or assign those modalities in FIA_MBV_EXT.1.1 for which <<SD>> defines the Evaluation Activities.
+*Application Note {counter:remark_count}*:: ST author shall select or assign those modalities in FIA_MBV_EXT.1.1 for which <<BIOSD>> defines the Evaluation Activities.
 
 *Application Note {counter:remark_count}*:: Value of FMR, FAR, FNMR and FRR shall be assigned by the ST author however the ST author should consider the following factors for setting those values.
 +
@@ -425,7 +425,7 @@ Although different modalities are available for the biometric verification, all 
 
 . Number of test subjects required for the performance testing
 +
-Target error rates defined in SFR shall be evaluated based on <<SD>>. Normally the target error rates will directly influence the size of the test subject, the time and cost of the testing. <<SD>> describes how those error rates should be evaluated in an objective manner.
+Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normally the target error rates will directly influence the size of the test subject, the time and cost of the testing. <<BIOSD>> describes how those error rates should be evaluated in an objective manner.
 
 ==== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
 
@@ -485,7 +485,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 *FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
 
-*Application Note {counter:remark_count}*:: Artefacts that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of artefact is defined in <<SD>>.
+*Application Note {counter:remark_count}*:: Artefacts that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of artefact is defined in <<BIOSD>>.
 
 === User data protection (FDP)
 
