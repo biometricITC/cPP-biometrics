@@ -58,6 +58,8 @@ Attempt::
    Submission of one (or a sequence of) biometric samples to the part of the TOE.
 Biometric Authentication Factor (BAF)::
 	Authentication factor used for biometric verification. In this PP-Module, the term is a synonym of the “template”.
+Biometric Characteristic::
+	Biological and behavioural characteristic of an individual from which distinguishing, repeatable biometric features can be extracted for the purpose of biometric recognition.
 Biometric Data::
 	Digital data created during biometric enrolment and verification processes. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected, and does not include end user information such as user name, password (unless tied to the biometric modality), demographic information, and authorizations.
 Biometric System Administrator::
@@ -73,7 +75,7 @@ False Accept Rate (FAR)::
 False Match Rate (FMR)::
 	Proportion of zero-effort impostor attempt samples that were falsely declared to match the compared non-self template.
 False Non-match Rate (FNMR)::
-	Proportion of genuine attempt samples that were falsely declared not to match the template of the same characteristic from the same user supplying the sample.
+	Proportion of genuine attempt samples that were falsely declared not to match the template of the same biometric characteristic from the same user supplying the sample.
 False Reject Rate (FRR)::
 	Proportion of verification transactions with truthful claims of identity that are incorrectly denied.
 Features::
