@@ -1,4 +1,4 @@
-= Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD]
+= Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - 
 :showtitle:
 :toc:
 :toclevels: 3
@@ -74,17 +74,17 @@ This Supporting Document was developed by the Biometric Security international T
 
 === Technology Area and Scope of Supporting Document
 
-This Supporting Document (BIOSD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>> that is intended for use with the base PP identified in the appropriate PP-Configuration.
+This Supporting Document (SD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>> that is intended for use with the base PP identified in the appropriate PP-Configuration.
 
-This BIOSD is mandatory for evaluations of TOEs that claim conformance to <<BIOPP-Module>>.
+This SD is mandatory for evaluations of TOEs that claim conformance to <<BIOPP-Module>>.
 
 The Biometric Security technical area has a number of specialised aspects, such as those relating to the biometric enrolment and verification, and to the particular ways in which the TOE optionally needs to be assessed across a range of different artificial artefact instruments (specifically artificial, not natural, Presentation Attack Instruments). This degree of specialisation, and the associations between individual SFRs in <<BIOPP-Module>>, make it important for both efficiency and effectiveness that EAs are given more specific interpretations than those found in the generic CEM activities.
 
-Although EAs are defined mainly for the evaluator to follow, the definitions in this BIOSD aim to provide a common understanding for developers, evaluators and users as to what aspects of the TOE are tested in an evaluation against <<BIOPP-Module>>, and to what depth the testing is carried out. This common understanding in turn contributes to the goal of ensuring that evaluations against <<BIOPP-Module>> achieve comparable, transparent and repeatable results. In general, the definition of EAs will also help developers to prepare for evaluation by identifying specific requirements for their TOE. The specific requirements in EAs may in some cases clarify the meaning of SFRs, and may identify particular requirements for the content of Security Targets (STs) (especially the TOE Summary Specification (TSS)), AGD guidance, and possibly supplementary information (e.g. for biometric performance testing – see <<Developer’s performance test document and its assessment strategy>>).
+Although EAs are defined mainly for the evaluator to follow, the definitions in this SD aim to provide a common understanding for developers, evaluators and users as to what aspects of the TOE are tested in an evaluation against <<BIOPP-Module>>, and to what depth the testing is carried out. This common understanding in turn contributes to the goal of ensuring that evaluations against <<BIOPP-Module>> achieve comparable, transparent and repeatable results. In general, the definition of EAs will also help developers to prepare for evaluation by identifying specific requirements for their TOE. The specific requirements in EAs may in some cases clarify the meaning of SFRs, and may identify particular requirements for the content of Security Targets (STs) (especially the TOE Summary Specification (TSS)), AGD guidance, and possibly supplementary information (e.g. for biometric performance testing – see <<Developer’s performance test document and its assessment strategy>>).
 
 === Structure of the Document
 
-EAs can be defined for both SFRs and SARs. These are defined in separate sections of this BIOSD.
+EAs can be defined for both SFRs and SARs. These are defined in separate sections of this SD.
 
 If any EA cannot be successfully completed in an evaluation then the overall verdict for the evaluation is a ‘fail’. In rare cases there may be acceptable reasons why an EA may be modified or deemed not applicable for a particular TOE, but this must be agreed with the Certification Body for the evaluation.
 
@@ -110,7 +110,7 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 |*PAI* |Presentation Attack Instrument (artefact)
 |*PP* |Protection Profile
 |*SAR* |Security Assurance Requirement
-|*BIOSD* |Supporting Document
+|*SD* |Supporting Document
 |*SEE* |Secure Execution Environment
 |*SFR* |Security Functional Requirement
 |*ST* |Security Target
@@ -167,9 +167,9 @@ Specific reporting requirements that support transparency and reproducibility of
 
 === Justification for EAs for SFRs
 
-EAs in this BIOSD provide specific or more detailed guidance to evaluate the biometric system, however, it is the CEM work units based on which the evaluator shall perform evaluations.
+EAs in this SD provide specific or more detailed guidance to evaluate the biometric system, however, it is the CEM work units based on which the evaluator shall perform evaluations.
 
-This Section explains how EAs for SFRs are derived from the particular CEM work units identified in Assessment Strategy to show the consistency and compatibility between the CEM work units and EAs in this BIOSD.
+This Section explains how EAs for SFRs are derived from the particular CEM work units identified in Assessment Strategy to show the consistency and compatibility between the CEM work units and EAs in this SD.
 
 Assessment Strategy for ASE_TSS requires the evaluator to examine that the TSS provides sufficient design descriptions and its verdicts will be associated with the CEM work unit ASE_TSS.1-1. Evaluator verdicts associated with the supplementary information will also be associated with ASE_TSS.1-1, since the requirement to provide such evidence is specified in ASE in the base PP from which SARs of <<BIOPP-Module>> are inherited.
 
@@ -187,7 +187,7 @@ The evaluator shall verify that the TOE enrols a user only after successful auth
 
 ===== Dependency
 
-There is no dependency to other EAs defined in this BIOSD.
+There is no dependency to other EAs defined in this SD.
 
 ===== Tool types required to perform the EA
 
@@ -451,7 +451,7 @@ FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometr
 
 ===== Dependency
 
-There is no dependency to other EAs defined in this BIOSD.
+There is no dependency to other EAs defined in this SD.
 
 ===== Tool types required to perform the EA
 
@@ -772,9 +772,9 @@ The evaluator shall perform the following two types of EAs or testing to evaluat
 
 ATE_IND.1 requires the evaluator to demonstrate that the TOE operates in accordance with its design representations described in TSS or AGD guidance because <<BIOPP-Module>> doesn't requre a formal or complete specification of PAD interface.
 
-However, <<BIOPP-Module>> doesn’t require such design representations about PAD (e.g. how the TOE checks the liveness of the object) in TSS or AGD because those information is beyond the scope of assurance level claimed by [BIOPP-Module]. Therefore, this BIOSD doesn’t also require the evaluator to test the functional aspects of PAD based on those design representations.
+However, <<BIOPP-Module>> doesn’t require such design representations about PAD (e.g. how the TOE checks the liveness of the object) in TSS or AGD because those information is beyond the scope of assurance level claimed by [BIOPP-Module]. Therefore, this SD doesn’t also require the evaluator to test the functional aspects of PAD based on those design representations.
 
-Instead, this BIOSD requires the evaluator to conduct ATE_IND.1 evaluation (i.e. independent testing) in black-box manner. However, difficulty of black-box testing for PAD, as described in <<ISO30107-3>>, is that it’s very difficult to have a comprehensive model of all possible artefacts. Therefore, it may be possible that different evaluator could use a different set of artefacts and see different test results for the same TOE.
+Instead, this SD requires the evaluator to conduct ATE_IND.1 evaluation (i.e. independent testing) in black-box manner. However, difficulty of black-box testing for PAD, as described in <<ISO30107-3>>, is that it’s very difficult to have a comprehensive model of all possible artefacts. Therefore, it may be possible that different evaluator could use a different set of artefacts and see different test results for the same TOE.
 
 To solve this issue, the Biometric Security iTC (BIO-iTC) creates <<Toolbox>>. This <<Toolbox>> defines the common artefacts for PAD testing based on publicly available information (e.g. research papers), experiences and knowledge shared among the BIO-iTC members.
 
@@ -832,7 +832,7 @@ If the evaluator can find new artefact species, the evaluator shall consider the
 [loweralpha]
 . Attacker’s motivation
 +
-For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the computer. The BIOSD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the computer.
+For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the computer. The SD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the computer.
 +
 Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face artefact) if such services are available at low cost.
 
@@ -891,7 +891,7 @@ For example, in case of finger or palm vein verification, men normally have thic
 +
 The evaluator may also increase time for artefact presentation training and habituation to find the better presentation method.
 +
-For example, in case of finger or palm vein verification, quality of vein pattern gained from the sensor (NIR-camera) of the TOE may vary depending on the distance between the artefact and sensor, and how to present the artefact to the TOE. However, it’s not possible for the evaluator to know the best distance or presentation method for the artefact in advance because this BIOSD requires the evaluator to test the TOE in black-box manner. The evaluator may simply increase the number of attempts to find the best distance or presentation through trial and error process.
+For example, in case of finger or palm vein verification, quality of vein pattern gained from the sensor (NIR-camera) of the TOE may vary depending on the distance between the artefact and sensor, and how to present the artefact to the TOE. However, it’s not possible for the evaluator to know the best distance or presentation method for the artefact in advance because this SD requires the evaluator to test the TOE in black-box manner. The evaluator may simply increase the number of attempts to find the best distance or presentation through trial and error process.
 
 ====== New artefacts found test plan
 
@@ -1148,7 +1148,7 @@ The developer shall also select the most common scenario among users to conduct 
 
 Only one template can be generated from each body part (e.g. right index fingerprint, left hand vein or face) of test subject and used for the performance testing.
 
-Quality of template may have significant impact on the biometric verification performance. This BIOSD assumes that the user is familiar with the computers operation and enrol him/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
+Quality of template may have significant impact on the biometric verification performance. This SD assumes that the user is familiar with the computers operation and enrol him/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
 
 ==== Maximum number of samples per test subject
 
@@ -1160,11 +1160,11 @@ Only one transaction can be run by each test subject because the computer locks 
 
 ==== Statistical certainty for FAR/FMR
 
-FMR/FAR shall be estimated following rule of 3 or 30 because these errors are most relevant to the security of the TOE and the trustworthiness of those values shall be evaluated statistically. While the rule of 3 would require that one test subject is only involved in one impostor transaction, it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. This BIOSD allows full cross-comparison to estimate FAR/FMR.
+FMR/FAR shall be estimated following rule of 3 or 30 because these errors are most relevant to the security of the TOE and the trustworthiness of those values shall be evaluated statistically. While the rule of 3 would require that one test subject is only involved in one impostor transaction, it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. This SD allows full cross-comparison to estimate FAR/FMR.
 
-This BIOSD also allows cross-comparison of attempts/templates for ordered pair if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates for ordered pair allows to compare between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE's verification algorithm is symmetric and make no distinction between the ordered pair, this assumption can't be used.
+This SD also allows cross-comparison of attempts/templates for ordered pair if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates for ordered pair allows to compare between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE's verification algorithm is symmetric and make no distinction between the ordered pair, this assumption can't be used.
 
-This BIOSD doesn’t allow intra-individual comparison that is a comparison between one body part and another body part of the same test subject (e.g. comparison between right and left iris of the same user).
+This SD doesn’t allow intra-individual comparison that is a comparison between one body part and another body part of the same test subject (e.g. comparison between right and left iris of the same user).
 
 ==== Statistical certainty for FRR/FNMR
 
@@ -1487,7 +1487,7 @@ This Section provides the Pass/Fail criteria for EAs for PAD testing taking this
 
 The computer limits the number of unsuccessful authentication attempts for biometric verification, as required by the base PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
 
-This BIOSD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable artefacts”. “Reliable artefacts” are those artefacts that succeed at least one attack within the allowable number of attempts (i.e. succeed to unlock the computer) at more than 80% of probability. This BIOSD selects this probability based on the use case assumed in <<BIOPP-Module>>.
+This SD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable artefacts”. “Reliable artefacts” are those artefacts that succeed at least one attack within the allowable number of attempts (i.e. succeed to unlock the computer) at more than 80% of probability. This SD selects this probability based on the use case assumed in <<BIOPP-Module>>.
 
 The probability of a successful presentation attack for one attempt *_p_* needs to satisfy the following equation to satisfy the above condition.
 
