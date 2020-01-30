@@ -88,6 +88,8 @@ Locked State::
 	A type or class of biometric system, such as fingerprint recognition, facial recognition, eye/iris recognition, voice recognition, signature/sign, and others.
 Password Authentication Factor::
 	A type of authentication factor requiring the user to provide a secret set of characters to gain access.
+Presentation::
+	Submission of a single biometric sample on the part of a user.
 Presentation Attack::
 	Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system.
 Presentation Attack Detection (PAD)::
