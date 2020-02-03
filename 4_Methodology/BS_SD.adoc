@@ -498,7 +498,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 The intention of this requirement is to prevent the logging, backing up or sending of plaintext biometric data to a service that transmits the information outside the security boundary of the SEE.
 
-For example, the TOE may transmit plaintext biometric data to the developer’s server for diagnostic purpose with a consent of the user. However, the TOE must not send plaintext biometric data as it is to the developer. The TOE must encrypt the data first before sending it.
+For example, the TOE may transmit plaintext biometric data to the developer’s server for diagnostic purpose with a consent of the user. However, the TOE must encrypt the plaintext biometric data before sending it to the developer’s server for diagnostic purposes.
 
 In any case, the evaluator shall determine that the TOE doesn’t transmit any plaintext biometric data outside the security boundary of the SEE.
 
