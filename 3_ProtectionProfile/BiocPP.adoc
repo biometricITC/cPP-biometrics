@@ -440,7 +440,7 @@ Target error rates defined in SFR shall be evaluated based on <<SD>>. Normally t
 
 *Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
 
-==== FPT_BDP_EXT.2 No Biometric data transmission [[FPT_BDP_EXT.2]]
+==== FPT_BDP_EXT.2 Biometric data transmission [[FPT_BDP_EXT.2]]
 
 *FPT_BDP_EXT.2.1* The TSF shall not transmit any plaintext biometric data outside the security boundary of the secure execution environment.
 
@@ -693,7 +693,7 @@ This component defines the requirements for the TSF to be able to protect plaint
  
 FPT_BDP_EXT.1 Biometric data processing requires the TSF to process plaintext biometric data within the security boundary of the secure execution environment.
 
-FPT_BDP_EXT.2 No Biometric data transmission requires the TSF not to transmit plaintext biometric data outside the security boundary of the secure execution environment.
+FPT_BDP_EXT.2 Biometric data transmission requires the TSF not to transmit plaintext biometric data outside the security boundary of the secure execution environment.
 
 FPT_BDP_EXT.3 Biometric data storage requires the TSF not to store plaintext biometric data outside the security boundary of the secure execution environment.
 
@@ -710,7 +710,7 @@ Dependencies: No dependencies
 
 *FPT_BDP_EXT.1.1* The TSF shall process any plaintext biometric data used to generate templates and perform sample matching within the security boundary of the secure execution environment.
 
-===== FPT_BDP_EXT.2 No Biometric data transmission
+===== FPT_BDP_EXT.2 Biometric data transmission
 Hierarchical to: 	No other components
 
 Dependencies: 	No dependencies
