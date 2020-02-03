@@ -188,8 +188,8 @@ As illustrated in the above figure, the TOE is capable of:
 * Extracting and processing the features from samples of sufficient quality and generating various templates (Signal Processing Subsystem)
 * Storing the templates in a database on the computer (Storage Subsystem)
 * Comparing captured features with data contained in one or more templates (Comparison Subsystem)
-* Optionally detecting the presentation attacks using an artefact
 * Deciding how well features and any template match, and indicating whether or not a verification of the user has been achieved (Decision Subsystem)
+* Optionally detecting the presentation attacks using an artefact (Presentation attack detection subsystem)
 
 ==== Relation between TOE and Computer 
 The TOE is reliant on the computer itself to provide overall security of the system. This PP-Module is intended to be used with a base PP, and the base PP is responsible for evaluating the following security functions:
