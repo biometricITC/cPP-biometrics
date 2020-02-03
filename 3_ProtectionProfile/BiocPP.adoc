@@ -1,4 +1,4 @@
-= collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -
+= collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module]
 :showtitle:
 :toc:
 :toclevels: 3
@@ -13,7 +13,7 @@
 
 
 == Acknowledgements
-This collaborative PP-Module was developed by the {iTC-longame} international Technical Community ({iTC-shortname}) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+This collaborative Protection Profile module (PP-Module) was developed by the {iTC-longame} international Technical Community ({iTC-shortname}) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
 
 == Preface
 
@@ -26,7 +26,7 @@ The scope of the PP-Module within the development and evaluation process is desc
 === Intended Readership
 The target audiences of this PP-Module are developers, CC consumers, system integrators, evaluators and schemes. 
 
-Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the {iTC-shortname}. 
+Although the PP-Module and Supporting Document <<SD>> may contain minor editorial errors, the PP-Module is recognized as living document and the iTC is dedicated to ongoing updates and revisions. Please report any issues to the {iTC-shortname}. 
 
 === Related Documents
 [bibliography]
@@ -37,7 +37,7 @@ Although the PP-Module and <<SD>> may contain minor editorial errors, the PP-Mod
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
 - [#MDFPP]#[MDFPP]# Protection Profile for Mobile Device Fundamentals, Version:3.3.
 - [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92.
-- [#SD]#[SD]# Evaluation Activities for collaborative Protection Profile Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92.
+- [#SD]#[SD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92.
 - [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [#ISOIEC19989-2]#[ISO/IEC 19989-2]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
 - [#ISO19989-3]#[ISO/IEC 19989-3]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
@@ -53,11 +53,13 @@ For the purpose of this PP-Module, the following terms and definitions given in 
 
 [glossary]
 Artefact::
-	Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying [SD] specifies artefacts that the evaluator should consider for the CC evaluation. Artefacts here are specifically artificially generated Presentation Attack Instruments (PAI), not natural ones.
+	Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying [SD] specifies artefacts that the evaluator should consider for the CC evaluation. Specifically, the artefacts here are artificially generated Presentation Attack Instruments (PAI), not natural ones.
 Attempt::
    Submission of one (or a sequence of) biometric samples to the part of the TOE.
 Biometric Authentication Factor (BAF)::
 	Authentication factor used for biometric verification. In this PP-Module, the term is a synonym of the “template”.
+Biometric Characteristic::
+	Biological and behavioural characteristic of an individual from which distinguishing, repeatable biometric features can be extracted for the purpose of biometric recognition.
 Biometric Data::
 	Digital data created during biometric enrolment and verification processes. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected, and does not include end user information such as user name, password (unless tied to the biometric modality), demographic information, and authorizations.
 Biometric System Administrator::
@@ -73,10 +75,10 @@ False Accept Rate (FAR)::
 False Match Rate (FMR)::
 	Proportion of zero-effort impostor attempt samples that were falsely declared to match the compared non-self template.
 False Non-match Rate (FNMR)::
-	Proportion of genuine attempt samples that were falsely declared not to match the template of the same characteristic from the same user supplying the sample.
+	Proportion of genuine attempt samples that were falsely declared not to match the template of the same biometric characteristic from the same user supplying the sample.
 False Reject Rate (FRR)::
 	Proportion of verification transactions with truthful claims of identity that are incorrectly denied.
-Features::
+(Biometric) Features::
 	Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates.
 Hybrid Authentication::
 	A hybrid authentication factor is one where a user has to submit a combination of biometric sample and PIN or password with both to pass and without the user being made aware of which factor failed, if either fails.
@@ -86,6 +88,8 @@ Locked State::
 	A type or class of biometric system, such as fingerprint recognition, facial recognition, eye/iris recognition, voice recognition, signature/sign, and others.
 Password Authentication Factor::
 	A type of authentication factor requiring the user to provide a secret set of characters to gain access.
+Presentation::
+	Submission of a single biometric sample on the part of a user.
 Presentation Attack::
 	Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system.
 Presentation Attack Detection (PAD)::
@@ -462,13 +466,12 @@ This PP-Module does not define any additional assurance requirements above and b
 
 As indicated in the introduction to this PP-Module, the baseline requirements (those that shall be performed by the TOE) are contained in <<Security Functional Requirements>>. Additionally, there are two other types of requirements specified in <<Selection-Based Requirements>> and <<Optional Requirements>>.
 
-The first type (in this Section) comprises requirements based on selections in other SFRs from the PP-Module: if certain selections are made, then additional requirements in this Section will need to be included in the body of the ST.
-
-The second type (in Section <<Optional Requirements>>) comprises requirements that can be included in the ST, but are not mandatory for a TOE to claim conformance to this PP-Module.
+This section comprises requirements based on selections in other SFRs from the PP-Module: if certain selections are made, then additional requirements in this Section will need to be included in the body of the ST.
 
 The PP-Module does not contain any selection-based requirements.
 
 == Optional Requirements
+This section comprises requirements that can be included in the ST, but are not mandatory for a TOE to claim conformance to this PP-Module.
 
 ST authors are free to choose none, some or all SFRs defined in this Section. Just the fact that a product supports a certain functionality does not mandate to add any SFR defined in this chapter.
 
@@ -515,7 +518,7 @@ This component defines the requirements for the TSF to be able to enrol a user, 
                                                   |  +---+
     +------------------------------------------+  |
     |                                          |  |  +---+
-    | FIA_MBE_EXT  Biometric enrollment        +--+->| 2 |
+    | FIA_MBE_EXT  Biometric enrolment         +--+->| 2 |
     |                                          |  |  +---+
     +------------------------------------------+  |
                                                   |  +---+
@@ -527,7 +530,7 @@ FIA_MBE_EXT.1 Biometric enrolment requires the TSF to enrol a user.
 
 FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment requires the TSF to create templates of sufficient quality.
 
-FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment requires the TSF to prevent presentation attacks during the biometric enrolment.
+FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment requires the TSF to detect and prevent presentation attacks during the biometric enrolment.
 
 ===== Management: FIA_MBE_EXT.1
 
@@ -547,7 +550,7 @@ a)	the management of the TSF data (setting values for detecting artificial prese
 ===== Audit: FIA_MBE_EXT.1, FIA_MBE_EXT.2
 The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
 
-a)	Basic: Success or failure of the biometric enrollment
+a)	Basic: Success or failure of the biometric enrolment
 
 ===== Audit: FIA_MBE_EXT.3
 The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP/ST:
@@ -603,7 +606,7 @@ FIA_MBV_EXT.1 Biometric verification requires the TSF to verify a user.
 
 FIA_MBV_EXT.2 Quality of biometric samples for biometric verification requires the TSF to use samples of sufficient quality.
 
-FIA_MBV_EXT.3 Presentation attack detection for biometric verification requires the TSF to prevent presentation attacks during the biometric verification.
+FIA_MBV_EXT.3 Presentation attack detection for biometric verification requires the TSF to detect and prevent presentation attacks during the biometric verification.
 
 ===== Management: FIA_MBV_EXT.1
 
@@ -680,7 +683,7 @@ This component defines the requirements for the TSF to be able to protect plaint
                                                  |  +---+
     +-----------------------------------------+  |
     |                                         |  |  +---+
-    | FPT_BDP_EXT  Diometric data processing  +--+->| 2 |
+    | FPT_BDP_EXT  Biometric data processing  +--+->| 2 |
     |                                         |  |  +---+
     +-----------------------------------------+  |
                                                  |  +---+
