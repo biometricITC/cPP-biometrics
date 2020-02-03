@@ -13,7 +13,7 @@
 
 
 == Acknowledgements
-This collaborative PP-Module was developed by the {iTC-longame} international Technical Community ({iTC-shortname}) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+This collaborative Protection Profile module (PP-Module) was developed by the {iTC-longame} international Technical Community ({iTC-shortname}) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
 
 == Preface
 
@@ -78,7 +78,7 @@ False Non-match Rate (FNMR)::
 	Proportion of genuine attempt samples that were falsely declared not to match the template of the same biometric characteristic from the same user supplying the sample.
 False Reject Rate (FRR)::
 	Proportion of verification transactions with truthful claims of identity that are incorrectly denied.
-Features::
+(Biometric) Features::
 	Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates.
 Hybrid Authentication::
 	A hybrid authentication factor is one where a user has to submit a combination of biometric sample and PIN or password with both to pass and without the user being made aware of which factor failed, if either fails.
@@ -186,7 +186,7 @@ As illustrated in the above figure, the TOE is capable of:
 
 * Capturing samples from user’s biometric characteristics (Data Capture Subsystem)
 * Extracting and processing the features from samples of sufficient quality and generating various templates (Signal Processing Subsystem)
-* Storing the templates in a database on the computer (Data Storage Subsystem)
+* Storing the templates in a database on the computer (Storage Subsystem)
 * Comparing captured features with data contained in one or more templates (Comparison Subsystem)
 * Optionally detecting the presentation attacks using an artefact
 * Deciding how well features and any template match, and indicating whether or not a verification of the user has been achieved (Decision Subsystem)
@@ -210,7 +210,7 @@ The computer itself may be operated in a number of use cases such as enterprise 
 This PP-Module only assumes USE CASE 1 described below. USE CASE 2 is out of scope of this PP-Module.
 
 ===== USE CASE 1: Biometric verification for unlocking the computer
-For enhanced security that is easy to use, the computer may implement biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that, the user is able to use their own biometric characteristic to unlock access to the computer. In this use case, the computer is not supposed to be used for security sensitive services through the biometric verification.
+This use case is applicable for any computers such as desktop, laptop, tablet or smartphone that implement biometric enrolment and verification functionality. For enhanced security that is easy to use, the computer may implement biometric verification on a computer once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that, the user is able to use their own biometric characteristic to unlock access to the computer. In this use case, the computer is not supposed to be used for security sensitive services through the biometric verification.
 
 The main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for computer that the TOE relies on should be handled by the base PP.
 
@@ -440,7 +440,7 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
 
-==== FPT_BDP_EXT.2 No Biometric data transmission [[FPT_BDP_EXT.2]]
+==== FPT_BDP_EXT.2 Biometric data transmission [[FPT_BDP_EXT.2]]
 
 *FPT_BDP_EXT.2.1* The TSF shall not transmit any plaintext biometric data outside the security boundary of the secure execution environment.
 
@@ -693,7 +693,7 @@ This component defines the requirements for the TSF to be able to protect plaint
  
 FPT_BDP_EXT.1 Biometric data processing requires the TSF to process plaintext biometric data within the security boundary of the secure execution environment.
 
-FPT_BDP_EXT.2 No Biometric data transmission requires the TSF not to transmit plaintext biometric data outside the security boundary of the secure execution environment.
+FPT_BDP_EXT.2 Biometric data transmission requires the TSF not to transmit plaintext biometric data outside the security boundary of the secure execution environment.
 
 FPT_BDP_EXT.3 Biometric data storage requires the TSF not to store plaintext biometric data outside the security boundary of the secure execution environment.
 
@@ -710,7 +710,7 @@ Dependencies: No dependencies
 
 *FPT_BDP_EXT.1.1* The TSF shall process any plaintext biometric data used to generate templates and perform sample matching within the security boundary of the secure execution environment.
 
-===== FPT_BDP_EXT.2 No Biometric data transmission
+===== FPT_BDP_EXT.2 Biometric data transmission
 Hierarchical to: 	No other components
 
 Dependencies: 	No dependencies
