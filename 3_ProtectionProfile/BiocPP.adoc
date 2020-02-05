@@ -49,7 +49,7 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#NIST800-63B]#[NIST800-63B]# NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
 === Glossary
-For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
+For the purpose of this PP-Module, the following terms and definitions are given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
 Artefact::
