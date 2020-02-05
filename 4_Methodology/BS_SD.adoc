@@ -13,7 +13,7 @@
 
 This is a Supporting Document, intended to complement the Common Criteria (CC) version 3 and the associated Common Evaluation Methodology for Information Technology Security Evaluation.
 
-Supporting Documents may be “Guidance Documents”, that highlight specific approaches and application of the standard to areas where no mutual recognition of its application is required, and as such, are not of normative nature, or “Mandatory Technical Documents”, whose application is mandatory for evaluations whose scope is covered by that of the Supporting Document. The usage of the latter class is not only mandatory, but certificates issued as a result of their application are recognized under the CCRA.
+This Supporting Document is "Mandatory Technical Document", whose application is mandatory for evaluations and only those certificates issued as a result of its application are mutually recognized under the CCRA.
 
 This Supporting Document has been developed by the Biometric Security iTC (BIO-iTC) and is designed to be used to support the evaluations of TOEs against the PP-Module identified in <<Technology Area and Scope of Supporting Document>>.
 
