@@ -260,7 +260,7 @@ Note that as a PP-Module, all threats, assumptions, and OSPs defined in the base
 === Threats
 
 [[T.Casual_Attack]]T.Casual_Attack::
-An attacker may attempt to impersonate as a legitimate user without being enrolled in the TOE. In order to perform the attack, the attacker only use his/her own biometric characteristic (in form of a zero-effort impostor attempt).
+An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker only use his/her own biometric characteristic (in form of a zero-effort impostor attempt).
 
 === Organizational Security Policies
 
@@ -314,7 +314,7 @@ The TOE shall protect biometric data using the secure execution environment prov
 
 SFR Rationale:
 
-Requirements to control access to the template is defined in FPT_PBT_EXT.1. FPT_BDP_EXT.1, FPT_BDP_EXT.2 and FPT_BDP_EXT.3 requires the TOE to protect the biometric data with support from the TOE environment. Optional requirements to protect the residual biometric data is defined as FDP_RIP.2 in <<Optional Requirements>>.
+Requirements to control access to the template is defined in FPT_PBT_EXT.1. FPT_BDP_EXT.1, FPT_BDP_EXT.2 and FPT_BDP_EXT.3 and requires the TOE to protect the biometric data with support from the TOE environment. Optional requirements to protect the residual biometric data is defined as FDP_RIP.2 in <<Optional Requirements>>.
 
 *Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
 
@@ -330,7 +330,7 @@ The TOE environment shall provide an alternative authentication mechanism as a c
 [[OE.Authentication]]OE.Authentication::
 The TOE environment shall invoke the TOE for biometric verification, and take appropriate actions based on the TOE’s decision.
 
-*Application Note {counter:remark_count}*:: Appropriate actions taken by the computer are unlocking the computer or incrementing the number of unsuccessful attempts and limiting maximum number of unsuccessful attempts.
+*Application Note {counter:remark_count}*:: Appropriate actions taken by the computer are unlocking the computer or incrementing the number of unsuccessful attempts and limiting the maximum number of unsuccessful attempts.
 
 [[OE.Protection]]OE.Protection::
 The TOE environment shall provide a secure execution environment to protect the TOE, the TOE configuration and biometric data during runtime and storage.
@@ -340,7 +340,7 @@ The TOE environment shall provide a secure execution environment to protect the 
 [[OE.User]]OE.User::
 The user shall configure the TOE and its environment correctly in a manner to ensure that the TOE security policies will be enforced.
 
-*Application Note {counter:remark_count}*:: Computer shall be configured by the user as required by base PP.
+*Application Note {counter:remark_count}*:: Computer shall be configured by the user as required by the base PP.
 
 === Security Objectives Rationale
 The following table describes how the assumptions, threats, and organizational security policies map to the security objectives.
@@ -351,7 +351,7 @@ The following table describes how the assumptions, threats, and organizational s
 
 |<<T.Casual_Attack>> <<OSP.Verification_Error>>	
 |<<O.BIO_Verification>>	
-|The threat <<T.Casual_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of biometric verification not to allow the user who have not been enrolled to impersonate as a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for biometric verification.
+|The threat <<T.Casual_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenrolled user from impersonating a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for biometric verification.
 
 |<<OSP.Enrol>>	
 |<<O.Enrol>>	
@@ -415,7 +415,7 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 [loweralpha]
 . Allowed maximum values defined in the standards
 +
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR. Several mobile vendors have specified fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value. 
+For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4) and 0.0001% (1 in 10^6) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. The PP-Module doesn’t provide any recommendation for those error rates however, ST author should set appropriate error rates referring those value. 
 +
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
 
@@ -577,7 +577,7 @@ Hierarchical to: No other components
 
 Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBE_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully enrolled.
+*FIA_MBE_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
 
 ==== Biometric verification (FIA_MBV_EXT)
 
