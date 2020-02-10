@@ -1452,7 +1452,7 @@ AVA_VAN.5
 
 Attack potential table <<attackpotentialcalc>> defined in previous Section doesn’t consider specific restrictions introduced by <<BIOPP-Module>>. For example, <<BIOPP-Module>> assumes that allowable maximum number of unsuccessful authentication attempts is limited that influence the calculation of *_Window of Opportunity (Access to TOE)_* for exploitation phase.
 
-The evaluator shall take following application notes into account to calculate the attack potential for <<BIOPP-Module>>, especially calculating the attack potential for presentation attacks during performing EAs for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
+The evaluator shall take the following application notes into account to calculate the attack potential for <<BIOPP-Module>>, especially calculating the attack potential for presentation attacks during performing EAs for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
 
 ==== Application note for Elapsed time for Identification
 
