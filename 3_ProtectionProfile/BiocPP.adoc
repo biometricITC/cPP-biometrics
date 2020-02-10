@@ -39,17 +39,12 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92 [CFG-MDF-BIO].
 - [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92 - [BIOSD].
 - [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
-- [#ISOIEC19989-2]#[ISO/IEC 19989-2]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance
-- [#ISO19989-3]#[ISO/IEC 19989-3]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 3: Presentation attack detection
-- [#ISO21879]#[ISO/IEC 21879]# Performance testing of biometrics on mobile devices
 - [#ISO29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
 - [#ISO30107-1]#[ISO/IEC 30107-1]# Biometric presentation attack detection - Part 1: Framework, First edition.
-- [#ISO30107-3]#[ISO/IEC 30107-3]#	Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
-- [#ISO30107-4]#[ISO/IEC 30107-4]# Information technology - Biometric presentation attack detection - Part 4: Profile for testing of mobile devices
 - [#NIST800-63B]#[NIST800-63B]# NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
 === Glossary
-For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1,ISO/IEC 19795-1>> and <<ISO30107-1,ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
+For the purpose of this PP-Module, the following terms and definitions given in <<ISOIEC19795-1>> and <<ISO30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
 Artefact::
@@ -80,8 +75,6 @@ False Reject Rate (FRR)::
 	Proportion of verification transactions with truthful claims of identity that are incorrectly denied.
 (Biometric) Features::
 	Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates.
-Hybrid Authentication::
-	A hybrid authentication factor is one where a user has to submit a combination of biometric sample and PIN or password with both to pass and without the user being made aware of which factor failed, if either fails.
 Locked State::
 	Powered on Computer, with most functionalities unavailable for use. User authentication is required to access full functionality.
 (Biometric) Modality::
@@ -100,8 +93,6 @@ Secure Execution Environment::
 	An operating environment separate from the main Computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity score::
 	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
-(Biometric) Species::
-The biometric species is the type of Presentation Attack Instrument (PAI) that has been created such as a photo, mold or mask (as appropriate for the modality being tested).
 Template::
 	User’s stored reference measure based on features extracted from enrolment samples.
 Transaction::
@@ -176,7 +167,7 @@ During the verification process, a user presents his/her own biometric character
 Examples of biometric characteristic used by the TOE are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics for which <<BIOSD>> defines the Evaluation Activities.
 
 ==== TOE Design
-The TOE is fully integrated into the computer without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1,ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
+The TOE is fully integrated into the computer without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
 
 [#img-TOE-generic]
 .Generic representation of a TOE
@@ -240,10 +231,6 @@ As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, this PP-Module:
 * is Part 2 extended,
 * all assurance requirements are inherited from the base PP,
 * does not claim conformance to any other security functional packages.
-
-=== Conformance type
-
-In order to be conformant to this PP-Module, a ST shall demonstrate Exact Conformance. Exact Conformance requires the ST to contain all of the SFRs in <<Security Functional Requirements>> (these are the mandatory SFRs). The ST may includes <<Optional Requirements>> (these are optional SFRs) of this PP-Module. While iteration is allowed, no additional requirements (from [CC2] or [CC3], or definitions of extended components not already included in this PP-Module) are allowed to be included in the ST. Further, no SFRs in <<Security Functional Requirements>> of this PP-Module are allowed to be omitted.
 
 === Evaluation activities
 
