@@ -244,7 +244,7 @@ The evaluator shall take the following additional application notes into account
 
 <<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<MDFPP>> and the operational guidance doesn’t need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
 
-There is additional application note related to EAs for FIA_MBV_EXT.3 in <<Additional application notes for AGD Class for FIA_MBV_EXT.3>>. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
+There is additional application note related to EAs for FIA_MBV_EXT.3 in link:../4_Methodology/BS_SD.adoc#additional-application-notes-for-agd-class[Section 9.3.2 [Additional application notes for AGD Class]] in <<BIOSD>>. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
 
 ===== Application note for EA of AGD_PRE.1
 
@@ -264,7 +264,7 @@ The evaluator shall take the following additional application notes into account
 
 ===== Application note for EA of ATE_IND.1
 
-Same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for PAD testing>> for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
+Same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in link:../4_Methodology/BS_SD.adoc#evaluation-activities-for-pad-testing[Section 6 [Evaluation Activities for PAD testing]] in <<BIOSD>> for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
 
 ==== Class AVA: Vulnerability Assessment
 
@@ -272,7 +272,7 @@ The evaluator shall take the following additional application notes into account
 
 ===== Application note for EA of AVA_VAN.1
 
-Same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in <<Evaluation Activities for PAD testing>> for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
+Same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (**Presentation attack detection for biometric enrolment**) and FIA_MBV_EXT.3 (**Presentation attack detection for biometric verification**). The evaluator shall perform EAs defined in link:../4_Methodology/BS_SD.adoc#evaluation-activities-for-pad-testing[Section 6 [Evaluation Activities for PAD testing]] in <<BIOSD>> for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
 
 In evaluating this PP-Configuration, the evaluator shall ensure that all Evaluation Activities for SFRs and SARs are evaluated as part of satisfying the required SARs.
 
