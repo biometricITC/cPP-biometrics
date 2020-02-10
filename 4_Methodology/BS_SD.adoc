@@ -795,9 +795,9 @@ As described in previous section, <<Toolbox>> defines test items to create a rep
 
 During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enrolled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
 
-<<Toolbox>> defines the Pass/Fail criteria, maximum attack presentation match rate for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign a fail verdict to those TOE that doesn’t satisfy the criteria.
+<<Toolbox>> defines the Pass/Fail criteria, maximum imposter attack presentation match rate for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign a fail verdict to those TOE that doesn’t satisfy the criteria.
 
-The artefacts that pass the criteria but show the higher attack presentation match rate will be tested again during the AVA_VAN.1 evaluation.
+The artefacts that pass the criteria but show the higher imposter attack presentation match rate will be tested again during the AVA_VAN.1 evaluation.
 
 <<Toolbox>> does not necessarily cover all biometric modalities. If the developer wants to evaluate modalities not currently included in <<Toolbox>>, the developer and evaluator shall contact the BIO-iTC to work together to extend <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
 
@@ -868,7 +868,7 @@ The evaluator shall perform EAs in <<No new artefacts found test plan>> if there
 
 ====== No new artefacts found test plan
 
-The evaluator shall select those artefacts that show higher attack presentation match rate at the independent testing. The evaluator shall test them extensively during the penetration testing.
+The evaluator shall select those artefacts that show higher imposter attack presentation match rate at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
 If there is no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact).
 
@@ -1201,15 +1201,9 @@ Identification corresponds to the effort required to create the attack, and to d
 
 Exploitation corresponds to achieving the attack on an instance of the TOE in its exploitation environment using the analysis and techniques defined in the identification phase. It could be assumed that a different attacker carries out the exploitation, the technique (and relevant background information) could be available for the exploitation in the form of a script or set of instructions defined during the identification phase. This type of script is assumed to identify the necessary equipment and, for example, mathematical techniques used in the analysis, or presentation attack methods. Furthermore, this same information may also reduce the exploitation requirement to one of time measurement, whereas the identification phase may have required reverse engineering of hardware or software information hence the expertise requirement may be reduced.
 
-[NOTE]
-====
-For the evaluator, the work of the identification phase has to be fully performed: developing hardware and software, creating artefacts if any, etc. The rating of this phase corresponds to the "real spending" in defining the attack. For the exploitation, it is not necessary to perform the work again and the rating could correspond to an evaluation of the necessary effort for each factor.
-====
+*Application Note {counter:remark_count}*:: For the evaluator, the work of the identification phase has to be fully performed: developing hardware and software, creating artefacts if any, etc. The rating of this phase corresponds to the "real spending" in defining the attack. For the exploitation, it is not necessary to perform the work again and the rating could correspond to an evaluation of the necessary effort for each factor.
 
-[NOTE]
-====
-Exploitation consisting in applying scripts, it is expected that some factor values will be reduced from the identification phase, in particular "Elapsed Time" and "Expertise". For the same reason, the "Knowledge of the TOE" factor is not applicable in the exploitation phase (all the knowledge is scripted).
-====
+*Application Note {counter:remark_count}*:: Exploitation consisting in applying scripts, it is expected that some factor values will be reduced from the identification phase, in particular "Elapsed Time" and "Expertise". For the same reason, the "Knowledge of the TOE" factor is not applicable in the exploitation phase (all the knowledge is scripted).
 
 ==== Factors to be considered
 
@@ -1225,21 +1219,17 @@ Potential difficulties to have an access to the TOE in exploitation environment 
 
 *_Expertise_* refers to the level of proficiency required by the attacker and the general knowledge that he possesses, not specific of the system being attacked. The levels are as follows:
 
+--
 [loweralpha]
 . _Layman_ is the level no real expertise needed and such that any person with a regular level of education is capable of performing the attack. For example, creating an artefact in a known (published) way without specific difficulties (difficult to buy materials) is considered at this level of expertise.
 . _Proficient_ is the level such that some advanced knowledge in certain specific topics (biometrics) is required as well as good knowledge of the state-of-the-art of attacks. An attacker of this level is capable of adapting known attack methods to his needs. For example, adapting a known attack type (published) by the choice of specific (not published and sometimes difficult to find) materials in order to bypass a presentation attack detection mechanism and/or finding a non-evident way to present this artefact to the system can be considered at this level of expertise.
 . _Expert_ is the level such that a specific preparation in multiple areas such as pattern recognition, computer vision or optimization is needed in order to carry out the attack. An attacker of this level is capable of generating his own new attacking algorithms. For example, finding a new (unpublished) way of creating an attack type using new and specific materials (unpublished) to counter an advanced presentation attack detection mechanism, can be considered at this level. In addition, this level can be associated with specific equipment (bespoke)
 . _Multiple Experts_ is the level such that the attack needs the collaboration of several people with high level expertise in different fields (e.g., electronics, cryptanalysis, physics, etc.). It has to be noticed that a specific competence in biometrics is not considered as "multiple expertise". For example, building a "hill climbing" attack by gaining access to the comparison scores requires additional expertise to electrically attack and penetrate the TOE, which can be considered to constitute a "multi expertise" level.
+--
 
-[NOTE]
-====
-As previously noted, exploitation expertise is usually lower than identification expertise. Layman or Proficient can be considered as typical value for expertise in the exploitation phase. For the same reason, the multiple expert level is excluded from the exploitation phase.
-====
+*Application Note {counter:remark_count}*:: As previously noted, exploitation expertise is usually lower than identification expertise. Layman or Proficient can be considered as typical value for expertise in the exploitation phase. For the same reason, the multiple expert level is excluded from the exploitation phase.
 
-[NOTE]
-====
-As all the factors, higher rating would require specific justifications from the evaluator.
-====
+*Application Note {counter:remark_count}*:: As all the factors, higher rating would require specific justifications from the evaluator.
 
 *_Knowledge of the TOE_* refers to the amount of knowledge of system required to perform the attack. For instance, format of the acquired samples, size and resolution of acquisition systems, specific format of templates, but also specifications and implementation of countermeasures are knowledge that could be required to set up an attack.
 
@@ -1278,21 +1268,17 @@ However, it is important to be able to compare the resistance of various systems
 
 The levels are as follows:
 
+--
 [loweralpha]
 . _Immediate_ is for 2D face, signature image, and voice. Samples of these modalities can be collected without difficulty, even without direct contact with an enrolled data subject (an exploration of the web and the social networks and so forth).
 . _Easy_ is for fingerprint. Latent fingerprints are often left on objects the enrolled data subject had in hand, but need to be revealed, acquired and the corresponding images need a preprocessing.
 . _Moderate_ is for 3D face, dynamic signature, and 3D fingerprint. 3D images require multiple acquisitions, probably in a controlled way, without the collaboration of an enrolled data subject but probably with a direct contact with them.
-. _Difficult_ is for iris and vein. Iris images can be acquired with a high resolution camera, but with some difficulties to get a complete high quality image without the cooperation of an enrolled data subject. Veins are a hidden characteristic, but infra-red cameras, close to them, can acquire images to be used.
+. _Difficult_ is for iris and vein. Iris images can be acquired with a high resolution camera, but with some difficulties to get a complete high quality image without the cooperation of an enrolled data subject. Veins are a hidden characteristic, but infra-red cameras, close to them, can acquire images to be used.      
+--
 
-[NOTE]
-====
-The above distribution of modalities per level is subject to modification depending on the evolution of technologies and usage. The current distribution is to be seen as guidance for the evaluator, who will have to adapt the rating to state-of-the-art.
-====
+*Application Note {counter:remark_count}*:: The above distribution of modalities per level is subject to modification depending on the evolution of technologies and usage. The current distribution is to be seen as guidance for the evaluator, who will have to adapt the rating to state-of-the-art.
 
-[NOTE]
-====
-Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Immediate_.
-====
+*Application Note {counter:remark_count}*:: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Immediate_.
 
 *_Equipment_* refers to the type of equipment required to perform the attack. This includes the biometric databases used (if any). The levels are follows:
 
@@ -1466,7 +1452,11 @@ AVA_VAN.5
 
 Attack potential table <<attackpotentialcalc>> defined in previous Section doesn’t consider specific restrictions introduced by <<BIOPP-Module>>. For example, <<BIOPP-Module>> assumes that allowable maximum number of unsuccessful authentication attempts is limited that influence the calculation of *_Window of Opportunity (Access to TOE)_* for exploitation phase.
 
-The evaluator shall take following application notes into account to calculate the attack potential for <<BIOPP-Module>>, especially calculating the attack potential for presentation attacks during performing EAs for FIA_MBV_EXT.3.
+The evaluator shall take following application notes into account to calculate the attack potential for <<BIOPP-Module>>, especially calculating the attack potential for presentation attacks during performing EAs for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
+
+==== Application note for Elapsed time for Identification
+
+The evaluator shall select one week at maximum because the evalator shall finish the penetration testing within one week.
 
 ==== Application note for Window of Opportunity (Access to TOE) for Identification
 
@@ -1474,7 +1464,7 @@ The evaluator shall select “Easy” because the TOE is a computer that anyone 
 
 ==== Application note for Window of Opportunity (Access to TOE) for Exploitation
 
-The evaluator shall select “Difficult” because number of unsuccessful authentication attempts for biometric verification is limited, and biometric verification become unusable if the number of failure attempts exceed the limit.
+The evaluator shall select “Moderate” because number of unsuccessful authentication attempts for biometric verification is limited, and biometric verification become unusable if the number of failure attempts exceed the limit.
 
 === Pass/Fail criteria for EAs for PAD testing (FIA_MBE_EXT.3 and FIA_MBV_EXT.3)
 
@@ -1509,7 +1499,7 @@ The following table shows that example of pairs (maximum *_p_* for particular *n
 |8 |0.18 (18%)
 |===
 
-If the base PP is <<MDFPP>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assign 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
+If the base PP is <<MDFPP>>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assign 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
 
 The evaluator shall assign pass verdict to the TOE only if the evaluator can’t find those artefacts that the probability of successful attack is more than *_p_*.
 
@@ -1517,7 +1507,7 @@ The evaluator shall make at least 3 artefacts from three test subjects following
 
 The evaluator should focus on a few artefacts that show highest error rate at the independent testing or hold highest quality for the penetration testing and spend enough time for training before conducting the final testing to measure *_p_* for those artefacts.
 
-==== Additional application notes for AGD Class for FIA_MBV_EXT.3
+==== Additional application notes for AGD Class
 
 CEM work unit AGD_OPE.1-1 requires the evaluator to examine the AGD guidance to determine that it describes appropriate warnings for secure use of the TOE.
 
@@ -1536,14 +1526,9 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.        
 - [#MDFPP]#[MDFPP]# Protection Profile for Mobile Device Fundamentals, Version:3.3.    
 - [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92 - [CFG-MDF-BIO].    
-- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92 - [BIOPP-Module].    
-- [#ISO/IEC 15408-4]#[ISO/IEC 15408-4]# Evaluation criteria for IT security – Part 4: Framework for the specification of evaluation methods and activities, under development.    
-- [#ISO/IEC 19792]#[ISO/IEC 19792]# Security evaluation of biometrics, First edition.    
+- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, December 20, 2019, Version 0.92 - [BIOPP-Module].        
 - [#ISO/IEC 19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
 - [#ISO/IEC 19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
 - [#ISO/IEC 19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.    
-- [#ISO/IEC 19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems – Part 1: framework, under development.    
-- [#ISO/IEC 19989-2]#[ISO/IEC 19989-2]# Information technology - Security techniques - Criteria and methodology for security evaluation of biometric systems - Part 2: Biometric recognition performance.    
-- [#ISO/IEC 30107-1]#[ISO/IEC 30107-1]# Biometric presentation attack detection — Part 1: Framework, First edition.    
 - [#ISO/IEC 30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection — Part 3: Testing and reporting, First edition.        
 - [#Toolbox]#[Toolbox]# *TBD*    
