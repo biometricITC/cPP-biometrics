@@ -232,7 +232,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-Biometric verification performance depends on quality of the template that is compared to the samples presented to the TOE. The evaluator shall examine that the TOE checks the quality of enrolment and authentication templates based on the assessment criteria to verify a user with an adequate reliability.
+Biometric verification performance depends on quality of samples from which templates are generated. The evaluator shall examine that the TOE checks the quality of samples to create enrolment and authentication templates based on the assessment criteria so that the TOE can verify a user with an adequate reliability.
 
 If the TOE doesn’t create authentication templates, this EA is only applicable to enrolment templates.
 
