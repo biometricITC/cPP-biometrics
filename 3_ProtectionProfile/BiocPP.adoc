@@ -62,13 +62,11 @@ Biometric Characteristic::
 	Biological and behavioural characteristic of an individual from which distinguishing, repeatable biometric features can be extracted for the purpose of biometric recognition.
 Biometric Data::
 	Digital data created during biometric enrolment and verification processes. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected, and does not include end user information such as user name, password (unless tied to the biometric modality), demographic information, and authorizations.
-Biometric System Administrator::
-	Person who is responsible for configuring the TOE. This PP-Module assumes that the user acts as the biometric system administrator.
 Computer::
 	A self-contained device which is composed of a hardware platform and its system software (operating system and applications). The device is typically some sort of general purpose computing platform, such as a laptop, tablet or smartphone that is designed to be portable (though this is not required). 
 Computer User (User)::
-	The individual authorized to physically control and operate the Computer. This PP-Module assumes that the user is the device owner.
-	Failure-To-Enroll Rate (FTE)::
+	The individual authorized to physically control and operate the Computer, usually the device owner. This person is responsible for configuring the TOE.
+Failure-To-Enroll Rate (FTE)::
 	Proportion of the population for whom the system fails to complete the enrolment process.
 False Accept Rate (FAR)::
 	Proportion of verification transactions with wrongful claims of identity that are incorrectly confirmed.
@@ -214,7 +212,7 @@ This use case is applicable for any computers such as desktop, laptop, tablet or
 
 The main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for computer that the TOE relies on should be handled by the base PP.
 
-This use case assumes that the computer is configured correctly to enable the biometric verification by the biometric system administrator. The user of the computer can act as the biometric system administrator in this use case.
+This use case assumes that the computer is configured correctly to enable the biometric verification by the user, who acts as the biometric system administrator in this use case.
 
 It is also assumed that the user enrols his/herself correctly, following the guidance provided by the TOE. Presentation attacks during biometric enrolment and verification may be out of scope, but optionally addressed. FTE is not a security relevant criterion for this use case.
 
