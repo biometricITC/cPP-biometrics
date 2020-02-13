@@ -312,7 +312,7 @@ Requirements to provide a biometric enrolment mechanism is defined in FIA_MBE_EX
 *Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
 
 [[O.Protection]]O.Protection::
-The TOE shall protect biometric data using the secure execution environment provided by the TOE environment.
+The TOE shall protect biometric data using the secure execution environment provided by the TOE environment during runtime and storage.
 
 SFR Rationale:
 
