@@ -910,7 +910,7 @@ The evaluator shall conduct the penetration testing based on the test plan creat
 
 The evaluator shall select those artefacts that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
-However, whole evaluation should be finished within 3 months and independent and penetration testing for PAD functionality should be finished within a single week, considering the assurance level claimed by <<BIOPP-Module>>.
+In order to place bounds on the effort involved related to the attack potential calculations for PAD functionality, the independent and penetrations testing is expected to be finished withing a single week, considering the assurance level claimed by <<BIOPP-Module>>.
 
 ===== Determine Pass/Fail of penetration testing
 
