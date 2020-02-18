@@ -1046,17 +1046,9 @@ It’s recommended to control all influential factors appropriately because diff
 . Test subject demographics
 +
 [arabic]
-.. Age
-+
-The age distribution ratio by the following age groups: [0-19], [20-34], [35-49], [50-64], [65-99].
-.. Gender
-+
-Female/Male ratio
-.. Ethnicity
-+
-The distribution ratio by the ethnic background of the participants.
-+
-The breakdown can be by one of two measures: https://www.internetworldstats.com/list1.htm#geo[UN geographical regions] or by a measure of ethnicity defined in the nation where testing has taken place. One of these categorizations must be used in the reporting of demographic information.
+.. Age: age distribution ratio by arbitrary age groups (e.g., 1, 5, 10 years)
+.. Gender: male/female distribution
+.. Ethnic origin: Distribution ratio by ethnic origin. Category of ethnic origin can be arbitrarily defined by developer
 
 [loweralpha, start=2]
 . Posture and positioning
