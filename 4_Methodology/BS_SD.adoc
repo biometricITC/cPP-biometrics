@@ -5,8 +5,8 @@
 :table-caption: Table
 :imagesdir: images
 :icons: font
-:revnumber: 0.92
-:revdate: 2019-12-20
+:revnumber: 0.95
+:revdate: 2020-02-21
 :xrefstyle: full
 
 == Foreword
@@ -253,7 +253,7 @@ Following input is required from the developer.
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description
 . AGD guidance shall provide clear instructions for a user to enrol him/herself
-. Supplementary information ([#MBE assessment criteria for templates]#Assessment criteria for templates#) shall describe assessment criteria for creating templates
+. Supplementary information ([#MBE assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
 AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
 
@@ -266,7 +266,7 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 The evaluator shall examine the TSS to understand how the TOE generate templates of sufficient quality at enrolment. The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol him/herself correctly and how the TOE behaves when low quality samples are presented to the TOE.
 
-The evaluator shall examine that <<MBE assessment criteria for templates, assessment criteria for templates>> to check that how the TOE creates the templates based on this assessment criteria. The <<MBE assessment criteria for templates, assessment criteria for templates>> may include;
+The evaluator shall examine that <<MBE assessment criteria for samples, assessment criteria for samples>> to check that how the TOE creates the templates based on this assessment criteria. The <<MBE assessment criteria for samples, assessment criteria for samples>> may include;
 
 [loweralpha]
 . Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features is available
@@ -278,7 +278,7 @@ The evaluator shall examine that <<MBE assessment criteria for templates, assess
 
 If the TOE creates authentication templates, the evaluator shall examine the TSS to understand how the TOE generate sufficient quality of authentication templates.
 
-The evaluator shall examine that the <<MBE assessment criteria for templates, assessment criteria for templates>> to check that how the TOE creates the authenticate templates based on its assessment criteria. The <<MBE assessment criteria for templates, assessment criteria for templates>> may include a) – d) in <<MBE2>> and;
+The evaluator shall examine that the <<MBE assessment criteria for samples, assessment criteria for samples>> to check that how the TOE creates the authenticate templates based on its assessment criteria. The <<MBE assessment criteria for samples, assessment criteria for samples>> may include a) – d) in <<MBE2>> and;
 
 [loweralpha, start=5]
 . Additional assessment criteria to applied to creation of authentication templates
@@ -291,9 +291,9 @@ The evaluator shall perform the following test to verify that the TOE generates 
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall perform biometric enrolment that results in creation of templates that don’t satisfy the assessment criteria described in <<MBE assessment criteria for templates, assessment criteria for templates>> (e.g. presenting biometric samples of low quality)
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create enrolment templates that don’t meet the assessment criteria specified in the <<MBE assessment criteria for templates, assessment criteria for templates>>
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any enrolment templates created by TOE meet the assessment criteria specified in the <<MBE assessment criteria for templates, assessment criteria for templates>> correctly
+. The evaluator shall perform biometric enrolment that results in creation of templates that don’t satisfy the assessment criteria described in <<MBE assessment criteria for samples, assessment criteria for samples>> (e.g. presenting biometric samples of low quality)
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create enrolment templates that don’t meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>>
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any enrolment templates created by TOE meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>> correctly
 
 *Authentication templates*
 
@@ -303,15 +303,15 @@ The following test steps require the developer to provide access to a test platf
 
 . The evaluator shall enrol him/herself
 . The evaluator shall present biometric samples repeatedly to trigger the TOE to create authentication templates
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create authentication templates that don’t meet the assessment criteria specified in the <<MBE assessment criteria for templates, assessment criteria for templates>>
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any authentication templates created by TOE meet the assessment criteria specified in the <<MBE assessment criteria for templates, assessment criteria for templates>> correctly
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create authentication templates that don’t meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>>
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any authentication templates created by TOE meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>> correctly
 
 ===== Pass/Fail criteria
 
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS, AGD guidance and <<MBE assessment criteria for templates, assessment criteria for templates>>
+. Information necessary to perform this EA is described in the TSS, AGD guidance and <<MBE assessment criteria for samples, assessment criteria for samples>>
 . The TOE creates only templates that pass the assessment criteria through the independent testing
 
 ===== Requirements for reporting
@@ -382,7 +382,7 @@ Biometric verification performance depends on quality of samples that is compare
 
 The evaluator shall keep in mind that the assessment criteria for different biometric modalities may not be the same. The evaluator shall evaluate each biometric modality separately if the ST author selects multiple biometric modalities in FIA_MBV_EXT.1.
 
-The evaluator shall also keep in mind that assessment criteria used for templates and samples may not be the same. Assessment criteria for templates may be stricter than the one for samples.
+The evaluator shall also keep in mind that assessment criteria used for templates and samples may not be the same. Assessment criteria for samples may be stricter than the one for samples.
 
 ===== Dependency
 
@@ -399,7 +399,7 @@ Following input is required from the developer.
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.2 at high level description
 . AGD guidance shall provide clear instruction for a user to verify him/herself
-. Supplementary information ([#MBV assessment criteria for templates]#Assessment criteria for templates#) shall describe assessment criteria for creating samples
+. Supplementary information ([#MBV assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
 
@@ -409,7 +409,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 The evaluator shall examine the TSS to understand how the TOE checks quality of samples captured. The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify him/herself correctly and how the TOE behaves when low quality samples are presented to the TOE.
 
-The evaluator shall examine that <<MBV assessment criteria for templates, assessment criteria for templates>> to check how the TOE checks the quality of samples based on its assessment criteria. The <<MBV assessment criteria for templates, assessment criteria for templates>> may include;
+The evaluator shall examine that <<MBV assessment criteria for samples, assessment criteria for samples>> to check how the TOE checks the quality of samples based on its assessment criteria. The <<MBV assessment criteria for samples, assessment criteria for samples>> may include;
 
 [loweralpha]
 . Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features is available
@@ -423,17 +423,17 @@ The evaluator shall perform the following test to verify that the TOE checks the
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall present biometric samples of low quality for biometric verification that don’t satisfy the assessment criteria described in <<MBV assessment criteria for templates, assessment criteria for templates>>
-. The evaluator shall present biometric samples of acceptable quality for biometric verification that satisfy the assessment criteria described in <<MBV assessment criteria for templates, assessment criteria for templates>>
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that don’t meet the assessment criteria specified in the <<MBV assessment criteria for templates, assessment criteria for templates>>
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any samples accepted by TOE meet the assessment criteria specified in the <<MBV assessment criteria for templates, assessment criteria for templates>> correctly
+. The evaluator shall present biometric samples of low quality for biometric verification that don’t satisfy the assessment criteria described in <<MBV assessment criteria for samples, assessment criteria for samples>>
+. The evaluator shall present biometric samples of acceptable quality for biometric verification that satisfy the assessment criteria described in <<MBV assessment criteria for samples, assessment criteria for samples>>
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that don’t meet the assessment criteria specified in the <<MBV assessment criteria for samples, assessment criteria for samples>>
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any samples accepted by TOE meet the assessment criteria specified in the <<MBV assessment criteria for samples, assessment criteria for samples>> correctly
 
 ===== Pass/Fail criteria
 
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS, AGD guidance and <<MBV assessment criteria for templates, assessment criteria for templates>>
+. Information necessary to perform this EA is described in the TSS, AGD guidance and <<MBV assessment criteria for samples, assessment criteria for samples>>
 . The TOE accepts only samples that pass the assessment criteria through the independent testing
 
 ===== Requirements for reporting
