@@ -293,7 +293,9 @@ The following test steps require the developer to provide access to a test platf
 
 . The evaluator shall perform biometric enrolment that results in creation of samples from which templates will be created that don’t satisfy the assessment criteria described in <<MBE assessment criteria for samples, assessment criteria for samples>> (e.g. presenting biometric samples of low quality)
 +
-The evaluator may examine feedback messages (e.g. “Finger too wet” in case of fingerprint verification) shown when the TOE can’t capture the enough quality of samples to understand how the evaluator can present a low quality sample. The evaluator may also ask the developer how the low quality samples can be presented if the TOE doesn’t show any feedback messages.
+. The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<MBE assessment criteria for samples, assessment criteria for samples>>
+
+. The evaluator may ask the developer how low quality samples can be created if the TOE doesn’t show any feedback messages
 
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create enrolment templates from samples that don’t meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>>
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any enrolment templates are created by TOE from samples that meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>> correctly
