@@ -100,7 +100,7 @@ Template::
 Transaction::
 	Sequence of attempts on the part of a user for the purposes of an enrolment and verification.
 Zero-effort Impostor Attempt::
-	Attempt in which an individual submits his/her own biometric characteristics as if he/she were attempting successful verification against his/her own template, but the comparison is made against the template of another user.
+	Attempt in which an individual submits one's biometric characteristics as if attempting successful verification against one's own template, but the comparison is made against the template of another user.
 
 === Revision History
 
@@ -160,11 +160,11 @@ a)	Biometric enrolment
 
 During the enrolment process, the TOE captures samples from the biometric characteristics of a user presented to the TOE and extracts the features from the samples. The features are then stored as a template in the TOE.
 
-Only a user who knows the computer password can enrol or revoke his/her own templates. Multiple templates may be enrolled, as separate entries uniquely identified by the TOE, and optionally uniquely identifiable by the user (through the computer's User Interface).
+Only a user who knows the computer password can enrol or revoke one's own templates. Multiple templates may be enrolled, as separate entries uniquely identified by the TOE, and optionally uniquely identifiable by the user (through the computer's User Interface).
 
 b)	Biometric verification
 
-During the verification process, a user presents his/her own biometric characteristics to the TOE without presenting any user identity information for unlocking the computer. The TOE captures samples from the biometric characteristics, retrieves all enrolled templates and compares them with the features extracted from the captured samples of the user to measure the similarity between the two data and determines whether to accept or reject the user based on the similarity, and indicates the decision to the computer.
+During the verification process, a user presents one's own biometric characteristics to the TOE without presenting any user identity information for unlocking the computer. The TOE captures samples from the biometric characteristics, retrieves all enrolled templates and compares them with the features extracted from the captured samples of the user to measure the similarity between the two data and determines whether to accept or reject the user based on the similarity, and indicates the decision to the computer.
 
 Examples of biometric characteristic used by the TOE are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics for which <<BIOSD>> defines the Evaluation Activities.
 
@@ -203,13 +203,13 @@ The computer itself may be operated in a number of use cases such as enterprise 
 This PP-Module only assumes USE CASE 1 described below. USE CASE 2 is out of scope of this PP-Module.
 
 ===== USE CASE 1: Biometric verification for unlocking the computer
-This use case is applicable for any computers such as desktop, laptop, tablet or smartphone that implement biometric enrolment and verification functionality. For enhanced security that is easy to use, the computer may implement biometric verification on a computer once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that, the user is able to use their own biometric characteristic to unlock access to the computer. In this use case, the computer is not supposed to be used for security sensitive services through the biometric verification.
+This use case is applicable for any computers such as desktop, laptop, tablet or smartphone that implement biometric enrolment and verification functionality. For enhanced security that is easy to use, the computer may implement biometric verification on a computer once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that, the user is able to use one's own biometric characteristic to unlock access to the computer. In this use case, the computer is not supposed to be used for security sensitive services through the biometric verification.
 
 The main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for computer that the TOE relies on should be handled by the base PP.
 
 This use case assumes that the computer is configured correctly to enable the biometric verification by the user, who acts as the biometric system administrator in this use case.
 
-It is also assumed that the user enrols his/herself correctly, following the guidance provided by the TOE. Presentation attacks during biometric enrolment and verification may be out of scope, but optionally addressed. FTE is not a security relevant criterion for this use case.
+It is also assumed that the user enrols to the biometric system correctly, following the guidance provided by the TOE. Presentation attacks during biometric enrolment and verification may be out of scope, but optionally addressed. FTE is not a security relevant criterion for this use case.
 
 ===== USE CASE 2: Biometric verification for security sensitive service
 
@@ -249,7 +249,7 @@ Note that as a PP-Module, all threats, assumptions, and OSPs defined in the base
 === Threats
 
 [[T.Casual_Attack]]T.Casual_Attack::
-An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker only use his/her own biometric characteristic (in form of a zero-effort impostor attempt).
+An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker only use one's own biometric characteristic (in form of a zero-effort impostor attempt).
 
 === Organizational Security Policies
 
@@ -294,7 +294,7 @@ SFR Rationale:
 
 Requirements to provide a biometric enrolment mechanism is defined in FIA_MBE_EXT.1. Requirement for quality of template is defined in FIA_MBE_EXT.2.
 
-*Application Note {counter:remark_count}*:: A user shall be authenticated using a Password Authentication Factor to enrol his/herself.
+*Application Note {counter:remark_count}*:: A user shall be authenticated using a Password Authentication Factor to enrol to the biometric system.
 
 *Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
 
