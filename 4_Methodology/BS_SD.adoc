@@ -794,8 +794,6 @@ To solve this issue, the Biometric Security iTC (BIO-iTC) created and maintains 
 
 The same <<Toolbox>> can also be used for AVA_VAN.1 evaluation (i.e. penetration testing) because AVA_VAN.1 requires the evaluator to devise tests based on information available in the public domain. However, <<Toolbox>> should be used in a different manner for AVA_VAN.1 evaluation. The following section explains how <<Toolbox>> should be used in EAs for ATE_IND.1 and AVA_VAN.1.
 
-<<Toolbox>> is intended to be a state of the art set of test and is continually updated. The latest versions of the <<Toolbox>> for each supported modality must be used by the evaluator at the time the testing begins.
-
 ==== Presentation Attack Instrument (artefact) species
 There are many types of Presentation Attack Instruments that can be used to test a PAD system. The <<BIOPP-Module>> specifically defines the artefacts that are to be used as artificial, and not natural. Natural artefacts, such as a dead eye, are not considered in scope for this evaluation. When searching for new artefact species, only artificial species should be considered.
 
