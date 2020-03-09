@@ -912,13 +912,19 @@ For example, in case of finger or palm vein verification, quality of vein patter
 
 If the evaluator can find a new artefact species that can be used for penetration testing, the evaluator shall produce the test item for those new artefact species and add them to <<Toolbox>>. The evaluator shall create those new test items at the same format and level of detail as existing items in <<Toolbox>>.
 
-The evaluator shall also inform the BIO-iTC for this update because the BIO-iTC is responsible for maintaining <<Toolbox>>.
+Those new test items are out of scope of the independent testing, so the evaluator shall test them first during the penetration testing as described in <<Testing the new artefacts>>. 
 
-The evaluator shall also perform EAs in <<No new artefacts found test plan>> to produce the test plan based on the result of independent testing.
+The evaluator shall also inform the BIO-iTC for this update because the BIO-iTC is responsible for maintaining <<Toolbox>>.
 
 ===== Conduct the penetration testing
 
-The evaluator shall conduct the penetration testing based on the test plan created in the previous step.
+====== Testing the new artefacts 
+The evaluator shall test those test items created for new artefacts first, as described in <<New artefacts found test plan>>, following the same procedure as the one used for the independent testing.
+The evaluator shall also update those new test items to create the “higher quality” artefacts as explained in <<No new artefacts found test plan>> based on result of this initial testing.
+
+====== Final penetration testing
+
+The evaluator shall conduct the penetration testing based on the test plan updated in the previous step.
 
 The evaluator shall select those artefacts that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
