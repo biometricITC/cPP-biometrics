@@ -882,7 +882,7 @@ The evaluator shall perform EAs in <<No new artefacts found test plan>> if there
 
 The evaluator shall select those artefacts that show higher imposter attack presentation match rate at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
-If there is no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact).
+If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact).
 
 The evaluator may recreate the artefacts selected for penetration testing to improve their quality taking following approaches.
 
@@ -914,17 +914,21 @@ If the evaluator can find a new artefact species that can be used for penetratio
 
 Those new test items are out of scope of the independent testing, so the evaluator shall test them first during the penetration testing as described in <<Testing the new artefacts>>. 
 
-The evaluator shall also inform the BIO-iTC for this update because the BIO-iTC is responsible for maintaining <<Toolbox>>.
+The evaluator shall compare and select best candidates from artefacts in <<Toolbox>> and new ones so the evaluator shall apply EAs in <<No new artefacts found test plan>> to both artefacts. 
+
+The evaluator shall inform the BIO-iTC if one can find those new artefacts that are worthwhile to test because the BIO-iTC is responsible for maintaining [Toolbox].
 
 ===== Conduct the penetration testing
 
 ====== Testing the new artefacts 
-The evaluator shall test those test items created for new artefacts first, as described in <<New artefacts found test plan>>, following the same procedure as the one used for the independent testing.
-The evaluator shall also update those new test items to create the “higher quality” artefacts as explained in <<No new artefacts found test plan>> based on result of this initial testing.
+
+This section is only applicable when the evaluator can find new artefacts at <<Search for new artefacts>>.
+
+The evaluator shall test those test items created for new artefacts first following the same procedure as the one used for the independent testing and add them to the final test plan based on the result of this testing, as described in <<New artefacts found test plan>>.
 
 ====== Final penetration testing
 
-The evaluator shall conduct the penetration testing based on the test plan updated in the previous step.
+The evaluator shall conduct the penetration testing based on the final test plan updated in the previous step.
 
 The evaluator shall select those artefacts that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
