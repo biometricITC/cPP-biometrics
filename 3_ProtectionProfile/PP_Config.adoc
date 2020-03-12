@@ -123,7 +123,7 @@ The following rationale identifies several SFRs from <<PP_MD_V3.3>> that are nee
 Relation between SFRs defined in the <<PP_MD_V3.3>> and SFRs and OEs in the <<BIOPP-Module>> is described below for each security functionality. *Bold SFRs* are those SFRs defined in the <<BIOPP-Module>> for the Biometric System and _italicized SFRs_ are those defined in <<PP_MD_V3.3>> for the mobile device.
 
 ===== Password authentication
-Mobile device shall implement the Password Authentication Factor as required by the _FIA_UAU.5.1._ This password authentication is used as an alternative authentication mechanism when the user is rejected by the biometric verification.
+The Password Authentication Factor defined in the <<PP_MD_V3.3>> is a Non-Biometric Authentication Factor as defined in the <<BIOPP-Module>>. Mobile device shall implement the Password Authentication Factor as required by the _FIA_UAU.5.1._ This password authentication is used as an alternative authentication mechanism when the user is rejected by the biometric verification.
 
 The <<BIOPP-Module>> assumes that above requirements are satisfied by the mobile device as defined in OE.Alternative.
 
