@@ -293,6 +293,11 @@ The evaluator shall perform the following test to verify that the TOE generates 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
 . The evaluator shall perform biometric enrolment that results in creation of samples from which templates will be created that don’t satisfy the assessment criteria described in <<MBE assessment criteria for samples, assessment criteria for samples>> (e.g. presenting biometric samples of low quality)
++
+. The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<MBE assessment criteria for samples, assessment criteria for samples>>
+
+. The evaluator may ask the developer how low quality samples can be created if the TOE doesn’t show any feedback messages
+
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create enrolment templates from samples that don’t meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>>
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any enrolment templates are created by TOE from samples that meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>> correctly
 
@@ -425,6 +430,11 @@ The evaluator shall perform the following test to verify that the TOE checks the
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
 . The evaluator shall present biometric samples of low quality for biometric verification that don’t satisfy the assessment criteria described in <<MBV assessment criteria for samples, assessment criteria for samples>>
++
+. The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<MBE assessment criteria for samples, assessment criteria for samples>>
+
+. The evaluator may ask the developer how low quality samples can be created if the TOE doesn’t show any feedback messages
+
 . The evaluator shall present biometric samples of acceptable quality for biometric verification that satisfy the assessment criteria described in <<MBV assessment criteria for samples, assessment criteria for samples>>
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that don’t meet the assessment criteria specified in the <<MBV assessment criteria for samples, assessment criteria for samples>>
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any samples accepted by TOE meet the assessment criteria specified in the <<MBV assessment criteria for samples, assessment criteria for samples>> correctly
@@ -984,6 +994,11 @@ Modification to the TOE for performance testing, if any, shall be reported (e.g.
 .. TOE configuration
 +
 Any configurable parameters or setting of the TOE that may affect the performance shall be reported. Value of each parameter set for the testing shall also be provided. For example, if threshold (e.g. decision threshold and image quality threshold) is configurable by users, value of threshold set for the testing shall be reported.
+
+.. Type of verification algorithm
++
+Type of verification algorithm, symmetric or asymmetric, shall be provided. As explained in <<Statistical certainty for FAR/FMR>>, cross-comparison of attempts/templates of ordered pairs is not allowed for symmetric verification algorithm.
+
 .. Performance test tools
 +
 Information that uniquely identify all testing tools (e.g. SDK) used for the performance testing shall be reported.
@@ -1175,7 +1190,7 @@ Only one transaction can be run by each test subject because the computer locks 
 
 FMR/FAR shall be estimated following rule of 3 or 30 because these errors are most relevant to the security of the TOE and the trustworthiness of those values shall be evaluated statistically. While the rule of 3 would require that one test subject is only involved in one impostor transaction, it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. This BIOSD allows full cross-comparison to estimate FAR/FMR.
 
-This BIOSD also allows cross-comparison of attempts/templates of ordered pairs if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates of ordered pairs allows to compare between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE's verification algorithm is symmetric and make no distinction between the ordered pairs, this assumption can't be used.
+This BIOSD also allows cross-comparison of attempts/templates of ordered pairs if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates of ordered pairs allows the comparison between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE's verification algorithm is symmetric and make no distinction between the ordered pairs, this assumption can't be used. The type of verification algorithm used by the TOE is reported in the developer’s performance report <<Overview of the performance testing>>. 
 
 This BIOSD doesn’t allow intra-individual comparison that is a comparison between one body part and another body part of the same test subject (e.g. comparison between right and left iris of the same user).
 
