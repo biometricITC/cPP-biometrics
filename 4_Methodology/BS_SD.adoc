@@ -200,7 +200,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.1 at high level description
-. AGD guidance shall provide clear instructions for a user to enrol him/herself
+. AGD guidance shall provide clear instructions for a user to enrol to the biometric system
 
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the enrolment attempt.
 
@@ -214,8 +214,8 @@ The evaluator shall examine the TSS to understand how the TOE enrols a user and 
 
 The evaluator shall perform the following steps to verify that the TOE performs the biometric enrolment correctly.
 
-. The evaluator shall try to enrol him/herself without setting a NBAF and confirm that he/she can’t enrol him/herself.
-. The evaluator shall set a NBAF and confirm that he/she can’t enrol him/herself without entering the NBAF correctly beforehand.
+. The evaluator shall try to enrol without setting a NBAF and confirm that it is not possible to enrol.
+. The evaluator shall set a NBAF and confirm that enrolment is not possible without entering the NBAF correctly beforehand.
 
 ===== Pass/Fail criteria
 
@@ -223,7 +223,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
 . Information necessary to perform this EA is described in the TSS and AGD guidance
-. Only authenticated users by NBAF can enrol him/herself and any attempts to enrol without the authentication are rejected through the independent testing
+. Only authenticated users by NBAF can enrol and any attempts to enrol without the authentication are rejected through the independent testing
 
 ===== Requirements for reporting
 
@@ -253,7 +253,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description
-. AGD guidance shall provide clear instructions for a user to enrol him/herself
+. AGD guidance shall provide clear instructions for a user to enrol to the biometric system
 . Supplementary information ([#MBE assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
 AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
@@ -265,7 +265,7 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 *Enrolment templates*
 
-The evaluator shall examine the TSS to understand how the TOE generate templates of sufficient quality from samples at enrolment. The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol him/herself correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
+The evaluator shall examine the TSS to understand how the TOE generate templates of sufficient quality from samples at enrolment. The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
 
 The evaluator shall examine that <<MBE assessment criteria for samples, assessment criteria for samples>> to check that how the TOE creates the templates from samples based on this assessment criteria. The <<MBE assessment criteria for samples, assessment criteria for samples>> may include;
 
@@ -302,7 +302,7 @@ The evaluator shall perform the following test to verify that the TOE generates 
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall enrol him/herself
+. The evaluator shall enrol to the biometric system
 . The evaluator shall present biometric samples repeatedly to trigger the TOE to create authentication templates
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE doesn’t create authentication templates from samples that that don’t meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>>
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any authentication templates created by TOE from samples that meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>> correctly
@@ -343,7 +343,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
-. AGD guidance shall provide clear instruction for a user to verify him/herself to unlock the computer
+. AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
 . Supplementary information (developer’s performance test document) shall describe developer’s performance test protocol and result of testing
 
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
@@ -352,7 +352,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE verifies a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify him/herself correctly and how the TOE behaves when biometric verification is succeeded or failed.
+The evaluator shall examine the TSS to understand how the TOE verifies a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when biometric verification is succeeded or failed.
 
 The evaluator shall examine “developer’s performance test document” to verify that the developer conducts the objective and repeatable performance testing. Minimum requirements for conducting performance testing are defined in <<Developer’s performance test document and its assessment strategy>>.
 
@@ -399,7 +399,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.2 at high level description
-. AGD guidance shall provide clear instruction for a user to verify him/herself
+. AGD guidance shall provide clear instruction for a user to verify one's biometric
 . Supplementary information ([#MBV assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
@@ -408,7 +408,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE checks quality of samples captured. The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify him/herself correctly and how the TOE behaves when low quality samples are presented to the TOE.
+The evaluator shall examine the TSS to understand how the TOE checks quality of samples captured. The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when low quality samples are presented to the TOE.
 
 The evaluator shall examine that <<MBV assessment criteria for samples, assessment criteria for samples>> to check how the TOE checks the quality of samples based on its assessment criteria. The <<MBV assessment criteria for samples, assessment criteria for samples>> may include;
 
@@ -847,7 +847,7 @@ Attacker may use any tools or materials that are normally available at home and 
 <<BIOPP-Module>> defines *A.User* and evaluator shall assume that the computers are configured securely by users. Evaluator shall make the following assumptions:
 
 [arabic]
-.. A user enrol him/herself following guidance provided by the TOE
+.. A user has enrolled following guidance provided by the TOE
 .. The computer is securely configured, and maximum number of unsuccessful biometric authentication attempts is limited
 +
 For efficiency, the evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing. However, as the computer shall be evaluated in the evaluated configuration, any attack needs to succeed within the allowed number of biometric authentication attempts defined in the ST to be considered a successful attack.
@@ -1161,7 +1161,7 @@ The developer shall also select the most common scenario among users to conduct 
 
 Only one template can be generated from each body part (e.g. right index fingerprint, left hand vein or face) of test subject and used for the performance testing.
 
-Quality of template may have significant impact on the biometric verification performance. This BIOSD assumes that the user is familiar with the computer's operation and enrol him/herself correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
+Quality of template may have significant impact on the biometric verification performance. This BIOSD assumes that the user is familiar with the computer's operation and enrol correctly following the AGD guidance provided by the developer. The test subject may make enough number of practice attempts to get familiar with the device operation before the final enrolment transaction.
 
 ==== Maximum number of samples per test subject
 
