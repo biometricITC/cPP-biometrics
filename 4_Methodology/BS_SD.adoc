@@ -107,6 +107,7 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 |*cPP* |collaborative Protection Profile
 |*EA* |Evaluation Activity
 |*iTC* |International Technical Community
+|*NBAF* |(Non-Biometric) Authentication Factor
 |*PAI* |Presentation Attack Instrument (artefact)
 |*PP* |Protection Profile
 |*SAR* |Security Assurance Requirement
@@ -183,7 +184,7 @@ Assessment Strategy for ATE_IND requires the evaluator to conduct testing that t
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by his/her password. Security requirements for the password authentication are defined in the base PP and out of scope of this EA.
+The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by his/her NBAF. Security requirements for the NBAF mechanism are defined in the base PP and out of scope of this EA.
 
 ===== Dependency
 
@@ -207,14 +208,14 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE enrols a user and examine the AGD guidance to confirm that a user is required to enter his/her valid password before the biometric enrolment.
+The evaluator shall examine the TSS to understand how the TOE enrols a user and examine the AGD guidance to confirm that a user is required to enter his/her valid NBAF before the biometric enrolment.
 
 ====== Strategy for ATE_IND
 
 The evaluator shall perform the following steps to verify that the TOE performs the biometric enrolment correctly.
 
-. The evaluator shall try to enrol without setting a password and confirm that it is not possible to enrol.
-. The evaluator shall set a password and confirm that enrolment is not possible without entering the password correctly beforehand.
+. The evaluator shall try to enrol without setting a NBAF and confirm that it is not possible to enrol.
+. The evaluator shall set a NBAF and confirm that enrolment is not possible without entering the NBAF correctly beforehand.
 
 ===== Pass/Fail criteria
 
@@ -222,7 +223,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
 . Information necessary to perform this EA is described in the TSS and AGD guidance
-. Only authenticated users by password can enrol and any attempts to enrol without the authentication are rejected through the independent testing
+. Only authenticated users by NBAF can enrol and any attempts to enrol without the authentication are rejected through the independent testing
 
 ===== Requirements for reporting
 
@@ -616,7 +617,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-Only an authenticated user can add his/her own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored outside the SEE without encryption as required by the FPT_BDP_EXT.3. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only authenticated user either using a PIN, password or by other secure means, as specified by the ST author can access the templates through the TSFI provided by the TOE.
+Only an authenticated user can add his/her own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored outside the SEE without encryption as required by the FPT_BDP_EXT.3. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only authenticated user either using a NBAF, as specified by the ST author can access the templates through the TSFI provided by the TOE.
 
 ===== Dependency
 
@@ -638,14 +639,14 @@ Following input is required from the developer.
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS and AGD guidance to identify any TSFI through which the user can access (e.g. revoke) the templates. The evaluator shall confirm that those TSFI requires either using a PIN, password or by other secure means, as specified by the ST author.
+The evaluator shall examine the TSS and AGD guidance to identify any TSFI through which the user can access (e.g. revoke) the templates. The evaluator shall confirm that those TSFI requires either using a NBAF, as specified by the ST author.
 
 ====== Strategy for ATE_IND
 
 The evaluator shall perform the following test steps to verify that the TOE protects the templates as specified in TSS and AGD guidance.
 
 . The evaluator shall perform functions through the TSFIs that access the templates
-. The evaluator shall check that the TSFI requires either using a PIN, password or by other secure means, as specified by the ST author.
+. The evaluator shall check that the TSFI requires either using a NBAF, as specified by the ST author.
 
 ===== Pass/Fail criteria
 
@@ -653,7 +654,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
 . Information necessary to perform this EA is described in the TSS and AGD guidance
-. The TOE protects the templates either using a PIN, password or by other secure means, as specified by the ST author
+. The TOE protects the templates either using a NBAF, as specified by the ST author
 
 ===== Requirements for reporting
 
@@ -835,7 +836,7 @@ If the evaluator can find new artefact species, the evaluator shall consider the
 [loweralpha]
 . Attacker’s motivation
 +
-For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a PIN/password which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the computer. The BIOSD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the computer.
+For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a NBAF which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the computer. The BIOSD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the computer.
 +
 Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face artefact) if such services are available at low cost.
 
@@ -1142,7 +1143,7 @@ The developer shall follow the guidance in this Section to define the transactio
 
 The user may use the biometric verification in a different way.
 
-Suppose the computer provides both Password Authentication Factor and BAF and the user can use either factor to unlock the device. One user may try to unlock the device with BAF until allowable maximum number of unsuccessful authentication attempts is exceeded. Another user may try to unlock the device with BAF only three times and switch to the password if all three attempts were failed.
+Suppose the computer provides both NBAF and BAF and the user can use either factor to unlock the device. One user may try to unlock the device with BAF until allowable maximum number of unsuccessful authentication attempts is exceeded. Another user may try to unlock the device with BAF only three times and switch to the NBAF if all three attempts were failed.
 
 It may also be possible for user to enrol multiple body parts (e.g. index and thumb fingerprint) or single body part for biometric verification.
 
@@ -1524,7 +1525,7 @@ The evaluator shall examine that appropriate warnings is provided in the AGD gui
 
 Those artefacts can succeed at least one presentation attack (and succeed to unlock the computer) at 25% of probability when allowable number of unsuccessful attempts is 4 (i.e. *n* = 4).
 
-Example of warnings is that the AGD guidance may warn that the biometric verification is less secure than a password and recommend using a password for security sensitive services.
+Example of warnings is that the AGD guidance may warn that the biometric verification is less secure than a NBAF and recommend using a NBAF for security sensitive services.
 
 == Related Documents
 [bibliography]
