@@ -39,7 +39,7 @@ This section describes consistency rationale between <<PP_MD_V3.3>> and <<BIOPP-
 
 === Consistency of TOE Type
 
-When the <<PP-Module>> is used to extend <<PP_MD_V3.3>>, the TOE type for the overall TOE is still a generic mobile device. However, one of the functions of the device must be the ability for it to have biometric enrolment and verification capability. The TOE boundary is simply extended to include that functionality.
+When the <<BIOPP-Module>> is used to extend <<PP_MD_V3.3>>, the TOE type for the overall TOE is still a generic mobile device. However, one of the functions of the device must be the ability for it to have biometric enrolment and verification capability. The TOE boundary is simply extended to include that functionality.
 
 === Consistency of Security Problem Definition
 
