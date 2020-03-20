@@ -46,17 +46,15 @@ When the <<BIOPP-Module>> is used to extend <<PP_MD_V3.3>>, the TOE type for the
 The threats, OSPs and assumptions defined by the <<BIOPP-Module>> (see the Sections: Threats, Organizational Security Policies and Assumptions) are consistent with those defined in the <<PP_MD_V3.3>> as follows:
 
 .Consistency Rationale for threats and OSPs
-[cols="1,1",options="header"]
+[cols=".^1,1",options="header"]
 |===
 
 |PP-Module Threats/OSPs	
 |Consistency Rationale
 
 |T.Casual_Attack 
-.5+.^|The threat of zero-effort impostor attempt and presentation attack with related OSPs are specific subsets of the T.PHYSICAL_ACCESS (i.e. impersonate the user authentication mechanisms) threat in the <<PP_MD_V3.3>>.
-|T.Presentation_Attack	
+.3+|The threat of zero-effort impostor attempt and presentation attack with related OSPs are specific subsets of the T.PHYSICAL_ACCESS (i.e. impersonate the user authentication mechanisms) threat in the <<PP_MD_V3.3>>.
 |OSP.Enrol
-|OSP.PAD_Error
 |OSP.Verification_Error
 
 .^|OSP.Protection	
@@ -65,13 +63,13 @@ The threats, OSPs and assumptions defined by the <<BIOPP-Module>> (see the Secti
 |===
 
 .Consistency Rationale for Assumptions
-[cols="1,1",options="header"]
+[cols=".^1,1",options="header"]
 |===
 |PP-Module Assumptions	    
 |Consistency Rationale
 
 |A.Alternative	
-.3+.^|All assumptions levied on the operational environment of biometric system (i.e. mobile device) are consistent with security requirements in the <<PP_MD_V3.3>>. 
+.3+|All assumptions levied on the operational environment of biometric system (i.e. mobile device) are consistent with security requirements in the <<PP_MD_V3.3>>. 
 |A.Authentication
 |A.User
 
@@ -82,13 +80,13 @@ The threats, OSPs and assumptions defined by the <<BIOPP-Module>> (see the Secti
 The objectives for the biometric system and its operational environment are consistent with the <<PP_MD_V3.3>> based on the following rationale:
 
 .Consistency Rationale for TOE Objectives
-[cols="1,1",options="header"]
+[cols=".^1,1",options="header"]
 |===
 |PP-Module TOE Objectives	
 |Consistency Rationale
 
 |O.BIO_Verification	
-.3+.^|These TOE Objectives are specific subsets of the O.AUTH objective in the <<PP_MD_V3.3>>. 
+.3+|These TOE Objectives are specific subsets of the O.AUTH objective in the <<PP_MD_V3.3>>. 
 |O.Enrol
 |O.Presentation_Attack_Detection	
 
