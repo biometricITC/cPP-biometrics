@@ -16,7 +16,7 @@ This PP-Configuration was developed by the Biometrics Security international Tec
 
 The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that combines Protection Profiles (PPs) and PP-Modules for various technology types into a single configuration that can be evaluated as a whole. The scope includes the definition of the configuration of a computer (a computer in the terms of the PP-Module) that has biometric enrolment and verification capability. The TOE will be defined by a combination of the components described in <<PP-Configuration Components Statement>>.
 
-The computer for the purposes of this PP-Configuration is a system with a General Purpose Operating System plus a Biometric System. The Biometric System may be directly integrated into the physical computer or an external component that has been linked/paired with the physical computer and for which biometric credentials are linked specifically to the paired computer (i.e. templates registered on computer 1 cannot be used on computer 2).
+The TOE for the purposes of this PP-Configuration is a system with a General Purpose Operating System plus a Biometric System. The Biometric System may be directly integrated into the TOE, or may include an external component that has been incorporated as part of the TOE platform and for which biometric credentials are linked specifically to the TOE platform (i.e. templates registered on TOE platform 1 cannot be used on TOE platform 2).
 
 == PP-Configuration Reference
 
@@ -41,7 +41,7 @@ This section describes consistency rationale between <<PP_OS_V4.3>> and <<BIOPP-
 
 === Consistency of TOE Type
 
-When the <<BIOPP-Module>> is used to extend <<PP_OS_V4.3>>, the TOE type for the overall TOE is still a general purpose operating system. However, one of the functions of the operating system and computer must be the ability for it to have biometric enrolment and verification capability. The TOE boundary is simply extended to include that functionality.
+When the <<BIOPP-Module>> is used to extend <<PP_OS_V4.3>>, the TOE type for the overall TOE is still a general purpose operating system. However, one of the functions of the TOE must be the ability for it to have biometric enrolment and verification capability. The TOE boundary is simply extended to include that functionality.
 
 === Consistency of Security Problem Definition
 
@@ -71,7 +71,7 @@ The threats, OSPs and assumptions defined by the <<BIOPP-Module>> (see the Secti
 |Consistency Rationale
 
 |A.Alternative	
-.3+|All assumptions levied on the operational environment of biometric system (i.e. The computer) are consistent with security requirements in the <<PP_OS_V4.3>>. 
+.3+|All assumptions levied on the operational environment of biometric system (i.e. the computer) are consistent with security requirements in the <<PP_OS_V4.3>>. 
 |A.Authentication
 |A.User
 
@@ -103,7 +103,7 @@ The objectives for the biometric system and its operational environment are cons
 |Consistency Rationale
 
 |OE.Alternative	
-.4+|All Environmental Objectives levied on the operational environment of biometric system (i.e. The computer) are consistent with security requirements in the <<PP_OS_V4.3>>. 
+.4+|All Environmental Objectives levied on the operational environment of biometric system (i.e. the computer) are consistent with security requirements in the <<PP_OS_V4.3>>. 
 |OE.Authentication
 |OE.Protection
 |OE.User
@@ -112,44 +112,44 @@ The objectives for the biometric system and its operational environment are cons
 
 === Consistency of Requirements
 
-The Biometric System (i.e. TSF in the <<BIOPP-Module>>) is comprised of biometric capture sensors and firmware/software that provide functions described in the <<BIOPP-Module>> TOE design. The Biometric System may be integral to the computer or an external (self-contained) device that has been linked/paired with the computer. The Biometric System is invoked by the computer as defined in the <<PP_OS_V4.3>> when user’s biometric characteristics is presented to the sensor. The Biometric System creates and stores the template or compares the features with the stored template and returns the verification outcome to the computer.
+The Biometric System (i.e. TSF in the <<BIOPP-Module>>) is comprised of biometric capture sensors and firmware/software that provide functions described in the <<BIOPP-Module>> TOE design. The TOE platform includes a Biometric System that may be integral to the GPOS TOE platform or extended to include an external (self-contained) device that has been linked/paired with the GPOS TOE platform. The Biometric System is invoked by the TSF as defined in the <<PP_OS_V4.3>> when user’s biometric characteristics is presented to the sensor. The Biometric System creates and stores the template or compares the features with the stored template and returns the verification outcome to the TOE.
 
-The <<BIOPP-Module>> assumes that the computer satisfies SFRs defined in the <<PP_OS_V4.3>> so that the Biometric System can work as specified in the <<BIOPP-Module>>. This section explains which SFRs in the <<PP_OS_V4.3>> are directly relevant to the Biometric System security functionality.
+The <<BIOPP-Module>> assumes that the TOE satisfies SFRs defined in the <<PP_OS_V4.3>> so that the Biometric System can work as specified in the <<BIOPP-Module>>. This section explains which SFRs in the <<PP_OS_V4.3>> are directly relevant to the Biometric System security functionality.
 
 The following rationale identifies several SFRs from <<PP_OS_V4.3>> that are needed to support Biometric System functionality and explains why the unions of SFRs in the <<PP_OS_V4.3>> and <<BIOPP-Module>> do not lead to a contradiction.
 
 ==== Relation among SFRs/OEs in the PP_OS_V4.3 and BIOPP-Module
-The relation between SFRs defined in the <<PP_OS_V4.3>> and SFRs and OEs in the <<BIOPP-Module>> is described below for each security functionality. *Bold SFRs* are those SFRs defined in the <<BIOPP-Module>> for the Biometric System and _italicized SFRs_ are those defined in <<PP_OS_V4.3>> for the computer.
+The relation between SFRs defined in the <<PP_OS_V4.3>> and SFRs and OEs in the <<BIOPP-Module>> is described below for each security functionality. *Bold SFRs* are those SFRs defined in the <<BIOPP-Module>> for the Biometric System and _italicized SFRs_ are those defined in <<PP_OS_V4.3>> for the TOE.
 
 ===== Authentication Factors
-The authentication factors defined in the <<PP_OS_V4.3>> are Non-Biometric Authentication Factors as defined in the <<BIOPP-Module>>. The computer shall implement an authentication factor as required by the _FIA_UAU.5.1._ These authentication factors are used as an alternative authentication mechanism when the user is rejected by the biometric verification.
+The authentication factors defined in the <<PP_OS_V4.3>> are Non-Biometric Authentication Factors as defined in the <<BIOPP-Module>>. The TOE shall implement an authentication factor as required by the _FIA_UAU.5.1._ These authentication factors are used as an alternative authentication mechanism when the user is rejected by the biometric verification.
 
-The <<BIOPP-Module>> assumes that above requirements are satisfied by the computer as defined in OE.Alternative.
+The <<BIOPP-Module>> assumes that above requirements are satisfied by the TOE as defined in OE.Alternative.
 
 ===== Invocation of the Biometric System
-For any modality selected in _FIA_UAU.5.1_, the computer shall invoke the Biometric System to unlock the computer under the rules specified in _FIA_UAU.5.2_.
+For any modality selected in _FIA_UAU.5.1_, the TOE shall invoke the Biometric System to unlock the TOE under the rules specified in _FIA_UAU.5.2_.
 
-The <<BIOPP-Module>> assumes that above requirements are satisfied by the computer as defined in OE.Authentication.
+The <<BIOPP-Module>> assumes that above requirements are satisfied by the TOE as defined in OE.Authentication.
 
 The Biometric System shall implement a biometric verification mechanism that satisfies SFRs defined in the <<BIOPP-Module>>. This means that same modality shall be selected in *FIA_MBV_EXT.1.1*, and relevant criteria and its error rate shall be specified in *FIA_MBV_EXT.1.2*. If multiple modalities are selected in _FIA_UAU.5.1_, *FIA_MBV_EXT.1* shall be iterated for each modality. The Biometric System shall also enrol all modalities selected as specified in *FIA_MBE.EXT.1*, to assure the quality of samples and templates as specified in *FIA_MBV.EXT.2* and *FIA_MBE.EXT.2*. The Biometric System may also prevent use of artificial presentation attack instruments during the biometric enrolment and verification as specified in *FIA_MBE.EXT.3* and *FIA_MBV.EXT.3*.
 
 ===== Enrolment or Updating a template
 When the user wants to enrol or update a template (such as adding or removing a fingerprint), the <<BIOPP-Module>> requires the user must enter a Non-Biometric Authentication Factor prior to access to the Biometric System as defined in the rules specified in _FIA_UAU.5.2_.
 
-The <<BIOPP-Module>> assumes that above requirements are satisfied by the computer as defined in OE.Authentication.
+The <<BIOPP-Module>> assumes that above requirements are satisfied by the TOE as defined in OE.Authentication.
 
 
 ===== Handling the verification outcome
-The computer shall take appropriate actions after receiving the verification outcome from the Biometric System as defined in _FIA_AFL_EXT.1_. 
+The TOE shall take appropriate actions after receiving the verification outcome from the Biometric System as defined in _FIA_AFL_EXT.1_. 
 
-_FIA_AFL_EXT.1_ defines rules regarding how the authentication factors interact in terms of unsuccessful authentication and actions computer shall take when number of unsuccessful authentication attempts surpass the pre-defined number. The computer also shall apply authentication throttling after failed biometric verification, if configured in _FMT_MOF_EXT.1 (Configure lockout policy for unsuccessful authentication attempts)_.
+_FIA_AFL_EXT.1_ defines rules regarding how the authentication factors interact in terms of unsuccessful authentication and actions TOE shall take when number of unsuccessful authentication attempts surpass the pre-defined number. The TOE also shall apply authentication throttling after failed biometric verification, if configured in _FMT_MOF_EXT.1 (Configure lockout policy for unsuccessful authentication attempts)_.
 
-The <<BIOPP-Module>> assumes that above requirements are satisfied by the computer as defined in OE.Authentication.
+The <<BIOPP-Module>> assumes that above requirements are satisfied by the TOE as defined in OE.Authentication.
 
 ===== Protection of the Biometric System and its biometric data
-The computer shall provide the Secure Execution Environment (e.g. restricted operational environment) so that Biometric System can work securely. This Secure Execution Environment guarantees code and data loaded inside to be protected with respect to confidentiality and integrity. This Secure Execution Environment is out of scope of the Biometric System defined in the <<BIOPP-Module>> and shall be provided by the computer and evaluated based on <<PP_OS_V4.3>>. However, ST author shall explain how such Secure Execution Environment is provided by the computer for the Biometric System, as required by <<BIOSD>>. The computer shall also keep secret any sensitive information regarding the biometric when the computer receives the verification outcome from the Biometric System, as required by _FIA_UAU.7.1_, and provide cryptographic support to encrypt or decrypt biometric data as required by _FCS class_. The computer shall treat source biometric data and values used in the enrolment or verification process (not the final templates) as keying material and critical security parameters according the _FCS_CKM_EXT.4.2_.
+The TOE shall provide the Secure Execution Environment (e.g. restricted operational environment) so that Biometric System can work securely. This Secure Execution Environment guarantees code and data loaded inside to be protected with respect to confidentiality and integrity. This Secure Execution Environment is out of scope of the Biometric System defined in the <<BIOPP-Module>> and shall be provided by the TOE and evaluated based on <<PP_OS_V4.3>>. However, ST author shall explain how such Secure Execution Environment is provided by the TOE for the Biometric System, as required by <<BIOSD>>. The TOE shall also keep secret any sensitive information regarding the biometric when the TOE receives the verification outcome from the Biometric System, as required by _FIA_UAU.7.1_, and provide cryptographic support to encrypt or decrypt biometric data as required by _FCS class_. The TOE shall treat source biometric data and values used in the enrolment or verification process (not the final templates) as keying material and critical security parameters according the _FCS_CKM_EXT.4.2_.
 
-The <<BIOPP-Module>> assumes that above requirements are satisfied by the computer as defined in OE.Protection.
+The <<BIOPP-Module>> assumes that above requirements are satisfied by the TOE as defined in OE.Protection.
 
 However, the Biometric System shall use this Secure Execution Environment correctly to protect biometric data and satisfy the following requirements:
 
@@ -161,17 +161,17 @@ However, the Biometric System shall use this Secure Execution Environment correc
 
 If the Biometric System stores any part of the biometric data outside the Secure Execution Environment, the Biometric System shall protect such data so that any entities running outside the Secure Execution Environment can’t get access to any plaintext biometric data. ST author shall explain what biometric data resides outside the Secure Execution Environment as required by <<BIOSD>> and if no data resides outside the environment, requirements below is implicitly satisfied.
 
-* The Biometric System shall not store any plaintext biometric data outside the Secure Execution Environment. As described in the <<BIOPP-Module>> Section TOE design, the Biometric System can store templates in the enrolment database. The Biometric System shall encrypt templates using cryptographic service provided by the computer within the Secure Execution Environment before storing them in the database, even if the computer storage itself is encrypted by the computer.
+* The Biometric System shall not store any plaintext biometric data outside the Secure Execution Environment. As described in the <<BIOPP-Module>> Section TOE design, the Biometric System can store templates in the enrolment database. The Biometric System shall encrypt templates using cryptographic service provided by the TOE within the Secure Execution Environment before storing them in the database, even if the TOE storage itself is encrypted by the TOE.
 * The Biometric System may overwrite encrypted biometric data in the storage when no longer needed. For example, the Biometric System may overwrite an encrypted template when it is revoked. This is an optional requirement.
 
-The Biometric System shall also protect templates so that only the user of the computer can access them. This means that the Biometric System shall only allow authenticated user by the Password Authentication Factor to access (e.g. add or revoke) the template.
+The Biometric System shall also protect templates so that only the user of the TOE can access them. This means that the Biometric System shall only allow authenticated user by the Password Authentication Factor to access (e.g. add or revoke) the template.
 
 * The Biometric System shall control access to, including adding or revoking, the templates.
 
 The above requirements are defined as *FPT_PBT_EXT.1*, *FPT_BDP_EXT.1*, *FPT_BDP_EXT.2* and *FPT_PBT_EXT.3* in Security Functional Requirements and *FDP_RIP.2* in Optional Requirements in the <<BIOPP-Module>>.
 
 ===== Management of the Biometric System configuration
-The computer shall enable/disable the BAF as required by adding the configuration to _FMT_SMF_EXT.1 [assignment: list of other management functions to be provided by the TSF]_. Any change to the BAF (e.g. adding or revoking templates) requires re-authentication via another authentication factor as specified in _FIA_UAU.5.2_.
+The TOE shall enable/disable the BAF as required by adding the configuration to _FMT_SMF_EXT.1 [assignment: list of other management functions to be provided by the TSF]_. Any change to the BAF (e.g. adding or revoking templates) requires re-authentication via another authentication factor as specified in _FIA_UAU.5.2_.
 
 The <<BIOPP-Module>> assumes that above requirements are satisfied by the TOE environment as defined in OE.Protection.
 
@@ -245,13 +245,13 @@ The evaluator shall take the following additional application notes into account
 
 ===== Application note for EA of AGD_OPE.1
 
-<<BIOPP-Module>> defines the assumptions for the computer that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the computer is successfully evaluated based on <<PP_OS_V4.3>> and the operational guidance doesn’t need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
+<<BIOPP-Module>> defines the assumptions for the TOE that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the TOE is successfully evaluated based on <<PP_OS_V4.3>> and the operational guidance doesn’t need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
 
 There is additional application note related to EAs for FIA_MBV_EXT.3 in Section 9.3.2 [Additional application notes for AGD Class] in <<BIOSD>>. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
 
 ===== Application note for EA of AGD_PRE.1
 
-<<BIOPP-Module>> supposes that the biometric system is fully integrated into the computer and the preparative procedures are unnecessary for <<BIOPP-Module>>. Therefore, AGD_PRE.1 deems satisfied for <<BIOPP-Module>>.
+<<BIOPP-Module>> supposes that the biometric system is fully integrated into the TOE and the preparative procedures are unnecessary for <<BIOPP-Module>>. Therefore, AGD_PRE.1 deems satisfied for <<BIOPP-Module>>.
 
 ==== Class ALC: Life-cycle Support
 
