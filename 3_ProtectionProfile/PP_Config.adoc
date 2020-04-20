@@ -86,7 +86,7 @@ The objectives for the biometric system and its operational environment are cons
 |Consistency Rationale
 
 |O.BIO_Verification	
-.3+|These TOE Objectives are specific subsets of the O.AUTH objective in the <<PP_MD_V3.3>>. 
+.2+|These TOE Objectives are specific subsets of the O.AUTH objective in the <<PP_MD_V3.3>>. 
 |O.Enrol
 
 |O.Protection	
