@@ -1233,7 +1233,7 @@ If the developer specifies 0.01% FMR and 1% FNMR in FIA_MBV_EXT.1, at least 30,0
 
 === Calculating attack potential for generic biometric system
 
-Attack potential is a function of expertise, resources and motivation, as is written in <<CEM>>. <<CEM>> provides general guidance for calculating attack potential for all type of IT products and doesn’t take any specific characteristics of biometrics into account.
+Attack potential is a function of expertise, resources and motivation, as is written in <<CEM>>. <<CEM>> provides general guidance for calculating attack potential for all type of IT products and doesn’t take any specific characteristics of biometrics into account. The iTC, building on the expertise of the membership, ongoing work at <<ISO/IEC 19795-1,ISO>> and the <<BEAT>> project, has tailored the guidance more specifically for biometrics.
 
 This section introduces a method for calculating attack potential for generic biometric systems.
 
@@ -1314,17 +1314,14 @@ However, it is important to be able to compare the resistance of various systems
 
 The levels are as follows:
 
---
 [loweralpha]
-. _Immediate_ is for 2D face, signature image, and voice. Samples of these modalities can be collected without difficulty, even without direct contact with an enrolled data subject (an exploration of the web and the social networks and so forth).
-. _Easy_ is for fingerprint. Latent fingerprints are often left on objects the enrolled data subject had in hand, but need to be revealed, acquired and the corresponding images need a preprocessing.
-. _Moderate_ is for 3D face, dynamic signature, and 3D fingerprint. 3D images require multiple acquisitions, probably in a controlled way, without the collaboration of an enrolled data subject but probably with a direct contact with them.
-. _Difficult_ is for iris and vein. Iris images can be acquired with a high resolution camera, but with some difficulties to get a complete high quality image without the cooperation of an enrolled data subject. Veins are a hidden characteristic, but infra-red cameras, close to them, can acquire images to be used.      
---
+. _Without notice_ is for samples for making an artefact that can be collected without any contact with an enrolled subject. For example, 2D face images uploaded on the Internet and latent fingerprint images on a glass can be collected without notice of the subject.
+. _Non-cooperative_ is for samples for making an artefact that need to be collected directly from an enrolled subject in a short period of time without full cooperation from the subject. For example, iris or vein images need to be acquired with a high resolution or infra-red camera, however, such images can be taken in a moment without full control of the subject.
+. _Cooperative_ is for samples for making an artefact that need to be collected directly from an enrolled subject with full cooperation from the subject. For example, the acquisition of a detailed 3D face scan of the subject takes time and requires full cooperation from the subject.
 
 *Application Note {counter:remark_count}*:: The above distribution of modalities per level is subject to modification depending on the evolution of technologies and usage. The current distribution is to be seen as guidance for the evaluator, who will have to adapt the rating to state-of-the-art.
 
-*Application Note {counter:remark_count}*:: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Immediate_.
+*Application Note {counter:remark_count}*:: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Without notice_.
 
 *_Equipment_* refers to the type of equipment required to perform the attack. This includes the biometric databases used (if any). The levels are follows:
 
@@ -1338,51 +1335,118 @@ _Bespoke equipment_ refers to very expensive equipment with difficult and contro
 
 <<attackpotentialcalc>> identifies the factors discussed in the previous Section and associates numeric values with the total value of each factor.
 
-[cols=",,",options="header",]
+[cols="2,^1,^1",options="header",]
 .Calculation of attack potential for general biometric system
 [[attackpotentialcalc]]
 |===
-|Factor |Value |
-| |Identification |Exploitation
-|*Elapsed Time* | |
-|<= one day |0 |0
-|<= one week |1 |2
-|<= two weeks |2 |4
-|<= one month |4 |8
-|> one month |8 |16
-|*Expertise* | |
-|Layman |0 |0
-|Proficient |2 |4
-|Expert |4 |8
-|Multiple experts |8 |Not applicable
-|*Knowledge of TOE* | |
-|Public |0 |Not applicable
-|Restricted |2 |Not applicable
-|Sensitive |4 |Not applicable
-|Critical |8 |Not applicable
-a|
-*Window of Opportunity*
+|Factor 
+|Value 
+|
 
-*(Access to TOE)*
+|
+|Identification 
+|Exploitation
 
-| |
-|Easy |0 |0
-|Moderate |2 |4
-|Difficult |4 |8
-a|
-*Window of Opportunity*
+3+|*Elapsed Time* 
 
-*(Access to Biometric Characteristics)*
+|<= one day 
+|0 
+|0
 
-| |
-|Immediate |Not applicable |0
-|Easy |Not applicable |2
-|Moderate |Not applicable |4
-|Difficult |Not applicable |8
-|*Equipment* | |
-|Standard |0 |0
-|Specialised |2 |4
-|Bespoke |4 |8
+|<= one week 
+|1 
+|2
+
+|<= two weeks 
+|2 
+|4
+
+|<= one month 
+|4 
+|8
+
+|> one month 
+|8 
+|16
+
+3+|*Expertise*
+
+|Layman 
+|0 
+|0
+
+|Proficient 
+|2 
+|4
+
+|Expert 
+|4 
+|8
+
+|Multiple experts 
+|8 
+|Not applicable
+
+3+|*Knowledge of TOE*
+
+|Public 
+|0 
+|Not applicable
+
+|Restricted 
+|2 
+|Not applicable
+
+|Sensitive 
+|4 
+|Not applicable
+
+|Critical 
+|8 
+|Not applicable
+
+3+|*Window of Opportunity* *(Access to TOE)*
+
+|Easy 
+|0 
+|0
+
+|Moderate 
+|2 
+|4
+
+|Difficult 
+|4 
+|8
+
+3+|*Window of Opportunity* *(Access to Biometric Characteristics)*
+
+|Without notice 
+|Not applicable 
+|0
+
+|Non-cooperative 
+|Not applicable 
+|2
+
+|Cooperative 
+|Not applicable 
+|4
+
+3+|*Equipment*
+
+|Standard 
+|0 
+|0
+
+|Specialised 
+|2 
+|4
+
+|Bespoke 
+|4 
+|8
+
 |===
 
 :xrefstyle: short
@@ -1395,38 +1459,21 @@ In order to calculate the attack potential value of the entire attack, the evalu
 
 The "Values" column of <<ratingvuln>> indicates the range of attack potential values (calculated using <<attackpotentialcalc>>) of an attack scenario that results in the SFRs being undermined.
 
-[cols=",,,,",options="header",]
+[cols=".^1,.^2,.^2,.^2,.^2",options="header",]
 .Rating of vulnerabilities and TOE resistance
 [[ratingvuln]]
 |===
-|Values a|
-Attack potential
+|Values 
+|Attack potential required to exploit scenario:
+|TOE resistant to attackers with attack potential of:
+|Meets assurance components:
+|Failure of components:
 
-required to
-
-exploit scenario:
-
-a|
-TOE resistant
-
-to attackers
-
-with attack
-
-potential of:
-
-a|
-Meets assurance
-
-components:
-
-a|
-Failure of
-
-components:
-
-|< 10 |Basic |No rating |- a|
-AVA_VAN.1,
+|< 10 
+|Basic 
+|No rating 
+|- 
+a|AVA_VAN.1,
 
 AVA_VAN.2,
 
@@ -1436,52 +1483,46 @@ AVA_VAN.4,
 
 AVA_VAN.5
 
-|10-19 a|
-Enhanced-
-
-Basic
-
-|Basic a|
-AVA_VAN.1,
+|10-19 
+|Enhanced-Basic
+|Basic 
+a|AVA_VAN.1,
 
 AVA_VAN.2
-
-a|
-AVA_VAN.3,
+a|AVA_VAN.3,
 
 AVA_VAN.4,
 
 AVA_VAN.5
 
-|20-29 |Moderate a|
-Enhanced-
-
-Basic
-
-a|
-AVA_VAN.1,
+|20-29 
+|Moderate 
+|Enhanced-Basic
+a|AVA_VAN.1,
 
 AVA_VAN.2,
 
 AVA_VAN.3
-
-a|
-AVA_VAN.4,
+a|AVA_VAN.4,
 
 AVA_VAN.5
 
-|30-39 |High |Moderate a|
-AVA_VAN.1,
+|30-39 
+|High 
+|Moderate 
+a|AVA_VAN.1,
 
 AVA_VAN.2,
 
 AVA_VAN.3,
 
 AVA_VAN.4
-
 |AVA_VAN.5
-|=>40 |Beyond-High |High a|
-AVA_VAN.1,
+
+|=>40 
+|Beyond-High 
+|High 
+a|AVA_VAN.1,
 
 AVA_VAN.2,
 
@@ -1490,8 +1531,8 @@ AVA_VAN.3,
 AVA_VAN.4,
 
 AVA_VAN.5
-
 |-
+
 |===
 
 === Application notes for <<BIOPP-Module>> 
@@ -1572,9 +1613,10 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.        
 - [#PP_MD_V3.3]#[PP_MD_V3.3]# Protection Profile for Mobile Device Fundamentals, Version:3.3.    
 - [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, March 13, 2020, Version 0.95 - [CFG-MDF-BIO].    
-- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, March 13, 2020, Version 0.95 - [BIOPP-Module].        
+- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, March 13, 2020, Version 0.95 - [BIOPP-Module].
+- [#Toolbox]#[Toolbox]# Toolbox Overview, March 13, 2020, Version 0.95.
 - [#ISO/IEC 19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
 - [#ISO/IEC 19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
 - [#ISO/IEC 19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.    
 - [#ISO/IEC 30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection — Part 3: Testing and reporting, First edition.        
-- [#Toolbox]#[Toolbox]# Toolbox Overview, March 13, 2020, Version 0.95
+- [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org
