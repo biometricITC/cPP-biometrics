@@ -1233,7 +1233,7 @@ If the developer specifies 0.01% FMR and 1% FNMR in FIA_MBV_EXT.1, at least 30,0
 
 === Calculating attack potential for generic biometric system
 
-Attack potential is a function of expertise, resources and motivation, as is written in <<CEM>>. <<CEM>> provides general guidance for calculating attack potential for all type of IT products and doesn’t take any specific characteristics of biometrics into account. The iTC, building on the expertise of the membership, ongoing work at <<ISO/IEC 19795-1,ISO>> and the <<BEAT>> project, has tailored the guidance more specifically for biometrics.
+Attack potential is a function of expertise, resources and motivation, as is written in <<CEM>>. <<CEM>> provides general guidance for calculating attack potential for all type of IT products and doesn’t take any specific characteristics of biometrics into account. The iTC, building on the expertise of the membership, ongoing work at <<ISO/IEC 19989-1,ISO>> and the <<BEAT>> project, has tailored the guidance more specifically for biometrics.
 
 This section introduces a method for calculating attack potential for generic biometric systems.
 
@@ -1617,6 +1617,7 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#Toolbox]#[Toolbox]# Toolbox Overview, March 13, 2020, Version 0.95.
 - [#ISO/IEC 19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
 - [#ISO/IEC 19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
-- [#ISO/IEC 19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.    
+- [#ISO/IEC 19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
+- [#ISO/IEC 19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems – Part 1: Framework, Under development.  
 - [#ISO/IEC 30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection — Part 3: Testing and reporting, First edition.        
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org
