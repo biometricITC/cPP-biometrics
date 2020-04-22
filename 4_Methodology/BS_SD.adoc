@@ -1315,11 +1315,9 @@ However, it is important to be able to compare the resistance of various systems
 The levels are as follows:
 
 [loweralpha]
-. _Without notice_ is for samples for making an artefact that can be collected without any contact with an enrolled subject. For example, 2D face images uploaded on the Internet and latent fingerprint images on a glass can be collected without notice of the subject.
-. _Non-cooperative_ is for samples for making an artefact that need to be collected directly from an enrolled subject in a short period of time without full cooperation from the subject. For example, iris or vein images need to be acquired with a high resolution or infra-red camera, however, such images can be taken in a moment without full control of the subject.
-. _Cooperative_ is for samples for making an artefact that need to be collected directly from an enrolled subject with full cooperation from the subject. For example, the acquisition of a detailed 3D face scan of the subject takes time and requires full cooperation from the subject.
-
-*Application Note {counter:remark_count}*:: The above distribution of modalities per level is subject to modification depending on the evolution of technologies and usage. The current distribution is to be seen as guidance for the evaluator, who will have to adapt the rating to state-of-the-art.
+. _Without notice_ is for making an artefact with samples that can be collected without any contact with an enrolled subject. For example, 2D face images uploaded on the Internet and latent fingerprint images on a glass can be collected without notice of the subject.
+. _Non-cooperative_ is for making an artefact with samples that need to be collected directly from an enrolled subject in a short period of time without full cooperation from the subject. For example, iris or vein images need to be acquired with a high resolution or infrared camera, however, such images can be taken in a moment without full control of the subject.
+. _Cooperative_ is for making an artefact with samples that need to be collected directly from an enrolled subject with full cooperation from the subject. For example, the acquisition of a detailed 3D face scan of the subject takes time and requires full cooperation from the subject.
 
 *Application Note {counter:remark_count}*:: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Without notice_.
 
