@@ -151,7 +151,7 @@ However, the Biometric System shall use this Secure Execution Environment correc
 
 * The Biometric System shall not transmit any plaintext biometric data outside of the Secure Execution Environment.
 
-If the Biometric System stores any part of the biometric data outside the Secure Execution Environment, the Biometric System shall protect such data so that any entities running outside the Secure Execution Environment can’t get access to any plaintext biometric data. ST author shall explain what biometric data resides outside the Secure Execution Environment as required by <<BIOSD>> and if no data resides outside the environment, requirements below is implicitly satisfied.
+If the Biometric System stores any part of the biometric data outside the Secure Execution Environment, the Biometric System shall protect such data so that any entities running outside the Secure Execution Environment can not get access to any plaintext biometric data. ST author shall explain what biometric data resides outside the Secure Execution Environment as required by <<BIOSD>> and if no data resides outside the environment, requirements below is implicitly satisfied.
 
 * The Biometric System shall not store any plaintext biometric data outside the Secure Execution Environment. As described in the <<BIOPP-Module>> Section TOE design, the Biometric System can store templates in the enrolment database. The Biometric System shall encrypt templates using cryptographic service provided by the mobile device within the Secure Execution Environment before storing them in the database, even if the mobile device storage itself is encrypted by the mobile device.
 * The Biometric System may overwrite encrypted biometric data in the storage when no longer needed. For example, the Biometric System may overwrite an encrypted template when it is revoked. This is an optional requirement.
@@ -225,7 +225,7 @@ Note that to fully evaluate the TOE, these SARs shall be applied to the entire T
 
 ==== Class ASE: Security Target
 
-<<PP_MD_V3.3>> doesn’t define any EAs and there is no additional EAs for <<BIOPP-Module>>.
+<<PP_MD_V3.3>> does not define any EAs and there is no additional EAs for <<BIOPP-Module>>.
 
 ==== Class ADV: Development
 
@@ -237,7 +237,7 @@ The evaluator shall take the following additional application notes into account
 
 ===== Application note for EA of AGD_OPE.1
 
-<<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<PP_MD_V3.3>> and the operational guidance doesn’t need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
+<<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<PP_MD_V3.3>> and the operational guidance does not need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
 
 There is additional application note related to EAs for FIA_MBV_EXT.3 in Section 9.3.2 [Additional application notes for AGD Class] in <<BIOSD>>. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
 
