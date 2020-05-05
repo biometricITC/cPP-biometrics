@@ -2,8 +2,8 @@
 :showtitle:
 :toc:
 :table-caption: Table
-:revnumber: 0.95
-:revdate: March 13, 2020
+:revnumber: 0.99
+:revdate: May 11, 2020
 
 == Acknowledgements
 
@@ -20,7 +20,7 @@ The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that
 
 This PP-Configuration is identified as follows:
 
-* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - version 0.95, March 13, 2020 - [CFG-MDF-BIO]
+* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - version 0.99, May 11, 2020 - [CFG-MDF-BIO]
 
 == PP-Configuration Components Statement
 
@@ -302,10 +302,10 @@ Version 0.5, May 2017.
 |Protection Profile for Mobile Device Fundamentals, Version:3.3
 
 |[#BIOPP-Module]#[BIOPP-Module]# 
-|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, March 13, 2020, Version 0.95 - [BIOPP-Module]
+|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, May 11, 2020, Version 1.0 - [BIOPP-Module]
 
 |[#BIOSD]#[BIOSD]#
-|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, March 13, 2020, Version 0.95 - [BIOSD]
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, May 11, 2020, Version 1.0 - [BIOSD]
 
 |===
 
@@ -337,5 +337,9 @@ Version 0.5, May 2017.
 |0.95
 |March 13, 2020
 |Proposed Release
+
+|0.99
+|May 11, 2020
+|Public Release (requires PP_MD_V3.3 release to move to v1.0)
 
 |===
