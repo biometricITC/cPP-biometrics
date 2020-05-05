@@ -114,24 +114,79 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 
 [cols="15,85",options="header",]
 |===
-|*Acronym* |*Meaning*
-|*BAF* |Biometric Authentication Factor
-|*CC* |Common Criteria for Information Technology Security Evaluation
-|*CEM* |Common Methodology for Information Technology Security Evaluation
-|*cPP* |collaborative Protection Profile
-|*EA* |Evaluation Activity
-|*iTC* |International Technical Community
-|*NBAF* |(Non-Biometric) Authentication Factor
-|*PAI* |Presentation Attack Instrument (artefact)
-|*PP* |Protection Profile
-|*SAR* |Security Assurance Requirement
-|*BIOSD* |Supporting Document
-|*SEE* |Secure Execution Environment
-|*SFR* |Security Functional Requirement
-|*ST* |Security Target
-|*TOE* |Target Of Evaluation
-|*TSFI* |TOE Security Functions Interface
-|*TSS* |TOE Summary Specification
+
+|Acronym
+|Meaning
+
+|*BAF* 
+|Biometric Authentication Factor
+
+|*CC* 
+|Common Criteria for Information Technology Security Evaluation
+
+|*CEM* 
+|Common Methodology for Information Technology Security Evaluation
+
+|*cPP* 
+|collaborative Protection Profile
+
+|*EA* 
+|Evaluation Activity
+
+|*FAR*
+|False Accept Rate
+
+|*FMR*
+|False Match Rate
+
+|*FNMR*
+|False Non-Match Rate
+
+|*FRR*
+|False Reject Rate
+
+|*iTC* 
+|International Technical Community
+
+|*NBAF* 
+|(Non-Biometric) Authentication Factor
+
+|*NFIQ*
+|NIST Fingerprint Image Quality
+
+|*PAD*
+|Presentation Attack Detection
+
+|*PAI* 
+|Presentation Attack Instrument (artefact)
+
+|*PP* 
+|Protection Profile
+
+|*SAR* 
+|Security Assurance Requirement
+
+|*BIOSD* 
+|Supporting Document
+
+|*SEE* 
+|Secure Execution Environment
+
+|*SFR* 
+|Security Functional Requirement
+
+|*ST* 
+|Security Target
+
+|*TOE* 
+|Target Of Evaluation
+
+|*TSFI* 
+|TOE Security Functions Interface
+
+|*TSS* 
+|TOE Summary Specification
+
 |===
 
 == Evaluation Activities for SFRs
