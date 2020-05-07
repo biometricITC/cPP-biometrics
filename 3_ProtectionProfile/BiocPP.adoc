@@ -61,7 +61,7 @@ Biometric Claim::
 	A claim that a user presenting a biometric sample is or is not the source of a specified or unspecified biometric template.
 Biometric Data::
 	Digital data created during biometric enrolment and verification processes. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected, and does not include end user information such as user name, authentication factor (unless tied to the biometric modality), demographic information, and authorizations.
-Biometric enrolment::
+Biometric Enrolment::
     The initial process of collecting biometric data samples from a person and subsequently storing the data in a reference template representing a user's identity to be used for later comparison.
 Biometric Probe::
 	Biometric sample or biometric feature set input to an algorithm for use as the subject of biometric comparison to a biometric template(s).
