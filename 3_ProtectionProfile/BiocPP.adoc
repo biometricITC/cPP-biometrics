@@ -58,11 +58,13 @@ Biometric Authentication Factor (BAF)::
 Biometric Characteristic::
 	Biological and behavioural characteristic of an individual from which distinguishing, repeatable biometric features can be extracted for the purpose of biometric recognition.
 Biometric Claim::
-	A claim that a biometric capture subject is or is not the source of a specified or unspecified biometric reference.
+	A claim that a user presenting a biometric sample is or is not the source of a specified or unspecified biometric template.
 Biometric Data::
 	Digital data created during biometric enrolment and verification processes. It encompasses raw sensor observations, biometric samples, features, templates, and/or similarity scores, among other data. This data is used to describe the information collected, and does not include end user information such as user name, authentication factor (unless tied to the biometric modality), demographic information, and authorizations.
+Biometric Enrolment::
+    The initial process of collecting biometric data samples from a person and subsequently storing the data in a reference template representing a user's identity to be used for later comparison.
 Biometric Probe::
-	Biometric sample or biometric feature set input to an algorithm for use as the subject of biometric comparison to a biometric reference(s).
+	Biometric sample or biometric feature set input to an algorithm for use as the subject of biometric comparison to a biometric template(s).
 Computer::
 	A self-contained device which is composed of a hardware platform and its system software (operating system and applications). The device is typically some sort of general purpose computing platform, such as a laptop, tablet or smartphone that is designed to be portable (though this is not required). 
 Computer User (User)::
@@ -70,13 +72,13 @@ Computer User (User)::
 Failure-To-Enroll Rate (FTE)::
 	Proportion of the population for whom the system fails to complete the enrolment process.
 False Accept Rate (FAR)::
-	Proportion of verification transactions with wrongful claims of identity that are incorrectly confirmed.
+	Proportion of verification transactions with wrongful biometric claims of identity that are incorrectly confirmed.
 False Match Rate (FMR)::
 	Proportion of zero-effort impostor attempt samples that were falsely declared to match the compared non-self template.
 False Non-match Rate (FNMR)::
 	Proportion of genuine attempt samples that were falsely declared not to match the template of the same biometric characteristic from the same user supplying the sample.
 False Reject Rate (FRR)::
-	Proportion of verification transactions with truthful claims of identity that are incorrectly denied.
+	Proportion of verification transactions with truthful biometric claims of identity that are incorrectly denied.
 (Biometric) Features::
 	Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates.
 Locked State::
