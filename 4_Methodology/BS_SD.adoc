@@ -8,6 +8,7 @@
 :revnumber: 1.0
 :revdate: May 11, 2020
 :xrefstyle: full
+:doctype: book
 
 == Foreword
 

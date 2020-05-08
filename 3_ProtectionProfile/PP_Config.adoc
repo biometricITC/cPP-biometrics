@@ -4,6 +4,7 @@
 :table-caption: Table
 :revnumber: 0.99
 :revdate: May 11, 2020
+:doctype: book
 
 == Acknowledgements
 
