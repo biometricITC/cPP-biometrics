@@ -1,0 +1,159 @@
+= Public Review Draft 1 of the Biometric iTC PP-Module & Supporting Document Overview
+:showtitle:
+:toc:
+:toclevels: 3
+:table-caption: Table
+:revnumber: 1.0
+:revdate: 2019-12-20
+:xrefstyle: full
+
+== Introduction
+
+This is an announcement of a public review period for the PP-Module and PP-Module Supporting Document from the BIO-iTC. By design these documents do not provide information about the methodology for performing Presentation Attack Detection. These are being handled as a toolkit which can be updated separately (and ideally more rapidly) without needing changes to the PP-Module and Supporting Document.
+
+This document will provide information about where to find the documents, how to provide feedback and information about the current status of the documents.
+
+Please email isec-itc-bio-info@ipa.go.jp if there are any questions about the Review process.
+
+The latest status of the Review Period, including the latest copies of any documents, can be found at the https://biometricitc.github.io/[Biometrics Security iTC page].
+
+== Review Status Phase
+The documents listed here are in the *Public Review Draft 2* phase.
+
+Publication Date:: December 20, 2019
+End of Comment Period:: February 7, 2020
+
+== Documents for Review
+
+The following are the documents included in this Public Review Draft 2 Period:
+
+.Public Review 2 Documents
+[[DocTable]]
+[cols="3,1,2",options="header"]
+|===
+|Title ^|Version ^|Link
+
+.^|collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
+^.^|0.92
+^.^|https://biometricitc.github.io/pr-draft2/MOD-BIO-enrl-v0.92DRAFT.pdf[Download PP-Module]
+
+.^|PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative Protection Profile Module for Mobile biometric enrolment and verification - for unlocking the device -
+^.^|0.92
+^.^|https://biometricitc.github.io/pr-draft2/PPC+MDF+BIO-v0.92DRAFT.pdf[Download PP-Configuration]
+
+.^|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Mobile biometric enrolment and verification - for unlocking the device -
+^.^|0.92
+^.^|https://biometricitc.github.io/pr-draft2/SD-BIO-enrl-v0.92DRAFT.pdf[Download Supporting Document]
+
+.^|Toolbox Overview for Testing Compliance for Mobile Biometric Enrolment and Verification
+^.^|0.5
+^.^|https://biometricitc.github.io/pr-draft2/BIO-PAD-Toolbox-Overview-v0.5DRAFT.pdf[Download Toolbox Overview]
+
+|===
+
+The following are the documents to use in support of the Public Review Draft 1 Period.
+
+.Supporting Documents
+[[SupDocTable]]
+[cols="1,1",options="header"]
+|===
+|Title ^|Link
+
+.^|Comment Matrix
+^|https://biometricitc.github.io/pr-draft1/BIO-iTC-CommentsMatrix.xlsx[Download Comment Matrix]
+
+
+|===
+
+== Document Release Process
+The BIO-iTC follows the document release process below for the publication of documents. Generally the PP (PP-Module and PP-Configuration) and SD would be released at the same time.
+
+[ditaa]
+....
+                                  
+    +----------+    +----------+   +----------+   +----------+   +----------+
+    |          |    |          |   | Public   |   |  cYEL    |   | Public   |
+    | Internal |    |  Public  |   | Review   |   |  Public  |   | Review   |
+    |  Draft   |--> |  Review  |-->| Draft 1  |-->|  Review  |-->| Draft 2  |-+
+    |          |    |  Draft 1 |   | Update   |   |  Draft 2 |   | Update   | |
+    |          |    |  (45d)   |   | (60d)    |   |  (45d)   |   | (60d)    | |
+    +----------+    +----------+   +----------+   +----------+   +----------+ |
+                                                                              |
+            +-----------------------------------------------------------------+
+            |   +----------+   +----------+   +-----------+
+            |   |          |   |          |   |           |
+            |   | Proposed |   | Proposed |   | Final     |
+            +-->|  Draft   |-->|  Update  |-->| Document  |
+                |          |   |          |   | Published |
+                | (30d)    |   | (10d)    |   |           |
+                +----------+   +----------+   +-----------+
+....
+
+.Review Timeline
+[[timeline]]
+|===
+|Phase |Time |Description
+
+|Internal Draft
+|
+|The normal, pre-release process for creating the documents
+
+|Public Review Draft 1
+|45 days
+|iTC has voted according to Terms of Reference to release this version for public review. Public (i.e. from non-iTC participants) comments are accepted during this period
+
+|Public Review Draft 1 Update
+|Up to 60 days
+|The iTC will review all received comments and update the documents accordingly
+
+|Public Review Draft 2
+|45 days
+|iTC has voted according to Terms of Reference to release this version for public review. Public (i.e. from non-iTC participants) comments are accepted during this period
+
+PAD Toolbox drafts will be published with this review (final review on toolboxes may proceed independently from rest of documents).
+
+|Public Review Draft 2 Update
+|Up to 60 days
+|The iTC will review all received comments and update the documents accordingly
+
+|Public Review Draft 3 (Optional, not shown)
+|45 days
+|iTC has voted according to Terms of Reference to release this version for public review. Public (i.e. from non-iTC participants) comments are accepted during this period
+
+|Public Review Draft 3 Update (Optional, not shown)
+|Up to 60 days
+|The iTC will review all received comments and update the documents accordingly
+
+|Proposed Draft
+|30 days
+|iTC has voted according to Terms of Reference to propose this as the final document. Public (i.e. from non-iTC participants) comments are accepted during this period
+
+|Proposed Update
+|10 days
+|iTC reviews any further comments and prepares the document for final publishing (updating all dates, producing official versions for publication)
+
+|Final Document Published
+|
+|Documents are posted to Common Criteria Portal
+
+|===
+
+The iTC may decide, based on the comments received during the Public Review Draft 2 period, that a Public Review Draft 3 period is needed, though the intent is to move to Proposed Draft after this comment period. Public announcement of a  proposed draft will be made once all comments have been addressed.
+
+=== Review Process
+There are two ways to contribute comments and suggestions to the iTC. The first is through GitHub, the second by spreadsheet. It should be noted however that comments that are received via the spreadsheet will be added to the GitHub platform to allow for a comprehensive discussion. Also, feedback for comments is only provided via the answers in the GitHub comments. 
+
+Each comment should have a suggested resolution be proposed if a change is needed to the document.
+
+==== GitHub Review Process
+To use GitHub to submit comments, you must have a GitHub account (and it is assumed you know how to use GitHub). Each comment should be submitted as an individual https://github.com/biometricITC/cPP-biometrics/issues[Issue] with the Label "Public Review" assigned. Pull Requests created for any issues will be linked to these Issues for traceability.
+
+==== Comment Matrix Spreadsheet Review Process
+In the <<SupDocTable>> table there is a link to the Comment Matrix spreadsheet. There are instructions for using the Matrix on the second worksheet. Please create a separate copy of the spreadsheet for each document.
+
+Email the spreadsheets to isec-itc-bio-info@ipa.go.jp.
+
+== Additional Notes
+Between the closing of the Public Review Draft 1 period and the publication of Public Review Draft 2, the Biometrics Security iTC Essential Security Requirements has been updated. The current version of the ESR can be found https://www.commoncriteriaportal.org/communities/bio-esr.pdf[here].
+
+The change to the ESR means that the PAD testing has been moved to an optional requirement instead of mandatory.
