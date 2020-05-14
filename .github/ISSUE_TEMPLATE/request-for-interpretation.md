@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Before submitting your request, please check https://bimetricitc.github.io/TD/tech-dec.html for the current set of Technical Decisions.**
+**Before submitting your request, please check https://biometricitc.github.io/TD/tech-dec.html for the current set of Technical Decisions.**
 
 **Requesting Organization:**
 Provide contact information regarding the request.
