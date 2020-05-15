@@ -1,6 +1,6 @@
 = Internal Doc Variables README
 
-At the heading of each file there are a number of strings that are used to more easily ensure consistent use of common references. 
+At the heading of each file there are a number of strings that are used to more easily ensure consistent use of common references.
 
 == iTC variables
 In many of the templates there will be a series of lines after the header all starting with :iTC.
