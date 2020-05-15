@@ -1,6 +1,6 @@
 Mobile Device Biometric System Use Case
 
-August 3, 2017
+August 3, 2017 (spelling and URL reference update on May 15, 2020)
 
 Background
 ==========
@@ -56,7 +56,7 @@ an integrated one or even on a mobile device which does not include a
 built-in biometric system.
 
 Note: The following paragraph is a response to the Nils comment
-(*https://github.com/nils-tekampe/cPP-biometrics/issues/38*). I am not
+(*https://github.com/biometricITC/cPP-biometrics/issues/38*). I am not
 sure that the here is the right place to insert below paragraph so it
 may be moved anywhere in the future.
 
@@ -72,7 +72,7 @@ role is normally acting remotely and could be the Mobile Device
 Management (MDM) Administrator acting through an MDM Agent (which is
 assigned the administrator role). In the case where the device is not
 enrolled in a management system, the user is considered to be the
-administator.
+administrator.
 
 Use Cases
 =========
@@ -95,7 +95,7 @@ Use case 1: XXX cPP
 Use case 2: YYY cPP (this document)
 
 Note: The above modification is a response to Nils comment \#40
-(https://github.com/nils-tekampe/cPP-biometrics/issues/40)
+(https://github.com/biometricITC/cPP-biometrics/issues/40)
 
 **\[USE CASE 1: Mobile device biometric authentication on “unlocked”
 device\]**
@@ -116,7 +116,7 @@ mobile device itself should be handled through another CC evaluation
 .
 
 Note: The above modification is a response to Nils comment \#40
-(https://github.com/nils-tekampe/cPP-biometrics/issues/40)
+(https://github.com/biometricITC/cPP-biometrics/issues/40)
 
 **\[USE CASE 2: Mobile device biometric authentication for security
 sensitive service\]**
@@ -136,7 +136,7 @@ in depth vulnerability analysis than the use case 1.
 The target of this cPP is use case 2.
 
 Note: The above modification is a response to Nils comment \#40
-(https://github.com/nils-tekampe/cPP-biometrics/issues/40)
+(https://github.com/biometricITC/cPP-biometrics/issues/40)
 
 **\[USE CASE 3: Mobile devices biometric authentication for security
 sensitive service at various environments\]**
