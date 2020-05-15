@@ -1,0 +1,20 @@
+= Internal Doc Variables README
+
+At the heading of each file there are a number of strings that are used to more easily ensure consistent use of common references. 
+
+== iTC variables
+In many of the templates there will be a series of lines after the header all starting with :iTC.
+
+  :iTC-longname: Biometrics Security
+  :iTC-shortname: CBIOiTC
+  :iTC-email: isec-itc-bio-info@ipa.go.jp
+  :iTC-website: https://biometricitc.github.io/
+  :iTC-GitHub: https://github.com/biometricITC/
+
+There may be more or less lines depending on the file, but all will follow this basic structure.
+
+The purpose of these lines is to make it easier to enter this information within the template without needing to edit it individually every time. This can be done by entering the name between the colons inside curly brackets {}. When this is done, the value entered in the line above will be replaced when the file is processed.
+
+For example, entering {iTC-website} would replace that with the URL specified in the line in the heading.
+
+Using these variables will allow you to maintain consistency throughout the document.
