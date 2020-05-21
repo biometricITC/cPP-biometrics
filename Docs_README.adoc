@@ -6,7 +6,7 @@ At the heading of each file there are a number of strings that are used to more 
 In many of the templates there will be a series of lines after the header all starting with :iTC.
 
   :iTC-longname: Biometrics Security
-  :iTC-shortname: CBIOiTC
+  :iTC-shortname: BIO-iTC
   :iTC-email: isec-itc-bio-info@ipa.go.jp
   :iTC-website: https://biometricitc.github.io/
   :iTC-GitHub: https://github.com/biometricITC/
