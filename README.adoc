@@ -1,0 +1,81 @@
+= Biometrics Security iTC (BIO-iTC)
+
+image::https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg[link="code_of_conduct.adoc]
+
+== Introduction
+From the CCDB-established Working Group, the Biometrics Security iTC (BIO-iTC for short) was formed. This iTC is focused on biometric systems used for authentication and verification. 
+
+This is the primary repository for the Biometrics Security iTC and its work on creating collaborative Protection Profiles and related supporting documents. The Common Criteria Portal page can be found https://www.commoncriteriaportal.org/communities/Bio.cfm[here].
+
+Check out the main page for the iTC at https://biometricitc.github.io/.
+
+== The Technical Community
+The BIO-iTC consists of members of Certification Bodies, labs, vendors and academia working together to create requirements for biometric security testing. 
+
+If you are interested to join the iTC and become a member of the mailing list, please send an email with a short request to isec-itc-bio-info@ipa.go.jp.
+
+== Code of Conduct
+The BIO-iTC expects participants to follow a code of conduct. This is laid out in the https://github.com/biometricITC/Administration/N58_BS%20iTC%20ToR%20-%20v0.6%20final.pdf[Terms of Reference] and in the https://github.com/biometricITC/Administration/code_of_conduct.adoc[Code of Conduct].
+
+== Contributing to the BIO-iTC
+The BIO-iTC welcomes contributions to the ongoing work of creating and maintaining the cPP and SD. Issues and Pull Requests can be submitted at any time for review by the iTC. New Issues can be submitted https://github.com/biometricITC/cPP-biometrics/issues/new/choose[here].
+
+The BIO-iTC uses asciidoc files as the source files for generating the cPP and all related documents. Asciidoc is a text format that can be read directly in GitHub as well as offline using any number of editors (including simple text editors). https://asciidoctor.org[Asciidoctor] is used as the post-processor for generating the final (i.e. PDF or HTML) output from these files. The format of these files is fairly simple to understand.
+
+A syntax guide for the main flags you are likely to run into can be found in the the iTC Team Tools WG repository https://github.com/itc-wgtools/cPP-Tools/tree/master/User%20Guidance[Syntax Guide]. This file is designed to be viewed as both source and output (to see what the flags do). Questions about the syntax can be posted to as an https://github.com/itc-wgtools/cPP-Tools/tree/master/User%20Guidance[Issue] to that WG.
+
+=== BIO-iTC Workflow
+The BIO-iTC generally utilizes a GitHub workflow for accepting new changes into the documents. An outline of this workflow can be found at the https://itc-wgtools.github.io/admin-guide/Maint-Project-Flow.html[iTC Documentation Workflow] page provided by the iTC Team Tools WG.
+
+== Branches
+The BIO-iTC has three primary branches:
+
+[cols=".^1,.^3",options="header"]
+|===
+|Branch
+|Description
+
+|Master
+|The current, approved released version of the documents.
+
+|Develop
+|The active branch for next version of the documents.
+
+|Interpretation
+|This branch is for working on technical decisions to the current, published release. 
+
+|===
+
+All Pull Requests should be made to the https://github.com/biometricITC/cPP-biometrics/tree/develop[Develop] branch.
+
+== Files Description
+This table provides an overview of the files in the repository.
+
+[cols=".^1,.^1,.^3",options="header"]
+|===
+
+|Folder
+|File
+|Description
+
+|Protection Profile
+|BiocPP.adoc
+|The cPP/PP-Module
+
+|Supporting Documents
+|BS_SD.adoc
+|The Supporting Documentation for the associated cPP/PP-Module
+
+|PP-Configurations
+|PP_MD/PP_Config.adoc
+|The PP-Configuration for the PP_MD (MDFPP)
+
+|PP-Configurations
+|PP_OS/PP_Config-OS.adoc
+|The PP-Configuration for the PP_OS (General Purpose Operating System PP)
+
+|Use Case Descriptions
+|
+|These define the use case scenarios for the biometric systems under consideration
+
+|===
