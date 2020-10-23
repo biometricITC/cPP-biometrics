@@ -334,7 +334,7 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 *Enrolment templates*
 
-The evaluator shall examine the TSS to understand how the TOE generates templates of sufficient quality from samples at enrolment. The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
+The evaluator shall examine the TSS to understand how the TOE generates templates of sufficient quality from samples at enrolment (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
 
 The evaluator shall examine the <<MBE assessment criteria for samples, assessment criteria for samples>> to determine how the TOE creates the templates from samples based on this assessment criteria. The <<MBE assessment criteria for samples, assessment criteria for samples>> may include;
 
@@ -483,7 +483,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE checks quality of samples captured. The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when low quality samples are presented to the TOE.
+The evaluator shall examine the TSS to understand how the TOE checks quality of samples captured (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when low quality samples are presented to the TOE.
 
 The evaluator shall examine the <<MBV assessment criteria for samples, assessment criteria for samples>> to check how the TOE checks the quality of samples based on its assessment criteria. The <<MBV assessment criteria for samples, assessment criteria for samples>> may include;
 
@@ -1679,4 +1679,5 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO/IEC 19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
 - [#ISO/IEC 19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems – Part 1: Framework, Under development.  
 - [#ISO/IEC 30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection — Part 3: Testing and reporting, First edition.        
-- [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org
+- [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
+- [#Biometric quality]#[Biometric quality]# Biometric quality: a review of fingerprint, iris, and face - July 2, 2014, https://link.springer.com/article/10.1186/1687-5281-2014-34.
