@@ -5,8 +5,8 @@
 :table-caption: Table
 :imagesdir: images
 :icons: font
-:revnumber: 1.0
-:revdate: May 11, 2020
+:revnumber: 1.0.1
+:revdate: November 10, 2020
 :xrefstyle: full
 :doctype: book
 
@@ -64,6 +64,10 @@ Biometric Security international Technical Community (BIO-iTC)
 |1.0
 |May 11, 2020
 |Public Release
+
+|1.0.1
+|November 10, 2020
+|Technical Decision BIO0002
 
 |===
 
