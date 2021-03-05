@@ -206,7 +206,7 @@ The TOE is reliant on the computer itself to provide overall security of the sys
 * Invoking the TOE to enrol and verify the user and take appropriate actions based on the decision of the TOE
 * Providing the Secure Execution Environment that guarantees the TOE and its data to be protected with respect to confidentiality and integrity
 
-The specification of the above security functions is out of scope of this PP-Module and expected to be included as part of the base PP. 
+The specification of the above security functions is out of scope of this PP-Module and are part of the base PP. 
  
 [#img-TOE-relations] 
 .Generic relations between the TOE and the computer environment
