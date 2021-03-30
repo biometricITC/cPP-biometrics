@@ -299,7 +299,7 @@ Requirements to provide a biometric verification mechanism are defined in FIA_MB
 *Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
 
 [[O.Enrol]]O.Enrol::
-The TOE shall implement the functionality to enrol a user for biometric verification and bind the template to the user only after successful authentication of the user to the TOE environment using an alternative authentication mechanism. The TOE shall create the sufficient quality of templates in order to meet the relevant error rates for biometric verification.
+The TOE shall implement the functionality to enrol a user for biometric verification and bind the template to the user only after successful authentication of the user to the TOE environment using an alternative authentication mechanism. The TOE shall create templates of sufficient quality in order to meet the relevant error rates for biometric verification.
 
 SFR Rationale:
 
