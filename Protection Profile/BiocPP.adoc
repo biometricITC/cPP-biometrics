@@ -296,18 +296,18 @@ SFR Rationale:
 
 Requirements to provide a biometric verification mechanism are defined in FIA_MBV_EXT.1 in which ST author can specify the relevant criteria for its security relevant error rates. FIA_MBV_EXT.2 requires the TOE to only use samples of sufficient quality to verify a user with an adequate reliability.
 
-*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
+*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR. Corresponding error rates are specified in FIA_MBV_EXT.1.
 
 [[O.Enrol]]O.Enrol::
-The TOE shall implement the functionality to enrol a user for biometric verification and bind the template to the user only after successful authentication of the user to the TOE environment using an alternative authentication mechanism. The TOE shall create the sufficient quality of templates in order to meet the relevant error rates for biometric verification.
+The TOE shall implement the functionality to enrol a user for biometric verification and bind the template to the user only after successful authentication of the user to the TOE environment using an alternative authentication mechanism. The TOE shall create templates of sufficient quality in order to meet the relevant error rates for biometric verification.
 
 SFR Rationale:
 
 Requirements to provide a biometric enrolment mechanism are defined in FIA_MBE_EXT.1. Requirements for quality of template are defined in FIA_MBE_EXT.2.
 
-*Application Note {counter:remark_count}*:: A user shall be authenticated using a NBAF to enrol to the biometric system.
+*Application Note {counter:remark_count}*:: A user enroling to the biometric system will have been authenticated using a NBAF, as specified in FIA_MBE_EXT.1.1.
 
-*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
+*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR. Corresponding error rates are specified in FIA_MBV_EXT.1.
 
 [[O.Protection]]O.Protection::
 The TOE shall protect biometric data using the Secure Execution Environment provided by the TOE environment during runtime and storage.
@@ -316,14 +316,14 @@ SFR Rationale:
 
 Requirements to control access to the template defined in FPT_PBT_EXT.1. FPT_BDP_EXT.1, FPT_BDP_EXT.2 and FPT_BDP_EXT.3 require the TOE to protect the biometric data with support from the TOE environment. Optional requirements to protect the residual biometric data are defined as FDP_RIP.2 in <<Optional Requirements>>.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e., the computer) satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
 
 === Security Objectives for the Operational Environment
 
 [[OE.Protection]]OE.Protection::
 The TOE environment shall provide a Secure Execution Environment to protect the TOE, the TOE configuration and biometric data during runtime and storage.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
 
 === Security Objectives Rationale
 The following table describes how the assumptions, threats, and organizational security policies map to the security objectives.
@@ -399,7 +399,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 *FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
 
-*Application Note {counter:remark_count}*:: User shall be authenticated by the computer using the NBAF before beginning biometric enrolment.
+*Application Note {counter:remark_count}*:: A user enroling to the biometric system will have been authenticated using a NBAF, as specified in FIA_MBE_EXT.1.1.
 
 ===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
 
@@ -413,16 +413,12 @@ This section lists SFRs for the biometric enrolment and verification.
 
 *FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _defined value_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _defined value_].
 
-*Application Note {counter:remark_count}*:: If the TOE supports multiple modalities, the ST author may iterate the SFR to define different error rates for each modality.
-
-*Application Note {counter:remark_count}*:: ST author shall select or assign those modalities in FIA_MBV_EXT.1.1 for which <<BIOSD>> defines the Evaluation Activities.
-
-*Application Note {counter:remark_count}*:: While the value of FMR, FAR, FNMR and FRR shall be assigned by the ST author, the ST author should consider the following factors for setting those values.
+*Application Note {counter:remark_count}*:: Consider the following factors when setting values of FMR, FAR, FNMR and FRR.
 +
 [loweralpha]
 . Allowed maximum values defined in the standards
 +
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4^) and 0.0001% (1 in 10^6^) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. While the PP-Module does not provide any recommendation for those error rates, the ST author should set appropriate error rates referring those values. 
+For example, <<NIST800-63B>> requires that FMR be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4^) and 0.0001% (1 in 10^6^) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. While the PP-Module does not provide any recommendation for those error rates, the ST author should set appropriate error rates referring those values. 
 +
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
 
@@ -445,25 +441,25 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *FPT_BDP_EXT.1.1* The TSF shall process any plaintext biometric data used to generate templates and perform sample matching within the security boundary of the Secure Execution Environment.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment protects biometric data in detail.
 
 ===== FPT_BDP_EXT.2 Biometric data transmission [[FPT_BDP_EXT.2]]
 
 *FPT_BDP_EXT.2.1* The TSF shall not transmit any plaintext biometric data outside the security boundary of the Secure Execution Environment.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment protects biometric data in detail.
 
 ===== FPT_BDP_EXT.3 Biometric data storage [[FPT_BDP_EXT.3]]
 
 [[FPT_BDP_EXT.3.1]]*FPT_BDP_EXT.3.1* The TSF shall not store any plaintext biometric data outside the security boundary of the Secure Execution Environment.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment protects biometric data in detail.
 
 ===== FPT_PBT_EXT.1 Protection of biometric template [[FPT_PBT_EXT.1]]
 
 *FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_, [*assignment*: _other circumstances_]].
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment protects biometric data in detail.
 
 === TOE Security Functional Requirements Rationale
 
@@ -645,7 +641,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 *FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
 
-*Application Note {counter:remark_count}*:: Artefacts that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of artefact is defined in <<BIOSD>>.
+*Application Note {counter:remark_count}*:: Artefacts that the TOE prevent and relevant criteria for its security relevant error rates for each type of artefact is defined in <<BIOSD>>.
 
 === User data protection (FDP)
 
@@ -653,7 +649,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 *FDP_RIP.2.1* The TSF shall ensure that any previous information content of biometric data is made unavailable upon the [*selection*: _allocation of the resource to, deallocation of the resource from_] all objects.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment protects biometric data in detail.
 
 == Extended Component Definitions
 This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <<Optional Requirements>>. 
