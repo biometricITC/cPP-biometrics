@@ -413,8 +413,6 @@ This section lists SFRs for the biometric enrolment and verification.
 
 *FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _defined value_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _defined value_].
 
-*Application Note {counter:remark_count}*:: If the TOE supports multiple modalities, not all modalities need to define the Evaluation Activities.
-
 *Application Note {counter:remark_count}*:: Consider the following factors when setting values of FMR, FAR, FNMR and FRR.
 +
 [loweralpha]
