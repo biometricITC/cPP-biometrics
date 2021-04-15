@@ -655,15 +655,15 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-== Evaluation Activities for PP_MD Requirements
+== Evaluation Activities for PP_MD_V3.3 Requirements
 In addition to the EAs required by the base PP, the evaluator shall perform the following additional EAs to ensure that the base PP's security functionaltiy is maintained by the addition of the PP-Module.
 
 === Modified SFRs from the base PP
 ==== Protection of the TSF (FPT)
 ===== Key Storage (FPT_KST)
-*FPT_KST_EXT.1*:: Refer to the EA for FPT_KST_EXT.1 in the PP_MD including biometric data as part of the plaintext key materials.
+*FPT_KST_EXT.1*:: Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
 
-*FPT_KST_EXT.2*:: Refer to the EA for FPT_KST_EXT.2 in the PP_MD including biometric data as part of the plaintext key materials.
+*FPT_KST_EXT.2*:: Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
 
 == Evaluation Activities for Selection-Based Requirements 
 

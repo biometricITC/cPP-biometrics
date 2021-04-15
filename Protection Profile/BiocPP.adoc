@@ -12,9 +12,12 @@
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
 
+:sectnums!:
 
 == Acknowledgements
 This collaborative Protection Profile module (PP-Module) was developed by the {iTC-longame} international Technical Community ({iTC-shortname}) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+
+:sectnums:
 
 == Preface
 
@@ -314,7 +317,7 @@ The TOE shall protect biometric data using the Separate Execution Environment pr
 
 SFR Rationale:
 
-Requirements to control access to the template defined in FPT_PBT_EXT.1. FPT_BDP_EXT.1, FPT_KST_EXT.1 and FPT_KST_EXT.2 require the TOE to protect the biometric data with support from the TOE environment. Optional requirements to protect the residual biometric data are defined as FDP_RIP.2 in <<Optional Requirements>>.
+Requirements to control access to the template defined in FPT_PBT_EXT.1. FPT_BDP_EXT.1, FPT_KST_EXT.1 (refined from <<PP_MD_V3.3>>) and FPT_KST_EXT.2 (refined from <<PP_MD_V3.3>>) require the TOE to protect the biometric data with support from the TOE environment. Optional requirements to protect the residual biometric data are defined as FDP_RIP.2 in <<Optional Requirements>>.
 
 *Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e., the computer) satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
 
