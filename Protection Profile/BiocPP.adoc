@@ -246,12 +246,18 @@ The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR an
 
 === Conformance statement
 
-As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, this PP-Module:
+As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, when the base PP is the PP_MD_V3.3, this PP-Module:
 
 * conforms to the requirements of Common Criteria v3.1, Revision 5,
 * is Part 2 extended,
+* is Part 3 extended,
 * all assurance requirements are inherited from the base PP,
-* does not claim conformance to any other security functional packages.
+* does not claim conformance to any other security functional packages or Protection Profiles.
+
+The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
+
+* PP-Module for Virtual Private Network (VPN) Clients, Version 2.2
+* PP-Module for MDM Agents, Version 1.0
 
 === Evaluation activities
 
