@@ -411,7 +411,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 *FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection*: _fingerprint, eye, face, voice, vein_, [*assignment*: _other modality_]].
 
-*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _defined value_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _defined value_].
+*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _a value equal to or less than to 1:1000_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _a value equal to or less than 10%_].
 
 *Application Note {counter:remark_count}*:: Consider the following factors when setting values of FMR, FAR, FNMR and FRR.
 +
@@ -424,11 +424,11 @@ For consistency in language throughout this document, referring to a “lower”
 
 . Technical limitation
 +
-Although different modalities are available for the biometric verification, all modalities may not achieve the same level of accuracy. For modalities that have different target of error rates, the ST author may iterate the requirement to set appropriate error rates for each modality.
+Although different modalities are available for the biometric verification, all modalities may not achieve the same level of accuracy. For modalities that have different error rates, the ST author may iterate the requirement to set appropriate error rates for each modality.
 
 . Number of test subjects required for the performance testing
 +
-Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normally the target error rates will directly influence the size of the test subjects, the time and cost of the testing. <<BIOSD>> describes how those error rates should be evaluated in an objective manner.
+Error rates defined in the SFR are evaluated based on <<BIOSD>>. Normally the error rates will directly influence the size of the test subjects, the time and cost of the testing. <<BIOSD>> describes how those error rates should be evaluated in an objective manner.
 
 ===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
 
@@ -798,7 +798,7 @@ Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
 *FIA_MBV_EXT.1.1* The TSF shall provide a biometric verification mechanism using [*selection:* _fingerprint, eye, face, voice, vein_, [*assignment:* _other modality_]].
 
-*FIA_MBV_EXT.1.2* The TSF shall provide a biometric verification mechanism with the [*selection:* _FMR, FAR_] not exceeding [*assignment:* _defined value_] and [*selection:* _FNMR, FRR_] not exceeding [*assignment:* _defined value_].
+*FIA_MBV_EXT.1.2* The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _a value equal to or less than to 1:1000_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _a value equal to or less than 10%_].
 
 ===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification
 Hierarchical to: No other components.
