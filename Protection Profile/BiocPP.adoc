@@ -457,8 +457,6 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_, [*assignment*: _other circumstances_]].
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment protects biometric data in detail.
-
 === TOE Security Functional Requirements Rationale
 
 The following rationale provides justification for each security objective for the TOE, showing that the SFRs are suitable to meet and achieve the security objectives:
