@@ -403,9 +403,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 ===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
 
-*FIA_MBE_EXT.2.1* The TSF shall only use biometric samples of sufficient quality for enrolment. As such, sample data shall have [*selection*: _no independent quality metric, [*assignment*: quality metric standard]_].
-
-*Application Note {counter:remark_count}*:: ST author may specify quality standards if the TOE follows such standard, or provide a description of the metrics used.
+*FIA_MBE_EXT.2.1* The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
 
 ===== FIA_MBV_EXT.1 Biometric verification [[FIA_MBV_EXT.1]]
 
