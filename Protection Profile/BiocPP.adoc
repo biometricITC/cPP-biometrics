@@ -409,7 +409,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 ===== FIA_MBV_EXT.1 Biometric verification [[FIA_MBV_EXT.1]]
 
-*FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection*: _fingerprint, eye, face, voice, vein_, [*assignment*: _other modality_]].
+*FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection*: _eye, face, fingerprint, vein_].
 
 *FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _defined value_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _defined value_].
 
@@ -796,7 +796,7 @@ Hierarchical to: No other components
 
 Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBV_EXT.1.1* The TSF shall provide a biometric verification mechanism using [*selection:* _fingerprint, eye, face, voice, vein_, [*assignment:* _other modality_]].
+*FIA_MBV_EXT.1.1* The TSF shall provide a biometric verification mechanism using [*selection:* _eye, face, fingerprint, vein_].
 
 *FIA_MBV_EXT.1.2* The TSF shall provide a biometric verification mechanism with the [*selection:* _FMR, FAR_] not exceeding [*assignment:* _defined value_] and [*selection:* _FNMR, FRR_] not exceeding [*assignment:* _defined value_].
 
