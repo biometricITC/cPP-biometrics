@@ -432,7 +432,6 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *FIA_MBV_EXT.2.1* The TSF shall only use biometric samples of sufficient quality for verification. As such, sample data shall have [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
 
-*Application Note {counter:remark_count}*:: ST author may specify quality standards if the TOE follows such standard, or provide a description of the metrics used.
 
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
