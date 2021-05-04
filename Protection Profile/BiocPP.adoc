@@ -449,7 +449,7 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
 
-*FPT_BDP_EXT.1.1* Processing of plaintext biometric data used to generate templates and perform sample matching shall be hardware-isolated from the OS on the TSF in runtime.
+*FPT_BDP_EXT.1.1* Processing of plaintext biometric data used to generate templates and perform sample comparisons shall be hardware-isolated from the OS on the TSF in runtime.
 
 *Application Note {counter:remark_count}*:: If biometric data processing occurs in a separate execution environment on the same Application Processor as the OS, the biometric data must be cleared from RAM immediately after use, and at least, must be wiped with the device is locked.
 
