@@ -326,8 +326,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description
-** If an independent quality metric is claimed, the TSS must include information about the metric
-** If no independent quality metric is claimed, the TSS must include a desription of how quality is measured
+** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include information about the metric
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
 . Supplementary information ([#MBE assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
