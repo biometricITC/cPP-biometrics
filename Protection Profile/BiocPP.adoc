@@ -409,9 +409,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 ===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
 
-*FIA_MBE_EXT.2.1* The TSF shall create templates of sufficient quality.
-
-*Application Note {counter:remark_count}*:: ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
+*FIA_MBE_EXT.2.1* The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
 
 ===== FIA_MBV_EXT.1 Biometric verification [[FIA_MBV_EXT.1]]
 
@@ -438,9 +436,8 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 ===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
 
-*FIA_MBV_EXT.2.1* The TSF shall only use samples of sufficient quality to verify the user.
+*FIA_MBV_EXT.2.1* The TSF shall only use biometric samples of sufficient quality for verification. As such, sample data shall have [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
 
-*Application Note {counter:remark_count}*:: ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
 
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
@@ -921,3 +918,8 @@ Hierarchical to: 	No other components
 Dependencies: 	No dependencies
 
 *FPT_PBT_EXT.1.1* The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_], [*assignment*: _other circumstances_]].
+
+== Biometrics Management Description (BMD)
+The documentation of the product's biometric functionality and performance should be detailed enough that, after reading, the evaluator will thoroughly understand the product's biometric functionality and performance. As some of this information may be considered confidential to the developer yet still necessary for understanding, this documentation is not required to be part of the TSS and can be submitted as a separate document marked as developer proprietary.
+
+Whether to use the BMD for any information is up to the developer. When used, a non-proprietary summary of the contents of the BMD must be provided in the TSS.
