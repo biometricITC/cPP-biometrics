@@ -383,7 +383,7 @@ The SFRs listed in this section are defined in the <<PP_MD_V3.3>> and relevant t
 
 *FPT_KST_EXT.1.1*:: The TSF shall not store any plaintext key material *and biometric data* in readable non-volatile memory.
 
-*Application Note {counter:remark_count}*:: This SFR is functionally identical to what is defined in the <<PP_MD_V3.3>> with the addition of biometric data as key materials to be protected. Plaintext biometric data to be protected includes any data used to generate templates and perform sample matching from the initial data capture to the match results.
+*Application Note {counter:remark_count}*:: This SFR is functionally identical to what is defined in the <<PP_MD_V3.3>> with the addition of biometric data as key materials to be protected. Plaintext biometric data to be protected includes any data used to generate templates or perform sample comparisons from the initial data capture, as well as the comparison score.
 
 ===== FPT_KST_EXT.2 No Key Transmission [[FPT_KST_EXT.2]]
 
