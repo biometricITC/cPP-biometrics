@@ -430,7 +430,7 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 ===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
 
-*FIA_MBV_EXT.2.1* The TSF shall only use biometric samples of sufficient quality for verification. As such, sample data shall have [*selection*: _no independent quality metric, [*assignment*: quality metric standard]_].
+*FIA_MBV_EXT.2.1* The TSF shall only use biometric samples of sufficient quality for verification. As such, sample data shall have [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
 
 *Application Note {counter:remark_count}*:: ST author may specify quality standards if the TOE follows such standard, or provide a description of the metrics used.
 
