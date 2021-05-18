@@ -101,7 +101,7 @@ This Supporting Document was developed by the Biometric Security international T
 
 === Technology Area and Scope of Supporting Document
 
-This Supporting Document (BIOSD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>> that is intended for use with the base PP identified in the appropriate PP-Configuration.
+This Supporting Document (BIOSD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>> that is intended for use with the Base-PP identified in the appropriate PP-Configuration.
 
 This BIOSD is mandatory for evaluations of TOEs that claim conformance to <<BIOPP-Module>>.
 
@@ -121,7 +121,7 @@ In general, if all EAs (for both SFRs and SARs) are successfully completed in an
 
 ==== Glossary
 
-For definitions of standard CC terminology see <<CC1>>. For definitions of biometrics and the computer, see <<BIOPP-Module>> and the base PP.
+For definitions of standard CC terminology see <<CC1>>. For definitions of biometrics and the computer, see <<BIOPP-Module>> and the Base-PP.
 
 ==== Acronyms
 
@@ -249,7 +249,7 @@ EAs in this BIOSD provide specific or more detailed guidance to evaluate the bio
 
 This Section explains how EAs for SFRs are derived from the particular CEM work units identified in Assessment Strategy to show the consistency and compatibility between the CEM work units and EAs in this BIOSD.
 
-Assessment Strategy for ASE_TSS requires the evaluator to examine that the TSS provides sufficient design descriptions and its verdicts will be associated with the CEM work unit ASE_TSS.1-1. Evaluator verdicts associated with the supplementary information will also be associated with ASE_TSS.1-1, since the requirement to provide such evidence is specified in ASE in the base PP from which SARs of <<BIOPP-Module>> are inherited.
+Assessment Strategy for ASE_TSS requires the evaluator to examine that the TSS provides sufficient design descriptions and its verdicts will be associated with the CEM work unit ASE_TSS.1-1. Evaluator verdicts associated with the supplementary information will also be associated with ASE_TSS.1-1, since the requirement to provide such evidence is specified in ASE in the Base-PP from which SARs of <<BIOPP-Module>> are inherited.
 
 Assessment Strategy for AGD_OPE/ADV_FSP requires the evaluator to examine that the AGD guidance provides sufficient information for the administrators/users as it pertains to SFRs, its verdicts will be associated with CEM work units ADV_FSP.1-7, AGD_OPE.1-4, and AGD_OPE.1-5.
 
@@ -261,7 +261,7 @@ Assessment Strategy for ATE_IND requires the evaluator to conduct testing of the
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by his/her NBAF. Security requirements for the NBAF mechanism are defined in the base PP and out of scope of this EA.
+The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by his/her NBAF. Security requirements for the NBAF mechanism are defined in the Base-PP and out of scope of this EA.
 
 ===== Dependency
 
@@ -592,12 +592,12 @@ The evaluator shall perform the following test to verify that the TOE encrypts p
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on the base PP
+. The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on the Base-PP
 . The evaluator shall load an application onto the computer. This application shall attempt to traverse over all file systems and report any newly created files
 . The evaluator shall perform biometric enrolment and verification and run the app to list new files
 . The evaluator shall compare files reported by the application and ones listed in “file list/format and cryptographic algorithm”
 . If evaluator finds newly created files not listed in “file list/format and cryptographic algorithm”, the evaluator shall confirm that those files do not include plaintext biometric data with the support from developer
-. For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on the base PP. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files do not follow the defined format to implicitly assume files are encrypted.
+. For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on the Base-PP. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files do not follow the defined format to implicitly assume files are encrypted.
 
 ===== Pass/Fail criteria
 
@@ -658,9 +658,9 @@ The evaluator can pass this EA only if the evaluator confirms that:
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
 == Evaluation Activities for PP_MD_V3.3 Requirements
-In addition to the EAs required by the base PP, the evaluator shall perform the following additional EAs to ensure that the base PP's security functionaltiy is maintained by the addition of the PP-Module.
+In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
 
-=== Modified SFRs from the base PP
+=== Modified SFRs from the Base-PP
 ==== Protection of the TSF (FPT)
 ===== Key Storage (FPT_KST)
 *FPT_KST_EXT.1*:: Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
@@ -765,7 +765,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ==== EA for FDP_RIP.2
 
-The evaluator shall refer the EA in the base PP to perform evaluation of this SFR (e.g. EA for FCS_CKM_EXT.4 in <<PP_MD_V3.3>>).
+The evaluator shall refer the EA in the Base-PP to perform evaluation of this SFR (e.g. EA for FCS_CKM_EXT.4 in <<PP_MD_V3.3>>).
 
 == Evaluation Activities for SARs
 
@@ -1047,7 +1047,7 @@ The performance report shall report the following information to uniquely identi
 [arabic]
 .. TOE reference
 +
-Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the base PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
+Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the Base-PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
 +
 Modification to the TOE for performance testing, if any, shall be reported (e.g. the TOE is modified to export biometric data for off-line testing). The rationale that such modification does not affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code is not executed during biometric verification or the developer may run regression tests to verify that modification does not change the result of verification (e.g. similarity score).
 .. TOE configuration
@@ -1222,7 +1222,7 @@ Suppose the computer provides both a NBAF and a BAF and the user can use either 
 
 It may also be possible for user to enrol multiple body parts (e.g. index and thumb fingerprint) or single body part for biometric verification.
 
-However, it is not possible to evaluate all these scenarios to measure the performance but the developer shall refer the ST that claims conformance to the base PP to define the scenario.
+However, it is not possible to evaluate all these scenarios to measure the performance but the developer shall refer the ST that claims conformance to the Base-PP to define the scenario.
 
 For example, if the ST sets the maximum number of unsuccessful authentication attempts for fingerprint verification to five, the developer shall assume that the attacker makes all five fingerprint unlock attempts in succession to try to unlock the computer.
 
@@ -1244,7 +1244,7 @@ The developer shall define the maximum number of samples per test subject to be 
 
 ==== Maximum number of transactions per test subject
 
-Only one transaction can be run by each test subject because the computer locks the biometric verification as required by the base PP after the certain number of attempts are failed.
+Only one transaction can be run by each test subject because the computer locks the biometric verification as required by the Base-PP after the certain number of attempts are failed.
 
 ==== Statistical certainty for FAR/FMR
 
@@ -1602,7 +1602,7 @@ This Section provides the Pass/Fail criteria for EAs for PAD testing taking this
 
 ==== Pass/Fail criteria
 
-The computer limits the number of unsuccessful authentication attempts for biometric verification, as required by the base PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
+The computer limits the number of unsuccessful authentication attempts for biometric verification, as required by the Base-PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
 
 This BIOSD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable artefacts”. “Reliable artefacts” are those artefacts that succeed on at least one attack within the allowable number of attempts (i.e. succeed to unlock the computer) at more than 80% of probability. This BIOSD selects this probability based on the use case assumed in <<BIOPP-Module>>.
 
@@ -1623,7 +1623,7 @@ The following table shows that example of pairs (maximum *_p_* for particular *n
 |8 |0.18 (18%)
 |===
 
-If the base PP is <<PP_MD_V3.3>>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assigns 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
+If the Base-PP is <<PP_MD_V3.3>>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assigns 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
 
 The evaluator shall assign a pass verdict to the TOE only if the evaluator can not find those artefacts that the probability of successful attack is more than *_p_*.
 
