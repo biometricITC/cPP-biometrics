@@ -99,7 +99,7 @@ Presentation Attack Detection (PAD)::
 (Biometric) Sample::
 	User’s biometric measures as output by the data capture subsystem of the TOE.
 Separate Execution Environment (SEE)::
-	An operating environment separate from the main Computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
+	An operating environment separate from the main computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity Score::
 	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
 Template::
@@ -452,9 +452,13 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
 
-*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data used to generate templates and perform sample comparisons shall be hardware-isolated from the OS on the TSF in runtime.
+*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data used to generate templates and perform sample comparisons shall be hardware-isolated from the main computer operating system on the TSF in runtime.
 
-*Application Note {counter:remark_count}*:: If biometric data processing occurs in a separate execution environment on the same Application Processor as the OS, the biometric data must be cleared from RAM immediately after use, and at least, must be wiped when the device is locked.
+*Application Note {counter:remark_count}*:: If biometric data processing occurs in a separate execution environment on the same Application Processor as the main computer operating system, the biometric data must be cleared from RAM immediately after use, and at least, must be wiped when the device is locked.
+
+*FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the SEE shall be isolated from the main computer operating system on the TSF in runtime.
+
+*Application Note {counter:remark_count}*:: This is specifically about the transmission of biometric data within the device between components, and not to external systems (such as an export of biometric data).
 
 ===== FPT_PBT_EXT.1 Protection of biometric template [[FPT_PBT_EXT.1]]
 
@@ -841,7 +845,7 @@ This component defines the requirements for the TSF to be able to protect plaint
     +-----------------------------------------+ 
 ....
  
-FPT_BDP_EXT.1 Biometric data processing requires the TSF to process plaintext biometric data within the in a separate execution environment from the OS.
+FPT_BDP_EXT.1 Biometric data processing requires the TSF to process plaintext biometric data within the in a separate execution environment and to protect the internal transmission of the biometric data from the main computer operating system.
 
 ===== Management: FPT_BDP_EXT.1
 There are no management activities foreseen.
@@ -854,7 +858,9 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data used to generate templates and perform sample matching shall be hardware-isolated from the OS on the TSF in runtime.
+*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data used to generate templates and perform sample matching shall be hardware-isolated from the main computer operating system on the TSF in runtime.
+
+*FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the SEE shall be isolated from the main computer operating system on the TSF in runtime.
 
 ==== Protection of biometric template (FPT_PBT_EXT)
 *Family Behaviour*
