@@ -657,6 +657,48 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
+=== Trusted Path/Channels (FTP)
+==== EA for FTP_TRP.1
+===== Objective of the EA
+The path between the biometric capture sensor and the SEE where processing of the biometric characteristics will be performed per <<FPT_BDP_EXT.1>> or interactions to the main computer operating system occur (such as providing the results of a match), must protect the captured data from being tampered with or duplicated in transit. The evaluator shall confirm that this data path is protected from access by untrusted components (generally defined as anything in the main computer operating system). 
+
+===== Dependency
+There is no dependency to other EAs defined in this BIOSD.
+
+===== Tool types required to perform the EA
+No tool is required for this EA.
+
+===== Required input from the developer or other entities
+Following input is required from the developer.
+
+[loweralpha]
+. TSS shall explain how the TOE meets FTP_TRP.1 at high level description
+. BMD shall provide additional information needed to explain the protection mechanism within the scope of the assurance level claimed by <<BIOPP-Module>>
+
+===== Assessment Strategy
+====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
+The evaluator shall examine the TSS and BMD to verify that all TSF modules (i.e. biometric capture sensor and any software running in biometric capture sensor and the computer processors) must send data via paths that are not accessible from any entities outside the SEE and the components used in the capture process.
+
+In any case, the evaluator shall examine the TSS and BMD to confirm that;
+
+[loweralpha]
+. All TSF modules use a trusted path to transmit any data between components and the SEE and any entities outside the SEE including the main computer operating system can’t interfere with processing of these modules
+
+The evaluator shall keep in mind that the objective of this EA is not evaluating the SEE itself. This EA is derived from ASE_TSS.1.1 which requires that the TSS to provide potential consumers of the TOE with a high-level view of how the developer intends to satisfy each SFR. The evaluator shall check the TSS and BMD to seek for a logical explanation how the above criteria are satisfied considering this scope of the requirement.
+
+====== Strategy for ATE_IND
+TODO
+
+===== Pass/Fail criteria
+The evaluator can pass this EA only if the evaluator confirms that:
+
+[loweralpha]
+. Information necessary to perform this EA is described in the TSS, BMD and AGD guidance
+. The TOE protects the biometric data captured while it is being trnasferred to the SEE
+
+===== Requirements for reporting
+The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
+
 == Evaluation Activities for PP_MD_V3.3 Requirements
 In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
 
