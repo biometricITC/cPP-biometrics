@@ -330,7 +330,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description
-** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include information about the metric
+** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
+. BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
 . Supplementary information ([#MBE assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
@@ -427,7 +428,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
-** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include information about the metric
+. BMD shall provide information about how the verification rates are tested
+** The CMD may refer to the developer's <<performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
 . Supplementary information (developer’s [#performance report]#performance report#) shall describe the developer’s performance test protocol and result of testing
 
@@ -484,6 +486,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.2 at high level description
+** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
+. BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
 . Supplementary information ([#MBV assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
@@ -696,7 +700,8 @@ No tool is required for this EA.
 Following input is required from the developer.
 
 [loweralpha]
-. TSS shall explain how the TOE meets FIA_MBE_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information is beyond the scope of assurance level claimed by <<BIOPP-Module>> and may also be exploited by attackers
+. TSS shall explain how the TOE meets FIA_MBE_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information may also be exploited by attackers
+. BMD shall provide additional information needed to explain the PAD mechanism within the scope of the assurance level claimed by <<BIOPP-Module>>
 . AGD guidance may provide information about how the TOE reacts when the artefact is detected
 
 ===== Assessment Strategy
@@ -739,7 +744,8 @@ No tool is required for this EA.
 Following input is required from the developer.
 
 [loweralpha]
-. TSS shall explain how the TOE meets FIA_MBV_EXT.3 at high level description. TSS may only states that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information is beyond the scope of assurance level claimed by <<BIOPP-Module>> and may also be exploited by attackers
+. TSS shall explain how the TOE meets FIA_MBV_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information may also be exploited by attackers
+. BMD shall provide additional information needed to explain the PAD mechanism within the scope of the assurance level claimed by <<BIOPP-Module>>
 . AGD guidance may provide information about how the TOE reacts when the artefact is detected
 
 ===== Assessment Strategy
