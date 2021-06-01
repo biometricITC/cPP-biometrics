@@ -5,8 +5,8 @@
 :table-caption: Table
 :imagesdir: images
 :icons: font
-:revnumber: 1.0.1
-:revdate: November 10, 2020
+:revnumber: 1.1
+:revdate: TBD, 2021
 :xrefstyle: full
 :doctype: book
 
@@ -69,6 +69,10 @@ Biometric Security international Technical Community (BIO-iTC)
 |November 10, 2020
 |Technical Decision BIO0002
 
+|1.1
+|TBD, 2021
+|Incorporated TDs and NIAP comments for PP_MD_V3.3 integration
+
 |===
 
 === General Purpose
@@ -97,7 +101,7 @@ This Supporting Document was developed by the Biometric Security international T
 
 === Technology Area and Scope of Supporting Document
 
-This Supporting Document (BIOSD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>> that is intended for use with the base PP identified in the appropriate PP-Configuration.
+This Supporting Document (BIOSD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>> that is intended for use with the Base-PP identified in the appropriate PP-Configuration.
 
 This BIOSD is mandatory for evaluations of TOEs that claim conformance to <<BIOPP-Module>>.
 
@@ -117,7 +121,7 @@ In general, if all EAs (for both SFRs and SARs) are successfully completed in an
 
 ==== Glossary
 
-For definitions of standard CC terminology see <<CC1>>. For definitions of biometrics and the computer, see <<BIOPP-Module>> and the base PP.
+For definitions of standard CC terminology see <<CC1>>. For definitions of biometrics and the computer, see <<BIOPP-Module>> and the Base-PP.
 
 ==== Acronyms
 
@@ -179,7 +183,7 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 |Supporting Document
 
 |*SEE* 
-|Secure Execution Environment
+|Separate Execution Environment
 
 |*SFR* 
 |Security Functional Requirement
@@ -245,7 +249,7 @@ EAs in this BIOSD provide specific or more detailed guidance to evaluate the bio
 
 This Section explains how EAs for SFRs are derived from the particular CEM work units identified in Assessment Strategy to show the consistency and compatibility between the CEM work units and EAs in this BIOSD.
 
-Assessment Strategy for ASE_TSS requires the evaluator to examine that the TSS provides sufficient design descriptions and its verdicts will be associated with the CEM work unit ASE_TSS.1-1. Evaluator verdicts associated with the supplementary information will also be associated with ASE_TSS.1-1, since the requirement to provide such evidence is specified in ASE in the base PP from which SARs of <<BIOPP-Module>> are inherited.
+Assessment Strategy for ASE_TSS requires the evaluator to examine that the TSS provides sufficient design descriptions and its verdicts will be associated with the CEM work unit ASE_TSS.1-1. Evaluator verdicts associated with the supplementary information will also be associated with ASE_TSS.1-1, since the requirement to provide such evidence is specified in ASE in the Base-PP from which SARs of <<BIOPP-Module>> are inherited.
 
 Assessment Strategy for AGD_OPE/ADV_FSP requires the evaluator to examine that the AGD guidance provides sufficient information for the administrators/users as it pertains to SFRs, its verdicts will be associated with CEM work units ADV_FSP.1-7, AGD_OPE.1-4, and AGD_OPE.1-5.
 
@@ -257,7 +261,7 @@ Assessment Strategy for ATE_IND requires the evaluator to conduct testing of the
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by his/her NBAF. Security requirements for the NBAF mechanism are defined in the base PP and out of scope of this EA.
+The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by his/her NBAF. Security requirements for the NBAF mechanism are defined in the Base-PP and out of scope of this EA.
 
 ===== Dependency
 
@@ -326,6 +330,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description
+** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
+. BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
 . Supplementary information ([#MBE assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
@@ -338,7 +344,7 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 *Enrolment templates*
 
-The evaluator shall examine the TSS to understand how the TOE generates templates of sufficient quality from samples at enrolment (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
+The evaluator shall examine the TSS and BMD to understand how the TOE generates templates of sufficient quality from samples at enrolment (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
 
 The evaluator shall examine the <<MBE assessment criteria for samples, assessment criteria for samples>> to determine how the TOE creates the templates from samples based on this assessment criteria. The <<MBE assessment criteria for samples, assessment criteria for samples>> may include;
 
@@ -391,7 +397,7 @@ The following test steps require the developer to provide access to a test platf
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS, AGD guidance and <<MBE assessment criteria for samples, assessment criteria for samples>>
+. Information necessary to perform this EA is described in the TSS, BMD, AGD guidance and <<MBE assessment criteria for samples, assessment criteria for samples>>
 . The TOE creates only templates from samples that pass the <<MBE assessment criteria for samples, assessment criteria>> through the independent testing
 
 ===== Requirements for reporting
@@ -422,6 +428,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
+. BMD shall provide information about how the verification rates are tested
+** The BMD may refer to the developer's <<performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
 . Supplementary information (developer’s [#performance report]#performance report#) shall describe the developer’s performance test protocol and result of testing
 
@@ -431,7 +439,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE verifies a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when biometric verification is succeeded or failed.
+The evaluator shall examine the TSS and BMD to understand how the TOE verifies a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when biometric verification is succeeded or failed.
 
 The evaluator shall examine developer’s <<Developer’s performance report and its assessment strategy, performance report>> to verify that the developer conducts the objective and repeatable performance testing. Minimum requirements for conducting performance testing are defined in <<Developer’s performance report and its assessment strategy>>.
 
@@ -478,6 +486,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.2 at high level description
+** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
+. BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
 . Supplementary information ([#MBV assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
@@ -487,7 +497,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE checks quality of samples captured (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when low quality samples are presented to the TOE.
+The evaluator shall examine the TSS and BMD to understand how the TOE checks quality of samples captured (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when low quality samples are presented to the TOE.
 
 The evaluator shall examine the <<MBV assessment criteria for samples, assessment criteria for samples>> to check how the TOE checks the quality of samples based on its assessment criteria. The <<MBV assessment criteria for samples, assessment criteria for samples>> may include;
 
@@ -518,7 +528,7 @@ The following test steps require the developer to provide access to a test platf
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS, AGD guidance and <<MBV assessment criteria for samples, assessment criteria for samples>>
+. Information necessary to perform this EA is described in the TSS, BMD, AGD guidance and <<MBV assessment criteria for samples, assessment criteria for samples>>
 . The TOE accepts only samples that pass the <<MBV assessment criteria for samples, assessment criteria>> through the independent testing
 
 ===== Requirements for reporting
@@ -531,11 +541,11 @@ The evaluator shall report the summary of the result of EA defined above, especi
 
 ===== Objective of the EA
 
-<<BIOPP-Module>> assumes that the computer provides the Secure Execution Environment (SEE), an operating environment separate from the main computer operating system. Access to the SEE is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
+<<BIOPP-Module>> assumes that the computer provides the Separate Execution Environment (SEE), an operating environment separate from the main computer operating system. Access to the SEE is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 
-Evaluation of this SEE is out of scope of <<BIOPP-Module>> and the evaluator does not need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the security boundary of the SEE. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
+Evaluation of this SEE is out of scope of <<BIOPP-Module>> and the evaluator does not need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the boundary of the SEE. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
 
-FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of transmitted and stored biometric data is out of scope of this EA and covered by FPT_BDP_EXT.2 and FPT_BDP_EXT.3 respectively.
+FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of transmitted and stored biometric data is out of scope of this EA and covered by FPT_KST_EXT.1 and FPT_KST_EXT.2 respectively.
 
 ===== Dependency
 
@@ -580,110 +590,18 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-==== EA for FPT_BDP_EXT.2
-
-===== Objective of the EA
-
-The intention of this requirement is to prevent the logging, backing up or sending of plaintext biometric data to a service that transmits the information outside the security boundary of the SEE.
-
-For example, the TOE may transmit biometric data to the developer’s server for diagnostic purpose with the consent of the user. However, the TOE must encrypt the plaintext biometric data before sending it to the developer’s server for diagnostic purposes.
-
-In any case, the evaluator shall determine that the TOE does not transmit any plaintext biometric data outside the security boundary of the SEE.
-
-===== Dependency
-
-The evaluator shall perform the EAs for FPT_BDP_EXT.1 first to confirm the TSF processes any plaintext biometric data within the security boundary of the secure execution environment.
-
-===== Tool types required to perform the EA
-
-No tool is required for this EA.
-
-===== Required input from the developer or other entities
-
-Following input is required from the developer.
-
-[loweralpha]
-. TSS shall explain how the TOE meets FPT_BDP_EXT.2 at high level description
-. AGD guidance shall describe all functions that transmit biometric data
-
-===== Assessment Strategy
-
-====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
-
-The evaluator shall examine the TSS and AGD guidance to identify any functions that transmit biometric data to any entities outside the SEE and type of biometric data that is transmitted.
-
-If the TOE transmits biometric data, the evaluator shall examine the activities that happen on data transmission to confirm that;
-
-[loweralpha]
-. The TOE requires an explicit user consent and user authentication to enable the transmission
-
-. The TOE never transmits plaintext biometric data to outside the SEE. This means;
-+
-[arabic]
-.. The TOE encrypts plaintext biometric data to be transmitted using the cryptographic functions evaluated based on the base PP within the SEE
-.. If the TOE stores the encrypted biometric data outside the SEE for transmission, the TOE deletes such data after the transmission
-.. If the TOE displays the plaintext biometric data to the user to seek approval for transmission, such process is performed within the SEE
-
-. The TOE disables the transmission immediately after the TOE achieves its purpose
-
-===== Pass/Fail criteria
-
-The evaluator can pass this EA only if the evaluator confirms that:
-
-[loweralpha]
-. information necessary to perform this EA is described in the TSS and AGD guidance
-
-===== Requirements for reporting
-
-The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
-
-==== EA for FPT_BDP_EXT.3
-
-===== Objective of the EA
-
-Plaintext biometric data, especially templates, are highly sensitive personal data because biometric characteristics may be recovered from them. Plaintext biometric data shall be processed within the SEE as required by FPT_BDP_EXT.1. However, part of plaintext biometric data including templates may need to be stored in the computer for biometric verification. Protection of such stored biometric data is not covered by FPT_BDP_EXT.1.
-
-The evaluator shall confirm that the TOE encrypts plaintext biometric data within the SEE before storing it in any non-volatile memory that is accessible to entities outside the SEE. If the evaluator confirms that the TOE does not store plaintext biometric data outside the SEE (e.g. biometric capture sensor processes biometric data within the sensor and return only decision outcome to the TSF modules running inside the SEE) during performing the EA of FPT_BDP_EXT.1, this requirement is deemed satisfied.
-
-===== Dependency
-
-The evaluator shall perform the EAs for FPT_BDP_EXT.1 first to confirm the TSF processes any plaintext biometric data within the security boundary of the SEE.
-
-===== Tool types required to perform the EA
-
-Developer shall provide a test platform for the evaluator to conduct the test described in the Assessment Strategy.
-
-===== Required input from the developer or other entities
-
-Following input is required from the developer.
-
-[loweralpha]
-. TSS shall explain how the TOE meets FPT_BDP_EXT.3 at high level description
-. Supplementary information (file list/format and cryptographic algorithm) shall list storage locations and the format of files that contain biometric data, and the cryptographic algorithms used to encrypt those files
-
-===== Assessment Strategy
-
-====== Strategy for ASE_TSS
-
-The evaluator shall examine the TSS to understand the activities that happen on biometric enrolment and verification relating to encrypting and storing biometric data. The evaluator shall confirm that;
-
-[loweralpha]
-. The TSS lists the type of biometric data that the TOE stores in non-volatile memory outside the SEE
-. The TOE encrypts all plaintext biometric data listed in the TSS within the SEE before storing it in the non-volatile memory
-. The TOE uses cryptographic functions evaluated based on the base PP to encrypt the data
-
 ====== Strategy for ATE_IND
 
 The evaluator shall perform the following test to verify that the TOE encrypts plaintext biometric data if the TOE stores the data in non-volatile memory outside the SEE.
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on the base PP
+. The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on the Base-PP
 . The evaluator shall load an application onto the computer. This application shall attempt to traverse over all file systems and report any newly created files
 . The evaluator shall perform biometric enrolment and verification and run the app to list new files
 . The evaluator shall compare files reported by the application and ones listed in “file list/format and cryptographic algorithm”
 . If evaluator finds newly created files not listed in “file list/format and cryptographic algorithm”, the evaluator shall confirm that those files do not include plaintext biometric data with the support from developer
-. For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on the base PP. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files do not follow the defined format to implicitly assume files are encrypted.
+. For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on the Base-PP. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files do not follow the defined format to implicitly assume files are encrypted.
 
 ===== Pass/Fail criteria
 
@@ -700,7 +618,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 ==== EA for FPT_PBT_EXT.1
 
 ===== Objective of the EA
-Only an authenticated user can add one's own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored outside the SEE without encryption as required by the FPT_BDP_EXT.3. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only an authenticated user using a NBAF as specified by the ST author can access the templates through the TSFI provided by the TOE.
+Only an authenticated user can add one's own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored as plaintext as required by the FPT_KST_EXT.1. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only an authenticated user using a NBAF as specified by the ST author can access the templates through the TSFI provided by the TOE.
 
 ===== Dependency
 
@@ -743,6 +661,16 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
+== Evaluation Activities for PP_MD_V3.3 Requirements
+In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
+
+=== Modified SFRs from the Base-PP
+==== Protection of the TSF (FPT)
+===== Key Storage (FPT_KST)
+*FPT_KST_EXT.1*:: Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+
+*FPT_KST_EXT.2*:: Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+
 == Evaluation Activities for Selection-Based Requirements 
 
 The <<BIOPP-Module>> does not contain any selection-based requirements.
@@ -772,14 +700,15 @@ No tool is required for this EA.
 Following input is required from the developer.
 
 [loweralpha]
-. TSS shall explain how the TOE meets FIA_MBE_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information is beyond the scope of assurance level claimed by <<BIOPP-Module>> and may also be exploited by attackers
+. TSS shall explain how the TOE meets FIA_MBE_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information may also be exploited by attackers
+. BMD shall provide additional information needed to explain the PAD mechanism within the scope of the assurance level claimed by <<BIOPP-Module>>
 . AGD guidance may provide information about how the TOE reacts when the artefact is detected
 
 ===== Assessment Strategy
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment.
+The evaluator shall examine the TSS, BMD and AGD guidance to check that the TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment.
 
 The main part of the EA is the evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require a detailed design description of PAD from the developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
@@ -788,7 +717,7 @@ The main part of the EA is the evaluator’s testing defined in <<Evaluation Act
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment
+. TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment
 
 ===== Requirements for reporting
 
@@ -815,14 +744,15 @@ No tool is required for this EA.
 Following input is required from the developer.
 
 [loweralpha]
-. TSS shall explain how the TOE meets FIA_MBV_EXT.3 at high level description. TSS may only states that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information is beyond the scope of assurance level claimed by <<BIOPP-Module>> and may also be exploited by attackers
+. TSS shall explain how the TOE meets FIA_MBV_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information may also be exploited by attackers
+. BMD shall provide additional information needed to explain the PAD mechanism within the scope of the assurance level claimed by <<BIOPP-Module>>
 . AGD guidance may provide information about how the TOE reacts when the artefact is detected
 
 ===== Assessment Strategy
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric verification.
+The evaluator shall examine the TSS and AGD guidance to check that the TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact during biometric verification.
 
 The main part of the EA is the evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require a detailed design description of PAD from the developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
@@ -831,7 +761,7 @@ The main part of the EA is the evaluator’s testing defined in <<Evaluation Act
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. TSS or AGD guidance states that the TOE prevents the use of the artefact
+. TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact
 
 ===== Requirements for reporting
 
@@ -841,7 +771,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ==== EA for FDP_RIP.2
 
-The evaluator shall refer the EA in the base PP to perform evaluation of this SFR (e.g. EA for FCS_CKM_EXT.4 in <<PP_MD_V3.3>>).
+The evaluator shall refer the EA in the Base-PP to perform evaluation of this SFR (e.g. EA for FCS_CKM_EXT.4 in <<PP_MD_V3.3>>).
 
 == Evaluation Activities for SARs
 
@@ -1123,7 +1053,7 @@ The performance report shall report the following information to uniquely identi
 [arabic]
 .. TOE reference
 +
-Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the base PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
+Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the Base-PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
 +
 Modification to the TOE for performance testing, if any, shall be reported (e.g. the TOE is modified to export biometric data for off-line testing). The rationale that such modification does not affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code is not executed during biometric verification or the developer may run regression tests to verify that modification does not change the result of verification (e.g. similarity score).
 .. TOE configuration
@@ -1298,7 +1228,7 @@ Suppose the computer provides both a NBAF and a BAF and the user can use either 
 
 It may also be possible for user to enrol multiple body parts (e.g. index and thumb fingerprint) or single body part for biometric verification.
 
-However, it is not possible to evaluate all these scenarios to measure the performance but the developer shall refer the ST that claims conformance to the base PP to define the scenario.
+However, it is not possible to evaluate all these scenarios to measure the performance but the developer shall refer the ST that claims conformance to the Base-PP to define the scenario.
 
 For example, if the ST sets the maximum number of unsuccessful authentication attempts for fingerprint verification to five, the developer shall assume that the attacker makes all five fingerprint unlock attempts in succession to try to unlock the computer.
 
@@ -1320,7 +1250,7 @@ The developer shall define the maximum number of samples per test subject to be 
 
 ==== Maximum number of transactions per test subject
 
-Only one transaction can be run by each test subject because the computer locks the biometric verification as required by the base PP after the certain number of attempts are failed.
+Only one transaction can be run by each test subject because the computer locks the biometric verification as required by the Base-PP after the certain number of attempts are failed.
 
 ==== Statistical certainty for FAR/FMR
 
@@ -1678,7 +1608,7 @@ This Section provides the Pass/Fail criteria for EAs for PAD testing taking this
 
 ==== Pass/Fail criteria
 
-The computer limits the number of unsuccessful authentication attempts for biometric verification, as required by the base PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
+The computer limits the number of unsuccessful authentication attempts for biometric verification, as required by the Base-PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
 
 This BIOSD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable artefacts”. “Reliable artefacts” are those artefacts that succeed on at least one attack within the allowable number of attempts (i.e. succeed to unlock the computer) at more than 80% of probability. This BIOSD selects this probability based on the use case assumed in <<BIOPP-Module>>.
 
@@ -1699,7 +1629,7 @@ The following table shows that example of pairs (maximum *_p_* for particular *n
 |8 |0.18 (18%)
 |===
 
-If the base PP is <<PP_MD_V3.3>>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assigns 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
+If the Base-PP is <<PP_MD_V3.3>>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assigns 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
 
 The evaluator shall assign a pass verdict to the TOE only if the evaluator can not find those artefacts that the probability of successful attack is more than *_p_*.
 

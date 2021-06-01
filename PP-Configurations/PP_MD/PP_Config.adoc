@@ -27,7 +27,7 @@ This PP-Configuration is identified as follows:
 
 This PP-Configuration includes the following components:
 
-* Base PP: Protection Profile for Mobile Device Fundamentals, <<PP_MD_V3.3>>
+* Base-PP: Protection Profile for Mobile Device Fundamentals, <<PP_MD_V3.3>>
 * PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>>
 
 == Conformance claim and conformance statement
