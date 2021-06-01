@@ -429,7 +429,7 @@ Following input is required from the developer.
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
 . BMD shall provide information about how the verification rates are tested
-** The CMD may refer to the developer's <<performance report>>
+** The BMD may refer to the developer's <<performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
 . Supplementary information (developer’s [#performance report]#performance report#) shall describe the developer’s performance test protocol and result of testing
 
