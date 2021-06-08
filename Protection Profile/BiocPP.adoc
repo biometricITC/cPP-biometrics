@@ -378,12 +378,16 @@ Full evaluation activities are not repeated in the <<BIOSD>> for the requirement
 
 [NOTE]
 ====
-TODO: Need to add additional EAs for modified and additional SFR to <<BIOSD>>
+TODO: Need to add additional EAs for modified SFR to <<BIOSD>>
 ====
 
 ==== Modified SFRs
 
 The SFRs listed in this section are defined in the <<PP_MD_V3.3>> and relevant to the secure operation of the biometric enrolment and verification. It is necessary for the ST author to complete selections and/or assignments for these SFRs in a specific manner in order to ensure that the functionality provided by the mobile device is consistent with the functionality required by the biometric enrolment and verification in order for it to conform to this PP-Module.
+
+===== Class: Cryptographic Support (FCS)
+
+This PP-Module does not modify SFRs in FCS class as it is defined in the <<PP_MD_V3.3>>. However, note that BAF must be illustrated in the key hierarchy diagram and all keys created upon successful biometric enrolment and verification must be generated, derived, combined, released and destroyed according to SFRs in this class.
 
 ===== FPT_KST_EXT.1 Key Storage [[FPT_KST_EXT.1]]
 
@@ -393,18 +397,17 @@ The SFRs listed in this section are defined in the <<PP_MD_V3.3>> and relevant t
 
 ===== FPT_KST_EXT.2 No Key Transmission [[FPT_KST_EXT.2]]
 
-*FPT_KST_EXT.2.1*:: The TSF shall not transmit any plaintext key material *or biometric data* outside the security boundary of the TOE.
+*FPT_KST_EXT.2.1*:: The TSF shall not transmit any plaintext key material *and biometric data* outside the security boundary of the TOE.
 
-*Application Note {counter:remark_count}*:: This SFR is functionally identical to what is defined in the <<PP_MD_V3.3>> with the addition of biometric data as plaintext key materials that must not be transmitted off-device.
+*Application Note {counter:remark_count}*:: This SFR is functionally identical to what is defined in the <<PP_MD_V3.3>> with the addition of biometric data as plaintext key materials that must not be transmitted off-device. 
+
+===== Class: Identification and Authentication (FIA)
+
+This PP-Module does not modify SFRs in FIA class as it is defined in the <<PP_MD_V3.3>>. However, if the TOE claims conformance to a PP-Configuration that includes this PP-Module, only eye, face, fingerprint or vein must be selected in the <<PP_MD_V3.3>> and the same modality must also be selected in this PP-Module.
 
 ==== Additional SFRs
 
-This section lists additional SFRs that must be added to the TOE boundary in order to implement the functionality in any PP-Configuration where the <<PP_MD_V3.3>> is claimed as the Base-PP.
-
-[NOTE]
-====
-TODO: Need to add additonal SFRs here 
-====
+There are no additional SFRs that must be claimed only in cases where the <<PP_MD_V3.3>> is the claimed Base-PP.
 
 === TOE Security Functional Requirements
 This section lists SFRs for the biometric enrolment and verification.
