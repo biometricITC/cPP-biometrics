@@ -385,6 +385,20 @@ TODO: Need to add additional EAs for modified and additional SFR to <<BIOSD>>
 
 The SFRs listed in this section are defined in the <<PP_MD_V3.3>> and relevant to the secure operation of the biometric enrolment and verification. It is necessary for the ST author to complete selections and/or assignments for these SFRs in a specific manner in order to ensure that the functionality provided by the mobile device is consistent with the functionality required by the biometric enrolment and verification in order for it to conform to this PP-Module.
 
+===== FCS_CKM_EXT.4 Key Destruction [[FCS_CKM_EXT.4]]
+
+*Application Note {counter:remark_count}*:: This SFR is functionally identical to what is defined in the <<PP_MD_V3.3>>. However, the following note should be added to the Application note of FCS_CKM_EXT.4. 
++
+*If biometric data processing occurs in a separate execution environment on the same Application Processor as the main computer operating system, the biometric data must be cleared from RAM immediately after use, and at least, must be wiped when the device is locked.*
+
+===== FPT_AEX_EXT.4 Domain Isolation [[FPT_AEX_EXT.4]]
+
+*FPT_AEX_EXT.4.1*:: The TSF shall protect itself from modification by untrusted subjects.
+*FPT_AEX_EXT.4.2*:: The TSF shall enforce isolation of address space between applications. 
+*FPT_AEX_EXT.4.3*:: *The TSF shall enforce isolation between the operating system and the separate execution environment.* 
+
+*Application Note {counter:remark_count}*:: This SFR is functionally identical to what is defined in the <<PP_MD_V3.3>> with the addition of FPT_AEX_EXT.4.3 that requires the mobile device to provide the separate execution environment isolated from the operating system. FPT_BDP_EXT.1 requires the biometric system to process plaintext biometric data in this separate execution environment.
+
 ===== FPT_KST_EXT.1 Key Storage [[FPT_KST_EXT.1]]
 
 *FPT_KST_EXT.1.1*:: The TSF shall not store any plaintext key material *and biometric data* in readable non-volatile memory.
@@ -452,11 +466,11 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
 
-*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data used to generate templates and perform sample comparisons shall be hardware-isolated from the main computer operating system on the TSF in runtime.
+*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data shall be inside the separate execution environment in runtime.
 
-*Application Note {counter:remark_count}*:: If biometric data processing occurs in a separate execution environment on the same Application Processor as the main computer operating system, the biometric data must be cleared from RAM immediately after use, and at least, must be wiped when the device is locked.
+*Application Note {counter:remark_count}*:: All TSF code and plain biometric data must be executed and retained inside the separate execution environment.
 
-*FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the SEE shall be isolated from the main computer operating system on the TSF in runtime.
+*FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the separate execution environment shall be isolated from the main computer operating system on the TSF in runtime.
 
 *Application Note {counter:remark_count}*:: This is specifically about the transmission of biometric data within the device between components, and not to external systems (such as an export of biometric data).
 
