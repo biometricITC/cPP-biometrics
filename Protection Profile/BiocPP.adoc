@@ -390,7 +390,7 @@ This SFR is identical to what is defined in the <<PP_MD_V3.3>>. The change is to
 
 *Application Note:* For the purposes of this requirement, plaintext keying material refers to authentication data, passwords, secret/private symmetric keys, private asymmetric keys, data used to derive keys, values derived from passwords, etc. *Biometric data used for enrolment or verification are considered critical security parameters that must be destroyed when no longer needed.*
 
-*Application Note {counter:remark_count}*:: The the Application Note following FCS_CKM_EXT.4.2 is modified to add the text to include biometric data as a critical security parameter to ensure it is handled properly by the TSF.
+*Application Note {counter:remark_count}*:: The Application Note following FCS_CKM_EXT.4.2 is modified to add the text to include biometric data as a critical security parameter to ensure it is handled properly by the TSF.
 
 ===== FPT_AEX_EXT.4 Domain Isolation [[FPT_AEX_EXT.4]]
 This SFR is identical to what is defined in the <<PP_MD_V3.3>>. The change is to the application note.
