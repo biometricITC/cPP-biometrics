@@ -99,7 +99,7 @@ Presentation Attack Detection (PAD)::
 (Biometric) Sample::
 	User’s biometric measures as output by the data capture subsystem of the TOE.
 Separate Execution Environment (SEE)::
-	An operating environment separate from the main Computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
+	An operating environment separate from the main computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity Score::
 	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
 Template::
@@ -381,8 +381,21 @@ Full evaluation activities are not repeated in the <<BIOSD>> for the requirement
 The SFRs listed in this section are defined in the <<PP_MD_V3.3>> and relevant to the secure operation of the biometric enrolment and verification. It is necessary for the ST author to complete selections and/or assignments for these SFRs in a specific manner in order to ensure that the functionality provided by the mobile device is consistent with the functionality required by the biometric enrolment and verification in order for it to conform to this PP-Module.
 
 ===== Class: Cryptographic Support (FCS)
-
 This PP-Module does not modify SFRs in FCS class as it is defined in the <<PP_MD_V3.3>>. However, note that BAF must be illustrated in the key hierarchy diagram and all keys created upon successful biometric enrolment and verification must be generated, derived, combined, released and destroyed according to SFRs in this class.
+
+===== FCS_CKM_EXT.4 Key Destruction [[FCS_CKM_EXT.4]]
+This SFR is identical to what is defined in the <<PP_MD_V3.3>>. The change is to the application note.
+
+*Application Note:* For the purposes of this requirement, plaintext keying material refers to authentication data, passwords, secret/private symmetric keys, private asymmetric keys, data used to derive keys, values derived from passwords, etc. *Biometric data used for enrolment or verification are considered critical security parameters that must be destroyed when no longer needed.*
+
+*Application Note {counter:remark_count}*:: The Application Note following FCS_CKM_EXT.4.2 is modified to add the text to include biometric data as a critical security parameter to ensure it is handled properly by the TSF.
+
+===== FPT_AEX_EXT.4 Domain Isolation [[FPT_AEX_EXT.4]]
+This SFR is identical to what is defined in the <<PP_MD_V3.3>>. The change is to the application note.
+
+*Application Note:* In addition to the TSF software (e.g., kernel image, device drivers, trusted applications) that resides in storage, the execution context (e.g., address space, processor registers, per-process environment variables) of the software operating in a privileged mode of the processor (e.g., kernel, *other processor modes*) *or on separate processors*, as well as the context of the trusted applications is to be protected. In addition to the software, any configuration information that controls or influences the behavior of the TSF is also to be protected from modification by untrusted subjects.
+
+*Application Note {counter:remark_count}*:: This application note explicitly adds more support for additional processor modes (e.g. the Secure/Normal World modes defined in a Trusted Execution Environment) or separate processors (e.g. a secure element) that may be present and used for the processing of biometric data. Biometric components should be considered as TSF software being protected by these mechanisms, defined as the separate execution environment.
 
 ===== FPT_KST_EXT.1 Key Storage [[FPT_KST_EXT.1]]
 
@@ -449,9 +462,13 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
 
-*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data used to generate templates and perform sample comparisons shall be hardware-isolated from the OS on the TSF in runtime.
+*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data shall be inside the separate execution environment in runtime.
 
-*Application Note {counter:remark_count}*:: If biometric data processing occurs in a separate execution environment on the same Application Processor as the OS, the biometric data must be cleared from RAM immediately after use, and at least, must be wiped when the device is locked.
+*Application Note {counter:remark_count}*:: All TSF code and plain biometric data must be executed and retained inside the separate execution environment.
+
+*FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the separate execution environment shall be isolated from the main computer operating system on the TSF in runtime.
+
+*Application Note {counter:remark_count}*:: This is specifically about the transmission of biometric data within the device between components, and not to external systems (such as an export of biometric data).
 
 ===== FPT_PBT_EXT.1 Protection of biometric template [[FPT_PBT_EXT.1]]
 
@@ -850,7 +867,7 @@ This component defines the requirements for the TSF to be able to protect plaint
     +-----------------------------------------+ 
 ....
  
-FPT_BDP_EXT.1 Biometric data processing requires the TSF to process plaintext biometric data within the in a separate execution environment from the OS.
+FPT_BDP_EXT.1 Biometric data processing requires the TSF to process plaintext biometric data within the in a separate execution environment and to protect the internal transmission of the biometric data from the main computer operating system.
 
 ===== Management: FPT_BDP_EXT.1
 There are no management activities foreseen.
@@ -863,7 +880,9 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data used to generate templates and perform sample matching shall be hardware-isolated from the OS on the TSF in runtime.
+*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data used to generate templates and perform sample matching shall be hardware-isolated from the main computer operating system on the TSF in runtime.
+
+*FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the SEE shall be isolated from the main computer operating system on the TSF in runtime.
 
 ==== Protection of biometric template (FPT_PBT_EXT)
 *Family Behaviour*

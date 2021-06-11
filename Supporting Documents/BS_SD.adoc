@@ -541,11 +541,11 @@ The evaluator shall report the summary of the result of EA defined above, especi
 
 ===== Objective of the EA
 
-<<BIOPP-Module>> assumes that the computer provides the Separate Execution Environment (SEE), an operating environment separate from the main computer operating system. Access to the SEE is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
+<<BIOPP-Module>> assumes that the computer provides the Separate Execution Environment (SEE), an operating environment separate from the main computer operating system. Access to the SEE is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation. In addition to providing the SEE, it is assumed that the computer provides a secure method to transmit data between the associated components and the SEE, such as the biometric capture sensor.
 
-Evaluation of this SEE is out of scope of <<BIOPP-Module>> and the evaluator does not need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the boundary of the SEE. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
+Evaluation of this SEE is out of scope of <<BIOPP-Module>> and the evaluator does not need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the boundary of the SEE, and that the transmission of this data is via a channel protected from the main computer operating system. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
 
-FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of transmitted and stored biometric data is out of scope of this EA and covered by FPT_KST_EXT.1 and FPT_KST_EXT.2 respectively.
+FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of stored and externally transmitted biometric data is out of scope of this EA and covered by FPT_KST_EXT.1 and FPT_KST_EXT.2 respectively.
 
 ===== Dependency
 
@@ -561,6 +561,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FPT_BDP_EXT.1 at high level description
+. BMD may be used to provide additional details about the protection mechanisms provided by the SEE and environment
 
 ===== Assessment Strategy
 
@@ -571,20 +572,20 @@ As depicted in Figure 1 of <<BIOPP-Module>>, biometric characteristics are captu
 In any case, the evaluator shall examine the TSS to confirm that;
 
 [loweralpha]
-. All TSF modules run within the SEE and any entities outside the SEE including the computer operating system can’t interfere with processing of these modules
+. All TSF modules run within the SEE and any entities outside the SEE including the computer operating system can’t interfere with transmission between and processing of these modules
 
 * If a biometric capture sensor returns plaintext biometric data, any entities outside the SEE can’t access the sensor and data captured by the sensor
 
 . All plaintext biometric data is retained in volatile memory within the SEE and any entities outside the SEE including the computer operating system can’t access these data. Any TSFIs do not reveal plaintext biometric data to any entities outside the SEE
 
-The evaluator shall keep in mind that the objective of this EA is not evaluating the SEE itself. This EA is derived from ASE_TSS.1.1 which requires that the TSS to provide potential consumers of the TOE with a high-level view of how the developer intends to satisfy each SFR. The evaluator shall check the TSS to seek for a logical explanation how the above criteria are satisfied considering this scope of the requirement.
+The evaluator shall keep in mind that the objective of this EA is not evaluating the SEE itself. This EA is derived from ASE_TSS.1.1 which requires that the TSS and BMD to provide potential consumers of the TOE with a high-level view of how the developer intends to satisfy each SFR. The evaluator shall check the TSS and BMD to seek for a logical explanation how the above criteria are satisfied considering this scope of the requirement.
 
 ===== Pass/Fail criteria
 
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. information necessary to perform this EA is described in the TSS
+. Information necessary to perform this EA is described in the TSS and BMD
 
 ===== Requirements for reporting
 
@@ -608,7 +609,7 @@ The following test steps require the developer to provide access to a test platf
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS.
+. Information necessary to perform this EA is described in the TSS and BMD
 . The TOE encrypts any plaintext biometric data before storing it outside the SEE through the independent testing
 
 ===== Requirements for reporting
@@ -665,11 +666,19 @@ The evaluator shall report the summary of result of EA defined above, especially
 In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
 
 === Modified SFRs from the Base-PP
-==== Protection of the TSF (FPT)
-===== Key Storage (FPT_KST)
-*FPT_KST_EXT.1*:: Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+==== Cryptographic Support (FCS)
+===== FCS_CKM_EXT.4 Key Destruction
+Refer to the EA for FCS_CKM_EXT.4 in the <<PP_MD_V3.3>> including biometric data as critical security parameters for the EA.
 
-*FPT_KST_EXT.2*:: Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+==== Protection of the TSF (FPT)
+===== FPT_AEX_EXT.4 Domain Isolation 
+Refer to the EA for FPT_AEX_EXT.4 in the <<PP_MD_V3.3>> including the protection of biometric data in the isolation description.
+
+===== Key Storage (FPT_KST_EXT.1)
+Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+
+===== NO Key Transmission (FPT_KST_EXT.2)
+Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
 
 == Evaluation Activities for Selection-Based Requirements 
 
