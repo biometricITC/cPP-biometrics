@@ -330,7 +330,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description
-** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include information about the metric
+** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
+. BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
 . Supplementary information ([#MBE assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
@@ -343,7 +344,7 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 *Enrolment templates*
 
-The evaluator shall examine the TSS to understand how the TOE generates templates of sufficient quality from samples at enrolment (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
+The evaluator shall examine the TSS and BMD to understand how the TOE generates templates of sufficient quality from samples at enrolment (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
 
 The evaluator shall examine the <<MBE assessment criteria for samples, assessment criteria for samples>> to determine how the TOE creates the templates from samples based on this assessment criteria. The <<MBE assessment criteria for samples, assessment criteria for samples>> may include;
 
@@ -396,7 +397,7 @@ The following test steps require the developer to provide access to a test platf
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS, AGD guidance and <<MBE assessment criteria for samples, assessment criteria for samples>>
+. Information necessary to perform this EA is described in the TSS, BMD, AGD guidance and <<MBE assessment criteria for samples, assessment criteria for samples>>
 . The TOE creates only templates from samples that pass the <<MBE assessment criteria for samples, assessment criteria>> through the independent testing
 
 ===== Requirements for reporting
@@ -427,7 +428,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
-** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include information about the metric
+. BMD shall provide information about how the verification rates are tested
+** The BMD may refer to the developer's <<performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
 . Supplementary information (developer’s [#performance report]#performance report#) shall describe the developer’s performance test protocol and result of testing
 
@@ -437,7 +439,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE verifies a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when biometric verification is succeeded or failed.
+The evaluator shall examine the TSS and BMD to understand how the TOE verifies a user with his/her biometric characteristics. The evaluator shall also examine the guidance about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when biometric verification is succeeded or failed.
 
 The evaluator shall examine developer’s <<Developer’s performance report and its assessment strategy, performance report>> to verify that the developer conducts the objective and repeatable performance testing. Minimum requirements for conducting performance testing are defined in <<Developer’s performance report and its assessment strategy>>.
 
@@ -484,6 +486,8 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.2 at high level description
+** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
+. BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
 . Supplementary information ([#MBV assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
 
@@ -493,7 +497,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS to understand how the TOE checks quality of samples captured (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when low quality samples are presented to the TOE.
+The evaluator shall examine the TSS and BMD to understand how the TOE checks quality of samples captured (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when low quality samples are presented to the TOE.
 
 The evaluator shall examine the <<MBV assessment criteria for samples, assessment criteria for samples>> to check how the TOE checks the quality of samples based on its assessment criteria. The <<MBV assessment criteria for samples, assessment criteria for samples>> may include;
 
@@ -524,7 +528,7 @@ The following test steps require the developer to provide access to a test platf
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS, AGD guidance and <<MBV assessment criteria for samples, assessment criteria for samples>>
+. Information necessary to perform this EA is described in the TSS, BMD, AGD guidance and <<MBV assessment criteria for samples, assessment criteria for samples>>
 . The TOE accepts only samples that pass the <<MBV assessment criteria for samples, assessment criteria>> through the independent testing
 
 ===== Requirements for reporting
@@ -705,14 +709,15 @@ No tool is required for this EA.
 Following input is required from the developer.
 
 [loweralpha]
-. TSS shall explain how the TOE meets FIA_MBE_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information is beyond the scope of assurance level claimed by <<BIOPP-Module>> and may also be exploited by attackers
+. TSS shall explain how the TOE meets FIA_MBE_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information may also be exploited by attackers
+. BMD shall provide additional information needed to explain the PAD mechanism within the scope of the assurance level claimed by <<BIOPP-Module>>
 . AGD guidance may provide information about how the TOE reacts when the artefact is detected
 
 ===== Assessment Strategy
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment.
+The evaluator shall examine the TSS, BMD and AGD guidance to check that the TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment.
 
 The main part of the EA is the evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require a detailed design description of PAD from the developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
@@ -721,7 +726,7 @@ The main part of the EA is the evaluator’s testing defined in <<Evaluation Act
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment
+. TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment
 
 ===== Requirements for reporting
 
@@ -748,14 +753,15 @@ No tool is required for this EA.
 Following input is required from the developer.
 
 [loweralpha]
-. TSS shall explain how the TOE meets FIA_MBV_EXT.3 at high level description. TSS may only states that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information is beyond the scope of assurance level claimed by <<BIOPP-Module>> and may also be exploited by attackers
+. TSS shall explain how the TOE meets FIA_MBV_EXT.3 at high level description. TSS may only state that the TOE implements PAD mechanism and may not disclose any information about the PAD mechanism itself in detail because such information may also be exploited by attackers
+. BMD shall provide additional information needed to explain the PAD mechanism within the scope of the assurance level claimed by <<BIOPP-Module>>
 . AGD guidance may provide information about how the TOE reacts when the artefact is detected
 
 ===== Assessment Strategy
 
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-The evaluator shall examine the TSS and AGD guidance to check that the TSS or AGD guidance states that the TOE prevents the use of the artefact during biometric verification.
+The evaluator shall examine the TSS and AGD guidance to check that the TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact during biometric verification.
 
 The main part of the EA is the evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require a detailed design description of PAD from the developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
@@ -764,7 +770,7 @@ The main part of the EA is the evaluator’s testing defined in <<Evaluation Act
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. TSS or AGD guidance states that the TOE prevents the use of the artefact
+. TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact
 
 ===== Requirements for reporting
 
