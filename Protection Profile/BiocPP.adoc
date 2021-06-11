@@ -43,13 +43,13 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#PP_MD_V3.3]#[PP_MD_V3.3]# Protection Profile for Mobile Device Fundamentals, Version:3.3.
 - [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, {revdate}, Version 1.0 [CFG-MDF-BIO].
 - [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, {revdate}, Version 1.1 - [BIOSD].
-- [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
+- [#ISO19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [#ISO29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
 - [#ISO30107-1]#[ISO/IEC 30107-1]# Biometric presentation attack detection - Part 1: Framework, First edition.
 - [#NIST800-63B]#[NIST800-63B]# NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
 === Glossary
-For the purpose of this PP-Module, the following terms and definitions are given in <<ISOIEC19795-1>> and <<ISO30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
+For the purpose of this PP-Module, the following terms and definitions are given in <<ISO19795-1, ISO/IEC 19795-1>> and <<ISO30107-1, ISO/IEC 30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
 Artefact::
@@ -195,7 +195,7 @@ During the verification process, a user presents one's own biometric characteris
 Examples of biometric characteristic used by the TOE are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics for which <<BIOSD>> defines the Evaluation Activities.
 
 ==== TOE Design
-The TOE is fully integrated into the computer without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
+The TOE is fully integrated into the computer without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1, ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
 
 [#img-TOE-generic]
 .Generic representation of a TOE
@@ -441,11 +441,11 @@ This section lists SFRs for the biometric enrolment and verification.
 [loweralpha]
 . Allowed maximum values defined in the standards
 +
-For example, <<NIST800-63B>> requires that FMR be 1 in 1000 or lower. <<ISO29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4^) and 0.0001% (1 in 10^6^) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. While the PP-Module does not provide any recommendation for those error rates other than minimum error rates, the ST author should set appropriate error rates referring those values. 
+For example, <<NIST800-63B>> requires that FMR be 1 in 1000 or lower. <<ISO29156, ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4^) and 0.0001% (1 in 10^6^) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. While the PP-Module does not provide any recommendation for those error rates other than minimum error rates, the ST author should set appropriate error rates referring those values. 
 +
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
 +
-<<ISOIEC19795-1>> recommends following “rule of 3” (i.e. 95% confidence interval) if there is no error observed during the performance testing. The ST author should assign appropriate confidence interval referring such relevant standards. 
+<<ISO19795-1, ISO/IEC 19795-1>> recommends following “rule of 3” (i.e. 95% confidence interval) if there is no error observed during the performance testing. The ST author should assign appropriate confidence interval referring such relevant standards. 
 
 . Technical limitation
 +
