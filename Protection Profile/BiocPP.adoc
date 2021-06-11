@@ -425,16 +425,20 @@ This section lists SFRs for the biometric enrolment and verification.
 
 *FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection*: _eye, face, fingerprint, vein_].
 
-*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _defined value_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _defined value_].
+*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _value equal to or less than 0.01% (1:10^4^)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval and,
++
+[*selection*: _FNMR, FRR_] not exceeding [*assignment*: _value equal to or less than 5% (5:100)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval.
 
 *Application Note {counter:remark_count}*:: Consider the following factors when setting values of FMR, FAR, FNMR and FRR.
 +
 [loweralpha]
 . Allowed maximum values defined in the standards
 +
-For example, <<NIST800-63B>> requires that FMR be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4^) and 0.0001% (1 in 10^6^) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. While the PP-Module does not provide any recommendation for those error rates, the ST author should set appropriate error rates referring those values. 
+For example, <<NIST800-63B>> requires that FMR be 1 in 1000 or lower. <<ISO29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4^) and 0.0001% (1 in 10^6^) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. While the PP-Module does not provide any recommendation for those error rates other than minimum error rates, the ST author should set appropriate error rates referring those values. 
 +
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
++
+<<ISOIEC19795-1>> recommends following “rule of 3” (i.e. 95% confidence interval) if there is no error observed during the performance testing. The ST author should assign appropriate confidence interval referring such relevant standards. 
 
 . Technical limitation
 +
@@ -446,8 +450,7 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 ===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
 
-*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. As such, sample data shall have [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
-
+*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
 
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
