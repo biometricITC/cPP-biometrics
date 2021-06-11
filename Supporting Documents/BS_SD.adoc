@@ -662,11 +662,19 @@ The evaluator shall report the summary of result of EA defined above, especially
 In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
 
 === Modified SFRs from the Base-PP
-==== Protection of the TSF (FPT)
-===== Key Storage (FPT_KST)
-*FPT_KST_EXT.1*:: Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+==== Cryptographic Support (FCS)
+===== FCS_CKM_EXT.4 Key Destruction
+Refer to the EA for FCS_CKM_EXT.4 in the <<PP_MD_V3.3>> including biometric data as critical security parameters for the EA.
 
-*FPT_KST_EXT.2*:: Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+==== Protection of the TSF (FPT)
+===== FPT_AEX_EXT.4 Domain Isolation 
+Refer to the EA for FPT_AEX_EXT.4 in the <<PP_MD_V3.3>> including the protection of biometric data in the isolation description.
+
+===== Key Storage (FPT_KST_EXT.1)
+Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+
+===== NO Key Transmission (FPT_KST_EXT.2)
+Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
 
 == Evaluation Activities for Selection-Based Requirements 
 
