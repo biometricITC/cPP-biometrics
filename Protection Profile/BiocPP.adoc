@@ -432,9 +432,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 *FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection*: _eye, face, fingerprint, vein_].
 
-*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _value equal to or less than 0.01% (1:10^4^)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval and,
-+
-[*selection*: _FNMR, FRR_] not exceeding [*assignment*: _value equal to or less than 5% (5:100)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval.
+*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _value equal to or less than 0.01% (1:10^4^)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval and, [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _value equal to or less than 5% (5:100)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval.
 
 *Application Note {counter:remark_count}*:: Consider the following factors when setting values of FMR, FAR, FNMR and FRR.
 +
@@ -823,7 +821,7 @@ Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
 *FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection:* _eye, face, fingerprint, vein_].
 
-*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection:* _FMR, FAR_] not exceeding [*assignment:* _defined value_] and [*selection:* _FNMR, FRR_] not exceeding [*assignment:* _defined value_].
+*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _value equal to or less than 0.01% (1:10^4^)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval and, [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _value equal to or less than 5% (5:100)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval.
 
 ===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification
 Hierarchical to: No other components.
@@ -834,8 +832,7 @@ FIA_MBE_EXT.1 Biometric enrolment
 
 FIA_MBV_EXT.1 Biometric verification
 
-
-*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. As such, sample data shall have [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
+*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: _an internal quality metric_, [*assignment*: _quality metric standard_]], using a threshold of [*assignment*: _quality metric threshold_].
 
 ===== FIA_MBV_EXT.3 Presentation attack detection for biometric verification
 Hierarchical to: No other components
