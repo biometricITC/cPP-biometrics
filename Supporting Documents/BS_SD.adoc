@@ -913,10 +913,10 @@ For enhanced security that is easy to use, the TOE implements biometric verifica
 Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face artefact) if such services are available at low cost.
 
 [loweralpha, start=2]
-. Assumptions in <<BIOPP-Module>>
+. Assumptions and Objectives in <<PP_MD_V3.3>>
 +
 --
-<<BIOPP-Module>> defines *A.User* and the evaluator shall assume that the computers are configured securely by users. The evaluator shall make the following assumptions:
+<<PP_MD_V3.3>> defines *A.CONFIG* and the evaluator shall assume that the computers are configured securely to enforce the TOE security policies and *A.PROPER_USER* where the evaluator shall assume that the user is not negligent or hostile. The evaluator shall make the following assumptions:
 
 [arabic]
 .. A user has enroled following guidance provided by the TOE
@@ -924,7 +924,7 @@ Attacker may use any tools or materials that are normally available at home and 
 +
 For efficiency, the evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing. However, as the computer shall be evaluated in the evaluated configuration, any attack needs to succeed within the allowed number of biometric authentication attempts defined in the ST to be considered a successful attack.
 
-<<BIOPP-Module>> also defines *A.Protection* and the evaluator shall assume that biometric data is adequately protected. Especially the evaluator shall make the following assumptions:
+<<PP_MD_V3.3>> also defines *O.INTEGRITY* and the evaluator shall assume that biometric data is adequately protected. Especially the evaluator shall make the following assumptions:
 
 [arabic, start=1]
 .. Attacker can not access the results of PAD subsystem, so they can not tune the artefacts based on the PAD score
