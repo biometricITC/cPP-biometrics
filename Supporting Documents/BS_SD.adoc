@@ -891,56 +891,15 @@ This Section describes EAs for AVA_VAN.1 step by step following the order of AVA
 
 The evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are out of scope of the <<Toolbox>> and need to be made in a completely different way with significantly different materials that are not covered by the <<Toolbox>>.
 
-Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by <<No new artefacts found test plan>>.
+Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
+
+====== New artefact Toolbox updates
+To utilize new artefacts, they must have approval from the BIO-iTC. The requirements for submitting new artefacts for use can be found at the https://biometricitc.github.io/[Biometrics Security home page]. If the new artefact type is approved, it will be included as part of the <<Toolbox>> for use. If the new artefact type is not approved, then only the artefacts already in the <<Toolbox>> may be used.
 
 ===== Identify candidate artefacts for testing
-
-The evaluator shall perform EAs in <<No new artefacts found>> if there is no new artefact species found at the previous step. Otherwise, follow <<New artefacts found>>.
-
-====== No new artefacts found
-
-If the evaluator can’t find such new artefact species, the evaluator does not need to devise new test items in addition to those defined in the <<Toolbox>> because the BIO-iTC develops test items based on all publicly available information published by the publication date of the <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. Therefore, the evaluator does not need to repeat this process.
-
-====== New artefacts found
-
-If the evaluator can find new artefact species, the evaluator shall consider the following factors to examine whether those new artefact species can be used in the actual operational environment or not.
-
-[loweralpha]
-. Attacker’s motivation
-+
-For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a NBAF which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the computer. The BIOSD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the computer.
-+
-Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face artefact) if such services are available at low cost.
-
-[loweralpha, start=2]
-. Assumptions and Objectives in <<PP_MD_V3.3>>
-+
---
-<<PP_MD_V3.3>> defines *A.CONFIG* and the evaluator shall assume that the computers are configured securely to enforce the TOE security policies and *A.PROPER_USER* where the evaluator shall assume that the user is not negligent or hostile. The evaluator shall make the following assumptions:
-
-[arabic]
-.. A user has enroled following guidance provided by the TOE
-.. The computer is securely configured, and maximum number of unsuccessful biometric authentication attempts is limited
-+
-For efficiency, the evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing. However, as the computer shall be evaluated in the evaluated configuration, any attack needs to succeed within the allowed number of biometric authentication attempts defined in the ST to be considered a successful attack.
-
-<<PP_MD_V3.3>> also defines *O.INTEGRITY* and the evaluator shall assume that biometric data is adequately protected. Especially the evaluator shall make the following assumptions:
-
-[arabic, start=1]
-.. Attacker can not access the results of PAD subsystem, so they can not tune the artefacts based on the PAD score
-.. Attacker can not gain access to the templates from the computer to create the artefacts
---
-
-[loweralpha, start=3]
-. Attack potential
-+
-The evaluator is not expected to determine the exploitability for new artefact species beyond those for which a Basic attack potential is required to create and present. Therefore, the evaluator shall determine that attack potential required to use new artefact species is within the scope of the Basic attack potential referring <<Attack Potential and TOE resistance>>.
+Each of the supported biometric modalities have a specific set of defined artefacts to be used in testing. These are devised based on publicly available information published by the publication date of the <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. 
 
 ===== Produce test plan
-
-The evaluator shall perform EAs in <<No new artefacts found test plan>> if there is no new artefact species found in previous step. Otherwise, follow <<New artefacts found test plan>>.
-
-====== No new artefacts found test plan
 
 The evaluator shall select those artefacts that show higher imposter attack presentation match rate at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
@@ -967,26 +926,9 @@ For example, men normally have thicker blood vessels than women. In the case of 
 +
 The evaluator may also increase time for artefact presentation training and habituation to find the better presentation method.
 +
-
 For example, in case of finger or palm vein verification, quality of vein pattern gained from the sensor (NIR-camera) of the TOE may vary depending on the distance between the artefact and sensor, and how to present the artefact to the TOE. However, it’s not possible for the evaluator to know the best distance or presentation method for the artefact in advance because this BIOSD requires the evaluator to test the TOE in a black-box manner. The evaluator may simply increase the number of attempts to find the best distance or presentation through trial and error process.
 
-====== New artefacts found test plan
-
-If the evaluator can find a new artefact species that can be used for penetration testing, the evaluator shall produce the test item for those new artefact species and add them to the <<Toolbox>>. The evaluator shall create those new test items at the same format and level of detail as existing items in the <<Toolbox>>.
-
-Those new test items are out of scope of the independent testing, so the evaluator shall test them first during the penetration testing as described in <<Testing the new artefacts>>. 
-
-The evaluator shall compare and select best candidates from artefacts in <<Toolbox>> and new ones so the evaluator shall apply EAs in <<No new artefacts found test plan>> to both artefacts. 
-
-The evaluator shall inform the BIO-iTC if one can find those new artefacts that are worthwhile to test because the BIO-iTC is responsible for maintaining the <<Toolbox>>.
-
 ===== Conduct the penetration testing
-
-====== Testing the new artefacts 
-
-This section is only applicable when the evaluator can find new artefacts at <<Search for new artefacts>>.
-
-The evaluator shall test those test items created for new artefacts first following the same procedure as the one used for the independent testing and add them to the final test plan based on the result of this testing, as described in <<New artefacts found test plan>>.
 
 ====== Final penetration testing
 
