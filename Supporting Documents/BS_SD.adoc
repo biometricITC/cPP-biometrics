@@ -517,8 +517,8 @@ The following test steps require the developer to provide access to a test platf
 +
 . The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<MBE assessment criteria for samples, assessment criteria for samples>>
 
-. The evaluator shall review public papers on biometric quality (see <<Related Documents>> for some referenced quality papers) for the appropriate modality to determine how to create low quality samples. The evaluator shall document the papers used for reference in the evaluation report.
-.. The evaluator may ask the developer for assistance if public methods are unsuccessful in creating the low quality samples
+. The evaluator shall review public papers on biometric quality (see <<Related Documents>> for some referenced quality papers) for the appropriate modality and algorithm to determine how to create low quality samples. The evaluator shall document the papers used for reference in the evaluation report.
+.. The evaluator may ask the developer for assistance if public methods are unsuccessful in creating the low quality samples (e.g., the quality method is not public).
 
 . The evaluator shall present biometric samples of acceptable quality for biometric verification that satisfy the assessment criteria described in <<MBV assessment criteria for samples, assessment criteria for samples>>
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that do not meet the assessment criteria specified in the <<MBV assessment criteria for samples, assessment criteria for samples>>
