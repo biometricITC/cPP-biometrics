@@ -333,7 +333,7 @@ Following input is required from the developer.
 ** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
 . BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
-. Supplementary information ([#MBE assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
+. Supplementary information (<<[#MBE assessment criteria for samples]#Assessment criteria for samples#>>) shall describe assessment criteria for creating samples
 
 AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
 
@@ -1022,7 +1022,7 @@ The requirements defined in this Section are created based on <<ISO19795-1, ISO/
 
 === Requirements for the performance report
 
-The developer shall provide the performance report for CC evaluations that claim a conform to <<BIOPP-Module>>. This Section defines required content of the performance report that is inputted to the EA for FIA_MBV_EXT.1.
+The developer shall provide the performance report for CC evaluations that claim conformance to the <<BIOPP-Module>>. This Section defines required content of the performance report that is inputted to the EA for FIA_MBV_EXT.1.
 
 The performance report is most likely a separate confidential document and not part of the ST for public release.
 
@@ -1282,6 +1282,121 @@ As described in the previous Section, the genuine and imposter transaction consi
 In this scenario, at least 30,000 imposter transactions shall be conducted with no error to achieve this performance goal if the rule of 3 is applied. To run more than 30,000 imposter transactions, at least 174 test subjects shall be gathered (173 * 174 = 30,102) if cross-comparison of ordered pairs is allowed. If number of test subjects is 174, only 1 genuine transaction can be failed to achieve 1% FRR (2/174 = 0.011 > 1%).
 
 If the developer specifies 0.01% FMR and 1% FNMR in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and 3 genuine attempts can be failed to achieve 1% FNMR (4/390 = 0.0102 > 1%).
+
+[[qualityassessmentcriteria]]
+== Developer's quality assessment criteria report of biometric samples
+This Section describes the requirements for the developer's quality assessment criteria of biometric samples.
+
+The developer shall create a report to explain the criteria used to determine the quality of the samples and how this has been verified.
+
+The evaluator shall examine the quality assessment report following the Assessment Strategy defined in <<EA for FIA_MBE_EXT.2>> and <<EA for FIA_MBV_EXT.2>> to determine the accuracy of the implementation in creating high quality templates for use in the TOE.
+
+The requriements defined in this Section are created based on <<ISO29794-1, ISO/IEC 29794-1>>.
+
+=== Requirements for the quality assessment criteria report
+The developer shall provide the quality assessment criteria report for CC evaluations that claim conformance to the <<BIOPP-Module>>. This Section defines required content of the performance report that is inputted to the EA for FIA_MBE_EXT.2 and FIA_MBV_EXT.2.
+
+The quality assessment critiera report is most likely a separate confidential document and not part of the ST for public release.
+
+=== Summary of contents
+<<QualityItemsTable>> shows items that shall be reported in the performance report. The name or structure of quality assessment criteria report does not need to follow <<QualityItemsTable>>. However, all items in <<QualityItemsTable>> shall be included somewhere in the report. Also, if some items are not included in the report, the developer shall provide a rationale for such exclusion to the evaluator.
+
+:xrefstyle: short
+[cols="1,2",options="header",]
+.Quality Assessment Criteria Report Items
+[[QualityItemsTable]]
+|===
+|*Section* 
+|*Item*
+
+|<<Overview of the quality assessment criteria>> 
+|Overview of the quality assessment criteria
+
+|<<Quality assessment methodology>> 
+|Quality assessment methodology
+
+|<<Quality score>> 
+|Quality score
+
+|<<Quality algorithm identification>> 
+|Quality algorithm identification
+
+|===
+
+:xrefstyle: full
+
+=== Quality assessment criteria report
+This Section describes each item in <<QualityItemsTable>> in detail. All items are created based on <<ISO29794-1, ISO/IEC 29794-1>> however some of them are modified to adjust to the CC evaluation.
+
+==== Overview of the quality assessment criteria
+The developer shall report the following general information about the quality assessment.
+
+[loweralpha]
+. Quality assessment test configuration
++
+[arabic]
+.. TOE Reference
++
+Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the Base-PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
++
+Modification to the TOE for performance testing, if any, shall be reported (e.g. the TOE is modified to export biometric data for reporting quality output). The rationale that such modification does not affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code is not executed during biometric verification or the developer may run regression tests to verify that modification does not change the result of verification (e.g. similarity score).
+.. TOE configuration
++
+Any configurable parameters or settings of the TOE that may affect the performance shall be reported. The value of each parameter set for the testing shall also be provided. For example, if the threshold (e.g. decision threshold and image quality threshold) is configurable by users, the value of the threshold set for the testing shall be reported.
+.. How quality is measured
++
+<<ISO29794-1, ISO/IEC 29794-1>> defines quality as the "degree to which a biometric sample fulfills specified requirements for a targeted application". The way quality is measured using character, fidelity and utility as defined in <<ISO29794-1, ISO/IEC 29794-1>> shall be reported.
+.. Type of quality algorithm
++
+The type of algorithm used to determine the quality of the sample.
+.. Quality assessment test tools
++
+Information that uniquely identifies all testing tools (e.g. SDK) used for the quality assessment testing shall be reported.
+
+[loweralpha, start=2]
+. Result of the quality testing
++
+The quality assessment report shall provide the following items from the result of testing:
++
+[arabic]
+.. Test period and location
++
+Timeline for the quality assessment testing (samples may be collected over multiple sessions if necessary) and location of testing shall be reported.
+.. Modality used for biometric verification
++
+The quality assessment testing shall be done for all modalities selected in FIA_MBV_EXT.1. The results of testing for each modality shall be reported separately.
+.. Number of test subjects and samples
++
+* Test subjects
++
+Number of test subjects who participated in the testing shall be reported.
+* Samples
++
+Number of samples collected for each body part and total number of samples collected from all test subjects shall be reported.
++
+Note all test subjects may not generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of body parts of a test subject) × (number of samples collected for each body part).
+
+[arabic, start=5]
+. Result of testing
++
+The determination of the quality score that will be used as the basis for sufficient quality.
+
+==== Quality assessment methodology
+The developer shall report 
+
+defect types
+
+* user character
+* imaging
+* user behavior
+* environmental
+
+
+
+==== Quality score
+
+
+==== Quality algorithm identification
 
 == Attack Potential and TOE resistance
 
@@ -1670,6 +1785,7 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
 - [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
 - [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems – Part 1: Framework, Under development.  
+- [#ISO29794-1]#[ISO/IEC 29794-1]# Biometric sample quality - Part 1: Framework, Second edition.
 - [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection — Part 3: Testing and reporting, First edition.        
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
 - [#Biometric quality]#[Biometric quality]# Biometric quality: a review of fingerprint, iris, and face - July 2, 2014, https://link.springer.com/article/10.1186/1687-5281-2014-34.
