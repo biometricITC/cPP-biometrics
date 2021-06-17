@@ -74,6 +74,10 @@ Computer::
 	A self-contained device which is composed of a hardware platform and its system software (operating system and applications). The device is typically some sort of general purpose computing platform, such as a laptop, tablet or smartphone that is designed to be portable (though this is not required). _In this version, the term Computer is used as a synonym for Mobile device. However, in the future version, this PP-Module will be updated to allow to use with the latest version of <<PP_OS>> and this italic text will also be removed._
 Computer User (User)::
 	The individual authorized to physically control and operate the Computer, usually the device owner. This person is responsible for configuring the TOE.
+Attack Presentation Classification Error Rate (APCER)::
+	Proportion of attack presentations using the same presentation attack instrument species incorrectly classified as bona fide presentations in a specific scenario.
+Bona Fide Presentation Classification Error Rate (BPCER)::
+	Proportion of bona fide presentations incorrectly classified as presentation attacks in a specific scenario.
 Failure-To-Enrol Rate (FTE)::
 	Proportion of the population for whom the system fails to complete the enrolment process.
 False Accept Rate (FAR)::
@@ -660,7 +664,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 ==== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment [[FIA_MBE_EXT.3]]
 
-*FIA_MBE_EXT.3.1*:: The TSF shall provide a biometric enrolment mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully enroled.
+*FIA_MBE_EXT.3.1*:: The TSF shall provide a biometric enrolment mechanism with the APCER not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] at a BPCER not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully enroled.
 
 ==== FIA_MBV_EXT.3 Presentation attack detection for biometric verification [[FIA_MBV_EXT.3]]
 
@@ -758,7 +762,7 @@ Hierarchical to: No other components
 
 Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBE_EXT.3.1*:: The TSF shall provide a biometric enrolment mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully enroled.
+*FIA_MBE_EXT.3.1*:: The TSF shall provide a biometric enrolment mechanism with the APCER not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] at a BPCER not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully enroled.
 
 ==== Biometric verification (FIA_MBV_EXT)
 
