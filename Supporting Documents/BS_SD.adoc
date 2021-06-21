@@ -1380,7 +1380,7 @@ The determination of the quality score that will be used as the basis for suffic
 ==== Quality algorithm identification
 The developer shall report on the algorithm(s) used to assess the quality of biometric samples. 
 
-The discussion of the algorithms(s) should include information about the defects that are considered and handled in determining quality. The specific algoirthm(s) used to generate a qualtiy score, whether general or modality-specific, must be covered. 
+The discussion of the algorithms(s) should include information about the defects that are considered and handled in determining quality. The specific algorithm(s) used to generate a quality score, whether general or modality-specific, must be covered. 
 
 The following information shall be included in the report.
 
