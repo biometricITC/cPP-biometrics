@@ -1298,7 +1298,7 @@ The developer shall provide the quality assessment criteria report for CC evalua
 The quality assessment critiera report is most likely a separate confidential document and not part of the ST for public release.
 
 === Summary of contents
-<<QualityItemsTable>> shows items that shall be reported in the performance report. The name or structure of quality assessment criteria report does not need to follow <<QualityItemsTable>>. However, all items in <<QualityItemsTable>> shall be included somewhere in the report. Also, if some items are not included in the report, the developer shall provide a rationale for such exclusion to the evaluator.
+<<QualityItemsTable>> shows items that shall be reported in the performance report. The name or structure of quality assessment criteria report does not need to follow <<QualityItemsTable>>. However, all items in <<QualityItemsTable>> should be included somewhere in the report. If some items are not included in the report, the developer shall provide a rationale for such exclusion to the evaluator.
 
 :xrefstyle: short
 [cols="1,2",options="header",]
