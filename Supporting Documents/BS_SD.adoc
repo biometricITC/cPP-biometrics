@@ -1324,7 +1324,7 @@ The quality assessment critiera report is most likely a separate confidential do
 === Quality assessment criteria report
 This Section describes each item in <<QualityItemsTable>> in detail. All items are created based on <<ISO29794-1, ISO/IEC 29794-1>> however some of them are modified to adjust to the CC evaluation.
 
-The developer may point to a public standard used for the determining of qualtiy criteria, such as <<NFIQ2>> or <<ISO29794-1, ISO/IEC 29794-1>> to provide the necesasry information. The developer must provide information about how the public standard is used by the TOE.
+The developer may point to a public standard used for the determining of quality criteria, such as <<ISO29794-4, ISO/IEC 29794-4>> to provide the necessary information. The developer must provide information about how the public standard is used by the TOE.
 
 ==== Overview of the quality assessment testing
 The developer shall report the following general information about the quality assessment.
