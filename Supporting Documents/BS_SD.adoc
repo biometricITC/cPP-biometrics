@@ -1372,7 +1372,7 @@ Number of test subjects who participated in the testing shall be reported.
 +
 Number of samples collected for each modality and total number of samples collected from all test subjects shall be reported.
 +
-Note all test subjects may not generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of body parts of a test subject) × (number of samples collected for each body part).
+Not all test subjects may generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of modalities of a test subject) × (number of samples collected for each modality).
 .. Result of testing
 +
 The determination of the quality score that will be used as the basis for sufficient quality.
