@@ -1802,7 +1802,7 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
 - [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems – Part 1: Framework, Under development.  
 - [#ISO29794-1]#[ISO/IEC 29794-1]# Biometric sample quality - Part 1: Framework, Second edition.
+- [#ISO29794-4]#[ISO/IEC 29794-4]# Biometric sample quality - Part 4: Finger image data.
 - [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection — Part 3: Testing and reporting, First edition.        
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
 - [#Biometric quality]#[Biometric quality]# Biometric quality: a review of fingerprint, iris, and face - July 2, 2014, https://link.springer.com/article/10.1186/1687-5281-2014-34.
-- [#ISO29794-4]#[ISO/IEC 29794-4]# Biometric sample quality - Part 4: Finger image data.
