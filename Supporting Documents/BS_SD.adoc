@@ -1395,7 +1395,7 @@ The following information shall be included in the report.
 A description of how defects are treated when determining quality.
 . Algorithms used in determining quality
 +
-Information about the algorithm(s) used to determine the quality of the captured sample. A description of any custom (e.g. non-public) algorithm must be provided in enough detail to understand how it performs the assessment. Public algorithms can be referenced to their source along with a summary of the use by the TOE.
+Information about the algorithm(s) used to determine the quality of the captured sample. A description of any custom (e.g. non-public) algorithm must be provided in enough detail to understand how it performs the assessment. Public algorithms can be referenced to their source along with a summary of their use by the TOE.
 . Methodology for determining quality
 +
 The workflow for determining the quality of a sample should be described. This must document both success and failure conditions (e.g. when samples may be accepted or rejected at various points in the evaluation process).
