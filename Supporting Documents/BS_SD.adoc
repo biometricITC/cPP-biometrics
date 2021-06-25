@@ -894,7 +894,9 @@ The evaluator shall search publicly available information that is published afte
 Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
 
 ====== New artefact Toolbox updates
-To utilize new artefacts, they must have approval from the BIO-iTC. The requirements for submitting new artefacts for use can be found at the https://biometricitc.github.io/[Biometrics Security home page]. If the new artefact type is approved, it will be included as part of the <<Toolbox>> for use. If the new artefact type is not approved, then only the artefacts already in the <<Toolbox>> may be used.
+The evaluator is strongly encouraged to report to the BIO-iTC when the evaluator can find the new artefact species that can successfully attack the TOE to add them to the <<Toolbox>>. 
+The requirements for addition of new artefact species can be found at the https://biometricitc.github.io/[Biometrics Security home page].
+The new artefact species will be included as part of the <<Toolbox>> by the BIO-iTC and the evaluator must refer the latest <<Toolbox>> at the time of the evaluation.
 
 ===== Identify candidate artefacts for testing
 Each of the supported biometric modalities have a specific set of defined artefacts to be used in testing. These are devised based on publicly available information published by the publication date of the <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. 
