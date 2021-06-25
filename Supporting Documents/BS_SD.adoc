@@ -889,7 +889,7 @@ This Section describes EAs for AVA_VAN.1 step by step following the order of AVA
 
 ===== Search for new artefacts
 
-The evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are out of scope of the <<Toolbox>> and need to be made in a completely different way with significantly different materials that are not covered by the <<Toolbox>>.
+The evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are significantly different from, or made using significantly different materials than those covered by the <<Toolbox>>, but still meet basic attack potential.
 
 Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
 
