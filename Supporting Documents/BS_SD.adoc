@@ -890,7 +890,7 @@ This Section describes EAs for AVA_VAN.1 step by step following the order of AVA
 ===== Search for new artefacts
 Each of the supported biometric modalities have a specific set of defined artefacts species in the <<Toolbox>> to be used in testing. These are devised based on publicly available information published by the publication date of the <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>.
 
-However, new artefacts species may be found after the <<Toolbox>> is published. So the evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are out of scope of the <<Toolbox>> and need to be made in a completely different way with significantly different materials that are not covered by the <<Toolbox>>.
+However, new artefacts species may be found after the <<Toolbox>> is published. The evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are out of scope of the <<Toolbox>> and need to be made in a completely different way with significantly different materials that are not covered by the <<Toolbox>>.
 
 Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
 
