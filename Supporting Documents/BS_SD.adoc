@@ -895,9 +895,7 @@ However, new artefacts species may be found after the <<Toolbox>> is published. 
 Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
 
 ====== New artefact Toolbox updates
-The evaluator shall report to the BIO-iTC when new artefact species are found so the artefacts may be added to the <<Toolbox>>. 
-The requirements for addition of new artefact species can be found at the https://biometricitc.github.io/[Biometrics Security home page].
-The new artefact species will be included as part of the <<Toolbox>> by the BIO-iTC and the evaluator must refer the latest <<Toolbox>> at the time of the evaluation.
+To utilize new artefacts, they must have approval from the BIO-iTC through publication in an incremented toolbox version for the evaluator to evaluate against.footnote:[Publication can occur rapidly, typically ≤2 weeks] The evaluator shall report to the BIO-iTC when new artefact species are found so the artefacts may be added to the <<Toolbox>>. The requirements for addition of new artefact species can be found at the https://biometricitc.github.io/[Biometrics Security home page]. The new artefact species will be included as part of the <<Toolbox>> by the BIO-iTC and the evaluator must refer the latest <<Toolbox>> at the time of the evaluation.
 
 ===== Produce test plan
 
