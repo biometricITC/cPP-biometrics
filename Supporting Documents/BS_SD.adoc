@@ -888,16 +888,16 @@ The <<Toolbox>> describes a test subset and test documentation that is sufficien
 This Section describes EAs for AVA_VAN.1 step by step following the order of AVA_VAN.1 CEM work units.
 
 ===== Search for new artefacts
+Each of the supported biometric modalities have a specific set of defined artefacts species in the <<Toolbox>> to be used in testing. These are devised based on publicly available information published by the publication date of the <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>.
 
-The evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are significantly different from, or made using significantly different materials than those covered by the <<Toolbox>>, but still meet basic attack potential.
+However, new artefacts species may be found after the <<Toolbox>> is published. The evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are significantly different from, or made using significantly different materials than those covered by the <<Toolbox>>, but still meet basic attack potential.
 
 Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
 
 ====== New artefact Toolbox updates
-To utilize new artefacts, they must have approval from the BIO-iTC. The requirements for submitting new artefacts for use can be found at the https://biometricitc.github.io/[Biometrics Security home page]. If the new artefact type is approved, it will be included as part of the <<Toolbox>> for use. If the new artefact type is not approved, then only the artefacts already in the <<Toolbox>> may be used.
-
-===== Identify candidate artefacts for testing
-Each of the supported biometric modalities have a specific set of defined artefacts to be used in testing. These are devised based on publicly available information published by the publication date of the <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. 
+The evaluator shall report to the BIO-iTC when new artefact species are found so the artefacts may be added to the <<Toolbox>>. 
+The requirements for addition of new artefact species can be found at the https://biometricitc.github.io/[Biometrics Security home page].
+The new artefact species will be included as part of the <<Toolbox>> by the BIO-iTC and the evaluator must refer the latest <<Toolbox>> at the time of the evaluation.
 
 ===== Produce test plan
 
@@ -930,9 +930,7 @@ For example, in case of finger or palm vein verification, quality of vein patter
 
 ===== Conduct the penetration testing
 
-====== Final penetration testing
-
-The evaluator shall conduct the penetration testing based on the final test plan updated in the previous step.
+The evaluator shall conduct the penetration testing based on the test plan updated in the previous step.
 
 The evaluator shall select those artefacts that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
@@ -946,7 +944,7 @@ The evaluator shall determine that the TOE, in its operational environment, is r
 
 The EAs presented in this section are derived from AVA_VAN.1-3, AVA_VAN.1-4, AVA_VAN.1-5, AVA_VAN.1-6, AVA_VAN.1-7 and AVA_VAN.1-10 and their verdicts will be associated with those work units.
 
-EAs in the <<Search for new artefacts>> and <<Identify candidate artefacts for testing>> complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new artefact) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
+EAs in the <<Search for new artefacts>> complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new artefact) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
 
 EAs in <<Produce test plan>> and <<Conduct the penetration testing>> complements evaluator’s action for creating the test plan and conducting the penetration testing for PAD (AVA_VAN.1-6 and AVA_VAN.1-7).
 
