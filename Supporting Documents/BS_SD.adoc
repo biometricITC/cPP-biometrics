@@ -1292,6 +1292,8 @@ The evaluator shall examine the quality assessment report following the Assessme
 
 The requriements defined in this Section are created based on <<ISO29794-1, ISO/IEC 29794-1>>.
 
+If the developer's quality assessment doesn't conform to any published standards and _developer defined quality assessment method_ is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, some requirements in this section may not be applicable. In such case, the developer shall contact the BIO-iTC to seek guidance about what report should be prepared.  
+
 === Requirements for the quality assessment criteria report
 The developer shall provide the quality assessment criteria report for CC evaluations that claim conformance to the <<BIOPP-Module>>. This Section defines required content of the performance report that is inputted to the EA for FIA_MBE_EXT.2 and FIA_MBV_EXT.2.
 
