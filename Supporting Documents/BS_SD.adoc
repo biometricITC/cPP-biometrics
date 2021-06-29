@@ -158,6 +158,9 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 |*FRR*
 |False Reject Rate
 
+|*IAPAR*
+|Imposter Attack Presentation Accept Rate
+
 |*iTC* 
 |International Technical Community
 
@@ -870,9 +873,9 @@ As described in previous section, the <<Toolbox>> defines test items to create a
 
 During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enroled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
 
-The <<Toolbox>> defines the Pass/Fail criteria, maximum imposter attack presentation match rate for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign a fail verdict to those TOE that do not satisfy the criteria.
+The <<Toolbox>> defines the Pass/Fail criteria, maximum IAPAR for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign a fail verdict to those TOE that do not satisfy the criteria.
 
-The artefacts that pass the criteria but show the higher imposter attack presentation match rate will be tested again during the AVA_VAN.1 evaluation.
+The artefacts that pass the criteria but show the higher IAPAR will be tested again during the AVA_VAN.1 evaluation.
 
 The <<Toolbox>> does not necessarily cover all biometric modalities, but only existing modalities with approved <<Toolbox>> tests can be used. If the developer wants to evaluate modalities not currently included in the <<Toolbox>>, the developer and evaluator shall contact the BIO-iTC to work together to add the new modality and extend the <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
 
@@ -900,7 +903,11 @@ To utilize new artefacts, they must have approval from the BIO-iTC through publi
 
 ===== Produce test plan
 
-The evaluator shall select those artefacts that show higher imposter attack presentation match rate at the independent testing. The evaluator shall test them extensively during the penetration testing.
+The evaluator shall perform EAs in <<No new artefacts found test plan>> if there is no new artefact species found in previous step. Otherwise, follow <<New artefacts found test plan>>.
+
+====== No new artefacts found test plan
+
+The evaluator shall select those artefacts that show higher IAPAR at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
 If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact).
 
@@ -1751,9 +1758,8 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
 - [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
 - [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems – Part 1: Framework, Under development.  
-- [#ISO29794-1]#[ISO/IEC 29794-1]# Biometric sample quality - Part 1: Framework, Second edition.
-- [#ISO29794-4]#[ISO/IEC 29794-4]# Biometric sample quality - Part 4: Finger image data.
-- [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection — Part 3: Testing and reporting, First edition.        
+- [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
+- [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
 - [#Biometric quality]#[Biometric quality]# Biometric quality: a review of fingerprint, iris, and face - July 2, 2014, https://link.springer.com/article/10.1186/1687-5281-2014-34.
 - [#Vascular quality]#[Vascular quality]# State of the Art in Vascular Biometrics (1.6 Presentation Attacks and Detection, and Sample Quality) - November 14, 2019, https://link.springer.com/chapter/10.1007/978-3-030-27731-4_1#Sec21.
