@@ -336,7 +336,7 @@ Following input is required from the developer.
 ** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
 . BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
-. Supplementary information ([#MBE assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
+. Supplementary information (<<qualityassessmentcriteria, quality assessment criteria report>>) shall describe assessment criteria for creating samples
 
 AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
 
@@ -349,19 +349,19 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 
 The evaluator shall examine the TSS and BMD to understand how the TOE generates templates of sufficient quality from samples at enrolment (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
 
-The evaluator shall examine the <<MBE assessment criteria for samples, assessment criteria for samples>> to determine how the TOE creates the templates from samples based on this assessment criteria. The <<MBE assessment criteria for samples, assessment criteria for samples>> may include;
+The evaluator shall examine the <<qualityassessmentcriteria, quality assessment criteria report>> to determine how the TOE creates the templates from samples based on this assessment criteria. The <<qualityassessmentcriteria, quality assessment criteria report>> may include;
 
 [loweralpha]
 . Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features is available
 . Method to quantify the quality of samples (e.g. method to generate quality score)
 . Assessment criteria to accept the sample of sufficient quality (e.g. compare quality score to quality threshold)
-. Quality standard that the TOE uses to perform the assessment if the TOE follows such standard (e.g. NFIQ for fingerprint)
+. Quality standard that the TOE uses to perform the assessment if the TOE follows such standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint)
 
 *Authentication templates*
 
 If the TOE creates authentication templates, the evaluator shall examine the TSS to understand how the TOE generate sufficient quality of authentication templates.
 
-The evaluator shall examine the <<MBE assessment criteria for samples, assessment criteria for samples>> to determine how the TOE creates the authentication templates from samples based on its assessment criteria. The <<MBE assessment criteria for samples, assessment criteria for samples>> may include a) – d) in <<MBE2>> and;
+The evaluator shall examine the <<qualityassessmentcriteria, quality assessment criteria report>> to determine how the TOE creates the authentication templates from samples based on its assessment criteria. The <<qualityassessmentcriteria, quality assessment criteria report>> may include a) – d) in <<MBE2>> and;
 
 [loweralpha, start=5]
 . Additional assessment criteria to applied to creation of authentication templates
@@ -374,15 +374,15 @@ The evaluator shall perform the following test to verify that the TOE generates 
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall perform biometric enrolment that results in creation of samples from which templates will be created that do not satisfy the assessment criteria described in <<MBE assessment criteria for samples, assessment criteria for samples>> (e.g. presenting biometric samples of low quality)
+. The evaluator shall perform biometric enrolment that results in creation of samples from which templates will be created that do not satisfy the assessment criteria described in <<qualityassessmentcriteria, quality assessment criteria report>> (e.g. presenting biometric samples of low quality)
 +
-. The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<MBE assessment criteria for samples, assessment criteria for samples>>
+. The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<qualityassessmentcriteria, quality assessment criteria report>>
 
 . The evaluator may ask the developer how low quality samples can be created if the TOE does not show any feedback messages
 
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE does not create enrolment templates from samples that do not meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>>
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE does not create enrolment templates from samples that do not meet the assessment criteria specified in the <<qualityassessmentcriteria, quality assessment criteria report>>
 
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any enrolment templates are created by TOE from samples that meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>> correctly
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any enrolment templates are created by TOE from samples that meet the assessment criteria specified in the <<qualityassessmentcriteria, quality assessment criteria report>> correctly
 
 *Authentication templates*
 
@@ -392,16 +392,16 @@ The following test steps require the developer to provide access to a test platf
 
 . The evaluator shall enrol to the biometric system
 . The evaluator shall present biometric samples repeatedly to trigger the TOE to create authentication templates
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE does not create authentication templates from samples that do not meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>>
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any authentication templates created by TOE from samples that meet the assessment criteria specified in the <<MBE assessment criteria for samples, assessment criteria for samples>> correctly
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE does not create authentication templates from samples that do not meet the assessment criteria specified in the <<qualityassessmentcriteria, quality assessment criteria report>>
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any authentication templates created by TOE from samples that meet the assessment criteria specified in the <<qualityassessmentcriteria, quality assessment criteria report>> correctly
 
 ===== Pass/Fail criteria
 
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS, BMD, AGD guidance and <<MBE assessment criteria for samples, assessment criteria for samples>>
-. The TOE creates only templates from samples that pass the <<MBE assessment criteria for samples, assessment criteria>> through the independent testing
+. Information necessary to perform this EA is described in the TSS, BMD, AGD guidance and the <<qualityassessmentcriteria, quality assessment criteria report>>
+. The TOE creates only templates from samples that pass the <<qualityassessmentcriteria, quality assessment criteria>> through the independent testing
 
 ===== Requirements for reporting
 
@@ -492,7 +492,7 @@ Following input is required from the developer.
 ** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
 . BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
-. Supplementary information ([#MBV assessment criteria for samples]#Assessment criteria for samples#) shall describe assessment criteria for creating samples
+. Supplementary information (<<qualityassessmentcriteria, quality assessment criteria report>>) shall describe assessment criteria for creating samples
 
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
 
@@ -502,7 +502,7 @@ AGD guidance may include online assistance, errors, prompts or warning provided 
 
 The evaluator shall examine the TSS and BMD to understand how the TOE checks quality of samples captured (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the guidance, including online assistance or prompts provided by the TOE, about how the TOE supports a user to verify one's biometric correctly and how the TOE behaves when low quality samples are presented to the TOE.
 
-The evaluator shall examine the <<MBV assessment criteria for samples, assessment criteria for samples>> to check how the TOE checks the quality of samples based on its assessment criteria. The <<MBV assessment criteria for samples, assessment criteria for samples>> may include;
+The evaluator shall examine the <<qualityassessmentcriteria, quality assessment criteria report>> to check how the TOE checks the quality of samples based on its assessment criteria. The <<qualityassessmentcriteria, quality assessment criteria report>> may include;
 
 [loweralpha]
 . Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features is available
@@ -516,23 +516,24 @@ The evaluator shall perform the following test to verify that the TOE checks the
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall present biometric samples of low quality for biometric verification that do not satisfy the assessment criteria described in <<MBV assessment criteria for samples, assessment criteria for samples>>
+. The evaluator shall present biometric samples of low quality for biometric verification that do not satisfy the assessment criteria described in <<qualityassessmentcriteria, quality assessment criteria report>>
 +
-. The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<MBE assessment criteria for samples, assessment criteria for samples>>
+. The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<qualityassessmentcriteria, quality assessment criteria report>>
 
-. The evaluator may ask the developer how low quality samples can be created if the TOE doesn’t show any feedback messages
+. The evaluator shall review public papers on biometric quality (see <<Related Documents>> for some referenced quality papers) for the appropriate modality and algorithm to determine how to create low quality samples. The evaluator shall document the papers used for reference in the evaluation report.
+.. The evaluator may ask the developer for assistance if public methods are unsuccessful in creating the low quality samples (e.g., the quality method is not public).
 
-. The evaluator shall present biometric samples of acceptable quality for biometric verification that satisfy the assessment criteria described in <<MBV assessment criteria for samples, assessment criteria for samples>>
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that do not meet the assessment criteria specified in the <<MBV assessment criteria for samples, assessment criteria for samples>>
-. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any samples accepted by TOE meet the assessment criteria specified in the <<MBV assessment criteria for samples, assessment criteria for samples>> correctly
+. The evaluator shall present biometric samples of acceptable quality for biometric verification that satisfy the assessment criteria described in <<qualityassessmentcriteria, quality assessment criteria report>>
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE rejects any samples that do not meet the assessment criteria specified in the <<qualityassessmentcriteria, quality assessment criteria report>>
+. The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that any samples accepted by TOE meet the assessment criteria specified in the <<qualityassessmentcriteria, quality assessment criteria report>> correctly
 
 ===== Pass/Fail criteria
 
 The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
-. Information necessary to perform this EA is described in the TSS, BMD, AGD guidance and <<MBV assessment criteria for samples, assessment criteria for samples>>
-. The TOE accepts only samples that pass the <<MBV assessment criteria for samples, assessment criteria>> through the independent testing
+. Information necessary to perform this EA is described in the TSS, BMD, AGD guidance and <<qualityassessmentcriteria, quality assessment criteria report>>
+. The TOE accepts only samples that pass the <<qualityassessmentcriteria, quality assessment criteria>> through the independent testing
 
 ===== Requirements for reporting
 
@@ -595,17 +596,17 @@ The evaluator can pass this EA only if the evaluator confirms that:
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
 ====== Strategy for ATE_IND
-
-The evaluator shall perform the following test to verify that the TOE encrypts plaintext biometric data if the TOE stores the data in non-volatile memory outside the SEE.
+The evaluator shall perform the following test to verify that the TOE restricts access to the biometric system by the main computer operating system.
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on the Base-PP
-. The evaluator shall load an application onto the computer. This application shall attempt to traverse over all file systems and report any newly created files
-. The evaluator shall perform biometric enrolment and verification and run the app to list new files
-. The evaluator shall compare files reported by the application and ones listed in “file list/format and cryptographic algorithm”
-. If evaluator finds newly created files not listed in “file list/format and cryptographic algorithm”, the evaluator shall confirm that those files do not include plaintext biometric data with the support from developer
-. For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on the Base-PP. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files do not follow the defined format to implicitly assume files are encrypted.
+The test is repeated for biometric enrolment and biometric verification (called the biometric transaction).
+
+. Using tools provided by the developer, the evaluator shall prepare the computer for a scan of the main computer operating system memory
+. The evaluator shall take a memory scan before biometric transaction
+. The evaluator shall perform the biometric transaction
+. The evalautor shall perform a memory scan during the biometric transaction and compare the results to the scan before the biometric transaction
+. The evaluator shall confirm that the changes between the two scans do not show access to the biometric data
 
 ===== Pass/Fail criteria
 
@@ -613,7 +614,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
 . Information necessary to perform this EA is described in the TSS and BMD
-. The TOE encrypts any plaintext biometric data before storing it outside the SEE through the independent testing
+. The TOE does not provide access to the biometric transaction to the main computer operating system
 
 ===== Requirements for reporting
 
@@ -891,53 +892,14 @@ The <<Toolbox>> describes a test subset and test documentation that is sufficien
 This Section describes EAs for AVA_VAN.1 step by step following the order of AVA_VAN.1 CEM work units.
 
 ===== Search for new artefacts
+Each of the supported biometric modalities have a specific set of defined artefacts species in the <<Toolbox>> to be used in testing. These are devised based on publicly available information published by the publication date of the <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>.
 
-The evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are out of scope of the <<Toolbox>> and need to be made in a completely different way with significantly different materials that are not covered by the <<Toolbox>>.
+However, new artefacts species may be found after the <<Toolbox>> is published. The evaluator shall search publicly available information that is published after the publication date of the <<Toolbox>> to look for new artefact species. New artefact species are those artefacts that are significantly different from, or made using significantly different materials than those covered by the <<Toolbox>>, but still meet basic attack potential.
 
-Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by <<No new artefacts found test plan>>.
+Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
 
-===== Identify candidate artefacts for testing
-
-The evaluator shall perform EAs in <<No new artefacts found>> if there is no new artefact species found at the previous step. Otherwise, follow <<New artefacts found>>.
-
-====== No new artefacts found
-
-If the evaluator can’t find such new artefact species, the evaluator does not need to devise new test items in addition to those defined in the <<Toolbox>> because the BIO-iTC develops test items based on all publicly available information published by the publication date of the <<Toolbox>>. The BIO-iTC also verifies that test items cover all existing artefact species that are within the scope of Basic attack potential defined in <<Attack Potential and TOE resistance>>. Therefore, the evaluator does not need to repeat this process.
-
-====== New artefacts found
-
-If the evaluator can find new artefact species, the evaluator shall consider the following factors to examine whether those new artefact species can be used in the actual operational environment or not.
-
-[loweralpha]
-. Attacker’s motivation
-+
-For enhanced security that is easy to use, the TOE implements biometric verification on a device once it has been “unlocked”. The initial unlock is generally done by a NBAF which is required at startup (or possibly after some period of time), and after that the user is able to use a registered biometric characteristic to unlock access to the computer. The BIOSD assumes that the biometric verification is being used in accordance with USE CASE 1: Biometric verification for unlocking the computer.
-+
-Attacker may use any tools or materials that are normally available at home and normal office environment such as laptop PC or office printer to attack the TOE. Attacker may also use any services (e.g. printing services to print a high-resolution photo of target users to create a face artefact) if such services are available at low cost.
-
-[loweralpha, start=2]
-. Assumptions in <<BIOPP-Module>>
-+
---
-<<BIOPP-Module>> defines *A.User* and the evaluator shall assume that the computers are configured securely by users. The evaluator shall make the following assumptions:
-
-[arabic]
-.. A user has enroled following guidance provided by the TOE
-.. The computer is securely configured, and maximum number of unsuccessful biometric authentication attempts is limited
-+
-For efficiency, the evaluator can increase the maximum number of unsuccessful biometric authentication attempts to conduct the testing. However, as the computer shall be evaluated in the evaluated configuration, any attack needs to succeed within the allowed number of biometric authentication attempts defined in the ST to be considered a successful attack.
-
-<<BIOPP-Module>> also defines *A.Protection* and the evaluator shall assume that biometric data is adequately protected. Especially the evaluator shall make the following assumptions:
-
-[arabic, start=1]
-.. Attacker can not access the results of PAD subsystem, so they can not tune the artefacts based on the PAD score
-.. Attacker can not gain access to the templates from the computer to create the artefacts
---
-
-[loweralpha, start=3]
-. Attack potential
-+
-The evaluator is not expected to determine the exploitability for new artefact species beyond those for which a Basic attack potential is required to create and present. Therefore, the evaluator shall determine that attack potential required to use new artefact species is within the scope of the Basic attack potential referring <<Attack Potential and TOE resistance>>.
+====== New artefact Toolbox updates
+To utilize new artefacts, they must have approval from the BIO-iTC through publication in an incremented toolbox version for the evaluator to evaluate against.footnote:[Publication can occur rapidly, typically ≤2 weeks] The evaluator shall report to the BIO-iTC when new artefact species are found so the artefacts may be added to the <<Toolbox>>. The requirements for addition of new artefact species can be found at the https://biometricitc.github.io/[Biometrics Security home page]. The new artefact species will be included as part of the <<Toolbox>> by the BIO-iTC and the evaluator must refer the latest <<Toolbox>> at the time of the evaluation.
 
 ===== Produce test plan
 
@@ -970,30 +932,11 @@ For example, men normally have thicker blood vessels than women. In the case of 
 +
 The evaluator may also increase time for artefact presentation training and habituation to find the better presentation method.
 +
-
 For example, in case of finger or palm vein verification, quality of vein pattern gained from the sensor (NIR-camera) of the TOE may vary depending on the distance between the artefact and sensor, and how to present the artefact to the TOE. However, it’s not possible for the evaluator to know the best distance or presentation method for the artefact in advance because this BIOSD requires the evaluator to test the TOE in a black-box manner. The evaluator may simply increase the number of attempts to find the best distance or presentation through trial and error process.
-
-====== New artefacts found test plan
-
-If the evaluator can find a new artefact species that can be used for penetration testing, the evaluator shall produce the test item for those new artefact species and add them to the <<Toolbox>>. The evaluator shall create those new test items at the same format and level of detail as existing items in the <<Toolbox>>.
-
-Those new test items are out of scope of the independent testing, so the evaluator shall test them first during the penetration testing as described in <<Testing the new artefacts>>. 
-
-The evaluator shall compare and select best candidates from artefacts in <<Toolbox>> and new ones so the evaluator shall apply EAs in <<No new artefacts found test plan>> to both artefacts. 
-
-The evaluator shall inform the BIO-iTC if one can find those new artefacts that are worthwhile to test because the BIO-iTC is responsible for maintaining the <<Toolbox>>.
 
 ===== Conduct the penetration testing
 
-====== Testing the new artefacts 
-
-This section is only applicable when the evaluator can find new artefacts at <<Search for new artefacts>>.
-
-The evaluator shall test those test items created for new artefacts first following the same procedure as the one used for the independent testing and add them to the final test plan based on the result of this testing, as described in <<New artefacts found test plan>>.
-
-====== Final penetration testing
-
-The evaluator shall conduct the penetration testing based on the final test plan updated in the previous step.
+The evaluator shall conduct the penetration testing based on the test plan updated in the previous step.
 
 The evaluator shall select those artefacts that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
@@ -1007,7 +950,7 @@ The evaluator shall determine that the TOE, in its operational environment, is r
 
 The EAs presented in this section are derived from AVA_VAN.1-3, AVA_VAN.1-4, AVA_VAN.1-5, AVA_VAN.1-6, AVA_VAN.1-7 and AVA_VAN.1-10 and their verdicts will be associated with those work units.
 
-EAs in the <<Search for new artefacts>> and <<Identify candidate artefacts for testing>> complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new artefact) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
+EAs in the <<Search for new artefacts>> complements evaluator’s action for searching publicly available information and identifying potential vulnerabilities (e.g. new artefact) (AVA_VAN.1-3, AVA_VAN.1-4 and AVA_VAN.1-5).
 
 EAs in <<Produce test plan>> and <<Conduct the penetration testing>> complements evaluator’s action for creating the test plan and conducting the penetration testing for PAD (AVA_VAN.1-6 and AVA_VAN.1-7).
 
@@ -1025,7 +968,7 @@ The requirements defined in this Section are created based on <<ISO19795-1, ISO/
 
 === Requirements for the performance report
 
-The developer shall provide the performance report for CC evaluations that claim a conform to <<BIOPP-Module>>. This Section defines required content of the performance report that is inputted to the EA for FIA_MBV_EXT.1.
+The developer shall provide the performance report for CC evaluations that claim conformance to the <<BIOPP-Module>>. This Section defines required content of the performance report that is inputted to the EA for FIA_MBV_EXT.1.
 
 The performance report is most likely a separate confidential document and not part of the ST for public release.
 
@@ -1115,9 +1058,8 @@ Note all test subjects may not generate the templates successfully and total num
 Number of samples collected for each body part and total number of samples collected from all test subjects shall be reported.
 +
 Note all test subjects may not generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of body parts of a test subject) × (number of samples collected for each body part).
-
-[arabic, start=5]
-. Result of testing
++
+.. Result of testing
 +
 Error rates measured by the performance testing shall be reported.
 +
@@ -1285,6 +1227,149 @@ As described in the previous Section, the genuine and imposter transaction consi
 In this scenario, at least 30,000 imposter transactions shall be conducted with no error to achieve this performance goal if the rule of 3 is applied. To run more than 30,000 imposter transactions, at least 174 test subjects shall be gathered (173 * 174 = 30,102) if cross-comparison of ordered pairs is allowed. If number of test subjects is 174, only 1 genuine transaction can be failed to achieve 1% FRR (2/174 = 0.011 > 1%).
 
 If the developer specifies 0.01% FMR and 1% FNMR in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and 3 genuine attempts can be failed to achieve 1% FNMR (4/390 = 0.0102 > 1%).
+
+[[qualityassessmentcriteria]]
+== Developer's quality assessment criteria report of biometric samples
+This Section describes the requirements for the developer's quality assessment criteria of biometric samples.
+
+The developer shall create a report to explain the criteria used to determine the quality of the samples and how this has been verified.
+
+The evaluator shall examine the quality assessment report following the Assessment Strategy defined in <<EA for FIA_MBE_EXT.2>> and <<EA for FIA_MBV_EXT.2>> to determine the accuracy of the implementation in creating high quality templates for use in the TOE.
+
+The requriements defined in this Section are created based on <<ISO29794-1, ISO/IEC 29794-1>>.
+
+If the developer's quality assessment doesn't conform to any published standards and _developer defined quality assessment method_ is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, some requirements in this section may not be applicable. In such case, the developer shall contact the BIO-iTC to seek guidance about what report should be prepared.  
+
+=== Requirements for the quality assessment criteria report
+The developer shall provide the quality assessment criteria report for CC evaluations that claim conformance to the <<BIOPP-Module>>. This Section defines required content of the performance report that is inputted to the EA for FIA_MBE_EXT.2 and FIA_MBV_EXT.2.
+
+The quality assessment critiera report is most likely a separate confidential document and not part of the ST for public release.
+
+=== Summary of contents
+<<QualityItemsTable>> shows items that shall be reported in the performance report. The name or structure of quality assessment criteria report does not need to follow <<QualityItemsTable>>. However, all items in <<QualityItemsTable>> should be included somewhere in the report. If some items are not included in the report, the developer shall provide a rationale for such exclusion to the evaluator.
+
+:xrefstyle: short
+[cols="1,2",options="header",]
+.Quality Assessment Criteria Report Items
+[[QualityItemsTable]]
+|===
+|*Section* 
+|*Item*
+
+|<<Overview of the quality assessment testing>> 
+|Overview of the quality assessment testing
+
+|<<Quality algorithm identification>> 
+|Quality algorithm identification
+
+|<<Quality score>> 
+|Quality score
+
+|===
+
+:xrefstyle: full
+
+=== Quality assessment criteria report
+This Section describes each item in <<QualityItemsTable>> in detail. All items are created based on <<ISO29794-1, ISO/IEC 29794-1>> however some of them are modified to adjust to the CC evaluation.
+
+The developer may point to a public standard used for the determining of quality criteria, such as <<ISO29794-4, ISO/IEC 29794-4>> to provide the necessary information. The developer must provide information about how the public standard is used by the TOE.
+
+==== Overview of the quality assessment testing
+The developer shall report the following general information about the quality assessment.
+
+[loweralpha]
+. Quality assessment test configuration
++
+[arabic]
+.. TOE Reference
++
+Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the Base-PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
++
+Modification to the TOE for performance testing, if any, shall be reported (e.g. the TOE is modified to export biometric data for reporting quality output). The rationale that such modification does not affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code is not executed during biometric verification or the developer may run regression tests to verify that modification does not change the result of verification (e.g. similarity score).
+.. TOE configuration
++
+Any configurable parameters or settings of the TOE that may affect the performance shall be reported. The value of each parameter set for the testing shall also be provided. For example, if the threshold (e.g. decision threshold and image quality threshold) is configurable by users, the value of the threshold set for the testing shall be reported.
+.. How quality is measured
++
+<<ISO29794-1, ISO/IEC 29794-1>> defines quality as the "degree to which a biometric sample fulfills specified requirements for a targeted application". The way quality is measured using character, fidelity and utility as defined in <<ISO29794-1, ISO/IEC 29794-1>> shall be reported.
+.. Type of quality algorithm
++
+The type of algorithm used to determine the quality of the sample.
+.. Quality assessment test tools
++
+Information that uniquely identifies all testing tools (e.g. SDK) used for the quality assessment testing shall be reported.
+
+[loweralpha, start=2]
+. Result of the quality testing
++
+The quality assessment report shall provide the following items from the result of testing:
++
+[arabic]
+.. Test period and location
++
+Timeline for the quality assessment testing (samples may be collected over multiple sessions if necessary) and location of testing shall be reported.
+.. Modality used for biometric verification
++
+The quality assessment testing shall be done for all modalities selected in FIA_MBV_EXT.1. The results of testing for each modality shall be reported separately.
+.. Test conditions and environment
++
+The conditions under which the testing occurred that are germain to the modality being reviewed. For example (not exhaustive):
++
+* Location of test (indoor vs outdoor)
+* Time of day (morning, afternoon, evening, night)
+* Season
+* Cleanliness (for example using dirty fingers)
+* Lighting conditions (diffuse, harsh, artifical, natural, temperature)
+.. Number of test subjects and samples
++
+* Test subjects
++
+Number of test subjects who participated in the testing shall be reported.
+* Samples
++
+Number of samples collected for each modality and total number of samples collected from all test subjects shall be reported.
++
+Not all test subjects may generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of modalities of a test subject) × (number of samples collected for each modality).
+.. Result of testing
++
+The determination of the quality score that will be used as the basis for sufficient quality.
+
+==== Quality algorithm identification
+The developer shall report on the algorithm(s) used to assess the quality of biometric samples. 
+
+The discussion of the algorithms(s) should include information about the defects that are considered and handled in determining quality. The specific algorithm(s) used to generate a quality score, whether general or modality-specific, must be covered. 
+
+The following information shall be included in the report.
+
+[loweralpha]
+. Review of defect types and how they are handled.
+* User character
+* User behavior
+* Imaging
+* Environmental
+. Criteria used to determine quality
++
+A description of how defects are treated when determining quality.
+. Algorithms used in determining quality
++
+Information about the algorithm(s) used to determine the quality of the captured sample. A description of any custom (e.g. non-public) algorithm must be provided in enough detail to understand how it performs the assessment. Public algorithms can be referenced to their source along with a summary of their use by the TOE.
+. Methodology for determining quality
++
+The workflow for determining the quality of a sample should be described. This must document both success and failure conditions (e.g. when samples may be accepted or rejected at various points in the evaluation process).
+
+==== Quality score
+The developer shall report on how the quality score is determined and how the result is used by the TOE. Enrolment and verification may have different requirements for the score necessary to use a sample. If this is the case, the report must specify the quality score differences for each mode of operation.
+
+[loweralpha]
+. Score calculations
++
+A description of how the score is calculated based on the output of the algorithms. If multiple algorithms are used to evaluate a sample, the report must include information about how the output from each algorithm is evaluated and combined in producing the quality score.
+. Score scale
++
+Information about how the score is scaled (e.g on a 5 point rating or on a 100-point scale). 
+. Score threshold(s)
++
+A description of how the score output is used to determine whether to use the sample for the comparison. This includes acceptance of the sample as well as feedback modes to the user (e.g. finger wet, image too dark) and full failure with no aquisition of usable data.
 
 == Attack Potential and TOE resistance
 
@@ -1677,3 +1762,4 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
 - [#Biometric quality]#[Biometric quality]# Biometric quality: a review of fingerprint, iris, and face - July 2, 2014, https://link.springer.com/article/10.1186/1687-5281-2014-34.
+- [#Vascular quality]#[Vascular quality]# State of the Art in Vascular Biometrics (1.6 Presentation Attacks and Detection, and Sample Quality) - November 14, 2019, https://link.springer.com/chapter/10.1007/978-3-030-27731-4_1#Sec21.
