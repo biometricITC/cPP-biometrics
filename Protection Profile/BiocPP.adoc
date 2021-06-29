@@ -88,8 +88,6 @@ False Reject Rate (FRR)::
 	Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates.
 Imposter Attack Presentation Accept Rate (IAPAR)::
     In a full-system evaluation of a verification system, proportion of impostor presentation attacks using the same artefact type that result in a accept.
-Imposter Attack Presentation Accept Rate for enrolment (IAPARE)::
-    In a full-system evaluation of a enrolment system, proportion of impostor presentation attacks using the same artefact type that result in a successful enrolment.
 Locked State::
 	Powered on Computer, with most functionalities unavailable for use. User authentication is required to access full functionality.
 (Biometric) Modality::
@@ -662,7 +660,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 ==== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment [[FIA_MBE_EXT.3]]
 
-*FIA_MBE_EXT.3.1*:: The TSF shall provide a biometric enrolment mechanism with the IAPARE not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully enroled.
+*FIA_MBE_EXT.3.1*:: The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
 
 ==== FIA_MBV_EXT.3 Presentation attack detection for biometric verification [[FIA_MBV_EXT.3]]
 
@@ -760,7 +758,7 @@ Hierarchical to: No other components
 
 Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBE_EXT.3.1*:: The TSF shall provide a biometric enrolment mechanism with the IAPARE not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully enroled.
+*FIA_MBE_EXT.3.1*:: The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
 
 ==== Biometric verification (FIA_MBV_EXT)
 

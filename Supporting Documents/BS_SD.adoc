@@ -161,9 +161,6 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 |*IAPAR*
 |Imposter Attack Presentation Accept Rate
 
-|*IAPARE*
-|Imposter Attack Presentation Accept Rate for enrolment
-
 |*iTC* 
 |International Technical Community
 
@@ -875,9 +872,9 @@ As described in previous section, the <<Toolbox>> defines test items to create a
 
 During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enroled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
 
-The <<Toolbox>> defines the Pass/Fail criteria, maximum IAPAR/IAPARE for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign a fail verdict to those TOE that do not satisfy the criteria.
+The <<Toolbox>> defines the Pass/Fail criteria, maximum IAPAR for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign a fail verdict to those TOE that do not satisfy the criteria.
 
-The artefacts that pass the criteria but show the higher IAPAR/IAPARE will be tested again during the AVA_VAN.1 evaluation.
+The artefacts that pass the criteria but show the higher IAPAR will be tested again during the AVA_VAN.1 evaluation.
 
 The <<Toolbox>> does not necessarily cover all biometric modalities, but only existing modalities with approved <<Toolbox>> tests can be used. If the developer wants to evaluate modalities not currently included in the <<Toolbox>>, the developer and evaluator shall contact the BIO-iTC to work together to add the new modality and extend the <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
 
@@ -948,7 +945,7 @@ The evaluator shall perform EAs in <<No new artefacts found test plan>> if there
 
 ====== No new artefacts found test plan
 
-The evaluator shall select those artefacts that show higher IAPAR/IAPARE at the independent testing. The evaluator shall test them extensively during the penetration testing.
+The evaluator shall select those artefacts that show higher IAPAR at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
 If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact).
 
