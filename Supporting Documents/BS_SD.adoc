@@ -593,17 +593,17 @@ The evaluator can pass this EA only if the evaluator confirms that:
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
 ====== Strategy for ATE_IND
-
-The evaluator shall perform the following test to verify that the TOE encrypts plaintext biometric data if the TOE stores the data in non-volatile memory outside the SEE.
+The evaluator shall perform the following test to verify that the TOE restricts access to the biometric system by the main computer operating system.
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall check that all cryptographic algorithms listed in “file list/format and cryptographic algorithm” are successfully evaluated based on the Base-PP
-. The evaluator shall load an application onto the computer. This application shall attempt to traverse over all file systems and report any newly created files
-. The evaluator shall perform biometric enrolment and verification and run the app to list new files
-. The evaluator shall compare files reported by the application and ones listed in “file list/format and cryptographic algorithm”
-. If evaluator finds newly created files not listed in “file list/format and cryptographic algorithm”, the evaluator shall confirm that those files do not include plaintext biometric data with the support from developer
-. For all files listed in “file list/format and cryptographic algorithm”, the evaluator shall display the contents of files and check that the files are encrypted. The evaluator can assume that encryption is done correctly because the TOE uses cryptographic algorithms evaluated based on the Base-PP. The evaluator shall compare the content of files to the format defined in “file list/format and cryptographic algorithm” to check that the files do not follow the defined format to implicitly assume files are encrypted.
+The test is repeated for biometric enrolment and biometric verification (called the biometric transaction).
+
+. Using tools provided by the developer, the evaluator shall prepare the computer for a scan of the main computer operating system memory
+. The evaluator shall take a memory scan before biometric transaction
+. The evaluator shall perform the biometric transaction
+. The evalautor shall perform a memory scan during the biometric transaction and compare the results to the scan before the biometric transaction
+. The evaluator shall confirm that the changes between the two scans do not show access to the biometric data
 
 ===== Pass/Fail criteria
 
@@ -611,7 +611,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 [loweralpha]
 . Information necessary to perform this EA is described in the TSS and BMD
-. The TOE encrypts any plaintext biometric data before storing it outside the SEE through the independent testing
+. The TOE does not provide access to the biometric transaction to the main computer operating system
 
 ===== Requirements for reporting
 
