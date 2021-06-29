@@ -1365,6 +1365,15 @@ Timeline for the quality assessment testing (samples may be collected over multi
 .. Modality used for biometric verification
 +
 The quality assessment testing shall be done for all modalities selected in FIA_MBV_EXT.1. The results of testing for each modality shall be reported separately.
+.. Test conditions and environment
++
+The conditions under which the testing occurred that are germain to the modality being reviewed. For example (not exhaustive):
++
+* Location of test (indoor vs outdoor)
+* Time of day (morning, afternoon, evening, night)
+* Season
+* Cleanliness (for example using dirty fingers)
+* Lighting conditions (diffuse, harsh, artifical, natural, temperature)
 .. Number of test subjects and samples
 +
 * Test subjects
