@@ -694,7 +694,7 @@ This component defines the requirements for the TSF to be able to enrol a user, 
 ===== Component levelling
 [#img-FIA-MBE-EXT] 
 .Component levelling 
-[ditaa,"FIA_MBE_EXT.png"]
+[ditaa,"FIA_MBE_EXT"]
 ....
                                                      +---+
                                                   +->| 1 |
@@ -770,7 +770,7 @@ This component defines the requirements for the TSF to be able to verify a user,
 ===== Component levelling
 [#img-FIA-MBV-EXT] 
 .Component levelling 
-[ditaa,"FIA_MBV_EXT.png"]
+[ditaa,"FIA_MBV_EXT"]
 ....
                                                        +---+
                                                     +->| 1 |
@@ -858,7 +858,7 @@ This component defines the requirements for the TSF to be able to protect plaint
 ===== Component levelling
 [#img-FPT_BDP-EXT]
 .Component levelling
-[ditaa,"FPT_BDP_EXT.png"]
+[ditaa,"FPT_BDP_EXT"]
 ....
 
     +-----------------------------------------+ 
@@ -893,7 +893,7 @@ This component defines the requirements for the TSF to be able to protect templa
 ===== Component levelling
 [#img-FPT-BPT-EXT]
 .Component levelling
-[ditaa,"FPT_BPT_EXT.png"]
+[ditaa,"FPT_BPT_EXT"]
 ....
 
     +------------------------------------------------+
