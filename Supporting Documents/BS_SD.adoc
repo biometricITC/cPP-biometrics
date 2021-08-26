@@ -333,10 +333,11 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description
-** If a non-standard (i.e., internal) quality metric is claimed, the TSS must include an overview of the quality metric
-. BMD shall explain details about a non-standard (i.e., internal) quality metric if one is claimed. The BMD may also include details of standard quality metrics as applicable.
+** If standard quality metrics are selected and assigned, the TSS shall include information (e.g. name of quality metrics and section numbers that define the metrics in the standard) to identify quality metrics that the TOE implements
+** If a _developer defined quality assessment_ is selected, the TSS shall include an overview of the quality metrics used for the assessment
+. BMD shall provide information about the assessment criteria that explains how the TOE checks the quality of samples to create enrolment and authentication templates (e.g. how the quality of samples are assessed based on the quality metrics and accepted or rejected based on the scores of quality metrics)
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
-. Supplementary information (<<qualityassessmentcriteria, quality assessment criteria report>>) shall describe assessment criteria for creating samples
+. Supplementary information (<<qualityassessmentcriteria, quality assessment criteria report>> explained in <<Developer’s quality assessment criteria report of biometric samples>>) shall describe efficacy of quality metrics, how the efficacy is tested or conformed and how the low-quality samples can be generated
 
 AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
 
@@ -345,26 +346,9 @@ AGD guidance may include online assistance, prompts or warning provided by the T
 [[MBE2]]
 ====== Strategy for ASE_TSS and AGD_OPE/ADV_FSP
 
-*Enrolment templates*
+The evaluator shall examine the TSS and BMD to understand how the TOE generates templates of sufficient quality from samples at enrolment. The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
 
-The evaluator shall examine the TSS and BMD to understand how the TOE generates templates of sufficient quality from samples at enrolment (see <<Biometric quality>> for a review of measures of sample quality). The evaluator shall also examine the AGD guidance about how the TOE supports a user to enrol correctly and how the TOE behaves when low quality samples are presented to the TOE for enrolment.
-
-The evaluator shall examine the <<qualityassessmentcriteria, quality assessment criteria report>> to determine how the TOE creates the templates from samples based on this assessment criteria. The <<qualityassessmentcriteria, quality assessment criteria report>> may include;
-
-[loweralpha]
-. Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features is available
-. Method to quantify the quality of samples (e.g. method to generate quality score)
-. Assessment criteria to accept the sample of sufficient quality (e.g. compare quality score to quality threshold)
-. Quality standard that the TOE uses to perform the assessment if the TOE follows such standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint)
-
-*Authentication templates*
-
-If the TOE creates authentication templates, the evaluator shall examine the TSS to understand how the TOE generate sufficient quality of authentication templates.
-
-The evaluator shall examine the <<qualityassessmentcriteria, quality assessment criteria report>> to determine how the TOE creates the authentication templates from samples based on its assessment criteria. The <<qualityassessmentcriteria, quality assessment criteria report>> may include a) – d) in <<MBE2>> and;
-
-[loweralpha, start=5]
-. Additional assessment criteria to applied to creation of authentication templates
+The evaluator shall examine the <<qualityassessmentcriteria, quality assessment criteria report>> to check the efficacy of quality metrics to conform that the TOE can select enough quality of samples from which TOE generates templates of sufficient quality.
 
 ====== Strategy for ATE_IND
 
@@ -374,11 +358,7 @@ The evaluator shall perform the following test to verify that the TOE generates 
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall perform biometric enrolment that results in creation of samples from which templates will be created that do not satisfy the assessment criteria described in <<qualityassessmentcriteria, quality assessment criteria report>> (e.g. presenting biometric samples of low quality)
-+
-. The evaluator may examine feedback messages shown (e.g. “Finger too wet” in case of fingerprint verification) to understand how the evaluator can present a biometric characteristic that does not meet the <<qualityassessmentcriteria, quality assessment criteria report>>
-
-. The evaluator may ask the developer how low quality samples can be created if the TOE does not show any feedback messages
+. The evaluator shall perform biometric enrolment that results in creation of samples from which templates will be created that do not satisfy the assessment criteria described in <<qualityassessmentcriteria, quality assessment criteria report>>. Methods to create poor samples are described in the report (e.g. varying temperature / humidity conditions of the finger skin, low physical pressure, too less presentation time or incorrect finger positioning angles for fingerprint verification)
 
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE does not create enrolment templates from samples that do not meet the assessment criteria specified in the <<qualityassessmentcriteria, quality assessment criteria report>>
 
@@ -1229,24 +1209,22 @@ In this scenario, at least 30,000 imposter transactions shall be conducted with 
 If the developer specifies 0.01% FMR and 1% FNMR in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and 3 genuine attempts can be failed to achieve 1% FNMR (4/390 = 0.0102 > 1%).
 
 [[qualityassessmentcriteria]]
-== Developer's quality assessment criteria report of biometric samples
-This Section describes the requirements for the developer's quality assessment criteria of biometric samples.
+== Developer’s quality assessment criteria report of biometric samples
+The TOE shall only use biometric samples of sufficient quality as required by FIA_MBE_EXT.2 and FIA_MBV_EXT.2. This means that the TOE shall assess the quality of samples based on quality assessment criteria, namely, quality scores of samples measured by quality metrics and threshold to reject poor-quality samples and the assessment criteria shall contribute to the TOE’s performance, especially FRR and FNMR. 
 
-The developer shall create a report to explain the criteria used to determine the quality of the samples and how this has been verified.
+BMD describes which quality metrics and how such quality metrics are used; however, usefulness or efficacy of quality metrics are not explained in BMD. Quality assessment criteria report shall show the efficacy of quality metrics and this section defines the requirements for the report. The requirements defined in this Section are created referring <<ISO29794-1, ISO/IEC 29794-1>>.
 
-The evaluator shall examine the quality assessment report following the Assessment Strategy defined in <<EA for FIA_MBE_EXT.2>> and <<EA for FIA_MBV_EXT.2>> to determine the accuracy of the implementation in creating high quality templates for use in the TOE.
+If the developer’s quality metrics conform to published standards and name of the standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>>) is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, the developer doesn’t need to test the efficacy of quality metrics because such efficacy had been verified by experts during the standardization process. However, the developer shall conduct the conformance test to show the implementations of quality metrics in the TOE conform with ones defined in the standard. For example, if the TOE implements the quality metrics for fingerprint defined in <<ISO29794-4, ISO/IEC 29794-4>>, the developer shall conduct the conformance test following the annex of <<ISO29794-4, ISO/IEC 29794-4>> and quality scores measured by quality metrics implemented in the TOE from open samples in the public databases specified in <<ISO29794-4, ISO/IEC 29794-4>> shall not differ from ones measured by the reference implementation, as shown in Table A.1 of <<ISO29794-4, ISO/IEC 29794-4>>, by more than 1 % to claim the conformance. Requirements for the report is described in <<Requirements for the quality assessment criteria report (standard quality metrics)>>.
 
-The requriements defined in this Section are created based on <<ISO29794-1, ISO/IEC 29794-1>>.
+If the developer’s quality metrics conform to published standards however standards don’t describe the method to verify the conformance (e.g. details of conformance test), or the developer’s quality metrics don’t conform to any published standards and _developer defined quality assessment method_ is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, the developer shall conduct the test to show the efficacy of quality metrics implemented in the TOE. This means that the developer shall conduct the test to show that those quality metrics serve as indicators of the usefulness of the biometric sample for biometric enrolment and verification and rejection of poor-quality samples based on those metrics improves TOE’s performance. Requirements for the report is described in <<Requirements for the quality assessment criteria report (non-standard quality metrics)>>.
 
-If the developer's quality assessment doesn't conform to any published standards and _developer defined quality assessment method_ is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, some requirements in this section may not be applicable. In such case, the developer shall contact the BIO-iTC to seek guidance about what report should be prepared.  
+=== Requirements for the quality assessment criteria report (standard quality metrics)
+This Section defines required content of the quality assessment criteria report for the TOE that implements the standard quality metrics. 
 
-=== Requirements for the quality assessment criteria report
-The developer shall provide the quality assessment criteria report for CC evaluations that claim conformance to the <<BIOPP-Module>>. This Section defines required content of the performance report that is inputted to the EA for FIA_MBE_EXT.2 and FIA_MBV_EXT.2.
+The report is most likely a separate confidential document and not part of the ST for public release.
 
-The quality assessment critiera report is most likely a separate confidential document and not part of the ST for public release.
-
-=== Summary of contents
-<<QualityItemsTable>> shows items that shall be reported in the performance report. The name or structure of quality assessment criteria report does not need to follow <<QualityItemsTable>>. However, all items in <<QualityItemsTable>> should be included somewhere in the report. If some items are not included in the report, the developer shall provide a rationale for such exclusion to the evaluator.
+==== Summary of contents
+<<QualityItemsTable>> shows items that shall be reported in the report. The name or structure of report does not need to follow <<QualityItemsTable>>. However, all items in <<QualityItemsTable>> should be included somewhere in the report. If some items are not included in the report, the developer shall provide a rationale for such exclusion to the evaluator.
 
 :xrefstyle: short
 [cols="1,2",options="header",]
@@ -1269,12 +1247,12 @@ The quality assessment critiera report is most likely a separate confidential do
 
 :xrefstyle: full
 
-=== Quality assessment criteria report
+==== Quality assessment criteria report
 This Section describes each item in <<QualityItemsTable>> in detail. All items are created based on <<ISO29794-1, ISO/IEC 29794-1>> however some of them are modified to adjust to the CC evaluation.
 
 The developer may point to a public standard used for the determining of quality criteria, such as <<ISO29794-4, ISO/IEC 29794-4>> to provide the necessary information. The developer must provide information about how the public standard is used by the TOE.
 
-==== Overview of the quality assessment testing
+===== Overview of the quality assessment testing
 The developer shall report the following general information about the quality assessment.
 
 [loweralpha]
@@ -1334,7 +1312,7 @@ Not all test subjects may generate the samples successfully and total number of 
 +
 The determination of the quality score that will be used as the basis for sufficient quality.
 
-==== Quality algorithm identification
+===== Quality algorithm identification
 The developer shall report on the algorithm(s) used to assess the quality of biometric samples. 
 
 The discussion of the algorithms(s) should include information about the defects that are considered and handled in determining quality. The specific algorithm(s) used to generate a quality score, whether general or modality-specific, must be covered. 
@@ -1357,7 +1335,7 @@ Information about the algorithm(s) used to determine the quality of the captured
 +
 The workflow for determining the quality of a sample should be described. This must document both success and failure conditions (e.g. when samples may be accepted or rejected at various points in the evaluation process).
 
-==== Quality score
+===== Quality score
 The developer shall report on how the quality score is determined and how the result is used by the TOE. Enrolment and verification may have different requirements for the score necessary to use a sample. If this is the case, the report must specify the quality score differences for each mode of operation.
 
 [loweralpha]
@@ -1370,6 +1348,8 @@ Information about how the score is scaled (e.g on a 5 point rating or on a 100-p
 . Score threshold(s)
 +
 A description of how the score output is used to determine whether to use the sample for the comparison. This includes acceptance of the sample as well as feedback modes to the user (e.g. finger wet, image too dark) and full failure with no aquisition of usable data.
+
+=== Requirements for the quality assessment criteria report (non-standard quality metrics)
 
 == Attack Potential and TOE resistance
 
@@ -1758,6 +1738,8 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
 - [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
 - [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems – Part 1: Framework, Under development.  
+- [#ISO29794-1]#[ISO/IEC 29794-1]# Information technology — Biometric sample quality - Part 1: Framework, First edition.
+- [#ISO29794-4]#[ISO/IEC 29794-4]# Information technology — Biometric sample quality - Part 4: Finger image data, First edition.
 - [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
 - [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
