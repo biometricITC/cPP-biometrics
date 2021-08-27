@@ -358,7 +358,7 @@ The evaluator shall perform the following test to verify that the TOE generates 
 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 
-. The evaluator shall perform biometric enrolment that results in creation of samples from which templates will be created that do not satisfy the assessment criteria described in <<qualityassessmentcriteria, quality assessment criteria report>>. Methods to create poor samples are described in the report (e.g. varying temperature / humidity conditions of the finger skin, low physical pressure, too less presentation time or incorrect finger positioning angles for fingerprint verification)
+. The evaluator shall perform biometric enrolment that results in creation of samples from which templates will be created that do not satisfy the assessment criteria described in <<qualityassessmentcriteria, quality assessment criteria report>>. Methods to create low-quality samples are described in the report (e.g. varying temperature / humidity conditions of the finger skin, low physical pressure, too less presentation time or incorrect finger positioning angles for fingerprint verification)
 
 . The evaluator shall check the TOE internal data (e.g. quality scores and quality threshold) to confirm that the TOE does not create enrolment templates from samples that do not meet the assessment criteria specified in the <<qualityassessmentcriteria, quality assessment criteria report>>
 
@@ -1228,126 +1228,79 @@ The report is most likely a separate confidential document and not part of the S
 
 :xrefstyle: short
 [cols="1,2",options="header",]
-.Quality Assessment Criteria Report Items
+.Quality Assessment Criteria Report Items (standard quality metrics)
 [[QualityItemsTable]]
 |===
 |*Section* 
 |*Item*
 
-|<<Overview of the quality assessment testing>> 
-|Overview of the quality assessment testing
+|<<Test configuration>> 
+|Test configuration
 
-|<<Quality algorithm identification>> 
-|Quality algorithm identification
+|<<Quality metrics and expected scores>> 
+|Quality metrics and expected scores
 
-|<<Quality score>> 
-|Quality score
+|<<Test result>> 
+|Test result
+
+|<<Methods to create low-quality samples>> 
+|Methods to create low-quality samples
 
 |===
 
 :xrefstyle: full
 
-==== Quality assessment criteria report
-This Section describes each item in <<QualityItemsTable>> in detail. All items are created based on <<ISO29794-1, ISO/IEC 29794-1>> however some of them are modified to adjust to the CC evaluation.
+==== Quality assessment criteria report (standard quality metrics)
+This Section describes each item in <<QualityItemsTable>> in detail. Most of items are created based on <<Reporting items description>> so the devloper may refer them to develop the report.
 
-The developer may point to a public standard used for the determining of quality criteria, such as <<ISO29794-4, ISO/IEC 29794-4>> to provide the necessary information. The developer must provide information about how the public standard is used by the TOE.
+The developer may point to a public standard used for the determining of quality metrics, such as <<ISO29794-4, ISO/IEC 29794-4>> to provide the necessary information. 
 
-===== Overview of the quality assessment testing
-The developer shall report the following general information about the quality assessment.
+==== Test configuration
 
 [loweralpha]
-. Quality assessment test configuration
-+
-[arabic]
-.. TOE Reference
+. TOE Reference
 +
 Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the Base-PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
 +
-Modification to the TOE for performance testing, if any, shall be reported (e.g. the TOE is modified to export biometric data for reporting quality output). The rationale that such modification does not affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code is not executed during biometric verification or the developer may run regression tests to verify that modification does not change the result of verification (e.g. similarity score).
-.. TOE configuration
+Modification to the TOE for testing, if any, shall be reported (e.g. the TOE is modified to export biometric data for reporting quality score). The rationale that such modification does not affect the TOE's quality control shall also be provided. For example, the developer may claim that the  quality control is not affected because modified code is not executed during biometric verification or the developer may run regression tests to verify that modification does not change the result of the quality control (e.g. quality score).
+. TOE configuration
 +
-Any configurable parameters or settings of the TOE that may affect the performance shall be reported. The value of each parameter set for the testing shall also be provided. For example, if the threshold (e.g. decision threshold and image quality threshold) is configurable by users, the value of the threshold set for the testing shall be reported.
-.. How quality is measured
-+
-<<ISO29794-1, ISO/IEC 29794-1>> defines quality as the "degree to which a biometric sample fulfills specified requirements for a targeted application". The way quality is measured using character, fidelity and utility as defined in <<ISO29794-1, ISO/IEC 29794-1>> shall be reported.
-.. Type of quality algorithm
-+
-The type of algorithm used to determine the quality of the sample.
-.. Quality assessment test tools
+Any configurable parameters or settings of the TOE that may affect the quality control shall be reported. The value of each parameter set for the testing shall also be provided. For example, if the threshold (e.g. sample quality threshold) is configurable by users, the value of the threshold set for the testing shall be reported.
+. Quality assessment test tools
 +
 Information that uniquely identifies all testing tools (e.g. SDK) used for the quality assessment testing shall be reported.
 
-[loweralpha, start=2]
-. Result of the quality testing
-+
-The quality assessment report shall provide the following items from the result of testing:
-+
-[arabic]
-.. Test period and location
-+
-Timeline for the quality assessment testing (samples may be collected over multiple sessions if necessary) and location of testing shall be reported.
-.. Modality used for biometric verification
-+
-The quality assessment testing shall be done for all modalities selected in FIA_MBV_EXT.1. The results of testing for each modality shall be reported separately.
-.. Test conditions and environment
-+
-The conditions under which the testing occurred that are germain to the modality being reviewed. For example (not exhaustive):
-+
-* Location of test (indoor vs outdoor)
-* Time of day (morning, afternoon, evening, night)
-* Season
-* Cleanliness (for example using dirty fingers)
-* Lighting conditions (diffuse, harsh, artifical, natural, temperature)
-.. Number of test subjects and samples
-+
-* Test subjects
-+
-Number of test subjects who participated in the testing shall be reported.
-* Samples
-+
-Number of samples collected for each modality and total number of samples collected from all test subjects shall be reported.
-+
-Not all test subjects may generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of modalities of a test subject) × (number of samples collected for each modality).
-.. Result of testing
-+
-The determination of the quality score that will be used as the basis for sufficient quality.
-
-===== Quality algorithm identification
-The developer shall report on the algorithm(s) used to assess the quality of biometric samples. 
-
-The discussion of the algorithms(s) should include information about the defects that are considered and handled in determining quality. The specific algorithm(s) used to generate a quality score, whether general or modality-specific, must be covered. 
-
-The following information shall be included in the report.
-
+==== Quality metrics and expected scores
 [loweralpha]
-. Review of defect types and how they are handled.
-* User character
-* User behavior
-* Imaging
-* Environmental
-. Criteria used to determine quality
+. Identification of standard quality metrics
 +
-A description of how defects are treated when determining quality.
-. Algorithms used in determining quality
+Quality metrics that the TOE implements shall be identified. For example, if the TOE implements the quality metrics in <<ISO29794-4, ISO/IEC 29794-4>>,  name of the standard (ISO/IEC 29794-4:2017 Information technology — Biometric sample quality — Part 4: Finger image data) and name of quality metrics (e.g. Orientation certainty level) that the TOE implements shall be reported.
+. Sample databases
 +
-Information about the algorithm(s) used to determine the quality of the captured sample. A description of any custom (e.g. non-public) algorithm must be provided in enough detail to understand how it performs the assessment. Public algorithms can be referenced to their source along with a summary of their use by the TOE.
-. Methodology for determining quality
+Sample databases used for the conformance test shall be reported. For example, <<ISO29794-4, ISO/IEC 29794-4>> specifies the website where the database can be downloaded.
+. Expected quality scores (Expected test result)
 +
-The workflow for determining the quality of a sample should be described. This must document both success and failure conditions (e.g. when samples may be accepted or rejected at various points in the evaluation process).
+Quality scores that are measured by the reference implementation shall be reported. For example, <<ISO29794-4, ISO/IEC 29794-4>> lists all expected quality scores from open samples for each quality metric.  
+. Pass/Fail criteria
++
+Pass/Fail criteria shall be defined. For example, <<ISO29794-4, ISO/IEC 29794-4>> states that no quality scores measured by TOE shall differ from expected ones by more than 1 % in order to conform the standard quality metrics.
 
-===== Quality score
-The developer shall report on how the quality score is determined and how the result is used by the TOE. Enrolment and verification may have different requirements for the score necessary to use a sample. If this is the case, the report must specify the quality score differences for each mode of operation.
-
+==== Test result
 [loweralpha]
-. Score calculations
+. Test period
 +
-A description of how the score is calculated based on the output of the algorithms. If multiple algorithms are used to evaluate a sample, the report must include information about how the output from each algorithm is evaluated and combined in producing the quality score.
-. Score scale
+Date of the conformance test shall be reported. 
 +
-Information about how the score is scaled (e.g on a 5 point rating or on a 100-point scale). 
-. Score threshold(s)
+. Actual quality scores (Actual test result)
 +
-A description of how the score output is used to determine whether to use the sample for the comparison. This includes acceptance of the sample as well as feedback modes to the user (e.g. finger wet, image too dark) and full failure with no aquisition of usable data.
+Quality scores of open samples that are measured by the TOE shall be reported. 
+. Final conclusion
++
+Final conclusion of test based on Pass/Fail criteria shall be reported. If the TOE can't conform to the standard quality matrics, usefullness of TOE's quality metrics shall be tested and reported following <<Requirements for the quality assessment criteria report (non-standard quality metrics)>>.
+
+==== Methods to create low-quality samples
+Methods to create low-quality samples (e.g. varying temperature / humidity conditions of the finger skin, low physical pressure, too less presentation time or incorrect finger positioning angles for fingerprint verification) shall be described. This information is used for the evaluator to conduct the independent testing for FIA_MBE_EXT.2 and FIA_MBV_EXT.2.
+
 
 === Requirements for the quality assessment criteria report (non-standard quality metrics)
 
