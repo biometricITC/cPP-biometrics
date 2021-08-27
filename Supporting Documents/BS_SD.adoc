@@ -1251,7 +1251,7 @@ The report is most likely a separate confidential document and not part of the S
 :xrefstyle: full
 
 ==== Quality assessment criteria report (standard quality metrics)
-This Section describes each item in <<QualityItemsTable>> in detail. Most of items are created based on <<Reporting items description>> so the devloper may refer them to develop the report.
+This Section describes each item in <<QualityItemsTable>> in detail. Most of items are created based on <<Reporting items description>> so the developer may refer them to create the report.
 
 The developer may point to a public standard used for the determining of quality metrics, such as <<ISO29794-4, ISO/IEC 29794-4>> to provide the necessary information. 
 
@@ -1296,13 +1296,91 @@ Date of the conformance test shall be reported.
 Quality scores of open samples that are measured by the TOE shall be reported. 
 . Final conclusion
 +
-Final conclusion of test based on Pass/Fail criteria shall be reported. If the TOE can't conform to the standard quality matrics, usefullness of TOE's quality metrics shall be tested and reported following <<Requirements for the quality assessment criteria report (non-standard quality metrics)>>.
+Final conclusion of test based on Pass/Fail criteria shall be reported. If the TOE can't conform to the standard quality metrics, usefulness of TOE's quality metrics shall be tested and reported following <<Requirements for the quality assessment criteria report (non-standard quality metrics)>>.
 
 ==== Methods to create low-quality samples
 Methods to create low-quality samples (e.g. varying temperature / humidity conditions of the finger skin, low physical pressure, too less presentation time or incorrect finger positioning angles for fingerprint verification) shall be described. This information is used for the evaluator to conduct the independent testing for FIA_MBE_EXT.2 and FIA_MBV_EXT.2.
 
-
 === Requirements for the quality assessment criteria report (non-standard quality metrics)
+
+This Section defines required content of the quality assessment criteria report for the TOE that implements the non-standard quality metrics.
+
+Most of TOEs may not conform to the standard quality metrics because of various reasons such as such standards don’t exist, or standard quality metrics need to be adjusted to the limited computer resources. In such cases, the developer themselves shall verify that the TOE’s quality metrics have a positive contribution to meet the requirements for quality of samples defined as FIA_MBE_EXT.2 and FIA_MBV_EXT.2. 
+
+The term “quality” is used in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, however, the quality of a biometric sample is interpreted differently throughout literature. In general, the quality is defined as an indicator of the usefulness of the biometric sample for biometric enrolment and verification. Therefore, the developer shall show this usefulness or efficacy through the testing of TOE’s quality metrics.
+
+There are several test approaches to show the efficacy in literature and the followings are the most popular ones.
+
+_*TBD*_
+
+The developer shall conduct the test to show the efficacy of TOE’s quality metrics and create the report to show the result of testing. 
+
+The report is most likely a separate confidential document and not part of the ST for public release.
+
+==== Summary of contents
+<<nonstdQualityItemsTable>> shows items that shall be reported in the report. The name or structure of report does not need to follow <<nonstdQualityItemsTable>>. However, all items in <<nonstdQualityItemsTable>> should be included somewhere in the report. If some items are not included in the report, the developer shall provide a rationale for such exclusion to the evaluator.
+
+:xrefstyle: short
+[cols="1,2",options="header",]
+.Quality Assessment Criteria Report Items (non-standard quality metrics)
+[[nonstdQualityItemsTable]]
+|===
+|*Section* 
+|*Item*
+
+|<<Test configuration>> 
+|Test configuration
+
+|<<Quality metrics and expected test result>> 
+|Quality metrics and expected test result
+
+|<<Test result of TOE quality metrics>> 
+|Test result of TOE quality metrics
+
+|<<Methods to create low-quality samples>> 
+|Methods to create low-quality samples
+
+|===
+
+:xrefstyle: full
+
+==== Quality assessment criteria report (non-standard quality metrics)
+This Section describes each item in <<nonstdQualityItemsTable>> in detail. Most of items are created based on <<Reporting items description>> so the developer may refer them to create the report.
+
+==== Test configuration
+
+Same as <<Test configuration>>
+
+==== Quality metrics and expected test result
+[loweralpha]
+. Overview of TOE’s quality metrics
++
+The developer shall provide information for the TOE’s quality metrics as described in the assessment strategy for FIA_MBE_EXT.2 and FIA_MBV_EXT.2. Such information is used to evaluate the CEM work units for ASE_TSS or AGD_OPE/ADV_FSP. Additional detail of TOE’s quality metrics shall be reported so that the evaluator can understand the result of test, if necessary.
+. Sample databases
++
+The developer shall use samples collected for the performance testing. If the developer adds samples to the database, the same procedure (e.g. <<Test instructions and training>>) shall be applied for the addition of samples and the same level of information (e.g. <<Target application and influential factors>>) for additional samples shall be reported.
+. Expected test result
++
+_*TBD*_
+. Pass/Fail criteria
++
+_*TBD*_
+
+==== Test result of TOE quality metrics
+[loweralpha]
+. Test period
++
+Date of the test shall be reported. 
++
+. Actual test result
++
+_*TBD*_ 
+. Final conclusion
++
+_*TBD*_
+
+==== Methods to create low-quality samples
+Same as <<Methods to create low-quality samples>>
 
 == Attack Potential and TOE resistance
 
