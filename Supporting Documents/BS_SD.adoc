@@ -1240,8 +1240,8 @@ The report is most likely a separate confidential document and not part of the S
 |<<Quality metrics and expected scores>> 
 |Quality metrics and expected scores
 
-|<<Test result>> 
-|Test result
+|<<Conformance test result>> 
+|Conformance test result
 
 |<<Methods to create low-quality samples>> 
 |Methods to create low-quality samples
@@ -1285,7 +1285,7 @@ Quality scores that are measured by the reference implementation shall be report
 +
 Pass/Fail criteria shall be defined. For example, <<ISO29794-4, ISO/IEC 29794-4>> states that no quality scores measured by TOE shall differ from expected ones by more than 1 % in order to conform the standard quality metrics.
 
-==== Test result
+==== Conformance test result
 [loweralpha]
 . Test period
 +
@@ -1311,9 +1311,19 @@ The term “quality” is used in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, however, the 
 
 There are several test approaches to show the efficacy in literature and the followings are the most popular ones.
 
-_*TBD*_
+[loweralpha]
+. Correlation between the similarity score and quality score
++
+Quality score can be used as an indicator of the usefulness of the biometric sample if quality score is strongly correlated with the similarity score. Based on such quality score, the TOE can reject low-quality samples at the time of capture, reduce the false non-match and save the time for image processing such as segmentation and feature extraction for low-quality samples.
++
+Correlation can be computed using, for example, Spearman’s rank correlation coefficient _p_ that is a quantitative method to analyze how well two variables correlate. A value of 1 or -1 of _p_ indicates being perfectly monotonically correlated, while 0 indicates being uncorrelated.
++
+The developer can compute the similarity score and quality score based on TOE’s quality metrics for collection of samples and compute the correlation to evaluate the efficacy of quality metrics. The detail information of such test method is described in, for example, <<Qualifying Fingerprint Samples>>.
+. Error Reject Curves
++
+_tbd_
 
-The developer shall conduct the test to show the efficacy of TOE’s quality metrics and create the report to show the result of testing. 
+The developer shall conduct the test following either of above approaches to show the efficacy of TOE’s quality metrics and create the test report. 
 
 The report is most likely a separate confidential document and not part of the ST for public release.
 
@@ -1774,5 +1784,5 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
 - [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
-- [#Biometric quality]#[Biometric quality]# Biometric quality: a review of fingerprint, iris, and face - July 2, 2014, https://link.springer.com/article/10.1186/1687-5281-2014-34.
+- [#Qualifying Fingerprint Samples]#[Qualifying Fingerprint Samples]# Qualifying Fingerprint Samples Captured by Smartphone Cameras in Real-Life Scenarios - May 3, 2016, http://hdl.handle.net/11250/2388306.
 - [#Vascular quality]#[Vascular quality]# State of the Art in Vascular Biometrics (1.6 Presentation Attacks and Detection, and Sample Quality) - November 14, 2019, https://link.springer.com/chapter/10.1007/978-3-030-27731-4_1#Sec21.
