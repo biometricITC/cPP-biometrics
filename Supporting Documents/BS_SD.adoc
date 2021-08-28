@@ -1214,9 +1214,9 @@ The TOE shall only use biometric samples of sufficient quality as required by FI
 
 BMD describes which quality metrics and how such quality metrics are used; however, usefulness or efficacy of quality metrics are not explained in BMD. Quality assessment criteria report shall show the efficacy of quality metrics and this section defines the requirements for the report. The requirements defined in this Section are created referring <<ISO29794-1, ISO/IEC 29794-1>>.
 
-If the developer’s quality metrics conform to published standards and name of the standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>>) is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, the developer doesn’t need to test the efficacy of quality metrics because such efficacy had been verified by experts during the standardization process. However, the developer shall conduct the conformance test to show the implementations of quality metrics in the TOE conform with ones defined in the standard. For example, if the TOE implements the quality metrics for fingerprint defined in <<ISO29794-4, ISO/IEC 29794-4>>, the developer shall conduct the conformance test following the annex of <<ISO29794-4, ISO/IEC 29794-4>> and quality scores measured by quality metrics implemented in the TOE from open samples in the public databases specified in <<ISO29794-4, ISO/IEC 29794-4>> shall not differ from ones measured by the reference implementation, as shown in Table A.1 of <<ISO29794-4, ISO/IEC 29794-4>>, by more than 1 % to claim the conformance. Requirements for the report is described in <<Requirements for the quality assessment criteria report (standard quality metrics)>>.
+If the developer’s quality metrics conform to published standards and name of the standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>>) is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, the developer doesn’t need to test the efficacy of quality metrics because such efficacy had been verified by experts during the standardization process. However, the developer shall conduct the conformance test to show the implementations of TOE’s quality metrics conform with ones defined in the standard. For example, if the TOE implements the quality metrics for fingerprint defined in <<ISO29794-4, ISO/IEC 29794-4>>, the developer shall conduct the conformance test following the annex of <<ISO29794-4, ISO/IEC 29794-4>> and quality scores measured by quality metrics implemented in the TOE from open samples in the public databases specified in <<ISO29794-4, ISO/IEC 29794-4>> shall not differ from ones measured by the reference implementation, as shown in Table A.1 of <<ISO29794-4, ISO/IEC 29794-4>>, by more than 1 % to claim the conformance. Requirements for the report is described in <<Requirements for the quality assessment criteria report (standard quality metrics)>>.
 
-If the developer’s quality metrics conform to published standards however standards don’t describe the method to verify the conformance (e.g. details of conformance test), or the developer’s quality metrics don’t conform to any published standards and _developer defined quality assessment method_ is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, the developer shall conduct the test to show the efficacy of quality metrics implemented in the TOE. This means that the developer shall conduct the test to show that those quality metrics serve as indicators of the usefulness of the biometric sample for biometric enrolment and verification and rejection of low-quality samples based on those metrics improves TOE’s performance. Requirements for the report is described in <<Requirements for the quality assessment criteria report (non-standard quality metrics)>>.
+If the developer’s quality metrics conform to published standards however standards don’t describe the method to verify the conformance (e.g. details of conformance test), or the developer’s quality metrics don’t conform to any published standards and _developer defined quality assessment method_ is assigned in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, the developer shall conduct the test to show the efficacy of quality metrics implemented in the TOE. This means that the developer shall conduct the test to verify that those quality metrics serve as indicators of the usefulness of the biometric sample for biometric enrolment and verification and rejection of low-quality samples based on those metrics improves TOE’s performance. Requirements for the report is described in <<Requirements for the quality assessment criteria report (non-standard quality metrics)>>.
 
 === Requirements for the quality assessment criteria report (standard quality metrics)
 This Section defines required content of the quality assessment criteria report for the TOE that implements the standard quality metrics. 
@@ -1274,13 +1274,13 @@ Information that uniquely identifies all testing tools (e.g. SDK) used for the q
 [loweralpha]
 . Identification of standard quality metrics
 +
-Quality metrics that the TOE implements shall be identified. For example, if the TOE implements the quality metrics in <<ISO29794-4, ISO/IEC 29794-4>>,  name of the standard (ISO/IEC 29794-4:2017 Information technology — Biometric sample quality — Part 4: Finger image data) and name of quality metrics (e.g. Orientation certainty level) that the TOE implements shall be reported.
+Quality metrics that the TOE implements shall be identified. For example, if the TOE implements the quality metrics in <<ISO29794-4, ISO/IEC 29794-4>>,  name of the standard (ISO/IEC 29794-4:2017 Information technology — Biometric sample quality — Part 4: Finger image data) and name of quality metrics (e.g. Orientation certainty level in Section 5.2.2) that the TOE implements shall be identified.
 . Sample databases
 +
 Sample databases used for the conformance test shall be reported. For example, <<ISO29794-4, ISO/IEC 29794-4>> specifies the website where the database can be downloaded.
 . Expected quality scores (Expected test result)
 +
-Quality scores that are measured by the reference implementation shall be reported. For example, <<ISO29794-4, ISO/IEC 29794-4>> lists all expected quality scores from open samples for each quality metric.  
+Quality scores that are measured by the reference implementation shall be reported. For example, <<ISO29794-4, ISO/IEC 29794-4>> lists all quality scores from samples in the database for each quality metric.  
 . Pass/Fail criteria
 +
 Pass/Fail criteria shall be defined. For example, <<ISO29794-4, ISO/IEC 29794-4>> states that no quality scores measured by TOE shall differ from expected ones by more than 1 % in order to conform the standard quality metrics.
@@ -1293,7 +1293,7 @@ Date of the conformance test shall be reported.
 +
 . Actual quality scores (Actual test result)
 +
-Quality scores of open samples that are measured by the TOE shall be reported. 
+Quality scores of samples in the database that are measured by the TOE shall be reported. 
 . Final conclusion
 +
 Final conclusion of test based on Pass/Fail criteria shall be reported. If the TOE can't conform to the standard quality metrics, usefulness of TOE's quality metrics shall be tested and reported following <<Requirements for the quality assessment criteria report (non-standard quality metrics)>>.
@@ -1305,11 +1305,11 @@ Methods to create low-quality samples (e.g. varying temperature / humidity condi
 
 This Section defines required content of the quality assessment criteria report for the TOE that implements the non-standard quality metrics.
 
-Most of TOEs may not conform to the standard quality metrics because of various reasons such as such standards don’t exist, or standard quality metrics need to be adjusted to the limited computer resources. In such cases, the developer themselves shall verify that the TOE’s quality metrics have a positive contribution to meet the requirements for quality of samples defined as FIA_MBE_EXT.2 and FIA_MBV_EXT.2. 
+Most of TOEs may not conform to the standard quality metrics because of various reasons such as such standards don’t exist for the modality that the TOE supports, or standard quality metrics need to be adjusted to the limited computer resources. In such cases, the developer themselves shall verify that the TOE’s quality metrics have a positive contribution to meet the requirements for quality of samples defined as FIA_MBE_EXT.2 and FIA_MBV_EXT.2. 
 
 The term “quality” is used in FIA_MBE_EXT.2 and FIA_MBV_EXT.2, however, the quality of a biometric sample is interpreted differently throughout literature. In general, the quality is defined as an indicator of the usefulness of the biometric sample for biometric enrolment and verification. Therefore, the developer shall show this usefulness or efficacy through the testing of TOE’s quality metrics.
 
-There are several test approaches to show the efficacy in literature and the followings are the most popular ones.
+There are several test approaches to show the efficacy in literature and the followings are the popular ones that can evaluate the efficacy in quantifiable manner.
 
 [loweralpha]
 . Correlation between the similarity score and quality score
@@ -1318,10 +1318,18 @@ Quality score can be used as an indicator of the usefulness of the biometric sam
 +
 Correlation can be computed using, for example, Spearman’s rank correlation coefficient _p_ that is a quantitative method to analyze how well two variables correlate. A value of 1 or -1 of _p_ indicates being perfectly monotonically correlated, while 0 indicates being uncorrelated.
 +
-The developer can compute the similarity score and quality score based on TOE’s quality metrics for collection of samples and compute the correlation to evaluate the efficacy of quality metrics. The detail information of such test method is described in, for example, <<Qualifying Fingerprint Samples>>.
+The developer can compute the similarity score and quality score based on TOE’s quality metrics for collection of samples and compute the correlation to evaluate the efficacy of quality metrics. 
++
+The detail information of such test method is described in, for example, <<Qualifying Fingerprint Samples>>.
 . Error Reject Curves
 +
-_tbd_
+Error reject curves (ERC) shows how efficiently rejection of low-quality samples can result in improved performance. If the TOE rejects low-quality samples whose quality scores are less than the quality threshold, and FNMR or FRR is improved because of this rejection, quality scores measured by TOE’s quality metrics can work as an indicator of the usefulness of the biometric sample. 
++
+Thus, a good quality metrics correctly labels those samples that cause low similarity scores as low-quality ones. For a good quality metrics, FNMR or FRR should decrease quickly with the fraction rejected.
++
+The detail information of ERC is described in, for example, <<Performance of Biometric Quality>>.
+. Error Reject Curves
++
 
 The developer shall conduct the test following either of above approaches to show the efficacy of TOE’s quality metrics and create the test report. 
 
@@ -1785,4 +1793,5 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
 - [#Qualifying Fingerprint Samples]#[Qualifying Fingerprint Samples]# Qualifying Fingerprint Samples Captured by Smartphone Cameras in Real-Life Scenarios - May 3, 2016, http://hdl.handle.net/11250/2388306.
+- [#Performance of Biometric Quality]#[Performance of Biometric Quality]# Performance of Biometric Quality Measures - April 16, 2007, https://www.nist.gov/publications/performance-biometric-quality-measures
 - [#Vascular quality]#[Vascular quality]# State of the Art in Vascular Biometrics (1.6 Presentation Attacks and Detection, and Sample Quality) - November 14, 2019, https://link.springer.com/chapter/10.1007/978-3-030-27731-4_1#Sec21.
