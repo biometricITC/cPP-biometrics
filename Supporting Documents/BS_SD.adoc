@@ -1328,8 +1328,13 @@ Error reject curves (ERC) shows how efficiently rejection of low-quality samples
 Thus, a good quality metrics correctly labels those samples that cause low similarity scores as low-quality ones. For a good quality metrics, FNMR or FRR should decrease quickly with the fraction rejected.
 +
 The detail information of ERC is described in, for example, <<Performance of Biometric Quality>>.
-. Error Reject Curves
+. Sample acceptance error tradeoff
 +
+The TOE needs to make decisions about whether or not to accept a sample for further processing based on quality metrics. Such decisions are subject to Type I/II error tradeoff analysis from decision theory. First, Type I error expresses incorrect rejection of a good biometric sample, i.e. assignment of low-quality when the sample would be enrolled or verified by the TOE correctly; and Type II error expresses incorrect acceptance of a low-quality sample when it ultimately gives a false negative.
++
+Both error rates of TOE’s quality metrics should be low enough to serve as an indicator of the usefulness of the biometric sample for biometric enrolment and verification.
++
+The detail information of both Type I and II errors is described in, for example, <<Ongoing Face Recognition Vendor Test>>.
 
 The developer shall conduct the test following either of above approaches to show the efficacy of TOE’s quality metrics and create the test report. 
 
@@ -1373,16 +1378,28 @@ Same as <<Test configuration>>
 [loweralpha]
 . Overview of TOE’s quality metrics
 +
-The developer shall provide information for the TOE’s quality metrics as described in the assessment strategy for FIA_MBE_EXT.2 and FIA_MBV_EXT.2. Such information is used to evaluate the CEM work units for ASE_TSS or AGD_OPE/ADV_FSP. Additional detail of TOE’s quality metrics shall be reported so that the evaluator can understand the result of test, if necessary.
+The developer shall provide information for the TOE’s quality metrics in BMD as described in the assessment strategy for FIA_MBE_EXT.2 and FIA_MBV_EXT.2. Such information is used to evaluate the CEM work units for ASE_TSS or AGD_OPE/ADV_FSP. Additional detail of TOE’s quality metrics shall be reported so that the evaluator can understand the result of test, if necessary.
 . Sample databases
 +
 The developer shall use samples collected for the performance testing. If the developer adds samples to the database, the same procedure (e.g. <<Test instructions and training>>) shall be applied for the addition of samples and the same level of information (e.g. <<Target application and influential factors>>) for additional samples shall be reported.
 . Expected test result
 +
-_*TBD*_
+The developer shall conduct the test following either of test methods described in <<Requirements for the quality assessment criteria report (non-standard quality metrics)>>. Expected test results for each test are defined as follows.
++
+.. Correlation between the similarity score and quality score
++
+Correlation shall be measured by widely used method such as Spearman’s rank correlation coefficient and both scores shall show a clear correlation. 
++
+Similarity score and quality score shall be categorized into 5 levels (lower level indicate poor sample properties). Most of samples in lowest level shall belong to the lowest level of the similarity score.
+.. Error Reject Curves
++
+ERC shall show that FNMR or FRR monotonically decreases as number of rejections of low-quality samples increases.
+.. Sample acceptance error tradeoff
++
+Both type I and type II error rates shall be less than 10%.
 . Pass/Fail criteria
 +
-_*TBD*_
+The evaluator shall make judgement whether or not the TOE’s quality metrics work as an indicator of the usefulness of the biometric sample for biometric enrolment and verification based on the test result.
 
 ==== Test result of TOE quality metrics
 [loweralpha]
@@ -1392,10 +1409,10 @@ Date of the test shall be reported.
 +
 . Actual test result
 +
-_*TBD*_ 
+Correlation, ERC or Type I/II error of TOE measured from the sample database shall be reported. 
 . Final conclusion
 +
-_*TBD*_
+Final conclusion of test based on Pass/Fail criteria shall be reported. 
 
 ==== Methods to create low-quality samples
 Same as <<Methods to create low-quality samples>>
@@ -1793,5 +1810,6 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
 - [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
 - [#Qualifying Fingerprint Samples]#[Qualifying Fingerprint Samples]# Qualifying Fingerprint Samples Captured by Smartphone Cameras in Real-Life Scenarios - May 3, 2016, http://hdl.handle.net/11250/2388306.
-- [#Performance of Biometric Quality]#[Performance of Biometric Quality]# Performance of Biometric Quality Measures - April 16, 2007, https://www.nist.gov/publications/performance-biometric-quality-measures
+- [#Performance of Biometric Quality]#[Performance of Biometric Quality]# Performance of Biometric Quality Measures - April 16, 2007, https://www.nist.gov/publications/performance-biometric-quality-measures.
+- [#Ongoing Face Recognition Vendor Test]#[Ongoing Face Recognition Vendor Test]# Ongoing Face Recognition Vendor Test (FRVT) Part 5: Face Image Quality Assessment - August 11, 2021, https://pages.nist.gov/frvt/reports/quality/frvt_quality_report.pdf.
 - [#Vascular quality]#[Vascular quality]# State of the Art in Vascular Biometrics (1.6 Presentation Attacks and Detection, and Sample Quality) - November 14, 2019, https://link.springer.com/chapter/10.1007/978-3-030-27731-4_1#Sec21.
