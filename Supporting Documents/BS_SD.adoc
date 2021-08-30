@@ -454,7 +454,7 @@ Biometric verification performance depends on quality of samples that is compare
 
 The evaluator shall keep in mind that the assessment criteria for different biometric modalities are not be the same. The evaluator shall evaluate each biometric modality separately if the ST author selects multiple biometric modalities in FIA_MBV_EXT.1.
 
-The evaluator shall also keep in mind that assessment criteria used for templates defined in <<MBE2>> and samples defined in this section may not be the same. Assessment criteria for samples defined in <<MBE2>> may be stricter than the one for samples defined in this section.
+The evaluator shall also keep in mind that assessment criteria used for samples for enrolment defined in <<EA for FIA_MBE_EXT.2>> and samples for verification defined in this section may not be the same. Assessment criteria for samples for enrolment may be stricter than the one for samples for verification defined in this section.
 
 ===== Dependency
 
@@ -472,7 +472,7 @@ Following input is required from the developer.
 . TSS shall explain how the TOE meets FIA_MBV_EXT.2 at high level description
 ** If standard quality metrics are selected and assigned, the TSS shall include information (e.g. name of quality metrics and section numbers that define the metrics in the standard) to identify quality metrics that the TOE implements
 ** If a developer defined quality assessment is selected, the TSS shall include an overview of the quality metrics used for the assessment
-. BMD shall provide information about the assessment criteria that explains how the TOE checks the quality of samples for biometric verification (e.g. how the quality of samples are assessed based on the quality metrics and accepted or rejected based on the scores of quality metrics). If standard quality metrics are assigned, BMD may refer to the standard that defines quality metrics. If developer defined quality assessment is selected, BMD shall provide the same level of information about the assessment criteria as the standard (e.g. ISO/IEC 29794-4 for fingerprint) does
+. BMD shall provide information about the assessment criteria that explains how the TOE checks the quality of samples for biometric verification (e.g. how the quality of samples are assessed based on the quality metrics and accepted or rejected based on the scores of quality metrics). If standard quality metrics are assigned, BMD may refer to the standard that defines quality metrics. If developer defined quality assessment is selected, BMD shall provide the same level of information about the assessment criteria as the standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint) does
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
 . Supplementary information (<<qualityassessmentcriteria, quality assessment criteria report>> explained in <<Developer’s quality assessment criteria report of biometric samples>>) shall describe efficacy of quality metrics, how the efficacy is tested or conformed and how the low-quality samples can be generated
 
