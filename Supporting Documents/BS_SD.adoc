@@ -9,7 +9,6 @@
 :revdate: TBD, 2021
 :xrefstyle: full
 :doctype: book
-:stem: latexmath
 
 == Foreword
 
@@ -414,7 +413,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 The evaluator shall verify that the TOE implements the biometric verification mechanism whose upper bound confidence interval of error rates don't exceed the claimed error rates (i.e. value of FAR/FMR and FRR/FNMR specified in FIA_MBV_EXT.1.2).
 
-The evaluator shall solely rely on the supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>>) to achieve this objective following instruction defined in Assessment Strategy. <<BIOPP-Module>> assumes that the biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, the evaluator does not need to take lots of time and cost to gather test subjects and conduct the independent testing for this SFR.
+The evaluator shall solely rely on the supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>> explained in <<Developer’s performance report and its assessment strategy>>) to achieve this objective following instruction defined in Assessment Strategy. <<BIOPP-Module>> assumes that the biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, the evaluator does not need to take lots of time and cost to gather test subjects and conduct the independent testing for this SFR.
 
 ===== Dependency
 
