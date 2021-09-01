@@ -412,11 +412,9 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE implements the biometric verification mechanism whose error rates is equal or lower than the claimed error rates (i.e. value of FAR/FMR and FRR/FNMR specified in FIA_MBV_EXT.1.2).
+The evaluator shall verify that the TOE implements the biometric verification mechanism whose upper bound confidence interval of error rates don't exceed the claimed error rates (i.e. value of FAR/FMR and FRR/FNMR specified in FIA_MBV_EXT.1.2).
 
-The evaluator shall solely rely on the supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>>) to achieve this objective following instruction defined in Assessment Strategy.
-
-<<BIOPP-Module>> assumes that the biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, risk of zero-effort impostor attempts is low and the developer may not follow the statistical method (e.g. Rule of 3 or Rule of 30) to measure the biometric verification performance.
+The evaluator shall solely rely on the supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>>) to achieve this objective following instruction defined in Assessment Strategy. <<BIOPP-Module>> assumes that the biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, the evaluator does not need to take lots of time and cost to gather test subjects and conduct the independent testing for this SFR.
 
 ===== Dependency
 
@@ -432,7 +430,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
-. BMD shall provide information about how the verification rates are tested
+. BMD shall provide information about how the upper bound confidence interval of error rates are estimated
 ** The BMD may refer to the developer's <<Developer’s performance report and its assessment strategy, performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
 . Supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>>) shall describe the developer’s performance test protocol and result of testing
@@ -449,7 +447,7 @@ The evaluator shall examine developer’s <<Developer’s performance report and
 
 Requirements defined in <<Developer’s performance report and its assessment strategy>> are based on ISO/IEC 19795. This standard specifies requirements on performance test protocol, recording and reporting of results based on the best practices developed by relevant organizations. The evaluator shall confirm that developer’s <<Developer’s performance report and its assessment strategy, performance report>> meets all requirements in <<Developer’s performance report and its assessment strategy>> and seek a rationale if the developer’s <<Developer’s performance report and its assessment strategy, performance report>> does not meet any requirements and determine whether the rationale is valid or not.
 
-Finally, the evaluator shall check that the measured error rates (FRR/FAR or FNMR/FMR) reported in the developer’s <<Developer’s performance report and its assessment strategy, performance report>> is equal or lower than the error rates specified in the FIA_MBV_EXT.1.2.
+Finally, the evaluator shall check that the estimated upper bound confidence interval of error rates (FRR/FAR or FNMR/FMR) reported in the developer’s <<Developer’s performance report and its assessment strategy, performance report>> do not exceed the claimed error rates specified in the FIA_MBV_EXT.1.2.
 
 ===== Pass/Fail criteria
 
@@ -458,7 +456,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 [loweralpha]
 . Information necessary to perform this EA is described in the TSS, BMD and AGD guidance
 . Developer’s <<Developer’s performance report and its assessment strategy, performance report>> meets all requirements in <<Developer’s performance report and its assessment strategy>> and a valid rationale is provided by developer if the developer’s <<Developer’s performance report and its assessment strategy, performance report>> doesn’t meet any requirements
-. FRR/FAR or FNMR/FMR measured by the developer’s performance testing is equal or lower than “defined value” specified in FIA_MBV_EXT.1.2
+. Upper bound confidence interval of error rates (FRR/FAR or FNMR/FMR) reported in the developer’s <<Developer’s performance report and its assessment strategy, performance report>> do not exceed the claimed error rates specified in FIA_MBV_EXT.1.2
 
 ===== Requirements for reporting
 
