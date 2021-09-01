@@ -1220,32 +1220,19 @@ Only one transaction can be run by each test subject because the computer locks 
 
 BIOSD allows full cross-comparison to estimate FAR/FMR because it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. 
 
-This BIOSD also allows cross-comparison of attempts/templates of ordered pairs if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates of ordered pairs allows the comparison between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE’s verification algorithm is symmetric and make no distinction between the ordered pairs, this assumption can not be used. The type of verification algorithm used by the TOE is reported in the developer’s performance report Section 8.3.1, “Overview of the performance testing”.
+This BIOSD also allows cross-comparison of attempts/templates of ordered pairs if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates of ordered pairs allows the comparison between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE’s verification algorithm is symmetric and make no distinction between the ordered pairs, this assumption can not be used. The type of verification algorithm used by the TOE is reported in the developer’s performance report <<Overview of the performance testing>>.
 
 This BIOSD doesn’t allow intra-individual comparison that is a comparison between one body part and another body part of the same test subject (e.g. comparison between right and left iris of the same user).
 
 === Example – fingerprint verification
 
-The developer defines that fingerprint verification consists of 5 attempts using both right index and thumb fingerprints to unlock the computer and specifies FAR not exceeding  0.01% for the upper bound of 95% confidence and FRR not exceeding 4.6% for the upper bound of 80% confidence in FIA_MBV_EXT.1. 
+The developer defines that fingerprint verification consists of 5 attempts using both right index and thumb fingerprints to unlock the computer and specifies FAR not exceeding  0.01% for the upper bound of 95% confidence and FRR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1. 
 
 As described in the previous Section, the genuine and imposter transaction consists of up to five unlock attempts using either of finger against each template for index and thumb finger and only one transaction can be run by each user.
 
-In this scenario, at least 30,000 imposter transactions shall be conducted with no error to achieve this performance goal if the developer applies rule of 3 in Annex B of << ISO19795-1, ISO/IEC 19795-1>>. To run more than 30,000 imposter transactions, at least 174 test subjects shall be gathered (173 * 174 = 30,102) if cross-comparison of ordered pairs is allowed. If number of test subjects is 174, only 5 genuine transaction can be failed to achieve 5% FRR with 80% confidence (upper bound estimated by equation B.1, B.2 and B.9 when 5 transaction denied = stem:[5/174 + 1.2816 * sqrt (5/174)] = 0.045 < 4.6 %).
+In this scenario, at least 30,000 imposter transactions shall be conducted with no error to achieve this performance goal if the developer applies rule of 3 in Annex B of <<ISO19795-1, ISO/IEC 19795-1>>. To run more than 30,000 imposter transactions, at least 174 test subjects shall be gathered (173 * 174 = 30,102) if cross-comparison of ordered pairs is allowed. If number of test subjects is 174, only 5 genuine transaction can be failed to achieve 5% FRR with 80% confidence (upper bound estimated by equation B.1, B.2 and B.9 when 5 transaction denied = 0.045 < 5%).
 
-[stem] 
-++++ 
-sqrt(4) = 2
-++++
-
-[stem]
-++++
-p = \frac{t}{2^{256}}
-++++
-
-
-
-
-If the developer specifies 0.01% FMR and 1% FNMR in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and 3 genuine attempts can be failed to achieve 1% FNMR (4/390 = 0.0102 > 1%).
+If the developer specifies FMR not exceeding 0.01% for the upper bound of 95% confidence and FNMR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and single attempt from each 14 test subjects can be failed to achieve 5% FNMR with 80% confidence (upper bound estimated by equation B.3, B.4 and B.9 when single attempt from each 14 test subjects are not matched = 0.049 < 5 %).
 
 [[qualityassessmentcriteria]]
 == Developer's quality assessment criteria report of biometric samples
