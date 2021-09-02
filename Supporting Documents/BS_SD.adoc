@@ -134,6 +134,9 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 |*BAF* 
 |Biometric Authentication Factor
 
+|*BMD* 
+|Biometrics Management Description
+
 |*CC* 
 |Common Criteria for Information Technology Security Evaluation
 
@@ -678,10 +681,10 @@ Refer to the EA for FCS_CKM_EXT.4 in the <<PP_MD_V3.3>> including biometric data
 ===== FPT_AEX_EXT.4 Domain Isolation 
 Refer to the EA for FPT_AEX_EXT.4 in the <<PP_MD_V3.3>> including the protection of biometric data in the isolation description.
 
-===== Key Storage (FPT_KST_EXT.1)
+===== FPT_KST_EXT.1 Key Storage
 Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
 
-===== NO Key Transmission (FPT_KST_EXT.2)
+===== FPT_KST_EXT.2 No Key Transmission
 Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
 
 == Evaluation Activities for Selection-Based Requirements 
@@ -780,15 +783,9 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-=== User data protection (FDP)
+== Evaluation Activities for SARs in <<PP_MD_V3.3>>
 
-==== EA for FDP_RIP.2
-
-The evaluator shall refer the EA in the Base-PP to perform evaluation of this SFR (e.g. EA for FCS_CKM_EXT.4 in <<PP_MD_V3.3>>).
-
-== Evaluation Activities for SARs
-
-<<PP_MD_V3.3>> and this BIOSD define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1. If optional requirement FDP_RIP.2 is selected in the <<BIOPP-Module>>, the Evaluation Activities for FCS_CKM_EXT.4 in <<PP_MD_V3.3>> can be applied to FDP_RIP.2.
+<<PP_MD_V3.3>> and this BIOSD define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1.
 
 <<BIOPP-Module>> does not define any SARs beyond those defined within <<PP_MD_V3.3>> to which it can claim conformance. It is important to note that the TOE that is evaluated against <<BIOPP-Module>> is inherently evaluated against <<PP_MD_V3.3>> as well. This means that EAs in Section 5.2 Security Assurance Requirements in <<PP_MD_V3.3>> should also applied to <<BIOPP-Module>> with additional application notes or EAs defined in the following Sections.
 
