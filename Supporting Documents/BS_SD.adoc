@@ -557,7 +557,7 @@ There is no dependency to other EAs defined in this BIOSD.
 
 ===== Tool types required to perform the EA
 
-No tool is required for this EA.
+Developer shall provide a test platform for the evaluator to conduct the test described in the Assessment Strategy.
 
 ===== Required input from the developer or other entities
 
@@ -596,7 +596,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
 ====== Strategy for ATE_IND
-Any plaintext biometric data must not be accessible from any entities outside the SEE, especially the main computer operating system, to meets FPT_BDP_EXT.1. This means that a) the TOE must not expose the plain biometric data to the memory that is accessible by the operating system during the processing of biometric data and b) any TSFIs that can output the plain biometric data must not be existed or accessible by the operating system.
+Any plaintext biometric data must not be accessible from any entities outside the SEE, especially the main computer operating system, to meets FPT_BDP_EXT.1. This means that a) the TOE must not expose the plain biometric data to the memory that is accessible by the operating system during the processing of biometric data and b) any TSFIs that can output the plain biometric data must not exist or be accessible by the operating system.
 
 The evaluator shall perform the following tests to verify that both a) and b) described above are true.
 
