@@ -55,7 +55,7 @@ For the purpose of this PP-Module, the following terms and definitions are given
 Artefact::
 	Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying <<BIOSD>> specifies artefacts that the evaluator should consider for the CC evaluation. Specifically, the artefacts here are artificially generated Presentation Attack Instruments (PAI), not natural ones.
 Attempt::
-   Submission of one (or a sequence of) biometric samples to the part of the TOE.
+   Submission of one (or a sequence of) biometric samples to the TOE.
 (Non-Biometric) Authentication Factor (NBAF)::
     Evidence to assert the identity of an individual based on knowledge or possession (e.g. password, PIN, smartcard).
 Biometric Authentication Factor (BAF)::
