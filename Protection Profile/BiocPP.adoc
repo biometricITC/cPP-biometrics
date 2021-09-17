@@ -420,7 +420,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 *FIA_MBE_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
 
-*Application Note {counter:remark_count}*:: _developer defined quality assessment method_ is the name of assessment method that the ST author can arbitrarily specify. Detail of assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
+*Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
 ===== FIA_MBV_EXT.1 Biometric verification [[FIA_MBV_EXT.1]]
 
@@ -451,7 +451,7 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
 
-*Application Note {counter:remark_count}*:: _developer defined quality assessment method_ is the name of assessment method that the ST author can arbitrarily specify. Detail of assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
+*Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
@@ -592,7 +592,7 @@ The following rationale identifies several SFRs from <<PP_MD>> that are needed t
 The relation between SFRs defined in the <<PP_MD>> and SFRs in this PP-Module is described below for each security functionality. *Bold SFRs* are those SFRs defined in this PP-Module for the Biometric System and _italicized SFRs_ are those defined in <<PP_MD>> for the mobile device.
 
 ===== Password authentication
-The Password Authentication Factor defined in the <<PP_MD>> is NBAF as defined in this PP-Module. Mobile device shall implement the Password Authentication Factor as required by the _FIA_UAU.5.1_. BAF can be used to unlock the mobile device after the initial Password Authentication Factor has been entered.
+The Password Authentication Factor defined in the <<PP_MD>> is a NBAF as defined in this PP-Module. The mobile device shall implement the Password Authentication Factor as required by the _FIA_UAU.5.1_. The BAF can be used to unlock the mobile device after the initial Password Authentication Factor has been entered.
 
 ===== Invocation of the Biometric System
 For any modality selected in _FIA_UAU.5.1_, the mobile device shall invoke the Biometric System to unlock the device under the condition specified in _FIA_UAU.6.2_. Mobile device shall also authenticate the user following the rule specified in _FIA_UAU.5.2_.
