@@ -826,7 +826,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of ATE_IND.1
 
-The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and BIOSD. As explained in <<Evaluation Activities for PAD testing>>, detail of PAD testing for ATE_IND.1 is defined in <<Toolbox>>.
+The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
 === Class AVA: Vulnerability Assessment
 
@@ -834,7 +834,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of AVA_VAN.1
 
-The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and BIOSD. As explained in <<Evaluation Activities for PAD testing>>, detail of PAD testing for AVA_VAN.1 is defined in <<Toolbox>>.
+The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
 == Evaluation Activities for PAD testing
 
@@ -867,19 +867,19 @@ There are many types of Presentation Attack Instruments that can be used to test
 
 As described in previous section, the <<Toolbox>> defines test items to create a representative set of artefacts that the evaluator shall use for the testing. During ATE_IND.1 evaluation, the evaluator shall conduct all test items in the <<Toolbox>> for the selected modalities without any change. The evaluator is not allowed to skip any test items in the <<Toolbox>> to maintain compatibility between different evaluations.
 
-The developer needs to assign the maximum IAPAR in FIA_MBV_EXT.3. The evaluator shall follow the information in <<Toolbox>>, for example, the number of artefact presentations, to conduct the testing and confirm that measured IAPARs for all artefacts are equal to or less than the assigned IAPAR through the independent testing. 
+The developer needs to assign the maximum IAPAR in FIA_MBV_EXT.3. The evaluator shall follow the information in the <<Toolbox>>, for example, the number of artefact presentations, to conduct the testing and confirm that measured IAPARs for all artefacts are equal to or less than the assigned IAPAR through the independent testing. 
 
-During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enroled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack. The evaluator shall assign a fail verdict only if the evaluator can reproduce the artefact of which IAPAR is higher than the maximum value reliably and repeatably.
+During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enroled target user. However, the evaluator may not be able to reliably reproduce a successful presentation attack. The evaluator shall assign a fail verdict only if the evaluator can reproduce the artefact of which IAPAR is higher than the maximum value reliably and repeatably.
 
 Those artefacts of which IAPAR is less than the maximum value but show one or more successful imposter presentations will be tested again during the AVA_VAN.1 evaluation.
 
-The developer can select any biometric modalities in FIA_MBV_EXT.1 and test instructions for each modality are included in the <<Toolbox>>. If the developer wants to evaluate modalities not currently included in FIA_MBV_EXT.1, the developer and evaluator shall contact the BIO-iTC to work together to add the new modality and extend the <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
+The developer can select any biometric modalities in FIA_MBV_EXT.1 (corresponding test instructions for each modality are included in the <<Toolbox>>). If the developer wants to evaluate modalities not currently included in FIA_MBV_EXT.1, the developer and evaluator shall contact the BIO-iTC to work together to add the new modality and extend the <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
 
 ==== Justification for EAs for ATE_IND.1
 
 The EAs presented in this section are derived from ATE_IND.1-3, ATE_IND.1-4 and ATE_IND.1-7 and their verdicts will be associated with those work units.
 
-The <<Toolbox>> describes a test subset and test documentation that is sufficiently detailed to enable the tests to be reproducible (ATE_IND.1-3 and ATE_IND.1-4). The <<Toolbox>> also includes information that support evaluator’s decision (ATE_IND.1-7).
+The <<Toolbox>> describes a test subset and test documentation that is sufficiently detailed to enable the tests to be reproducible (ATE_IND.1-3 and ATE_IND.1-4). The <<Toolbox>> also includes information that support the evaluator’s decision (ATE_IND.1-7).
 
 === EA for AVA_VAN.1 (Vulnerability survey)
 
@@ -900,7 +900,7 @@ To utilize new artefacts, they must have approval from the BIO-iTC through publi
 ===== Produce test plan
 The evaluator shall select those artefacts that show higher IAPAR at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
-If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact). The evaluator may measure the quality score of samples captured from artefacts and select ones that produce higher score as “higher quality” artefacts.
+If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact). The evaluator may measure the quality score of samples captured from artefacts and select ones that produce higher scores as “higher quality” artefacts.
 
 The evaluator may recreate the artefacts selected for penetration testing to improve their quality taking following approaches.
 
@@ -935,7 +935,7 @@ In order to place bounds on the effort involved related to the attack potential 
 
 ===== Determine Pass/Fail of penetration testing
 
-The evaluator shall assign a fail verdict if the evaluator can find the artefact of which IAPAR is higher than the maximum IAPAR and it can be reproduced reliably and repeatably by an attacker possessing a Basic attack potential.
+The evaluator shall assign a fail verdict if the evaluator can find the artefact where the IAPAR is higher than the maximum IAPAR and it can be reproduced reliably and repeatably by an attacker possessing a Basic attack potential.
 
 ==== Justification for EAs for AVA_VAN.1
 
