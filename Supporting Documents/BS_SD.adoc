@@ -557,7 +557,7 @@ There is no dependency to other EAs defined in this BIOSD.
 
 ===== Tool types required to perform the EA
 
-Developer shall provide a test platform for the evaluator to conduct the test described in the Assessment Strategy.
+The developer shall provide a test platform for the evaluator to conduct the test described in the Assessment Strategy.
 
 ===== Required input from the developer or other entities
 
@@ -596,11 +596,15 @@ The evaluator can pass this EA only if the evaluator confirms that:
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
 ====== Strategy for ATE_IND
-Any plaintext biometric data must not be accessible from any entities outside the SEE, especially the main computer operating system, to meets FPT_BDP_EXT.1. This means that a) the TOE must not expose the plain biometric data to the memory that is accessible by the operating system during the processing of biometric data and b) any TSFIs that can output the plain biometric data must not exist or be accessible by the operating system.
+Plaintext biometric data must not be accessible from any entities outside the SEE, especially the main computer operating system, to meet FPT_BDP_EXT.1. This means that:
+
+[loweralpha]
+. The TOE must not expose the plain biometric data to the memory that is accessible by the operating system during the processing of biometric data.
+. Any TSFIs that can output plain biometric data must not exist or be accessible by the operating system.
 
 The evaluator shall perform the following tests to verify that both a) and b) described above are true.
 
-If it is impractical or inadequate to conduct the following tests, the developer may propose alternate approach to verify a) and b). It is the evaluator's responsibility to determine the suitability of the alternate approach. However, for example, an analysis of source codes to determine that a) and b) are met by the TOE is an acceptable alternate approach, as described in <<CEM>>.
+If it is impractical or inadequate to conduct the following tests, the developer may propose alternate approaches to verify a) and b). It is the evaluator's responsibility to determine the suitability of an alternate approach. For example, an analysis of source code to determine that a) and b) are met by the TOE is an acceptable alternate approach, as described in the <<CEM>>.
 
 [loweralpha]
 . Memory scan test
@@ -621,10 +625,10 @@ The test is repeated for biometric enrolment and biometric verification (called 
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 +
 [arabic]
-.. The evaluator shall identify any TSFIs that output the plaintext biometric data to the memory that is accessible by the operating system. The evaluator shall especially examine TSFIs of TSF modules provided by the biometric capture sensor (e.g. SDK) because they may include testing or debug codes and the developer who integrated the sensor into the TOE may apply minimal changes to those modules
+.. The evaluator shall identify any TSFIs that output plaintext biometric data to the memory that is accessible by the operating system. The evaluator shall especially examine TSFIs of TSF modules provided by the biometric capture sensor (e.g. SDK) because they may include testing or debug codes and the developer who integrated the sensor into the TOE may apply minimal changes to those modules
 +
 If the evaluator can’t find such TSFIs, the following test can be skipped. 
-.. The evaluator shall conform that invocation of the TSFIs by the operating system are failed.
+.. The evaluator shall confirm that invocation of the TSFIs by the operating system are failed.
 
 
 
@@ -643,7 +647,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 ==== EA for FPT_PBT_EXT.1
 
 ===== Objective of the EA
-Only an authenticated user can add one's own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored as plaintext as required by the modified FPT_KST_EXT.1 defined in <<BIOPP-Module>>. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only an authenticated user using a NBAF as specified by the ST author can access the templates through the TSFI provided by the TOE.
+Only an authenticated user can add one's own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored as plaintext as required by the modified FPT_KST_EXT.1 defined in the <<BIOPP-Module>>. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only an authenticated user using a NBAF as specified by the ST author can access the templates through the TSFI provided by the TOE.
 
 ===== Dependency
 
