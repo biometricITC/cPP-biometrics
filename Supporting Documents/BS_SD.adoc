@@ -413,7 +413,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 The evaluator shall verify that the TOE implements the biometric verification mechanism whose upper bound confidence interval of error rates don't exceed the claimed error rates (i.e. value of FAR/FMR and FRR/FNMR specified in FIA_MBV_EXT.1.2).
 
-The evaluator shall solely rely on the supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>> explained in <<Developer’s performance report and its assessment strategy>>) to achieve this objective following instruction defined in Assessment Strategy. <<BIOPP-Module>> assumes that the biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, the evaluator does not need to take lots of time and cost to gather test subjects and conduct the independent testing for this SFR.
+The evaluator shall solely rely on the supplementary information (developer’s performance report explained in <<Developer’s performance report and its assessment strategy>>) to achieve this objective following instruction defined in Assessment Strategy. The <<BIOPP-Module>> assumes that the biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, the evaluator does not need to take lots of time and cost to gather test subjects and conduct the independent testing for this SFR.
 
 ===== Dependency
 
@@ -1060,18 +1060,18 @@ Note all test subjects may not generate the samples successfully and total numbe
 .. Result of testing
 * Estimation method for confidential interval
 +
-Upper bound of confidence interval of error rates (e.g. FAR and FRR) selected at FIA_MBV_EXT.1.2 shall be estimated and reported. Method of estimation shall follow the methods defined in Annex B of <<ISO19795-1, ISO/IEC 19795-1>>.
+The upper bound of the confidence interval of error rates (e.g. FAR and FRR) selected at FIA_MBV_EXT.1.2 shall be estimated and reported. The method of estimation shall follow the methods defined in Annex B of <<ISO19795-1, ISO/IEC 19795-1>>.
 +
-<<ISO19795-1, ISO/IEC 19795-1>> explains estimation methods for confidence interval for FMR and FNMR. However, <<ISO19795-1, ISO/IEC 19795-1>> describes estimation methods for FAR and FRR indirectly through the estimation of confidence interval of FMR and FNMR only when a genuine or imposter transaction consists of a single attempt. The developer may apply the estimation method for FNMR defined in Annex B.3.2.1 to estimate the confidence interval of FRR and an estimation method for FMR defined in Annex B.3.2.3 to estimate the confidence interval of FAR, assuming a single attempt is same as a single transaction. 
+<<ISO19795-1, ISO/IEC 19795-1>> explains estimation methods for confidence interval for FMR and FNMR. However, <<ISO19795-1, ISO/IEC 19795-1>> describes estimation methods for FAR and FRR indirectly through the estimation of the confidence interval of FMR and FNMR only when a genuine or imposter transaction consists of a single attempt. The developer may apply the estimation method for FNMR defined in Annex B.3.2.1 to estimate the confidence interval of FRR and an estimation method for FMR defined in Annex B.3.2.3 to estimate the confidence interval of FAR, assuming a single attempt is same as a single transaction. 
 +
-However, several problems in estimation methods defined in <<ISO19795-1, ISO/IEC 19795-1>> are pointed out in several literature, for example <<Interval estimation, Interval estimation>>. The developer may use alternative confidence interval estimation methods (e.g. Agresti–Coull interval) proposed in those literature. However, the developer shall describe the detail of such alternative method and rationale why such method is selected in the report.
+However, several problems in the estimation methods defined in <<ISO19795-1, ISO/IEC 19795-1>> are pointed out in literature, for example <<Interval estimation, Interval estimation>>. The developer may use alternative confidence interval estimation methods (e.g. Agresti–Coull interval) proposed in the alternate literature. However, the developer shall describe the detail of the selected alternative method and a rationale why the method is selected in the report.
 * Final test result
 +
 The following values shall be reported.
 +
-If FAR and FRR is selected in FIA_MBV_EXT.1, number of total genuine and imposter transactions, number of transactions incorrectly accepted or denied, the estimation methods of confidence interval and upper bound of confidence interval for FAR and FRR shall be reported.
+If FAR and FRR is selected in FIA_MBV_EXT.1, the number of total genuine and imposter transactions, the number of transactions incorrectly accepted or denied, the estimation methods of confidence interval and the upper bound of confidence interval for FAR and FRR shall be reported.
 +
-If FMR and FNMR is selected in FIA_MBV_EXT.1, number of total genuine and imposter attempts, number of attempts falsely declared match or not to match, the estimation methods of confidence interval and upper bound of confidence interval for FMR and FNMR shall be reported.
+If FMR and FNMR is selected in FIA_MBV_EXT.1, the number of total genuine and imposter attempts, the number of attempts falsely declared match or not to match, the estimation methods of confidence interval and the upper bound of confidence interval for FMR and FNMR shall be reported.
 
 
 ==== Target application and influential factors
@@ -1195,7 +1195,7 @@ For example, if the ST sets the maximum number of unsuccessful authentication at
 
 This means that if FAR and FRR are selected, the developer shall define that the genuine and imposter transaction is consists of up to five unlock attempts and only one transaction can be run by each user.
 
-If FMR and FNMR are selected, the developer may follow the same scenario and collect five samples from each test subject. However, FMR/FNMR is a comparison subsystem measure while FAR/FRR is a system level measure, therefore FAR/FRR should be selected in FIA_MBV_EXT.1 if the developer considers the specific test scenario to measure the performance at system level.
+If FMR and FNMR are selected, the developer may follow the same scenario and collect five samples from each test subject. However, FMR/FNMR is a comparison subsystem measure while FAR/FRR is a system level measure, therefore FAR/FRR should be selected in FIA_MBV_EXT.1 if the developer considers the specific test scenario to measure the performance at the system level.
 
 The developer shall also select the most common scenario among users to conduct the performance testing. For example, if the user can enrol multiple fingerprints, the developer should assume that the user enrols index and thumb fingerprint if such enrolment is most common. FAR may increase and FRR may decrease if the user enrols multiple fingerprints however, performance of widely used configuration should be measured.
 
@@ -1215,7 +1215,7 @@ Only one transaction can be run by each test subject because the computer locks 
 
 ==== Cross-comparison for FAR/FMR
 
-BIOSD allows full cross-comparison to estimate FAR/FMR because it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. 
+The BIOSD allows full cross-comparison to estimate FAR/FMR because it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. 
 
 This BIOSD also allows cross-comparison of attempts/templates of ordered pairs if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates of ordered pairs allows the comparison between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE’s verification algorithm is symmetric and make no distinction between the ordered pairs, this assumption can not be used. The type of verification algorithm used by the TOE is reported in the developer’s performance report <<Overview of the performance testing>>.
 
@@ -1223,13 +1223,13 @@ This BIOSD doesn’t allow intra-individual comparison that is a comparison betw
 
 === Example – fingerprint verification
 
-The developer defines that fingerprint verification consists of 5 attempts using both right index and thumb fingerprints to unlock the computer and specifies FAR not exceeding  0.01% for the upper bound of 95% confidence and FRR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1. 
+The developer defines that fingerprint verification consists of 5 attempts using both right index and thumb fingerprints to unlock the computer and specifies a FAR not exceeding  0.01% for the upper bound of 95% confidence and a FRR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1. 
 
 As described in the previous Section, the genuine and imposter transaction consists of up to five unlock attempts using either of finger against each template for index and thumb finger and only one transaction can be run by each user.
 
-In this scenario, at least 30,000 imposter transactions shall be conducted with no error to achieve this performance goal if the developer applies rule of 3 in Annex B of <<ISO19795-1, ISO/IEC 19795-1>>. To run more than 30,000 imposter transactions, at least 174 test subjects shall be gathered (173 * 174 = 30,102) if cross-comparison of ordered pairs is allowed. If number of test subjects is 174, only 5 genuine transaction can be failed to achieve 5% FRR with 80% confidence (upper bound estimated by equation B.1, B.2 and B.9 when 5 transaction denied = 0.045 < 5%).
+In this scenario, at least 30,000 imposter transactions shall be conducted with no error to achieve this performance goal if the developer applies rule of 3 in Annex B of <<ISO19795-1, ISO/IEC 19795-1>>. To run more than 30,000 imposter transactions, at least 174 test subjects shall be gathered (173 * 174 = 30,102) if cross-comparison of ordered pairs is allowed. If number of test subjects is 174, only 5 genuine transactions can fail to achieve a 5% FRR with 80% confidence (upper bound estimated by equation B.1, B.2 and B.9 when 5 transaction denied = 0.045 < 5%).
 
-If the developer specifies FMR not exceeding 0.01% for the upper bound of 95% confidence and FNMR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and single attempt from each 14 test subjects can be failed to achieve 5% FNMR with 80% confidence (upper bound estimated by equation B.3, B.4 and B.9 when single attempt from each 14 test subjects are not matched = 0.049 < 5 %).
+If the developer specifies a FMR not exceeding 0.01% for the upper bound of 95% confidence and a FNMR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and single attempt from each 14 test subjects can be failed to achieve a 5% FNMR with 80% confidence (upper bound estimated by equation B.3, B.4 and B.9 when single attempt from each 14 test subjects are not matched = 0.049 < 5 %).
 
 [[qualityassessmentcriteria]]
 == Developer's quality assessment criteria report of biometric samples
