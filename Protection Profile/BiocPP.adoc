@@ -619,7 +619,7 @@ However, the Biometric System shall use this SEE correctly to protect biometric 
 
 If the Biometric System stores any part of the biometric data outside the SEE, the Biometric System shall protect such data so that any entities running outside the SEE can not get access to any plaintext biometric data. ST author shall explain what biometric data resides outside the SEE as required by <<BIOSD>> and if no data resides outside the environment, requirements below is implicitly satisfied.
 
-* The Biometric System shall not store any plaintext biometric data outside the SEE. As described in <<TOE Design>>, the Biometric System can store templates in the enrolment database. The Biometric System shall encrypt templates using cryptographic service provided by the mobile device within the SEE before storing them in the database, even if the mobile device storage itself is encrypted by the mobile device.
+* The Biometric System shall not store any plaintext biometric data outside the SEE. As described in <<TOE Design>>, the Biometric System can store templates in the enrolment database. The Biometric System shall encrypt templates using the cryptographic service provided by the mobile device within the SEE before storing them in the database, even if the mobile device storage itself is encrypted by the mobile device.
 
 The Biometric System shall also protect templates so that only the user of the mobile device can access them. This means that the Biometric System shall only allow authenticated user by the Password Authentication Factor to access (e.g. add or revoke) the template.
 
