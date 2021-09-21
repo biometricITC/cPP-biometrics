@@ -860,7 +860,7 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data shall be inside the SEE in runtime.
+*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data shall be inside the SEE at runtime.
 
 *FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the SEE shall be isolated from the main computer operating system on the TSF in runtime.
 
