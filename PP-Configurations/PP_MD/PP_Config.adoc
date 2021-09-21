@@ -4,6 +4,7 @@
 :table-caption: Table
 :revnumber: 0.99
 :revdate: May 11, 2020
+:xrefstyle: full
 :doctype: book
 
 == Acknowledgements
@@ -27,14 +28,14 @@ This PP-Configuration is identified as follows:
 
 This PP-Configuration includes the following components:
 
-* Base-PP: Protection Profile for Mobile Device Fundamentals, <<PP_MD_V3.3>>
+* Base-PP: Protection Profile for Mobile Device Fundamentals, Version:3.3. <<PP_MD>>
 * PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>>
 
 == Conformance claim and conformance statement
 
 === Common Criteria Conformance claim
 
-This PP-Configuration, <<PP_MD_V3.3>> and <<BIOPP-Module>> are conformant to Common Criteria Version 3.1, Revision 5.
+This PP-Configuration, <<PP_MD>> and <<BIOPP-Module>> are conformant to Common Criteria Version 3.1, Revision 5.
 
 === The conformance type
 
@@ -42,7 +43,7 @@ To be conformant to this PP-Configuration, an ST must demonstrate Exact Conforma
 
 === The Assurance package conformance claim
 
-In order to evaluate a TOE that claims conformance to this PP-Configuration, the evaluator shall evaluate the TOE against the following SARs that are defined in the <<PP_MD_V3.3>>:
+In order to evaluate a TOE that claims conformance to this PP-Configuration, the evaluator shall evaluate the TOE against the following SARs that are defined in the <<PP_MD>>:
 
 [cols=",",options="header",]
 .Assurance Components
@@ -69,7 +70,7 @@ In order to evaluate a TOE that claims conformance to this PP-Configuration, the
 .3+.^|Life Cycle Support (ALC) 
 |Labeling of the TOE (ALC_CMC.1)
 |TOE CM Coverage (ALC_CMS.1)
-|Timely Security Updates (ALC_TSU_EXT)
+|Timely Security Updates (ALC_TSU_EXT.1)
 
 |Tests (ATE) 
 |Independent testing - conformance (ATE_IND.1)
@@ -79,7 +80,7 @@ In order to evaluate a TOE that claims conformance to this PP-Configuration, the
 
 |===
 
-Note that to fully evaluate the TOE, these SARs shall be applied to the entire TSF and not just the portions described by <<PP_MD_V3.3>> where the SARs are defined.
+Note that to fully evaluate the TOE, these SARs shall be applied to the entire TSF and not just the portions described by <<PP_MD>> where the SARs are defined.
 
 == Related Documents
 
@@ -108,7 +109,7 @@ Version 0.5, May 2017.
 
 [cols="1,3",]
 |===
-|[#PP_MD_V3.3]#[PP_MD_V3.3]# 
+|[#PP_MD]#[PP_MD]# 
 |Protection Profile for Mobile Device Fundamentals, Version:3.3
 
 |[#BIOPP-Module]#[BIOPP-Module]# 
