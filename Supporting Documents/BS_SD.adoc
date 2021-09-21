@@ -627,9 +627,7 @@ The following test steps require the developer to provide access to a test platf
 [arabic]
 .. The evaluator shall identify any TSFIs that output plaintext biometric data to the memory that is accessible by the operating system. The evaluator shall especially examine TSFIs of TSF modules provided by the biometric capture sensor (e.g. SDK) because they may include testing or debug codes and the developer who integrated the sensor into the TOE may apply minimal changes to those modules
 +
-If the evaluator can’t find such TSFIs, the following test can be skipped. 
-.. The evaluator shall confirm that invocation of the TSFIs by the operating system are failed.
-
+If the evaluator can’t find such TSFIs, then the evaluator does not need to perform testing to access this type of TSFI.
 
 
 ===== Pass/Fail criteria
