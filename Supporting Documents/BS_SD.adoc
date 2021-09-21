@@ -552,7 +552,7 @@ The evaluator shall report the summary of the result of EA defined above, especi
 
 Evaluation of this SEE is out of scope of <<BIOPP-Module>> and the evaluator does not need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the boundary of the SEE, and that the transmission of this data is via a channel protected from the main computer operating system. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
 
-FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of stored and externally transmitted biometric data is out of scope of this EA and covered by FPT_KST_EXT.1 and FPT_KST_EXT.2 respectively.
+FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of stored and externally transmitted biometric data is out of scope of this EA and covered by modified FPT_KST_EXT.1 and FPT_KST_EXT.2 defined in <<BIOPP-Module>> respectively.
 
 ===== Dependency
 
@@ -560,7 +560,7 @@ There is no dependency to other EAs defined in this BIOSD.
 
 ===== Tool types required to perform the EA
 
-No tool is required for this EA.
+The developer shall provide a test platform for the evaluator to conduct the test described in the Assessment Strategy.
 
 ===== Required input from the developer or other entities
 
@@ -599,17 +599,39 @@ The evaluator can pass this EA only if the evaluator confirms that:
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
 ====== Strategy for ATE_IND
-The evaluator shall perform the following test to verify that the TOE restricts access to the biometric system by the main computer operating system.
+Plaintext biometric data must not be accessible from any entities outside the SEE, especially the main computer operating system, to meet FPT_BDP_EXT.1. This means that:
 
+[loweralpha]
+. The TOE must not expose the plain biometric data to the memory that is accessible by the operating system during the processing of biometric data.
+. Any TSFIs that can output plain biometric data must not exist or be accessible by the operating system.
+
+The evaluator shall perform the following tests to verify that both a) and b) described above are true.
+
+If it is impractical or inadequate to conduct the following tests, the developer may propose alternate approaches to verify a) and b). It is the evaluator's responsibility to determine the suitability of an alternate approach. For example, an analysis of source code to determine that a) and b) are met by the TOE is an acceptable alternate approach, as described in the <<CEM>>.
+
+[loweralpha]
+. Memory scan test
++
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
-
++
 The test is repeated for biometric enrolment and biometric verification (called the biometric transaction).
++
+[arabic]
+.. Using tools provided by the developer, the evaluator shall prepare the computer for a scan of the main computer operating system memory
+.. The evaluator shall take a memory scan before biometric transaction
+.. The evaluator shall perform the biometric transaction
+.. The evaluator shall perform a memory scan during the biometric transaction and compare the results to the scan before the biometric transaction
+.. The evaluator shall confirm that the changes between the two scans do not show access to the biometric data
+[loweralpha]
+. TSFI invocation test
++
+The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
++
+[arabic]
+.. The evaluator shall identify any TSFIs that output plaintext biometric data to the memory that is accessible by the operating system. The evaluator shall especially examine TSFIs of TSF modules provided by the biometric capture sensor (e.g. SDK) because they may include testing or debug codes and the developer who integrated the sensor into the TOE may apply minimal changes to those modules
++
+If the evaluator can’t find such TSFIs, then the evaluator does not need to perform testing to access this type of TSFI.
 
-. Using tools provided by the developer, the evaluator shall prepare the computer for a scan of the main computer operating system memory
-. The evaluator shall take a memory scan before biometric transaction
-. The evaluator shall perform the biometric transaction
-. The evalautor shall perform a memory scan during the biometric transaction and compare the results to the scan before the biometric transaction
-. The evaluator shall confirm that the changes between the two scans do not show access to the biometric data
 
 ===== Pass/Fail criteria
 
@@ -626,7 +648,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 ==== EA for FPT_PBT_EXT.1
 
 ===== Objective of the EA
-Only an authenticated user can add one's own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored as plaintext as required by the FPT_KST_EXT.1. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only an authenticated user using a NBAF as specified by the ST author can access the templates through the TSFI provided by the TOE.
+Only an authenticated user can add one's own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored as plaintext as required by the modified FPT_KST_EXT.1 defined in the <<BIOPP-Module>>. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only an authenticated user using a NBAF as specified by the ST author can access the templates through the TSFI provided by the TOE.
 
 ===== Dependency
 
