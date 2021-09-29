@@ -825,8 +825,6 @@ The evaluator shall take the following additional application notes into account
 
 <<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<PP_MD>> and the operational guidance does not need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
 
-There is an additional application note related to EAs for FIA_MBV_EXT.3 in Section 9.3.2 [Additional application notes for AGD Class] in this BIOSD. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
-
 ==== Application note for EA of AGD_PRE.1
 
 <<BIOPP-Module>> supposes that the biometric system is fully integrated into the mobile device and the preparative procedures are unnecessary for <<BIOPP-Module>>. Therefore, AGD_PRE.1 is deemed satisfied for <<BIOPP-Module>>.
@@ -845,7 +843,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of ATE_IND.1
 
-The same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (Presentation attack detection for biometric enrolment) and FIA_MBV_EXT.3 (Presentation attack detection for biometric verification). The evaluator shall perform EAs defined in Section 6 [Evaluation Activities for PAD testing] in this BIOSD for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
+The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
 === Class AVA: Vulnerability Assessment
 
@@ -853,9 +851,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of AVA_VAN.1
 
-The same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (Presentation attack detection for biometric enrolment) and FIA_MBV_EXT.3 (Presentation attack detection for biometric verification). The evaluator shall perform EAs defined in <<Evaluation Activities for PAD testing>> in this BIOSD for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
-
-In evaluating this PP-Configuration, the evaluator shall ensure that all Evaluation Activities for SFRs and SARs are evaluated as part of satisfying the required SARs.
+The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
 == Evaluation Activities for PAD testing
 
@@ -880,7 +876,7 @@ The <<Toolbox>> includes a collection of test items for each biometric modality.
 The same <<Toolbox>> can also be used for AVA_VAN.1 evaluation (i.e. penetration testing) because AVA_VAN.1 requires the evaluator to devise tests based on information available in the public domain. However, the <<Toolbox>> should be used in a different manner for AVA_VAN.1 evaluation. The following section explains how the <<Toolbox>> should be used in EAs for ATE_IND.1 and AVA_VAN.1.
 
 ==== Presentation Attack Instrument (artefact) species
-There are many types of Presentation Attack Instruments that can be used to test a PAD system. The <<BIOPP-Module>> specifically defines the artefacts that are to be used as artificial, and not natural. Natural artefacts, such as a dead eye, are not considered in scope for this evaluation. When searching for new artefact species, only artificial species should be considered.
+There are many types of Presentation Attack Instruments that can be used to test a PAD subsystem. The <<BIOPP-Module>> specifically defines the artefacts that are to be used as artificial, and not natural. Natural artefacts, such as a dead eye, are not considered in scope for this evaluation. When searching for new artefact species, only artificial species should be considered.
 
 === EAs for ATE_IND.1 (Independent testing - conformance)
 
@@ -888,19 +884,19 @@ There are many types of Presentation Attack Instruments that can be used to test
 
 As described in previous section, the <<Toolbox>> defines test items to create a representative set of artefacts that the evaluator shall use for the testing. During ATE_IND.1 evaluation, the evaluator shall conduct all test items in the <<Toolbox>> for the selected modalities without any change. The evaluator is not allowed to skip any test items in the <<Toolbox>> to maintain compatibility between different evaluations.
 
-During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enroled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
+The developer needs to assign the maximum IAPAR in FIA_MBV_EXT.3. The evaluator shall follow the information in the <<Toolbox>>, for example, the number of artefact presentations, to conduct the testing and confirm that measured IAPARs for all artefacts are equal to or less than the assigned IAPAR through the independent testing. 
 
-The <<Toolbox>> defines the Pass/Fail criteria, maximum IAPAR for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign a fail verdict to those TOE that do not satisfy the criteria.
+During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enroled target user. However, the evaluator may not be able to reliably reproduce a successful presentation attack. The evaluator shall assign a fail verdict only if the evaluator can reproduce the artefact of which IAPAR is higher than the maximum value reliably and repeatably.
 
-The artefacts that pass the criteria but show the higher IAPAR will be tested again during the AVA_VAN.1 evaluation.
+Those artefacts of which IAPAR is less than the maximum value but show one or more successful imposter presentations will be tested again during the AVA_VAN.1 evaluation.
 
-The <<Toolbox>> does not necessarily cover all biometric modalities, but only existing modalities with approved <<Toolbox>> tests can be used. If the developer wants to evaluate modalities not currently included in the <<Toolbox>>, the developer and evaluator shall contact the BIO-iTC to work together to add the new modality and extend the <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
+The developer can select any biometric modalities in FIA_MBV_EXT.1 (corresponding test instructions for each modality are included in the <<Toolbox>>). If the developer wants to evaluate modalities not currently included in FIA_MBV_EXT.1, the developer and evaluator shall contact the BIO-iTC to work together to add the new modality and extend the <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
 
 ==== Justification for EAs for ATE_IND.1
 
 The EAs presented in this section are derived from ATE_IND.1-3, ATE_IND.1-4 and ATE_IND.1-7 and their verdicts will be associated with those work units.
 
-The <<Toolbox>> describes a test subset and test documentation that is sufficiently detailed to enable the tests to be reproducible (ATE_IND.1-3 and ATE_IND.1-4). The <<Toolbox>> also defines Pass/Fail criteria that support evaluator’s decision (ATE_IND.1-7).
+The <<Toolbox>> describes a test subset and test documentation that is sufficiently detailed to enable the tests to be reproducible (ATE_IND.1-3 and ATE_IND.1-4). The <<Toolbox>> also includes information that support the evaluator’s decision (ATE_IND.1-7).
 
 === EA for AVA_VAN.1 (Vulnerability survey)
 
@@ -915,18 +911,13 @@ However, new artefacts species may be found after the <<Toolbox>> is published. 
 
 Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
 
-====== New artefact Toolbox updates
+===== New artefact Toolbox updates
 To utilize new artefacts, they must have approval from the BIO-iTC through publication in an incremented toolbox version for the evaluator to evaluate against.footnote:[Publication can occur rapidly, typically ≤2 weeks] The evaluator shall report to the BIO-iTC when new artefact species are found so the artefacts may be added to the <<Toolbox>>. The requirements for addition of new artefact species can be found at the https://biometricitc.github.io/[Biometrics Security home page]. The new artefact species will be included as part of the <<Toolbox>> by the BIO-iTC and the evaluator must refer the latest <<Toolbox>> at the time of the evaluation.
 
 ===== Produce test plan
-
-The evaluator shall perform EAs in <<No new artefacts found test plan>> if there is no new artefact species found in previous step. Otherwise, follow <<New artefacts found test plan>>.
-
-====== No new artefacts found test plan
-
 The evaluator shall select those artefacts that show higher IAPAR at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
-If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact).
+If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact). The evaluator may measure the quality score of samples captured from artefacts and select ones that produce higher scores as “higher quality” artefacts.
 
 The evaluator may recreate the artefacts selected for penetration testing to improve their quality taking following approaches.
 
@@ -953,7 +944,7 @@ For example, in case of finger or palm vein verification, quality of vein patter
 
 ===== Conduct the penetration testing
 
-The evaluator shall conduct the penetration testing based on the test plan updated in the previous step.
+The evaluator shall conduct the penetration testing based on the test plan.
 
 The evaluator shall select those artefacts that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
@@ -961,7 +952,7 @@ In order to place bounds on the effort involved related to the attack potential 
 
 ===== Determine Pass/Fail of penetration testing
 
-The evaluator shall determine that the TOE, in its operational environment, is resistant to an attacker possessing a Basic attack potential. The evaluator shall make this determination based on guidance provided in  <<Pass/Fail criteria for EAs for PAD testing (FIA_MBE_EXT.3 and FIA_MBV_EXT.3)>> and maximum allowable error rates defined in <<Toolbox>>.
+The evaluator shall assign a fail verdict if the evaluator can find the artefact where the IAPAR is higher than the maximum IAPAR and it can be reproduced reliably and repeatably by an attacker possessing a Basic attack potential.
 
 ==== Justification for EAs for AVA_VAN.1
 
@@ -1713,57 +1704,6 @@ The evaluator shall select “Easy” because the TOE is a computer that anyone 
 ==== Application note for Window of Opportunity (Access to TOE) for Exploitation
 
 The evaluator shall select “Moderate” because the number of unsuccessful authentication attempts for biometric verification is limited, and biometric verification becomes unusable if the number of failure attempts exceed the limit.
-
-=== Pass/Fail criteria for EAs for PAD testing (FIA_MBE_EXT.3 and FIA_MBV_EXT.3)
-
-As required by CC, the evaluator shall determine that the TOE is resistant to an attacker possessing a Basic attack potential based on <<attackpotentialcalc>>. However, the table doesn’t provide any guidance for the probability of success or failure of presentation attack.
-
-The evaluator may have enough confidence to assign fail verdict to the TOE if the evaluator find the artefacts that succeed the attack repeatably or at high probability (e.g. almost 100%).
-
-However, the evaluator can’t make an objective decision if the probability of success decreases at certain level because the computer limits the number of unsuccessful authentication attempts for biometric verification and the attacker can not present the artefact to the TOE so many times in the actual operational environment.
-
-This Section provides the Pass/Fail criteria for EAs for PAD testing taking this particular aspect into account so that the evaluator can make consistent and objective decision.
-
-==== Pass/Fail criteria
-
-The computer limits the number of unsuccessful authentication attempts for biometric verification, as required by the Base-PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
-
-This BIOSD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable artefacts”. “Reliable artefacts” are those artefacts that succeed on at least one attack within the allowable number of attempts (i.e. succeed to unlock the computer) at more than 80% of probability. This BIOSD selects this probability based on the use case assumed in <<BIOPP-Module>>.
-
-The probability of a successful presentation attack for one attempt *_p_* needs to satisfy the following equation to satisfy the above condition.
-
-
-1-(1-*_p_*)*^n^* > 0.8 (*n* = allowable number of unsuccessful attempts)
-
-
-The following table shows that example of pairs (maximum *_p_* for particular *n*) that satisfy the above equation.
-
-[cols=",",options="header",]
-.Example of (n, _p_) pair
-|===
-|*n* |*_p_*
-|4 |0.33 (33%)
-|6 |0.23 (23%)
-|8 |0.18 (18%)
-|===
-
-If the Base-PP is <<PP_MD_V3.3>>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assigns 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
-
-The evaluator shall assign a pass verdict to the TOE only if the evaluator can not find those artefacts that the probability of successful attack is more than *_p_*.
-
-The evaluator shall make at least 3 artefacts from three test subjects following the same creation process and perform at least 10 attempts for each artefact to calculate *_p_* (i.e. minimum number of attempts for calculation of *_p_* for each artefact is 3 * 10 = 30).
-
-The evaluator should focus on a few artefacts that show highest error rate at the independent testing or hold highest quality for the penetration testing and spend enough time for training before conducting the final testing to measure *_p_* for those artefacts.
-
-==== Additional application notes for AGD Class
-
-CEM work unit AGD_OPE.1-1 requires the evaluator to examine the AGD guidance to determine that it describes appropriate warnings for secure use of the TOE.
-
-The evaluator shall examine that appropriate warnings is provided in the AGD guidance if the evaluator can find those artefacts that pass the penetration test however whose *_p_* is higher than 7%.
-
-Those artefacts can succeed at least one presentation attack (and succeed to unlock the computer) at 25% of probability when allowable number of unsuccessful attempts is 4 (i.e. *n* = 4).
-
-Example of warnings is that the AGD guidance may warn that the biometric verification is less secure than a NBAF and recommend using a NBAF for security sensitive services.
 
 == Related Documents
 [bibliography]
