@@ -655,7 +655,9 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 *FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
-*Application Note {counter:remark_count}*:: Artefacts that the TOE prevent and relevant criteria for its security relevant error rates for each type of artefact is defined in <<BIOSD>>.
+*Application Note {counter:remark_count}*:: <<BIOSD>> provides instructions how to produce and present the artificial presentation attack instruments.
+
+*Application Note {counter:remark_count}*:: If the ST author selects FMR/FNMR in FIA_MBV_EXT.1.2, IAPAR needs to be calculated based on attempts (i.e. IAPAR (%) = 100 * (number of presentation attack attempts which are verified successfully) / (total number of presentation attack attempts)). If the ST author selects FAR/FRR, IAPAR needs to be calculated based on transactions (i.e. IAPAR (%) = 100 * (number of presentation attack transactions which are verified successfully) / (total number of presentation attack transactions)).
 
 == Extended Component Definitions
 This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <<Optional Requirements>>. 
