@@ -1221,7 +1221,7 @@ If the developer specifies 0.01% FMR and 1% FNMR in FIA_MBV_EXT.1, at least 30,0
 == Developer’s quality assessment criteria report of biometric samples
 The term “quality” is used in FIA_MBE_EXT.2 and FIA_MBV_EXT.2 and these SFRs require the TOE to use biometric samples of sufficient quality. However, the quality of a biometric sample is interpreted differently throughout literature. In general, quality is defined as an indicator of the usefulness of the biometric sample for biometric enrolment and verification. The TOE can use this indicator to improve the TOE’s performance, especially FRR and FNMR, because the TOE can reject “bad” or low-quality samples at an early phase that would cause performance degradation. 
 
-The TOE uses quality assessment criteria to measure the indicator, namely, quality scores of samples measured by quality metrics and reject low-quality samples that below the quality threshold.
+The TOE uses quality assessment criteria to measure the indicator, namely, quality scores of samples measured by quality metrics and reject low-quality samples that fall below the quality threshold.
 
 The BMD must provide an overview of the quality metrics and how such quality metrics are used so the evaluator can understand how the TOE meets FIA_MBE_EXT.2 and FIA_MBV_EXT.2; however, the BMD does not need to explain why the quality metrics can estimate the quality scores of samples. The developer shall conduct the testing to show the efficacy of quality metrics and report the result of testing in the quality assessment criteria report. This section defines the requirements for contents of report referring <<ISO29794-1, ISO/IEC 29794-1>>.
 
