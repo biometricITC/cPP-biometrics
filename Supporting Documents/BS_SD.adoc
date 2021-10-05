@@ -486,7 +486,7 @@ Following input is required from the developer.
 . The BMD shall provide information about the assessment criteria that explains how the TOE checks the quality of samples for biometric verification. The assessment criteria for biometric verification may include the following information
 +
 --
-** Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features is available
+** Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features are available
 ** Method to quantify the quality of samples (e.g. method to generate quality score)
 ** Assessment criteria to accept the sample of sufficient quality (e.g. compare quality score to quality threshold)
 ** Quality standard that the TOE uses to perform the assessment if the TOE follows such standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint)
