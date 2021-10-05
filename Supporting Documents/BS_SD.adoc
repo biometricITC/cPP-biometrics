@@ -491,7 +491,7 @@ Following input is required from the developer.
 ** Assessment criteria to accept the sample of sufficient quality (e.g. compare quality score to quality threshold)
 ** Quality standard that the TOE uses to perform the assessment if the TOE follows such standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint)
 
-The BMD can make a priori assumptions about the usefulness or efficacy of the criteria or metrics. If standard quality metrics are assigned, the BMD may refer to the standard that defines quality metrics. If developer defined quality assessment is selected, the BMD shall provide the same level of information about the assessment criteria as the standard (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint) does.
+The BMD can make a priori assumptions about the usefulness or efficacy of the criteria or metrics. If standard quality metrics are assigned, the BMD may refer to the standard that defines quality metrics. If developer defined quality assessment is selected, the BMD shall provide the same level of information about the assessment criteria as an equivalent image quality standard for the specific modality (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint) does.
 --
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
 . Supplementary information (the quality assessment criteria report explained in <<Developer’s quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
