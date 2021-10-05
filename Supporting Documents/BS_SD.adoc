@@ -71,7 +71,7 @@ Biometric Security international Technical Community (BIO-iTC)
 
 |1.1
 |TBD, 2021
-|Incorporated TDs and NIAP comments for PP_MD_V3.3 integration
+|Incorporated TDs and NIAP comments for PP_MD integration
 
 |===
 
@@ -133,6 +133,9 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 
 |*BAF* 
 |Biometric Authentication Factor
+
+|*BMD* 
+|Biometrics Management Description
 
 |*CC* 
 |Common Criteria for Information Technology Security Evaluation
@@ -392,11 +395,9 @@ The evaluator shall report the summary of result of EA defined above, especially
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE implements the biometric verification mechanism whose error rates is equal or lower than the claimed error rates (i.e. value of FAR/FMR and FRR/FNMR specified in FIA_MBV_EXT.1.2).
+The evaluator shall verify that the TOE implements the biometric verification mechanism whose upper bound confidence interval of error rates does not exceed the claimed error rates (i.e. value of FAR/FMR and FRR/FNMR specified in FIA_MBV_EXT.1.2).
 
-The evaluator shall solely rely on the supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>>) to achieve this objective following instruction defined in Assessment Strategy.
-
-<<BIOPP-Module>> assumes that the biometric verification is not used for the security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, risk of zero-effort impostor attempts is low and the developer may not follow the statistical method (e.g. Rule of 3 or Rule of 30) to measure the biometric verification performance.
+The evaluator shall solely rely on the supplementary information (developer’s performance report explained in <<Developer’s performance report and its assessment strategy>>) to achieve this objective following instruction defined in Assessment Strategy. The <<BIOPP-Module>> assumes that the biometric verification is not used for security sensitive services and the TOE operational environment also limits the maximum number of failed verification attempts in succession. Therefore, the evaluator does not need to gather large quantities of test subjects to conduct the independent testing for this SFR.
 
 ===== Dependency
 
@@ -412,7 +413,7 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
-. BMD shall provide information about how the verification rates are tested
+. BMD shall provide information about how the upper bound confidence interval of error rates are estimated
 ** The BMD may refer to the developer's <<Developer’s performance report and its assessment strategy, performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
 . Supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>>) shall describe the developer’s performance test protocol and result of testing
@@ -429,7 +430,7 @@ The evaluator shall examine developer’s <<Developer’s performance report and
 
 Requirements defined in <<Developer’s performance report and its assessment strategy>> are based on ISO/IEC 19795. This standard specifies requirements on performance test protocol, recording and reporting of results based on the best practices developed by relevant organizations. The evaluator shall confirm that developer’s <<Developer’s performance report and its assessment strategy, performance report>> meets all requirements in <<Developer’s performance report and its assessment strategy>> and seek a rationale if the developer’s <<Developer’s performance report and its assessment strategy, performance report>> does not meet any requirements and determine whether the rationale is valid or not.
 
-Finally, the evaluator shall check that the measured error rates (FRR/FAR or FNMR/FMR) reported in the developer’s <<Developer’s performance report and its assessment strategy, performance report>> is equal or lower than the error rates specified in the FIA_MBV_EXT.1.2.
+Finally, the evaluator shall check that the estimated upper bound confidence interval of error rates (FRR/FAR or FNMR/FMR) reported in the developer’s <<Developer’s performance report and its assessment strategy, performance report>> do not exceed the claimed error rates specified in the FIA_MBV_EXT.1.2.
 
 ===== Pass/Fail criteria
 
@@ -438,7 +439,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 [loweralpha]
 . Information necessary to perform this EA is described in the TSS, BMD and AGD guidance
 . Developer’s <<Developer’s performance report and its assessment strategy, performance report>> meets all requirements in <<Developer’s performance report and its assessment strategy>> and a valid rationale is provided by developer if the developer’s <<Developer’s performance report and its assessment strategy, performance report>> doesn’t meet any requirements
-. FRR/FAR or FNMR/FMR measured by the developer’s performance testing is equal or lower than “defined value” specified in FIA_MBV_EXT.1.2
+. Upper bound confidence interval of error rates (FRR/FAR or FNMR/FMR) reported in the developer’s <<Developer’s performance report and its assessment strategy, performance report>> do not exceed the claimed error rates specified in FIA_MBV_EXT.1.2
 
 ===== Requirements for reporting
 
@@ -518,7 +519,7 @@ The evaluator shall report the summary of the result of EA defined above, especi
 
 Evaluation of this SEE is out of scope of <<BIOPP-Module>> and the evaluator does not need to evaluate this environment itself. However, the evaluator shall examine that the TOE processes any plaintext biometric data within the boundary of the SEE, and that the transmission of this data is via a channel protected from the main computer operating system. The SEE is responsible for preventing any entities outside the environment from accessing plaintext biometric data.
 
-FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of stored and externally transmitted biometric data is out of scope of this EA and covered by FPT_KST_EXT.1 and FPT_KST_EXT.2 respectively.
+FPT_BDP_EXT.1 applies to plaintext biometric data being processed during biometric enrolment and verification. Protection of stored and externally transmitted biometric data is out of scope of this EA and covered by modified FPT_KST_EXT.1 and FPT_KST_EXT.2 defined in <<BIOPP-Module>> respectively.
 
 ===== Dependency
 
@@ -526,7 +527,7 @@ There is no dependency to other EAs defined in this BIOSD.
 
 ===== Tool types required to perform the EA
 
-No tool is required for this EA.
+The developer shall provide a test platform for the evaluator to conduct the test described in the Assessment Strategy.
 
 ===== Required input from the developer or other entities
 
@@ -565,17 +566,39 @@ The evaluator can pass this EA only if the evaluator confirms that:
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
 ====== Strategy for ATE_IND
-The evaluator shall perform the following test to verify that the TOE restricts access to the biometric system by the main computer operating system.
+Plaintext biometric data must not be accessible from any entities outside the SEE, especially the main computer operating system, to meet FPT_BDP_EXT.1. This means that:
 
+[loweralpha]
+. The TOE must not expose the plain biometric data to the memory that is accessible by the operating system during the processing of biometric data.
+. Any TSFIs that can output plain biometric data must not exist or be accessible by the operating system.
+
+The evaluator shall perform the following tests to verify that both a) and b) described above are true.
+
+If it is impractical or inadequate to conduct the following tests, the developer may propose alternate approaches to verify a) and b). It is the evaluator's responsibility to determine the suitability of an alternate approach. For example, an analysis of source code to determine that a) and b) are met by the TOE is an acceptable alternate approach, as described in the <<CEM>>.
+
+[loweralpha]
+. Memory scan test
++
 The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
-
++
 The test is repeated for biometric enrolment and biometric verification (called the biometric transaction).
++
+[arabic]
+.. Using tools provided by the developer, the evaluator shall prepare the computer for a scan of the main computer operating system memory
+.. The evaluator shall take a memory scan before biometric transaction
+.. The evaluator shall perform the biometric transaction
+.. The evaluator shall perform a memory scan during the biometric transaction and compare the results to the scan before the biometric transaction
+.. The evaluator shall confirm that the changes between the two scans do not show access to the biometric data
+[loweralpha]
+. TSFI invocation test
++
+The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
++
+[arabic]
+.. The evaluator shall identify any TSFIs that output plaintext biometric data to the memory that is accessible by the operating system. The evaluator shall especially examine TSFIs of TSF modules provided by the biometric capture sensor (e.g. SDK) because they may include testing or debug codes and the developer who integrated the sensor into the TOE may apply minimal changes to those modules
++
+If the evaluator can’t find such TSFIs, then the evaluator does not need to perform testing to access this type of TSFI.
 
-. Using tools provided by the developer, the evaluator shall prepare the computer for a scan of the main computer operating system memory
-. The evaluator shall take a memory scan before biometric transaction
-. The evaluator shall perform the biometric transaction
-. The evalautor shall perform a memory scan during the biometric transaction and compare the results to the scan before the biometric transaction
-. The evaluator shall confirm that the changes between the two scans do not show access to the biometric data
 
 ===== Pass/Fail criteria
 
@@ -592,7 +615,7 @@ The evaluator shall report the summary of result of EA defined above, especially
 ==== EA for FPT_PBT_EXT.1
 
 ===== Objective of the EA
-Only an authenticated user can add one's own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored as plaintext as required by the FPT_KST_EXT.1. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only an authenticated user using a NBAF as specified by the ST author can access the templates through the TSFI provided by the TOE.
+Only an authenticated user can add one's own templates during biometric enrolment as defined in the FIA_MBE_EXT.1 and those templates are not stored as plaintext as required by the modified FPT_KST_EXT.1 defined in the <<BIOPP-Module>>. However, the TOE may provide functions (e.g. revocation of templates) to access the templates. The evaluator shall confirm that only an authenticated user using a NBAF as specified by the ST author can access the templates through the TSFI provided by the TOE.
 
 ===== Dependency
 
@@ -635,23 +658,23 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-== Evaluation Activities for PP_MD_V3.3 Requirements
+== Evaluation Activities for PP_MD Requirements
 In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
 
 === Modified SFRs from the Base-PP
 ==== Cryptographic Support (FCS)
 ===== FCS_CKM_EXT.4 Key Destruction
-Refer to the EA for FCS_CKM_EXT.4 in the <<PP_MD_V3.3>> including biometric data as critical security parameters for the EA.
+Refer to the EA for FCS_CKM_EXT.4 in the <<PP_MD>> including biometric data as critical security parameters for the EA.
 
 ==== Protection of the TSF (FPT)
 ===== FPT_AEX_EXT.4 Domain Isolation 
-Refer to the EA for FPT_AEX_EXT.4 in the <<PP_MD_V3.3>> including the protection of biometric data in the isolation description.
+Refer to the EA for FPT_AEX_EXT.4 in the <<PP_MD>> including the protection of biometric data in the isolation description.
 
-===== Key Storage (FPT_KST_EXT.1)
-Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+===== FPT_KST_EXT.1 Key Storage
+Refer to the EA for FPT_KST_EXT.1 in the <<PP_MD>> including biometric data as part of the plaintext key materials.
 
-===== NO Key Transmission (FPT_KST_EXT.2)
-Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD_V3.3>> including biometric data as part of the plaintext key materials.
+===== FPT_KST_EXT.2 No Key Transmission
+Refer to the EA for FPT_KST_EXT.2 in the <<PP_MD>> including biometric data as part of the plaintext key materials.
 
 == Evaluation Activities for Selection-Based Requirements 
 
@@ -749,35 +772,27 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-=== User data protection (FDP)
+== Evaluation Activities for SARs in PP_MD
 
-==== EA for FDP_RIP.2
+<<PP_MD>> and this BIOSD define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1.
 
-The evaluator shall refer the EA in the Base-PP to perform evaluation of this SFR (e.g. EA for FCS_CKM_EXT.4 in <<PP_MD_V3.3>>).
-
-== Evaluation Activities for SARs
-
-<<PP_MD_V3.3>> and this BIOSD define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1. If optional requirement FDP_RIP.2 is selected in the <<BIOPP-Module>>, the Evaluation Activities for FCS_CKM_EXT.4 in <<PP_MD_V3.3>> can be applied to FDP_RIP.2.
-
-<<BIOPP-Module>> does not define any SARs beyond those defined within <<PP_MD_V3.3>> to which it can claim conformance. It is important to note that the TOE that is evaluated against <<BIOPP-Module>> is inherently evaluated against <<PP_MD_V3.3>> as well. This means that EAs in Section 5.2 Security Assurance Requirements in <<PP_MD_V3.3>> should also applied to <<BIOPP-Module>> with additional application notes or EAs defined in the following Sections.
+<<BIOPP-Module>> does not define any SARs beyond those defined within <<PP_MD>> to which it can claim conformance. It is important to note that the TOE that is evaluated against <<BIOPP-Module>> is inherently evaluated against <<PP_MD>> as well. This means that EAs in Section 5.2 Security Assurance Requirements in <<PP_MD>> should also applied to <<BIOPP-Module>> with additional application notes or EAs defined in the following Sections.
 
 === Class ASE: Security Target
 
-<<PP_MD_V3.3>> does not define any EAs and there is no additional EAs for <<BIOPP-Module>>.
+<<PP_MD>> does not define any EAs and there is no additional EAs for <<BIOPP-Module>>.
 
 === Class ADV: Development
 
-Same EA defined in <<PP_MD_V3.3>> should also be applied to <<BIOPP-Module>>.
+Same EA defined in <<PP_MD>> should also be applied to <<BIOPP-Module>>.
 
 === Class AGD: Guidance Documentation
 
-The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MD_V3.3>>.
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MD>>.
 
 ==== Application note for EA of AGD_OPE.1
 
-<<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<PP_MD_V3.3>> and the operational guidance does not need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
-
-There is an additional application note related to EAs for FIA_MBV_EXT.3 in Section 9.3.2 [Additional application notes for AGD Class] in this BIOSD. The evaluator shall also follow this note depending on the result of the penetration testing for PAD.
+<<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<PP_MD>> and the operational guidance does not need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
 
 ==== Application note for EA of AGD_PRE.1
 
@@ -785,29 +800,27 @@ There is an additional application note related to EAs for FIA_MBV_EXT.3 in Sect
 
 === Class ALC: Life-cycle Support
 
-The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MD_V3.3>> for <<BIOPP-Module>>. There is no application note for EA for ALC_CMS.1 and ALC_TSU_EXT.
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MD>> for <<BIOPP-Module>>. There is no application note for EA for ALC_CMS.1 and ALC_TSU_EXT.1.
 
 ==== Application note for EA of ALC_CMC.1
 
-<<BIOPP-Module>> is intended to be used with <<PP_MD_V3.3>> and reference for the mobile device can be used as the TOE (mobile device + biometric system) reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device.
+<<BIOPP-Module>> is intended to be used with <<PP_MD>> and reference for the mobile device can be used as the TOE (mobile device + biometric system) reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device.
 
 === Class ATE: Tests
 
-The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MD_V3.3>> for <<BIOPP-Module>>.
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MD>> for <<BIOPP-Module>>.
 
 ==== Application note for EA of ATE_IND.1
 
-The same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (Presentation attack detection for biometric enrolment) and FIA_MBV_EXT.3 (Presentation attack detection for biometric verification). The evaluator shall perform EAs defined in Section 6 [Evaluation Activities for PAD testing] in this BIOSD for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
+The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
 === Class AVA: Vulnerability Assessment
 
-The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MD_V3.3>> for <<BIOPP-Module>>.
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MD>> for <<BIOPP-Module>>.
 
 ==== Application note for EA of AVA_VAN.1
 
-The same EA should be applied to <<BIOPP-Module>> except optional requirement FIA_MBE_EXT.3 (Presentation attack detection for biometric enrolment) and FIA_MBV_EXT.3 (Presentation attack detection for biometric verification). The evaluator shall perform EAs defined in <<Evaluation Activities for PAD testing>> in this BIOSD for FIA_MBE_EXT.3 and FIA_MBV_EXT.3.
-
-In evaluating this PP-Configuration, the evaluator shall ensure that all Evaluation Activities for SFRs and SARs are evaluated as part of satisfying the required SARs.
+The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
 == Evaluation Activities for PAD testing
 
@@ -832,7 +845,7 @@ The <<Toolbox>> includes a collection of test items for each biometric modality.
 The same <<Toolbox>> can also be used for AVA_VAN.1 evaluation (i.e. penetration testing) because AVA_VAN.1 requires the evaluator to devise tests based on information available in the public domain. However, the <<Toolbox>> should be used in a different manner for AVA_VAN.1 evaluation. The following section explains how the <<Toolbox>> should be used in EAs for ATE_IND.1 and AVA_VAN.1.
 
 ==== Presentation Attack Instrument (artefact) species
-There are many types of Presentation Attack Instruments that can be used to test a PAD system. The <<BIOPP-Module>> specifically defines the artefacts that are to be used as artificial, and not natural. Natural artefacts, such as a dead eye, are not considered in scope for this evaluation. When searching for new artefact species, only artificial species should be considered.
+There are many types of Presentation Attack Instruments that can be used to test a PAD subsystem. The <<BIOPP-Module>> specifically defines the artefacts that are to be used as artificial, and not natural. Natural artefacts, such as a dead eye, are not considered in scope for this evaluation. When searching for new artefact species, only artificial species should be considered.
 
 === EAs for ATE_IND.1 (Independent testing - conformance)
 
@@ -840,19 +853,19 @@ There are many types of Presentation Attack Instruments that can be used to test
 
 As described in previous section, the <<Toolbox>> defines test items to create a representative set of artefacts that the evaluator shall use for the testing. During ATE_IND.1 evaluation, the evaluator shall conduct all test items in the <<Toolbox>> for the selected modalities without any change. The evaluator is not allowed to skip any test items in the <<Toolbox>> to maintain compatibility between different evaluations.
 
-During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enroled target user however, the evaluator may not be able to reliably reproduce a successful presentation attack.
+The developer needs to assign the maximum IAPAR in FIA_MBV_EXT.3. The evaluator shall follow the information in the <<Toolbox>>, for example, the number of artefact presentations, to conduct the testing and confirm that measured IAPARs for all artefacts are equal to or less than the assigned IAPAR through the independent testing. 
 
-The <<Toolbox>> defines the Pass/Fail criteria, maximum IAPAR for artefacts. The evaluator shall follow the <<Toolbox>> criteria for the number of artefact presentations and confirm that the TOE’s match rate is below the specified criteria during the independent testing. The evaluator shall assign a fail verdict to those TOE that do not satisfy the criteria.
+During the independent testing, the evaluator may find artefacts that are incorrectly matched to the enroled target user. However, the evaluator may not be able to reliably reproduce a successful presentation attack. The evaluator shall assign a fail verdict only if the evaluator can reproduce the artefact of which IAPAR is higher than the maximum value reliably and repeatably.
 
-The artefacts that pass the criteria but show the higher IAPAR will be tested again during the AVA_VAN.1 evaluation.
+Those artefacts of which IAPAR is less than the maximum value but show one or more successful imposter presentations will be tested again during the AVA_VAN.1 evaluation.
 
-The <<Toolbox>> does not necessarily cover all biometric modalities, but only existing modalities with approved <<Toolbox>> tests can be used. If the developer wants to evaluate modalities not currently included in the <<Toolbox>>, the developer and evaluator shall contact the BIO-iTC to work together to add the new modality and extend the <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
+The developer can select any biometric modalities in FIA_MBV_EXT.1 (corresponding test instructions for each modality are included in the <<Toolbox>>). If the developer wants to evaluate modalities not currently included in FIA_MBV_EXT.1, the developer and evaluator shall contact the BIO-iTC to work together to add the new modality and extend the <<Toolbox>>. Upon the BIO-iTC approval of this extension, the evaluator can proceed with PAD evaluation for the new modality.
 
 ==== Justification for EAs for ATE_IND.1
 
 The EAs presented in this section are derived from ATE_IND.1-3, ATE_IND.1-4 and ATE_IND.1-7 and their verdicts will be associated with those work units.
 
-The <<Toolbox>> describes a test subset and test documentation that is sufficiently detailed to enable the tests to be reproducible (ATE_IND.1-3 and ATE_IND.1-4). The <<Toolbox>> also defines Pass/Fail criteria that support evaluator’s decision (ATE_IND.1-7).
+The <<Toolbox>> describes a test subset and test documentation that is sufficiently detailed to enable the tests to be reproducible (ATE_IND.1-3 and ATE_IND.1-4). The <<Toolbox>> also includes information that support the evaluator’s decision (ATE_IND.1-7).
 
 === EA for AVA_VAN.1 (Vulnerability survey)
 
@@ -867,18 +880,13 @@ However, new artefacts species may be found after the <<Toolbox>> is published. 
 
 Those new artefact species that can be made by slightly modifying test items in the <<Toolbox>> are covered by the normal test plans.
 
-====== New artefact Toolbox updates
+===== New artefact Toolbox updates
 To utilize new artefacts, they must have approval from the BIO-iTC through publication in an incremented toolbox version for the evaluator to evaluate against.footnote:[Publication can occur rapidly, typically ≤2 weeks] The evaluator shall report to the BIO-iTC when new artefact species are found so the artefacts may be added to the <<Toolbox>>. The requirements for addition of new artefact species can be found at the https://biometricitc.github.io/[Biometrics Security home page]. The new artefact species will be included as part of the <<Toolbox>> by the BIO-iTC and the evaluator must refer the latest <<Toolbox>> at the time of the evaluation.
 
 ===== Produce test plan
-
-The evaluator shall perform EAs in <<No new artefacts found test plan>> if there is no new artefact species found in previous step. Otherwise, follow <<New artefacts found test plan>>.
-
-====== No new artefacts found test plan
-
 The evaluator shall select those artefacts that show higher IAPAR at the independent testing. The evaluator shall test them extensively during the penetration testing.
 
-If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact).
+If there are no such artefacts, the evaluator should select “higher quality” artefacts. “Higher quality” means that artefacts are closer in resemblance to the biometric characteristics of the target user (e.g. higher resolution photo for face artefact). The evaluator may measure the quality score of samples captured from artefacts and select ones that produce higher scores as “higher quality” artefacts.
 
 The evaluator may recreate the artefacts selected for penetration testing to improve their quality taking following approaches.
 
@@ -905,7 +913,7 @@ For example, in case of finger or palm vein verification, quality of vein patter
 
 ===== Conduct the penetration testing
 
-The evaluator shall conduct the penetration testing based on the test plan updated in the previous step.
+The evaluator shall conduct the penetration testing based on the test plan.
 
 The evaluator shall select those artefacts that may succeed the attack at higher probability as described in <<Produce test plan>> for the penetration testing.
 
@@ -913,7 +921,7 @@ In order to place bounds on the effort involved related to the attack potential 
 
 ===== Determine Pass/Fail of penetration testing
 
-The evaluator shall determine that the TOE, in its operational environment, is resistant to an attacker possessing a Basic attack potential. The evaluator shall make this determination based on guidance provided in  <<Pass/Fail criteria for EAs for PAD testing (FIA_MBE_EXT.3 and FIA_MBV_EXT.3)>> and maximum allowable error rates defined in <<Toolbox>>.
+The evaluator shall assign a fail verdict if the evaluator can find the artefact where the IAPAR is higher than the maximum IAPAR and it can be reproduced reliably and repeatably by an attacker possessing a Basic attack potential.
 
 ==== Justification for EAs for AVA_VAN.1
 
@@ -987,7 +995,7 @@ Any configurable parameters or settings of the TOE that may affect the performan
 
 .. Type of verification algorithm
 +
-Type of verification algorithm, symmetric or asymmetric, shall be provided. As explained in <<Statistical certainty for FAR/FMR>>, cross-comparison of attempts/templates of ordered pairs is not allowed for symmetric verification algorithm.
+Type of verification algorithm, symmetric or asymmetric, shall be provided. As explained in <<Cross-comparison for FAR/FMR>>, cross-comparison of attempts/templates of ordered pairs is not allowed for symmetric verification algorithm.
 
 .. Performance test tools
 +
@@ -1029,12 +1037,21 @@ Number of samples collected for each body part and total number of samples colle
 Note all test subjects may not generate the samples successfully and total number of samples may be less than (number of test subjects) × (number of body parts of a test subject) × (number of samples collected for each body part).
 +
 .. Result of testing
+* Estimation method for confidential interval
 +
-Error rates measured by the performance testing shall be reported.
+The upper bound of the confidence interval of error rates (e.g. FAR and FRR) selected at FIA_MBV_EXT.1.2 shall be estimated and reported. The method of estimation shall follow the methods defined in Annex B of <<ISO19795-1, ISO/IEC 19795-1>>.
 +
-If FAR and FRR is selected in FIA_MBV_EXT.1, number of genuine and imposter transaction shall also be reported.
+<<ISO19795-1, ISO/IEC 19795-1>> explains estimation methods for confidence interval for FMR and FNMR. However, <<ISO19795-1, ISO/IEC 19795-1>> describes estimation methods for FAR and FRR indirectly through the estimation of the confidence interval of FMR and FNMR only when a genuine or imposter transaction consists of a single attempt. The developer may apply the estimation method for FNMR defined in Annex B.3.2.1 to estimate the confidence interval of FRR and an estimation method for FMR defined in Annex B.3.2.3 to estimate the confidence interval of FAR, assuming a single attempt is same as a single transaction. 
 +
-If FMR and FNMR is selected in FIA_MBV_EXT.1, number of genuine and imposter attempts shall also be reported.
+However, several problems in the estimation methods defined in <<ISO19795-1, ISO/IEC 19795-1>> are pointed out in literature, for example <<Interval estimation, Interval estimation>>. The developer may use alternative confidence interval estimation methods (e.g. Agresti–Coull interval) proposed in the alternate literature. However, the developer shall describe the detail of the selected alternative method and a rationale why the method is selected in the report.
+* Final test result
++
+The following values shall be reported.
++
+If FAR and FRR is selected in FIA_MBV_EXT.1, the number of total genuine and imposter transactions, the number of transactions incorrectly accepted or denied, the estimation methods of confidence interval and the upper bound of confidence interval for FAR and FRR shall be reported.
++
+If FMR and FNMR is selected in FIA_MBV_EXT.1, the number of total genuine and imposter attempts, the number of attempts falsely declared match or not to match, the estimation methods of confidence interval and the upper bound of confidence interval for FMR and FNMR shall be reported.
+
 
 ==== Target application and influential factors
 
@@ -1151,13 +1168,13 @@ Suppose the computer provides both a NBAF and a BAF and the user can use either 
 
 It may also be possible for user to enrol multiple body parts (e.g. index and thumb fingerprint) or single body part for biometric verification.
 
-However, it is not possible to evaluate all these scenarios to measure the performance but the developer shall refer the ST that claims conformance to the Base-PP to define the scenario.
+However, it is not possible to evaluate all these scenarios to measure the performance. The developer shall define one test scenario and describe it in the ST.
 
 For example, if the ST sets the maximum number of unsuccessful authentication attempts for fingerprint verification to five, the developer shall assume that the attacker makes all five fingerprint unlock attempts in succession to try to unlock the computer.
 
 This means that if FAR and FRR are selected, the developer shall define that the genuine and imposter transaction is consists of up to five unlock attempts and only one transaction can be run by each user.
 
-If FMR and FNMR are selected, the developer may follow the same scenario and collect five samples from each test subject. However, FMR/FNMR is a comparison subsystem measure while FAR/FRR is a system level measure, therefore FAR/FRR should be selected in FIA_MBV_EXT.1 if the developer considers the specific test scenario to measure the performance.
+If FMR and FNMR are selected, the developer may follow the same scenario and collect five samples from each test subject. However, FMR/FNMR is a comparison subsystem measure while FAR/FRR is a system level measure, therefore FAR/FRR should be selected in FIA_MBV_EXT.1 if the developer considers the specific test scenario to measure the performance at the system level.
 
 The developer shall also select the most common scenario among users to conduct the performance testing. For example, if the user can enrol multiple fingerprints, the developer should assume that the user enrols index and thumb fingerprint if such enrolment is most common. FAR may increase and FRR may decrease if the user enrols multiple fingerprints however, performance of widely used configuration should be measured.
 
@@ -1175,27 +1192,23 @@ The developer shall define the maximum number of samples per test subject to be 
 
 Only one transaction can be run by each test subject because the computer locks the biometric verification as required by the Base-PP after the certain number of attempts are failed.
 
-==== Statistical certainty for FAR/FMR
+==== Cross-comparison for FAR/FMR
 
-FMR/FAR shall be estimated following rule of 3 or 30 because these errors are most relevant to the security of the TOE and the trustworthiness of those values shall be evaluated statistically. While the rule of 3 would require that one test subject is only involved in one impostor transaction, it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. This BIOSD allows full cross-comparison to estimate FAR/FMR.
+The BIOSD allows full cross-comparison to estimate FAR/FMR because it is commonly agreed that the statistical loss of computing all possible cross-comparisons between test subjects is acceptable. 
 
-This BIOSD also allows cross-comparison of attempts/templates of ordered pairs if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates of ordered pairs allows the comparison between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE's verification algorithm is symmetric and make no distinction between the ordered pairs, this assumption can not be used. The type of verification algorithm used by the TOE is reported in the developer’s performance report <<Overview of the performance testing>>. 
+This BIOSD also allows cross-comparison of attempts/templates of ordered pairs if there is no explicit reason that this cross-comparison hinders the accuracy of the result of performance testing. Cross-comparison of attempts/templates of ordered pairs allows the comparison between user A’s template and user B’s sample and user A’s sample and user B’s template separately. However, if the TOE’s verification algorithm is symmetric and make no distinction between the ordered pairs, this assumption can not be used. The type of verification algorithm used by the TOE is reported in the developer’s performance report <<Overview of the performance testing>>.
 
 This BIOSD doesn’t allow intra-individual comparison that is a comparison between one body part and another body part of the same test subject (e.g. comparison between right and left iris of the same user).
 
-==== Statistical certainty for FRR/FNMR
-
-The rule of 3 requires no error occurred for all attempts/transactions and the rule of 30 may require too many attempts/transactions if the FNMR/FRR is quite low. Therefore, the developer may calculate FNMR/FRR directly from the result of performance testing without considering the statistical confidence.
-
 === Example – fingerprint verification
 
-The developer defines that fingerprint verification consists of 5 attempts using both right index and thumb fingerprints to unlock the computer and specifies 0.01% FAR and 1% FRR in FIA_MBV_EXT.1.
+The developer defines that fingerprint verification consists of 5 attempts using both right index and thumb fingerprints to unlock the computer and specifies a FAR not exceeding  0.01% for the upper bound of 95% confidence and a FRR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1. 
 
 As described in the previous Section, the genuine and imposter transaction consists of up to five unlock attempts using either of finger against each template for index and thumb finger and only one transaction can be run by each user.
 
-In this scenario, at least 30,000 imposter transactions shall be conducted with no error to achieve this performance goal if the rule of 3 is applied. To run more than 30,000 imposter transactions, at least 174 test subjects shall be gathered (173 * 174 = 30,102) if cross-comparison of ordered pairs is allowed. If number of test subjects is 174, only 1 genuine transaction can be failed to achieve 1% FRR (2/174 = 0.011 > 1%).
+In this scenario, at least 30,000 imposter transactions shall be conducted with no error to achieve this performance goal if the developer applies rule of 3 in Annex B of <<ISO19795-1, ISO/IEC 19795-1>>. To run more than 30,000 imposter transactions, at least 174 test subjects shall be gathered (173 * 174 = 30,102) if cross-comparison of ordered pairs is allowed. If number of test subjects is 174, only 5 genuine transactions can fail to achieve a 5% FRR with 80% confidence (upper bound estimated by equation B.1, B.2 and B.9 when 5 transaction denied = 0.045 < 5%).
 
-If the developer specifies 0.01% FMR and 1% FNMR in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and 3 genuine attempts can be failed to achieve 1% FNMR (4/390 = 0.0102 > 1%).
+If the developer specifies a FMR not exceeding 0.01% for the upper bound of 95% confidence and a FNMR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1, at least 30,000 imposter attempts shall be made with no errors. To run more than 30,000 imposter attempts, at least 78 test subjects shall be gathered (77 * 78 * 5 = 30030) if cross-comparison of ordered pairs is allowed. If number of test subjects is 78, the total number of genuine attempts is 78 * 5 = 390 and single attempt from each 14 test subjects can be failed to achieve a 5% FNMR with 80% confidence (upper bound estimated by equation B.3, B.4 and B.9 when single attempt from each 14 test subjects are not matched = 0.049 < 5 %).
 
 [[qualityassessmentcriteria]]
 == Developer’s quality assessment criteria report of biometric samples
@@ -1727,57 +1740,6 @@ The evaluator shall select “Easy” because the TOE is a computer that anyone 
 
 The evaluator shall select “Moderate” because the number of unsuccessful authentication attempts for biometric verification is limited, and biometric verification becomes unusable if the number of failure attempts exceed the limit.
 
-=== Pass/Fail criteria for EAs for PAD testing (FIA_MBE_EXT.3 and FIA_MBV_EXT.3)
-
-As required by CC, the evaluator shall determine that the TOE is resistant to an attacker possessing a Basic attack potential based on <<attackpotentialcalc>>. However, the table doesn’t provide any guidance for the probability of success or failure of presentation attack.
-
-The evaluator may have enough confidence to assign fail verdict to the TOE if the evaluator find the artefacts that succeed the attack repeatably or at high probability (e.g. almost 100%).
-
-However, the evaluator can’t make an objective decision if the probability of success decreases at certain level because the computer limits the number of unsuccessful authentication attempts for biometric verification and the attacker can not present the artefact to the TOE so many times in the actual operational environment.
-
-This Section provides the Pass/Fail criteria for EAs for PAD testing taking this particular aspect into account so that the evaluator can make consistent and objective decision.
-
-==== Pass/Fail criteria
-
-The computer limits the number of unsuccessful authentication attempts for biometric verification, as required by the Base-PP. Therefore, the attacker must succeed the presentation attack at least one time within this limit.
-
-This BIOSD assumes that the attacker actually performs the presentation attack only if the attacker can create the “Reliable artefacts”. “Reliable artefacts” are those artefacts that succeed on at least one attack within the allowable number of attempts (i.e. succeed to unlock the computer) at more than 80% of probability. This BIOSD selects this probability based on the use case assumed in <<BIOPP-Module>>.
-
-The probability of a successful presentation attack for one attempt *_p_* needs to satisfy the following equation to satisfy the above condition.
-
-
-1-(1-*_p_*)*^n^* > 0.8 (*n* = allowable number of unsuccessful attempts)
-
-
-The following table shows that example of pairs (maximum *_p_* for particular *n*) that satisfy the above equation.
-
-[cols=",",options="header",]
-.Example of (n, _p_) pair
-|===
-|*n* |*_p_*
-|4 |0.33 (33%)
-|6 |0.23 (23%)
-|8 |0.18 (18%)
-|===
-
-If the Base-PP is <<PP_MD_V3.3>>, the evaluator shall set *n* based on the assignment in FIA_AFL_EXT.1 in the ST. If the ST assigns 5 to the maximum number of unsuccessful attempts for biometric verification, *n* should be 5. If the ST states that this number is configurable from 5 to 10, the evaluator shall assume the worst-case scenario and *n* should be 10.
-
-The evaluator shall assign a pass verdict to the TOE only if the evaluator can not find those artefacts that the probability of successful attack is more than *_p_*.
-
-The evaluator shall make at least 3 artefacts from three test subjects following the same creation process and perform at least 10 attempts for each artefact to calculate *_p_* (i.e. minimum number of attempts for calculation of *_p_* for each artefact is 3 * 10 = 30).
-
-The evaluator should focus on a few artefacts that show highest error rate at the independent testing or hold highest quality for the penetration testing and spend enough time for training before conducting the final testing to measure *_p_* for those artefacts.
-
-==== Additional application notes for AGD Class
-
-CEM work unit AGD_OPE.1-1 requires the evaluator to examine the AGD guidance to determine that it describes appropriate warnings for secure use of the TOE.
-
-The evaluator shall examine that appropriate warnings is provided in the AGD guidance if the evaluator can find those artefacts that pass the penetration test however whose *_p_* is higher than 7%.
-
-Those artefacts can succeed at least one presentation attack (and succeed to unlock the computer) at 25% of probability when allowable number of unsuccessful attempts is 4 (i.e. *n* = 4).
-
-Example of warnings is that the AGD guidance may warn that the biometric verification is less secure than a NBAF and recommend using a NBAF for security sensitive services.
-
 == Related Documents
 [bibliography]
 - [#CC1]#[CC1]#	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.         
@@ -1785,7 +1747,7 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.    
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.    
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.        
-- [#PP_MD_V3.3]#[PP_MD_V3.3]# Protection Profile for Mobile Device Fundamentals, Version:3.3.    
+- [#PP_MD]#[PP_MD]# Protection Profile for Mobile Device Fundamentals, Version:3.3.    
 - [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, May 11, 2020, Version 0.99 - [CFG-MDF-BIO].    
 - [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, May 11, 2020, Version 1.0 - [BIOPP-Module].
 - [#Toolbox]#[Toolbox]# Toolbox Overview, May 11, 2020, Version 1.0.
@@ -1801,4 +1763,5 @@ Example of warnings is that the AGD guidance may warn that the biometric verific
 - [#Qualifying Fingerprint Samples]#[Qualifying Fingerprint Samples]# Qualifying Fingerprint Samples Captured by Smartphone Cameras in Real-Life Scenarios - May 3, 2016, http://hdl.handle.net/11250/2388306.
 - [#Performance of Biometric Quality]#[Performance of Biometric Quality]# Performance of Biometric Quality Measures - April 16, 2007, https://www.nist.gov/publications/performance-biometric-quality-measures.
 - [#Ongoing Face Recognition Vendor Test]#[Ongoing Face Recognition Vendor Test]# Ongoing Face Recognition Vendor Test (FRVT) Part 5: Face Image Quality Assessment - August 11, 2021, https://pages.nist.gov/frvt/reports/quality/frvt_quality_report.pdf.
+- [#Biometric quality]#[Biometric quality]# Biometric quality: a review of fingerprint, iris, and face - July 2, 2014, https://link.springer.com/article/10.1186/1687-5281-2014-34.
 - [#Vascular quality]#[Vascular quality]# State of the Art in Vascular Biometrics (1.6 Presentation Attacks and Detection, and Sample Quality) - November 14, 2019, https://link.springer.com/chapter/10.1007/978-3-030-27731-4_1#Sec21.
