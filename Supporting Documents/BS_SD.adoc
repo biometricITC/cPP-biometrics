@@ -832,7 +832,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of ATE_IND.1
 
-The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
+The evaluator shall follow the same EAs defined in <<PP_MD>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
 === Class AVA: Vulnerability Assessment
 
@@ -840,7 +840,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of AVA_VAN.1
 
-The evaluator shall follow the same EAs defined in <<PP_MD_V3.3>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
+The evaluator shall follow the same EAs defined in <<PP_MD>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
 == Evaluation Activities for PAD testing
 
