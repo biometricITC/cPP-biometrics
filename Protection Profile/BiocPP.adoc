@@ -867,8 +867,7 @@ Dependencies: No dependencies
 *FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the SEE shall be isolated from the main computer operating system on the TSF in runtime.
 
 ==== Protection of biometric template (FPT_PBT_EXT)
-*Family Behaviour*
-
+===== Family Behaviour
 This component defines the requirements for the TSF to be able to protect templates.
 
 ===== Component levelling
