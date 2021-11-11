@@ -2,8 +2,8 @@
 :showtitle:
 :toc:
 :table-caption: Table
-:revnumber: 0.99
-:revdate: May 11, 2020
+:revnumber: 1.1
+:revdate: November 9, 2021
 :xrefstyle: full
 :doctype: book
 
@@ -22,20 +22,20 @@ The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that
 
 This PP-Configuration is identified as follows:
 
-* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - version 0.99, May 11, 2020 - <<CFG-MDF-BIO>>
+* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - version 1.1, November 9, 2021 - <<CFG-MDF-BIO>>
 
 == PP-Configuration Components Statement
 
 This PP-Configuration includes the following components:
 
-* Base-PP: Protection Profile for Mobile Device Fundamentals, Version:3.3. <<PP_MD>>
+* Base-PP: Protection Profile for Mobile Device Fundamentals, Version:3.3. <<PP_MDF>>
 * PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>>
 
 == Conformance claim and conformance statement
 
 === Common Criteria Conformance claim
 
-This PP-Configuration, <<PP_MD>> and <<BIOPP-Module>> are conformant to Common Criteria Version 3.1, Revision 5.
+This PP-Configuration, <<PP_MDF>> and <<BIOPP-Module>> are conformant to Common Criteria Version 3.1, Revision 5.
 
 === The conformance type
 
@@ -43,7 +43,7 @@ To be conformant to this PP-Configuration, an ST must demonstrate Exact Conforma
 
 === The Assurance package conformance claim
 
-In order to evaluate a TOE that claims conformance to this PP-Configuration, the evaluator shall evaluate the TOE against the following SARs that are defined in the <<PP_MD>>:
+In order to evaluate a TOE that claims conformance to this PP-Configuration, the evaluator shall evaluate the TOE against the following SARs that are defined in the <<PP_MDF>>:
 
 [cols=",",options="header",]
 .Assurance Components
@@ -80,7 +80,7 @@ In order to evaluate a TOE that claims conformance to this PP-Configuration, the
 
 |===
 
-Note that to fully evaluate the TOE, these SARs shall be applied to the entire TSF and not just the portions described by <<PP_MD>> where the SARs are defined.
+Note that to fully evaluate the TOE, these SARs shall be applied to the entire TSF and not just the portions described by <<PP_MDF>> where the SARs are defined.
 
 == Related Documents
 
@@ -109,14 +109,14 @@ Version 0.5, May 2017.
 
 [cols="1,3",]
 |===
-|[#PP_MD]#[PP_MD]# 
-|Protection Profile for Mobile Device Fundamentals, Version:3.3
+|[#PP_MDF]#[PP_MDF]# 
+|Protection Profile for Mobile Device Fundamentals, Version: 3.3
 
 |[#BIOPP-Module]#[BIOPP-Module]# 
-|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, May 11, 2020, Version 1.0 - [BIOPP-Module]
+|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, 2021, Version 1.1 - [BIOPP-Module]
 
 |[#BIOSD]#[BIOSD]#
-|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, May 11, 2020, Version 1.0 - [BIOSD]
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, 2021, Version 1.1 - [BIOSD]
 
 |===
 
@@ -151,6 +151,10 @@ Version 0.5, May 2017.
 
 |0.99
 |May 11, 2020
-|Public Release (requires PP_MD_V3.3 release to move to v1.0)
+|Public Release (requires PP_MDF_V3.3 release to move to v1.0)
+
+|1.1
+|November 9, 2021
+|Version 1.1
 
 |===
