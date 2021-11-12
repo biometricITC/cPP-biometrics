@@ -3,19 +3,19 @@
 image::https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg[link="code_of_conduct.adoc]
 
 == Introduction
-From the CCDB-established Working Group, the Biometrics Security iTC (BIO-iTC for short) was formed. This iTC is focused on biometric systems used for authentication and verification. 
+From the CCDB-established Working Group, the Biometrics Security iTC (BIO-iTC for short) was formed. This iTC is focused on biometric systems used for authentication and verification.
 
 This is the primary repository for the Biometrics Security iTC and its work on creating collaborative Protection Profiles and related supporting documents. The Common Criteria Portal page can be found https://www.commoncriteriaportal.org/communities/Bio.cfm[here].
 
 Check out the main page for the iTC at https://biometricitc.github.io/.
 
 == The Technical Community
-The BIO-iTC consists of members of Certification Bodies, labs, vendors and academia working together to create requirements for biometric security testing. 
+The BIO-iTC consists of members of Certification Bodies, labs, vendors and academia working together to create requirements for biometric security testing.
 
 If you are interested to join the iTC and become a member of the mailing list, please send an email with a short request to isec-itc-bio-info@ipa.go.jp.
 
 == Code of Conduct
-The BIO-iTC expects participants to follow a code of conduct. This is laid out in the https://github.com/biometricITC/Administration/N58_BS%20iTC%20ToR%20-%20v0.6%20final.pdf[Terms of Reference] and in the https://github.com/biometricITC/Administration/code_of_conduct.adoc[Code of Conduct].
+The BIO-iTC expects participants to follow a code of conduct. This is laid out in the https://github.com/biometricITC/Administration/blob/master/N58_BS%20iTC%20ToR%20-%20v0.6%20final.pdf[Terms of Reference] and in the https://github.com/biometricITC/Administration/blob/master/code_of_conduct.adoc[Code of Conduct].
 
 == Contributing to the BIO-iTC
 The BIO-iTC welcomes contributions to the ongoing work of creating and maintaining the cPP and SD. Issues and Pull Requests can be submitted at any time for review by the iTC. New Issues can be submitted https://github.com/biometricITC/cPP-biometrics/issues/new/choose[here].
@@ -42,7 +42,7 @@ The BIO-iTC has three primary branches:
 |The active branch for next version of the documents.
 
 |Interpretation
-|This branch is for working on technical decisions to the current, published release. 
+|This branch is for working on technical decisions to the current, published release.
 
 |===
 

@@ -5,16 +5,20 @@
 :sectnums:
 :sectnumlevels: 5
 :imagesdir: images
-:revnumber: 1.0
-:revdate: May 11, 2020
+:revnumber: 1.1
+:revdate: November 9, 2021
+:xrefstyle: full
 :doctype: book
 
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
 
+:sectnums!:
 
 == Acknowledgements
 This collaborative Protection Profile module (PP-Module) was developed by the {iTC-longame} international Technical Community ({iTC-shortname}) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+
+:sectnums:
 
 == Preface
 
@@ -36,22 +40,23 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
-- [#PP_MD_V3.3]#[PP_MD_V3.3]# Protection Profile for Mobile Device Fundamentals, Version:3.3.
-- [#PPC-MDF]#[PPC-MDF]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, May 11, 2020, Version 0.99 [CFG-MDF-BIO].
-- [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, May 11, 2020, Version 1.0 - [BIOSD].
-- [#ISOIEC19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
-- [#ISO29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
-- [#ISO30107-1]#[ISO/IEC 30107-1]# Biometric presentation attack detection - Part 1: Framework, First edition.
+- [#PP_OS]#[PP_OS]# Protection Profile for General Purpose Operating Systems.
+- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, Version: 3.3.
+- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, 2021, Version 1.1 [CFG-MDF-BIO].
+- [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, 2021, Version 1.1 - [BIOSD].
+- [#ISO/IEC 19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
+- [#ISO/IEC 29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
+- [#ISO/IEC 30107-1]#[ISO/IEC 30107-1]# Biometric presentation attack detection - Part 1: Framework, First edition.
 - [#NIST800-63B]#[NIST800-63B]# NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
 
 === Glossary
-For the purpose of this PP-Module, the following terms and definitions are given in <<ISOIEC19795-1>> and <<ISO30107-1>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
+For the purpose of this PP-Module, the following terms and definitions are given in <<ISO/IEC 19795-1>> and <<ISO/IEC 29156>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
 
 [glossary]
 Artefact::
 	Biometric characteristic or object used in a presentation attack (e.g. artificial or abnormal biometric characteristics). Accompanying <<BIOSD>> specifies artefacts that the evaluator should consider for the CC evaluation. Specifically, the artefacts here are artificially generated Presentation Attack Instruments (PAI), not natural ones.
 Attempt::
-   Submission of one (or a sequence of) biometric samples to the part of the TOE.
+   Submission of one (or a sequence of) biometric samples to the TOE.
 (Non-Biometric) Authentication Factor (NBAF)::
     Evidence to assert the identity of an individual based on knowledge or possession (e.g. password, PIN, smartcard).
 Biometric Authentication Factor (BAF)::
@@ -67,10 +72,12 @@ Biometric Enrolment::
 Biometric Probe::
 	Biometric sample or biometric feature set input to an algorithm for use as the subject of biometric comparison to a biometric template(s).
 Computer::
-	A self-contained device which is composed of a hardware platform and its system software (operating system and applications). The device is typically some sort of general purpose computing platform, such as a laptop, tablet or smartphone that is designed to be portable (though this is not required). 
+	A self-contained device which is composed of a hardware platform and its system software (operating system and applications). The device is typically some sort of general purpose computing platform, such as a laptop, tablet or smartphone that is designed to be portable (though this is not required). _In this version, the term Computer is used as a synonym for Mobile device. However, in the future version, this PP-Module will be updated to allow to use with the latest version of <<PP_OS>> and this italic text will also be removed._
 Computer User (User)::
 	The individual authorized to physically control and operate the Computer, usually the device owner. This person is responsible for configuring the TOE.
-Failure-To-Enroll Rate (FTE)::
+Developer Defined Quality Assessment Method::
+    Assessment criteria defined by the developer used to measure the quality of a Biometric Sample captured by the system. 
+Failure-To-Enrol Rate (FTE)::
 	Proportion of the population for whom the system fails to complete the enrolment process.
 False Accept Rate (FAR)::
 	Proportion of verification transactions with wrongful biometric claims of identity that are incorrectly confirmed.
@@ -82,6 +89,8 @@ False Reject Rate (FRR)::
 	Proportion of verification transactions with truthful biometric claims of identity that are incorrectly denied.
 (Biometric) Features::
 	Digital representation of the information extracted from a sample (by the signal processing subsystem) that will be used to construct or compare against enrolment templates.
+Imposter Attack Presentation Accept Rate (IAPAR)::
+    In a full-system evaluation of a verification system, proportion of impostor presentation attacks using the same artefact type that result in a accept.
 Locked State::
 	Powered on Computer, with most functionalities unavailable for use. User authentication is required to access full functionality.
 (Biometric) Modality::
@@ -94,8 +103,8 @@ Presentation Attack Detection (PAD)::
 	Automated determination of a presentation attack.
 (Biometric) Sample::
 	User’s biometric measures as output by the data capture subsystem of the TOE.
-Secure Execution Environment::
-	An operating environment separate from the main Computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
+Separate Execution Environment (SEE)::
+	An operating environment separate from the main computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity Score::
 	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
 Template::
@@ -155,6 +164,10 @@ Zero-effort Impostor Attempt::
 |May 11, 2020
 |Public Release
 
+|1.1
+|November 9, 2021
+|Incorporated TDs and NIAP comments for PP_MDF integration
+
 |===
 
 == PP-Module Introduction
@@ -164,12 +177,15 @@ Zero-effort Impostor Attempt::
 - PP-Module Version: {revnumber}
 - PP-Module Date: {revdate}
 
-=== Base PP identification
-Base PP of this PP-Module is identified in the appropriate PP-Configuration documents.
+=== Base-PP identification
+This PP-Module is intended for use with the following Base-PP:
+Protection Profile for Mobile Device Fundamentals <<PP_MDF>>.
+
+This Base-PP is valid because biometric enrolment and verification may be a specific type of stand-alone software application or a built-in component of a computer. The biometric enrolment and verification functionality defined by this PP-Module will rely on the Base-PP and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module describes the relevant functionality for the Base-PP, including specific selections, assignments, or inclusion of optional requirements that must be made as needed to support the biometric enrolment and verification functionality.
 
 === TOE Overview
 ==== TOE main security features
-This is a collaborative Protection Profile Module (PP-Module) used to extend a base PP for a computer that implements biometric enrolment and verification to unlock the computer in the locked state using the user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the term TOE in this document expresses the biometric system that is a part of the TOE environment (i.e. the computer) and implements the biometric enrolment and verification functionality for clearly describing the relation and boundary between the biometric system and computer. The biometric enrolment and verification processes are described in the following sections. 
+This is a collaborative Protection Profile Module (PP-Module) used to extend a Base-PP for a computer that implements biometric enrolment and verification to unlock the computer in the locked state using the user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the terms TOE and TOE environment in this document expresses the biometric system that implements the biometric enrolment and verification functionality, and the computer that supports the biometric system to protect the biometric data respectively, for clearly describing the relation and boundary between the biometric system and computer. The biometric enrolment and verification processes are described in the following sections. 
 
 ===== Biometric Enrolment
 
@@ -181,10 +197,10 @@ Only a user who knows the computer NBAF can enrol or revoke one's own templates.
 
 During the verification process, a user presents one's own biometric characteristics to the TOE without presenting any user identity information for unlocking the computer. The TOE captures samples from the biometric characteristics, retrieves all enroled templates and compares them with the features extracted from the captured samples of the user to measure the similarity between the two data and determines whether to accept or reject the user based on the similarity, and indicates the decision to the computer.
 
-Examples of biometric characteristic used by the TOE are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics for which <<BIOSD>> defines the Evaluation Activities.
+Examples of biometric characteristic used for the biometric enrolment and verification are: fingerprint, face, eye, palm print, finger vein, palm vein, speech, signature and so forth. However, scope of this PP-Module is limited to only those biometric characteristics that can be selected from FIA_MBV_EXT.1.1 for which <<BIOSD>> defines the Evaluation Activities.
 
 ==== TOE Design
-The TOE is fully integrated into the computer without the need for additional software and hardware. The following figure, inspired from <<ISO30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
+The TOE is fully integrated into the computer without the need for additional software and hardware. The following figure, inspired from <<ISO/IEC 30107-1>>, is a generic representation of a TOE. It should be noted that the actual TOE design may not directly correspond to this figure and the developer may design the TOE in a different way. This illustrates the different sub-functionalities on which the biometric enrolment and verification processes rely on.
 
 [#img-TOE-generic]
 .Generic representation of a TOE
@@ -200,27 +216,27 @@ As illustrated in the above figure, the TOE is capable of:
 * Optionally detecting the presentation attacks using an artefact (Presentation attack detection subsystem)
 
 ==== Relation between TOE and Computer 
-The TOE is reliant on the computer itself to provide overall security of the system. This PP-Module is intended to be used with a base PP, and the base PP is responsible for evaluating the following security functions:
+The TOE is reliant on the computer itself to provide overall security of the system. This PP-Module is intended to be used with a Base-PP, and the Base-PP is responsible for evaluating the following security functions:
 
 * Providing the NBAF to support user authentication and management of the TOE security function
 * Invoking the TOE to enrol and verify the user and take appropriate actions based on the decision of the TOE
-* Providing the Secure Execution Environment that guarantees the TOE and its data to be protected with respect to confidentiality and integrity
+* Providing the Separate Execution Environment (SEE) that guarantees the TOE and its data to be protected with respect to confidentiality and integrity
 
-The evaluation of the above security functions is out of scope of this PP-Module and expected to be performed as part of the base PP evaluation. 
+The specification of the above security  functions are described in the Base-PP and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module.
  
 [#img-TOE-relations] 
 .Generic relations between the TOE and the computer environment
-image::BIO_cPP_architecture_final.png[title="Generic relation between the TOE and the computer environment" align="center"]
+image::BIO_cPP_architecture_final.png[title="Generic relation between the TOE and the computer" align="center"]
 
 ==== TOE Use Case
-The computer itself may be operated in a number of use cases such as enterprise use with limited personal use or Bring Your Own Device (BYOD). The TOE on the device may also be operated in the same use cases, however, use cases of the TOE should be devised separately considering the purpose of biometric verification. The following use cases describe how and why biometric verification is supposed to be used. Each use case has its own assurance level, depending on its criticality and separate PP or PP-Module should be developed for each use case.  
+The computer itself may be operated in a number of use cases such as enterprise use with limited personal use or Bring Your Own Device (BYOD). The TOE on the computer may also be operated in the same use cases, however, use cases of the TOE should be devised separately considering the purpose of biometric verification. The following use cases describe how and why biometric verification is supposed to be used. Each use case has its own assurance level, depending on its criticality and separate PP or PP-Module should be developed for each use case.  
 
 This PP-Module only assumes USE CASE 1 described below. USE CASE 2 is out of scope of this PP-Module.
 
 ===== USE CASE 1: Biometric verification for unlocking the computer
 This use case is applicable for any computers such as a desktop, laptop, tablet or smartphone that implement biometric enrolment and verification functionality. For enhanced security that is easy to use, the computer may implement biometric verification on a computer once it has been “unlocked”. The initial unlock is generally done by a NBAF which is required at startup (or possibly after some period of time), and after that, the user is able to use one's own biometric characteristic to unlock access to the computer. In this use case, the computer is not supposed to be used for security sensitive services through the biometric verification.
 
-The main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for computer that the TOE relies on should be handled by the base PP.
+The main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for computer that the TOE relies on should be handled by the Base-PP.
 
 This use case assumes that the computer is configured correctly to enable the biometric verification by the user, who acts as the biometric system administrator in this use case.
 
@@ -234,20 +250,23 @@ Computers may be used for security sensitive services such as payment transactio
 
 The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR and FRR/FNMR) and presentation attack detection.
 
-== Consistency rationale
-
-Consistency between the base PP and this PP-Module is demonstrated in the appropriate PP-Configuration.
-
 == Conformance Claims
 
 === Conformance statement
 
-As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, this PP-Module:
+As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, when the Base-PP is the <<PP_MDF>>, this PP-Module:
 
 * conforms to the requirements of Common Criteria v3.1, Revision 5,
 * is Part 2 extended,
-* all assurance requirements are inherited from the base PP,
-* does not claim conformance to any other security functional packages.
+* is Part 3 extended,
+* all assurance requirements are inherited from the Base-PP,
+* does not claim conformance to any other security functional packages or Protection Profiles.
+
+The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
+
+* PP-Module for Virtual Private Network (VPN) Clients, Version 2.3
+* PP-Module for MDM Agents, Version 1.0
+* PP-Module for Bluetooth, Version 1.0
 
 === Evaluation activities
 
@@ -259,7 +278,7 @@ The security problem is described in terms of the threats that the TOE is expect
 
 This PP-Module is written to address the situation described in the section <<USE CASE 1: Biometric verification for unlocking the computer>>. 
 
-Note that as a PP-Module, all threats, assumptions, and OSPs defined in the base PP will also apply to a TOE unless otherwise specified. The SFRs defined in this PP-Module will mitigate the threats that are defined in the PP-Module but may also mitigate some threats defined in the base PP in more comprehensive detail due to the specific capabilities provided by a biometric system.
+Note that as a PP-Module, all threats, assumptions, and OSPs defined in the Base-PP will also apply to a TOE unless otherwise specified. The SFRs defined in this PP-Module will mitigate the threats that are defined in the PP-Module but may also mitigate some threats defined in the Base-PP in more comprehensive detail due to the specific capabilities provided by a biometric system.
 
 === Threats
 
@@ -278,15 +297,7 @@ The TOE in cooperation with its environment shall protect itself, its configurat
 The TOE shall meet relevant criteria for its security relevant error rates for biometric verification.
 
 === Assumptions
-
-[[A.Alternative]]A.Alternative::
-It is assumed that the TOE environment provides an alternative authentication mechanism as a complement to biometric verification. The alternative authentication mechanism is required for enrolment of the biometric template and can also be used in cases when a user is rejected by the biometric verification (False Rejection).
-
-[[A.Authentication]]A.Authentication::
-It is assumed that the TOE environment invokes the TOE for biometric verification, and take appropriate actions based on the TOE’s decision.
-
-[[A.User]]A.User::
-It is assumed that the user configures the TOE and its environment correctly in a manner to ensure that the TOE security policies will be enforced.
+This PP-Module does not define any assumptions.
  
 == Security Objectives 
 This PP-Module defines the following security objectives.
@@ -296,55 +307,24 @@ This PP-Module defines the following security objectives.
 [[O.BIO_Verification]]O.BIO_Verification::
 The TOE shall provide a biometric verification mechanism to verify a user with an adequate reliability. The TOE shall meet the relevant criteria for its security relevant error rates for biometric verification.
 
-SFR Rationale:
-
-Requirements to provide a biometric verification mechanism are defined in FIA_MBV_EXT.1 in which ST author can specify the relevant criteria for its security relevant error rates. FIA_MBV_EXT.2 requires the TOE to only use samples of sufficient quality to verify a user with an adequate reliability.
-
-*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
+*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR. Corresponding error rates are specified in FIA_MBV_EXT.1.
 
 [[O.Enrol]]O.Enrol::
-The TOE shall implement the functionality to enrol a user for biometric verification and bind the template to the user only after successful authentication of the user to the TOE environment using an alternative authentication mechanism. The TOE shall create the sufficient quality of templates in order to meet the relevant error rates for biometric verification.
+The TOE shall implement the functionality to enrol a user for biometric verification and bind the template to the user only after successful authentication of the user using NBAF. The TOE shall create templates of sufficient quality in order to meet the relevant error rates for biometric verification.
 
-SFR Rationale:
-
-Requirements to provide a biometric enrolment mechanism are defined in FIA_MBE_EXT.1. Requirements for quality of template are defined in FIA_MBE_EXT.2.
-
-*Application Note {counter:remark_count}*:: A user shall be authenticated using a NBAF to enrol to the biometric system.
-
-*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR and corresponding error rates shall be specified in the FIA_MBV_EXT.1.
+*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR. Corresponding error rates are specified in FIA_MBV_EXT.1.
 
 [[O.Protection]]O.Protection::
-The TOE shall protect biometric data using the Secure Execution Environment provided by the TOE environment during runtime and storage.
+The TOE shall protect biometric data using the SEE provided by the TOE environment during runtime and storage.
 
-SFR Rationale:
-
-Requirements to control access to the template defined in FPT_PBT_EXT.1. FPT_BDP_EXT.1, FPT_BDP_EXT.2 and FPT_BDP_EXT.3 require the TOE to protect the biometric data with support from the TOE environment. Optional requirements to protect the residual biometric data are defined as FDP_RIP.2 in <<Optional Requirements>>.
-
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e., the computer) satisfy relevant requirements defined in this PP-Module and Base-PP respectively to protect biometric data.
 
 === Security Objectives for the Operational Environment
 
-[[OE.Alternative]]OE.Alternative::
-The TOE environment shall provide an alternative authentication mechanism as a complement to biometric verification. The alternative authentication mechanism is required for enrolment of the biometric template and can also be used in cases where a user is rejected by the biometric verification (False Rejection).
-
-*Application Note {counter:remark_count}*:: The TOE environment (i.e. the computer) shall satisfy relevant requirements defined in base PP.
-
-*Application Note {counter:remark_count}*:: The TOE environment (i.e. the computer) shall provide an alternative authentication mechanism such as a NBAF.
-
-[[OE.Authentication]]OE.Authentication::
-The TOE environment shall invoke the TOE for biometric verification, and take appropriate actions based on the TOE’s decision.
-
-*Application Note {counter:remark_count}*:: Appropriate actions taken by the computer are unlocking the computer or incrementing the number of unsuccessful attempts and limiting the maximum number of unsuccessful attempts.
-
 [[OE.Protection]]OE.Protection::
-The TOE environment shall provide a Secure Execution Environment to protect the TOE, the TOE configuration and biometric data during runtime and storage.
+The TOE environment shall provide the SEE to protect the TOE, the TOE configuration and biometric data during runtime and storage.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) shall satisfy relevant requirements defined in this PP-Module and base PP respectively to protect biometric data.
-
-[[OE.User]]OE.User::
-The user shall configure the TOE and its environment correctly in a manner to ensure that the TOE security policies will be enforced.
-
-*Application Note {counter:remark_count}*:: The computer shall be configured by the user as required by the base PP.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) satisfy relevant requirements defined in this PP-Module and Base-PP respectively to protect biometric data.
 
 === Security Objectives Rationale
 The following table describes how the assumptions, threats, and organizational security policies map to the security objectives.
@@ -368,17 +348,6 @@ The following table describes how the assumptions, threats, and organizational s
 |<<O.Protection>> <<OE.Protection>>	
 |The OSP <<OSP.Protection>> is enforced by <<O.Protection>> and its operational environment objective <<OE.Protection>>.
 
-|<<A.Alternative>>	
-|<<OE.Alternative>>	
-|The Assumption <<A.Alternative>> is satisfied by the operational environment objective <<OE.Alternative>>.
-
-|<<A.Authentication>>
-|<<OE.Authentication>>	
-|The Assumption <<A.Authentication>> is satisfied by the operational environment objective <<OE.Authentication>>.
-
-|<<A.User>>
-|<<OE.User>>	
-|The Assumption <<A.User>> is satisfied by the operational environment objective <<OE.User>>.
 |===
 
 == Security Functional Requirements
@@ -393,38 +362,82 @@ The following conventions are used for the completion of operations:
 
 Extended SFRs are identified by having a label “EXT” at the end of the SFR name.
 
-=== Identification and Authentication (FIA)
+=== PP_MDF Security Functional Requirements Direction
 
-==== FIA_MBE_EXT.1 Biometric enrolment [[FIA_MBE_EXT.1]]
+In a PP-Configuration that includes the <<PP_MDF>>, the biometric enrolment and verification is expected to rely on some of the security functions implemented by the computer as a whole and evaluated against the Base-PP. In this case, the following sections describe any modifications that the ST author must make to the SFRs defined in the Base-PP in addition to what is mandated by <<TOE Security Functional Requirements>>. 
+
+Full evaluation activities are not repeated in the <<BIOSD>> for the requirements in this section that are references to the <<PP_MDF>>; only the additional testing needed to supplement what has already been captured in the <<PP_MDF>> is included in the <<BIOSD>>
+
+==== Modified SFRs
+
+The SFRs listed in this section are defined in the <<PP_MDF>> and relevant to the secure operation of the biometric enrolment and verification. It is necessary for the ST author to complete selections and/or assignments for these SFRs in a specific manner in order to ensure that the functionality provided by the mobile device is consistent with the functionality required by the biometric enrolment and verification in order for it to conform to this PP-Module.
+
+===== Class: Cryptographic Support (FCS)
+This PP-Module does not modify SFRs in FCS class as it is defined in the <<PP_MDF>>. However, note that BAF must be illustrated in the key hierarchy diagram and all keys created upon successful biometric enrolment and verification must be generated, derived, combined, released and destroyed according to SFRs in this class.
+
+===== FCS_CKM_EXT.4 Key Destruction [[FCS_CKM_EXT.4]]
+This SFR is identical to what is defined in the <<PP_MDF>>. The change is to the application note.
+
+*Application Note:* For the purposes of this requirement, plaintext keying material refers to authentication data, passwords, secret/private symmetric keys, private asymmetric keys, data used to derive keys, values derived from passwords, etc. *Biometric data used for enrolment or verification are considered critical security parameters that must be destroyed when no longer needed.*
+
+*Application Note {counter:remark_count}*:: The Application Note following FCS_CKM_EXT.4.2 is modified to add the text to include biometric data as a critical security parameter to ensure it is handled properly by the TSF.
+
+===== FPT_AEX_EXT.4 Domain Isolation [[FPT_AEX_EXT.4]]
+This SFR is identical to what is defined in the <<PP_MDF>>. The change is to the application note.
+
+*Application Note:* In addition to the TSF software (e.g., kernel image, device drivers, trusted applications) that resides in storage, the execution context (e.g., address space, processor registers, per-process environment variables) of the software operating in a privileged mode of the processor (e.g., kernel, *other processor modes*) *or on separate processors*, as well as the context of the trusted applications is to be protected. In addition to the software, any configuration information that controls or influences the behavior of the TSF *and any hardware (e.g. biometric capture sensor) that generates or accesses the biometric data* is also to be protected from modification *or unauthorized access* by untrusted subjects.
+
+*Application Note {counter:remark_count}*:: This application note explicitly adds more support for additional processor modes (e.g. the Secure/Normal World modes defined in a Trusted Execution Environment) or separate processors (e.g. a secure element) that may be present and used for the processing of biometric data. Any biometric components depicted in <<Figure 1>> should be considered as TSF being protected by these mechanisms, defined as the SEE.
+
+===== FPT_KST_EXT.1 Key Storage [[FPT_KST_EXT.1]]
+
+*FPT_KST_EXT.1.1*:: The TSF shall not store any plaintext key material *or biometric data* in readable non-volatile memory.
+
+*Application Note {counter:remark_count}*:: This SFR is functionally identical to what is defined in the <<PP_MDF>> with the addition of biometric data as key materials to be protected. Plaintext biometric data to be protected includes any data used for the biometric enrolment and verification.
+
+===== FPT_KST_EXT.2 No Key Transmission [[FPT_KST_EXT.2]]
+
+*FPT_KST_EXT.2.1*:: The TSF shall not transmit any plaintext key material *or biometric data* outside the security boundary of the TOE.
+
+*Application Note {counter:remark_count}*:: This SFR is functionally identical to what is defined in the <<PP_MDF>> with the addition of biometric data as plaintext key materials that must not be transmitted off-device. 
+
+==== Additional SFRs
+
+There are no additional SFRs that must be claimed only in cases where the <<PP_MDF>> is the claimed Base-PP.
+
+=== TOE Security Functional Requirements
+This section lists SFRs for the biometric enrolment and verification.
+
+==== Identification and Authentication (FIA)
+
+===== FIA_MBE_EXT.1 Biometric enrolment [[FIA_MBE_EXT.1]]
 
 *FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
 
-*Application Note {counter:remark_count}*:: User shall be authenticated by the computer using the NBAF before beginning biometric enrolment.
+*Application Note {counter:remark_count}*:: A user enroling to the biometric system will have been authenticated using a NBAF, as specified in FIA_MBE_EXT.1.1.
 
-==== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
+===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
 
-*FIA_MBE_EXT.2.1* The TSF shall create templates of sufficient quality.
+*FIA_MBE_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
 
-*Application Note {counter:remark_count}*:: ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
+*Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
-==== FIA_MBV_EXT.1 Biometric verification [[FIA_MBV_EXT.1]]
+===== FIA_MBV_EXT.1 Biometric verification [[FIA_MBV_EXT.1]]
 
-*FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection*: _fingerprint, eye, face, voice, vein_, [*assignment*: _other modality_]].
+*FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection*: _eye, face, fingerprint, vein_].
 
-*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _defined value_] and [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _defined value_].
+*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _value equal to or less than 0.01% (1:10^4^)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval and, [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _value equal to or less than 5% (5:100)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval.
 
-*Application Note {counter:remark_count}*:: If the TOE supports multiple modalities, the ST author may iterate the SFR to define different error rates for each modality.
-
-*Application Note {counter:remark_count}*:: ST author shall select or assign those modalities in FIA_MBV_EXT.1.1 for which <<BIOSD>> defines the Evaluation Activities.
-
-*Application Note {counter:remark_count}*:: While the value of FMR, FAR, FNMR and FRR shall be assigned by the ST author, the ST author should consider the following factors for setting those values.
+*Application Note {counter:remark_count}*:: Consider the following factors when setting values of FMR, FAR, FNMR and FRR.
 +
 [loweralpha]
 . Allowed maximum values defined in the standards
 +
-For example, <<NIST800-63B>> requires that FMR shall be 1 in 1000 or lower. <<ISO29156,ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4^) and 0.0001% (1 in 10^6^) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification shall have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. While the PP-Module does not provide any recommendation for those error rates, the ST author should set appropriate error rates referring those values. 
+For example, <<NIST800-63B>> requires that FMR be 1 in 1000 or lower. <<ISO/IEC 29156>> suggests as a simple rule of thumb that for basic, medium and high levels of authentication assurance, rates of 1% (1 in 100), 0.01% (1 in 10^4^) and 0.0001% (1 in 10^6^) can be considered as suitable target figures for FAR. Several mobile vendors have specified that fingerprint verification have the FAR lower than 0.002% and recommended to have the FRR lower than 10%. While the PP-Module does not provide any recommendation for those error rates other than minimum error rates, the ST author should set appropriate error rates referring those values. 
 +
 For consistency in language throughout this document, referring to a “lower” number will mean the chance of occurrence is lower (i.e. 1/100 is lower than 1/20). So, saying device 1 has a lower FAR than device 2 means device 1 could have 1/1000 and device 2 would be 1/999 or higher in terms of likelihood. Saying “greater” will explicitly mean the opposite.
++
+<<ISO/IEC 19795-1>> recommends following “rule of 3” (i.e. 95% confidence interval) if there is no error observed during the performance testing. The ST author should assign appropriate confidence interval referring such relevant standards. 
 
 . Technical limitation
 +
@@ -434,40 +447,190 @@ Although different modalities are available for the biometric verification, all 
 +
 Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normally the target error rates will directly influence the size of the test subjects, the time and cost of the testing. <<BIOSD>> describes how those error rates should be evaluated in an objective manner.
 
-==== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
+===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
 
-*FIA_MBV_EXT.2.1* The TSF shall only use samples of sufficient quality to verify the user.
+*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
 
-*Application Note {counter:remark_count}*:: ST author may refine “sufficient quality” to specify quality standards if the TOE follows such standard.
+*Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
-=== Protection of the TSF (FPT)
-==== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
+==== Protection of the TSF (FPT)
+===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
 
-*FPT_BDP_EXT.1.1* The TSF shall process any plaintext biometric data used to generate templates and perform sample matching within the security boundary of the Secure Execution Environment.
+*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data shall be inside the SEE in runtime.
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: All TSF code and plain biometric data must be executed and retained inside the SEE.
 
-==== FPT_BDP_EXT.2 Biometric data transmission [[FPT_BDP_EXT.2]]
+*FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the SEE shall be isolated from the main computer operating system on the TSF in runtime.
 
-*FPT_BDP_EXT.2.1* The TSF shall not transmit any plaintext biometric data outside the security boundary of the Secure Execution Environment.
+*Application Note {counter:remark_count}*:: This is specifically about the transmission of biometric data within the device between components, and not to external systems (such as an export of biometric data).
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
-
-==== FPT_BDP_EXT.3 Biometric data storage [[FPT_BDP_EXT.3]]
-
-[[FPT_BDP_EXT.3.1]]*FPT_BDP_EXT.3.1* The TSF shall not store any plaintext biometric data outside the security boundary of the Secure Execution Environment.
-
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
-
-==== FPT_PBT_EXT.1 Protection of biometric template [[FPT_PBT_EXT.1]]
+===== FPT_PBT_EXT.1 Protection of biometric template [[FPT_PBT_EXT.1]]
 
 *FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_, [*assignment*: _other circumstances_]].
 
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
+=== TOE Security Functional Requirements Rationale
+
+The following rationale provides justification for each security objective for the TOE, showing that the SFRs are suitable to meet and achieve the security objectives:
+
+[cols=".^1,.^1,2",options="header",]
+.Mapping between SFRs and Security Objectives
+|===
+|Objective 
+|Addressed By
+|Rationale
+
+.3+|<<O.BIO_Verification>>	
+|<<FIA_MBV_EXT.1, FIA_MBV_EXT.1>>
+|This SFR supports the objective by defining the minimum accuracy of the biometric authentication methods that the TSF must support for verification.
+
+|<<FIA_MBV_EXT.2, FIA_MBV_EXT.2>>
+|This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for verification.
+
+|<<FIA_MBV_EXT.3, FIA_MBV_EXT.3>> (optional)
+|This SFR supports the objective by requiring the TSF to detect spoofed biometric data during verification.
+
+.3+|<<O.Enrol>>	
+|<<FIA_MBE_EXT.1, FIA_MBE_EXT.1>>
+|This SFR supports the objective by providing a method for enroling a user for authentication.
+
+|<<FIA_MBE_EXT.2, FIA_MBE_EXT.2>>
+|This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for enrolment.
+
+|<<FIA_MBE_EXT.3, FIA_MBE_EXT.3>> (optional)
+|This SFR supports the objective by requiring the TSF to detect spoofed biometric data during enrolment.
+
+.5+a|<<O.Protection>>
+
+<<OE.Protection>>	
+|<<KPT_KST_EXT.1, FPT_KST_EXT.1>> (refined from <<PP_MDF>>)
+|This SFR supports the objectives by requiring the TOE to prevent the unprotected storage of biometric data.
+
+|<<KPT_KST_EXT.2, FPT_KST_EXT.2>> (refined from <<PP_MDF>>)
+|This SFR supports the objectives by requiring the TOE to prevent the transmission of biometric data outside the device.
+
+|<<FPT_BDP_EXT.1, FPT_BDP_EXT.1>>
+|This SFR supports the objectives by requiring the TOE to provide the SEE for the processing of biometric data which is not available to the main computer operating system.
+
+
+|<<FPT_PBT_EXT.1, FPT_PBT_EXT.1>>
+|This SFR supports the objectives by requiring the TOE to protect a user's biometric template with an additional authentication factor.
+
+|===
 
 == Security Assurance Requirements
 
-This PP-Module does not define any additional assurance requirements above and beyond what is defined in the base PP that it extends. Application of the SARs to the TOE boundary described by both the claimed base and this PP-Module is sufficient to demonstrate that the claimed SFRs have been implemented correctly by the TOE.
+This PP-Module does not define any additional assurance requirements above and beyond what is defined in the Base-PP that it extends. Application of the SARs to the TOE boundary described by both the claimed base and this PP-Module is sufficient to demonstrate that the claimed SFRs have been implemented correctly by the TOE.
+
+== Consistency Rationale
+
+This section describes consistency rationale between <<PP_MDF>> and this PP-Module to show that the unions of Security Problem Definition, objectives, and Security Functional Requirement(SFR)s defined in <<PP_MDF>> and this PP-Module do not lead to a contradiction.
+
+=== Consistency of TOE Type
+
+When this PP-Module is used to extend <<PP_MDF>>, the TOE type for the overall TOE is still a generic mobile device. However, one of the functions of the device must be the ability for it to have biometric enrolment and verification capability. The TOE boundary is simply extended to include that functionality.
+
+=== Consistency of Security Problem Definition
+
+The threats, OSPs and assumptions defined by this PP-Module (see the <<Security Problem Definition>>) are consistent with those defined in the <<PP_MDF>> as follows:
+
+.Consistency Rationale for threats and OSPs
+[cols=".^1,.^1",options="header"]
+|===
+
+|PP-Module Threats/OSPs	
+|Consistency Rationale
+
+|<<T.Casual_Attack>>
+.3+|The threat of zero-effort impostor attempt and presentation attack with related OSPs are specific subsets of the T.PHYSICAL_ACCESS (i.e. impersonate the user authentication mechanisms) threat in the <<PP_MDF>>.
+|<<OSP.Enrol>>
+|<<OSP.Verification_Error>>
+
+|<<OSP.Protection>>
+|This OSP is specific subsets of the T.PHYSICAL_ACCESS (i.e. direct and possibly destructive access to its storage media (biometric data)) threat in the <<PP_MDF>>.
+
+|===
+
+=== Consistency of Objectives
+
+The objectives for the biometric system and its operational environment are consistent with the <<PP_MDF>> based on the following rationale:
+
+.Consistency Rationale for TOE Objectives
+[cols=".^1,.^1",options="header"]
+|===
+|PP-Module TOE Objectives	
+|Consistency Rationale
+
+|<<O.BIO_Verification>>
+.2+|These TOE Objectives are specific subsets of the O.AUTH objective in the <<PP_MDF>>. 
+|<<O.Enrol>>
+
+|<<O.Protection>>
+|This TOE Objective is specific subset of the O.STORAGE objective in the <<PP_MDF>>.
+
+|===
+
+.Consistency Rationale for Environmental Objectives
+[cols=".^1,.^1",options="header"]
+|===
+|PP-Module Environmental Objectives	
+|Consistency Rationale
+
+|<<OE.Protection>>
+.4+|All Environmental Objectives levied on the operational environment of biometric system (i.e. mobile device) are consistent with security requirements in the <<PP_MDF>>. 
+
+|===
+
+=== Consistency of Requirements
+
+The Biometric System (i.e. TOE in this PP-Module) is comprised of biometric capture sensors and firmware/software that provide functions described in <<TOE Design>>. The Biometric System is invoked by the mobile device as defined in the <<PP_MDF>> when user’s biometric characteristics is presented to the sensor. The Biometric System creates and stores the template or compares the features with the stored template and returns the verification outcome to the mobile device.
+
+This PP-Module assumes that the mobile device satisfies SFRs defined in the <<PP_MDF>> so that the Biometric System can work as specified in this PP-Module. This section explains which SFRs in the <<PP_MDF>> are directly relevant to the Biometric System security functionality.
+
+The following rationale identifies several SFRs from <<PP_MDF>> that are needed to support Biometric System functionality and explains why the unions of SFRs in the <<PP_MDF>> and this PP-Module do not lead to a contradiction.
+
+==== Relation among SFRs/OEs in the PP_MDF and PP-Module
+The relation between SFRs defined in the <<PP_MDF>> and SFRs in this PP-Module is described below for each security functionality. *Bold SFRs* are those SFRs defined in this PP-Module for the Biometric System and _italicized SFRs_ are those defined in <<PP_MDF>> for the mobile device.
+
+===== Password authentication
+The Password Authentication Factor defined in the <<PP_MDF>> is a NBAF as defined in this PP-Module. The mobile device shall implement the Password Authentication Factor as required by the _FIA_UAU.5.1_. The BAF can be used to unlock the mobile device after the initial Password Authentication Factor has been entered.
+
+===== Invocation of the Biometric System
+For any modality selected in _FIA_UAU.5.1_, the mobile device shall invoke the Biometric System to unlock the device under the condition specified in _FIA_UAU.6.2_. Mobile device shall also authenticate the user following the rule specified in _FIA_UAU.5.2_.
+
+The Biometric System shall implement a biometric verification mechanism that satisfies SFRs defined in this PP-Module. This means that same modality selected in _FIA_UAU.5.1_ shall also be selected in *FIA_MBV_EXT.1.1*, and relevant criteria and its error rate shall be specified in *FIA_MBV_EXT.1.2*. If multiple modalities are selected in _FIA_UAU.5.1_, *FIA_MBV_EXT.1* shall be iterated for each modality. The Biometric System shall also enrol all modalities selected as specified in *FIA_MBE.EXT.1*, to assure the quality of samples and templates as specified in *FIA_MBV.EXT.2* and *FIA_MBE.EXT.2*. The Biometric System may also prevent use of artificial presentation attack instruments during the biometric enrolment and verification as specified in *FIA_MBE.EXT.3* and *FIA_MBV.EXT.3*.
+
+===== Handling the verification outcome
+The mobile device shall take appropriate actions after receiving the verification outcome from the Biometric System as defined in _FIA_AFL_EXT.1_. 
+
+_FIA_AFL_EXT.1_ defines rules regarding how the authentication factors interact in terms of unsuccessful authentication and actions mobile device shall take when number of unsuccessful authentication attempts surpass the pre-defined number. The mobile device also shall apply authentication throttling after failed biometric verification, as required by _FIA_TRT_EXT.1.1_.
+
+===== Protection of the Biometric System and its biometric data
+The mobile device shall provide the SEE (e.g. restricted operational environment) so the Biometric System can work securely. This SEE guarantees code and data loaded inside to be protected with respect to confidentiality and integrity. This SEE is out of scope of the Biometric System defined in this PP-Module and shall be provided by the mobile device and evaluated based on <<PP_MDF>> and <<Modified SFRs>>. However, ST author shall explain how such SEE is provided by the mobile device for the Biometric System, as required by <<BIOSD>>. The mobile device shall also keep secret any sensitive information regarding the biometric when the mobile device receives the verification outcome from the Biometric System, as required by _FIA_UAU.7.1_, and provide cryptographic support to encrypt or decrypt biometric data as required by _FCS class_. The mobile device shall treat biometric data used in the enrolment or verification process (not the final templates) as critical security parameters according to _FCS_CKM_EXT.4.2_ with additonal application note described in <<FCS_CKM_EXT.4 Key Destruction>>.
+
+This PP-Module assumes that above requirements are satisfied by the mobile device as defined in OE.Protection.
+
+However, the Biometric System shall use this SEE correctly to protect biometric data and satisfy the following requirements:
+
+* The Biometric System shall process any plaintext biometric data (e.g. capturing biometric characteristic, creating samples, features and templates) for biometric enrolment and verification within the boundary of the SEE. This implies that:
+** Any part of the Biometric System that processes plaintext biometric data shall be within the boundary of the SEE. For example, the biometric capture sensor shall be configured to be within the boundary of the SEE, so that only the SEE can access to the sensor and the data captured. Any software modules that process plaintext biometric data shall run within the boundary of the SEE.
+** Plaintext biometric data shall never be accessible from outside the SEE, and any entities outside the SEE can only access the result of process of biometric data (e.g. success or failure of biometric verification) through the interface provided by the Biometric System.
+
+* The Biometric System shall not transmit any plaintext biometric data outside of the SEE.
+
+If the Biometric System stores any part of the biometric data outside the SEE, the Biometric System shall protect such data so that any entities running outside the SEE cannot get access to any plaintext biometric data. ST author shall explain what biometric data resides outside the SEE as required by <<BIOSD>> and if no data resides outside the environment, the requirements below are implicitly satisfied.
+
+* The Biometric System shall not store any plaintext biometric data outside the SEE. As described in <<TOE Design>>, the Biometric System can store templates in the enrolment database. The Biometric System shall encrypt templates using the cryptographic service provided by the mobile device within the SEE before storing them in the database, even if the mobile device storage itself is encrypted by the mobile device.
+
+The Biometric System shall also protect templates so that only the user of the mobile device can access them. This means that the Biometric System shall only allow authenticated user by the Password Authentication Factor to access (e.g. add or revoke) the template.
+
+* The Biometric System shall control access to, including adding or revoking, the templates.
+
+The above requirements are defined as *FPT_PBT_EXT.1*, *FPT_BDP_EXT.1*, *FPT_KST_EXT.1*, *FPT_KST_EXT.2* and *FPT_AEX_EXT.4* in <<Security Functional Requirements>> in this PP-Module.
+
+===== Management of the Biometric System configuration
+The mobile device shall enable/disable the BAF as required by _FMT_SMF_EXT.1 (Management function 23)_, and revoke the BAF as _FMT_SMF_EXT.1 (Management Function 46)_. Any change to the BAF (e.g. adding or revoking templates) requires re-authentication via the Password Authentication Factor as required by _FIA_UAU.6.2_.
+
+This PP-Module assumes that above requirements are satisfied by the mobile device.
 
 == Selection-Based Requirements
 
@@ -486,21 +649,15 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 ==== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment [[FIA_MBE_EXT.3]]
 
-*FIA_MBE_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
+*FIA_MBE_EXT.3.1*:: The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
 
 ==== FIA_MBV_EXT.3 Presentation attack detection for biometric verification [[FIA_MBV_EXT.3]]
 
-*FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
+*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
-*Application Note {counter:remark_count}*:: Artefacts that the TOE shall prevent and relevant criteria for its security relevant error rates for each type of artefact is defined in <<BIOSD>>.
+*Application Note {counter:remark_count}*:: <<BIOSD>> provides instructions how to produce and present the artificial presentation attack instruments.
 
-=== User data protection (FDP)
-
-==== FDP_RIP.2 Full residual information protection [[FDP_RIP.2]]
-
-*FDP_RIP.2.1* The TSF shall ensure that any previous information content of biometric data is made unavailable upon the [*selection*: _allocation of the resource to, deallocation of the resource from_] all objects.
-
-*Application Note {counter:remark_count}*:: The Consistency Rationale in the appropriate PP-Configuration explains how the TOE in cooperation with its environment shall protect biometric data in detail.
+*Application Note {counter:remark_count}*:: If the ST author selects FMR/FNMR in FIA_MBV_EXT.1.2, IAPAR needs to be calculated based on attempts (i.e. IAPAR (%) = 100 * (number of presentation attack attempts which are verified successfully) / (total number of presentation attack attempts)). If the ST author selects FAR/FRR, IAPAR needs to be calculated based on transactions (i.e. IAPAR (%) = 100 * (number of presentation attack transactions which are verified successfully) / (total number of presentation attack transactions)).
 
 == Extended Component Definitions
 This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <<Optional Requirements>>. 
@@ -518,7 +675,7 @@ This component defines the requirements for the TSF to be able to enrol a user, 
 ===== Component levelling
 [#img-FIA-MBE-EXT] 
 .Component levelling 
-[ditaa,"FIA_MBE_EXT.png"]
+[ditaa,"FIA_MBE_EXT"]
 ....
                                                      +---+
                                                   +->| 1 |
@@ -555,12 +712,12 @@ The following actions could be considered for the management functions in FMT:
 a)	the management of the TSF data (setting values for detecting artificial presentation attack instruments) by an administrator.
 
 ===== Audit: FIA_MBE_EXT.1, FIA_MBE_EXT.2
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the base PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the Base-PP/ST:
 
 a)	Basic: Success or failure of the biometric enrolment
 
 ===== Audit: FIA_MBE_EXT.3
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the base PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the Base-PP/ST:
 
 a)	Basic: Detection of presentation attacks
 
@@ -569,14 +726,14 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FIA_MBE_EXT.1.1* The TSF shall provide a mechanism to enrol an authenticated user.
+*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
 
 ===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment
 Hierarchical to: No other components
 
 Dependencies: 	FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBE_EXT.2.1* The TSF shall create templates of sufficient quality.
+*FIA_MBE_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
 
 ===== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment
 
@@ -584,7 +741,7 @@ Hierarchical to: No other components
 
 Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBE_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
+*FIA_MBE_EXT.3.1*:: The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
 
 ==== Biometric verification (FIA_MBV_EXT)
 
@@ -594,7 +751,7 @@ This component defines the requirements for the TSF to be able to verify a user,
 ===== Component levelling
 [#img-FIA-MBV-EXT] 
 .Component levelling 
-[ditaa,"FIA_MBV_EXT.png"]
+[ditaa,"FIA_MBV_EXT"]
 ....
                                                        +---+
                                                     +->| 1 |
@@ -632,12 +789,12 @@ The following actions could be considered for the management functions in FMT:
 a)	the management of the TSF data (setting values for detecting artificial presentation attack instruments) by an administrator.
 
 ===== Audit: FIA_MBV_EXT.1, FIA_MBV_EXT.2
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the base PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the Base-PP/ST:
 
 a)	Basic: Success or failure of the biometric verification
 
 ===== Audit: FIA_MBV_EXT.3
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the base PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the Base-PP/ST:
 
 a)	Basic: Detection of presentation attacks
 
@@ -647,9 +804,9 @@ Hierarchical to: No other components
 
 Dependencies: FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBV_EXT.1.1* The TSF shall provide a biometric verification mechanism using [*selection:* _fingerprint, eye, face, voice, vein_, [*assignment:* _other modality_]].
+*FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection:* _eye, face, fingerprint, vein_].
 
-*FIA_MBV_EXT.1.2* The TSF shall provide a biometric verification mechanism with the [*selection:* _FMR, FAR_] not exceeding [*assignment:* _defined value_] and [*selection:* _FNMR, FRR_] not exceeding [*assignment:* _defined value_].
+*FIA_MBV_EXT.1.2*:: The TSF shall provide a biometric verification mechanism with the [*selection*: _FMR, FAR_] not exceeding [*assignment*: _value equal to or less than 0.01% (1:10^4^)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval and, [*selection*: _FNMR, FRR_] not exceeding [*assignment*: _value equal to or less than 5% (5:100)_] for the upper bound of [*assignment*: _value equal to or greater than 80%_] confidence interval.
 
 ===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification
 Hierarchical to: No other components.
@@ -660,8 +817,7 @@ FIA_MBE_EXT.1 Biometric enrolment
 
 FIA_MBV_EXT.1 Biometric verification
 
-
-*FIA_MBV_EXT.2.1* The TSF shall only use samples of sufficient quality to verify the user.
+*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
 
 ===== FIA_MBV_EXT.3 Presentation attack detection for biometric verification
 Hierarchical to: No other components
@@ -672,7 +828,7 @@ FIA_MBE_EXT.1 Biometric enrolment
 
 FIA_MBV_EXT.1 Biometric verification
 
-*FIA_MBV_EXT.3.1* The TSF shall prevent use of artificial presentation attack instruments from being successfully verified.
+*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
 
 === Protection of the TSF (FPT)
@@ -683,31 +839,22 @@ This component defines the requirements for the TSF to be able to protect plaint
 ===== Component levelling
 [#img-FPT_BDP-EXT]
 .Component levelling
-[ditaa,"FPT_BDP_EXT.png"]
+[ditaa,"FPT_BDP_EXT"]
 ....
-                                                    +---+
-                                                 +->| 1 |
-                                                 |  +---+
-    +-----------------------------------------+  |
-    |                                         |  |  +---+
-    | FPT_BDP_EXT  Biometric data processing  +--+->| 2 |
-    |                                         |  |  +---+
-    +-----------------------------------------+  |
-                                                 |  +---+
-                                                 +->| 3 |
-                                                    +---+
+
+    +-----------------------------------------+ 
+    |                                         |     +---+
+    | FPT_BDP_EXT  Biometric data processing  +--+->| 1 |
+    |                                         |     +---+
+    +-----------------------------------------+ 
 ....
  
-FPT_BDP_EXT.1 Biometric data processing requires the TSF to process plaintext biometric data within the security boundary of the Secure Execution Environment.
+FPT_BDP_EXT.1 Biometric data processing requires the TSF to process plaintext biometric data within the in the SEE and to protect the internal transmission of the biometric data from the main computer operating system.
 
-FPT_BDP_EXT.2 Biometric data transmission requires the TSF not to transmit plaintext biometric data outside the security boundary of the Secure Execution Environment.
-
-FPT_BDP_EXT.3 Biometric data storage requires the TSF not to store plaintext biometric data outside the security boundary of the Secure Execution Environment.
-
-===== Management: FPT_BDP_EXT.1, FPT_BDP_EXT.2, FPT_BDP_EXT.3
+===== Management: FPT_BDP_EXT.1
 There are no management activities foreseen.
 
-===== Audit: FPT_BDP_EXT.1, FPT_BDP_EXT.2, FPT_BDP_EXT.3
+===== Audit: FPT_BDP_EXT.1
 There are no auditable events foreseen.
 
 ===== FPT_BDP_EXT.1 Biometric data processing
@@ -715,32 +862,18 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FPT_BDP_EXT.1.1* The TSF shall process any plaintext biometric data used to generate templates and perform sample matching within the security boundary of the Secure Execution Environment.
+*FPT_BDP_EXT.1.1*:: Processing of plaintext biometric data shall be inside the SEE at runtime.
 
-===== FPT_BDP_EXT.2 Biometric data transmission
-Hierarchical to: 	No other components
-
-Dependencies: 	No dependencies
-
-*FPT_BDP_EXT.2.1* The TSF shall not transmit any plaintext biometric data outside the security boundary of the Secure Execution Environment.
-
-===== FPT_BDP_EXT.3 Biometric data storage
-
-Hierarchical to: 	No other components
-
-Dependencies: 	No dependencies
-
-*FPT_BDP_EXT.3.1* The TSF shall not store any plaintext biometric data outside the security boundary of the Secure Execution Environment.
+*FPT_BDP_EXT.1.2*:: Transmission of plaintext biometric data between the capture sensor and the SEE shall be isolated from the main computer operating system on the TSF in runtime.
 
 ==== Protection of biometric template (FPT_PBT_EXT)
-*Family Behaviour*
-
+===== Family Behaviour
 This component defines the requirements for the TSF to be able to protect templates.
 
 ===== Component levelling
 [#img-FPT-BPT-EXT]
 .Component levelling
-[ditaa,"FPT_BPT_EXT.png"]
+[ditaa,"FPT_BPT_EXT"]
 ....
 
     +------------------------------------------------+
@@ -765,4 +898,9 @@ Hierarchical to: 	No other components
 
 Dependencies: 	No dependencies
 
-*FPT_PBT_EXT.1.1* The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_], [*assignment*: _other circumstances_]].
+*FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_], [*assignment*: _other circumstances_]].
+
+== Biometrics Management Description (BMD)
+The documentation of the product's biometric functionality and performance should be detailed enough that, after reading, the evaluator will thoroughly understand the product's biometric functionality and performance. As some of this information may be considered confidential to the developer yet still necessary for understanding, this documentation is not required to be part of the TSS and can be submitted as a separate document marked as developer proprietary.
+
+Whether to use the BMD for any information is up to the developer. When used, a non-proprietary summary of the contents of the BMD must be provided in the TSS.
