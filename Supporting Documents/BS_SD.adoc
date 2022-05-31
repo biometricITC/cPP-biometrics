@@ -665,7 +665,7 @@ The evaluator shall perform the following test steps to verify that the TOE prot
 
 . The evaluator shall perform functions through the TSFIs that access the templates
 . The evaluator shall check that the TSFI requires using a NBAF as specified by the ST author
-.. The evaluator shall attempt to add new, change or remove existing BAFs on the TOE and ensure the NBAF is required before allowing any change
+.. The evaluator shall attempt to add new, change and remove existing BAFs on the TOE and ensure the NBAF is required before allowing any change
 
 ===== Pass/Fail criteria
 
