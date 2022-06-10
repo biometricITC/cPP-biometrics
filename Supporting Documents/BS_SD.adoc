@@ -837,7 +837,7 @@ The evaluator shall follow the same EAs defined in <<PP_MDF>> and the BIOSD. As 
 
 === Class AVA: Vulnerability Assessment
 
-The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MDF>> for <<BIOPP-Module>>.
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MDF>> for <<BIOPP-Module>> when  PAD testing is included in the evaluation. As PAD is an optional set of requirements, the vulnerability assessment activities related to PAD are only included when PAD is included.
 
 ==== Application note for EA of AVA_VAN.1
 
