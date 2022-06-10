@@ -605,11 +605,11 @@ The test is repeated for biometric enrolment and biometric verification (called 
 +
 [arabic]
 .. Using tools provided by the developer, the evaluator shall prepare the computer for a scan of the main computer operating system memory
-.. The developer tools shall write the biometric template data to an accessible location (either prior or during, depending on the type of test)
+.. The developer shall provide an example of template data (specifically including common header information)
 .. The evaluator shall perform a biometric transaction
-.. The evaluator shall perform a memory scan during the biometric transaction
+.. The evaluator shall perform a memory scan prior the biometric transaction
 .. The evaluator shall take a memory scan after the completion of a biometric transaction
-.. The evaluator shall confirm that the template data can only be found in memory during the biometric transaction
+.. The evaluator shall confirm that the template data (the header information) is not found in the memory scans
 [loweralpha]
 . TSFI invocation test
 +
