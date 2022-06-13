@@ -570,7 +570,7 @@ In any case, the evaluator shall examine the TSS to confirm that;
 
 * If a biometric capture sensor returns plaintext biometric data, any entities outside the SEE can’t access the sensor and data captured by the sensor
 
-. All plaintext biometric data is retained in volatile memory within the SEE and any entities outside the SEE including the main computer operating system can’t access these data. Any TSFIs do not reveal plaintext biometric data to any entities outside the SEE. The evaluator shall especially examine TSFIs of TSF modules provided by the biometric capture sensor (e.g. SDK) because they may include testing or debug codes and the developer who integrated the sensor into the TOE may apply minimal changes to those modules
+. All plaintext biometric data is retained in volatile memory within the SEE and any entities outside the SEE including the main computer operating system can’t access these data. Any TSFIs do not reveal plaintext biometric data to any entities outside the SEE. The evaluator shall examine TSFIs of TSF modules provided by the biometric capture sensor (e.g. SDK) because they may include testing or debug codes and the developer who integrated the sensor into the TOE may apply changes to those modules
 
 The evaluator shall keep in mind that the objective of this EA is not evaluating the SEE itself. This EA is derived from ASE_TSS.1.1 which requires that the TSS and BMD to provide potential consumers of the TOE with a high-level view of how the developer intends to satisfy each SFR. The evaluator shall check the TSS and BMD to seek for a logical explanation how the above criteria are satisfied considering this scope of the requirement.
 
