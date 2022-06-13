@@ -612,7 +612,7 @@ The test is repeated for biometric enrolment and biometric verification (called 
 [loweralpha]
 . TSFI invocation test
 +
-If TSFIs exist the can be used to output plaintext biometric data to the operating system, the evaluator must perform this test. The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
+If TSFIs exist, they could be used to output plaintext biometric data to the operating system, and so the evaluator shall perform this test. The following test steps require the developer to provide access to a test platform that provides the evaluator with tools that are typically not found on factory products.
 +
 [arabic]
 .. The evaluator shall identify any TSFIs that output plaintext biometric data to the memory that is accessible by the operating system. 
