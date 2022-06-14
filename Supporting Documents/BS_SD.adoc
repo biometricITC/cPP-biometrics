@@ -111,7 +111,7 @@ Although EAs are defined mainly for the evaluator to follow, the definitions in 
 
 === Structure of the Document
 
-EAs can be defined for both SFRs and SARs. These are defined in separate sections of this BIOSD.
+EAs can be defined for both SFRs and SARs. These are defined in separate sections of this BIOSD. EAs are intended to be both cost effective and practical.
 
 If any EA cannot be successfully completed in an evaluation then the overall verdict for the evaluation is a ‘fail’. In rare cases there may be acceptable reasons why an EA may be modified or deemed not applicable for a particular TOE, but this must be agreed with the Certification Body for the evaluation.
 
