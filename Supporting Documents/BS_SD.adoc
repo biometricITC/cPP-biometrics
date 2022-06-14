@@ -736,6 +736,8 @@ Following input is required from the developer.
 
 The evaluator shall examine the TSS, BMD and AGD guidance to check that the TSS, BMD or AGD guidance states that the TOE prevents the use of the artefact during biometric enrolment.
 
+====== Strategy for ATE_IND
+
 The main part of the EA is the evaluator’s testing defined in <<Evaluation Activities for PAD testing>>. The evaluator should not require a detailed design description of PAD from the developer because it’s beyond the scope of assurance level claimed in <<BIOPP-Module>>.
 
 ===== Pass/Fail criteria
@@ -833,7 +835,7 @@ The evaluator shall take the following additional application notes into account
 
 ==== Application note for EA of ATE_IND.1
 
-The evaluator shall follow the same EAs defined in <<PP_MDF>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
+The evaluator shall follow the same EAs defined in <<PP_MDF>> and the BIOSD.
 
 === Class AVA: Vulnerability Assessment
 
