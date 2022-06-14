@@ -1749,7 +1749,7 @@ The evaluator shall take the following application notes into account to calcula
 
 ==== Application note for Elapsed time for Identification
 
-The evaluator should select one week at maximum because the evalator should finish the penetration testing within one week for the testing of a single biometric sensor. This is not intended to force the evaluator to spend a week of time for testing each sensor type when multiple sensor types are tested in a single evaluation. The evaluator shall provide a sufficient justification that the time taken in testing for each sensor type is equivalent to a week for a single sensor test (when only a single sensor would be tested in isolation).
+The evaluator should select one week at maximum because the evaluator should finish the penetration testing within one week for the testing of a single biometric sensor. This is not intended to force the evaluator to spend a week of time for testing each sensor type when multiple sensor types are tested in a single evaluation. The evaluator shall provide a sufficient justification that the time taken in testing for each sensor type is equivalent to a week for a single sensor test (when only a single sensor would be tested in isolation).
 
 ==== Application note for Window of Opportunity (Access to TOE) for Identification
 
