@@ -338,7 +338,7 @@ Following input is required from the developer.
 . TSS shall explain how the TOE meets FIA_MBE_EXT.2 at high level description
 ** If standard quality metrics are selected and assigned, the TSS shall include information (e.g. name of quality metrics and section numbers that define the metrics in the standard) to identify quality metrics that the TOE implements
 ** If a developer defined quality assessment is selected, the TSS shall include an overview of the quality metrics used for the assessment
-. The BMD shall provide information about the assessment criteria that explains how the TOE checks the quality of samples to create enrolment and authentication templates. The assessment criteria for enrolment templates may include the following information
+. The BMD should provide information about the assessment criteria that explains how the TOE checks the quality of samples to create enrolment and authentication templates. The assessment criteria for enrolment templates may include the following information
 +
 --
 ** Quality requirements for the biometric sample to ensure that a sufficient amount of distinctive features are available
@@ -352,7 +352,7 @@ The BMD can make a priori assumptions about the usefulness or efficacy of the cr
 --
 . The BMD shall also provide information about how authentication templates are created and, where applicable, updated. The information shall be detailed enough to conduct the EA for authentication template described below.
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
-. Supplementary information (the quality assessment criteria report explained in <<Developer’s quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
+. If supplementary information in addition to the information provided in b), (the quality assessment criteria report explained in <<Developer’s quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
 
 AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
 
@@ -424,10 +424,10 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBV_EXT.1 at high level description
-. BMD should provide information about how the upper bound confidence interval of error rates are estimated
+. BMD shall provide information about how the upper bound confidence interval of error rates are estimated
 ** The BMD may refer to the developer's <<Developer’s performance report and its assessment strategy, performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
-. If supplementary information in addition to the information provided in b), (developer’s <<Developer’s performance report and its assessment strategy, performance report>>) shall describe the developer’s performance test protocol and result of testing
+. Supplementary information (developer’s <<Developer’s performance report and its assessment strategy, performance report>>) shall describe the developer’s performance test protocol and result of testing
 
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
 
