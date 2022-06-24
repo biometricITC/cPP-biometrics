@@ -495,7 +495,7 @@ Following input is required from the developer.
 The BMD can make a priori assumptions about the usefulness or efficacy of the criteria or metrics. If standard quality metrics are assigned, the BMD may refer to the standard that defines quality metrics. If developer defined quality assessment is selected, the BMD shall provide the same level of information about the assessment criteria as an equivalent image quality standard for the specific modality (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint) does.
 --
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
-. If supplementary information in addition to the information provided in b), (the quality assessment criteria report explained in <<Developer’s quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
+. If supplementary information is provided in addition to the information provided in b), (the quality assessment criteria report explained in <<Developer’s quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
 
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
 
