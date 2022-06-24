@@ -82,6 +82,10 @@ In order to evaluate a TOE that claims conformance to this PP-Configuration, the
 
 Note that to fully evaluate the TOE, these SARs shall be applied to the entire TSF and not just the portions described by <<PP_MDF>> where the SARs are defined.
 
+=== Presentation Attack Detection (PAD) conformance
+
+In order to evaluate a TOE that claims conformance to the Presentation Attack Detection (PAD) requirements, the evaluator shall evaluate the TOE using the tests defined in the <<Toolbox>>. PAD conformance is not mandatory for a TOE under evaluation.
+
 == Related Documents
 
 **Common Criteria**footnote:[For details see http://www.commoncriteriaportal.org/]
@@ -117,6 +121,9 @@ Version 0.5, May 2017.
 
 |[#BIOSD]#[BIOSD]#
 |Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, 2021, Version 1.1 - [BIOSD]
+
+|[#Toolbox]#[Toolbox]# 
+|Toolbox Overview, November 9, 2021, Version 1.1
 
 |===
 
