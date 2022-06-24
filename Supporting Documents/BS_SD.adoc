@@ -591,7 +591,7 @@ Plaintext biometric data must not be accessible from any entities outside the SE
 
 [loweralpha]
 . The TOE must not expose the plain biometric data to the memory that is accessible by the main computer operating system during the processing of biometric data.
-. Any TSFIs identified in the TSS that can output plaintext biometric data must not be accessible by the main computer operating system.
+. Any TSFIs identified in the TSS that can output plaintext biometric data must not be accessible by the main computer operating system for local storage.
 
 From a testing perspective, a) is a function of ensuring the TOE design such that it is contained within the SEE boundaries. As the SEE itself is out of scope, there is no specific test to verify this as it brings the SEE itself into the scope of the testing (as if the TOE design is correct any failure would be due to an SEE failure).
 
