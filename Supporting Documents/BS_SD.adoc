@@ -558,7 +558,7 @@ Following input is required from the developer.
 [loweralpha]
 . TSS shall explain how the TOE meets FPT_BDP_EXT.1 at high level description
 . BMD may be used to provide additional details about the protection mechanisms provided by the SEE and environment
-. BMD may be used to provide details about TSFIs that may provide the capbility to export plaintext biometric data but which must be disabled/blocked for use in the evaluated configuration
+. BMD may be used to provide details about TSFIs that may provide the capability to export plaintext biometric data but which must be disabled/blocked for use in the evaluated configuration
 
 ===== Assessment Strategy
 
