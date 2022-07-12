@@ -858,7 +858,7 @@ The evaluator shall follow the same EAs defined in <<PP_MDF>> and the BIOSD. As 
 
 === Introduction
 
-PAD is an optional set of requirements, when FIA_MBE_EXT.3 or FIA_MBV_EXT.3 are included in an evaluation. This set of Evaluation Activities are only performed if any of these requirements are included.
+PAD is an optional set of requirements, when FIA_MBE_EXT.3 or FIA_MBV_EXT.3 are included in an evaluation. This set of Evaluation Activities are only performed if any of these requirements are included. PAD is measured by using the Imposter Attack Presentation Attack Rate (IAPAR). IAPAR is a "full system" evaluation, and not a component evaluation, so the measure applies to the system as a whole, and so the results of failures for both PAD and the match are combined (the actual reason for the failure is not known, only that the presentation failed). According to <<ISO30107-3, ISO/IEC 30107-3>>, the proportion of presentation attacks using the same PAI species that results in an accepted verification is measured by IAPAR (Note that the 2017 edition defines this as Imporster Attack Presentation Match Rate (IAMPR) but this will be changed to IAPAR in a later revision).
 
 The evaluator shall perform the following two types of EAs or testing to evaluate the FIA_MBE_EXT.3 (Presentation attack detection for biometric enrolment) and FIA_MBV_EXT.3 (Presentation attack detection for biometric verification). The following section defines EAs for FIA_MBV_EXT.3 however, the evaluator can replace "verification" with "enrolment" and apply the EAs to FIA_MBE_EXT.3. 
 
