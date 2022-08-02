@@ -6,7 +6,7 @@
 :imagesdir: images
 :icons: font
 :revnumber: 1.1
-:revdate: November 9, 2021
+:revdate: July 19, 2022
 :xrefstyle: full
 :doctype: book
 
@@ -70,7 +70,7 @@ Biometric Security international Technical Community (BIO-iTC)
 |Technical Decision BIO0002
 
 |1.1
-|November 9, 2021
+|July 19, 2022
 |Incorporated TDs and NIAP comments for PP_MDF integration
 
 |===
@@ -1780,9 +1780,9 @@ The evaluator shall select “Moderate” because the number of unsuccessful aut
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.    
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.        
 - [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, Version: 3.3.    
-- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, 2021, Version 1.1 - [CFG-MDF-BIO].    
-- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, Version 1.1 - [BIOPP-Module].
-- [#Toolbox]#[Toolbox]# Toolbox Overview, November 9, 2021, Version 1.1.
+- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, July 19, 2022, Version 1.1 - [CFG-MDF-BIO].    
+- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, July 19, 2022, Version 1.1 - [BIOPP-Module].
+- [#Toolbox]#[Toolbox]# Toolbox Overview, July 19, 2022, Version 1.1.
 - [#ISO19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
 - [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
 - [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
