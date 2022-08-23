@@ -3,7 +3,7 @@
 :toc:
 :table-caption: Table
 :revnumber: 1.1
-:revdate: July 19, 2022
+:revdate: September 12, 2022
 :xrefstyle: full
 :doctype: book
 
@@ -22,20 +22,20 @@ The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that
 
 This PP-Configuration is identified as follows:
 
-* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - version 1.1, July 19, 2022 - <<CFG-MDF-BIO>>
+* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<CFG-MDF-BIO>>, September 12, 2022, Version 1.1 
 
 == PP-Configuration Components Statement
 
 This PP-Configuration includes the following components:
 
-* Base-PP: Protection Profile for Mobile Device Fundamentals, Version:3.3. <<PP_MDF>>
-* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>>
+* Base-PP: Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3. <<PP_MDF>>
+* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], September 12, 2022, Version 1.1
 
 == Conformance claim and conformance statement
 
 === Common Criteria Conformance claim
 
-This PP-Configuration, <<PP_MDF>> and <<BIOPP-Module>> are conformant to Common Criteria Version 3.1, Revision 5.
+This PP-Configuration, <<PP_MDF>> and <<MOD_BIO_V1.0>> are conformant to Common Criteria Version 3.1, Revision 5.
 
 === The conformance type
 
@@ -90,7 +90,7 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 
 **Common Criteria**footnote:[For details see http://www.commoncriteriaportal.org/]
 
-[cols="1,3",]
+[cols=".^1,3",]
 |===
 |[#CC1]#[CC1]# |Common Criteria for Information Technology Security Evaluation, +
 Part 1: Introduction and General Model, +
@@ -111,19 +111,19 @@ Version 0.5, May 2017.
 
 *Protection Profiles*
 
-[cols="1,3",]
+[cols=".^1,3",]
 |===
 |[#PP_MDF]#[PP_MDF]# 
-|Protection Profile for Mobile Device Fundamentals, Version: 3.3
+|Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3
 
-|[#BIOPP-Module]#[BIOPP-Module]# 
-|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, July 19, 2022, Version 1.1 - [BIOPP-Module]
+|[#MOD_BIO_V1.0]#[MOD_BIO_V1.0]# 
+|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], September 12, 2022, Version 1.1
 
 |[#BIOSD]#[BIOSD]#
-|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, July 19, 2022, Version 1.1 - [BIOSD]
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], September 12, 2022, Version 1.1
 
 |[#Toolbox]#[Toolbox]# 
-|Toolbox Overview, July 19, 2022, Version 1.1
+|Toolbox Overview, September 12, 2022, Version 1.1
 
 |===
 
@@ -161,7 +161,7 @@ Version 0.5, May 2017.
 |Public Release (requires PP_MDF_V3.3 release to move to v1.0)
 
 |1.1
-|July 19, 2022
+|September 12, 2022
 |Version 1.1
 
 |===
