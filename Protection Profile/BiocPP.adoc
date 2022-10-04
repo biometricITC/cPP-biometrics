@@ -408,7 +408,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 ===== FIA_MBE_EXT.1 Biometric enrolment [[FIA_MBE_EXT.1]]
 
-*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
+*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user to the biometric system.
 
 *Application Note {counter:remark_count}*:: A user enroling to the biometric system will have been authenticated using a NBAF, as specified in FIA_MBE_EXT.1.1.
 
@@ -462,7 +462,7 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 ===== FPT_PBT_EXT.1 Protection of biometric template [[FPT_PBT_EXT.1]]
 
-*FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_, [*assignment*: _other circumstances_]].
+*FPT_PBT_EXT.1.1*:: The TSF shall protect the biometric template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_, [*assignment*: _other circumstances_]].
 
 === TOE Security Functional Requirements Rationale
 
@@ -722,7 +722,7 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
+*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user to the biometric system.
 
 ===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment
 Hierarchical to: No other components
@@ -894,7 +894,7 @@ Hierarchical to: 	No other components
 
 Dependencies: 	No dependencies
 
-*FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_], [*assignment*: _other circumstances_]].
+*FPT_PBT_EXT.1.1*:: The TSF shall protect the biometric template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_], [*assignment*: _other circumstances_]].
 
 == Biometrics Management Description (BMD)
 The documentation of the product's biometric functionality and performance should be detailed enough that, after reading, the evaluator will thoroughly understand the product's biometric functionality and performance. As some of this information may be considered confidential to the developer yet still necessary for understanding, this documentation is not required to be part of the TSS and can be submitted as a separate document marked as developer proprietary.
