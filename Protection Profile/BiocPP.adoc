@@ -6,7 +6,7 @@
 :sectnumlevels: 5
 :imagesdir: images
 :revnumber: 1.1
-:revdate: November 9, 2021
+:revdate: September 12, 2022
 :xrefstyle: full
 :doctype: book
 
@@ -41,9 +41,9 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
 - [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
 - [#PP_OS]#[PP_OS]# Protection Profile for General Purpose Operating Systems.
-- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, Version: 3.3.
-- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, 2021, Version 1.1 [CFG-MDF-BIO].
-- [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device -, November 9, 2021, Version 1.1 - [BIOSD].
+- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3.
+- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], September 12, 2022, Version 1.1.
+- [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], September 12, 2022, Version 1.1.
 - [#ISO/IEC 19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [#ISO/IEC 29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
 - [#ISO/IEC 30107-1]#[ISO/IEC 30107-1]# Biometric presentation attack detection - Part 1: Framework, First edition.
@@ -165,7 +165,7 @@ Zero-effort Impostor Attempt::
 |Public Release
 
 |1.1
-|November 9, 2021
+|September 12, 2022
 |Incorporated TDs and NIAP comments for PP_MDF integration
 
 |===
@@ -262,11 +262,7 @@ As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, when the Base-PP is t
 * all assurance requirements are inherited from the Base-PP,
 * does not claim conformance to any other security functional packages or Protection Profiles.
 
-The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
-
-* PP-Module for Virtual Private Network (VPN) Clients, Version 2.3
-* PP-Module for MDM Agents, Version 1.0
-* PP-Module for Bluetooth, Version 1.0
+The PPs and PP-Modules that are allowed to be  specified in a PP-Configuration with this PP-Module can be found at the https://biometricitc.github.io/PP-allowed.html[Allowed Components] page on the Biometrics Security website.
 
 === Evaluation activities
 
@@ -412,7 +408,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 ===== FIA_MBE_EXT.1 Biometric enrolment [[FIA_MBE_EXT.1]]
 
-*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
+*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user to the biometric system.
 
 *Application Note {counter:remark_count}*:: A user enroling to the biometric system will have been authenticated using a NBAF, as specified in FIA_MBE_EXT.1.1.
 
@@ -466,7 +462,7 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 ===== FPT_PBT_EXT.1 Protection of biometric template [[FPT_PBT_EXT.1]]
 
-*FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_, [*assignment*: _other circumstances_]].
+*FPT_PBT_EXT.1.1*:: The TSF shall protect the biometric template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_, [*assignment*: _other circumstances_]].
 
 === TOE Security Functional Requirements Rationale
 
@@ -726,7 +722,7 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user.
+*FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user to the biometric system.
 
 ===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment
 Hierarchical to: No other components
@@ -898,7 +894,7 @@ Hierarchical to: 	No other components
 
 Dependencies: 	No dependencies
 
-*FPT_PBT_EXT.1.1*:: The TSF shall protect the template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_], [*assignment*: _other circumstances_]].
+*FPT_PBT_EXT.1.1*:: The TSF shall protect the biometric template [*selection*: _using a PIN as an additional factor, using a password as an additional factor_], [*assignment*: _other circumstances_]].
 
 == Biometrics Management Description (BMD)
 The documentation of the product's biometric functionality and performance should be detailed enough that, after reading, the evaluator will thoroughly understand the product's biometric functionality and performance. As some of this information may be considered confidential to the developer yet still necessary for understanding, this documentation is not required to be part of the TSS and can be submitted as a separate document marked as developer proprietary.
