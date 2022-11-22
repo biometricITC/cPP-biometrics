@@ -659,7 +659,7 @@ No tool is required for this EA.
 Following input is required from the developer.
 
 [loweralpha]
-. TSS shall explain how the TOE meets FPT_BDP_EXT.1 at high level description
+. TSS shall explain how the TOE meets FPT_PBT_EXT.1 at high level description
 . AGD guidance shall describe how the user can access the templates
 
 ===== Assessment Strategy
