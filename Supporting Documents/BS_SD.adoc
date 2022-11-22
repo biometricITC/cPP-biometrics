@@ -5,8 +5,8 @@
 :table-caption: Table
 :imagesdir: images
 :icons: font
-:revnumber: 1.1
-:revdate: September 12, 2022
+:revnumber: 1.1.1
+:revdate: November 21, 2022
 :xrefstyle: full
 :doctype: book
 
@@ -72,6 +72,10 @@ Biometric Security international Technical Community (BIO-iTC)
 |1.1
 |September 12, 2022
 |Incorporated TDs and NIAP comments for PP_MDF integration
+
+|1.1.1
+|November 21, 2022
+|Technical Decision BIO0003
 
 |===
 
