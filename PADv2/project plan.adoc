@@ -1,0 +1,238 @@
+= PADv2 development plan
+:showtitle:
+:toclevels: 3
+:table-caption: Table
+:doctype: book
+
+== Use of biometrics for electronic IDentification (e-ID)
+By 2024, the European digital ID or e-ID wallet will be available to EU citizens to store crucial digital identity credentials on their mobile devices, 
+including their national ID, driving license, payment cards, and more. Japan also follows this move and national ID hosted in a mobile app will be available 
+in a near future.
+
+According to the European Union Agency for Cybersecurity (ENISA) [1], use of biometrics for the e-ID is increasing. Some EU member states replaced one-time 
+passwords with PIN, fingerprint or face verification for the e-ID to enable secure and faster access to the online services. Biometrics is also used for the 
+remote e-ID. For example, Baltic countries introduced a biometric registration process for their e-ID, called Smart-ID, allowing individuals to create an 
+e-ID account without having to visit a government branch. Citizens can scan the high-resolution face-image from the identity document such as e-passport 
+using NFC-enabled mobile devices and claim that they really are the owner of the identity document with mobile face verification to create their e-ID account online.
+
+The EU Regulation (eIDAS) [2] introduces three Levels of Assurance (LoA) for the security of e-ID, Low, Substantial and High. The LoA refers to the degree 
+of confidence that can be put in the claimed identity of a person during an electronic identification. Currently, LoA High can’t be achieved with biometrics. 
+For example, Norway’s e-ID, BankID with biometrics uses built-in face verification in a mobile device and this e-ID with face verification corresponds to LoA 
+Substantial and cannot be used for the online services that access highly sensitive personal information because such services require LoA high (traditional 
+physical BankID needs to be used instead). Latvia and Belgium also disabled the use of biometric for their e-ID to meet LoA High. The reason is not clear why 
+LoA High can’t be achieved using biometrics but probably because of security concerns, especially presentation attacks.
+
+== LoA and attack potential for biometrics security
+[2] uses the terms _enhanced-basic_, _moderate_ and _high_ to denote the different LoA and this terminology is borrowed from ISO/IEC 15408, as explained in [3]. 
+German technical guidance [4] explains the LoA as follows.
+
+_In general, the requirement is quantified to resist against attacks by attackers possessing a defined attack potential. The required attack potential to be 
+resisted is_
+
+*	_attack potential enhanced-basic for Level of Assurance low_
+*	_attack potential moderate for Level of Assurance substantial_
+*	_attack potential high for Level of Assurance high_
+
+[4] also states that hardware elements that store the e-ID _must be proven by a Common Criteria certification against a suitable (i.e. covering all relevant 
+assets and threats) protection profile on Assurance Level 4 augmented by AVA_VAN.4_. It also states, _the overall attack resistance of the authentication 
+mechanism needs to be assessed additionally_, so biometrics also needs to be assessed if used as one of authentication factors for the e-ID, especially for 
+the case where an attack _can be industrialized to attack any/all users and thus result in a large scale compromise_ as explained in [3].
+
+DeepMasterPrint [5] or Masterface [6], which are synthesized fingerprint or face images created that fortuitously match with a large number of other fingerprints 
+or faces, can be used for such attacks that may _result in a large scale compromise_. However, both [3] and [4] don’t provide any information or guidance about 
+how to handle such latest presentation attacks. Both guidance doesn’t also say anything about what _attack potential enhanced-basic, moderate or high_ means 
+for biometrics but only refers the ISO/IEC 19896-3 [7] that defines the same attack potential table as defined in our iTC document [8] (See below). 
+
+[cols="2,^1,^1",options="header",]
+.Calculation of attack potential for general biometric system
+[[attackpotentialcalc]]
+|===
+|Factor 
+2.+|Value 
+
+|
+|Identification 
+|Exploitation
+
+3+|*Elapsed Time* 
+
+|<= one day 
+|0 
+|0
+
+|<= one week 
+|1 
+|2
+
+|<= two weeks 
+|2 
+|4
+
+|<= one month 
+|4 
+|8
+
+|> one month 
+|8 
+|16
+
+3+|*Expertise*
+
+|Layman 
+|0 
+|0
+
+|Proficient 
+|2 
+|4
+
+|Expert 
+|4 
+|8
+
+|Multiple experts 
+|8 
+|Not applicable
+
+3+|*Knowledge of TOE*
+
+|Public 
+|0 
+|Not applicable
+
+|Restricted 
+|2 
+|Not applicable
+
+|Sensitive 
+|4 
+|Not applicable
+
+|Critical 
+|8 
+|Not applicable
+
+3+|*Window of Opportunity* *(Access to TOE)*
+
+|Easy 
+|0 
+|0
+
+|Moderate 
+|2 
+|4
+
+|Difficult 
+|4 
+|8
+
+3+|*Window of Opportunity* *(Access to Biometric Characteristics)*
+
+|Without notice 
+|Not applicable 
+|0
+
+|Non-cooperative 
+|Not applicable 
+|2
+
+|Cooperative 
+|Not applicable 
+|4
+
+3+|*Equipment*
+
+|Standard 
+|0 
+|0
+
+|Specialised 
+|2 
+|4
+
+|Bespoke 
+|4 
+|8
+
+|===
+
+Knowledge of fingerprint matching algorithm is necessary to create DeepMasterPrint because the matching score should be used to iteratively improve synthesized 
+fingerprint image so this level of attack should not be rated as LoA Low (enhanced-basic attack potential). However, it’s not clear how the attack potential 
+for the DeepMasterPrint should be calculated to determine whether it is rated as LoA Sbustantial (moderate attack potential) or High (high attack potential). 
+For example, attacker needs enough number of fingerprint images to create DeepMasterPrint but it’s not clear which one in “Window of Opportunity (Access to Biometric 
+Characteristics)” in Identification should be selected in this case. Furthermore, if the TOE’s FAR is 0.001% but the DeepMasterPrint matches 1% of fingerprint 
+images in the test fingerprint database, can this TOE pass the evaluation? 
+
+Several documents define levels of the attack potential for presentation attacks, but they are not the same. For example, FIDO [9] classifies presentation attack 
+instruments (PAI) into three levels based an increasing level of difficulty to mount. For face presentation attack, _"paper printout of face image, mobile device 
+display of face photo"_, _"paper masks, video display of face (with movement and blinking)"_ and _"silicon masks, theatrical masks"_ are used for level A, B and C 
+respectively. However, Liveness.com [10] also provides three levels of PAI but they are different from FIDO, _"Hi-res paper & digital photos, hi-def challenge/response 
+videos and paper masks including deepfake puppets"_, _"Commercially available lifelike dolls, and human-worn resin, latex & silicone 3D masks under $300 in price"_ 
+and _"Custom-made ultra-realistic 3D masks, wax heads, etc., up to $3,000 in creation cost"_ are defined for level A, B and C. Android Compatibility Definition [11] 
+classifies biometric sensors as Class 3 (Strong), Class 2 (Weak), or Class 1 (Convenience) based on their spoof and imposter acceptance rates but scope of PAIs 
+are limited to _"Printed photos, Photos on a monitor or a phone display, Videos on a monitor or a phone display (2D PAI species) and 3D printed masks (3D PAI species)"_ 
+[12]. According to the Japanese government report [13], mobile biometrics that protects digital certificates used for e-ID need to meet Android Class 3 requirements, 
+but not sure this Class 3 are equivalent to the LoA Substantial in eIDAS or not.
+
+CEN (European Committee for Standardization) is trying to establish a common ground in this area and start developing a standard that _specifies a conformity 
+assessment scheme for the evaluation of biometric products within the context of the European Union_ [14]. This conformity assessment scheme will be based on 
+ISO/IEC 15408 and our iTC documents can support their effort (and draft of [14] refers our cPP).
+
+== Proposal for the PADv2 development
+=== Revision of Attack potential table
+
+Before start developing the PADv2, we should define the common understanding of the level of assurance for presentation attack to answer the following questions.
+
+
+* What kind of PAIs should be tested to meet the eIDAS LoA Low, Substantial and High? Such information is very critical for developers that apply the conformity 
+assessment because it determines whether products pass the assessment or not ([14] states that attacks should not exceed the maximum attack potential, so lab 
+doesn’t need to use PAIs for LoA High to evaluate biometric products that claim LoA Substantial or it’s no problem for such products to be attacked successfully 
+by the PAIs for LoA High).
+
+* What is the difference among FIDO/Liveness.com Level A/B/C, Android Class 1/2/3 or eIDAS Low/ Substantial/High? Is there any common scale to measure and 
+compare them objectively?
+
+* If labs can create DeepMasterPrint that can match 10% of the fingerprint images in the test database, how should such DeepMasterPrint be handled? 
+
+We should update the attack potential table in [7] or [8] first to answer these questions. ISO/IEC 19896-3 [7] was developed and being maintained by ISO/IEC 
+JTC1/SC27/WG3 which I belong so I can revise the attack potential table in ISO/IEC 19896-3 based on biometric security iTC’s proposal. This ISO/IEC 19896-3 is 
+referred by the EU standard including [14] so new attack potential table and PADv2 developed based on it can support the establishment of EU conformity assessment 
+scheme for the evaluation of biometric products.
+
+=== Revision of PADv1 and development of PADv2
+After the revision of attack potential table, we should review the PADv1 to conform it to the new attack potential table and also start developing PADv2 based 
+on it. Revised attack potential table can serve as a common scale to measure or compare different presentation attack evaluations so that developers can claim 
+that, for example, our biometric product pass the PADv2 testing so our product meets the eIDAS LoA Substantial or FIDO level C requirements and so on.
+
+*Reference*
+
+[1] European Commission: Commission Implementing Regulation (EU) 2015/1502  
+
+[2] eIDAS COMPLIANT eID SOLUTIONS, MARCH 2020  
+
+[3] Guidance for the application of the levels of assurance which support the eIDAS Regulation (as of 22nd June, 2023)  
+
+[4] Technical Guideline TR-03159, Mobile Identities Part 1: Security Requirements for eIDAS LoA “substantial”, Version 1.0 Draft 2, 26. August 20  
+
+[5] DeepMasterPrints: Generating Master-Prints for Dictionary Attacks via Latent Variable Evolution  
+
+[6] Generating Master Faces for Dictionary Attacks with a Network-Assisted Latent Space Evolution  
+
+[7] ISO/IEC 199896-3 “Information security — Criteria and methodology for security evaluation of biometric systems — Part 3: Presentation attack detection”  
+
+[8] Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], Version 1.1, September 12, 2022  
+
+[9] FIDO Biometrics Requirements, Final Document, January 11, 2023  
+
+[10] https://www.liveness.com/  
+
+[11] Android 13 Compatibility Definition  
+
+[12] Measuring Biometric Unlock Security  
+
+[13] https://www.digital.go.jp/assets/contents/node/basic_page/field_ref_resources/75540031-2bab-41ee-9671-0772f5cd82a6/886342c1/20221025_policies_mynumber_local-government_outline_01.pdf  
+
+[14] https://standardsdevelopment.bsigroup.com/projects/9022-07710#/section
+
+
+
