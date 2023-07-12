@@ -27,7 +27,7 @@ LoA High can't be achieved using biometrics but probably because of security con
 
 === LoA and attack potential for biometrics security
 [2] uses the terms _enhanced-basic_, _moderate_ and _high_ to denote the different LoA and this terminology is borrowed from ISO/IEC 15408, as explained in [3]. 
-German technical guidance [4] explains the LoA as follows.
+German technical guidance [4] explains the LoA as follows:
 
 _In general, the requirement is quantified to resist against attacks by attackers possessing a defined attack potential. The required attack potential to be 
 resisted is_
@@ -36,15 +36,10 @@ resisted is_
 *	_attack potential moderate for Level of Assurance substantial_
 *	_attack potential high for Level of Assurance high_
 
-[4] also states that hardware elements that store the e-ID _must be proven by a Common Criteria certification against a suitable (i.e. covering all relevant 
-assets and threats) protection profile on Assurance Level 4 augmented by AVA_VAN.4_. It also states, _the overall attack resistance of the authentication 
-mechanism needs to be assessed additionally_, so biometrics also needs to be assessed if used as one of authentication factors for the e-ID, especially for 
+[4] also states that hardware elements that store the e-ID _must be proven by a Common Criteria certification against a suitable (i.e. covering all relevant assets and threats) protection profile on Assurance Level 4 augmented by AVA_VAN.4_. It also states, _the overall attack resistance of the authentication mechanism needs to be assessed additionally_, so biometrics also needs to be assessed if used as one of authentication factors for the e-ID, especially for 
 the case where an attack _can be industrialized to attack any/all users and thus result in a large scale compromise_ as explained in [3].
 
-DeepMasterPrint [5] or Masterface [6], which are synthesized fingerprint or face images created that fortuitously match with a large number of other fingerprints 
-or faces, can be used for such attacks that may _result in a large scale compromise_. However, both [3] and [4] don't provide any information or guidance about 
-how to handle such latest presentation attacks. Both guidance doesn't also say anything about what _attack potential enhanced-basic, moderate or high_ means 
-for biometrics but only refers the ISO/IEC 19896-3 [7] that defines the same attack potential table as defined in our iTC document [8] (See below). 
+DeepMasterPrint [5] or Masterface [6], which are synthesized fingerprint or face images created that fortuitously match with a large number of other fingerprints  or faces, can be used for such attacks that may _result in a large scale compromise_. However, both [3] and [4] don't provide any information or guidance about  how to handle such latest presentation attacks. Both guidance doesn't also say anything about what _attack potential enhanced-basic, moderate or high_ means for biometrics but only refers the ISO/IEC 19896-3 [7] that defines the same attack potential table as defined in our iTC document [8] (See below). 
 
 [cols="2,^1,^1",options="header",]
 .Calculation of attack potential for general biometric system
@@ -159,27 +154,11 @@ for biometrics but only refers the ISO/IEC 19896-3 [7] that defines the same att
 
 |===
 
-Knowledge of fingerprint matching algorithm is necessary to create DeepMasterPrint because the matching score should be used to iteratively improve synthesized 
-fingerprint image so this level of attack should not be rated as LoA Low (enhanced-basic attack potential). However, it's not clear how the attack potential 
-for the DeepMasterPrint should be calculated to determine whether it is rated as LoA Sbustantial (moderate attack potential) or High (high attack potential). 
-For example, attacker needs enough number of fingerprint images to create DeepMasterPrint but it's not clear which one in “Window of Opportunity (Access to Biometric 
-Characteristics)” in Identification should be selected in this case. Furthermore, if the TOE's FAR is 0.001% but the DeepMasterPrint matches 1% of fingerprint 
-images in the test fingerprint database, can this TOE pass the evaluation? 
+Knowledge of fingerprint matching algorithm is necessary to create DeepMasterPrint because the matching score should be used to iteratively improve synthesized fingerprint image so this level of attack should not be rated as LoA Low (enhanced-basic attack potential). However, it's not clear how the attack potential for the DeepMasterPrint should be calculated to determine whether it is rated as LoA Sbustantial (moderate attack potential) or High (high attack potential). For example, attacker needs enough number of fingerprint images to create DeepMasterPrint but it's not clear which one in “Window of Opportunity (Access to Biometric Characteristics)” in Identification should be selected in this case. Furthermore, if the TOE's FAR is 0.001% but the DeepMasterPrint matches 1% of fingerprint images in the test fingerprint database, can this TOE pass the evaluation? 
 
-Several documents define levels of the attack potential for presentation attacks, but they are not the same. For example, FIDO [9] classifies presentation attack 
-instruments (PAI) into three levels based an increasing level of difficulty to mount. For face presentation attack, _"paper printout of face image, mobile device 
-display of face photo"_, _"paper masks, video display of face (with movement and blinking)"_ and _"silicon masks, theatrical masks"_ are used for level A, B and C 
-respectively. However, Liveness.com [10] also provides three levels of PAI but they are different from FIDO, _"Hi-res paper & digital photos, hi-def challenge/response 
-videos and paper masks including deepfake puppets"_, _"Commercially available lifelike dolls, and human-worn resin, latex & silicone 3D masks under $300 in price"_ 
-and _"Custom-made ultra-realistic 3D masks, wax heads, etc., up to $3,000 in creation cost"_ are defined for level A, B and C. Android Compatibility Definition [11] 
-classifies biometric sensors as Class 3 (Strong), Class 2 (Weak), or Class 1 (Convenience) based on their spoof and imposter acceptance rates but scope of PAIs 
-are limited to _"Printed photos, Photos on a monitor or a phone display, Videos on a monitor or a phone display (2D PAI species) and 3D printed masks (3D PAI species)"_ 
-[12]. According to the Japanese government report [13], mobile biometrics that protects digital certificates used for e-ID need to meet Android Class 3 requirements, 
-but not sure this Class 3 are equivalent to the LoA Substantial in eIDAS or not.
+Several documents define levels of the attack potential for presentation attacks, but they are not the same. For example, FIDO [9] classifies presentation attack instruments (PAI) into three levels based an increasing level of difficulty to mount. For face presentation attack, _"paper printout of face image, mobile device display of face photo"_, _"paper masks, video display of face (with movement and blinking)"_ and _"silicon masks, theatrical masks"_ are used for level A, B and C respectively. However, Liveness.com [10] also provides three levels of PAI but they are different from FIDO, _"Hi-res paper & digital photos, hi-def challenge/response videos and paper masks including deepfake puppets"_, _"Commercially available lifelike dolls, and human-worn resin, latex & silicone 3D masks under $300 in price"_ and _"Custom-made ultra-realistic 3D masks, wax heads, etc., up to $3,000 in creation cost"_ are defined for level A, B and C. Android Compatibility Definition [11] classifies biometric sensors as Class 3 (Strong), Class 2 (Weak), or Class 1 (Convenience) based on their spoof and imposter acceptance rates but scope of PAIs are limited to _"Printed photos, Photos on a monitor or a phone display, Videos on a monitor or a phone display (2D PAI species) and 3D printed masks (3D PAI species)"_ [12]. According to the Japanese government report [13], mobile biometrics that protects digital certificates used for e-ID need to meet Android Class 3 requirements, but not sure this Class 3 are equivalent to the LoA Substantial in eIDAS or not.
 
-CEN (European Committee for Standardization) is trying to establish a common ground in this area and start developing a standard that _specifies a conformity 
-assessment scheme for the evaluation of biometric products within the context of the European Union_ [14]. This conformity assessment scheme will be based on 
-ISO/IEC 15408 and our iTC documents can support their effort (and draft of [14] refers our cPP).
+CEN (European Committee for Standardization) is trying to establish a common ground in this area and start developing a standard that _specifies a conformity assessment scheme for the evaluation of biometric products within the context of the European Union_ [14]. This conformity assessment scheme will be based on ISO/IEC 15408 and our iTC documents can support their effort (and draft of [14] refers our cPP).
 
 == Proposal for the PADv2 development
 There are several questions to be resolved in this work. The primary goal, at the end, is to have at least 2 separate PAD classes for testing, with the second class being able to withstand a higher level of attack potential than the first one. To support this result, it will be necessary to better define the common understanding of the attack potential table with regard to biometrics.
@@ -193,30 +172,24 @@ The final output of this project is expected to be guidance documents about how 
 == Work that is being planned for this project
 The sections below provide the current expected output from this project.
 
-=== Revision of Attack potential table
+=== Revision of Attack Potential table and mapping with LoA
 
-Before start developing the PADv2, we should define the common understanding of the level of assurance for presentation attack to answer the following questions.
+Before start developing the PADv2, we should define the common understanding of the level of assurance for presentation attack to answer the following questions. It is possible that the attack potential tables and the expectations for the LoA may not directly map to each other. For example, it may be possible that LoA Substantial could map to some range of attack potential scores that do not match a defined Common Criteria range. As such, both the attack potential table and the LoA mappings must be considered separately as well as together. If the mappings for LoA match up with Common Criteria definitions, this will be easier, but this needs to be understood.
 
+* What kind of PAIs should be tested to meet the eIDAS LoA Low, Substantial and High? Such information is very critical for developers that apply the conformity assessment because it determines whether products pass the assessment or not ([14] states that attacks should not exceed the maximum attack potential, so lab doesn't need to use PAIs for LoA High to evaluate biometric products that claim LoA Substantial or it's no problem for such products to be attacked successfully by the PAIs for LoA High).
 
-* What kind of PAIs should be tested to meet the eIDAS LoA Low, Substantial and High? Such information is very critical for developers that apply the conformity 
-assessment because it determines whether products pass the assessment or not ([14] states that attacks should not exceed the maximum attack potential, so lab 
-doesn't need to use PAIs for LoA High to evaluate biometric products that claim LoA Substantial or it's no problem for such products to be attacked successfully 
-by the PAIs for LoA High).
-
-* What is the difference among FIDO/Liveness.com Level A/B/C, Android Class 1/2/3 or eIDAS Low/ Substantial/High? Is there any common scale to measure and 
-compare them objectively?
+* What is the difference among FIDO/Liveness.com Level A/B/C, Android Class 1/2/3 or eIDAS Low/ Substantial/High? Is there any common scale to measure and compare them objectively?
 
 * If labs can create DeepMasterPrint that can match 10% of the fingerprint images in the test database, how should such DeepMasterPrint be handled? 
 
-We should update the attack potential table in [7] or [8] first to answer these questions. ISO/IEC 19896-3 [7] was developed and being maintained by ISO/IEC 
-JTC1/SC27/WG3 which I belong so I can revise the attack potential table in ISO/IEC 19896-3 based on biometric security iTC's proposal. This ISO/IEC 19896-3 is 
-referred by the EU standard including [14] so new attack potential table and PADv2 developed based on it can support the establishment of EU conformity assessment 
-scheme for the evaluation of biometric products.
+* Attack scalability needs to be considered based on an initial focus on mobile devices. How does the scalability of an attack map into the calculations in the table? Is it part of the Window of Opportunity scoring or does it merit a separate score, and how is the threat posed by scalability calculated?
 
-=== Determination of acceptable attack potential scores
-Using the eIDAS as a basis, the tests included in the current version of the PAD toolboxes largely would not meet Low LoA (a few likely would, but these are also likely to be moved into the new toolboxes). 
+We should update the attack potential table in [7] or [8] first to answer these questions. ISO/IEC 19896-3 [7] was developed and being maintained by ISO/IEC JTC1/SC27/WG3. One of the BIO-iTC members belongs to this ISO group and can work to revise the attack potential table in ISO/IEC 19896-3 based on biometric security iTC's proposal. This ISO/IEC 19896-3 is referred by the EU standard including [14] so new attack potential table and PADv2 developed based on it can support the establishment of EU conformity assessment scheme for the evaluation of biometric products.
 
-The BIO-iTC wants to consider whether Medium attack potential is a realistic set of tests for mobile devices (the current primary user of these requirements), or if some lower score should be used. The goal is to determine the feasibility of meeting Medium vs Low.
+=== Determination of acceptable Attack Potential and LoA scores
+Using the eIDAS as a basis, the tests included in the current version of the PAD toolboxes largely may not meet LoA Low (depending on whether [4] is current as EUCC regulations are published). 
+
+The BIO-iTC wants to consider whether Medium attack potential or LoA Substantial is a realistic set of tests for mobile devices (the current primary user of these requirements), or if some lower score should be used. The goal is to determine the feasibility of meeting higher levels in mobile devices and what the limit would seem to be (based on what is currently known).
 
 === Revision of PADv1 and development of PADv2
 After the revision of attack potential table, we should review the PADv1 to conform it to the new attack potential table and also start developing PADv2 based on it. Revised attack potential table can serve as a common scale to measure or compare different presentation attack valuations so that developers can claim that, for example, our biometric product pass the PADv2 testing so our product meets the eIDAS LoA Substantial or FIDO level C requirements and so on.
@@ -234,7 +207,7 @@ The BIO-iTC wants to work on creating a mapping between these different testing 
 
 [3] Guidance for the application of the levels of assurance which support the eIDAS Regulation (as of 22nd June, 2023)  
 
-[4] Technical Guideline TR-03159, Mobile Identities Part 1: Security Requirements for eIDAS LoA “substantial”, Version 1.0 Draft 2, 26. August 20  
+[4] Technical Guideline TR-03159, Mobile Identities Part 1: Security Requirements for eIDAS LoA “substantial”, Version 1.0 Draft 2, 26. August 2019
 
 [5] DeepMasterPrints: Generating Master-Prints for Dictionary Attacks via Latent Variable Evolution  
 
