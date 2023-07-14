@@ -5,7 +5,9 @@
 :doctype: book
 
 == Introduction
-The Biometrics iTC is investigating updating the Presentation Attack Detection requirements available for testing. This document lays out both the background reasons for doing so as well as the proposal for requesting support in developing the new requirements.
+The Biometrics iTC is investigating updating the Presentation Attack Detection requirements and expanding the PAD toolbox (PADv1) [0] that  are recipes for creating a wide range of PREsentation Attack Instruments (PAI)s for the PAD testing. 
+
+This document lays out both the background reasons for doing so as well as the proposal for requesting support in developing the new requirements and PADv2 which is a new version of the PAD toolbox.
 
 === Use of biometrics for electronic IDentification (e-ID)
 By 2024, the European digital ID or e-ID wallet will be available to EU citizens to store crucial digital identity credentials on their mobile devices, 
@@ -200,6 +202,8 @@ In addition to eIDAS, the FIDO Alliance has a well-defined, but not specifically
 The BIO-iTC wants to work on creating a mapping between these different testing regimes such that they may become aligned in the future so that biometric testing can be accepted across many different standards using common (or closely understood) requirements.
 
 *Reference*
+
+[0] Biometric PAD Toolbox Overview, https://github.com/biometricITC/cPP-toolboxes/blob/master/toolbox.adoc
 
 [1] European Commission: Commission Implementing Regulation (EU) 2015/1502  
 
