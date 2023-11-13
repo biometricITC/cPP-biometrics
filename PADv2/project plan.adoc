@@ -41,7 +41,7 @@ resisted is_
 [4] also states that hardware elements that store the e-ID _must be proven by a Common Criteria certification against a suitable (i.e. covering all relevant assets and threats) protection profile on Assurance Level 4 augmented by AVA_VAN.4_. It also states, _the overall attack resistance of the authentication mechanism needs to be assessed additionally_, so biometrics also needs to be assessed if used as one of authentication factors for the e-ID, especially for 
 the case where an attack _can be industrialized to attack any/all users and thus result in a large scale compromise_ as explained in [3].
 
-DeepMasterPrint [5] or Masterface [6], which are synthesized fingerprint or face images created that fortuitously match with a large number of other fingerprints  or faces, can be used for such attacks that may _result in a large scale compromise_. However, both [3] and [4] don't provide any information or guidance about  how to handle such latest presentation attacks. Both guidance doesn't also say anything about what _attack potential enhanced-basic, moderate or high_ means for biometrics but only refers the ISO/IEC 19896-3 [7] that defines the same attack potential table as defined in our iTC document [8] (See below). 
+DeepMasterPrint [5] or Masterface [6], which are synthesized fingerprint or face images created that fortuitously match with a large number of other fingerprints  or faces, can be used for such attacks that may _result in a large scale compromise_. However, both [3] and [4] don't provide any information or guidance about  how to handle such latest presentation attacks. Both guidance doesn't also say anything about what _attack potential enhanced-basic, moderate or high_ means for biometrics but only refers the ISO/IEC 19989-3 [7] that defines the same attack potential table as defined in our iTC document [8] (See below). 
 
 [cols="2,^1,^1",options="header",]
 .Calculation of attack potential for general biometric system
@@ -186,7 +186,7 @@ Before start developing the PADv2, we should define the common understanding of 
 
 * Attack scalability needs to be considered based on an initial focus on mobile devices. How does the scalability of an attack map into the calculations in the table? Is it part of the Window of Opportunity scoring or does it merit a separate score, and how is the threat posed by scalability calculated?
 
-We should update the attack potential table in [7] or [8] first to answer these questions. ISO/IEC 19896-3 [7] was developed and being maintained by ISO/IEC JTC1/SC27/WG3. One of the BIO-iTC members belongs to this ISO group and can work to revise the attack potential table in ISO/IEC 19896-3 based on biometric security iTC's proposal. This ISO/IEC 19896-3 is referred by the EU standard including [14] so new attack potential table and PADv2 developed based on it can support the establishment of EU conformity assessment scheme for the evaluation of biometric products.
+We should update the attack potential table in [7] or [8] first to answer these questions. ISO/IEC 19989-3 [7] was developed and being maintained by ISO/IEC JTC1/SC27/WG3. One of the BIO-iTC members belongs to this ISO group and can work to revise the attack potential table in ISO/IEC 19989-3 based on biometric security iTC's proposal. This ISO/IEC 19989-3 is referred by the EU standard including [14] so new attack potential table and PADv2 developed based on it can support the establishment of EU conformity assessment scheme for the evaluation of biometric products.
 
 === Determination of acceptable Attack Potential and LoA scores
 Using the eIDAS as a basis, the tests included in the current version of the PAD toolboxes largely may not meet LoA Low (depending on whether [4] is current as EUCC regulations are published). 
@@ -217,7 +217,7 @@ The BIO-iTC wants to work on creating a mapping between these different testing 
 
 [6] Generating Master Faces for Dictionary Attacks with a Network-Assisted Latent Space Evolution  
 
-[7] ISO/IEC 199896-3 “Information security — Criteria and methodology for security evaluation of biometric systems — Part 3: Presentation attack detection”  
+[7] ISO/IEC 19989-3 “Information security — Criteria and methodology for security evaluation of biometric systems — Part 3: Presentation attack detection”  
 
 [8] Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], Version 1.1, September 12, 2022  
 
