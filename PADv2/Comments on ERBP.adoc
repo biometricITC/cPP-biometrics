@@ -4,6 +4,10 @@
 :table-caption: Table
 :doctype: book
 
+
+[.text-right]
+*Biometric Security iTC, 22nd, Nov, 2023*
+
 ==  Commonalities and differences between BIO-iTC documents and ERBP
 Scope of European requirements for biometric products (ERBP) [1] is _generic framework for the establishment of requirements and their evaluation methodology for biometric products_. 
 Those biometric products are used for, for example, remote identification as described in _Profile 1: Video-identification using video-conferencing tools and pre-issued documents, 
