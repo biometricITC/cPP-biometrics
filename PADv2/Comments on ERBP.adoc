@@ -1,0 +1,96 @@
+= Biometrics Security iTC (BIO-iTC) comments on "Personal identification — European requirements for biometric products"
+:showtitle:
+:toclevels: 3
+:table-caption: Table
+:doctype: book
+
+==  Commonalities and differences between BIO-iTC documents and ERBP
+Scope of European requirements for biometric products (ERBP) [1] is _generic framework for the establishment of requirements and their evaluation methodology for biometric products_. 
+Those biometric products are used for, for example, remote identification as described in _Profile 1: Video-identification using video-conferencing tools and pre-issued documents, 
+with human supervision before final decision_ in N 922.
+
+On the other hand, scope of our document, PP-Module for Biometric enrolment and verification [2] is limited to the mobile device biometrics used for unlocking the device. Some tests 
+in N 922, for example, _Test T3-3-6: Biometric data injection attack_ is out of scope of [2] because [2] assumes that biometric verification is done in a mobile device’s secure 
+execution environment (e.g., TEE or SE) that establishes an isolated execution environment to protect sensitive code and data including biometric data.
+
+However, there are tests and topics that are common in both documents. BIO-iTC would like to exchange information about the following common topics with CEN/TC 224/WG 18 and seek 
+the possibility of future collaboration so that we can avoid duplicate effort for the same issues.
+
+== Common topics for future collaboration
+=== Blackbox PAD testing for AVA_VAN.1
+There are 6 mobile devices that were evaluated or in evaluation based on [2], however, without PAD testing. Currently [2] defines the PAD requirement as an optional requirement 
+because there was no common understanding of vulnerability assessment methodology for the PAD among the CCRA nations in early phase of development of [2]. However, one CC evaluation 
+for fingerprint mobile biometrics with the PAD requirement is ongoing and PAD requirement will be mandatory in the near future. 
+
+The important factor to improve and enhance the evaluation methodology or testing is actual evaluation experiences, as our Fingerprint toolbox [3] is being improved based on the 
+feedback from the ongoing evaluation. CEN/TC 224/ WG 18 can refer [3] when developing PAD testing for fingerprint biometric and BIO-iTC can also improve its Face toolbox [4] 
+referring N 922.
+
+=== Gray-box or Whitebox PAD testing for higher AVA_VAN
+According to N914 [2], _Eventually, the application profile also determines different level of evaluation with adapted parameters to be compliant with the three levels of insurance 
+(basic, substantial and high) defined in the EU CSA_. _substantial_ and _high_ correspond to AVA_VAN.1 or 2 and AVA_VAN.3, 4, or 5 respectively. 
+
+CC defines requirements for vulnerability assessment, AVA_VAN and its levelling is based on an increasing rigour of vulnerability assessment by the evaluator and increased levels 
+of attack potential required by an attacker to identify and exploit the potential vulnerabilities. Required input documents, such as interface specification, design and source code, 
+also increase as the level goes up.
+
+|===
+|Level |TOE resistant to attacker with attack potential of |Required input 
+
+|AVA_VAN.1
+|Basic
+|Product manual
+
+|AVA_VAN.2
+|Basic
+|Product manual and basic design
+
+|AVA_VAN.3
+|Enhanced-Basic
+|Product manual and detail design including source code
+
+|AVA_VAN.4
+|Moderate
+|Product manual and detail design including source code
+
+|AVA_VAN.5
+|High
+|Product manual and detail design including source code
+
+|===
+
+However, CC doesn’t describe any detail about vulnerability assessment for specific technology and nobody knows what kind of documents is necessary for PAD vulnerability assessment 
+at each level and how such information should be utilized or analyzed.
+
+There are various type of Face PAD approaches and the latest one is Deep Learning (DL) -based PAD where large amount of face anti-spoofing dataset containing attack and bona fide image 
+samples is used to train DL PAD model. However, it’s well known that the trained DL model easily overfit to the anti-spoofing dataset used and is vulnerable to unseen attacks that are 
+not included in the dataset. AVA_VAN.3 or above requires evaluators to analyze the source code for vulnerability assessment, however, for the DL PAD model (and traditional PAD approach 
+that use texture cues etc), it’s lots more important to analyze attack images in the training dataset and test those images that the DL PAD model has never seen before, rather than digging 
+into the source code implementing the PAD.
+
+Currently [2] provides toolboxes for AVA_VAN.1 but BIO-iTC plans to extend Fingerprint and Face toolbox for higher AVA_VAN with additional guidance for PAD vulnerability assessment. 
+CEN/TC 224/ WG 18 can refer our output when developing related documents.
+
+=== Attack potential table
+As described in [5], the common understanding of the level of assurance for the PAD should be established and the BIO-iTC plans to update the attack potential table in [2] and ISO/IEC 19989-3. 
+BIO-iTC would like to hear opinions from CEN/TC 224/ WG 18 on this matter.
+
+*Reference*
+
+[0] CEN/TC 224/ WG 18 drafts +
+Personal identification — European requirements for biometric products — Part 1: General requirements and application profile definition (N 914) +
+Personal identification — European requirements for biometric products — Part 2: Interoperability test (N 916)  +
+Personal identification — European requirements for biometric products — Part 3: Functionality evaluation methodology (N 921)  +
+Personal identification — European requirements for biometric products — Part 5: Face biometric (N 922) +
+
+[2] BIO-iTC documents (All documents are available from https://biometricitc.github.io/#_current_documents) +
+collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module] +
+PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO] +
+Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD] +
+Biometric PAD Toolbox Overview [Toolbox] +
+
+[3] Fingerprint toolbox available from https://github.com/biometricITC/Fingerprint-Toolbox
+
+[4] Face toolbox available from https://github.com/biometricITC/Face-Toolbox
+
+[5] PADv2 project plan available from https://github.com/biometricITC/cPP-biometrics/blob/PADv2-plan/PADv2/project%20plan.adoc
