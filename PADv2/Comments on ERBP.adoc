@@ -31,7 +31,7 @@ feedback from the ongoing evaluation. CEN/TC 224/ WG 18 can refer [3] when devel
 referring N 922.
 
 === Gray-box or Whitebox PAD testing for higher AVA_VAN
-According to N914 [2], _Eventually, the application profile also determines different level of evaluation with adapted parameters to be compliant with the three levels of insurance 
+According to N 914 [0], _Eventually, the application profile also determines different level of evaluation with adapted parameters to be compliant with the three levels of insurance 
 (basic, substantial and high) defined in the EU CSA_. _substantial_ and _high_ correspond to AVA_VAN.1 or 2 and AVA_VAN.3, 4, or 5 respectively. 
 
 CC defines requirements for vulnerability assessment, AVA_VAN and its levelling is based on an increasing rigour of vulnerability assessment by the evaluator and increased levels 
