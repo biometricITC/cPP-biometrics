@@ -13,7 +13,7 @@ Scope of European requirements for biometric products (ERBP) [1] is _generic fra
 Those biometric products are used for, for example, remote identification as described in _Profile 1: Video-identification using video-conferencing tools and pre-issued documents, 
 with human supervision before final decision_ in N 922.
 
-On the other hand, scope of our document, PP-Module for Biometric enrolment and verification [2] is limited to the mobile device biometrics used for unlocking the device. Some tests 
+On the other hand, scope of our document, PP-Module for Biometric enrolment and verification [2] is limited to the mobile device biometrics used for unlocking the device, but we are working towards extensions for other use cases such as eID. Some tests 
 in N 922, for example, _Test T3-3-6: Biometric data injection attack_ is out of scope of [2] because [2] assumes that biometric verification is done in a mobile device’s secure 
 execution environment (e.g., TEE or SE) that establishes an isolated execution environment to protect sensitive code and data including biometric data.
 
@@ -32,7 +32,7 @@ referring N 922.
 
 === Gray-box or Whitebox PAD testing for higher AVA_VAN
 According to N 914 [0], _Eventually, the application profile also determines different level of evaluation with adapted parameters to be compliant with the three levels of insurance 
-(basic, substantial and high) defined in the EU CSA_. _substantial_ and _high_ correspond to AVA_VAN.1 or 2 and AVA_VAN.3, 4, or 5 respectively. 
+(basic, substantial and high) defined in the EU CSA_. Assurance levels are usually defined basing on the resistance to attacks and CC provides a reliable framework to specify it using the AVA_VAN assurance class. 
 
 CC defines requirements for vulnerability assessment, AVA_VAN and its levelling is based on an increasing rigour of vulnerability assessment by the evaluator and increased levels 
 of attack potential required by an attacker to identify and exploit the potential vulnerabilities. Required input documents, such as interface specification, design and source code, 
@@ -77,11 +77,16 @@ CEN/TC 224/ WG 18 can refer our output when developing related documents.
 
 === Attack potential table
 As described in [5], the common understanding of the level of assurance for the PAD should be established and the BIO-iTC plans to update the attack potential table in [2] and ISO/IEC 19989-3. 
-BIO-iTC would like to hear opinions from CEN/TC 224/ WG 18 on this matter.
+
+Attack potential table in ERBP Part 1, FIDO and ISO/IEC 19989-3 (or [BIOSD]) are different and it's difficult for end uses to understand the gap between Basic (ERBP), Level A (FIDO) and AVA_VAN.1 (ISO/IEC 19989-3) and so on. BIO-iTC would like to discuss this issue with CEN/TC 224/WG 18 because we want to avoid divergence between us.
+ 
+One possible solution may be that we can develop a common attack potential table that both BIO-iTC and CEN/TC 224/WG 18 can use (and update ISO/IEC 19989-3 accordingly). For example, _Minimum requirements for attack detection testing_ etc in ERBP Part 1 may be replaced with ones such as _Window of Opportunity (Access to TOE)_ defined in ISO/IEC 19989-3, but those factors in ISO/IEC 19989-3 may be modified to fit WG 18’s needs.
+	
+Another approach is that we can analyze difference between ERBP Part 1 and ISO/IEC 19989-3 and add informative annex to ISO/IEC 19989-3 about the difference between the Basic, Substantial and High in EU CSA and AVA_VAN. For example, if _Minimum requirements for attack detection testing (Number of attacks taken into account)_ for Basic, Substantial and High is clearly defined (e.g., minimum number of attacks for Basic is “XXX”) in ERBP part 1, we could explain the gap such as "EU CSA Basic is equivalent to AVA_VAN.1 if the labs conducted presentation attacks “XXX” times at minimum during the AVA_VAN.1 evaluation".
 
 *Reference*
 
-[0] CEN/TC 224/ WG 18 drafts +
+[0] CEN/TC 224/ WG 18 ERBP drafts +
 Personal identification — European requirements for biometric products — Part 1: General requirements and application profile definition (N 914) +
 Personal identification — European requirements for biometric products — Part 2: Interoperability test (N 916)  +
 Personal identification — European requirements for biometric products — Part 3: Functionality evaluation methodology (N 921)  +
