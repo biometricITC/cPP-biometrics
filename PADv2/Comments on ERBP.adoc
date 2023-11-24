@@ -76,13 +76,13 @@ Currently [2] provides toolboxes for AVA_VAN.1 but BIO-iTC plans to extend Finge
 CEN/TC 224/ WG 18 can refer our output when developing related documents.
 
 === Attack potential table
-As described in [5], the common understanding of the level of assurance for the PAD should be established and the BIO-iTC plans to update the attack potential table in [2] and ISO/IEC 19989-3. 
+As described in [5], the common understanding of the level of assurance for the PAD should be established and the BIO-iTC plans to update the attack potential table in [2] and ISO/IEC 19989-1. 
 
-Attack potential table in ERBP Part 1, FIDO and ISO/IEC 19989-3 (or [BIOSD]) are different and it's difficult for end uses to understand the gap between Basic (ERBP), Level A (FIDO) and AVA_VAN.1 (ISO/IEC 19989-3) and so on. BIO-iTC would like to discuss this issue with CEN/TC 224/WG 18 because we want to avoid divergence between us.
+Attack potential table in ERBP Part 1, FIDO and ISO/IEC 19989-1 (or [BIOSD]) are different and it's difficult for end uses to understand the gap between Basic (ERBP), Level A (FIDO) and AVA_VAN.1 (ISO/IEC 19989-1) and so on. BIO-iTC would like to discuss this issue with CEN/TC 224/WG 18 because we want to avoid divergence between us.
  
-One possible solution may be that we can develop a common attack potential table that both BIO-iTC and CEN/TC 224/WG 18 can use (and update ISO/IEC 19989-3 accordingly). For example, _Minimum requirements for attack detection testing_ etc in ERBP Part 1 may be replaced with ones such as _Window of Opportunity (Access to TOE)_ defined in ISO/IEC 19989-3, but those factors in ISO/IEC 19989-3 may be modified to fit WG 18’s needs.
+One possible solution may be that we can develop a common attack potential table that both BIO-iTC and CEN/TC 224/WG 18 can use (and update ISO/IEC 19989-1 accordingly). For example, _Minimum requirements for attack detection testing_ etc in ERBP Part 1 may be replaced with ones such as _Window of Opportunity (Access to TOE)_ defined in ISO/IEC 19989-1, but those factors in ISO/IEC 19989-1 may be modified to fit WG 18’s needs.
 	
-Another approach is that we can analyze difference between ERBP Part 1 and ISO/IEC 19989-3 and add informative annex to ISO/IEC 19989-3 about the difference between the Basic, Substantial and High in EU CSA and AVA_VAN. For example, if _Minimum requirements for attack detection testing (Number of attacks taken into account)_ for Basic, Substantial and High is clearly defined (e.g., minimum number of attacks for Basic is “XXX”) in ERBP part 1, we could explain the gap such as "EU CSA Basic is equivalent to AVA_VAN.1 if the labs conducted presentation attacks “XXX” times at minimum during the AVA_VAN.1 evaluation".
+Another approach is that we can analyze difference between ERBP Part 1 and ISO/IEC 19989-1 and add informative annex to ISO/IEC 19989-1 about the difference between the Basic, Substantial and High in EU CSA and AVA_VAN. For example, if _Minimum requirements for attack detection testing (Number of attacks taken into account)_ for Basic, Substantial and High is clearly defined (e.g., minimum number of attacks for Basic is “XXX”) in ERBP part 1, we could explain the gap such as "EU CSA Basic is equivalent to AVA_VAN.1 if the labs conducted presentation attacks “XXX” times at minimum during the AVA_VAN.1 evaluation".
 
 *Reference*
 
