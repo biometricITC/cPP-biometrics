@@ -826,6 +826,36 @@ FIA_MBV_EXT.1 Biometric verification
 
 *FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
+==== Presentation Attack Detection (FIA_PAD_EXT)
+===== Family Behaviour
+This component defines the requirements as to whether the TSF supports the detection of presentation attacks.
+
+===== Component levelling
+[#img-FIA_PAD-EXT]
+.Component levelling
+[ditaa,"FIA_PAD_EXT"]
+....
+    +---------------------------------------------+ 
+    |                                             |     +---+
+    | FIA_PAD_EXT  Presentation Attack Detection  +---->| 1 |
+    |                                             |     +---+
+    +---------------------------------------------+ 
+....
+ 
+FIA_PAD_EXT.1 Presentation attack detection specifies whether the TSF supports spoof detection and where applicable the level of attacks that are resisted.
+
+===== Management: FIA_PAD_EXT.1
+There are no management activities foreseen.
+
+===== Audit: FIA_PAD_EXT.1
+There are no auditable events foreseen.
+
+===== FIA_PAD_EXT.1 Biometric data processing
+Hierarchical to: No other components
+
+Dependencies: No dependencies
+
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _biometric modality_] with [*selection*: _enrolment detection_] at biometric enrolment and [*selection*: _verification detection_] at biometric verification.
 
 === Protection of the TSF (FPT)
 ==== Biometric data processing (FPT_BDP_EXT)
@@ -840,7 +870,7 @@ This component defines the requirements for the TSF to be able to protect plaint
 
     +-----------------------------------------+ 
     |                                         |     +---+
-    | FPT_BDP_EXT  Biometric data processing  +--+->| 1 |
+    | FPT_BDP_EXT  Biometric data processing  +---->| 1 |
     |                                         |     +---+
     +-----------------------------------------+ 
 ....
