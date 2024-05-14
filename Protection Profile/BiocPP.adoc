@@ -449,6 +449,36 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
+===== FIA_PAD_EXT.1 Presentation attack detection [[FIA_PAD_EXT.1]]
+
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _biometric modality_] with [*selection*: _enrolment detection_] detection at biometric enrolment and [*selection*: _verification detection_] detection at biometric verification.
+
+.Supported PAD levels
+[[PAD_levels]]
+[cols=".^1,.^2,.^2",options=header]
+|===
+|Biometric modality
+|Enrolment detection
+|Verification detection
+
+|eye 
+|{empty}[*selection*: [.underline]#PAD-L1 as specified in FIA_MBE_EXT.3, no PAD#]
+|{empty}[*selection*: [.underline]#PAD-L1 as specified in FIA_MBV_EXT.3, no PAD#]
+
+|face
+|{empty}[*selection*: [.underline]#PAD-L2 as specified in FIA_MBE_EXT.3, PAD-L1 as specified in FIA_MBE_EXT.3, no PAD#]
+|{empty}[*selection*: [.underline]#PAD-L2 as specified in FIA_MBV_EXT.3, PAD-L1 as specified in FIA_MBV_EXT.3, no PAD#]
+
+|fingerprint
+|{empty}[*selection*: [.underline]#PAD-L2 as specified in FIA_MBE_EXT.3, PAD-L1 as specified in FIA_MBE_EXT.3, no PAD#]
+|{empty}[*selection*: [.underline]#PAD-L2 as specified in FIA_MBV_EXT.3, PAD-L1 as specified in FIA_MBV_EXT.3, no PAD#]
+
+|vein
+|{empty}[*selection*: [.underline]#PAD-L1 as specified in FIA_MBE_EXT.3, no PAD#]
+|{empty}[*selection*: [.underline]#PAD-L1 as specified in FIA_MBV_EXT.3, no PAD#]
+
+|===
+
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
 
@@ -649,7 +679,7 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 ==== FIA_MBV_EXT.3 Presentation attack detection for biometric verification [[FIA_MBV_EXT.3]]
 
-*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully verified.
+*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*selection*: _value equal to or less than 7% (7:100) if FIA_PAD_EXT.1.1 selects PAD-L2, _value equal to or less than 15% (15:100) if FIA_PAD_EXT.1.1 selects PAD-L1_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
 *Application Note {counter:remark_count}*:: <<BIOSD>> provides instructions how to produce and present the artificial presentation attack instruments.
 
@@ -824,7 +854,7 @@ FIA_MBE_EXT.1 Biometric enrolment
 
 FIA_MBV_EXT.1 Biometric verification
 
-*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully verified.
+*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*selection*: _value equal to or less than 7% (7:100) if FIA_PAD_EXT.1.1 selects PAD-L2, _value equal to or less than 15% (15:100) if FIA_PAD_EXT.1.1 selects PAD-L1_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
 ==== Presentation Attack Detection (FIA_PAD_EXT)
 ===== Family Behaviour
@@ -855,7 +885,7 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _biometric modality_] with [*selection*: _enrolment detection_] at biometric enrolment and [*selection*: _verification detection_] at biometric verification.
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _biometric modality_] with [*selection*: _enrolment detection_] detection at biometric enrolment and [*selection*: _verification detection_] detection at biometric verification.
 
 === Protection of the TSF (FPT)
 ==== Biometric data processing (FPT_BDP_EXT)
