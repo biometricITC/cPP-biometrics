@@ -5,8 +5,8 @@
 :sectnums:
 :sectnumlevels: 5
 :imagesdir: images
-:revnumber: 1.1
-:revdate: September 12, 2022
+:revnumber: 1.2
+:revdate: TBD
 :xrefstyle: full
 :doctype: book
 
@@ -167,6 +167,10 @@ Zero-effort Impostor Attempt::
 |1.1
 |September 12, 2022
 |Incorporated TDs and NIAP comments for PP_MDF integration
+
+|1.2
+|TBD
+|Incorporated updated PAD levels
 
 |===
 
@@ -449,7 +453,7 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
-===== FIA_PAD_EXT.1 Presentation attack detection [[FIA_PAD_EXT.1]]
+===== FIA_PAD_EXT.1 Presentation attack support [[FIA_PAD_EXT.1]]
 
 *FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _biometric modality_] with [*selection*: _enrolment detection_] detection at biometric enrolment and [*selection*: _verification detection equal to or greater than enrolment detection_] detection at biometric verification.
 
@@ -509,22 +513,28 @@ The following rationale provides justification for each security objective for t
 |Addressed By
 |Rationale
 
-.3+|<<O.BIO_Verification>>	
+.4+|<<O.BIO_Verification>>	
 |<<FIA_MBV_EXT.1, FIA_MBV_EXT.1>>
 |This SFR supports the objective by defining the minimum accuracy of the biometric authentication methods that the TSF must support for verification.
 
 |<<FIA_MBV_EXT.2, FIA_MBV_EXT.2>>
 |This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for verification.
 
+|<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
+|This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during verification.
+
 |<<FIA_MBV_EXT.3, FIA_MBV_EXT.3>> (optional)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during verification.
 
-.3+|<<O.Enrol>>	
+.4+|<<O.Enrol>>	
 |<<FIA_MBE_EXT.1, FIA_MBE_EXT.1>>
 |This SFR supports the objective by providing a method for enroling a user for authentication.
 
 |<<FIA_MBE_EXT.2, FIA_MBE_EXT.2>>
 |This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for enrolment.
+
+|<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
+|This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during enrolment.
 
 |<<FIA_MBE_EXT.3, FIA_MBE_EXT.3>> (optional)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during enrolment.
@@ -769,7 +779,8 @@ Dependencies: 	FIA_MBE_EXT.1 Biometric enrolment
 
 Hierarchical to: No other components
 
-Dependencies: FIA_MBE_EXT.1 Biometric enrolment
+Dependencies: FIA_MBE_EXT.1 Biometric enrolment, 
+FIA_PAD_EXT.1 Presentation Attack Support
 
 *FIA_MBE_EXT.3.1*:: The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
 
@@ -832,7 +843,8 @@ a)	Basic: Detection of presentation attacks
 
 Hierarchical to: No other components
 
-Dependencies: FIA_MBE_EXT.1 Biometric enrolment
+Dependencies: FIA_MBE_EXT.1 Biometric enrolment, 
+FIA_PAD_EXT.1 Presentation Attack Support
 
 *FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection:* _eye, face, fingerprint, vein_].
 
@@ -871,7 +883,7 @@ This component defines the requirements as to whether the TSF supports the detec
 ....
     +---------------------------------------------+ 
     |                                             |     +---+
-    | FIA_PAD_EXT  Presentation Attack Detection  +---->| 1 |
+    | FIA_PAD_EXT  Presentation attack support    +---->| 1 |
     |                                             |     +---+
     +---------------------------------------------+ 
 ....
@@ -884,7 +896,7 @@ There are no management activities foreseen.
 ===== Audit: FIA_PAD_EXT.1
 There are no auditable events foreseen.
 
-===== FIA_PAD_EXT.1 Biometric data processing
+===== FIA_PAD_EXT.1 Presentation attack support
 Hierarchical to: No other components
 
 Dependencies: No dependencies
