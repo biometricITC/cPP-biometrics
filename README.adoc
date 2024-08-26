@@ -12,7 +12,7 @@ Check out the main page for the iTC at https://biometricitc.github.io/.
 == The Technical Community
 The BIO-iTC consists of members of Certification Bodies, labs, vendors and academia working together to create requirements for biometric security testing.
 
-If you are interested to join the iTC and become a member of the mailing list, please send an email with a short request to px-isec-itc-bio@ipa.go.jp.
+If you are interested to join the iTC and become a member of the mailing list, please send an email with a short request to px-isec-itc-bio-info@ipa.go.jp.
 
 == Code of Conduct
 The BIO-iTC expects participants to follow a code of conduct. This is laid out in the https://github.com/biometricITC/Administration/blob/master/N58_BS%20iTC%20ToR%20-%20v0.6%20final.pdf[Terms of Reference] and in the https://github.com/biometricITC/Administration/blob/master/code_of_conduct.adoc[Code of Conduct].
