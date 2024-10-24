@@ -101,14 +101,16 @@ Presentation Attack::
 	Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system.
 Presentation Attack Detection (PAD)::
 	Automated determination of a presentation attack.
+Presentation Attack Detection - Level (PAD-L)::
+    Presentation Attack Detection based on different Attack Potential calculations with higher level equating to higher Attack Potential.
 (Biometric) Sample::
-	User’s biometric measures as output by the data capture subsystem of the TOE.
+	User's biometric measures as output by the data capture subsystem of the TOE.
 Separate Execution Environment (SEE)::
 	An operating environment separate from the main computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity Score::
-	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
+	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user's reference model.
 Template::
-	User’s stored reference measure based on features extracted from enrolment samples.
+	User's stored reference measure based on features extracted from enrolment samples.
 Transaction::
 	Sequence of attempts on the part of a user for the purposes of an enrolment and verification.
 Zero-effort Impostor Attempt::
@@ -189,7 +191,7 @@ This Base-PP is valid because biometric enrolment and verification may be a spec
 
 === TOE Overview
 ==== TOE main security features
-This is a collaborative Protection Profile Module (PP-Module) used to extend a Base-PP for a computer that implements biometric enrolment and verification to unlock the computer in the locked state using the user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the terms TOE and TOE environment in this document expresses the biometric system that implements the biometric enrolment and verification functionality, and the computer that supports the biometric system to protect the biometric data respectively, for clearly describing the relation and boundary between the biometric system and computer. The biometric enrolment and verification processes are described in the following sections. 
+This is a collaborative Protection Profile Module (PP-Module) used to extend a Base-PP for a computer that implements biometric enrolment and verification to unlock the computer in the locked state using the user's biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the terms TOE and TOE environment in this document expresses the biometric system that implements the biometric enrolment and verification functionality, and the computer that supports the biometric system to protect the biometric data respectively, for clearly describing the relation and boundary between the biometric system and computer. The biometric enrolment and verification processes are described in the following sections. 
 
 ===== Biometric Enrolment
 
@@ -212,7 +214,7 @@ image::TOE_flows.jpg[title="Generic representation of a TOE" align="center"]
 {empty} +
 As illustrated in the above figure, the TOE is capable of:
 
-* Capturing samples from user’s biometric characteristics (Data Capture Subsystem)
+* Capturing samples from user's biometric characteristics (Data Capture Subsystem)
 * Extracting and processing the features from samples of sufficient quality and generating various templates (Signal Processing Subsystem)
 * Storing the templates in a database on the computer (Storage Subsystem)
 * Comparing captured features with data contained in one or more templates (Comparison Subsystem)
@@ -457,9 +459,9 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _eye, face, fingerprint, vein_] with [*selection*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, equal or greater than enrolment*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBV_EXT.3 during biometric verification.
 
-*Application Note {counter:remark_count}*:: Not all combinations of modality and PAD levels may be supported as PAD-L2 and PAD-L3 toolboxes are not publicly released.
+*Application Note {counter:remark_count}*:: Not all combinations of modality and PAD levels may be supported.
 
-*Application Note {counter:remark_count}*:: The selection for the verification detection shall be at least equal to the selection for the enrolment detection. Choosing PAD (either L1 or L2 as appropriate) at enrolment means that at least the same level of PAD shall be selected for verification. Higher levels for verification can always be selected (such as No PAD at enrolment and any PAD level for verification or PAD-L1 for enrolment and PAD-L2 at verification).
+*Application Note {counter:remark_count}*:: The selection for the verification detection shall be at least equal to the selection for the enrolment detection. Choosing PAD at enrolment means that at least the same level of PAD shall be selected for verification. Higher levels for verification can always be selected (such as no PAD at enrolment and any PAD level for verification or PAD-L1 for enrolment and PAD-L2 at verification).
 
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
@@ -596,7 +598,7 @@ The objectives for the biometric system and its operational environment are cons
 
 === Consistency of Requirements
 
-The Biometric System (i.e. TOE in this PP-Module) is comprised of biometric capture sensors and firmware/software that provide functions described in <<TOE Design>>. The Biometric System is invoked by the mobile device as defined in the <<PP_MDF>> when user’s biometric characteristics is presented to the sensor. The Biometric System creates and stores the template or compares the features with the stored template and returns the verification outcome to the mobile device.
+The Biometric System (i.e. TOE in this PP-Module) is comprised of biometric capture sensors and firmware/software that provide functions described in <<TOE Design>>. The Biometric System is invoked by the mobile device as defined in the <<PP_MDF>> when user's biometric characteristics is presented to the sensor. The Biometric System creates and stores the template or compares the features with the stored template and returns the verification outcome to the mobile device.
 
 This PP-Module assumes that the mobile device satisfies SFRs defined in the <<PP_MDF>> so that the Biometric System can work as specified in this PP-Module. This section explains which SFRs in the <<PP_MDF>> are directly relevant to the Biometric System security functionality.
 
