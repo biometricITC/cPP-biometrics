@@ -755,10 +755,6 @@ Refer to the EA for FPT_KST_EXT.2 in the <<PP_MDF>> including biometric data as 
 
 == Evaluation Activities for Selection-Based Requirements 
 
-The <<BIOPP-Module>> does not contain any selection-based requirements.
-
-== Evaluation Activities for Optional Requirements 
-
 === Identification and Authentication (FIA)
 
 ==== EA for FIA_MBE_EXT.3
@@ -850,6 +846,10 @@ The evaluator can pass this EA only if the evaluator confirms that:
 ===== Requirements for reporting
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
+
+== Evaluation Activities for Optional Requirements 
+
+The <<BIOPP-Module>> does not contain any optional requirements.
 
 == Evaluation Activities for SARs in PP_MDF
 
