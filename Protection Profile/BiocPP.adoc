@@ -12,6 +12,7 @@
 
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
+:iTC-website: https://biometricitc.github.io/
 
 :sectnums!:
 
@@ -457,9 +458,9 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 ===== FIA_PAD_EXT.1 Presentation attack support [[FIA_PAD_EXT.1]]
 
-*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _eye, face, fingerprint, vein_] with [*selection*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, equal or greater than enrolment*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBV_EXT.3 during biometric verification.
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _eye, face, fingerprint, vein_] with [*selection, from available PAD levels*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, from available PAD levels, equal or greater than enrolment*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBV_EXT.3 during biometric verification.
 
-*Application Note {counter:remark_count}*:: Not all combinations of modality and PAD levels may be supported.
+*Application Note {counter:remark_count}*:: The BIO-iTC website ({iTC-website}) specifies the available PAD toolboxes for each modality.
 
 *Application Note {counter:remark_count}*:: The selection for the verification detection shall be at least equal to the selection for the enrolment detection. Choosing PAD at enrolment means that at least the same level of PAD shall be selected for verification. Higher levels for verification can always be selected (such as no PAD at enrolment and any PAD level for verification or PAD-L1 for enrolment and PAD-L2 at verification).
 
@@ -654,13 +655,6 @@ As indicated in the introduction to this PP-Module, the baseline requirements (t
 
 This section comprises requirements based on selections in other SFRs from the PP-Module: if certain selections are made, then additional requirements in this Section will need to be included in the body of the ST.
 
-The PP-Module does not contain any selection-based requirements.
-
-== Optional Requirements
-This section comprises requirements that can be included in the ST, but are not mandatory for a TOE to claim conformance to this PP-Module.
-
-ST authors are free to choose none, some or all SFRs defined in this Section. Just the fact that a product supports a certain functionality does not mandate to add any SFR defined in this chapter.
-
 === Identification and Authentication (FIA)
 
 ==== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment [[FIA_MBE_EXT.3]]
@@ -669,11 +663,18 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 ==== FIA_MBV_EXT.3 Presentation attack detection for biometric verification [[FIA_MBV_EXT.3]]
 
-*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*selection*: _value equal to or less than 7% (7:100) if FIA_PAD_EXT.1.1 selects PAD-L2 or higher, _value equal to or less than 15% (15:100) if FIA_PAD_EXT.1.1 selects PAD-L1_] to prevent use of artificial presentation attack instruments from being successfully verified.
+*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*selection*: _value equal to or less than 7% (7:100) if FIA_PAD_EXT.1.1 selects PAD-L2 or higher, value equal to or less than 15% (15:100) if FIA_PAD_EXT.1.1 selects PAD-L1_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
 *Application Note {counter:remark_count}*:: <<BIOSD>> provides instructions how to produce and present the artificial presentation attack instruments.
 
 *Application Note {counter:remark_count}*:: If the ST author selects FMR/FNMR in FIA_MBV_EXT.1.2, IAPAR needs to be calculated based on attempts (i.e. IAPAR (%) = 100 * (number of presentation attack attempts which are verified successfully) / (total number of presentation attack attempts)). If the ST author selects FAR/FRR, IAPAR needs to be calculated based on transactions (i.e. IAPAR (%) = 100 * (number of presentation attack transactions which are verified successfully) / (total number of presentation attack transactions)).
+
+== Optional Requirements
+This section comprises requirements that can be included in the ST, but are not mandatory for a TOE to claim conformance to this PP-Module.
+
+ST authors are free to choose none, some or all SFRs defined in this Section. Just the fact that a product supports a certain functionality does not mandate to add any SFR defined in this chapter.
+
+The PP-Module does not contain any optional requirements.
 
 == Extended Component Definitions
 This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <<Optional Requirements>>. 
@@ -877,7 +878,7 @@ Hierarchical to: No other components
 
 Dependencies: No dependencies
 
-*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _eye, face, fingerprint, vein_] with [*selection*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, equal or greater than enrolment*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBV_EXT.3 during biometric verification.
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _eye, face, fingerprint, vein_] with [*selection, from available PAD levels*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, from available PAD levels, equal or greater than enrolment*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBV_EXT.3 during biometric verification.
 
 === Protection of the TSF (FPT)
 ==== Biometric data processing (FPT_BDP_EXT)
