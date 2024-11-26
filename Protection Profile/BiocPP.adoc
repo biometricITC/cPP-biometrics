@@ -5,13 +5,14 @@
 :sectnums:
 :sectnumlevels: 5
 :imagesdir: images
-:revnumber: 1.1
-:revdate: September 12, 2022
+:revnumber: 1.2
+:revdate: TBD
 :xrefstyle: full
 :doctype: book
 
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
+:iTC-website: https://biometricitc.github.io/
 
 :sectnums!:
 
@@ -101,14 +102,16 @@ Presentation Attack::
 	Presentation to the biometric data capture subsystem with the goal of interfering with the operation of the biometric system.
 Presentation Attack Detection (PAD)::
 	Automated determination of a presentation attack.
+Presentation Attack Detection - Level (PAD-L)::
+    Presentation Attack Detection based on different Attack Potential calculations with higher level equating to higher Attack Potential.
 (Biometric) Sample::
-	User’s biometric measures as output by the data capture subsystem of the TOE.
+	User's biometric measures as output by the data capture subsystem of the TOE.
 Separate Execution Environment (SEE)::
 	An operating environment separate from the main computer operating system. Access to this environment is highly restricted and may be made available through special processor modes, separate security processors or a combination to provide this separation.
 Similarity Score::
-	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user’s reference model.
+	Measure of the similarity between features derived from a sample and a stored template, or a measure of how well these features fit a user's reference model.
 Template::
-	User’s stored reference measure based on features extracted from enrolment samples.
+	User's stored reference measure based on features extracted from enrolment samples.
 Transaction::
 	Sequence of attempts on the part of a user for the purposes of an enrolment and verification.
 Zero-effort Impostor Attempt::
@@ -168,6 +171,10 @@ Zero-effort Impostor Attempt::
 |September 12, 2022
 |Incorporated TDs and NIAP comments for PP_MDF integration
 
+|1.2
+|TBD
+|Incorporated updated PAD levels
+
 |===
 
 == PP-Module Introduction
@@ -185,7 +192,7 @@ This Base-PP is valid because biometric enrolment and verification may be a spec
 
 === TOE Overview
 ==== TOE main security features
-This is a collaborative Protection Profile Module (PP-Module) used to extend a Base-PP for a computer that implements biometric enrolment and verification to unlock the computer in the locked state using the user’s biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the terms TOE and TOE environment in this document expresses the biometric system that implements the biometric enrolment and verification functionality, and the computer that supports the biometric system to protect the biometric data respectively, for clearly describing the relation and boundary between the biometric system and computer. The biometric enrolment and verification processes are described in the following sections. 
+This is a collaborative Protection Profile Module (PP-Module) used to extend a Base-PP for a computer that implements biometric enrolment and verification to unlock the computer in the locked state using the user's biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the terms TOE and TOE environment in this document expresses the biometric system that implements the biometric enrolment and verification functionality, and the computer that supports the biometric system to protect the biometric data respectively, for clearly describing the relation and boundary between the biometric system and computer. The biometric enrolment and verification processes are described in the following sections. 
 
 ===== Biometric Enrolment
 
@@ -208,7 +215,7 @@ image::TOE_flows.jpg[title="Generic representation of a TOE" align="center"]
 {empty} +
 As illustrated in the above figure, the TOE is capable of:
 
-* Capturing samples from user’s biometric characteristics (Data Capture Subsystem)
+* Capturing samples from user's biometric characteristics (Data Capture Subsystem)
 * Extracting and processing the features from samples of sufficient quality and generating various templates (Signal Processing Subsystem)
 * Storing the templates in a database on the computer (Storage Subsystem)
 * Comparing captured features with data contained in one or more templates (Comparison Subsystem)
@@ -449,6 +456,14 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 *Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
+===== FIA_PAD_EXT.1 Presentation attack support [[FIA_PAD_EXT.1]]
+
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _eye, face, fingerprint, vein_] with [*selection, from available PAD levels*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, from available PAD levels, equal or greater than enrolment*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBV_EXT.3 during biometric verification.
+
+*Application Note {counter:remark_count}*:: The BIO-iTC website ({iTC-website}) specifies the available PAD toolboxes for each modality.
+
+*Application Note {counter:remark_count}*:: The selection for the verification detection shall be at least equal to the selection for the enrolment detection. Choosing PAD at enrolment means that at least the same level of PAD shall be selected for verification. Higher levels for verification can always be selected (such as no PAD at enrolment and any PAD level for verification or PAD-L1 for enrolment and PAD-L2 at verification).
+
 ==== Protection of the TSF (FPT)
 ===== FPT_BDP_EXT.1 Biometric data processing [[FPT_BDP_EXT.1]]
 
@@ -475,22 +490,28 @@ The following rationale provides justification for each security objective for t
 |Addressed By
 |Rationale
 
-.3+|<<O.BIO_Verification>>	
+.4+|<<O.BIO_Verification>>	
 |<<FIA_MBV_EXT.1, FIA_MBV_EXT.1>>
 |This SFR supports the objective by defining the minimum accuracy of the biometric authentication methods that the TSF must support for verification.
 
 |<<FIA_MBV_EXT.2, FIA_MBV_EXT.2>>
 |This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for verification.
 
+|<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
+|This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during verification.
+
 |<<FIA_MBV_EXT.3, FIA_MBV_EXT.3>> (optional)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during verification.
 
-.3+|<<O.Enrol>>	
+.4+|<<O.Enrol>>	
 |<<FIA_MBE_EXT.1, FIA_MBE_EXT.1>>
 |This SFR supports the objective by providing a method for enroling a user for authentication.
 
 |<<FIA_MBE_EXT.2, FIA_MBE_EXT.2>>
 |This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for enrolment.
+
+|<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
+|This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during enrolment.
 
 |<<FIA_MBE_EXT.3, FIA_MBE_EXT.3>> (optional)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during enrolment.
@@ -578,7 +599,7 @@ The objectives for the biometric system and its operational environment are cons
 
 === Consistency of Requirements
 
-The Biometric System (i.e. TOE in this PP-Module) is comprised of biometric capture sensors and firmware/software that provide functions described in <<TOE Design>>. The Biometric System is invoked by the mobile device as defined in the <<PP_MDF>> when user’s biometric characteristics is presented to the sensor. The Biometric System creates and stores the template or compares the features with the stored template and returns the verification outcome to the mobile device.
+The Biometric System (i.e. TOE in this PP-Module) is comprised of biometric capture sensors and firmware/software that provide functions described in <<TOE Design>>. The Biometric System is invoked by the mobile device as defined in the <<PP_MDF>> when user's biometric characteristics is presented to the sensor. The Biometric System creates and stores the template or compares the features with the stored template and returns the verification outcome to the mobile device.
 
 This PP-Module assumes that the mobile device satisfies SFRs defined in the <<PP_MDF>> so that the Biometric System can work as specified in this PP-Module. This section explains which SFRs in the <<PP_MDF>> are directly relevant to the Biometric System security functionality.
 
@@ -593,7 +614,7 @@ The Password Authentication Factor defined in the <<PP_MDF>> is a NBAF as define
 ===== Invocation of the Biometric System
 For any modality selected in _FIA_UAU.5.1_, the mobile device shall invoke the Biometric System to unlock the device under the condition specified in _FIA_UAU.6.2_. Mobile device shall also authenticate the user following the rule specified in _FIA_UAU.5.2_.
 
-The Biometric System shall implement a biometric verification mechanism that satisfies SFRs defined in this PP-Module. This means that same modality selected in _FIA_UAU.5.1_ shall also be selected in *FIA_MBV_EXT.1.1*, and relevant criteria and its error rate shall be specified in *FIA_MBV_EXT.1.2*. If multiple modalities are selected in _FIA_UAU.5.1_, *FIA_MBV_EXT.1* shall be iterated for each modality. The Biometric System shall also enrol all modalities selected as specified in *FIA_MBE.EXT.1*, to assure the quality of samples and templates as specified in *FIA_MBV.EXT.2* and *FIA_MBE.EXT.2*. The Biometric System may also prevent use of artificial presentation attack instruments during the biometric enrolment and verification as specified in *FIA_MBE.EXT.3* and *FIA_MBV.EXT.3*.
+The Biometric System shall implement a biometric verification mechanism that satisfies SFRs defined in this PP-Module. This means that same modality selected in _FIA_UAU.5.1_ shall also be selected in *FIA_MBV_EXT.1.1*, and relevant criteria and its error rate shall be specified in *FIA_MBV_EXT.1.2*. If multiple modalities are selected in _FIA_UAU.5.1_, *FIA_MBV_EXT.1* shall be iterated for each modality. The Biometric System shall also enrol all modalities selected as specified in *FIA_MBE.EXT.1*, to assure the quality of samples and templates as specified in *FIA_MBV.EXT.2* and *FIA_MBE.EXT.2*. The Biometric System may also prevent use of artificial presentation attack instruments during the biometric enrolment and verification as specified in *FIA_PAD_EXT.1*, *FIA_MBE.EXT.3* and *FIA_MBV.EXT.3*.
 
 ===== Handling the verification outcome
 The mobile device shall take appropriate actions after receiving the verification outcome from the Biometric System as defined in _FIA_AFL_EXT.1_. 
@@ -634,13 +655,6 @@ As indicated in the introduction to this PP-Module, the baseline requirements (t
 
 This section comprises requirements based on selections in other SFRs from the PP-Module: if certain selections are made, then additional requirements in this Section will need to be included in the body of the ST.
 
-The PP-Module does not contain any selection-based requirements.
-
-== Optional Requirements
-This section comprises requirements that can be included in the ST, but are not mandatory for a TOE to claim conformance to this PP-Module.
-
-ST authors are free to choose none, some or all SFRs defined in this Section. Just the fact that a product supports a certain functionality does not mandate to add any SFR defined in this chapter.
-
 === Identification and Authentication (FIA)
 
 ==== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment [[FIA_MBE_EXT.3]]
@@ -649,11 +663,18 @@ ST authors are free to choose none, some or all SFRs defined in this Section. Ju
 
 ==== FIA_MBV_EXT.3 Presentation attack detection for biometric verification [[FIA_MBV_EXT.3]]
 
-*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully verified.
+*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*selection*: _value equal to or less than 7% (7:100) if FIA_PAD_EXT.1.1 selects PAD-L2 or higher, value equal to or less than 15% (15:100) if FIA_PAD_EXT.1.1 selects PAD-L1_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
 *Application Note {counter:remark_count}*:: <<BIOSD>> provides instructions how to produce and present the artificial presentation attack instruments.
 
 *Application Note {counter:remark_count}*:: If the ST author selects FMR/FNMR in FIA_MBV_EXT.1.2, IAPAR needs to be calculated based on attempts (i.e. IAPAR (%) = 100 * (number of presentation attack attempts which are verified successfully) / (total number of presentation attack attempts)). If the ST author selects FAR/FRR, IAPAR needs to be calculated based on transactions (i.e. IAPAR (%) = 100 * (number of presentation attack transactions which are verified successfully) / (total number of presentation attack transactions)).
+
+== Optional Requirements
+This section comprises requirements that can be included in the ST, but are not mandatory for a TOE to claim conformance to this PP-Module.
+
+ST authors are free to choose none, some or all SFRs defined in this Section. Just the fact that a product supports a certain functionality does not mandate to add any SFR defined in this chapter.
+
+The PP-Module does not contain any optional requirements.
 
 == Extended Component Definitions
 This appendix contains the definitions for the extended requirements that are used in the PP-Module, including those used in <<Optional Requirements>>. 
@@ -735,7 +756,8 @@ Dependencies: 	FIA_MBE_EXT.1 Biometric enrolment
 
 Hierarchical to: No other components
 
-Dependencies: FIA_MBE_EXT.1 Biometric enrolment
+Dependencies: FIA_MBE_EXT.1 Biometric enrolment, 
+FIA_PAD_EXT.1 Presentation Attack Support
 
 *FIA_MBE_EXT.3.1*:: The TSF shall prevent use of artificial presentation attack instruments from being successfully enroled.
 
@@ -798,7 +820,8 @@ a)	Basic: Detection of presentation attacks
 
 Hierarchical to: No other components
 
-Dependencies: FIA_MBE_EXT.1 Biometric enrolment
+Dependencies: FIA_MBE_EXT.1 Biometric enrolment, 
+FIA_PAD_EXT.1 Presentation Attack Support
 
 *FIA_MBV_EXT.1.1*:: The TSF shall provide a biometric verification mechanism using [*selection:* _eye, face, fingerprint, vein_].
 
@@ -824,8 +847,38 @@ FIA_MBE_EXT.1 Biometric enrolment
 
 FIA_MBV_EXT.1 Biometric verification
 
-*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*assignment*: _value equal to or less than 15% (15:100)_] to prevent use of artificial presentation attack instruments from being successfully verified.
+*FIA_MBV_EXT.3.1*:: The TSF shall provide a biometric verification mechanism with the IAPAR not exceeding [*selection*: _value equal to or less than 7% (7:100) if FIA_PAD_EXT.1.1 selects PAD-L2 or higher, _value equal to or less than 15% (15:100) if FIA_PAD_EXT.1.1 selects PAD-L1_] to prevent use of artificial presentation attack instruments from being successfully verified.
 
+==== Presentation Attack Detection (FIA_PAD_EXT)
+===== Family Behaviour
+This component defines the requirements as to whether the TSF supports the detection of presentation attacks.
+
+===== Component levelling
+[#img-FIA_PAD-EXT]
+.Component levelling
+[ditaa,"FIA_PAD_EXT"]
+....
+    +---------------------------------------------+ 
+    |                                             |     +---+
+    | FIA_PAD_EXT  Presentation attack support    +---->| 1 |
+    |                                             |     +---+
+    +---------------------------------------------+ 
+....
+ 
+FIA_PAD_EXT.1 Presentation attack detection specifies whether the TSF supports spoof detection and where applicable the level of attacks that are resisted.
+
+===== Management: FIA_PAD_EXT.1
+There are no management activities foreseen.
+
+===== Audit: FIA_PAD_EXT.1
+There are no auditable events foreseen.
+
+===== FIA_PAD_EXT.1 Presentation attack support
+Hierarchical to: No other components
+
+Dependencies: No dependencies
+
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _eye, face, fingerprint, vein_] with [*selection, from available PAD levels*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, from available PAD levels, equal or greater than enrolment*: _PAD-L3, PAD-L2, PAD-L1, no PAD_] detection as specified in FIA_MBV_EXT.3 during biometric verification.
 
 === Protection of the TSF (FPT)
 ==== Biometric data processing (FPT_BDP_EXT)
@@ -840,7 +893,7 @@ This component defines the requirements for the TSF to be able to protect plaint
 
     +-----------------------------------------+ 
     |                                         |     +---+
-    | FPT_BDP_EXT  Biometric data processing  +--+->| 1 |
+    | FPT_BDP_EXT  Biometric data processing  +---->| 1 |
     |                                         |     +---+
     +-----------------------------------------+ 
 ....
