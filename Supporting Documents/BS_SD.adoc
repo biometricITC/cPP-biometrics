@@ -12,7 +12,7 @@
 
 == Foreword
 
-This is a Supporting Document, intended to complement the Common Criteria (CC) version 3 and the associated Common Evaluation Methodology for Information Technology Security Evaluation.
+This is a Supporting Document, intended to complement the Common Criteria (CC) version 2022 and the associated Common Evaluation Methodology for Information Technology Security Evaluation.
 
 This Supporting Document is a "Mandatory Technical Document", whose application is mandatory for evaluations and only those certificates issued as a result of its application are mutually recognized under the CCRA.
 
@@ -1124,7 +1124,7 @@ The upper bound of the confidence interval of error rates (e.g. FAR and FRR) sel
 +
 <<ISO19795-1, ISO/IEC 19795-1>> explains estimation methods for confidence interval for FMR and FNMR. However, <<ISO19795-1, ISO/IEC 19795-1>> describes estimation methods for FAR and FRR indirectly through the estimation of the confidence interval of FMR and FNMR only when a genuine or imposter transaction consists of a single attempt. The developer may apply the estimation method for FNMR defined in Annex B.3.2.1 to estimate the confidence interval of FRR and an estimation method for FMR defined in Annex B.3.2.3 to estimate the confidence interval of FAR, assuming a single attempt is same as a single transaction. 
 +
-However, several problems in the estimation methods defined in <<ISO19795-1, ISO/IEC 19795-1>> are pointed out in literature, for example <<Interval estimation, Interval estimation>>. The developer may use alternative confidence interval estimation methods (e.g. Agresti–Coull interval) proposed in the alternate literature. However, the developer shall describe the detail of the selected alternative method and a rationale why the method is selected in the report.
+However, several problems in the estimation methods defined in <<ISO19795-1, ISO/IEC 19795-1>> are pointed out in literature, for example <<Interval estimation, Interval estimation>>. The developer may use alternative confidence interval estimation methods (e.g. Agresti-Coull interval) proposed in the alternate literature. However, the developer shall describe the detail of the selected alternative method and a rationale why the method is selected in the report.
 * Final test result
 +
 The following values shall be reported.
@@ -1281,7 +1281,7 @@ This BIOSD also allows cross-comparison of attempts/templates of ordered pairs i
 
 This BIOSD doesn't allow intra-individual comparison that is a comparison between one body part and another body part of the same test subject (e.g. comparison between right and left iris of the same user).
 
-=== Example – fingerprint verification
+=== Example - fingerprint verification
 
 The developer defines that fingerprint verification consists of 5 attempts using both right index and thumb fingerprints to unlock the computer and specifies a FAR not exceeding  0.01% for the upper bound of 95% confidence and a FRR not exceeding 5% for the upper bound of 80% confidence in FIA_MBV_EXT.1. 
 
@@ -1821,11 +1821,13 @@ The evaluator shall select “Moderate” because the number of unsuccessful aut
 
 == Related Documents
 [bibliography]
-- [#CC1]#[CC1]#	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.         
-- [#CC2]#[CC2]# Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.    
-- [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.    
-- [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.    
-- [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.        
+- [#CC1]#[CC1]#	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2022-11-001, CC:2022 Revision 1, November 2022.
+- [#CC2]#[CC2]# Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2022-11-002, CC:2022 Revision 1, November 2022.
+- [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2022-11-003, CC:2022 Revision 1, November 2022.
+- [#CC4]#[CC4]#	Common Criteria for Information Technology Security Evaluation, Part 4: Framework for the specification of evaluation methods and activities, CCMB-2022-11-004, CC:2022 Revision 1, November 2022.
+- [#CC5]#[CC5]#	Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
+- [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
+- [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024.       
 - [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3.    
 - [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], September 12, 2022, Version 1.1.    
 - [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], September 12, 2022, Version 1.1.
@@ -1833,7 +1835,7 @@ The evaluator shall select “Moderate” because the number of unsuccessful aut
 - [#ISO19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
 - [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
 - [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
-- [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems – Part 1: Framework, Under development.  
+- [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems - Part 1: Framework, Under development.  
 - [#ISO29794-1]#[ISO/IEC 29794-1]# Information technology — Biometric sample quality - Part 1: Framework, First edition.
 - [#ISO29794-4]#[ISO/IEC 29794-4]# Information technology — Biometric sample quality - Part 4: Finger image data, First edition.
 - [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
