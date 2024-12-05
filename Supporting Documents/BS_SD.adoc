@@ -12,7 +12,7 @@
 
 == Foreword
 
-This is a Supporting Document, intended to complement the Common Criteria (CC) version 2022 and the associated Common Evaluation Methodology for Information Technology Security Evaluation.
+This is a Supporting Document, intended to complement the Common Criteria (CC) CC:2022, Release 1 and Errata and Interpretation, Version 1.1, and the associated Common Evaluation Methodology for Information Technology Security Evaluation.
 
 This Supporting Document is a "Mandatory Technical Document", whose application is mandatory for evaluations and only those certificates issued as a result of its application are mutually recognized under the CCRA.
 
