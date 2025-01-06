@@ -36,11 +36,13 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 
 === Related Documents
 [bibliography]
-- [#CC1]#[CC1]#	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2017-04-001, Version 3.1 Revision 5, April 2017.
-- [#CC2]#[CC2]# Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2017-04-002, Version 3.1 Revision 5, April 2017.
-- [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2017-04-003, Version 3.1 Revision 5, April 2017.
-- [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, Evaluation Methodology, CCMB-2017-04-004, Version 3.1 Revision 5, April 2017.
-- [#addenda]#[addenda]#	CC and CEM addenda, Exact Conformance, Selection-Based SFRs, Optional SFRs, Version 0.5, May 2017.
+- [#CC1]#[CC1]#	Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2022-11-001, CC:2022 Revision 1, November 2022.
+- [#CC2]#[CC2]# Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2022-11-002, CC:2022 Revision 1, November 2022.
+- [#CC3]#[CC3]#	Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2022-11-003, CC:2022 Revision 1, November 2022.
+- [#CC4]#[CC4]#	Common Criteria for Information Technology Security Evaluation, Part 4: Framework for the specification of evaluation methods and activities, CCMB-2022-11-004, CC:2022 Revision 1, November 2022.
+- [#CC5]#[CC5]#	Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
+- [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
+- [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024.
 - [#PP_OS]#[PP_OS]# Protection Profile for General Purpose Operating Systems.
 - [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3.
 - [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], September 12, 2022, Version 1.1.
@@ -261,9 +263,9 @@ The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR an
 
 === Conformance statement
 
-As defined by the references <<CC1>>, <<CC2>> and <<CC3>>, when the Base-PP is the <<PP_MDF>>, this PP-Module:
+As defined by the references <<CC1>>, <<CC2>>, <<CC3>>, <<CC4>>, <<CC5>> and <<CC-E&I>> when the Base-PP is the <<PP_MDF>>, this PP-Module:
 
-* conforms to the requirements of Common Criteria v3.1, Revision 5,
+* conforms to the requirements of Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1,
 * is Part 2 extended,
 * is Part 3 extended,
 * all assurance requirements are inherited from the Base-PP,
@@ -500,7 +502,7 @@ The following rationale provides justification for each security objective for t
 |<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
 |This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during verification.
 
-|<<FIA_MBV_EXT.3, FIA_MBV_EXT.3>> (optional)
+|<<FIA_MBV_EXT.3, FIA_MBV_EXT.3>> (selection)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during verification.
 
 .4+|<<O.Enrol>>	
@@ -513,7 +515,7 @@ The following rationale provides justification for each security objective for t
 |<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
 |This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during enrolment.
 
-|<<FIA_MBE_EXT.3, FIA_MBE_EXT.3>> (optional)
+|<<FIA_MBE_EXT.3, FIA_MBE_EXT.3>> (selection)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during enrolment.
 
 .5+a|<<O.Protection>>
