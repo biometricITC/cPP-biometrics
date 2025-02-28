@@ -2,8 +2,8 @@
 :showtitle:
 :toc:
 :table-caption: Table
-:revnumber: 1.2
-:revdate: TBD
+:revnumber: 2.0
+:revdate: February 28, 2025
 :xrefstyle: full
 :doctype: book
 
@@ -22,20 +22,22 @@ The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that
 
 This PP-Configuration is identified as follows:
 
-* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<CFG-MDF-BIO>>, September 12, 2022, Version 1.2 
+* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<CFG-MDF-BIO>>, February 28, 2025, Version 2.0 
 
 == PP-Configuration Components Statement
 
 This PP-Configuration includes the following components:
 
 * Base-PP: Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3. <<PP_MDF>>
-* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], September 12, 2022, Version 1.2
+* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0
 
 == Conformance claim and conformance statement
 
 === Common Criteria Conformance claim
 
 This PP-Configuration, <<PP_MDF>> and <<MOD_BIO_V1.2>> are conformant to Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1.
+
+The <<PP_MDF>> will be evaluated in compliance to CC:2022.
 
 === The conformance type
 
@@ -124,13 +126,13 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3
 
 |[#MOD_BIO_V1.2]#[MOD_BIO_V1.2]# 
-|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], September 12, 2022, Version 1.1
+|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0
 
 |[#BIOSD]#[BIOSD]#
-|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], September 12, 2022, Version 1.1
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], February 28, 2025, Version 2.0
 
 |[#Toolbox]#[Toolbox]# 
-|Toolbox Overview, September 12, 2022, Version 1.1
+|Toolbox Overview, October 15, 2024, Version 1.2
 
 |===
 
@@ -170,5 +172,9 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |1.1
 |September 12, 2022
 |Version 1.1
+
+|2.0
+|February 28, 2025
+|Incorporated updated PAD levels and CC:2022 compliance
 
 |===
