@@ -35,7 +35,7 @@ This PP-Configuration includes the following components:
 
 === Common Criteria Conformance claim
 
-This PP-Configuration, <<PP_MDF>> and <<MOD_BIO_V1.2>> are conformant to Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1.
+This PP-Configuration, <<PP_MDF>> and <<MOD_BIO_V2.0>> are conformant to Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1.
 
 The <<PP_MDF>> will be evaluated in compliance to CC:2022.
 
@@ -125,7 +125,7 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |[#PP_MDF]#[PP_MDF]# 
 |Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3
 
-|[#MOD_BIO_V1.2]#[MOD_BIO_V1.2]# 
+|[#MOD_BIO_V2.0]#[MOD_BIO_V2.0]# 
 |collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0
 
 |[#BIOSD]#[BIOSD]#
