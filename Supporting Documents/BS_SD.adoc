@@ -1621,19 +1621,19 @@ _Bespoke equipment_ refers to very expensive equipment with difficult and contro
 
 |<= one week 
 |1 
-|2
+|4
 
 |<= two weeks 
 |2 
-|4
+|8
 
 |<= one month 
 |4 
-|8
+|16
 
 |> one month 
 |8 
-|16
+|32
 
 3+|*Expertise*
 
@@ -1689,15 +1689,15 @@ _Bespoke equipment_ refers to very expensive equipment with difficult and contro
 
 |Without notice 
 |Not applicable 
-|0
+|2
 
 |Non-cooperative 
 |Not applicable 
-|2
+|4
 
 |Cooperative 
 |Not applicable 
-|4
+|12
 
 3+|*Equipment*
 
