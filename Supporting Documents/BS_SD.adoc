@@ -309,7 +309,7 @@ Following input is required from the developer.
 . TSS shall explain how the TOE meets FIA_MBE_EXT.1 at high level description
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
 +
-AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the enrolment attempt.
+AGD guidance may include online assistance, errors, prompts or warnings provided by the TOE during the enrolment attempt.
 
 ===== Assessment Strategy
 
@@ -377,7 +377,7 @@ The BMD can make a priori assumptions about the usefulness or efficacy of the cr
 . The BMD shall also provide information about how authentication templates are created and, where applicable, updated. The information shall be detailed enough to conduct the EA for authentication template described below.
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
 +
-AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
+AGD guidance may include online assistance, prompts or warnings provided by the TOE during the enrolment attempt.
 
 . If supplementary information is provided in addition to the information provided in b), (the quality assessment criteria report explained in <<Developer's quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
 
@@ -454,7 +454,7 @@ Following input is required from the developer.
 ** The BMD may refer to the developer's <<Developer's performance report and its assessment strategy, performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
 +
-AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
+AGD guidance may include online assistance, errors, prompts or warnings provided by the TOE during the verification attempt.
 
 . Supplementary information (developer's <<Developer's performance report and its assessment strategy, performance report>>) shall describe the developer's performance test protocol and result of testing
 
@@ -523,7 +523,7 @@ The BMD can make a priori assumptions about the usefulness or efficacy of the cr
 --
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
 +
-AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
+AGD guidance may include online assistance, errors, prompts or warnings provided by the TOE during the verification attempt.
 
 . If supplementary information is provided in addition to the information provided in b), (the quality assessment criteria report explained in <<Developer's quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
 
