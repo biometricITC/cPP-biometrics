@@ -308,7 +308,7 @@ Following input is required from the developer.
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_MBE_EXT.1 at high level description
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
-
++
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the enrolment attempt.
 
 ===== Assessment Strategy
@@ -376,9 +376,11 @@ The BMD can make a priori assumptions about the usefulness or efficacy of the cr
 --
 . The BMD shall also provide information about how authentication templates are created and, where applicable, updated. The information shall be detailed enough to conduct the EA for authentication template described below.
 . AGD guidance shall provide clear instructions for a user to enrol to the biometric system
++
+AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
+
 . If supplementary information is provided in addition to the information provided in b), (the quality assessment criteria report explained in <<Developer's quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
 
-AGD guidance may include online assistance, prompts or warning provided by the TOE during the enrolment attempt.
 
 ===== Assessment Strategy
 
@@ -451,9 +453,10 @@ Following input is required from the developer.
 . BMD shall provide information about how the upper bound confidence interval of error rates are estimated
 ** The BMD may refer to the developer's <<Developer's performance report and its assessment strategy, performance report>>
 . AGD guidance shall provide clear instructions for a user to verify one's biometric to unlock the computer
-. Supplementary information (developer's <<Developer's performance report and its assessment strategy, performance report>>) shall describe the developer's performance test protocol and result of testing
-
++
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
+
+. Supplementary information (developer's <<Developer's performance report and its assessment strategy, performance report>>) shall describe the developer's performance test protocol and result of testing
 
 ===== Assessment Strategy
 
@@ -519,9 +522,10 @@ Following input is required from the developer.
 The BMD can make a priori assumptions about the usefulness or efficacy of the criteria or metrics. If standard quality metrics are assigned, the BMD may refer to the standard that defines quality metrics. If developer defined quality assessment is selected, the BMD shall provide the same level of information about the assessment criteria as an equivalent image quality standard for the specific modality (e.g. <<ISO29794-4, ISO/IEC 29794-4>> for fingerprint) does.
 --
 . AGD guidance shall provide clear instruction for a user to verify one's biometric
-. If supplementary information is provided in addition to the information provided in b), (the quality assessment criteria report explained in <<Developer's quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
-
++
 AGD guidance may include online assistance, errors, prompts or warning provided by the TOE during the verification attempt.
+
+. If supplementary information is provided in addition to the information provided in b), (the quality assessment criteria report explained in <<Developer's quality assessment criteria report of biometric samples>>) shall describe the efficacy of quality metrics, how the efficacy is tested or confirmed and how the low-quality samples can be generated
 
 ===== Assessment Strategy
 
@@ -573,8 +577,6 @@ Following input is required from the developer.
 
 [loweralpha]
 . TSS shall explain how the TOE meets FIA_PAD_EXT.1 at high level description
-
-AGD guidance may include information about online assistance, errors, prompts or warnings provided by the TOE during the enrolment attempt.
 
 ===== Assessment Strategy
 
