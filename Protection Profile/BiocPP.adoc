@@ -423,7 +423,14 @@ This section lists SFRs for the biometric enrolment and verification.
 
 ===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
 
-*FIA_MBE_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
+*FIA_MBE_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: 
++
+--
+* [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], 
+* [*assignment*: _developer defined quality assessment method_]
++
+].
+--
 
 *Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
@@ -454,7 +461,14 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 ===== FIA_MBV_EXT.2 Quality of biometric samples for biometric verification [[FIA_MBV_EXT.2]]
 
-*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
+*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: 
++
+--
+* [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], 
+* [*assignment*: _developer defined quality assessment method_]
++
+].
+--
 
 *Application Note {counter:remark_count}*:: The selection _developer defined quality assessment method_ is used as the name of an assessment method that the ST author can arbitrarily specify. Details of the assessment method can be described in a separate confidential document as explained in <<BIOSD>>.
 
@@ -752,7 +766,14 @@ Hierarchical to: No other components
 
 Dependencies: 	FIA_MBE_EXT.1 Biometric enrolment
 
-*FIA_MBE_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
+*FIA_MBE_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for enrolment. Sufficiency of sample data shall be determined by measuring sample with [*selection*: 
++
+--
+* [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], 
+* [*assignment*: _developer defined quality assessment method_]
++
+].
+--
 
 ===== FIA_MBE_EXT.3 Presentation attack detection for biometric enrolment
 
@@ -838,7 +859,14 @@ FIA_MBE_EXT.1 Biometric enrolment
 
 FIA_MBV_EXT.1 Biometric verification
 
-*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], [*assignment*: _developer defined quality assessment method_]].
+*FIA_MBV_EXT.2.1*:: The TSF shall only use biometric samples of sufficient quality for verification. Sufficiency of sample data shall be determined by measuring sample with [*selection*: 
++
+--
+* [[*assignment*: _quality metric standard_] using a threshold of [*assignment*: _quality metric threshold_]], 
+* [*assignment*: _developer defined quality assessment method_]
++
+].
+--
 
 ===== FIA_MBV_EXT.3 Presentation attack detection for biometric verification
 Hierarchical to: No other components
