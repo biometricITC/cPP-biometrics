@@ -1605,6 +1605,15 @@ This factor is not expressed in terms of time. The levels are as follows:
 
 *Application Note {counter:remark_count}*:: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Without notice_.
 
+*_Degree of Scrutiny_* refers to the amount of examination or oversight applied during the use of the TOE for authenticaiton. 
+
+The levels are as follows:
+
+[loweralpha]
+. _None_: For the attack, there is no supervision during the attack attempt.
+. _Overseen_: For both the attack and discovery, there is a security agent or operator trained for fraud detection overseeing the use of the TOE. This oversight is limited for efficiency and may be remote as opposed to physically close.
+. _Not practical_: For both the attack and discovery there is a security agent physically present and close to the attacker with thorough control over the TOE during usage. An attack is considered not practical when an attacker is not confident enough to perform an attack, even when an exploit has been found.
+
 ==== Calculation of attack potential
 
 <<attackpotentialcalc>> identifies the factors discussed in the previous Section and associates numeric values with the total value of each factor.
