@@ -1524,7 +1524,7 @@ Exploitation corresponds to achieving the attack on an instance of the TOE in it
 
 ==== Factors to be considered
 
-As in the <<CEM>>, the factors to be considered consist of *_Elapsed time_*, *_Expertise_*, *_Knowledge of the TOE_*, *_Equipment_*, *_Window of opportunity_*, and *_Degree of Scutiny_*. But *_Window of opportunity_* is divided into two subfactors *_Window of opportunity (Access to the TOE)_*, *_Window of opportunity (Access to biometric characteristics)_*.
+As in the <<CEM>>, the factors to be considered consist of *_Elapsed time_*, *_Expertise_*, *_Knowledge of the TOE_*, *_Equipment_*, *_Window of opportunity_*, and *_Degree of Scrutiny_*. But *_Window of opportunity_* is divided into two subfactors *_Window of opportunity (Access to the TOE)_*, *_Window of opportunity (Access to biometric characteristics)_*.
 
 *_Elapsed time_* is the total amount of time taken by the attacker.
 
@@ -1532,7 +1532,7 @@ In the identification phase, elapsed time corresponds to the time required to cr
 
 In the exploitation phase, elapsed time corresponds to the time necessary to apply the "script" to specific biometric characteristics. For example, for a presentation attack to a fingerprint capture device, it corresponds to the time required to create an artefact from an image of a print (and not the acquisition of this image which is taken into account in the factor *_Window of opportunity (Access to biometric characteristics)_*).
 
-Potential difficulties to having access to the TOE in the exploitation environment are taken into account in the factor *_Window of opportunity (Access to the TOE)_* and where applicable, the *_Degree of Scutiny_*, though for mobile devices, this is assumed to be none.
+Potential difficulties to having access to the TOE in the exploitation environment are taken into account in the factor *_Window of opportunity (Access to the TOE)_* and where applicable, the *_Degree of Scrutiny_*, though for mobile devices, the *_Degree of Scrutiny_* is assumed to be none.
 
 *_Expertise_* refers to the level of proficiency required by the attacker and the general knowledge that he possesses, not specific of the system being attacked. The levels are as follows:
 
@@ -1612,7 +1612,9 @@ The levels are as follows:
 [loweralpha]
 . _None_: For the attack, there is no supervision during the attack attempt.
 . _Overseen_: For both the attack and discovery, there is a security agent or operator trained for fraud detection overseeing the use of the TOE. This oversight is limited for efficiency and may be remote as opposed to physically close.
-. _Not practical_: For both the attack and discovery there is a security agent physically present and close to the attacker with thorough control over the TOE during usage. An attack is considered not practical when an attacker is not confident enough to perform an attack, even when an exploit has been found.
+. _Not practical_: For both the attack and discovery there is a security agent physically present and close to the attacker with thorough control over the TOE during usage. 
+
+*Application Note {counter:remark_count}*:: An attack is considered not practical when an attacker is not confident enough to perform an attack, even when an exploit has been found.
 
 ==== Calculation of attack potential
 
