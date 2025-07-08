@@ -1553,7 +1553,7 @@ Potential difficulties to having access to the TOE in the exploitation environme
 This information could be publicly available at the website of the capture device manufacturer or protected (distributed to stakeholders under non-disclosure agreement or even classified inside the company). The levels are as follows:
 
 [loweralpha]
-. _Public information_ which is fairly easy to obtain (e.g., on the web).
+. _Public information_ information is considered public if it can be easily obtained by anyone (from internet for instance) or if it is provided by the developer to any customer without further means. It is important to consider that some public information may not be easily used, such as open source projects, where the code is available for anyone, but may require expertise or time to be of use.
 . _Restricted information_ which is only shared by the developer and organizations which are using the system, usually under a non-disclosure agreement.
 . _Sensitive information_ which is only available within the organization that develops the system and is in no case shared outside it.
 . _Critical information_ which is only available to certain people or groups within the organization which develops the system.
@@ -1568,7 +1568,7 @@ _Standard equipment_ is an orderable, easy to obtain and simple to operate equip
 
 _Specialised equipment_ refers to fairly expensive equipment, not available in standard markets and which require of some specific formation to be used (e.g., laboratory equipment, advanced printer specific materials and inks, and advanced oscilloscopes).
 
-_Bespoke equipment_ refers to very expensive equipment with difficult and controlled access; for example, research printing systems with specific ink definition and flexible support adaptation. In addition, if more than one specialised equipment is required to perform different parts of the attack, this value should be used. Before using this level, it has to be carefully checked that no service is available (renting, limited time access, etc.). If such service exists, the level has to be moved down to Specialised level.
+_Bespoke equipment_ refers to very expensive equipment with difficult and controlled access; for example, research printing systems with specific ink definition and flexible support adaptation. In addition, if more than one specialised equipment is required to perform different parts of the attack, this value should be used. This level is restricted to equipment that cannot be obtained through a service, such as renting or accessing a time-limited service for some defined period for the purposes of the attack. If such service exists, the level has to be moved down to Specialised level.
 
 _Multiple Bespoke_ refers to needing different types of bespoke equipment, not a single system, for distinct steps in the attack.
 
@@ -1584,7 +1584,7 @@ The levels are as follows:
 
 [loweralpha]
 . _Without notice_ is for making an artefact with samples that can be collected without any contact with an enroled subject. For example, 2D face images uploaded on the Internet and latent fingerprint images on a glass can be collected without notice of the subject.
-. _Non-cooperative_ is for making an artefact with samples that need to be collected directly from an enroled subject in a short period of time without full cooperation from the subject. For example, iris or vein images need to be acquired with a high resolution or infrared camera, however, such images can be taken in a moment without full control of the subject.
+. _Non-cooperative_ is for making an artefact with samples that need to be collected directly from an enroled subject in a short period of time without conscious cooperation from the subject. For example, iris or vein images need to be acquired with a high resolution or infrared camera, however, such images can be taken in a moment without conscious control of the subject.
 . _Cooperative_ is for making an artefact with samples that need to be collected directly from an enroled subject with full cooperation from the subject. For example, the acquisition of a detailed 3D face scan of the subject takes time and requires full cooperation from the subject.
 
 *_Window of opportunity (Access to the TOE)_* refers to measuring the difficulty to access the TOE either to prepare the attack or to perform it on the target system.
@@ -1598,14 +1598,14 @@ The number and the level of equipment requested to build the attack is also take
 This factor is not expressed in terms of time. The levels are as follows:
 
 [loweralpha]
-. _Not needed_: For the attack phase, there is no need to have access to the biometric characteristic.
+. _Not needed_: For the attack phase, there is no need to have access to the TOE.
 . _Easy_: For identification phase, there is no strong constraint for the attacker to buy the TOE (reasonable price) to prepare its attack. For exploitation phase, there is no limit in the number of tries and the presentation attack is difficult to detect.
-. _Moderate_: For identification phase, specialised distribution schemes exist (not available to individuals). For exploitation phase, either a tuning of the attack for the final system is required (unknown parameterization of countermeasures for example) or there is a supervision of the biometric system emitting, for example, an alert in case of numerous fail presentations.
+. _Moderate_: For identification phase, specialised distribution schemes exist (not available to individuals). For exploitation phase, either a tuning of the attack for the final system is required (unknown parameterization of countermeasures for example) or there are constraints such as having to steal the device where the owner of the system would become aware of the missing device within some defined time period.
 . _Difficult_: For identification phase, the system is not available except for identified users and access requires compromising of one of the actors. For exploitation phase, for example artefacts must be adapted to the (unknown) specific tuning, or the system needs physical modification (for example physically accessing a hidden signal significant to the comparison score).
 
 *Application Note {counter:remark_count}*:: Rating the resistance of a system is based on rating the successful attacks and verifying that no successful attack is found at the targeted level. Some attacks do not need real biometric data to be available, for example, attacks based on synthetic images or template generation. In such a case, this factor has to be considered to be _Without notice_.
 
-*_Degree of Scrutiny_* refers to the amount of examination or oversight applied during the use of the TOE for authenticaiton. 
+*_Degree of Scrutiny_* refers to the amount of examination or oversight applied during the use of the TOE for authentication. 
 
 The levels are as follows:
 
@@ -1636,6 +1636,10 @@ The levels are as follows:
 |<= one hour
 |0
 |0
+
+|<= twelve hours
+|0
+|1
 
 |<= one day 
 |1 
@@ -1729,6 +1733,10 @@ The levels are as follows:
 |0
 |0
 
+|Opportunistic Easy (Enhanced-Easy)
+|0
+|2
+
 |Non-cooperative (Moderate)
 |4
 |4
@@ -1745,11 +1753,11 @@ The levels are as follows:
 
 |Moderate 
 |2 
-|2
+|4
 
 |Difficult 
 |4 
-|4
+|8
 
 3+|*Degree of Scrutiny*
 
