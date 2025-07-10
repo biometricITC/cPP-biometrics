@@ -1568,7 +1568,7 @@ _Standard equipment_ is an orderable, easy to obtain and simple to operate equip
 
 _Specialised equipment_ refers to fairly expensive equipment, not available in standard markets and which require of some specific formation to be used (e.g., laboratory equipment, advanced printer specific materials and inks, and advanced oscilloscopes).
 
-_Bespoke equipment_ refers to very expensive equipment with difficult and controlled access; for example, research printing systems with specific ink definition and flexible support adaptation. In addition, if more than one specialised equipment is required to perform different parts of the attack, this value should be used. This level is restricted to equipment that cannot be obtained through a service, such as renting or accessing a time-limited service for some defined period for the purposes of the attack. If such service exists, the level has to be moved down to Specialised level.
+_Bespoke equipment_ refers to very expensive equipment. The equipment is so specialized that its distribution is controlled, or the use of equipment requires either significant experience to master its operation or a human operator is hired together with the equipment; for example, high-grade printing systems with a human operator hired together. In addition, if more than one specialized equipment is required to perform different parts of the attack, this value should be used. Before using this level, the possibility of renting equipment should be determined. If such a service exists, the level shall be moved down to the specialized level.
 
 _Multiple Bespoke_ refers to needing different types of bespoke equipment, not a single system, for distinct steps in the attack.
 
