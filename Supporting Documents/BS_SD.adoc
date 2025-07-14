@@ -1795,7 +1795,7 @@ The "Values" column of <<ratingvuln>> indicates the range of attack potential va
 |Meets assurance components:
 |Failure of components:
 
-|< 10 
+|0-9
 |Basic 
 |No rating 
 |- 
@@ -1812,10 +1812,10 @@ AVA_VAN.5
 |10-19 
 |Enhanced-Basic
 |Basic 
-a|AVA_VAN.1,
+a|AVA_VAN.1
+a|AVA_VAN.2,
 
-AVA_VAN.2
-a|AVA_VAN.3,
+AVA_VAN.3,
 
 AVA_VAN.4,
 
@@ -1826,10 +1826,10 @@ AVA_VAN.5
 |Enhanced-Basic
 a|AVA_VAN.1,
 
-AVA_VAN.2,
+AVA_VAN.2
+a|AVA_VAN.3,
 
-AVA_VAN.3
-a|AVA_VAN.4,
+AVA_VAN.4,
 
 AVA_VAN.5
 
@@ -1840,10 +1840,10 @@ a|AVA_VAN.1,
 
 AVA_VAN.2,
 
-AVA_VAN.3,
+AVA_VAN.3
+|AVA_VAN.4,
 
-AVA_VAN.4
-|AVA_VAN.5
+AVA_VAN.5
 
 |=>40 
 |Beyond-High 
@@ -1858,6 +1858,12 @@ AVA_VAN.4,
 
 AVA_VAN.5
 |-
+
+|At least one "Not Practical" Mark
+|Not practical
+|Not practical
+|Not practical
+|
 
 |===
 
