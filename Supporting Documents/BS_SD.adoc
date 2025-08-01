@@ -1504,7 +1504,23 @@ Same as <<Methods to create low-quality samples>>
 
 === Calculating attack potential for generic biometric system
 
-Attack potential is a function of expertise, resources and motivation, as is written in <<CEM>>. The <<CEM>> provides general guidance for calculating attack potential for all type of IT products and doesn't take any specific characteristics of biometrics into account. The iTC, building on the expertise of the membership, ongoing work at <<ISO/IEC 19989-1,ISO 19989>>, <<ISO/IEC 25456-1,ISO 25456>> and the <<BEAT>> project, has tailored the guidance more specifically for biometrics.
+Attack potential is a function of expertise, resources and motivation, as is written in <<CEM>>. The <<CEM>> provides general guidance for calculating attack potential for all type of IT products and this general guidance should be adjusted considering the specific characteristics of a particular type of IT products.
+
+Currently, two ISO standards, <<ISO/IEC 19989-1,ISO 19989>> and <<ISO/IEC 25456,ISO 25456>> have tailored the guidance more specifically for biometrics. <<ISO/IEC 19989-1,ISO 19989>> and <<ISO/IEC 25456,ISO 25456>> define the framework for the PAD and biometric data injection attack detection evaluation respectively. There is similarity between both frameworks, however, there is a fundamental difference between the two.
+
+<<ISO/IEC 19989-1,ISO 19989>> framework is conformant to the <<CC>> and <<CEM>> (This <<SD>> is also conformant to the <<CC>> and <<CEM>> however, its scope is limited to AVA_VAN.1). Biometric product evaluations under <<ISO/IEC 19989-1,ISO 19989>> shall meet all requirements defined in <<ISO/IEC 19989-1,ISO 19989>>, the <<CC>> and <<CEM>>. The level of AVA_VAN component that the TOE shall meet determines the level of resistance to attacks and evidence (e.g., design, configuration management or development lifecycle document) required for the evaluations. 
+
+On the other hand, <<ISO/IEC 25456,ISO 25456>> is not conformant to <CC>> and <<CEM>> and doesn’t use the AVA_VAN component. Instead, <<ISO/IEC 25456,ISO 25456>> reduces the number of requirements to enable the fixed-time evaluations and provides detail and specific guidance for the penetration testing.
+
+However, both standards share almost the same attack potential table because the measure to gauge the level of presentation attack and biometric data injection attack should be consistent. Differences between the table in <<ISO/IEC 19989-1,ISO 19989>> and <<ISO/IEC 25456,ISO 25456>> are;
+
+[loweralpha]
+. <<ISO/IEC 25456,ISO 25456>> includes additional factor, Degree of Scrutiny and a level _Not needed_ in *Window of Opportunity (Access to Biometric Characteristics)*. This factor and level can’t apply to mobile devices and values for this factor and level are all specified as *Not applicable* in the attack potential table.   
+. <<ISO/IEC 19989-1,ISO 19989>> adds a new level _Opportunistic Easy (Enhanced-Easy)_ to *Window of Opportunity (Access to Biometric Characteristics)* and defines higher values for *Window of Opportunity (Access to TOE)* in exploitation phase considering the nature of mobile devices.  
+. Both standards define a few factors with different name (e.g., *Elapsed Time* in <<ISO/IEC 19989-1,ISO 19989>> and *Time effort* in <<ISO/IEC 25456,ISO 25456>>). 
+. Guidance for factors in <<ISO/IEC 19989-1,ISO 19989>> is adjusted to the presentation attack and different from ones in <<ISO/IEC 25456,ISO 25456>>.
+
+This <<SD>> defines the same attack potential table and guidance as defined in <<ISO/IEC 19989-1,ISO 19989>>.
 
 This section introduces a method for calculating attack potential for generic biometric systems.
 
@@ -1901,8 +1917,8 @@ The evaluator shall select “Moderate” because the number of unsuccessful aut
 - [#ISO19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
 - [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
 - [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
-- [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems - Part 1: Framework, Under development.  
-- [#ISO25456-1]#[ISO/IEC 25456-1]# Criteria and methodology for security evaluation of biometric systems - Part 1: Framework, Under development.  
+- [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems - Part 1: Framework, Under revision.  
+- [#ISO25456]#[ISO/IEC 25456]# Biometrics — Biometric data injection attack detection, Under development.  
 - [#ISO29794-1]#[ISO/IEC 29794-1]# Information technology — Biometric sample quality - Part 1: Framework, First edition.
 - [#ISO29794-4]#[ISO/IEC 29794-4]# Information technology — Biometric sample quality - Part 4: Finger image data, First edition.
 - [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
