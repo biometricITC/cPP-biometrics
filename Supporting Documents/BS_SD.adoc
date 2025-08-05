@@ -1539,7 +1539,7 @@ Exploitation corresponds to achieving the attack on an instance of the TOE in it
 
 ==== Factors to be considered
 
-As in the [CEM], the factors to be considered consist of *_Elapsed time_*, *_Expertise_*, *_Knowledge of the TOE_*, *_Equipment_*, *_Window of opportunity_* and *_Degree of Scrutiny_*. But *_Window of opportunity_* is divided into two subfactors *_Window of opportunity (Access to the TOE)_* and *_Window of opportunity (Access to biometric characteristics)_*. 
+As in the <<CEM>>, the factors to be considered consist of *_Elapsed time_*, *_Expertise_*, *_Knowledge of the TOE_*, *_Equipment_*, *_Window of opportunity_* and *_Degree of Scrutiny_*. But *_Window of opportunity_* is divided into two subfactors *_Window of opportunity (Access to the TOE)_* and *_Window of opportunity (Access to biometric characteristics)_*. 
 
 *_Elapsed time_* is the total amount of time taken by the attacker.
 
@@ -1598,9 +1598,9 @@ The levels are as follows:
 [loweralpha]
 . _Not needed_ is for attacks that do not need real biometric data to be available, for example, attacks based on synthetic images or template generation.
 . _Without notice (Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject. For example, 2D face images uploaded on the Internet and latent fingerprint images on a glass can be collected without notice of the subject.
-. _Without notice (Enhanced-Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject, but for which the identity of the subject is not known prior to the attack, as in a target of opportunity vs a planned attack. In this case, while the necessary images may not be difficult to acquire, they may have to be acquired after the attack has started instead of beforehand.
+. _Opportunistic Easy (Enhanced-Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject, but for which the identity of the subject is not known prior to the attack, as in a target of opportunity vs a planned attack. In this case, while the necessary images may not be difficult to acquire, they may have to be acquired after the attack has started instead of beforehand.
 . _Non-cooperative (Moderate)_ is for making an artefact with samples that need to be collected directly from an enroled subject in a short period of time without conscious cooperation from the subject. For example, iris or vein images need to be acquired with a high resolution or infrared camera, however, such images can be taken in a moment without conscious control of the subject.
-. _Cooperative(Difficult)_ is for making an artefact with samples that need to be collected directly from an enroled subject with full cooperation from the subject. For example, the acquisition of a detailed 3D face scan of the subject takes time and requires full cooperation from the subject.
+. _Cooperative (Difficult)_ is for making an artefact with samples that need to be collected directly from an enroled subject with full cooperation from the subject. For example, the acquisition of a detailed 3D face scan of the subject takes time and requires full cooperation from the subject.
 
 *_Window of opportunity (Access to the TOE)_* refers to measuring the difficulty to access the TOE either to prepare the attack or to perform it on the target system.
 
@@ -1923,7 +1923,6 @@ The evaluator shall select "None" because potential difficulties to having acces
 - [#ISO29794-4]#[ISO/IEC 29794-4]# Information technology — Biometric sample quality - Part 4: Finger image data, First edition.
 - [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
 - [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
-- [#BEAT]#[BEAT]# Biometrics Evaluation and Testing, https://www.beat-eu.org.
 - [#Qualifying Fingerprint Samples]#[Qualifying Fingerprint Samples]# Qualifying Fingerprint Samples Captured by Smartphone Cameras in Real-Life Scenarios - May 3, 2016, http://hdl.handle.net/11250/2388306.
 - [#Performance of Biometric Quality]#[Performance of Biometric Quality]# Performance of Biometric Quality Measures - April 16, 2007, https://www.nist.gov/publications/performance-biometric-quality-measures.
 - [#Ongoing Face Recognition Vendor Test]#[Ongoing Face Recognition Vendor Test]# Ongoing Face Recognition Vendor Test (FRVT) Part 5: Face Image Quality Assessment - August 11, 2021, https://pages.nist.gov/frvt/reports/quality/frvt_quality_report.pdf.
