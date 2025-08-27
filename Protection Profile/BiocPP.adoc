@@ -5,8 +5,8 @@
 :sectnums:
 :sectnumlevels: 5
 :imagesdir: images
-:revnumber: 2.0
-:revdate: February 28, 2025
+:revnumber: 2.1
+:revdate: August 27, 2025
 :xrefstyle: full
 :doctype: book
 
@@ -43,9 +43,9 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#CC5]#[CC5]#	Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
 - [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024.
-- [#PP_OS]#[PP_OS]# Protection Profile for General Purpose Operating Systems.
 - [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3.
 - [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], February 28, 2025, Version 2.0.
+- [#TS 103 732-1]#[TS 103 732-1]# ETSI CYBER; Consumer Mobile Device; Part 1: Base Protection Profile, ???, Version 3.1.1
 - [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], February 28, 2025, Version 2.0.
 - [#ISO/IEC 19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
 - [#ISO/IEC 29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
@@ -176,6 +176,10 @@ Zero-effort Impostor Attempt::
 |2.0
 |February 28, 2025
 |Incorporated updated PAD levels and CC:2022 compliance
+
+|2.1
+|???
+|Incorporated updated AVA_VAN descriptions, ETSI TS 103 732-1 as Base-PP
 
 |===
 
@@ -409,6 +413,59 @@ This SFR is identical to what is defined in the <<PP_MDF>>. The change is to the
 ==== Additional SFRs
 
 There are no additional SFRs that must be claimed only in cases where the <<PP_MDF>> is the claimed Base-PP.
+
+=== TS 103 732-1 Security Functional Requirements Direction
+In a PP-Configuration that includes <<TS 103 732-1>> as the Base-PP, the biometric enrolment the biometric enrolment and verification is expected to rely on some of the security functions implemented by the computer as a whole and evaluated against the Base-PP. In this case, the following sections describe any modifications that the ST author must make to the SFRs defined in the Base-PP in addition to what is mandated by <<TOE Security Functional Requirements>>. 
+
+Full evaluation activities are not repeated in the <<BIOSD>> for the requirements in this section that are references to the <<TS 103 732-1>>; only the additional testing needed to supplement what has already been captured in the <<TS 103 732-1>> is included in the <<BIOSD>>.
+
+*Application Note {counter:remark_count}*:: This PP-Module is not compatible with ETSI TS 103 732-2 (CYBER; Consumer Mobile Device; Part 2: Biometric Authentication Protection Profile Module), which is the ETSI defined PP-Module for biometric security. Only one of these PP-Modules can be used at a time.
+
+==== Modified SFRs
+
+The SFRs listed in this section are defined in the <<TS 103 732-1>> and relevant to the secure operation of the biometric enrolment and verification. It is necessary for the ST author to complete selections and/or assignments for these SFRs in a specific manner in order to ensure that the functionality provided by the mobile device is consistent with the functionality required by the biometric enrolment and verification in order for it to conform to this PP-Module.
+
+If a portion of the SFR or the appication not is not included, it does not need to be changed for compliance with this PP-Module.
+
+===== Class: Cryptographic Support (FCS)
+This PP-Module does not modify SFRs in FCS class as it is defined in the <<TS 103 732-1>>. However, the cryptographic key hierarchy description will need to show how the BAF is used in relation to the keys in the hierarchy.
+
+===== FCS_CKM.6 Key Destruction [[FCS_CKM.6]]
+This SFR is identical to what is defined in the <<TS 103 732-1>>. The change is to the first assignment, adding a pre-filled assignment for biometric data to be included as one type of data that has to be deleted in FCS_CKM.6.1. No changes are made to FCS_CKM.6.2 (and hence it is not listed here). Biometric data is added as a specific set of materials for protection and deletion.
+
+*FCS_CKM.6.1*:: The TSF shall destroy [*biometric data*, assignment: _list of cryptographic keys (including keying material)_] when [selection: _no longer needed, [assignment: other circumstances for key or keying material destruction]_].
+
+===== FIA_AFL.1 Authentication failure handling
+This SFR adds the specific biometrics allowed by the PP-Module and only makes changes to FIA_AFL.1.1.
+
+*FIA_AFL.1.1*:: The TSF shall detect when [an integer between 3 and 10] unsuccessful authentication attempts occur related to [selection: _password, PIN, pattern, *eye, face, fingerprint, vein,* EAF_].
+
+===== FIA_UAU.5/Local Multiple authentication mechanisms
+This SFR adds the specific biometrics allowed by the PP-Module.
+
+*FIA_UAU.5.1/Local*:: The TSF shall provide [_password, PIN_ and [selection: pattern, *eye, face, fingerprint, vein,* [assignment: EAF], no other mechanism]] to support user authentication.
+
+*FIA_UAU.5.2/Local*:: The TSF shall authenticate any user's claimed identity according to the [assignment: rules describing how the multiple authentication mechanisms provide authentication].
+
+*Application Note:*	Rules can be: "Always try *biometric* authentication first", "Always require both password and *biometric* authentication", "User chooses which mechanism to use", etc. 
+
+===== FPT_PHP.3 Resistance to physical attack
+This SFR is identical to what is defined in the <<TS 103 732-1>>. The change is to the last assignment, adding a pre-filled assignment for biometric data to be included as one type of data that has to be protected. Biometric data is added as a specific set of materials for protection.
+
+
+*FPT_PHP.3.1*:: The TSF shall resist [_to:_
+
+* _read or modify the DUK;_
+* _read or modify [assignment: list of data and keys in the key hierarchies of the FCS_CKH_EXT.1 SFRs which are not encrypted themselves and whose leakage would affect the security of the key hierarchy];_
+* _modify [assignment: any key(s), hashes of key(s), certificate(s) and/or other data] used to verify the integrity of the TSF in FPT_TST.1;_
+* _modify [assignment: any key(s), hashes of key(s), certificate(s) and/or other data] used to verify the integrity and authenticity of updates to the tsf in FCS_COP.1/Asymmetric;_
+* _read or modify [*biometric data*, assignment: list of other data and/or keys]_]
+
+to the [_hardware based secure environment of the TSF_] by responding automatically such that the SFRs are always enforced it is impossible to read or modify this data and/or key(s).
+
+==== Additional SFRs
+
+There are no additional SFRs that must be claimed only in cases where the <<TS 103 732-1>> is the claimed Base-PP.
 
 === TOE Security Functional Requirements
 This section lists SFRs for the biometric enrolment and verification.
