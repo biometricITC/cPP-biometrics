@@ -232,7 +232,7 @@ For definitions of standard CC terminology see <<CC1>>. For definitions of biome
 
 |===
 
-== Evaluation Activities for SFRs
+== Overview of Evaluation Activities for Security Functional Requirements
 
 === Structure of EAs
 
@@ -284,6 +284,8 @@ Assessment Strategy for ASE_TSS requires the evaluator to examine that the TSS p
 Assessment Strategy for AGD_OPE/ADV_FSP requires the evaluator to examine that the AGD guidance provides sufficient information for the administrators/users as it pertains to SFRs, its verdicts will be associated with CEM work units ADV_FSP.1-7, AGD_OPE.1-4, and AGD_OPE.1-5.
 
 Assessment Strategy for ATE_IND requires the evaluator to conduct testing of the TOE that the BIO-iTC has determined is necessary in the context of the associated SFR. While the evaluator is expected to develop tests, there may be instances where it is more practical for the developer to construct tests, or where the developer may have existing tests. Therefore, it is acceptable for the evaluator to witness developer-generated tests in lieu of executing the tests. In this case, the evaluator must ensure the developer's tests are executing both in the manner declared by the developer and as mandated by the EA. The CEM work units that derive those EAs are: ATE_IND.1-3, ATE_IND.1-4, ATE_IND.1-5, ATE_IND.1-6, and ATE_IND.1-7.
+
+== Evaluation Activities for PP-Module Mandatory Requirements
 
 === Identification and Authentication (FIA)
 
@@ -737,25 +739,7 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-== Evaluation Activities for PP_MDF Requirements
-In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
-
-=== Modified SFRs from the Base-PP
-==== Cryptographic Support (FCS)
-===== FCS_CKM_EXT.4 Key Destruction
-Refer to the EA for FCS_CKM_EXT.4 in the <<PP_MDF>> including biometric data as critical security parameters for the EA.
-
-==== Protection of the TSF (FPT)
-===== FPT_AEX_EXT.4 Domain Isolation 
-Refer to the EA for FPT_AEX_EXT.4 in the <<PP_MDF>> including the protection of biometric data in the isolation description.
-
-===== FPT_KST_EXT.1 Key Storage
-Refer to the EA for FPT_KST_EXT.1 in the <<PP_MDF>> including biometric data as part of the plaintext key materials.
-
-===== FPT_KST_EXT.2 No Key Transmission
-Refer to the EA for FPT_KST_EXT.2 in the <<PP_MDF>> including biometric data as part of the plaintext key materials.
-
-== Evaluation Activities for Selection-Based Requirements 
+== Evaluation Activities for PP-Module Selection-Based Requirements 
 
 === Identification and Authentication (FIA)
 
@@ -849,59 +833,156 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-== Evaluation Activities for Optional Requirements 
+== Evaluation Activities for PP-Module Optional Requirements 
 
 The <<BIOPP-Module>> does not contain any optional requirements.
 
-== Evaluation Activities for SARs in PP_MDF
+== Evaluation Activities for PP-Module Security Assurance Requirements
+
+The <<BIOPP-Module>> relies on the Base-PP to provide SARs. Guidance is provided for each approved Base-PP.
+
+== Evaluation Activities for PP_MDF as the Base-PP
+
+When the <<PP_MDF>> is the Base-PP, there are evaluation activities related to SFRs that need to be modified as well as recommendations for handling the SARs.
+
+=== Evaluation Activities for Modified Requirements in the PP_MDF
+In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
+
+==== Cryptographic Support (FCS)
+===== FCS_CKM_EXT.4 Key Destruction
+Refer to the EA for FCS_CKM_EXT.4 in the <<PP_MDF>> including biometric data as critical security parameters for the EA.
+
+==== Protection of the TSF (FPT)
+===== FPT_AEX_EXT.4 Domain Isolation 
+Refer to the EA for FPT_AEX_EXT.4 in the <<PP_MDF>> including the protection of biometric data in the isolation description.
+
+===== FPT_KST_EXT.1 Key Storage
+Refer to the EA for FPT_KST_EXT.1 in the <<PP_MDF>> including biometric data as part of the plaintext key materials.
+
+===== FPT_KST_EXT.2 No Key Transmission
+Refer to the EA for FPT_KST_EXT.2 in the <<PP_MDF>> including biometric data as part of the plaintext key materials.
+
+=== Evaluation Activities for Security Assurance Requirements in PP_MDF
 
 <<PP_MDF>> and this BIOSD define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1.
 
 <<BIOPP-Module>> does not define any SARs beyond those defined within <<PP_MDF>> to which it can claim conformance. It is important to note that the TOE that is evaluated against <<BIOPP-Module>> is inherently evaluated against <<PP_MDF>> as well. This means that EAs in Section 5.2 Security Assurance Requirements in <<PP_MDF>> should also applied to <<BIOPP-Module>> with additional application notes or EAs defined in the following Sections.
 
-=== Class ASE: Security Target
+==== Class ASE: Security Target
 
 <<PP_MDF>> does not define any EAs and there is no additional EAs for <<BIOPP-Module>>.
 
-=== Class ADV: Development
+==== Class ADV: Development
 
 Same EA defined in <<PP_MDF>> should also be applied to <<BIOPP-Module>>.
 
-=== Class AGD: Guidance Documentation
+==== Class AGD: Guidance Documentation
 
 The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MDF>>.
 
-==== Application note for EA of AGD_OPE.1
+===== Application note for EA of AGD_OPE.1
 
 <<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<PP_MDF>> and the operational guidance does not need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
 
-==== Application note for EA of AGD_PRE.1
+===== Application note for EA of AGD_PRE.1
 
 <<BIOPP-Module>> supposes that the biometric system is fully integrated into the mobile device and the preparative procedures are unnecessary for <<BIOPP-Module>>. Therefore, AGD_PRE.1 is deemed satisfied for <<BIOPP-Module>>.
 
-=== Class ALC: Life-cycle Support
+==== Class ALC: Life-cycle Support
 
 The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MDF>> for <<BIOPP-Module>>. There is no application note for EA for ALC_CMS.1 and ALC_TSU_EXT.1.
 
-==== Application note for EA of ALC_CMC.1
+===== Application note for EA of ALC_CMC.1
 
 <<BIOPP-Module>> is intended to be used with <<PP_MDF>> and reference for the mobile device can be used as the TOE (mobile device + biometric system) reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device.
 
-=== Class ATE: Tests
+==== Class ATE: Tests
 
 The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MDF>> for <<BIOPP-Module>>.
 
-==== Application note for EA of ATE_IND.1
+===== Application note for EA of ATE_IND.1
 
 The evaluator shall follow the same EAs defined in <<PP_MDF>> and the BIOSD.
 
-=== Class AVA: Vulnerability Assessment
+==== Class AVA: Vulnerability Assessment
 
 The evaluator shall take the following additional application notes into account to perform EAs defined in <<PP_MDF>> for <<BIOPP-Module>> when PAD testing is included in the evaluation. As PAD is an optional set of requirements, the vulnerability assessment activities related to PAD are only included when PAD is included.
 
-==== Application note for EA of AVA_VAN.1
+===== Application note for EA of AVA_VAN.1
 
 The evaluator shall follow the same EAs defined in <<PP_MDF>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
+
+== Evaluation Activities for TS 103 732-1 as the Base-PP
+
+When the <<TS 103 732-1>> is the Base-PP, there are evaluation activities related to SFRs that need to be modified as well as recommendations for handling the SARs.
+
+=== Evaluation Activities for Modified Requirements in the TS 103 732-1
+In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
+
+==== Cryptographic Support (FCS)
+===== FCS_CKM.6 Timing and event of cryptographic key destruction
+Refer to the EA for FCS_CKM.6 in the <<TS 103 732-1>> including biometric data as a pre-selected assignment for destruction according to the requirements for the EA.
+
+==== Identification and Authentication (FIA)
+===== FIA_AFL.1 Authentication failure handling 
+Refer to the EA for FIA_AFL.1 in the <<TS 103 732-1>> while including the choice of available biometric modalities as part of the process for selecting an authentication method.
+
+===== FIA_UAU.5/Local Multiple authentication mechanisms
+Refer to the EA for FPT_KST_EXT.1 in the <<TS 103 732-1>> while including the choice of available biometric modalities as part of the process for selecting an authentication method.
+
+==== Protection of the TSF (FPT)
+===== FPT_PHP.3 Resistance to physical attack
+Refer to the EA for FPT_KST_EXT.2 in the <<TS 103 732-1>> including biometric data as a pre-selected assignment for protection according to the requirements for the EA.
+
+=== Evaluation Activities for Security Assurance Requirements in TS 103 732-1
+
+<<TS 103 732-1>> and this BIOSD define Evaluation Activities for how to evaluate individual SFRs as they relate to the SARs for ASE_TSS.1, AGD_OPE.1, and ATE_IND.1.
+
+<<BIOPP-Module>> does not define any SARs beyond those defined within <<TS 103 732-1>> to which it can claim conformance. It is important to note that the TOE that is evaluated against <<BIOPP-Module>> is inherently evaluated against <<TS 103 732-1>> as well. This means that EAs in Section 8.5 Security Assurance Requirements in <<TS 103 732-1>> should also applied to <<BIOPP-Module>> with additional application notes or EAs defined in the following Sections.
+
+==== Class ASE: Security Target
+
+<<TS 103 732-1>> does not define any EAs and there is no additional EAs for <<BIOPP-Module>>.
+
+==== Class ADV: Development
+
+Same EA defined in <<TS 103 732-1>> should also be applied to <<BIOPP-Module>> though it is not expected that internal interfaces of the biometric system will be described as it is a subcomponent within the TOE.
+
+==== Class AGD: Guidance Documentation
+
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<TS 103 732-1>>.
+
+===== Application note for EA of AGD_OPE.1
+
+<<BIOPP-Module>> defines the assumptions for the mobile device that is the operational environment of the biometric system. These assumptions are implicitly satisfied if the mobile device is successfully evaluated based on <<TS 103 732-1>> and the operational guidance does not need to describe the security measures to be followed in order to fulfil the security objectives for the operational environment derived from those assumptions.
+
+===== Application note for EA of AGD_PRE.1
+
+<<BIOPP-Module>> supposes that the biometric system is fully integrated into the mobile device and the preparative procedures are unnecessary for <<BIOPP-Module>>. Therefore, AGD_PRE.1 is deemed satisfied for <<BIOPP-Module>>.
+
+==== Class ALC: Life-cycle Support
+
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<TS 103 732-1>> for <<BIOPP-Module>>. There is no application note for EA for ALC_CMS.2.
+
+===== Application note for EA of ALC_CMC.2
+
+<<BIOPP-Module>> is intended to be used with <<TS 103 732-1>> and reference for the mobile device can be used as the TOE (mobile device + biometric system) reference only if the reference for the mobile device also uniquely identifies the biometric system embedded in the mobile device.
+
+==== Class ATE: Tests
+
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<TS 103 732-1>> for <<BIOPP-Module>>.
+
+===== Application note for EA of ATE_IND.2
+
+The evaluator shall follow the same EAs defined in <<TS 103 732-1>> and the BIOSD.
+
+==== Class AVA: Vulnerability Assessment
+
+The evaluator shall take the following additional application notes into account to perform EAs defined in <<TS 103 732-1>> for <<BIOPP-Module>> when PAD testing is included in the evaluation. As PAD is an optional set of requirements, the vulnerability assessment activities related to PAD are only included when PAD is included.
+
+===== Application note for EA of AVA_VAN.2
+
+The evaluator shall follow the same EAs defined in <<TS 103 732-1>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.2 are defined in <<Toolbox>>.
 
 == Evaluation Activities for PAD testing
 
@@ -1912,6 +1993,7 @@ The evaluator shall select "None" because potential difficulties to having acces
 - [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024.       
 - [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3.    
 - [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], February 28, 2025, Version 2.0.    
+- [#TS 103 732-1]#[TS 103 732-1]# ETSI CYBER; Consumer Mobile Device; Part 1: Base Protection Profile, ???, Version 3.1.1
 - [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0.
 - [#Toolbox]#[Toolbox]# Toolbox Overview, October 15, 2024, Version 1.2.
 - [#ISO19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
