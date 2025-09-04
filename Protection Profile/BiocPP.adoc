@@ -983,3 +983,17 @@ Dependencies: 	No dependencies
 The documentation of the product's biometric functionality and performance should be detailed enough that, after reading, the evaluator will thoroughly understand the product's biometric functionality and performance. As some of this information may be considered confidential to the developer yet still necessary for understanding, this documentation is not required to be part of the TSS and can be submitted as a separate document marked as developer proprietary.
 
 Whether to use the BMD for any information is up to the developer. When used, a non-proprietary summary of the contents of the BMD must be provided in the TSS.
+
+== PAD-L2 PP-Module
+=== Introduction
+==== PP-Module Identification
+
+- PP-Module Reference: PAD-L2 Module for the BIOPP-Module
+- PP-Module Version: {revnumber}
+- PP-Module Date: {revdate}
+
+==== Base-PP identification
+This PP-Module is intended for use with the following Base-PP:
+Protection Profile for Mobile Device Fundamentals <<PP_MDF>>.
+
+This Base-PP is valid because biometric enrolment and verification may be a specific type of stand-alone software application or a built-in component of a computer. The biometric enrolment and verification functionality defined by this PP-Module will rely on the Base-PP and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module describes the relevant functionality for the Base-PP, including specific selections, assignments, or inclusion of optional requirements that must be made as needed to support the biometric enrolment and verification functionality.
