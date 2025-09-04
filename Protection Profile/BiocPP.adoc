@@ -186,15 +186,17 @@ Zero-effort Impostor Attempt::
 == PP-Module Introduction
 
 === PP-Module Reference
-- PP-Module Reference: {doctitle}
-- PP-Module Version: {revnumber}
-- PP-Module Date: {revdate}
+* PP-Module Reference: {doctitle}
+* PP-Module Version: {revnumber}
+* PP-Module Date: {revdate}
 
 === Base-PP identification
-This PP-Module is intended for use with the following Base-PP:
-Protection Profile for Mobile Device Fundamentals <<PP_MDF>>.
+This PP-Module is intended for use with the following Base-PPs:
 
-This Base-PP is valid because biometric enrolment and verification may be a specific type of stand-alone software application or a built-in component of a computer. The biometric enrolment and verification functionality defined by this PP-Module will rely on the Base-PP and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module describes the relevant functionality for the Base-PP, including specific selections, assignments, or inclusion of optional requirements that must be made as needed to support the biometric enrolment and verification functionality.
+* Protection Profile for Mobile Device Fundamentals <<PP_MDF>>
+* ETSI CYBER; Consumer Mobile Device; Part 1: Base Protection Profile <<TS 103 732-1>>
+
+These Base-PPs are valid because biometric enrolment and verification may be a specific type of stand-alone software application or a built-in component of a computer. The biometric enrolment and verification functionality defined by this PP-Module will rely on the Base-PP and either <<PP_MDF Security Functional Requirements Direction>> or <<TS 103 732-1 Security Functional Requirements Direction>> of this PP-Module to describe the relevant functionality for the Base-PP, including specific selections, assignments, or inclusion of optional requirements that must be made as needed to support the biometric enrolment and verification functionality.
 
 === TOE Overview
 ==== TOE main security features
@@ -235,7 +237,7 @@ The TOE is reliant on the computer itself to provide overall security of the sys
 * Invoking the TOE to enrol and verify the user and take appropriate actions based on the decision of the TOE
 * Providing the Separate Execution Environment (SEE) that guarantees the TOE and its data to be protected with respect to confidentiality and integrity
 
-The specification of the above security  functions are described in the Base-PP and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module.
+The specification of the above security  functions are described in the Base-PP and either <<PP_MDF Security Functional Requirements Direction>> or <<TS 103 732-1 Security Functional Requirements Direction>> of this PP-Module.
  
 [#img-TOE-relations] 
 .Generic relations between the TOE and the computer environment
