@@ -9,6 +9,7 @@
 :revdate: February 28, 2025
 :xrefstyle: full
 :doctype: book
+:appendix-caption: Annex
 
 :iTC-longame: Biometrics Security
 :iTC-shortname: BIO-iTC
@@ -285,10 +286,15 @@ This PP-Module is written to address the situation described in the section <<US
 
 Note that as a PP-Module, all threats, assumptions, and OSPs defined in the Base-PP will also apply to a TOE unless otherwise specified. The SFRs defined in this PP-Module will mitigate the threats that are defined in the PP-Module but may also mitigate some threats defined in the Base-PP in more comprehensive detail due to the specific capabilities provided by a biometric system.
 
-=== Threats
+=== Threats - Mandatory
 
 [[T.Casual_Attack]]T.Casual_Attack::
 An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker only use one's own biometric characteristic (in form of a zero-effort impostor attempt).
+
+=== Threats - Selection-based
+
+[[T.Scripted_Attack]]T.Scripted_Attack::
+An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes public scripts for creating a presentation attack instrument.
 
 === Organizational Security Policies
 
@@ -341,16 +347,22 @@ The following table describes how the assumptions, threats, and organizational s
 |Security Objectives 
 |Rationale
 
-|<<T.Casual_Attack>> <<OSP.Verification_Error>>	
+|<<T.Casual_Attack>>
+
+<<T.Scripted_Attack>>
+
+<<OSP.Verification_Error>>	
 |<<O.BIO_Verification>>	
-|The threat <<T.Casual_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled user from impersonating a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for biometric verification.
+|The threats <<T.Casual_Attack>> and <<t.Scripted_Attack>> are countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled or spoofed user from impersonating a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for biometric verification.
 
 |<<OSP.Enrol>>	
 |<<O.Enrol>>	
 |The OSP <<OSP.Enrol>> is enforced by <<O.Enrol>> as this require the TOE to implement the functionality to enrol a user for biometric verification and create sufficient quality of templates.
 
 |<<OSP.Protection>>	
-|<<O.Protection>> <<OE.Protection>>	
+|<<O.Protection>>
+
+<<OE.Protection>>	
 |The OSP <<OSP.Protection>> is enforced by <<O.Protection>> and its operational environment objective <<OE.Protection>>.
 
 |===
@@ -574,8 +586,12 @@ The threats, OSPs and assumptions defined by this PP-Module (see the <<Security 
 |Consistency Rationale
 
 |<<T.Casual_Attack>>
-.3+|The threat of zero-effort impostor attempt and presentation attack with related OSPs are specific subsets of the T.PHYSICAL_ACCESS (i.e. impersonate the user authentication mechanisms) threat in the <<PP_MDF>>.
+.4+|The threat of zero-effort impostor attempt and presentation attack with related OSPs are specific subsets of the T.PHYSICAL_ACCESS (i.e. impersonate the user authentication mechanisms) threat in the <<PP_MDF>>.
+
+|<<T.Scripted_Attack>>
+
 |<<OSP.Enrol>>
+
 |<<OSP.Verification_Error>>
 
 |<<OSP.Protection>>
@@ -984,16 +1000,95 @@ The documentation of the product's biometric functionality and performance shoul
 
 Whether to use the BMD for any information is up to the developer. When used, a non-proprietary summary of the contents of the BMD must be provided in the TSS.
 
+[appendix]
 == PAD-L2 PP-Module
 === Introduction
 ==== PP-Module Identification
 
-- PP-Module Reference: PAD-L2 Module for the BIOPP-Module
-- PP-Module Version: {revnumber}
-- PP-Module Date: {revdate}
+* PP-Module Reference: PAD-L2 Module for the BIOPP-Module
+* PP-Module Version: {revnumber}
+* PP-Module Date: {revdate}
 
-==== Base-PP identification
-This PP-Module is intended for use with the following Base-PP:
-Protection Profile for Mobile Device Fundamentals <<PP_MDF>>.
+==== PP-Module Base identification
+This PP-Module is intended for use with the following PP-Module:
+collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], version {revnumber}.
 
-This Base-PP is valid because biometric enrolment and verification may be a specific type of stand-alone software application or a built-in component of a computer. The biometric enrolment and verification functionality defined by this PP-Module will rely on the Base-PP and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module describes the relevant functionality for the Base-PP, including specific selections, assignments, or inclusion of optional requirements that must be made as needed to support the biometric enrolment and verification functionality.
+==== TOE Overview
+===== TOE Main Security Features
+The scope of this PP-Module is to describe the assurance requirements when PAD-L2 is selected as the level of protection against presentation attacks for the biometric system. There are no changes to the scope of the system, only to the claims of the level of protection made in terms of protecting against presentation attacks. In this case, an explicit claim of AVA_VAN.2 is made on this requirement.
+
+When the PP-Module Base already includes AVA_VAN.2, this PP-Module should be included.
+
+===== TOE Design
+The TOE design is identical to the BIOPP-Module.
+
+===== Relation Between TOE and Computer
+The relation between the TOE and the computer is identical to the BIOPP-Module.
+
+==== TOE Use Case
+This PP-Module does not specifically define a use case, though it aligns with the Use Case 2: Biometric verification for security sensitive services.
+
+=== Conformance Claims
+
+As defined by the references <<CC1>>, <<CC2>>, <<CC3>>, <<CC4>>, <<CC5>> and <<CC-E&I>>, this PP-Module:
+
+* conforms to the requirements of Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1,
+* is Part 2 extended,
+* is Part 3 extended.
+
+The following assurance requirement is included for this PP-Module:
+
+* AVA_VAN.2 Vulnerability Analysis
+
+=== Security Problem Definition
+==== Threats
+T.Intentional_Attack:: An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes more specialized knowledge and preparation time beforehand to generate presentation attack instruments.
+
+
+
+
+
+[appendix]
+== PAD-L3 PP-Module
+=== Introduction
+==== PP-Module Identification
+
+* PP-Module Reference: PAD-L3 Module for the BIOPP-Module
+* PP-Module Version: {revnumber}
+* PP-Module Date: {revdate}
+
+==== PP-Module Base identification
+This PP-Module is intended for use with the following PP-Module:
+collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], version {revnumber}.
+
+==== TOE Overview
+===== TOE Main Security Features
+The scope of this PP-Module is to describe the assurance requirements when PAD-L3 is selected as the level of protection against presentation attacks for the biometric system. There are no changes to the scope of the system, only to the claims of the level of protection made in terms of protecting against presentation attacks. In this case, an explicit claim of AVA_VAN.3 is made on this requirement.
+
+When the PP-Module Base already includes AVA_VAN.3, this PP-Module should be included.
+
+===== TOE Design
+The TOE design is identical to the BIOPP-Module.
+
+===== Relation Between TOE and Computer
+The relation between the TOE and the computer is identical to the BIOPP-Module.
+
+==== TOE Use Case
+This PP-Module does not specifically define a use case, though it aligns with the Use Case 2: Biometric verification for security sensitive services.
+
+=== Conformance Claims
+
+As defined by the references <<CC1>>, <<CC2>>, <<CC3>>, <<CC4>>, <<CC5>> and <<CC-E&I>>, this PP-Module:
+
+* conforms to the requirements of Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1,
+* is Part 2 extended,
+* is Part 3 extended.
+
+The following assurance requirement is included for this PP-Module:
+
+* AVA_VAN.3 Focused Vulnerability Analysis
+
+=== Security Problem Definition
+==== Threats
+T.Targeted_Attack:: An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes more specialized knowledge and preparation time beforehand specifically about the legitimate user to generate presentation attack instruments.
+
