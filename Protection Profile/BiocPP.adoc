@@ -187,15 +187,15 @@ Zero-effort Impostor Attempt::
 - PP-Module Version: {revnumber}
 - PP-Module Date: {revdate}
 
-=== Base-PP identification
-This PP-Module is intended for use with the following Base-PP:
+=== PP-Module Base identification
+This PP-Module is intended for use with the following PP-Module Base:
 Protection Profile for Mobile Device Fundamentals <<PP_MDF>>.
 
-This Base-PP is valid because biometric enrolment and verification may be a specific type of stand-alone software application or a built-in component of a computer. The biometric enrolment and verification functionality defined by this PP-Module will rely on the Base-PP and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module describes the relevant functionality for the Base-PP, including specific selections, assignments, or inclusion of optional requirements that must be made as needed to support the biometric enrolment and verification functionality.
+This PP-Module Base is valid because biometric enrolment and verification may be a specific type of stand-alone software application or a built-in component of a computer. The biometric enrolment and verification functionality defined by this PP-Module will rely on the PP-Module Base and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module describes the relevant functionality for the PP-Module Base, including specific selections, assignments, or inclusion of optional requirements that must be made as needed to support the biometric enrolment and verification functionality.
 
 === TOE Overview
 ==== TOE main security features
-This is a collaborative Protection Profile Module (PP-Module) used to extend a Base-PP for a computer that implements biometric enrolment and verification to unlock the computer in the locked state using the user's biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the terms TOE and TOE environment in this document expresses the biometric system that implements the biometric enrolment and verification functionality, and the computer that supports the biometric system to protect the biometric data respectively, for clearly describing the relation and boundary between the biometric system and computer. The biometric enrolment and verification processes are described in the following sections. 
+This is a collaborative Protection Profile Module (PP-Module) used to extend a PP-Module Base for a computer that implements biometric enrolment and verification to unlock the computer in the locked state using the user's biometric characteristics. Therefore, the Target of Evaluation (TOE) in this PP-Module is a computer that implements biometric enrolment and verification functionality. However, the terms TOE and TOE environment in this document expresses the biometric system that implements the biometric enrolment and verification functionality, and the computer that supports the biometric system to protect the biometric data respectively, for clearly describing the relation and boundary between the biometric system and computer. The biometric enrolment and verification processes are described in the following sections. 
 
 ===== Biometric Enrolment
 
@@ -226,13 +226,13 @@ As illustrated in the above figure, the TOE is capable of:
 * Optionally detecting the presentation attacks using an artefact (Presentation attack detection subsystem)
 
 ==== Relation between TOE and Computer 
-The TOE is reliant on the computer itself to provide overall security of the system. This PP-Module is intended to be used with a Base-PP, and the Base-PP is responsible for evaluating the following security functions:
+The TOE is reliant on the computer itself to provide overall security of the system. This PP-Module is intended to be used with a PP-Module Base, and the PP-Module Base is responsible for evaluating the following security functions:
 
 * Providing the NBAF to support user authentication and management of the TOE security function
 * Invoking the TOE to enrol and verify the user and take appropriate actions based on the decision of the TOE
 * Providing the Separate Execution Environment (SEE) that guarantees the TOE and its data to be protected with respect to confidentiality and integrity
 
-The specification of the above security  functions are described in the Base-PP and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module.
+The specification of the above security  functions are described in the PP-Module Base and <<PP_MDF Security Functional Requirements Direction>> of this PP-Module.
  
 [#img-TOE-relations] 
 .Generic relations between the TOE and the computer environment
@@ -246,7 +246,7 @@ This PP-Module only assumes USE CASE 1 described below. USE CASE 2 is out of sco
 ===== USE CASE 1: Biometric verification for unlocking the computer
 This use case is applicable for any computers such as a desktop, laptop, tablet or smartphone that implement biometric enrolment and verification functionality. For enhanced security that is easy to use, the computer may implement biometric verification on a computer once it has been “unlocked”. The initial unlock is generally done by a NBAF which is required at startup (or possibly after some period of time), and after that, the user is able to use one's own biometric characteristic to unlock access to the computer. In this use case, the computer is not supposed to be used for security sensitive services through the biometric verification.
 
-The main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for computer that the TOE relies on should be handled by the Base-PP.
+The main concern of this use case is the accuracy of the biometric verification (i.e. FAR/FMR and FRR/FNMR). Security assurance for computer that the TOE relies on should be handled by the PP-Module Base.
 
 This use case assumes that the computer is configured correctly to enable the biometric verification by the user, who acts as the biometric system administrator in this use case.
 
@@ -264,12 +264,12 @@ The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR an
 
 === Conformance statement
 
-As defined by the references <<CC1>>, <<CC2>>, <<CC3>>, <<CC4>>, <<CC5>> and <<CC-E&I>> when the Base-PP is the <<PP_MDF>>, this PP-Module:
+As defined by the references <<CC1>>, <<CC2>>, <<CC3>>, <<CC4>>, <<CC5>> and <<CC-E&I>> when the PP-Module Base is the <<PP_MDF>>, this PP-Module:
 
 * conforms to the requirements of Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1,
 * is Part 2 extended,
 * is Part 3 extended,
-* all assurance requirements are inherited from the Base-PP,
+* all assurance requirements are inherited from the PP-Module Base,
 * does not claim conformance to any other security functional packages or Protection Profiles.
 
 The PPs and PP-Modules that are allowed to be  specified in a PP-Configuration with this PP-Module can be found at the https://biometricitc.github.io/PP-allowed.html[Allowed Components] page on the Biometrics Security website.
@@ -284,7 +284,7 @@ The security problem is described in terms of the threats that the TOE is expect
 
 This PP-Module is written to address the situation described in the section <<USE CASE 1: Biometric verification for unlocking the computer>>. 
 
-Note that as a PP-Module, all threats, assumptions, and OSPs defined in the Base-PP will also apply to a TOE unless otherwise specified. The SFRs defined in this PP-Module will mitigate the threats that are defined in the PP-Module but may also mitigate some threats defined in the Base-PP in more comprehensive detail due to the specific capabilities provided by a biometric system.
+Note that as a PP-Module, all threats, assumptions, and OSPs defined in the PP-Module Base will also apply to a TOE unless otherwise specified. The SFRs defined in this PP-Module will mitigate the threats that are defined in the PP-Module but may also mitigate some threats defined in the PP-Module Base in more comprehensive detail due to the specific capabilities provided by a biometric system.
 
 === Threats - Mandatory
 
@@ -330,14 +330,14 @@ The TOE shall implement the functionality to enrol a user for biometric verifica
 [[O.Protection]]O.Protection::
 The TOE shall protect biometric data using the SEE provided by the TOE environment during runtime and storage.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e., the computer) satisfy relevant requirements defined in this PP-Module and Base-PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e., the computer) satisfy relevant requirements defined in this PP-Module and PP-Module Base respectively to protect biometric data.
 
 === Security Objectives for the Operational Environment
 
 [[OE.Protection]]OE.Protection::
 The TOE environment shall provide the SEE to protect the TOE, the TOE configuration and biometric data during runtime and storage.
 
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) satisfy relevant requirements defined in this PP-Module and Base-PP respectively to protect biometric data.
+*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) satisfy relevant requirements defined in this PP-Module and PP-Module Base respectively to protect biometric data.
 
 === Security Objectives Rationale
 The following table describes how the assumptions, threats, and organizational security policies map to the security objectives.
@@ -383,7 +383,7 @@ Extended SFRs are identified by having a label “EXT” at the end of the SFR n
 
 === PP_MDF Security Functional Requirements Direction
 
-In a PP-Configuration that includes the <<PP_MDF>>, the biometric enrolment and verification is expected to rely on some of the security functions implemented by the computer as a whole and evaluated against the Base-PP. In this case, the following sections describe any modifications that the ST author must make to the SFRs defined in the Base-PP in addition to what is mandated by <<TOE Security Functional Requirements>>. 
+In a PP-Configuration that includes the <<PP_MDF>>, the biometric enrolment and verification is expected to rely on some of the security functions implemented by the computer as a whole and evaluated against the PP-Module Base. In this case, the following sections describe any modifications that the ST author must make to the SFRs defined in the PP-Module Base in addition to what is mandated by <<TOE Security Functional Requirements>>. 
 
 Full evaluation activities are not repeated in the <<BIOSD>> for the requirements in this section that are references to the <<PP_MDF>>; only the additional testing needed to supplement what has already been captured in the <<PP_MDF>> is included in the <<BIOSD>>
 
@@ -422,7 +422,7 @@ This SFR is identical to what is defined in the <<PP_MDF>>. The change is to the
 
 ==== Additional SFRs
 
-There are no additional SFRs that must be claimed only in cases where the <<PP_MDF>> is the claimed Base-PP.
+There are no additional SFRs that must be claimed only in cases where the <<PP_MDF>> is the claimed PP-Module Base.
 
 === TOE Security Functional Requirements
 This section lists SFRs for the biometric enrolment and verification.
@@ -566,7 +566,7 @@ The following rationale provides justification for each security objective for t
 
 == Security Assurance Requirements
 
-This PP-Module does not define any additional assurance requirements above and beyond what is defined in the Base-PP that it extends. Application of the SARs to the TOE boundary described by both the claimed base and this PP-Module is sufficient to demonstrate that the claimed SFRs have been implemented correctly by the TOE.
+This PP-Module does not define any additional assurance requirements above and beyond what is defined in the PP-Module Base that it extends. Application of the SARs to the TOE boundary described by both the claimed base and this PP-Module is sufficient to demonstrate that the claimed SFRs have been implemented correctly by the TOE.
 
 == Consistency Rationale
 
@@ -763,12 +763,12 @@ The following actions could be considered for the management functions in FMT:
 a)	the management of the TSF data (setting values for detecting artificial presentation attack instruments) by an administrator.
 
 ===== Audit: FIA_MBE_EXT.1, FIA_MBE_EXT.2
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the Base-PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP-Module Base/ST:
 
 a)	Basic: Success or failure of the biometric enrolment
 
 ===== Audit: FIA_MBE_EXT.3
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the Base-PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP-Module Base/ST:
 
 a)	Basic: Detection of presentation attacks
 
@@ -848,12 +848,12 @@ The following actions could be considered for the management functions in FMT:
 a)	the management of the TSF data (setting values for detecting artificial presentation attack instruments) by an administrator.
 
 ===== Audit: FIA_MBV_EXT.1, FIA_MBV_EXT.2
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the Base-PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP-Module Base/ST:
 
 a)	Basic: Success or failure of the biometric verification
 
 ===== Audit: FIA_MBV_EXT.3
-The following actions should be auditable if FAU_GEN Security audit data generation is included in the Base-PP/ST:
+The following actions should be auditable if FAU_GEN Security audit data generation is included in the PP-Module Base/ST:
 
 a)	Basic: Detection of presentation attacks
 
