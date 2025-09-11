@@ -296,6 +296,8 @@ An attacker may attempt to impersonate as a legitimate user without being enrole
 [[T.Scripted_Attack]]T.Scripted_Attack::
 An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes public scripts for creating a presentation attack instrument.
 
+The threat <<T.Scripted_Attack>> is defined as attacks which are scored as meeting Basic according to the Ratings of vulnerabilities and TOE resistance in the BIOSD.
+
 === Organizational Security Policies
 
 [[OSP.Enrol]]OSP.Enrol::
@@ -353,7 +355,7 @@ The following table describes how the assumptions, threats, and organizational s
 
 <<OSP.Verification_Error>>	
 |<<O.BIO_Verification>>	
-|The threats <<T.Casual_Attack>> and <<t.Scripted_Attack>> are countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled or spoofed user from impersonating a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for biometric verification.
+|The threats <<T.Casual_Attack>> and <<T.Scripted_Attack>> are countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled or spoofed user from impersonating a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for biometric verification.
 
 |<<OSP.Enrol>>	
 |<<O.Enrol>>	
@@ -1001,23 +1003,24 @@ The documentation of the product's biometric functionality and performance shoul
 Whether to use the BMD for any information is up to the developer. When used, a non-proprietary summary of the contents of the BMD must be provided in the TSS.
 
 [appendix]
-== PAD-L2 PP-Module
+[[L2PP-Module]]
+== collaborative PP-Module with PAD-L2 for Biometric verification [L2PP-Module]
 === Introduction
 ==== PP-Module Identification
 
-* PP-Module Reference: PAD-L2 Module for the BIOPP-Module
+* PP-Module Reference: collaborative PP-Module with PAD-L2 for Biometric verification [L2PP-Module]
 * PP-Module Version: {revnumber}
 * PP-Module Date: {revdate}
 
 ==== PP-Module Base identification
-This PP-Module is intended for use with the following PP-Module:
+The L2PP-Module is intended for use with the following PP-Module:
 collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], version {revnumber}.
 
 ==== TOE Overview
 ===== TOE Main Security Features
-The scope of this PP-Module is to describe the assurance requirements when PAD-L2 is selected as the level of protection against presentation attacks for the biometric system. There are no changes to the scope of the system, only to the claims of the level of protection made in terms of protecting against presentation attacks. In this case, an explicit claim of AVA_VAN.2 is made on this requirement.
+The scope of the L2PP-Module is to describe the assurance requirements when PAD-L2 is selected as the level of protection against presentation attacks for the biometric system. There are no changes to the scope of the system, only to the claims of the level of protection made in terms of protecting against presentation attacks. In this case, an explicit claim of AVA_VAN.2 is made on this requirement.
 
-When the PP-Module Base already includes AVA_VAN.2, this PP-Module should be included.
+When the PP-Module Base already includes AVA_VAN.2, this L2PP-Module should be included.
 
 ===== TOE Design
 The TOE design is identical to the BIOPP-Module.
@@ -1026,7 +1029,7 @@ The TOE design is identical to the BIOPP-Module.
 The relation between the TOE and the computer is identical to the BIOPP-Module.
 
 ==== TOE Use Case
-This PP-Module does not specifically define a use case, though it aligns with the Use Case 2: Biometric verification for security sensitive services.
+The L2PP-Module does not specifically define a use case, though it aligns with the Use Case 2: Biometric verification for security sensitive services.
 
 === Conformance Claims
 
@@ -1041,31 +1044,127 @@ The following assurance requirement is included for this PP-Module:
 * AVA_VAN.2 Vulnerability Analysis
 
 === Security Problem Definition
-==== Threats
+==== Threats - Mandatory
+
+The following threat replaces the selection-based threat <<T.Scripted_Attack>> in the PP-Module Base as mandatory, and as a superset of the original threat.
+
 T.Intentional_Attack:: An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes more specialized knowledge and preparation time beforehand to generate presentation attack instruments.
 
+The threat <<T.Intentional_Attack>> is defined as attacks which are scored as meeting Enhanced-Basic according to the Ratings of vulnerabilities and TOE resistance in the BIOSD.
 
+==== Organizational Security Policies
 
+The L2PP-Module does not define any organizational security policies.
 
+==== Assumptions
+
+The L2PP-Module does not define any assumptions.
+
+=== Security Objectives
+
+The L2PP-Module does not device any new security objectives for the TOE or the operational environment.
+
+==== Security Objectives Rationale
+
+[cols=".^1,.^1,2",options="header",]
+.L2PP-Module Mapping between Security Problem Definition and Security Objectives
+|===
+
+|Threat, Assumption, or OSP 
+|Security Objectives 
+|Rationale
+
+|<<T.Intentional_Attack>>
+|<<O.BIO_Verification>>	
+|The threat <<T.Intentional_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled or spoofed user from impersonating a legitimate user.
+
+|===
+
+=== Security Functional Requirements
+
+==== Conventions
+The individual security functional requirements are specified in the sections below.
+The following conventions are used for the completion of operations:
+
+* [_Italicized text within square brackets_] indicates an operation to be completed by the ST author.
+
+* [*Bold text within square brackets*] indicates the type of operation.
+
+Extended SFRs are identified by having a label “EXT” at the end of the SFR name.
+
+==== BIOPP-Module Security Functional Requirements Direction
+
+The SFRs listed in this section are defined in the <<Security Functional Requirements, PP-Module Base>> and are modified for use to conform to this L2PP-Module. If the computer supports multiple biometric modalities which do not all meet the requirements of this L2PP-Module, the SFRs shuld be iterated to clearly show which modalities support which PAD levels.
+
+===== FIA_PAD_EXT.1 Presentation attack support
+
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _face, fingerprint_] with [PAD-L2] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, from available PAD levels, equal or greater than enrolment*: PAD-L2] detection as specified in FIA_MBV_EXT.3 during biometric verification.
+
+===== Additional SFRs
+
+There are no additional SFRs that to be claimed specifically for this L2PP-Module.
+
+==== TOE Security Functional Requirements
+
+The L2PP-Module does not define any additional SFRs.
+
+==== TOE Security Funcational Requirements Rationale
+
+[cols=".^1,.^1,2",options="header",]
+.L2PP-Module Mapping between SFRs and Security Objectives
+|===
+|Objective 
+|Addressed By
+|Rationale
+
+|<<O.BIO_Verification>> (from the PP-Module Base)
+|<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
+|This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during verification.
+
+|===
+
+=== Security Assurance Requirements
+
+The L2PP-Module augments the SARs from the PP-Module Base with the addition of AVA_VAN.2 Vulnerability Analysis. The AVA_VAN.2 SAR added here is focsued on the SFRs included in the L2PP-Module based on the inclusion of the <<T.Intentional_Attack>>. This Threat is designed to represent attacks with a higher Attack Potential as defined in the BIOSD in Section 11 that matches with AVA_VAN.2. This SAR does not impact the overall AVA_VAN level for the TOE, only for the SFRs included in the L2PP-Module.
+
+Depending on the PP-Module Base for the BIOPP-Module it is possible that AVA_VAN.2 is already included in the set of SARs for the computer containing the biometric system. In this case the SAR for the overall TOE does not change but the evaluation activities related to the selected PAD component are decribed in the BIOSD specifically as it ties to AVA_VAN.2.
+
+=== Consistency Rationale
+
+This section describes consistency rationale between <<BIOPP-Module>> and the L2PP-Module to show that the unions of Security Problem Definition, objectives, and Security Functional Requirements defined in <<BIOPP-Module>> and the L2PP-Module do not lead to a contradiction.
+
+==== Consistency of Security Problem Definition
+
+The threat added in the L2PP-Module is a replacement for an existing threat in the PP-Module Base with a higher attack potential rating.
+
+<<T.Intentional_Attack>> encompasses <<T.Scripted_Attack>> and so follows the same consistency rationale when applied to the PP-Module Base of the BIOPP-Module. 
+
+==== Consistency of Objectives
+
+The L2PP-Module does not add any objectives to the TOE.
+
+==== Consistency of Requirements
+
+The L2PP-Module restricts the selections in FIA_PAD_EXT.1 to be limited solely to biometric modalities that have PAD-L2 toolboxes for testing. 
 
 [appendix]
-== PAD-L3 PP-Module
+== collaborative PP-Module with PAD-L3 for Biometric verification [L3PP-Module]
 === Introduction
 ==== PP-Module Identification
 
-* PP-Module Reference: PAD-L3 Module for the BIOPP-Module
+* PP-Module Reference: collaborative PP-Module with PAD-L3 for Biometric verification [L3PP-Module]
 * PP-Module Version: {revnumber}
 * PP-Module Date: {revdate}
 
 ==== PP-Module Base identification
-This PP-Module is intended for use with the following PP-Module:
+The L3PP-Module is intended for use with the following PP-Module:
 collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], version {revnumber}.
 
 ==== TOE Overview
 ===== TOE Main Security Features
-The scope of this PP-Module is to describe the assurance requirements when PAD-L3 is selected as the level of protection against presentation attacks for the biometric system. There are no changes to the scope of the system, only to the claims of the level of protection made in terms of protecting against presentation attacks. In this case, an explicit claim of AVA_VAN.3 is made on this requirement.
+The scope of the L3PP-Module is to describe the assurance requirements when PAD-L3 is selected as the level of protection against presentation attacks for the biometric system. There are no changes to the scope of the system, only to the claims of the level of protection made in terms of protecting against presentation attacks. In this case, an explicit claim of AVA_VAN.3 is made on this requirement.
 
-When the PP-Module Base already includes AVA_VAN.3, this PP-Module should be included.
+When the PP-Module Base already includes AVA_VAN.3, this L3PP-Module should be included.
 
 ===== TOE Design
 The TOE design is identical to the BIOPP-Module.
@@ -1074,7 +1173,7 @@ The TOE design is identical to the BIOPP-Module.
 The relation between the TOE and the computer is identical to the BIOPP-Module.
 
 ==== TOE Use Case
-This PP-Module does not specifically define a use case, though it aligns with the Use Case 2: Biometric verification for security sensitive services.
+The L3PP-Module does not specifically define a use case, though it aligns with the Use Case 2: Biometric verification for security sensitive services.
 
 === Conformance Claims
 
@@ -1089,6 +1188,105 @@ The following assurance requirement is included for this PP-Module:
 * AVA_VAN.3 Focused Vulnerability Analysis
 
 === Security Problem Definition
-==== Threats
+==== Threats - Mandatory
+
+The following threat replaces the selection-based threat <<T.Scripted_Attack>> in the PP-Module Base as mandatory, and as a superset of the original threat.
+
 T.Targeted_Attack:: An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes more specialized knowledge and preparation time beforehand specifically about the legitimate user to generate presentation attack instruments.
 
+The threat <<T.Targeted_Attack>> is defined as attacks which are scored as meeting Medium according to the Ratings of vulnerabilities and TOE resistance in the BIOSD.
+
+==== Organizational Security Policies
+
+The L3PP-Module does not define any organizational security policies.
+
+==== Assumptions
+
+The L3PP-Module does not define any assumptions.
+
+=== Security Objectives
+
+The L3PP-Module does not device any new security objectives for the TOE or the operational environment.
+
+==== Security Objectives Rationale
+
+[cols=".^1,.^1,2",options="header",]
+.L3PP-Module Mapping between Security Problem Definition and Security Objectives
+|===
+
+|Threat, Assumption, or OSP 
+|Security Objectives 
+|Rationale
+
+|<<T.Targeted_Attack>>
+|<<O.BIO_Verification>>	
+|The threat <<T.Targeted_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled or spoofed user from impersonating a legitimate user.
+
+|===
+
+=== Security Functional Requirements
+
+==== Conventions
+The individual security functional requirements are specified in the sections below.
+The following conventions are used for the completion of operations:
+
+* [_Italicized text within square brackets_] indicates an operation to be completed by the ST author.
+
+* [*Bold text within square brackets*] indicates the type of operation.
+
+Extended SFRs are identified by having a label “EXT” at the end of the SFR name.
+
+==== BIOPP-Module Security Functional Requirements Direction
+
+The SFRs listed in this section are defined in the <<Security Functional Requirements, PP-Module Base>> and are modified for use to conform to this L3PP-Module. If the computer supports multiple biometric modalities which do not all meet the requirements of this L3PP-Module, the SFRs shuld be iterated to clearly show which modalities support which PAD levels.
+
+===== FIA_PAD_EXT.1 Presentation attack support
+
+*FIA_PAD_EXT.1.1*:: The TSF shall provide the [*selection*: _face, fingerprint_] with [PAD-L3] detection as specified in FIA_MBE_EXT.3 during biometric enrolment and [*selection, from available PAD levels, equal or greater than enrolment*: PAD-L3] detection as specified in FIA_MBV_EXT.3 during biometric verification.
+
+===== Additional SFRs
+
+There are no additional SFRs that to be claimed specifically for this L3PP-Module.
+
+==== TOE Security Functional Requirements
+
+The L3PP-Module does not define any additional SFRs.
+
+==== TOE Security Funcational Requirements Rationale
+
+[cols=".^1,.^1,2",options="header",]
+.L3PP-Module Mapping between SFRs and Security Objectives
+|===
+|Objective 
+|Addressed By
+|Rationale
+
+|<<O.BIO_Verification>> (from the PP-Module Base)
+|<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
+|This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during verification.
+
+|===
+
+=== Security Assurance Requirements
+
+The L3PP-Module augments the SARs from the PP-Module Base with the addition of AVA_VAN.3 Focused Vulnerability Analysis. The AVA_VAN.3 SAR added here is focsued on the SFRs included in the L3PP-Module based on the inclusion of the <<T.Targeted_Attack>>. This Threat is designed to represent attacks with a higher Attack Potential as defined in the BIOSD in Section 11 that matches with AVA_VAN.3. This SAR does not impact the overall AVA_VAN level for the TOE, only for the SFRs included in the L3PP-Module.
+
+Depending on the PP-Module Base for the BIOPP-Module it is possible that AVA_VAN.3 is already included in the set of SARs for the computer containing the biometric system. In this case the SAR for the overall TOE does not change but the evaluation activities related to the selected PAD component are decribed in the BIOSD specifically as it ties to AVA_VAN.3.
+
+=== Consistency Rationale
+
+This section describes consistency rationale between <<BIOPP-Module>> and the L3PP-Module to show that the unions of Security Problem Definition, objectives, and Security Functional Requirements defined in <<BIOPP-Module>> and the L3PP-Module do not lead to a contradiction.
+
+==== Consistency of Security Problem Definition
+
+The threat added in the L3PP-Module is a replacement for an existing threat in the PP-Module Base with a higher attack potential rating.
+
+<<T.Intentional_Attack>> encompasses <<T.Scripted_Attack>> and so follows the same consistency rationale when applied to the PP-Module Base of the BIOPP-Module. 
+
+==== Consistency of Objectives
+
+The L3PP-Module does not add any objectives to the TOE.
+
+==== Consistency of Requirements
+
+The L3PP-Module restricts the selections in FIA_PAD_EXT.1 to be limited solely to biometric modalities that have PAD-L3 toolboxes for testing. 
