@@ -125,7 +125,7 @@ This Supporting Document was developed by the Biometric Security international T
 
 === Technology Area and Scope of Supporting Document
 
-This Supporting Document (BIOSD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>> that is intended for use with the Base-PP identified in the appropriate PP-Configuration.
+This Supporting Document (BIOSD) defines the Evaluation Activities (EAs) associated with the collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<BIOPP-Module>> that is intended for use with the PP-Module Base identified in the appropriate PP-Configuration.
 
 This BIOSD is mandatory for evaluations of TOEs that claim conformance to <<BIOPP-Module>>.
 
@@ -145,7 +145,7 @@ In general, if all EAs (for both SFRs and SARs) are successfully completed in an
 
 ==== Glossary
 
-For definitions of standard CC terminology see <<CC1>>. For definitions of biometrics and the computer, see <<BIOPP-Module>> and the Base-PP.
+For definitions of standard CC terminology see <<CC1>>. For definitions of biometrics and the computer, see <<BIOPP-Module>> and the PP-Module Base.
 
 ==== Acronyms
 
@@ -279,7 +279,7 @@ EAs in this BIOSD provide specific or more detailed guidance to evaluate the bio
 
 This Section explains how EAs for SFRs are derived from the particular CEM work units identified in Assessment Strategy to show the consistency and compatibility between the CEM work units and EAs in this BIOSD.
 
-Assessment Strategy for ASE_TSS requires the evaluator to examine that the TSS provides sufficient design descriptions and its verdicts will be associated with the CEM work unit ASE_TSS.1-1. Evaluator verdicts associated with the supplementary information will also be associated with ASE_TSS.1-1, since the requirement to provide such evidence is specified in ASE in the Base-PP from which SARs of <<BIOPP-Module>> are inherited.
+Assessment Strategy for ASE_TSS requires the evaluator to examine that the TSS provides sufficient design descriptions and its verdicts will be associated with the CEM work unit ASE_TSS.1-1. Evaluator verdicts associated with the supplementary information will also be associated with ASE_TSS.1-1, since the requirement to provide such evidence is specified in ASE in the PP-Module Base from which SARs of <<BIOPP-Module>> are inherited.
 
 Assessment Strategy for AGD_OPE/ADV_FSP requires the evaluator to examine that the AGD guidance provides sufficient information for the administrators/users as it pertains to SFRs, its verdicts will be associated with CEM work units ADV_FSP.1-7, AGD_OPE.1-4, and AGD_OPE.1-5.
 
@@ -293,7 +293,7 @@ Assessment Strategy for ATE_IND requires the evaluator to conduct testing of the
 
 ===== Objective of the EA
 
-The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by one's NBAF. Security requirements for the NBAF mechanism are defined in the Base-PP and out of scope of this EA.
+The evaluator shall verify that the TOE enrols a user only after successful authentication of the user by one's NBAF. Security requirements for the NBAF mechanism are defined in the PP-Module Base and out of scope of this EA.
 
 ===== Dependency
 
@@ -839,14 +839,14 @@ The <<BIOPP-Module>> does not contain any optional requirements.
 
 == Evaluation Activities for PP-Module Security Assurance Requirements
 
-The <<BIOPP-Module>> relies on the Base-PP to provide SARs. Guidance is provided for each approved Base-PP.
+The <<BIOPP-Module>> relies on the PP-Module Base to provide SARs. Guidance is provided for each approved PP-Module Base.
 
-== Evaluation Activities for PP_MDF as the Base-PP
+== Evaluation Activities for PP_MDF as the PP-Module Base
 
-When the <<PP_MDF>> is the Base-PP, there are evaluation activities related to SFRs that need to be modified as well as recommendations for handling the SARs.
+When the <<PP_MDF>> is the PP-Module Base, there are evaluation activities related to SFRs that need to be modified as well as recommendations for handling the SARs.
 
 === Evaluation Activities for Modified Requirements in the PP_MDF
-In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
+In addition to the EAs required by the PP-Module Base, the evaluator shall perform the following additional EAs to ensure that the PP-Module Base's security functionaltiy is maintained by the addition of the PP-Module.
 
 ==== Cryptographic Support (FCS)
 ===== FCS_CKM_EXT.4 Key Destruction
@@ -912,12 +912,12 @@ The evaluator shall take the following additional application notes into account
 
 The evaluator shall follow the same EAs defined in <<PP_MDF>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.1 are defined in <<Toolbox>>.
 
-== Evaluation Activities for TS 103 732-1 as the Base-PP
+== Evaluation Activities for TS 103 732-1 as the PP-Module Base
 
-When the <<TS 103 732-1>> is the Base-PP, there are evaluation activities related to SFRs that need to be modified as well as recommendations for handling the SARs.
+When the <<TS 103 732-1>> is the PP-Module Base, there are evaluation activities related to SFRs that need to be modified as well as recommendations for handling the SARs.
 
 === Evaluation Activities for Modified Requirements in the TS 103 732-1
-In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
+In addition to the EAs required by the PP-Module Base, the evaluator shall perform the following additional EAs to ensure that the PP-Module Base's security functionaltiy is maintained by the addition of the PP-Module.
 
 ==== Cryptographic Support (FCS)
 ===== FCS_CKM.6 Timing and event of cryptographic key destruction
@@ -982,7 +982,7 @@ The evaluator shall take the following additional application notes into account
 
 ===== Application note for EA of AVA_VAN.2
 
-The evaluator shall follow the same EAs defined in <<TS 103 732-1>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.2 are defined in <<Toolbox>>.
+The evaluator shall follow the same EAs defined in <<TS 103 732-1>> and the BIOSD. As explained in the <<Evaluation Activities for PAD testing>>, details of PAD testing for ATE_IND.2 and AVA_VAN.2 are defined in <<Toolbox>>.
 
 == Evaluation Activities for PAD testing
 
@@ -1149,7 +1149,7 @@ The performance report shall report the following information to uniquely identi
 [arabic]
 .. TOE reference
 +
-Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the Base-PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
+Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the PP-Module Base and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
 +
 Modification to the TOE for performance testing, if any, shall be reported (e.g. the TOE is modified to export biometric data for off-line testing). The rationale that such modification does not affect the TOE performance shall also be provided. For example, the developer may claim that the performance is not affected because modified code is not executed during biometric verification or the developer may run regression tests to verify that modification does not change the result of verification (e.g. similarity score).
 .. TOE configuration
@@ -1354,7 +1354,7 @@ The developer shall define the maximum number of samples per test subject to be 
 
 ==== Maximum number of transactions per test subject
 
-Only one transaction can be run by each test subject because the computer locks the biometric verification as required by the Base-PP after the certain number of attempts are failed.
+Only one transaction can be run by each test subject because the computer locks the biometric verification as required by the PP-Module Base after the certain number of attempts are failed.
 
 ==== Cross-comparison for FAR/FMR
 
@@ -1428,7 +1428,7 @@ The developer may point to a public standard used for the determining of quality
 [loweralpha]
 . TOE Reference
 +
-Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the Base-PP and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
+Information that uniquely identifies the TOE shall be reported. <<BIOPP-Module>> is intended to be used with the PP-Module Base and reference for the computer can be used as the TOE reference only if the reference for the computer also uniquely identifies the biometric system embedded in the computer
 +
 Modification to the TOE for testing, if any, shall be reported (e.g. the TOE is modified to export biometric data for reporting quality score). The rationale that such modification does not affect the TOE's quality control shall also be provided. For example, the developer may claim that the  quality control is not affected because modified code is not executed during biometric verification or the developer may run regression tests to verify that modification does not change the result of the quality control (e.g. quality score).
 . TOE configuration
