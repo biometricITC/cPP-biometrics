@@ -735,7 +735,7 @@ The Biometric System shall also protect templates so that only the user of the m
 The above requirements are defined as *FPT_PBT_EXT.1*, *FPT_BDP_EXT.1*, *FPT_KST_EXT.1*, *FPT_KST_EXT.2* and *FPT_AEX_EXT.4* in <<Security Functional Requirements>> in this PP-Module.
 
 ====== Management of the Biometric System configuration
-The mobile device shall enable/disable/remove the BAF as required by _FMT_SMF.1/Authentication_. Any change to the BAF (e.g. adding or revoking templates) requires re-authentication via the Password Authentication Factor as required by _FIA_UAU.6.1/CREDENTIAL_.
+The mobile device shall enable/disable the BAF as required by _FMT_SMF.1 (Management function 22)_, and revoke the BAF as _FMT_SMF.1 (Management Function 46)_. Any change to the BAF (e.g. adding or revoking templates) requires re-authentication via the Password Authentication Factor as required by _FIA_UAU.6.1_.
 
 This PP-Module assumes that above requirements are satisfied by the mobile device.
 
@@ -846,7 +846,7 @@ The Biometric System shall also protect templates so that only the user of the m
 The above requirements are defined through *FPT_PHP.3* in <<Security Functional Requirements>> in this PP-Module.
 
 ====== Management of the Biometric System configuration
-The mobile device shall enable/disable the BAF as required by _FMT_SMF.1 (Management function 22)_, and revoke the BAF as _FMT_SMF.1 (Management Function 46)_. Any change to the BAF (e.g. adding or revoking templates) requires re-authentication via the Password Authentication Factor as required by _FIA_UAU.6.1_.
+The mobile device shall enable/disable/remove the BAF as required by _FMT_SMF.1/Authentication_. Any change to the BAF (e.g. adding or revoking templates) requires re-authentication via the Password Authentication Factor as required by _FIA_UAU.6.1/CREDENTIAL_.
 
 This PP-Module assumes that above requirements are satisfied by the mobile device.
 
