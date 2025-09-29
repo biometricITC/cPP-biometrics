@@ -1125,7 +1125,11 @@ The L2PP-Module does not define any additional SFRs.
 
 === Security Assurance Requirements
 
-The L2PP-Module augments the SARs from the PP-Module Base with the addition of AVA_VAN.2 Vulnerability Analysis. The AVA_VAN.2 SAR added here is focsued on the SFRs included in the L2PP-Module based on the inclusion of the <<T.Intentional_Attack>>. This Threat is designed to represent attacks with a higher Attack Potential as defined in the BIOSD in Section 11 that matches with AVA_VAN.2. This SAR does not impact the overall AVA_VAN level for the TOE, only for the SFRs included in the L2PP-Module.
+This L2PP-Module is created following the multi-assurance evaluation paradigm that consists in applying different assurance requirements to different parts of the TSF (sub-TSFs), while enforcing a global set of SARs for the entire TOE. In this case, the entire TOE corresponds to computer containing the biometric system and the sub-TSF corresponds to the biometric system.
+
+The L2PP-Module augments the SARs from the PP-Module Base with the addition of AVA_VAN.2 to counter against <<T.Intentional_Attack>> that assumes higher attack potential for presentation attacks. The TOE evaluation should follow multi-assurance evaluation paradigm when the SARs for the TOE (i.e., computer) includes lower component, AVA_VAN.1.
+
+AVA_VAN.2 has additional dependencies on ADV_ARC.1, ADV_FSP.2 and ADV_TDS.1 in addition to those components depended by AVA_VAN.1, however, those dependencies are removed in this L2PP-Module because attack scenarios or recipes that require Enhanced-Basic attack potential are defined in Toolbox and the evaluator doesn't need such design information to verify that the TOE can counter against <<T.Intentional_Attack>>.
 
 Depending on the PP-Module Base for the BIOPP-Module it is possible that AVA_VAN.2 is already included in the set of SARs for the computer containing the biometric system. In this case the SAR for the overall TOE does not change but the evaluation activities related to the selected PAD component are decribed in the BIOSD specifically as it ties to AVA_VAN.2.
 
@@ -1269,7 +1273,11 @@ The L3PP-Module does not define any additional SFRs.
 
 === Security Assurance Requirements
 
-The L3PP-Module augments the SARs from the PP-Module Base with the addition of AVA_VAN.3 Focused Vulnerability Analysis. The AVA_VAN.3 SAR added here is focsued on the SFRs included in the L3PP-Module based on the inclusion of the <<T.Targeted_Attack>>. This Threat is designed to represent attacks with a higher Attack Potential as defined in the BIOSD in Section 11 that matches with AVA_VAN.3. This SAR does not impact the overall AVA_VAN level for the TOE, only for the SFRs included in the L3PP-Module.
+This L3PP-Module is created following the multi-assurance evaluation paradigm that consists in applying different assurance requirements to different parts of the TSF (sub-TSFs), while enforcing a global set of SARs for the entire TOE. In this case, the entire TOE corresponds to computer containing the biometric system and the sub-TSF corresponds to the biometric system.
+
+The L3PP-Module augments the SARs from the PP-Module Base with the addition of AVA_VAN.3 to counter against <<T.Targeted_Attack>>that assumes higher attack potential for presentation attacks. The TOE evaluation should follow multi-assurance evaluation paradigm when the SARs for the TOE (i.e., computer) includes lower component, AVA_VAN.1.
+
+AVA_VAN.3 has additional dependencies on ADV_ARC.1, ADV_FSP.4, ADV_TDS.3, ADV_IMP.1 and ATE_DPT.1 in addition to those components depended by AVA_VAN.1, however, those dependencies are removed in this L3PP-Module because attack scenarios or recipes that require Medium attack potential are defined in Toolbox and the evaluator doesn't need such design information to verify that the TOE can counter against <<T.Targeted_Attack>>.
 
 Depending on the PP-Module Base for the BIOPP-Module it is possible that AVA_VAN.3 is already included in the set of SARs for the computer containing the biometric system. In this case the SAR for the overall TOE does not change but the evaluation activities related to the selected PAD component are decribed in the BIOSD specifically as it ties to AVA_VAN.3.
 
