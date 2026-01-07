@@ -5,8 +5,8 @@
 :sectnums:
 :sectnumlevels: 5
 :imagesdir: images
-:revnumber: 2.0
-:revdate: February 28, 2025
+:revnumber: 2.1-PD1
+:revdate: January 7, 2026
 :xrefstyle: full
 :doctype: book
 :appendix-caption: Annex
@@ -177,6 +177,10 @@ Zero-effort Impostor Attempt::
 |2.0
 |February 28, 2025
 |Incorporated updated PAD levels and CC:2022 compliance
+
+|2.1-PD1
+|January 7, 2026
+|Updates to the Attacl Potential Table and PP-Modules for AVA_VAN
 
 |===
 
