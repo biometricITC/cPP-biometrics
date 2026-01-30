@@ -124,7 +124,7 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
 
 |[#CC-E&I]#[CC-E&I]#
-|Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024.
+|Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.
 
 |===
 
