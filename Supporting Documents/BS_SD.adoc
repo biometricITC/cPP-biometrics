@@ -1600,7 +1600,7 @@ However, it is important to be able to compare the resistance of various systems
 The levels are as follows:
 
 [loweralpha]
-. _Not needed_ is for attacks that do not need real biometric data to be available, for example, attacks based on synthetic images or template generation.
+. _Not needed_ is for attacks that do not need real biometric data to be available, for example, attacks based on synthetic images or template generation, or samples from an enroled subject are unnecessary to create a script during the identification phase.
 . _Without notice (Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject. For example, 2D face images uploaded on the Internet and latent fingerprint images on a glass can be collected without notice of the subject.
 . _Opportunistic Easy (Enhanced-Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject, but for which the identity of the subject is not known prior to the attack, as in a target of opportunity vs a planned attack. In this case, while the necessary images may not be difficult to acquire, they may have to be acquired after the attack has started instead of beforehand.
 . _Non-cooperative (Moderate)_ is for making an artefact with samples that need to be collected directly from an enroled subject in a short period of time without conscious cooperation from the subject. For example, iris or vein images need to be acquired with a high resolution or infrared camera, however, such images can be taken in a moment without conscious control of the subject.
