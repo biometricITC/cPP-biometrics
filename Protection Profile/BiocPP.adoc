@@ -304,14 +304,14 @@ The threat <<T.Scripted_Attack>> is defined as attacks which are scored as meeti
 
 === Organizational Security Policies
 
-[[OSP.Enrol]]OSP.Enrol::
-The TOE shall enrol a user for biometric verification, only after successful authentication of a user. The TOE shall ensure that templates are of sufficient quality in order to meet the relevant error rates for biometric verification.
+[[OSP.Auth_Enrol]]OSP.Auth_Enrol::
+The TOE shall only enrol a user for biometric verification after successful user authentication.
+
+[[OSP.Error_Rates]]OSP.Error_Rates::
+The TOE shall ensure that templates are of sufficient quality in order to meet the relevant error rates for biometric verification.
 
 [[OSP.Protection]]OSP.Protection::
 The TOE in cooperation with its environment shall protect itself, its configuration and biometric data.
-
-[[OSP.Verification_Error]]OSP.Verification_Error::
-The TOE shall meet relevant criteria for its security relevant error rates for biometric verification.
 
 === Assumptions
 This PP-Module does not define any assumptions.
@@ -321,22 +321,12 @@ This PP-Module defines the following security objectives.
 
 === Security Objectives for the TOE
 
-[[O.BIO_Verification]]O.BIO_Verification::
-The TOE shall provide a biometric verification mechanism to verify a user with an adequate reliability. The TOE shall meet the relevant criteria for its security relevant error rates for biometric verification.
-
-*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR. Corresponding error rates are specified in FIA_MBV_EXT.1.
-
-[[O.Enrol]]O.Enrol::
-The TOE shall implement the functionality to enrol a user for biometric verification and bind the template to the user only after successful authentication of the user using NBAF. The TOE shall create templates of sufficient quality in order to meet the relevant error rates for biometric verification.
-
-*Application Note {counter:remark_count}*:: In this PP-Module, relevant criteria are FAR/FMR and FRR/FNMR. Corresponding error rates are specified in FIA_MBV_EXT.1.
-
-[[O.Protection]]O.Protection::
-The TOE shall protect biometric data using the SEE provided by the TOE environment during runtime and storage.
-
-*Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e., the computer) satisfy relevant requirements defined in this PP-Module and PP-Module Base respectively to protect biometric data.
+This PP-Module is a Direct Rationale PP-Module following Appendix C.2.3 of CC:2022 Part 1. Accordingly, no security objectives for the TOE are defined.
 
 === Security Objectives for the Operational Environment
+
+[[OE.Auth_Enrol]]OE.Auth_Enrol::
+The TOE environment shall ensure that biometric enrolment is only available after a successful user authentication.
 
 [[OE.Protection]]OE.Protection::
 The TOE environment shall provide the SEE to protect the TOE, the TOE configuration and biometric data during runtime and storage.
@@ -344,32 +334,22 @@ The TOE environment shall provide the SEE to protect the TOE, the TOE configurat
 *Application Note {counter:remark_count}*:: The TOE and TOE environment (i.e. the computer) satisfy relevant requirements defined in this PP-Module and PP-Module Base respectively to protect biometric data.
 
 === Security Objectives Rationale
-The following table describes how the assumptions, threats, and organizational security policies map to the security objectives.
+The following table describes how the assumptions and organizational security policies map to the security objectives.
 
 [cols=".^1,.^1,2",options="header",]
 .Mapping between Security Problem Definition and Security Objectives
 |===
-|Threat, Assumption, or OSP 
+|Assumption or OSP 
 |Security Objectives 
 |Rationale
 
-|<<T.Casual_Attack>>
-
-<<T.Scripted_Attack>>
-
-<<OSP.Verification_Error>>	
-|<<O.BIO_Verification>>	
-|The threats <<T.Casual_Attack>> and <<T.Scripted_Attack>> are countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled or spoofed user from impersonating a legitimate user. The OSP <<OSP.Verification_Error>> is enforced by <<O.BIO_Verification>> as this requires the TOE to meet relevant criteria for security relevant error rates for biometric verification.
-
-|<<OSP.Enrol>>	
-|<<O.Enrol>>	
-|The OSP <<OSP.Enrol>> is enforced by <<O.Enrol>> as this require the TOE to implement the functionality to enrol a user for biometric verification and create sufficient quality of templates.
+|<<OSP.Auth_Enrol>>	
+|<<OE.Auth_Enrol>>		
+|The objective <<OE.Auth_Enrol>> is enforced by the security policy for the TOE environment <<OSP.Auth_Enrol>>.
 
 |<<OSP.Protection>>	
-|<<O.Protection>>
-
-<<OE.Protection>>	
-|The OSP <<OSP.Protection>> is enforced by <<O.Protection>> and its operational environment objective <<OE.Protection>>.
+|<<OE.Protection>>	
+|The objective <<OE.Protection>> is enforced by the security policy for the TOE environment <<OSP.Protection>>.
 
 |===
 
@@ -515,16 +495,20 @@ Target error rates defined in SFR shall be evaluated based on <<BIOSD>>. Normall
 
 === TOE Security Functional Requirements Rationale
 
-The following rationale provides justification for each security objective for the TOE, showing that the SFRs are suitable to meet and achieve the security objectives:
+The following rationale provides justification for each threat or security policy for the TOE, showing that the SFRs are suitable to meet and achieve the security requirements:
 
 [cols=".^1,.^1,2",options="header",]
-.Mapping between SFRs and Security Objectives
+.Mapping between Threats, Security Policies and SFRs
 |===
-|Objective 
+|Threats, Security Policies
 |Addressed By
 |Rationale
 
-.4+|<<O.BIO_Verification>>	
+.4+|<<T.Casual_Attack>>
+
+<<T.Scripted_Attack>>
+
+<<OSP.Error_Rates>>
 |<<FIA_MBV_EXT.1, FIA_MBV_EXT.1>>
 |This SFR supports the objective by defining the minimum accuracy of the biometric authentication methods that the TSF must support for verification.
 
@@ -537,7 +521,7 @@ The following rationale provides justification for each security objective for t
 |<<FIA_MBV_EXT.3, FIA_MBV_EXT.3>> (selection)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during verification.
 
-.4+|<<O.Enrol>>	
+.4+|<<OSP.Error_Rates>>	
 |<<FIA_MBE_EXT.1, FIA_MBE_EXT.1>>
 |This SFR supports the objective by providing a method for enroling a user for authentication.
 
@@ -550,9 +534,7 @@ The following rationale provides justification for each security objective for t
 |<<FIA_MBE_EXT.3, FIA_MBE_EXT.3>> (selection)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during enrolment.
 
-.5+a|<<O.Protection>>
-
-<<OE.Protection>>	
+.5+a|<<OSP.Protection>>
 |<<KPT_KST_EXT.1, FPT_KST_EXT.1>> (refined from <<PP_MDF>>)
 |This SFR supports the objectives by requiring the TOE to prevent the unprotected storage of biometric data.
 
@@ -596,31 +578,12 @@ The threats, OSPs and assumptions defined by this PP-Module (see the <<Security 
 
 |<<T.Scripted_Attack>>
 
-|<<OSP.Enrol>>
+|<<OSP.Auth_Enrol>>
 
-|<<OSP.Verification_Error>>
+|<<OSP.Error_Rates>>
 
 |<<OSP.Protection>>
 |This OSP is specific subsets of the T.PHYSICAL_ACCESS (i.e. direct and possibly destructive access to its storage media (biometric data)) threat in the <<PP_MDF>>.
-
-|===
-
-=== Consistency of Objectives
-
-The objectives for the biometric system and its operational environment are consistent with the <<PP_MDF>> based on the following rationale:
-
-.Consistency Rationale for TOE Objectives
-[cols=".^1,.^1",options="header"]
-|===
-|PP-Module TOE Objectives	
-|Consistency Rationale
-
-|<<O.BIO_Verification>>
-.2+|These TOE Objectives are specific subsets of the O.AUTH objective in the <<PP_MDF>>. 
-|<<O.Enrol>>
-
-|<<O.Protection>>
-|This TOE Objective is specific subset of the O.STORAGE objective in the <<PP_MDF>>.
 
 |===
 
@@ -630,8 +593,10 @@ The objectives for the biometric system and its operational environment are cons
 |PP-Module Environmental Objectives	
 |Consistency Rationale
 
+|<<OE.Auth_Rnrol>>
+.2+|All Environmental Objectives levied on the operational environment of biometric system (i.e. mobile device) are consistent with security requirements in the <<PP_MDF>>. 
+
 |<<OE.Protection>>
-.4+|All Environmental Objectives levied on the operational environment of biometric system (i.e. mobile device) are consistent with security requirements in the <<PP_MDF>>. 
 
 |===
 
@@ -1052,7 +1017,7 @@ The following assurance requirement is included for this PP-Module:
 
 The following threat replaces the selection-based threat <<T.Scripted_Attack>> in the PP-Module Base as mandatory, and as a superset of the original threat.
 
-T.Intentional_Attack:: An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes more specialized knowledge and preparation time beforehand to generate presentation attack instruments.
+[[T.Intentional_Attack]]T.Intentional_Attack:: An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes more specialized knowledge and preparation time beforehand to generate presentation attack instruments.
 
 The threat <<T.Intentional_Attack>> is defined as attacks which are scored as meeting Enhanced-Basic according to the Ratings of vulnerabilities and TOE resistance in the BIOSD.
 
@@ -1067,22 +1032,6 @@ The L2PP-Module does not define any assumptions.
 === Security Objectives
 
 The L2PP-Module does not device any new security objectives for the TOE or the operational environment.
-
-==== Security Objectives Rationale
-
-[cols=".^1,.^1,2",options="header",]
-.L2PP-Module Mapping between Security Problem Definition and Security Objectives
-|===
-
-|Threat, Assumption, or OSP 
-|Security Objectives 
-|Rationale
-
-|<<T.Intentional_Attack>>
-|<<O.BIO_Verification>>	
-|The threat <<T.Intentional_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled or spoofed user from impersonating a legitimate user.
-
-|===
 
 === Security Functional Requirements
 
@@ -1112,16 +1061,18 @@ There are no additional SFRs that to be claimed specifically for this L2PP-Modul
 
 The L2PP-Module does not define any additional SFRs.
 
-==== TOE Security Funcational Requirements Rationale
+==== TOE Security Functional Requirements Rationale
+
+The following rationale provides justification for each threat or security policy for the TOE, showing that the SFRs are suitable to meet and achieve the security requirements:
 
 [cols=".^1,.^1,2",options="header",]
-.L2PP-Module Mapping between SFRs and Security Objectives
+.L2PP-Module Mapping between Threats, Security Policies and SFRs
 |===
-|Objective 
+|Threats, Security Policies
 |Addressed By
 |Rationale
 
-|<<O.BIO_Verification>> (from the PP-Module Base)
+|<<T.Intentional_Attack>>
 |<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
 |This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during verification.
 
@@ -1202,7 +1153,7 @@ The following assurance requirement is included for this PP-Module:
 
 The following threat replaces the selection-based threat <<T.Scripted_Attack>> in the PP-Module Base as mandatory, and as a superset of the original threat.
 
-T.Targeted_Attack:: An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes more specialized knowledge and preparation time beforehand specifically about the legitimate user to generate presentation attack instruments.
+[[T.Targeted_Attack]]T.Targeted_Attack:: An attacker may attempt to impersonate as a legitimate user without being enroled in the TOE. In order to perform the attack, the attacker utilizes more specialized knowledge and preparation time beforehand specifically about the legitimate user to generate presentation attack instruments.
 
 The threat <<T.Targeted_Attack>> is defined as attacks which are scored as meeting Medium according to the Ratings of vulnerabilities and TOE resistance in the BIOSD.
 
@@ -1217,22 +1168,6 @@ The L3PP-Module does not define any assumptions.
 === Security Objectives
 
 The L3PP-Module does not device any new security objectives for the TOE or the operational environment.
-
-==== Security Objectives Rationale
-
-[cols=".^1,.^1,2",options="header",]
-.L3PP-Module Mapping between Security Problem Definition and Security Objectives
-|===
-
-|Threat, Assumption, or OSP 
-|Security Objectives 
-|Rationale
-
-|<<T.Targeted_Attack>>
-|<<O.BIO_Verification>>	
-|The threat <<T.Targeted_Attack>> is countered by <<O.BIO_Verification>> as this provides the capability of biometric verification to disallow an unenroled or spoofed user from impersonating a legitimate user.
-
-|===
 
 === Security Functional Requirements
 
@@ -1264,14 +1199,16 @@ The L3PP-Module does not define any additional SFRs.
 
 ==== TOE Security Funcational Requirements Rationale
 
+The following rationale provides justification for each threat or security policy for the TOE, showing that the SFRs are suitable to meet and achieve the security requirements:
+
 [cols=".^1,.^1,2",options="header",]
-.L3PP-Module Mapping between SFRs and Security Objectives
+.L3PP-Module Mapping between Threats, Security Policies and SFRs
 |===
-|Objective 
+|Threats, Security Policies
 |Addressed By
 |Rationale
 
-|<<O.BIO_Verification>> (from the PP-Module Base)
+|<<T.Targeted_Attack>> (from the PP-Module Base)
 |<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
 |This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during verification.
 
