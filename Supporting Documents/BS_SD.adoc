@@ -79,7 +79,7 @@ Biometric Security international Technical Community (BIO-iTC)
 
 |2.1-PD1
 |January 7, 2026
-|Updates to the Attacl Potential Table and PP-Modules for AVA_VAN
+|Updates to the Attack Potential Table and PP-Modules for AVA_VAN
 
 |===
 
