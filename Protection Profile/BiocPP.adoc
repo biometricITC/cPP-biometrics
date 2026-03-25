@@ -308,7 +308,7 @@ The threat <<T.Scripted_Attack>> is defined as attacks which are scored as meeti
 The TOE shall only enrol a user for biometric verification after successful user authentication.
 
 [[OSP.Error_Rates]]OSP.Error_Rates::
-The TOE shall ensure that templates are of sufficient quality in order to meet the relevant error rates for biometric verification.
+The TOE shall ensure that templates and samples are of sufficient quality and meet relevant criteria for its security relevant error rates for biometric verification.
 
 [[OSP.Protection]]OSP.Protection::
 The TOE in cooperation with its environment shall protect itself, its configuration and biometric data.
@@ -504,37 +504,32 @@ The following rationale provides justification for each threat or security polic
 |Addressed By
 |Rationale
 
-.4+|<<T.Casual_Attack>>
-
-<<T.Scripted_Attack>>
-
-<<OSP.Error_Rates>>
-|<<FIA_MBV_EXT.1, FIA_MBV_EXT.1>>
-|This SFR supports the objective by defining the minimum accuracy of the biometric authentication methods that the TSF must support for verification.
-
-|<<FIA_MBV_EXT.2, FIA_MBV_EXT.2>>
-|This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for verification.
-
+.3+|<<T.Scripted_Attack>>
 |<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
 |This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during verification.
 
 |<<FIA_MBV_EXT.3, FIA_MBV_EXT.3>> (selection)
 |This SFR supports the objective by requiring the TSF to detect spoofed biometric data during verification.
 
-.4+|<<OSP.Error_Rates>>	
+|<<FIA_MBE_EXT.3, FIA_MBE_EXT.3>> (selection)
+|This SFR supports the objective by requiring the TSF to detect spoofed biometric data during enrolment.
+
+.4+|<<T.Casual_Attack>>
+
+<<OSP.Error_Rates>>	
 |<<FIA_MBE_EXT.1, FIA_MBE_EXT.1>>
 |This SFR supports the objective by providing a method for enroling a user for authentication.
 
 |<<FIA_MBE_EXT.2, FIA_MBE_EXT.2>>
 |This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for enrolment.
 
-|<<FIA_PAD_EXT.1, FIA_PAD_EXT.1>>
-|This SFR supports the objective by specifying the level of support for detecting spoofed biometric data during enrolment.
+|<<FIA_MBV_EXT.1, FIA_MBV_EXT.1>>
+|This SFR supports the objective by defining the minimum accuracy of the biometric authentication methods that the TSF must support for verification.
 
-|<<FIA_MBE_EXT.3, FIA_MBE_EXT.3>> (selection)
-|This SFR supports the objective by requiring the TSF to detect spoofed biometric data during enrolment.
+|<<FIA_MBV_EXT.2, FIA_MBV_EXT.2>>
+|This SFR supports the objective by requiring the TSF to enforce a minimum quality standard on the biometric data used for verification.
 
-.5+a|<<OSP.Protection>>
+.4+a|<<OSP.Protection>>
 |<<KPT_KST_EXT.1, FPT_KST_EXT.1>> (refined from <<PP_MDF>>)
 |This SFR supports the objectives by requiring the TOE to prevent the unprotected storage of biometric data.
 
@@ -543,7 +538,6 @@ The following rationale provides justification for each threat or security polic
 
 |<<FPT_BDP_EXT.1, FPT_BDP_EXT.1>>
 |This SFR supports the objectives by requiring the TOE to provide the SEE for the processing of biometric data which is not available to the main computer operating system.
-
 
 |<<FPT_PBT_EXT.1, FPT_PBT_EXT.1>>
 |This SFR supports the objectives by requiring the TOE to protect a user's biometric template with an additional authentication factor.
@@ -593,7 +587,7 @@ The threats, OSPs and assumptions defined by this PP-Module (see the <<Security 
 |PP-Module Environmental Objectives	
 |Consistency Rationale
 
-|<<OE.Auth_Rnrol>>
+|<<OE.Auth_Enrol>>
 .2+|All Environmental Objectives levied on the operational environment of biometric system (i.e. mobile device) are consistent with security requirements in the <<PP_MDF>>. 
 
 |<<OE.Protection>>
