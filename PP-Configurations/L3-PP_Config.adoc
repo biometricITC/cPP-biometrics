@@ -34,7 +34,7 @@ This PP-Configuration includes the following components:
 
 == Conformance Statement
 
-Conformance to this PP-Configuration, required for the Security Targets clziming conformance to it, is exact conformance as defined in Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1.
+Conformance to this PP-Configuration, required for the Security Targets claiming conformance to it, is exact conformance as defined in <<CC1>> and <<CC-E&I>>.
 
 == The Assurance package conformance claim
 
