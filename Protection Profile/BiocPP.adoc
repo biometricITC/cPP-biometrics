@@ -270,9 +270,9 @@ The requirements for the TOE focus on the biometric performance (FTE, FAR/FMR an
 
 As defined by the references <<CC1>>, <<CC2>>, <<CC3>>, <<CC4>>, <<CC5>> and <<CC-E&I>> when the PP-Module Base is the <<PP_MDF>>, this PP-Module:
 
-* conforms to the requirements of Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1,
-* is Part 2 extended,
-* is Part 3 extended,
+* conforms to <<CC1>>, <<CC2>>, <<CC3>> and <<CC-E&I>>,
+* is <<CC2>> extended,
+* is <<CC3>> extended,
 * all assurance requirements are inherited from the PP-Module Base,
 * does not claim conformance to any other security functional packages or Protection Profiles.
 
@@ -321,7 +321,7 @@ This PP-Module defines the following security objectives.
 
 === Security Objectives for the TOE
 
-This PP-Module is a Direct Rationale PP-Module following Appendix C.2.3 of CC:2022 Part 1. Accordingly, no security objectives for the TOE are defined.
+This PP-Module is a Direct Rationale PP-Module following Appendix C.2.3 of <<CC1>>. Accordingly, no security objectives for the TOE are defined.
 
 === Security Objectives for the Operational Environment
 
@@ -998,9 +998,9 @@ The L2PP-Module does not specifically define a use case, though it aligns with t
 
 As defined by the references <<CC1>>, <<CC2>>, <<CC3>>, <<CC4>>, <<CC5>> and <<CC-E&I>>, this PP-Module:
 
-* conforms to the requirements of Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.2,
-* is Part 2 extended,
-* is Part 3 extended.
+* conforms to <<CC1>>, <<CC2>>, <<CC3>> and <<CC-E&I>>,
+* is <<CC2>> extended,
+* is <<CC3>> extended.
 
 The following assurance requirement is included for this PP-Module:
 
@@ -1134,9 +1134,9 @@ The L3PP-Module does not specifically define a use case, though it aligns with t
 
 As defined by the references <<CC1>>, <<CC2>>, <<CC3>>, <<CC4>>, <<CC5>> and <<CC-E&I>>, this PP-Module:
 
-* conforms to the requirements of Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.2,
-* is Part 2 extended,
-* is Part 3 extended.
+* conforms to <<CC1>>, <<CC2>>, <<CC3>> and <<CC-E&I>>,
+* is <<CC2>> extended,
+* is <<CC3>> extended.
 
 The following assurance requirement is included for this PP-Module:
 
