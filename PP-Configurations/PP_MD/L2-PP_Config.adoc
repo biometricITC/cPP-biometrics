@@ -1,0 +1,165 @@
+= Multi-Assurance PP-Configuration for PAD-L2 Biometric Verification - [CFG-MDF-BIO-L2]
+:showtitle:
+:toc:
+:table-caption: Table
+:revnumber: 1.0
+:revdate: January 28, 2026
+:xrefstyle: full
+:doctype: book
+
+== Acknowledgements
+
+This PP-Configuration was developed by the Biometrics Security international Technical Community (BIO-iTC) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+
+:sectnums:
+:sectnumlevels: 5
+
+== Introduction
+
+The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that combines Protection Profiles (PPs) and PP-Modules for various technology types into a single configuration that can be evaluated as a whole. The scope includes the definition of the configuration of a mobile device (a computer in the terms of the PP-Module) that has biometric enrolment and verification capability. The TOE will be defined by a combination of the components described in <<PP-Configuration Components Statement>>.
+
+== PP-Configuration Reference
+
+This PP-Configuration is identified as follows:
+
+* Multi-Assurance PP-Configuration for PAD-L2 Biometric Verification - <<CFG-MDF-BIO-L2>>, {revdate}, Version {revnumber}
+
+== PP-Configuration Components Statement
+
+This PP-Configuration includes the following components:
+
+* PP-Module Base: Protection Profile for Mobile Device Fundamentals, <date>, Version 4.0. <<PP_MDF>>
+* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [<<MOD_BIO_V2.1, BIOPP-Module>>], <date>, Version <version>
+* PP-Module: collaborative PP-Module with PAD-L2 for Biometric verification [<<MOD_L2BIO_V1.0,L2PP-Module>>], <date>, Version <version>
+
+== Conformance Statement
+
+Conformance to this PP-Configuration, required for the Security Targets claiming conformance to it, is exact conformance as defined in <<CC1>> and <<CC-E&I>>.
+
+== The Assurance package conformance claim
+
+This PP-Configuration is a Multi-Assurance configuration. This requires conformity to the requirements of the PP-Module Base (<<PP_MDF>>) as well as the requirements of the <<MOD_L2BIO_V1.0>> which is an augmented AVA_VAN.2 requirement targeted in one area.
+
+The global set of SARs are defined in the PP-Module Base, and are consistent with the threats defined in the SPD. The PP-Module defines one enhanced threat, T.Intentional_Attack, a superset of T.Scripted_Attack.
+
+The global set of SARs as defined in the PP-Module Base are consistent with the additional SARs from the PP-Module, in that there is only one additional SAR for the PP-Module (AVA_VAN.2) that is applied only to the sub-TSF of the PP-Module in relation to PAD testing. This application of AVA_VAN.2 to the PP-Module sub-TSF is the intent of the PP-Module and PP-Configuration.
+
+=== PP_MDF Assurance conformance
+
+[cols=".^,.^",options="header",]
+.Assurance Components from PP_MDF
+|===
+|Assurance Class 
+|Assurance Components
+
+.7+|Security Target (ASE) 
+|Conformance Claims (ASE_CCL.1)
+|Extended Components Definition (ASE_ECD.1)
+|ST Introduction (ASE_INT.1)
+|Security Objectives for the Operational Environment (ASE_OBJ.1)
+|Stated Security Requirements (ASE_REQ.1)
+|Security Problem Definition (ASE_SPD.1)
+|TOE Summary Specification (ASE_TSS.1)
+
+|Development (ADV) 
+|Basic Functional Specification (ADV_FSP.1)
+
+.2+|Guidance Documents (AGD) 
+|Operational User Guidance (AGD_OPE.1)
+|Preparative Procedures (AGD_PRE.1)
+
+.3+|Life Cycle Support (ALC) 
+|Labeling of the TOE (ALC_CMC.1)
+|TOE CM Coverage (ALC_CMS.1)
+|Timely Security Updates (ALC_TSU_EXT.1)
+
+|Tests (ATE) 
+|Independent testing - conformance (ATE_IND.1)
+
+|Vulnerability Assessment (AVA) 
+|Vulnerability Survey (AVA_VAN.1)
+
+|===
+
+Note that to fully evaluate the TOE, these SARs shall be applied to the entire TSF and not just the portions described by <<PP_MDF>> where the SARs are defined.
+
+=== Presentation Attack Detection (PAD) conformance
+
+[cols=".^,.^",options="header",]
+.Assurance Components from MOD_L2BIO_V1.0
+|===
+|Assurance Class 
+|Assurance Components
+
+|Vulnerability Assessment
+|Vulnerabiltiy Analysis (AVA_VAN.2) - for PAD only
+
+|===
+
+In order to evaluate a TOE that claims conformance to the Presentation Attack Detection (PAD) requirements, the evaluator shall evaluate the TOE using the tests defined in the <<Toolbox>>. PAD conformance is not normally mandatory for a TOE under evaluation, though in this PP-Configuration it is mandatory as it is the only reason to utilize this PP-Configuration.
+
+== Related Documents
+
+**Common Criteria**footnote:[For details see http://www.commoncriteriaportal.org/]
+
+[cols=".^1,3",]
+|===
+
+|[#CC1]#[CC1]#
+|Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2022-11-001, CC:2022 Revision 1, November 2022.
+
+|[#CC2]#[CC2]#
+|Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2022-11-002, CC:2022 Revision 1, November 2022.
+
+|[#CC3]#[CC3]#
+|Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2022-11-003, CC:2022 Revision 1, November 2022.
+
+|[#CC4]#[CC4]#
+|Common Criteria for Information Technology Security Evaluation, Part 4: Framework for the specification of evaluation methods and activities, CCMB-2022-11-004, CC:2022 Revision 1, November 2022.
+
+|[#CC5]#[CC5]#
+|Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
+
+|[#CEM]#[CEM]#
+|Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
+
+|[#CC-E&I]#[CC-E&I]#
+|Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.
+
+|===
+
+*Protection Profiles*
+
+[cols=".^1,3",]
+|===
+|[#PP_MDF]#[PP_MDF]# 
+|Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3
+
+|[#MOD_BIO_V2.1]#[MOD_BIO_V2.1]# 
+|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0
+
+|[#MOD_L2BIO_V1.0]#[MOD_L2BIO_V1.0]#
+|PP-Module: collaborative PP-Module with PAD-L2 for Biometric verification [L2PP-Module], <date>, Version <version>
+
+|[#BIOSD]#[BIOSD]#
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], February 28, 2025, Version 2.0
+
+|[#Toolbox]#[Toolbox]# 
+|Toolbox Overview, October 15, 2024, Version 1.2
+
+|===
+
+== Revision History
+
+[cols=".^1,.^2,3",options="header",]
+.Revision history
+|===
+|Version 
+|Date 
+|Description
+
+|1.0
+|{revdate}
+|Initial version for possible use
+
+|===
