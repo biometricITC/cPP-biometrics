@@ -2,8 +2,8 @@
 :showtitle:
 :toc:
 :table-caption: Table
-:revnumber: 2.0
-:revdate: February 28, 2025
+:revnumber: 2.1
+:revdate: May 1, 2026
 :xrefstyle: full
 :doctype: book
 
@@ -22,20 +22,20 @@ The purpose of a PP-Configuration is to define a Target of Evaluation (TOE) that
 
 This PP-Configuration is identified as follows:
 
-* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<CFG-MDF-BIO>>, February 28, 2025, Version 2.0 
+* PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - <<CFG-MDF-BIO>>, {revdate}, Version {revnumber}
 
 == PP-Configuration Components Statement
 
 This PP-Configuration includes the following components:
 
-* Base-PP: Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3. <<PP_MDF>>
-* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0
+* Base-PP: Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0. <<PP_MDF>>
+* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], {revdate}, Version {revnumber}
 
 == Conformance claim and conformance statement
 
 === Common Criteria Conformance claim
 
-This PP-Configuration, <<PP_MDF>> and <<MOD_BIO_V2.0>> are conformant to Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.1.
+This PP-Configuration, <<PP_MDF>> and <<MOD_BIO_V2.1>> are conformant to Common Criteria CC:2022, Release 1 and the Errata and Interpretation, Version 1.2.
 
 The <<PP_MDF>> will be evaluated in compliance to CC:2022.
 
@@ -114,7 +114,7 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
 
 |[#CC-E&I]#[CC-E&I]#
-|Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024.
+|Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.
 
 |===
 
@@ -123,13 +123,13 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 [cols=".^1,3",]
 |===
 |[#PP_MDF]#[PP_MDF]# 
-|Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3
+|Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0
 
-|[#MOD_BIO_V2.0]#[MOD_BIO_V2.0]# 
-|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0
+|[#MOD_BIO_V2.1]#[MOD_BIO_V2.1]# 
+|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], {revdate}, Version {revnumber}
 
 |[#BIOSD]#[BIOSD]#
-|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], February 28, 2025, Version 2.0
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], {revdate}, Version {revnumber}
 
 |[#Toolbox]#[Toolbox]# 
 |Toolbox Overview, October 15, 2024, Version 1.2
@@ -176,5 +176,9 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |2.0
 |February 28, 2025
 |Incorporated updated PAD levels and CC:2022 compliance
+
+|{revnumber}
+|{revdate}
+|Updates to the Attack Potential Table and PP-Modules for AVA_VAN and support for PP_MDF_V4.0
 
 |===

@@ -5,8 +5,8 @@
 :sectnums:
 :sectnumlevels: 5
 :imagesdir: images
-:revnumber: 2.1-PD1
-:revdate: January 7, 2026
+:revnumber: 2.1
+:revdate: May 1, 2026
 :xrefstyle: full
 :doctype: book
 :appendix-caption: Annex
@@ -44,14 +44,13 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#CC5]#[CC5]#	Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
 - [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.
-- [#PP_OS]#[PP_OS]# Protection Profile for General Purpose Operating Systems.
-- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3.
-- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], February 28, 2025, Version 2.0.
-- [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], February 28, 2025, Version 2.0.
-- [#ISO/IEC 19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting — Part 1: Principles and framework, First edition.
-- [#ISO/IEC 29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, 2015.
-- [#ISO/IEC 30107-1]#[ISO/IEC 30107-1]# Biometric presentation attack detection - Part 1: Framework, First edition.
-- [#NIST800-63B]#[NIST800-63B]# NIST Special Publication 800-63B, Digital Identity Guidelines Authentication and Lifecycle Management, June 2017
+- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0.
+- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], {revdate}, Version {revnumber}.
+- [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], {revdate}, Version {revnumber}.
+- [#ISO/IEC 19795-1]#[ISO/IEC 19795-1:2021]# Biometric performance testing and reporting — Part 1: Principles and framework, Edition 2.
+- [#ISO/IEC 29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, Edition 1.
+- [#ISO/IEC 30107-1]#[ISO/IEC 30107-1:2023]# Biometric presentation attack detection - Part 1: Framework, Edition 2.
+- [#NIST800-63B]#[NIST800-63B]# NIST Special Publication 800-63B-4, Digital Identity Guidelines Authentication and Lifecycle Management, July 2025.
 
 === Glossary
 For the purpose of this PP-Module, the following terms and definitions are given in <<ISO/IEC 19795-1>> and <<ISO/IEC 29156>>. If the same terms and definitions are given in those references, terms and definitions that fit the context of this PP-Module take precedence. Some terms and definitions are also adjusted to match the context of the biometric enrolment and verification.
@@ -178,9 +177,9 @@ Zero-effort Impostor Attempt::
 |February 28, 2025
 |Incorporated updated PAD levels and CC:2022 compliance
 
-|2.1-PD1
-|January 7, 2026
-|Updates to the Attack Potential Table and PP-Modules for AVA_VAN
+|{revnumber}
+|{revdate}
+|Updates to the Attack Potential Table and PP-Modules for AVA_VAN and support for PP_MDF_V4.0
 
 |===
 
