@@ -3,7 +3,7 @@
 :toc:
 :table-caption: Table
 :revnumber: 1.0
-:revdate: January 28, 2026
+:revdate: May 1, 2026
 :xrefstyle: full
 :doctype: book
 
@@ -28,9 +28,9 @@ This PP-Configuration is identified as follows:
 
 This PP-Configuration includes the following components:
 
-* PP-Module Base: Protection Profile for Mobile Device Fundamentals, <date>, Version 4.0. <<PP_MDF>>
-* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [<<MOD_BIO_V2.1, BIOPP-Module>>], <date>, Version <version>
-* PP-Module: collaborative PP-Module with PAD-L3 for Biometric verification [<<MOD_L3BIO_V1.0,L3PP-Module>>], <date>, Version <version>
+* PP-Module Base: Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0. <<PP_MDF>>
+* PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [<<MOD_BIO_V2.1, BIOPP-Module>>], {revdate}, Version {revnumber}
+* PP-Module: collaborative PP-Module with PAD-L3 for Biometric verification [<<MOD_L3BIO_V1.0,L3PP-Module>>], {revdate}, Version {revnumber}
 
 == Conformance Statement
 
@@ -136,13 +136,13 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |Protection Profile for Mobile Device Fundamentals, <date>, Version 4.0
 
 |[#MOD_BIO_V2.1]#[MOD_BIO_V2.1]# 
-|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0
+|collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], {revdate}, Version {revnumber}
 
 |[#MOD_L3BIO_V1.0]#[MOD_L3BIO_V1.0]#
-|PP-Module: collaborative PP-Module with PAD-L3 for Biometric verification [L3PP-Module], <date>, Version <version>
+|PP-Module: collaborative PP-Module with PAD-L3 for Biometric verification [L3PP-Module], {revdate}, Version {revnumber}
 
 |[#BIOSD]#[BIOSD]#
-|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], February 28, 2025, Version 2.0
+|Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], {revdate}, Version {revnumber}
 
 |[#Toolbox]#[Toolbox]# 
 |Toolbox Overview, October 15, 2024, Version 1.2

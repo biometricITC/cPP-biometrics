@@ -5,8 +5,8 @@
 :table-caption: Table
 :imagesdir: images
 :icons: font
-:revnumber: 2.1-PD1
-:revdate: January 7, 2026
+:revnumber: 2.1
+:revdate: May 1, 2026
 :xrefstyle: full
 :doctype: book
 
@@ -77,9 +77,9 @@ Biometric Security international Technical Community (BIO-iTC)
 |February 28, 2025
 |Incorporated updated PAD levels and CC:2022 compliance
 
-|2.1-PD1
-|January 7, 2026
-|Updates to the Attack Potential Table and PP-Modules for AVA_VAN
+|{revnumber}
+|{revdate}
+|Updates to the Attack Potential Table and PP-Modules for AVA_VAN and support for PP_MDF_V4.0
 
 |===
 
@@ -120,10 +120,10 @@ This Supporting Document was developed by the Biometric Security international T
 |Toolbox Overview
 
 |Toolbox Overview Version
-|{revnumber}
+|1.2
 
 |Toolbox Overview Date
-|{revdate}
+|October 15, 2024
 
 |===
 
@@ -1914,19 +1914,19 @@ The evaluator shall select "None" because potential difficulties to having acces
 - [#CC5]#[CC5]#	Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
 - [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.       
-- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3.    
-- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], February 28, 2025, Version 2.0.    
-- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0.
+- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0.    
+- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], {revdate}, Version {revnumber}.    
+- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], {revdate}, Version {revnumber}.
 - [#Toolbox]#[Toolbox]# Toolbox Overview, October 15, 2024, Version 1.2.
-- [#ISO19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
-- [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
-- [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
-- [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems - Part 1: Framework, Under revision.  
+- [#ISO19795-1]#[ISO/IEC 19795-1:2021]# Biometric performance testing and reporting - Part 1: Principles and framework, Edition 2.
+- [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, Edition 1.    
+- [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, Edition 1.
+- [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems - Part 1: Framework, Under revision.
 - [#ISO25456]#[ISO/IEC 25456]# Biometrics — Biometric data injection attack detection, Under development.  
-- [#ISO29794-1]#[ISO/IEC 29794-1]# Information technology — Biometric sample quality - Part 1: Framework, First edition.
-- [#ISO29794-4]#[ISO/IEC 29794-4]# Information technology — Biometric sample quality - Part 4: Finger image data, First edition.
-- [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
-- [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
+- [#ISO29794-1]#[ISO/IEC 29794-1:2024]# Information technology — Biometric sample quality - Part 1: Framework, Edition 3.
+- [#ISO29794-4]#[ISO/IEC 29794-4:2024]# Information technology — Biometric sample quality - Part 4: Finger image data, Edition 2.
+- [#ISO30107-3]#[ISO/IEC 30107-3:2023]# Biometric presentation attack detection - Part 3: Testing and reporting, Edition 2.
+- [#ISO30107-4]#[ISO/IEC 30107-4:2024]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, Edition 2.
 - [#Qualifying Fingerprint Samples]#[Qualifying Fingerprint Samples]# Qualifying Fingerprint Samples Captured by Smartphone Cameras in Real-Life Scenarios - May 3, 2016, http://hdl.handle.net/11250/2388306.
 - [#Performance of Biometric Quality]#[Performance of Biometric Quality]# Performance of Biometric Quality Measures - April 16, 2007, https://www.nist.gov/publications/performance-biometric-quality-measures.
 - [#Ongoing Face Recognition Vendor Test]#[Ongoing Face Recognition Vendor Test]# Ongoing Face Recognition Vendor Test (FRVT) Part 5: Face Image Quality Assessment - August 11, 2021, https://pages.nist.gov/frvt/reports/quality/frvt_quality_report.pdf.
