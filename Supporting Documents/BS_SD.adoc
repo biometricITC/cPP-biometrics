@@ -746,8 +746,8 @@ In addition to the EAs required by the Base-PP, the evaluator shall perform the 
 
 === Modified SFRs from the Base-PP
 ==== Cryptographic Support (FCS)
-===== FCS_CKM_EXT.4 Key Destruction
-Refer to the EA for FCS_CKM_EXT.4 in the <<PP_MDF>> including biometric data as critical security parameters for the EA.
+===== FCS_CKM.6 Timing and Event of Cryptographic Key Destruction
+Refer to the EA for FCS_CKM.6 in the <<PP_MDF>> including biometric data as keying material for the EA.
 
 ==== Protection of the TSF (FPT)
 ===== FPT_AEX_EXT.4 Domain Isolation 
