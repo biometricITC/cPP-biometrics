@@ -5,8 +5,8 @@
 :table-caption: Table
 :imagesdir: images
 :icons: font
-:revnumber: 2.0
-:revdate: February 28, 2025
+:revnumber: 2.1
+:revdate: May 1, 2026
 :xrefstyle: full
 :doctype: book
 
@@ -77,6 +77,10 @@ Biometric Security international Technical Community (BIO-iTC)
 |February 28, 2025
 |Incorporated updated PAD levels and CC:2022 compliance
 
+|{revnumber}
+|{revdate}
+|Updates to the Attack Potential Table and PP-Modules for AVA_VAN and support for PP_MDF_V4.0
+
 |===
 
 === General Purpose
@@ -116,10 +120,10 @@ This Supporting Document was developed by the Biometric Security international T
 |Toolbox Overview
 
 |Toolbox Overview Version
-|{revnumber}
+|1.2
 
 |Toolbox Overview Date
-|{revdate}
+|October 15, 2024
 
 |===
 
@@ -739,7 +743,25 @@ The evaluator can pass this EA only if the evaluator confirms that:
 
 The evaluator shall report the summary of result of EA defined above, especially how the evaluator reaches the Pass/Fail judgement based on the Pass/Fail criteria.
 
-== Evaluation Activities for PP-Module Selection-Based Requirements 
+== Evaluation Activities for PP_MDF Requirements
+In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP's security functionaltiy is maintained by the addition of the PP-Module.
+
+=== Modified SFRs from the Base-PP
+==== Cryptographic Support (FCS)
+===== FCS_CKM.6 Timing and Event of Cryptographic Key Destruction
+Refer to the EA for FCS_CKM.6 in the <<PP_MDF>> including biometric data as keying material for the EA.
+
+==== Protection of the TSF (FPT)
+===== FPT_AEX_EXT.4 Domain Isolation 
+Refer to the EA for FPT_AEX_EXT.4 in the <<PP_MDF>> including the protection of biometric data in the isolation description.
+
+===== FPT_KST_EXT.1 Key Storage
+Refer to the EA for FPT_KST_EXT.1 in the <<PP_MDF>> including biometric data as part of the plaintext key materials.
+
+===== FPT_KST_EXT.2 No Key Transmission
+Refer to the EA for FPT_KST_EXT.2 in the <<PP_MDF>> including biometric data as part of the plaintext key materials.
+
+== Evaluation Activities for Selection-Based Requirements 
 
 === Identification and Authentication (FIA)
 
@@ -1677,9 +1699,9 @@ However, it is important to be able to compare the resistance of various systems
 The levels are as follows:
 
 [loweralpha]
-. _Not needed_ is for attacks that do not need real biometric data to be available, for example, attacks based on synthetic images or template generation.
-. _Without notice (Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject. For example, 2D face images uploaded on the Internet and latent fingerprint images on a glass can be collected without notice of the subject.
-. _Opportunistic Easy (Enhanced-Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject, but for which the identity of the subject is not known prior to the attack, as in a target of opportunity vs a planned attack. In this case, while the necessary images may not be difficult to acquire, they may have to be acquired after the attack has started instead of beforehand.
+. _Not needed_ is for attacks that do not need real biometric data to be available, for example, attacks based on synthetic images or template generation, or samples from an enroled subject are unnecessary to create a script during the identification phase.
+. _Without notice (Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject. It assumes these samples are publicly available in locations accessible to anyone (e.g., the internet). For example, 2D facial images uploaded to the web can be harvested without notice of the subject.
+. _Opportunistic Easy (Enhanced-Easy)_ is for making an artefact with samples that can be collected without any contact with an enroled subject; however, the attacker must collect samples from objects the subject has physically touched. For example, while a latent fingerprint on a drinking glass can be collected without notice of the subject, the attacker must physically obtain the glass to retrieve the sample. In the context of face verification, obtaining facial images from the web is often hindered by a lack of identifying metadata (such as a name). If the subject is a complete stranger, the attacker is instead forced to capture the image manually.
 . _Non-cooperative (Moderate)_ is for making an artefact with samples that need to be collected directly from an enroled subject in a short period of time without conscious cooperation from the subject. For example, iris or vein images need to be acquired with a high resolution or infrared camera, however, such images can be taken in a moment without conscious control of the subject.
 . _Cooperative (Difficult)_ is for making an artefact with samples that need to be collected directly from an enroled subject with full cooperation from the subject. For example, the acquisition of a detailed 3D face scan of the subject takes time and requires full cooperation from the subject.
 
@@ -1990,21 +2012,21 @@ The evaluator shall select "None" because potential difficulties to having acces
 - [#CC4]#[CC4]#	Common Criteria for Information Technology Security Evaluation, Part 4: Framework for the specification of evaluation methods and activities, CCMB-2022-11-004, CC:2022 Revision 1, November 2022.
 - [#CC5]#[CC5]#	Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
-- [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024.       
-- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, September 12, 2022, Version 3.3.    
-- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], February 28, 2025, Version 2.0.    
+- [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.       
+- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0.    
+- [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], {revdate}, Version {revnumber}.    
 - [#TS 103 732-1]#[TS 103 732-1]# ETSI CYBER; Consumer Mobile Device; Part 1: Base Protection Profile, ???, Version 3.1.1
-- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], February 28, 2025, Version 2.0.
+- [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], {revdate}, Version {revnumber}.
 - [#Toolbox]#[Toolbox]# Toolbox Overview, October 15, 2024, Version 1.2.
-- [#ISO19795-1]#[ISO/IEC 19795-1]# Biometric performance testing and reporting - Part 1: Principles and framework, First edition.    
-- [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, First edition.    
-- [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, First edition.
-- [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems - Part 1: Framework, Under revision.  
+- [#ISO19795-1]#[ISO/IEC 19795-1:2021]# Biometric performance testing and reporting - Part 1: Principles and framework, Edition 2.
+- [#ISO19795-2]#[ISO/IEC 19795-2]# Biometric performance testing and reporting - Part 2: Testing methodologies for technology and scenario evaluation, Edition 1.    
+- [#ISO19795-3]#[ISO/IEC 19795-3]# Biometric performance testing and reporting - Part 3: Modality-specific testing, Edition 1.
+- [#ISO19989-1]#[ISO/IEC 19989-1]# Criteria and methodology for security evaluation of biometric systems - Part 1: Framework, Under revision.
 - [#ISO25456]#[ISO/IEC 25456]# Biometrics — Biometric data injection attack detection, Under development.  
-- [#ISO29794-1]#[ISO/IEC 29794-1]# Information technology — Biometric sample quality - Part 1: Framework, First edition.
-- [#ISO29794-4]#[ISO/IEC 29794-4]# Information technology — Biometric sample quality - Part 4: Finger image data, First edition.
-- [#ISO30107-3]#[ISO/IEC 30107-3]# Biometric presentation attack detection - Part 3: Testing and reporting, First edition.
-- [#ISO30107-4]#[ISO/IEC 30107-4]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, First edition.
+- [#ISO29794-1]#[ISO/IEC 29794-1:2024]# Information technology — Biometric sample quality - Part 1: Framework, Edition 3.
+- [#ISO29794-4]#[ISO/IEC 29794-4:2024]# Information technology — Biometric sample quality - Part 4: Finger image data, Edition 2.
+- [#ISO30107-3]#[ISO/IEC 30107-3:2023]# Biometric presentation attack detection - Part 3: Testing and reporting, Edition 2.
+- [#ISO30107-4]#[ISO/IEC 30107-4:2024]# Biometric presentation attach detection - Part 4: Profile for testing of mobile devices, Edition 2.
 - [#Qualifying Fingerprint Samples]#[Qualifying Fingerprint Samples]# Qualifying Fingerprint Samples Captured by Smartphone Cameras in Real-Life Scenarios - May 3, 2016, http://hdl.handle.net/11250/2388306.
 - [#Performance of Biometric Quality]#[Performance of Biometric Quality]# Performance of Biometric Quality Measures - April 16, 2007, https://www.nist.gov/publications/performance-biometric-quality-measures.
 - [#Ongoing Face Recognition Vendor Test]#[Ongoing Face Recognition Vendor Test]# Ongoing Face Recognition Vendor Test (FRVT) Part 5: Face Image Quality Assessment - August 11, 2021, https://pages.nist.gov/frvt/reports/quality/frvt_quality_report.pdf.
