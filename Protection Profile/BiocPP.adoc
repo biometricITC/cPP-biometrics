@@ -468,14 +468,14 @@ that meets the following: [assignment: _list of standards_].
 ===== FIA_AFL.1 Authentication failure handling
 This SFR adds the specific biometrics allowed by the PP-Module and only makes changes to FIA_AFL.1.1.
 
-*FIA_AFL.1.1*:: The TSF shall detect when [an integer between 3 and 10] unsuccessful authentication attempts occur related to [selection: _password, PIN, pattern, *eye, face, fingerprint, vein,* EAF_].
+*FIA_AFL.1.1*:: The TSF shall detect when [_an integer between 3 and 10_] unsuccessful authentication attempts occur related to [selection: _password, PIN, pattern, *eye, face, fingerprint, vein,* EAF_].
 
 *FIA_AFL.1.2*:: When the defined number of unsuccessful authentication attempts has been [met], the TSF shall [selection: _reboot, progressively lengthen the time to attempt an authentication, make all user data assets unreadable, [assignment: list of other actions to reduce the risk of attacks such as brute-force attack]_].
 
 ===== FIA_UAU.5/Local Multiple authentication mechanisms
 This SFR adds the specific biometrics allowed by the PP-Module.
 
-*FIA_UAU.5.1/Local*:: The TSF shall provide [_password, PIN_ and [selection: pattern, *eye, face, fingerprint, vein,* [assignment: EAF], no other mechanism]] to support user authentication.
+*FIA_UAU.5.1/Local*:: The TSF shall provide [_password, PIN and_ [selection: _pattern, *eye, face, fingerprint, vein,* [assignment: EAF], no other mechanism_]] to support user authentication.
 
 *FIA_UAU.5.2/Local*:: The TSF shall authenticate any user's claimed identity according to the [assignment: rules describing how the multiple authentication mechanisms provide authentication].
 
@@ -493,8 +493,15 @@ The biometric capture subsystem data is protection of the data during the captur
 * _modify [assignment: any key(s), hashes of key(s), certificate(s) and/or other data] used to verify the integrity of the TSF in FPT_TST.1;_
 * _modify [assignment: any key(s), hashes of key(s), certificate(s) and/or other data] used to verify the integrity and authenticity of updates to the tsf in FCS_COP.1/Asymmetric;_
 * _read or modify [*biometric data*, *the biometric capture subsystem data* assignment: list of other data and/or keys]_]
-
-to the [_hardware based secure environment of the TSF_] by responding automatically such that the SFRs are always enforced it is impossible to read or modify this data and/or key(s).
++
+to the [selection:
++
+* _to physical features of the SoC,_
+* _to a hardware-isolated component,_
+* _to a hardware-protected component,_
+* _[assignment: other secure environment of the TSF]_
++
+] by responding automatically such that the SFRs are always enforced it is impossible to read or modify this data and/or key(s).
 
 ==== Additional SFRs
 
