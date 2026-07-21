@@ -950,11 +950,11 @@ Refer to the EA for FCS_CKM.6 in the <<TS 103 732-1>> including biometric data a
 Refer to the EA for FIA_AFL.1 in the <<TS 103 732-1>> while including the choice of available biometric modalities as part of the process for selecting an authentication method.
 
 ===== FIA_UAU.5/Local Multiple authentication mechanisms
-Refer to the EA for FPT_KST_EXT.1 in the <<TS 103 732-1>> while including the choice of available biometric modalities as part of the process for selecting an authentication method.
+Refer to the EA for FIA_UAU.5/Local in the <<TS 103 732-1>> while including the choice of available biometric modalities as part of the process for selecting an authentication method.
 
 ==== Protection of the TSF (FPT)
 ===== FPT_PHP.3 Resistance to physical attack
-Refer to the EA for FPT_KST_EXT.2 in the <<TS 103 732-1>> including biometric data as a pre-selected assignment for protection according to the requirements for the EA.
+Refer to the EA for FPT_PHP.3 in the <<TS 103 732-1>> including biometric data as a pre-selected assignment for protection according to the requirements for the EA.
 
 === Evaluation Activities for Security Assurance Requirements in TS 103 732-1
 
