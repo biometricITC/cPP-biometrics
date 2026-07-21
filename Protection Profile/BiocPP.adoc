@@ -492,7 +492,7 @@ The biometric capture subsystem data is protection of the data during the captur
 * _read or modify [assignment: list of data and keys in the key hierarchies of the FCS_CKH_EXT.1 SFRs which are not encrypted themselves and whose leakage would affect the security of the key hierarchy];_
 * _modify [assignment: any key(s), hashes of key(s), certificate(s) and/or other data] used to verify the integrity of the TSF in FPT_TST.1;_
 * _modify [assignment: any key(s), hashes of key(s), certificate(s) and/or other data] used to verify the integrity and authenticity of updates to the tsf in FCS_COP.1/Asymmetric;_
-* _read or modify [*biometric data*, *the biometric capture subsystem data* assignment: list of other data and/or keys]_]
+* _read or modify [*biometric data*, *the biometric capture subsystem data,* assignment: list of other data and/or keys]_]
 +
 to the [selection:
 +
