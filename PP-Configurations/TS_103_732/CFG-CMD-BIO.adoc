@@ -3,7 +3,7 @@
 :toc:
 :table-caption: Table
 :revnumber: 1.0
-:revdate: July 17, 2026
+:revdate: September 4, 2026
 :xrefstyle: full
 :doctype: book
 

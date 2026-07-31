@@ -5,8 +5,8 @@
 :table-caption: Table
 :imagesdir: images
 :icons: font
-:revnumber: 2.1
-:revdate: May 1, 2026
+:revnumber: 2.2
+:revdate: September 4, 2026
 :xrefstyle: full
 :doctype: book
 
@@ -77,9 +77,13 @@ Biometric Security international Technical Community (BIO-iTC)
 |February 28, 2025
 |Incorporated updated PAD levels and CC:2022 compliance
 
+|2.1
+|<date>
+|Updates to the Attack Potential Table and PP-Modules for AVA_VAN and support for PP_MDF_V4.0
+
 |{revnumber}
 |{revdate}
-|Updates to the Attack Potential Table and PP-Modules for AVA_VAN and support for PP_MDF_V4.0
+|Updates to integrate with ETSI TS 103 732-1 v3.1.1
 
 |===
 
@@ -2015,7 +2019,7 @@ The evaluator shall select "None" because potential difficulties to having acces
 - [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.       
 - [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0.    
 - [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], {revdate}, Version {revnumber}.    
-- [#TS 103 732-1]#[TS 103 732-1]# ETSI CYBER; Consumer Mobile Device; Part 1: Base Protection Profile, ???, Version 3.1.1
+- [#TS 103 732-1]#[TS 103 732-1]# ETSI CYBER; Consumer Mobile Device; Part 1: Base Protection Profile, July 16, 2026, Version 3.1.1
 - [#BIOPP-Module]#[BIOPP-Module]# collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOPP-Module], {revdate}, Version {revnumber}.
 - [#Toolbox]#[Toolbox]# Toolbox Overview, October 15, 2024, Version 1.2.
 - [#ISO19795-1]#[ISO/IEC 19795-1:2021]# Biometric performance testing and reporting - Part 1: Principles and framework, Edition 2.

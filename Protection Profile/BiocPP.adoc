@@ -5,8 +5,8 @@
 :sectnums:
 :sectnumlevels: 5
 :imagesdir: images
-:revnumber: 2.1
-:revdate: May 1, 2026
+:revnumber: 2.2
+:revdate: September 4, 2026
 :xrefstyle: full
 :doctype: book
 :appendix-caption: Annex
@@ -46,7 +46,7 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.
 - [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0.
 - [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], {revdate}, Version {revnumber}.
-- [#TS 103 732-1]#[TS 103 732-1]# ETSI CYBER; Consumer Mobile Device; Part 1: Base Protection Profile, ???, Version 3.1.1
+- [#TS 103 732-1]#[TS 103 732-1]# ETSI CYBER; Consumer Mobile Device; Part 1: Base Protection Profile, July 16, 2026, Version 3.1.1
 - [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], {revdate}, Version {revnumber}.
 - [#ISO/IEC 19795-1]#[ISO/IEC 19795-1:2021]# Biometric performance testing and reporting — Part 1: Principles and framework, Edition 2.
 - [#ISO/IEC 29156]#[ISO/IEC 29156]# Information technology - Guidance for specifying performance requirements to meet security and usability needs in applications using biometrics, Edition 1.
@@ -178,9 +178,13 @@ Zero-effort Impostor Attempt::
 |February 28, 2025
 |Incorporated updated PAD levels and CC:2022 compliance
 
+|2.1
+|<date>
+|Updates to the Attack Potential Table and PP-Modules for AVA_VAN and support for PP_MDF_V4.0
+
 |{revnumber}
 |{revdate}
-|Updates to the Attack Potential Table and PP-Modules for AVA_VAN and support for PP_MDF_V4.0
+|Updates to integrate with ETSI TS 103 732-1 v3.1.1
 
 |===
 
@@ -404,7 +408,7 @@ The SFRs listed in this section are defined in the <<PP_MDF>> and relevant to th
 ===== Class: Cryptographic Support (FCS)
 This PP-Module does not modify SFRs in FCS class as it is defined in the <<PP_MDF>>. However, note that BAF must be illustrated in the key hierarchy diagram and all keys created upon successful biometric enrolment and verification must be generated, derived, combined, released and destroyed according to SFRs in this class.
 
-===== FCS_CKM.6 Timing and Event of Cryptographic Key Destruction [[FCS_CKM.6]]
+===== FCS_CKM.6 Timing and Event of Cryptographic Key Destruction (PP_MDF)
 This SFR is identical to what is defined in the <<PP_MDF>>. The change is to the application note.
 
 *Application Note:* For the purposes of this requirement, keying material refers to authentication data, passwords, secret/private symmetric keys, private asymmetric keys, data used to derive keys, values derived from passwords, etc. “Plaintext keying material” may refer to a KEK that is used to encrypt other keying material. Destruction of encrypted keying material may be accomplished by destroying the KEK used to encrypt it. If different mechanisms are used for destroying different keying material, all relevant claims should be selected and the TSS should identify which keying material is destroyed by which mechanism. *Biometric data used for enrolment or verification is considered keying material that must be destroyed when no longer needed.*
@@ -450,7 +454,7 @@ If a portion of the SFR or the appication not is not included, it does not need 
 ===== Class: Cryptographic Support (FCS)
 This PP-Module does not modify SFRs in FCS class as it is defined in the <<TS 103 732-1>>. However, the cryptographic key hierarchy description will need to show how the BAF is used in relation to the keys in the hierarchy.
 
-===== FCS_CKM.6 Timing and event of cryptographic key destruction [[FCS_CKM.6]]
+===== FCS_CKM.6 Timing and event of cryptographic key destruction (TS 103 732-1)
 This SFR is identical to what is defined in the <<TS 103 732-1>>. The change is to the first assignment, adding a pre-filled assignment for biometric data to be included as one type of data that has to be deleted in FCS_CKM.6.1. No changes are made to FCS_CKM.6.2 (and hence it is not listed here). Biometric data is added as a specific set of materials for protection and deletion.
 
 *FCS_CKM.6.1*:: The TSF shall destroy [*biometric data*, assignment: _list of cryptographic keys (including keying material)_] when [selection: _no longer needed, [assignment: other circumstances for key or keying material destruction]_].
@@ -759,7 +763,7 @@ The mobile device shall take appropriate actions after receiving the verificatio
 _FIA_AFL.1_ defines rules regarding how the authentication factors interact in terms of unsuccessful authentication and actions mobile device shall take when number of unsuccessful authentication attempts surpass the pre-defined number.
 
 ===== Protection of the Biometric System and its biometric data
-The mobile device shall provide the SEE (e.g. restricted operational environment) so the Biometric System can work securely. This SEE guarantees code and data loaded inside to be protected with respect to confidentiality and integrity. This SEE is out of scope of the Biometric System defined in this PP-Module and shall be provided by the mobile device and evaluated based on <<PP_MDF>> and <<Modified SFRs>>. However, ST author shall explain how such SEE is provided by the mobile device for the Biometric System, as required by <<BIOSD>>. The mobile device shall also keep secret any sensitive information regarding the biometric when the mobile device receives the verification outcome from the Biometric System, as required by _FIA_UAU.7.1_, and provide cryptographic support to encrypt or decrypt biometric data as required by _FCS class_. The mobile device shall treat biometric data used in the enrolment or verification process (not the final templates) as keying material according to _FCS_CKM.6.2_ with additonal application note described in <<FCS_CKM.6 Timing and Event of Cryptographic Key Destruction>>.
+The mobile device shall provide the SEE (e.g. restricted operational environment) so the Biometric System can work securely. This SEE guarantees code and data loaded inside to be protected with respect to confidentiality and integrity. This SEE is out of scope of the Biometric System defined in this PP-Module and shall be provided by the mobile device and evaluated based on <<PP_MDF>> and <<Modified SFRs>>. However, ST author shall explain how such SEE is provided by the mobile device for the Biometric System, as required by <<BIOSD>>. The mobile device shall also keep secret any sensitive information regarding the biometric when the mobile device receives the verification outcome from the Biometric System, as required by _FIA_UAU.7.1_, and provide cryptographic support to encrypt or decrypt biometric data as required by _FCS class_. The mobile device shall treat biometric data used in the enrolment or verification process (not the final templates) as keying material according to _FCS_CKM.6.2_ with additonal application note described in <<FCS_CKM.6 Timing and Event of Cryptographic Key Destruction (PP_MDF)>>.
 
 This PP-Module assumes that above requirements are satisfied by the mobile device as defined in OE.Protection.
 
@@ -869,7 +873,7 @@ The mobile device shall take appropriate actions after receiving the verificatio
 _FIA_AFL_EXT.1_ defines rules regarding how the authentication factors interact in terms of unsuccessful authentication and actions mobile device shall take when number of unsuccessful authentication attempts surpass the pre-defined number. The mobile device also shall apply authentication throttling after failed biometric verification, as required by _FIA_TRT_EXT.1.1_.
 
 ====== Protection of the Biometric System and its biometric data
-The mobile device shall provide the SEE (e.g. restricted operational environment) so the Biometric System can work securely. This SEE guarantees code and data loaded inside to be protected with respect to confidentiality and integrity. This SEE is out of scope of the Biometric System defined in this PP-Module and shall be provided by the mobile device and evaluated based on <<TS 103 732-1>> and <<Modified SFRs>>. However, ST author shall explain how such SEE is provided by the mobile device for the Biometric System, as required by <<BIOSD>>. The mobile device shall also keep secret any sensitive information regarding the biometric when the mobile device receives the verification outcome from the Biometric System, as required by _FIA_UAU.7.1_, and provide cryptographic support to encrypt or decrypt biometric data as required by _FCS class_. The mobile device shall treat biometric data used in the enrolment or verification process (not the final templates) as critical security parameters according to _FCS_CKM.6.2_ with additonal application note described in <<FCS_CKM.6 Timing and event of cryptographic key destruction>>.
+The mobile device shall provide the SEE (e.g. restricted operational environment) so the Biometric System can work securely. This SEE guarantees code and data loaded inside to be protected with respect to confidentiality and integrity. This SEE is out of scope of the Biometric System defined in this PP-Module and shall be provided by the mobile device and evaluated based on <<TS 103 732-1>> and <<Modified SFRs>>. However, ST author shall explain how such SEE is provided by the mobile device for the Biometric System, as required by <<BIOSD>>. The mobile device shall also keep secret any sensitive information regarding the biometric when the mobile device receives the verification outcome from the Biometric System, as required by _FIA_UAU.7.1_, and provide cryptographic support to encrypt or decrypt biometric data as required by _FCS class_. The mobile device shall treat biometric data used in the enrolment or verification process (not the final templates) as critical security parameters according to _FCS_CKM.6.2_ with additonal application note described in <<FCS_CKM.6 Timing and event of cryptographic key destruction (TS 103 732-1)>>.
 
 This PP-Module assumes that above requirements are satisfied by the mobile device as defined in OE.Protection.
 
