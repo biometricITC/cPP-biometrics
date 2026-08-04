@@ -416,7 +416,7 @@ This section lists SFRs for the biometric enrolment and verification.
 
 *FIA_MBE_EXT.1.1*:: The TSF shall provide a mechanism to enrol an authenticated user to the biometric system.
 
-*Application Note {counter:remark_count}*:: A user enroling to the biometric system will have been authenticated using a NBAF, specified in FIA_UAU.5.1. When any modification of BAF data occurs, re-authentication shall be performed in accordance with FIA_UAU.6.1.
+*Application Note {counter:remark_count}*:: A user enroling to the biometric system will have been authenticated using a NBAF, specified in FIA_UAU.5.1. When any modification of the BAF data occurs, re-authentication shall be performed in accordance with FIA_UAU.6.1.
 
 ===== FIA_MBE_EXT.2 Quality of biometric templates for biometric enrolment [[FIA_MBE_EXT.2]]
 
