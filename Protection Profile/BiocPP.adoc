@@ -6,7 +6,7 @@
 :sectnumlevels: 5
 :imagesdir: images
 :revnumber: 2.1
-:revdate: May 1, 2026
+:revdate: November 22, 2026
 :xrefstyle: full
 :doctype: book
 :appendix-caption: Annex
@@ -43,8 +43,8 @@ Although the PP-Module and Supporting Document <<BIOSD>> may contain minor edito
 - [#CC4]#[CC4]#	Common Criteria for Information Technology Security Evaluation, Part 4: Framework for the specification of evaluation methods and activities, CCMB-2022-11-004, CC:2022 Revision 1, November 2022.
 - [#CC5]#[CC5]#	Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
 - [#CEM]#[CEM]#	Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
-- [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.
-- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0.
+- [#CC-E&I]#[CC-E&I]# Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), CCMB-2025-001, Version 1.2, October 15, 2025.
+- [#PP_MDF]#[PP_MDF]# Protection Profile for Mobile Device Fundamentals, November 22, 2026, Version 4.0.
 - [#CFG-MDF-BIO]#[CFG-MDF-BIO]# PP-Configuration for Protection Profile for Mobile Device Fundamentals and collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [CFG-MDF-BIO], {revdate}, Version {revnumber}.
 - [#BIOSD]#[BIOSD]# Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], {revdate}, Version {revnumber}.
 - [#ISO/IEC 19795-1]#[ISO/IEC 19795-1:2021]# Biometric performance testing and reporting — Part 1: Principles and framework, Edition 2.
@@ -1190,7 +1190,7 @@ There are no additional SFRs that to be claimed specifically for this L3PP-Modul
 
 The L3PP-Module does not define any additional SFRs.
 
-==== TOE Security Funcational Requirements Rationale
+==== TOE Security Functional Requirements Rationale
 
 The following rationale provides justification for each threat or security policy for the TOE, showing that the SFRs are suitable to meet and achieve the security requirements:
 

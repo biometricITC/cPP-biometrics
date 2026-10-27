@@ -3,7 +3,7 @@
 :toc:
 :table-caption: Table
 :revnumber: 1.0
-:revdate: May 1, 2026
+:revdate: November 22, 2026
 :xrefstyle: full
 :doctype: book
 
@@ -28,7 +28,7 @@ This PP-Configuration is identified as follows:
 
 This PP-Configuration includes the following components:
 
-* PP-Module Base: Protection Profile for Mobile Device Fundamentals, May 1, 2026, Version 4.0. <<PP_MDF>>
+* PP-Module Base: Protection Profile for Mobile Device Fundamentals, November 22, 2026, Version 4.0. <<PP_MDF>>
 * PP-Module: collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [<<MOD_BIO_V2.1, BIOPP-Module>>], {revdate}, Version {revnumber}
 * PP-Module: collaborative PP-Module with PAD-L3 for Biometric verification [<<MOD_L3BIO_V1.0,L3PP-Module>>], {revdate}, Version {revnumber}
 
@@ -124,7 +124,7 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
 
 |[#CC-E&I]#[CC-E&I]#
-|Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 001, Version 1.2, October 15, 2025.
+|Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), CCMB-2025-001, Version 1.2, October 15, 2025.
 
 |===
 
