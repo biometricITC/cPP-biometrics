@@ -132,7 +132,7 @@ In order to evaluate a TOE that claims conformance to the Presentation Attack De
 |Supporting Document Mandatory Technical Document: Evaluation Activities for collaborative PP-Module for Biometric enrolment and verification - for unlocking the device - [BIOSD], {revdate}, Version {revnumber}
 
 |[#Toolbox]#[Toolbox]# 
-|Toolbox Overview, October 15, 2024, Version 1.2
+|Toolbox Overview, November, 22, 2026, Version 2.0
 
 |===
 
